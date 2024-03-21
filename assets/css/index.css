@@ -28,6 +28,8 @@
     --blue5: #1639b1;
     --white: #ffffff;
     --black: #000;
+
+    --blueTrasition: #0ca2ff;
 }
 
 * {
@@ -43,7 +45,7 @@
 
 @media screen and (min-width: 1025px) {
     header {
-        height: 100vh;
+        height: 10vh;
     }
 
     nav {
@@ -99,5 +101,191 @@
         color: var(--white);
         background-color: var(--blue2);
     }
+    #section-1{
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        flex-direction: row;
+        /* border-top: solid 2px var(--blue3); */
+    }
+    #section-1-apresentacao{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 5%;
+    }
+    #apresentacao-titulo{
+        font-size: 40px;
+        color: #000;
+        font-family: 'Poppins-Regular';
+        margin-bottom: 1%;
+        font-weight: 600;
+    }
+    #apresentacao-titulo span{
+        color: var(--blue3);
+        font-size: 50px;
+        font-weight: 700;
+    }
+    #comecar{
+        display: flex;
+        align-items: center;
+        
+    }
+    #comecar a{
+        text-decoration: none;
+        color: #fff;
+        padding: 10px 25px;
+        background-color: var(--blue3);
+        border-radius: 10px;
+        transition: 400ms;
+    }
+    #comecar a:hover{
+        background-color: var(--blueTrasition);
+    }
 
+    #section-1-img{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #apresentacao-subtitulo{
+        font-size: 25px;
+        color: #000;
+        font-family: 'Poppins-Regular';
+        margin-bottom: 1%;
+        font-weight: 600;
+    }
+    #apresentacao-subtitulo span{
+        font-size: 25px;
+        color: var(--blue4);
+        font-weight: 600;
+    }
+    #section-1-img img{
+        width: 85%;
+    }
+    /* section 2 */
+    #section-2{
+        width: 100%;
+        height: 15vh;
+        border-top: 2px solid var(--blue5);
+        border-bottom: 2px solid var(--blue5);
+        background-color: var(--blue3);
+    }
+    #section-2-apresentacao{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #section-2-apresentacao  p{
+        color: var(--white);
+        font-size: 30px;
+        font-family: 'Poppins-Regular';
+    }
+    #section-2-apresentacao p > span{
+        font-weight: 600;
+    }
+    /* section-3 */
+    #section-3{
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .section-3-conteiner{
+        width: 32%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .section-3-cards{
+        width: 70%;
+        height: 80%;
+        border-radius: 10px;
+        border: solid 2px var(--blue5);
+        padding: 5%;
+        box-shadow: var(--blue2) 25px 25px 0px;
+    }
+    #section-4{
+        width: 100%;
+        height: 15vh;
+        border-top: 2px solid var(--blue5);
+        border-bottom: 2px solid var(--blue5);
+        background-color: var(--blue3);
+    }
+    #section-4-apresentacao{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #section-4-apresentacao  p{
+        color: var(--white);
+        font-size: 30px;
+        font-family: 'Poppins-Regular';
+    }
+    #section-4-apresentacao p > span{
+        font-weight: 600;
+    }
+    #section-5{
+
+    }
+    #img_game{
+        width: 40%;
+        height: auto;
+        margin-top: 7%;
+        margin-left: 5%;
+        border-radius: 10px;
+        box-shadow: #f2f2f2 -25px -25px 0px
+    }
+
+    #img_menina{
+        position: relative;
+        left: 80%;
+        width: 20%;
+        height: auto;
+    }
+    #section-6{
+        width: 100%;
+        height: 5vh;
+        border-top: 7px solid var(--blue4);
+        border-bottom: 7px solid var(--blue4);
+        background-color: var(--blue3);
+    }
+    .titulo-card{
+        width: 100%;
+        height: 20%;
+        display: flex;
+        align-items: center;
+    }
+    .titulo-card p {
+        color:var(--blue4);
+        font-size: 35px;
+    }
+    .conteudo-card{
+        width: 100%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+    }
+    .conteudo-card p{
+        color:var(--black);
+        font-size: 20px;
+    }
+
+
+    footer{
+        height: 20vh;
+    }
 }
