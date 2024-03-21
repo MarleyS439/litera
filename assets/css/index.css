@@ -1,0 +1,103 @@
+/* Fontes Tipográficas */
+
+@font-face {
+    font-family: 'Poppins-Black';
+    src: url(../fonts/Poppins/Poppins-Black.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins-BlackItalic';
+    src: url(../fonts/Poppins/Poppins-BlackItalic.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url(../fonts/Poppins/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url(../fonts/Poppins/Poppins-Regular.ttf);
+}
+
+:root {
+    --blue0: #ebf7ff;
+    --blue2: #6ac3fa;
+    --blue3: #1187cf;
+    --blue4: #1639b1;
+    --blue5: #1639b1;
+    --white: #ffffff;
+    --black: #000;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins-Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+
+@media screen and (min-width: 1025px) {
+    header {
+        height: 100vh;
+    }
+
+    nav {
+        position: fixed;
+        padding: .5% 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        box-shadow: 0px 2px 2px #0000002c;
+    }
+
+    .logo-area {
+        font-size: 2rem;
+        color: var(--blue2);
+        font-weight: bold;
+    }
+
+    .links {
+        display: flex;
+    }
+
+    .links ul {
+        display: flex;
+    }
+
+    .links li {
+        display: flex;
+    }
+
+    .links a {
+        padding: 10px;
+        text-decoration: none;
+        color: var(--black);
+    }
+    
+    .enter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .enter a {
+        text-decoration: none;
+        color: var(--black);
+        padding: 5px 15px;
+        border: 2px solid var(--blue2);
+        border-radius: 10px;
+        transition: 500ms;
+    }
+
+    .enter a:hover {
+        color: var(--white);
+        background-color: var(--blue2);
+    }
+
+}

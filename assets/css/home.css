@@ -1,0 +1,295 @@
+@font-face {
+    font-family: 'Poppins-Black';
+    src: url(../fonts/Poppins/Poppins-Black.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins-BlackItalic';
+    src: url(../fonts/Poppins/Poppins-BlackItalic.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url(../fonts/Poppins/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url(../fonts/Poppins/Poppins-Regular.ttf);
+}
+
+:root {
+    --blue0: #ebf7ff;
+    --blue2: #6ac3fa;
+    --blue3: #1187cf;
+    --blue4: #1639b1;
+    --blue5: #1639b1;
+    --white: #ffffff;
+    --black: #000;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins-Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+body {
+    background-color: var(--blue0);
+}
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+
+@media screen and (min-width: 1025px) {
+    /* Estilos para PCs */
+
+    .top-bar-litera {
+        background-color: var(--blue3);
+        width: 100%;
+        position: fixed;
+        display: flex;
+        padding: .6% 5%;
+        justify-content: space-between;
+        align-items: center;
+        transition: 500ms ease-out .2s;
+        z-index: 9999;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+
+    .logo-litera h2 {
+        font-family: 'Poppins-Bold', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: var(--blue0);
+    }
+
+    .profile-pic-user {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--white);
+    }
+
+    .profile-pic-user p {
+        margin: 0px 5px;
+        font-weight: bold;
+    }
+
+    .profile-pic-user img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-link.active {
+        background-color: var(--blue0);
+        font-weight: bold;
+        color: var(--blue3);
+        transition: 200ms ease-out;
+    }
+
+    .navigation-litera ul {
+        list-style: none;
+        display: flex;
+    }
+
+    .navigation-litera a {
+        display: flex;
+        text-decoration: none;
+        color: var(--blue0);
+        align-items: center;
+        background-color: var(--blue3);
+        padding: 6px;
+        border-radius: 8px;
+    }
+
+    .navigation-litera li {
+        display: flex;
+        margin: 0% 2%;
+    }
+
+    .icon-menu svg path {
+        fill: var(--blue0);
+        stroke: var(--blue0);
+    }
+
+    .nav-link.active .icon-menu svg path {
+        fill: var(--blue3);
+        stroke: var(--blue3);
+    }
+
+
+    .icon-menu svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .icon-menu svg:hover {
+        fill: #1639b1;
+    }
+
+    .name-menu {
+        margin: 0px 5px;
+    }
+
+    .contain {
+        display: flex;
+        position: relative;
+        top: 10vh;
+        justify-content: left;
+        padding: 0;
+        transition: 500ms ease-in-out .1s;
+    }
+
+    .suit-games {
+        display: flex;
+        justify-content: left;
+        width: 80vw;
+        flex-wrap: wrap;
+        padding: 0% 5%;
+    }
+
+    .games {
+        transition: 500ms ease-in-out .1s;
+        background-color: var(--blue3);
+        padding: 1%;
+        border-radius: 8px;
+        margin: 10px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        width: 20vw;
+    }
+
+
+    .games a {
+        background-color: var(--blue3);
+        display: flex;
+        justify-content: center;
+        border-radius: 8px;
+        width: 100%;
+        text-decoration: none;
+        color: var(--blue0);
+    }
+
+    .games a p {
+        background-color: var(--blue3);
+        font-size: 1.3rem;
+    }
+
+    .access-game {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .figure-game {
+        padding: 2%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .figure-game img {
+        width: 45%;
+    }
+
+    .name-game p {
+        font-family: 'Poppins-Bold', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .description-game {
+        transition: 500ms ease-in-out .1s;
+    }
+
+    .title-container {
+        display: flex;
+        position: relative;
+        top: 10vh;
+        justify-content: left;
+        padding: 2%;
+    }
+
+    .title-container h2 {
+        padding: 0% 0% 0% 5%;
+        font-family: 'Poppins-Bold', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: var(--blue3);
+    }
+
+    .side-bar-status {
+        display: flex;
+        position: fixed;
+        justify-content: center;
+        width: 20vw;
+        border-left: 1px solid var(--blue2);
+        padding: 1%;
+        height: 100%;
+        top: -5vh;
+        flex-direction: column;
+    }
+
+    .side-status {
+        display: flex;
+        position: relative;
+        right: 0;
+    }
+
+    .container-avatar-user {
+        background-color: var(--blue2);
+        padding: 10%;
+        border-radius: 10px;
+        color: var(--blue0);
+        width: 100%;
+    }
+
+    .container-avatar-user p {
+        font-family: 'Poppins-Bold', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .avatar-user {
+        display: flex;
+        justify-content: center;
+    }
+
+    .avatar-user img {
+        width: 100px;
+    }
+
+    .status .info {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .info p {
+        display: flex;
+        justify-content: left;
+        padding: 0;
+        font-size: small;
+        align-items: center;
+    }
+
+    .info b {
+        margin: 0px 5px;
+    }
+
+    .side-status {
+        display: flex;
+        position: fixed;
+        justify-content: end;
+    }
+
+    .level {
+        margin: 5px;
+    }
+
+    .level p {
+        font-size: small;
+        font-weight: bold;
+    }
+
+    .statistics {
+    display: flex;
+    justify-content: center;
+    }
+
+    .level
+
+}
+
+@media screen and (max-width: 1447px) {}
