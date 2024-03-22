@@ -1,0 +1,666 @@
+/* Fontes Tipográficas */
+
+@font-face {
+  font-family: "Poppins-Black";
+  src: url(../fonts/Poppins/Poppins-Black.ttf);
+}
+
+@font-face {
+  font-family: "Poppins-BlackItalic";
+  src: url(../fonts/Poppins/Poppins-BlackItalic.ttf);
+}
+
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url(../fonts/Poppins/Poppins-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url(../fonts/Poppins/Poppins-Regular.ttf);
+}
+
+:root {
+  --blue0: #ebf7ff;
+  --blue2: #6ac3fa;
+  --blue3: #1187cf;
+  --blue4: #1639b1;
+  --blue5: #1639b1;
+  --blue6: #0e669d;
+  --white: #ffffff;
+  --black: #000;
+  --white1: #E7E7E7;
+  --blueTrasition: #0ca2ff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins-Regular", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+
+@media screen and (min-width: 1025px) {
+  header {
+    height: 10vh;
+  }
+
+  nav {
+    position: fixed;
+    padding: 0.5% 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0px 2px 2px #0000002c;
+    background-color: rgb(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+  }
+
+  .logo-area {
+    font-size: 2rem;
+    color: var(--blue2);
+    font-weight: bold;
+  }
+
+  .links {
+    display: flex;
+  }
+
+  .links ul {
+    display: flex;
+  }
+
+  .links li {
+    display: flex;
+  }
+
+  .links a {
+    padding: 10px;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 1.1rem;
+  }
+
+  .enter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .enter a {
+    text-decoration: none;
+    color: var(--blue3);
+    padding: 8px 25px;
+    border: 2px solid var(--blue2);
+    border-radius: 10px;
+    transition: 500ms;
+    font-weight: bold
+  }
+
+  .enter a:hover {
+    color: var(--white);
+    background-color: var(--blue2);
+  }
+
+  #section-1 {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    /* border-top: solid 2px var(--blue3); */
+  }
+
+  #section-1-apresentacao {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5%;
+  }
+
+  #apresentacao-titulo {
+    font-size: 40px;
+    color: #000;
+    font-family: "Poppins-Regular";
+    margin-bottom: 1%;
+    font-weight: 600;
+  }
+
+  #apresentacao-titulo span {
+    color: var(--blue3);
+    font-size: 50px;
+    font-weight: 700;
+  }
+
+  #comecar {
+    display: flex;
+    align-items: center;
+  }
+
+  #comecar a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 25px;
+    background-color: var(--blue3);
+    border-radius: 10px;
+    transition: 400ms;
+  }
+
+  #comecar a:hover {
+    background-color: var(--blueTrasition);
+  }
+
+  /* section-1  */
+  #section-1-img {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #apresentacao-subtitulo {
+    font-size: 25px;
+    color: #000;
+    font-family: "Poppins-Regular";
+    margin-bottom: 1%;
+    font-weight: 600;
+  }
+
+  #apresentacao-subtitulo span {
+    font-size: 25px;
+    color: var(--blue4);
+    font-weight: 600;
+  }
+
+  #section-1-img img {
+    width: 85%;
+  }
+
+  /* section 2 */
+  #section-2 {
+    width: 100%;
+    height: 15vh;
+    border-top: 2px solid var(--blue5);
+    border-bottom: 2px solid var(--blue5);
+    background-color: var(--blue3);
+  }
+
+  #section-2-apresentacao {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #section-2-apresentacao p {
+    color: var(--white);
+    font-size: 30px;
+    font-family: "Poppins-Regular";
+  }
+
+  #section-2-apresentacao p>span {
+    font-weight: 600;
+  }
+
+  /* section-3 */
+  #section-3 {
+    width: 100%;
+    height: auto;
+  }
+
+  #conteiner-section {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .section-3-conteiner {
+    width: 32%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section-3-cards {
+    width: 70%;
+    height: 62vh;
+    border-radius: 10px;
+    border: solid 0.2rem var(--blue6);
+    padding: 5%;
+    box-shadow: var(--blue2) 25px 25px 0px;
+  }
+
+  .titulo-card {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+  }
+
+  .titulo-card p {
+    color: var(--blue6);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1%;
+  }
+
+  .conteudo-card {
+    width: 100%;
+    height: auto;
+    display: flex;
+  }
+
+  .conteudo-card p {
+    color: var(--black);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 5% 1%;
+  }
+
+  #title-litera-container {
+    margin-bottom: 2%;
+  }
+
+  #title-literaHelp {
+    text-align: center;
+    font-size: 1.6rem;
+  }
+
+  #title-literaHelp span {
+    color: var(--blue3);
+  }
+
+  .title-utility {
+    color: var(--blue3);
+    font-size: 3rem;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 1%;
+  }
+
+  .div-justify {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .container-justify {
+    width: 20%;
+    text-align: center;
+    margin-bottom: 5%;
+  }
+
+  #img_data {
+    width: 50%;
+    height: auto;
+  }
+
+  /* section-4 */
+  #section-4 {
+    width: 100%;
+    height: 15vh;
+    border-top: 2px solid var(--blue5);
+    border-bottom: 2px solid var(--blue5);
+    background-color: var(--blue3);
+  }
+
+  #section-4-apresentacao {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #section-4-apresentacao p {
+    color: var(--white);
+    font-size: 30px;
+    font-family: "Poppins-Regular";
+  }
+
+  #section-4-apresentacao p>span {
+    font-weight: 600;
+  }
+
+  /* Section-5 */
+  #section-5 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #section-5-img {
+    width: 70%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #img_game {
+    width: 70%;
+    height: auto;
+    margin-top: 7%;
+    margin-left: 5%;
+    border-radius: 10px;
+    box-shadow: #f2f2f2 -25px -25px 0px;
+  }
+
+  #section-5-textContainer {
+    width: 30%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2%;
+    padding-right: 8%;
+  }
+
+  #section-5-textContainer p {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--black);
+  }
+
+  /* section-5-parte-2 */
+  #section-5-parte-2 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 40vh;
+  }
+
+  .jogos-demonstracao {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    height: 20vh;
+  }
+
+  .area-card-jogo {
+    width: 50%;
+    height: 20vh;
+  }
+
+  .area-card-jogo p {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .card-jogo-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-jogo-end {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+  }
+
+  .card-jogo {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 25px;
+    background-color: var(--blue2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img-jogo {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  #section-5-2-img {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+  }
+
+  #img_menina {
+    width: 65%;
+    height: auto;
+  }
+
+  #jogoAdivinha {
+    margin-bottom: 20px;
+  }
+
+  #jogoVogal {
+    margin-top: 20px;
+  }
+
+  #jogoVazio1 {
+    margin-bottom: 20px;
+  }
+
+  #jgogoVazio2 {
+    margin-top: 20px;
+  }
+
+  /* section-6 */
+  #section-6 {
+    width: 100%;
+    height: 5vh;
+    border-top: 7px solid var(--blue4);
+    border-bottom: 7px solid var(--blue4);
+    background-color: var(--blue3);
+  }
+
+  /* Section-7 */
+  #section-7 {
+    width: 100%;
+    height: 70vh;
+  }
+
+  #section-7-title {
+    text-align: center;
+    padding-left: 21%;
+    padding-right: 21%;
+  }
+
+  #section-7-title h3 {
+    font-size: 1.6rem;
+  }
+
+  #section-7-conteinerConteudo {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  #section-7-containerImg {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    padding-right: 2%;
+  }
+
+  #section-7-img {
+    width: 70%;
+  }
+
+  #section-7-text {
+    width: 50%;
+    height: 100%;
+    padding-right: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #section-7-text p {
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .title-section-multipart {
+    padding: 5%;
+    text-align: center;
+  }
+
+
+  /* section-8 */
+  .title-clientes {
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #area-comentario {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 5%;
+  }
+
+  .comentario {
+    width: 35%;
+    height: 100%;
+    border: solid 1px var(--black);
+    border-radius: 15px;
+  }
+
+  .top-comentario {
+    width: 100%;
+    height: 35%;
+    padding: 2% 1%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .comentario-user {
+    width: 100%;
+    height: 65%;
+    padding: 2% 1% 2% 1%;
+  }
+
+  .img-perfil-usuario {
+    width: 12%;
+    margin-right: 4%;
+  }
+
+  .top-comentario p {
+    font-size: 1.4rem;
+    font-family: "Poppins-Regular";
+    font-weight: 500;
+    color: var(--blue6);
+  }
+
+  .comentario-user p {
+    color: var(--black);
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+  }
+  /* section-final */
+  #section-final{
+    width: 100%;
+    height: 40vh;
+    background-color: var(--white1);
+    margin-bottom: 5%;
+  }
+  #title-section-final{
+    width: 100%;
+    height: 20%;
+  }
+  #title-section-final p{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  #section-final-conteudo{
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+  }
+  #txt-section-final{
+    width: 50%;
+    height: 100%;
+    padding-left: 16%;
+    padding-right: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #txt-section-final p{
+    font-size: 1.1rem;
+    text-align: center;
+    font-weight: 600;
+  }
+  #area-form{
+    width: 50%;
+    height: 100%;
+  }
+  #form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #form input{
+    width: 60%;
+    height: 20%;
+    font-size: 1rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 1%;
+  }
+  #form button{
+    color: var(--white);
+    background-color: var(--blue3);
+    width: 20%;
+    height: 20%;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: 400ms;
+  }
+  #form button:hover{
+    background-color: var(--blueTrasition);
+    
+  }
+
+  footer {
+    height: 20vh;
+  }
+}
