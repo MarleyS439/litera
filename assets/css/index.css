@@ -53,13 +53,13 @@
 
   nav {
     position: fixed;
-    padding: 0.5% 5%;
+    padding: 0.5% 3%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     box-shadow: 0px 2px 2px #0000002c;
-    background-color: rgb(255, 255, 255, 0.95);
+    background-color: rgb(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
   }
 
@@ -67,6 +67,17 @@
     font-size: 2rem;
     color: var(--blue2);
     font-weight: bold;
+    display: flex;
+    align-items: center; 
+    width: 9%;
+  }
+  
+  .logo-area img {
+    width: 40%; 
+  }
+  
+  .logo-area p {
+    margin-left: 5%;
   }
 
   .links {
@@ -309,10 +320,9 @@
     text-align: center;
     margin-bottom: 5%;
   }
-
+  
   #img_data {
-    width: 50%;
-    height: auto;
+    width: 30%;
   }
 
   /* section-4 */
@@ -435,7 +445,7 @@
   }
 
   .img-jogo {
-    width: 6rem;
+    width: 6.5rem;
     height: 6rem;
   }
 
