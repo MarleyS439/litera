@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Litera | Alfabatização Para Novas Gerações</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/index.css">
 </head>
 
@@ -67,31 +68,43 @@
             <div id="conteiner-section">
                 <div class="section-3-conteiner">
                     <div class="section-3-cards">
-                        <div class="titulo-card">
-                            <p><span>Desempenho</span></p>
-                        </div>
-                        <div class="conteudo-card">
-                            <p>Com o <span>Litera</span> será possível que o responsável tenha acesso ao desempenho da criança e possa saber em que partes ela deve melhorar.</p>
-                        </div>
+                      <div class="titulo-card">
+                          <button class="accordion-header">
+                              <img class="icon" src="./assets/images/icones 2/desempenho.svg" alt="">
+                              <p><span>Desempenho</span></p>
+                              <i id="arrow" class="fa-solid fa-chevron-down"></i> <!-- Ícone Chevon agora está isolado do lado oposto -->
+                          </button>
+                      </div>
+                      <div class="conteudo-card">
+                          <p>Com o <span>Litera</span> será possível que o responsável tenha acesso ao desempenho da criança e possa saber em que partes ela deve melhorar.</p>
+                      </div>
+                    </div>
+                </div>
+                <div class="section-3-conteiner">
+                    <div class="section-3-cards">
+                      <div class="titulo-card">
+                          <button class="accordion-header">
+                            <img class="icon" src="./assets/images/icones 2/acessivel.svg" alt="">
+                            <p><span>Acessível</span></p>
+                              <i id="arrow" class="fa-solid fa-chevron-down"></i>
+                          </button>
+                      </div>
+                      <div class="conteudo-card">
+                          <p>O <span>Litera</span> é uma plataforma acessível pois é totalmente gratuita sem exigir que o usuário faça inscrição em um tipo de plano</p>
+                      </div>
                     </div>
                 </div>
                 <div class="section-3-conteiner">
                     <div class="section-3-cards">
                         <div class="titulo-card">
-                            <p><span>Acessivel</span></p>
+                            <button class="accordion-header">
+                                <img class="icon" src="./assets/images/icones 2/interativo.svg" alt="">
+                                <p><span>Interativo</span></p>
+                                <i id="arrow" class="fa-solid fa-chevron-down"></i>
+                            </button>
                         </div>
                         <div class="conteudo-card">
-                            <p>O <span>Litera</span> é uma plataforma acessível pois é totalmente gratuita sem exigir que o usuário faça inscrição em um tipo de plano</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="section-3-conteiner">
-                    <div class="section-3-cards">
-                        <div class="titulo-card">
-                            <p><span>Interativo</span></p>
-                        </div>
-                        <div class="conteudo-card">
-                            <p>O <span>Litera</span> é uma plataforma interativa possibilitando que o usuário aprenda de forma divertida e fácil e personalive seu avatar</p>
+                            <p>O <span>Litera</span> é uma plataforma interativa possibilitando que o usuário aprenda de forma divertida e fácil e personalize seu avatar</p>
                         </div>
                     </div>
                 </div>
@@ -170,20 +183,25 @@
         <section id="section-6"></section>
 
         <section id="section-7">
+            
             <div class="title-section-multipart">
                 <h3 id="section-7-title">Projetado para ser acessado em qualquer dispositivo e local!</h3>
             </div>
             <div id="section-7-conteinerConteudo">
                 <div id="section-7-containerImg">
-                    <img id="section-7-img" id="img_dispositivos" src="./assets/images/LandingPage/Frame 66.png" alt="">
+                    <img id="section-7-img" src="./assets/images/LandingPage/Frame 66.png" alt="">
                 </div>
-                <div id="section-7-text">
+                <div id="section-7-text" class="content">
                     <p>O Litera tem um design totalmente responsivo, possibilitando que os usuários consigam acessá-lo de diversos aparelhos e locais.</p>
-                </div>    
+                </div>
+                <!-- <div id="section-7-another-content" class="content">
+                    <p>Outro conteúdo</p>
+                </div> -->
             </div>
+           
         </section>
 
-        <section>
+        <section id="section-8">
             <div class="title-clientes">
                 <h3>O que os nossos clientes dizem?</h3>
             </div>
@@ -237,6 +255,8 @@
 
         </section>
     </footer>
+    
+    <script src="./assets/javascript/accordion.js"></script>
 </body>
 
 </html>

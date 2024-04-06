@@ -29,6 +29,7 @@
             <div class="jogos">
                     <div class="contJogo">
                         <h1>Nome do Jogo</h1>
+                        
                     </div>
                     <div class="contJogo">
                         <h1>Nome do Jogo</h1>
