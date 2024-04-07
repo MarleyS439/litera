@@ -30,6 +30,10 @@ if ($usuarioAutenticado['banido'] != 0) {
     include('../views/components/topbar.php');
     ?>
 
+    <div class="title-container">
+        <h2>Loja de produtos</h2>
+    </div>
+
     <div class="contain">
 
         <div class="cards">
