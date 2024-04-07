@@ -11,3 +11,21 @@ navLinks.forEach(link => {
         this.classList.add('active');
     });
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const icons = document.querySelectorAll('.icon');
+    const contents = document.querySelectorAll('.content');
+
+    icons.forEach(icon => {
+        icon.addEventListener('click', function() {
+            const contentId = this.getAttribute('data-content');
+
+            contents.forEach(content => {
+                if (content.id === contentId) {
+                    content.classList.add('active');
+                } else {
+                    content.classList.remove('active');
+                }
+            });
+        });
+    });
+});
