@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     session_start();
                     header('Location: ../index.php');
                 }catch (Exception $e){
-                    header('Location: ../view/register.php');
+                    header('Location: ../views/register.php');
                 }
                 echo "Cadastro realizado com sucesso!";
             } else {
