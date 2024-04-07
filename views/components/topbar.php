@@ -5,7 +5,7 @@
     <div class="navigation-litera">
         <ul>
             <li>
-                <a href="#" class="nav-link">
+                <a href="start.php" class="nav-link">
                     <div class="icon-menu">
                         <div class="icon-menu" id="icon-menu">
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="25" height="25">
@@ -26,7 +26,7 @@
             </li>
 
             <li>
-                <a href="#" class="nav-link">
+                <a href="store.php" class="nav-link">
                     <div class="icon-menu">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="25" height="25">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
