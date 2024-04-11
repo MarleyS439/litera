@@ -1,19 +1,45 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=7">
     <meta name="description" content="">
     <meta name="keywords" content="">
+    <meta name="author" content="Illumi">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Litera</title>
     <link rel="shortcut icon" href="../assets/images/icons/Litera Icon2.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css"> 
 </head>
 
 <body>
-    <div class="desktop-screen">
+
+    <!-- desktop-view -->
+    <div class="desktop-view">
+        <div class="container">
+            <div class="image-left">
+                <h2>Litera</h2>
+                <p>Alfabetizando novas gerações</p>
+                <img src="../assets/images/arara 2.svg" alt="">
+            </div>
+
+            <div class="options">
+                <div class="">
+                    <h3>Seja bem-vindo</h3>
+                    <p>Vamos criar a sua conta</p>
+                </div>
+
+                <div class="formulario">
+                    <form action="" method="post">
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="desktop-screen">
 
         <div class="container-desktop">
 
@@ -58,7 +84,7 @@
             <a href="./register.php" id="start-m">Começar</a>
             <a href="./login.php" id="have-m">Já tenho uma conta</a>
         </div>
-    </div>
+    </div>-->
 </body>
 
 </html>

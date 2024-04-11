@@ -1,68 +1,157 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" dir="ltr">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Home</title>
+
+
+
+    <link rel="shortcut icon" href="../assets/images/litera.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../assets/css/home.css">
+    <?php
+    $passou_tutorial = false;
+
+    if ($passou_tutorial == false) {
+        echo '<link rel="stylesheet" type="text/css" href="../assets/css/tutorial-inicial.css">';
+    }
+    ?>
+    <title>Litera | Início</title>
+
 </head>
+
 <body>
-    <header>
-    <nav>
-        <h1 class="poppins-extrabold">Litera</h1>
-        <ul>
-        <li><a href="#home"><img src="./Image/IconHome.svg" alt="Home" class="iconHome" onclick="changeColor('iconHome')"></a></li>
-        <li><a href="#loja"><img src="./Image/IconStore.svg" alt="Store" class="iconStore" onclick="changeColor('iconStore')"></a></li>
-        </ul>
-        <div class="contUser">
-            <div class="profile-img">
-                <img src="./Image/Lula.jpeg" alt="Imagem">
-            </div>
-            <h2 class="poppins-bold">Usuário</h2>
-        </div>
-    </nav>
-    </header>
+    <!-- Desktop and Tablet View -->
 
-    <div class="container">
-        <div class="contSalaJogos">
-            <h1>Sala de Jogos</h1>
-            <div class="jogos">
-                    <div class="contJogo">
-                        <h1>Nome do Jogo</h1>
-                        
-                    </div>
-                    <div class="contJogo">
-                        <h1>Nome do Jogo</h1>
-                    </div>
+    <div class="overlay-itens1">
+
+    </div>
+    <div class="desktop-view">
+        <?php
+        include('../views/components/navbarHome.php');
+        ?>
+
+        <main class="main-desktop">
+            <div class="games-desktop">
+                <div class="title-desktop-room">
+                    <h2>Sala de Jogos</h2>
                 </div>
-                <div class="jogos">
-                    <div class="contJogo">
-                        <h1>Nome do Jogo</h1>
-                    </div>
-                    <div class="contJogo">
-                        <h1>Nome do Jogo</h1>
+
+                <div class="games-desktop-itens">
+                    <a class="game-item" id="first" href="../views/jogo/index.php">
+                        <div class="title-game-item">
+                            <p>Caça às vogais</p>
+                            <div class="bg-game"></div>
+                        </div>
+                    </a>
+
+                    <a class="game-item">
+                        <div class="title-game-item">
+                            <p>Caça às vogais</p>
+                            <div class="bg-game"></div>
+                        </div>
+                    </a>
+
+                    <a class="game-item">
+                        <div class="title-game-item">
+                            <p>Caça às vogais</p>
+                            <div class="bg-game"></div>
+                        </div>
+                    </a>
+
+                    <a class="game-item">
+                        <div class="title-game-item">
+                            <p>Caça às vogais</p>
+                            <div class="bg-game"></div>
+                        </div>
+                    </a>
                 </div>
+            </div>
+
+            <?php include('../views/components/menu-profile.php'); ?>
+        </main>
+        <div class="information-litera">
+            <p>&copy; Litera 2024 | Versão 1.0</p>
+
+        </div>
+    </div>
+
+    <!-- Mobile View -->
+    <div class="mobile-view">
+
+        <div class="overlay-itens2"></div>
+
+        <div class="top-bar">
+            <div class="info-user">
+                <img src="../assets/images/icons/profile.svg" alt="">
+                <span>Nome usuário</span>
+            </div>
+
+            <div class="credits">
+                <img src="../assets/images/icons/coin.svg" alt="">
+                <span>500</span>
             </div>
         </div>
 
-        <div class="contPerfil">
-            <h1>Seu Perfil</h1>
-            <div class="perfilUser">
-                <h1>Usuário</h1>
+        <main>
+            <div class="title">
+                <h2>Sala de Jogos</h2>
             </div>
-            <div class="contDadosUser">
-                <div class="SideToSide">
-                    <p>Entrou em Junho de 2024</p>
-                    <div class="moedas">
-                        <img src="./Image/IconMoedas.svg" alt="coins">
-                        <p>554</p>
+
+            <div class="games-list">
+                <a class="game" id="t" href="../views/jogo/index.php">
+                    <div class="title-game" id="aa">
+                        <p>Caça às Letras</p>
                     </div>
-                </div>
-                <p class="mb">Nivel: 4</p>
-                <p class="mb">Quantidade de Itens:</p>
-                <p class="mb">Melhor desempenho em:</p>
+
+                    <div class="background-card-game" id="aa"></div>
+                </a>
+
+                <a class="game">
+                    <div class="title-game">
+                        <p>Caça às Letras</p>
+                    </div>
+
+                    <div class="background-card-game"></div>
+                </a>
+
+                <a class="game">
+                    <div class="title-game">
+                        <p>Caça às Letras</p>
+                    </div>
+
+                    <div class="background-card-game"></div>
+                </a>
+
+                <a class="game">
+                    <div class="title-game">
+                        <p>Caça às Letras</p>
+                    </div>
+
+                    <div class="background-card-game"></div>
+                </a>
             </div>
+        </main>
+
+
+
+        <div class="bottom-navigation-bar">
+
+            <a href="#">
+                <img src="../assets/images/icons/home-icon.svg" alt="Início" id="home">
+            </a>
+
+            <a href="#">
+                <img src="../assets/images/icons/store-icon.svg" alt="Loja" id="store">
+            </a>
+
+            <a href="#">
+                <img src="../assets/images/icons/profile-icon.svg" alt="Perfil" id="profile">
+            </a>
+
         </div>
     </div>
 </body>
+
 </html>
