@@ -1,0 +1,407 @@
+@import url(./default.css);
+@import url(./animations.css);
+@import url(./default.css);
+
+@media screen and (max-width: 768px) {
+
+    .desktop-view {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: var(--dark-blue);
+        height: 100vh;
+        padding: 5%;
+    }
+
+    .container-desktop {
+        background-color: var(--white);
+        border-radius: 5px;
+        padding: 5%;
+        -webkit-animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    .arara-imagem img {
+        width: 100px;
+    }
+
+    .title p {
+        display: none;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+    }
+
+    .content h1 {
+        font-family: var(--font-poppins-bold);
+        color: var(--blue3);
+        margin: 5px;
+        font-size: 2rem;
+    }
+
+    .formu {
+        margin: 5px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .formu form h2 {
+        color: var(--blue3);
+        font-family: var(--font-poppins-bold);
+    }
+
+    .item input {
+        width: 100%;
+        border: 1px solid var(--blue3);
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .item {
+        margin: 2% 0%;
+    }
+
+    .item label {
+        font-family: var(--font-poppins-bold);
+        color: var(--black2);
+    }
+
+    .item button {
+        margin-top: 2%;
+        width: 100%;
+        border: none;
+        color: var(--white);
+        background-color: var(--blue3);
+        border-radius: 5px;
+        padding: 5px;
+        font-family: var(--font-poppins-bold);
+    }
+
+    .register {
+        font-size: .8rem;
+        display: flex;
+    }
+
+    .register a {
+        text-decoration: none;
+        color: var(--blue3);
+    }
+
+    .return {
+        display: flex;
+        justify-content: center;
+        margin-top: 5%;
+    }
+
+    .return a {
+        text-decoration: none;
+        color: var(--blue3);
+        font-family: var(--font-poppins-bold);
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    body {
+        overflow: hidden;
+    }
+
+    .mobile-view {
+        display: none;
+    }
+
+    .desktop-view {
+        padding: 5%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        background-image: url(../images/v1070-03\ 1.png);
+    }
+
+    .container-desktop {
+        display: flex;
+        background-color: var(--blue0);
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 10px;
+        width: 90vw;
+        box-shadow: 10px 10px 10px 10px #00000081;
+        transition: 200ms ease-in-out;
+        -webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    .content {
+        display: flex;
+        padding: 5%;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .arara-imagem img {
+        width: 350px;
+    }
+
+    .title {
+        color: var(--blue3);
+        margin: 1% 0%;
+        display: flex;
+        justify-content: center;
+        align-items: left;
+        flex-direction: column;
+        padding: 5%;
+    }
+
+    .title h1,
+    .title p {
+        font-family: var(--font-poppins-bold);
+    }
+
+    .title h1 {
+        font-size: 3rem;
+    }
+
+    .title p {
+        font-size: 1rem;
+    }
+
+    .item {
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+    }
+
+    .formu {
+        padding: 2%;
+        background-color: var(--white);
+        border-radius: 10px;
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        width: 50vw;
+    }
+
+    .formu form {
+        height: 100%;
+        display: flex;
+        padding: 2%;
+        justify-content: left;
+        align-content: center;
+        position: relative;
+        flex-direction: column;
+        top: 20%;
+    }
+
+    .item {
+        margin: 5px 0px;
+    }
+
+    .item a {
+        color: var(--blue3);
+        font-family: var(--font-poppins-bold);
+        transition: 200ms ease-in-out;
+        text-decoration: none;
+        width: 110px;
+    }
+
+    .item a:hover {
+        color: var(--blue2);
+    }
+
+    .item input {
+        padding: 5px;
+        width: 100%;
+        border: 1px solid var(--white1);
+        background-color: var(--white1);
+        border-radius: 5px;
+        transition: 200ms ease-in-out;
+    }
+
+    .item button {
+        padding: 8px;
+        border: none;
+        background-color: var(--blue3);
+        border-radius: 5px;
+        color: var(--white);
+        font-family: var(--font-poppins-bold);
+        cursor: pointer;
+        transition: 200ms ease-in-out;
+    }
+
+    .item button:hover {
+        background-color: var(--blue2);
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    body {
+        overflow: hidden;
+    }
+
+    .mobile-view {
+        display: none;
+    }
+
+    .desktop-view {
+        padding: 3%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        background-image: url(../images/v1070-03\ 1.png);
+    }
+
+    .container-desktop {
+        display: flex;
+        background-color: var(--blue0);
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 10px;
+        width: 70vw;
+        box-shadow: 10px 10px 10px 10px #00000081;
+        -webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    .content {
+        display: flex;
+        padding: 5%;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .arara-imagem img {
+        width: 400px;
+    }
+
+    .title {
+        color: var(--blue3);
+        margin: 1% 0%;
+        display: flex;
+        justify-content: center;
+        align-items: left;
+        flex-direction: column;
+        padding: 5%;
+    }
+
+    .title h1,
+    .title p {
+        font-family: var(--font-poppins-bold);
+    }
+
+    .title h1 {
+        font-size: 3rem;
+    }
+
+    .title p {
+        font-size: 1rem;
+    }
+
+    .item {
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+    }
+
+    .formu {
+        padding: 2%;
+        background-color: var(--white);
+        border-radius: 10px;
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        width: 35cqw;
+    }
+
+    .formu form {
+        height: 100%;
+        display: flex;
+        width: 100%;
+        padding: 5%;
+        justify-content: left;
+        align-content: center;
+        position: relative;
+        flex-direction: column;
+        top: 20%;
+    }
+
+    .item {
+        margin: 5px 0px;
+    }
+
+    .item a {
+        color: var(--blue3);
+        font-family: var(--font-poppins-bold);
+        transition: 200ms ease-in-out;
+        text-decoration: none;
+        width: 100%;
+        display: flex;
+    }
+
+    .return {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+    }
+
+    .return a {
+        transition: 200ms ease-in-out;
+        color: var(--blue3);
+        text-decoration: none;
+        font-family: var(--font-poppins-bold);
+    }
+
+    .return a:hover {
+        color: var(--blue2);
+    }
+
+    .item a:hover {
+        color: var(--blue2);
+    }
+
+    .register {
+        display: flex;
+        width: 100%;
+        font-size: .9rem;
+    }
+
+    .register a {
+        color: var(--blue3);
+        text-decoration: none;
+    }
+
+    .item input {
+        padding: 5px;
+        width: 100%;
+        border: 1px solid var(--white1);
+        background-color: var(--white1);
+        border-radius: 5px;
+        transition: 200ms ease-in-out;
+    }
+
+    .item button {
+        padding: 8px;
+        border: none;
+        background-color: var(--blue3);
+        border-radius: 5px;
+        color: var(--white);
+        font-family: var(--font-poppins-bold);
+        cursor: pointer;
+        transition: 200ms ease-in-out;
+    }
+
+    .item button:hover {
+        background-color: var(--blue2);
+    }
+
+}

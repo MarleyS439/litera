@@ -1,0 +1,648 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+    color: #000000;
+}
+:root{
+    --branco: #FFFFFF;
+    --header: #1C96E1;
+    --fundo: #C1E6FD;
+    --borda: #000000;
+    --barraPreenc: #3EF150;
+    --mensagem: #00000083;
+    --bordaAvanc: #1c8126;
+    --btnAvanc: #3EF150;
+    --borda-btnOff: #5A7C90;
+    --cor-btnOff: #79A2BB;
+    --borda-btnOn: #15BE26;
+    --cor-btnOn: #9CFFA5;
+    --border-fim: #E17B1C;
+    --background-fim: #FFCC9C;
+    --text-fim: #E17B1C;
+    --borda-btnFim1: #15BE26;
+    --borda-btnFim2: #E1C01C;
+    --cor-btnFim1: #9CFFA5;
+    --cor-btnFim2: #FFEE9C;
+
+}
+
+/* Arredondamento de Bordas */
+:root{
+    --R-areaJogoBorda: 10px;
+    --R-btnBorda: 10px;
+    --R-barraBorda: 5px;
+    --R-BoxletraJogo: 5px;
+    --R-BtnFim-e-Text-Fim: 5px;
+    --R-nav: 30px;
+    --R-avatar: 30px;
+    --R-btnAvanc: 50px;
+}
+
+/* TAMANHOS */
+:root{
+    --T-btnAvanc: 50px;
+    --T-nav: 30px;
+    --T-avatar: 30px;
+    --T-letraFalada: 60px;
+    --T-balaoW: 80px;
+    --T-balaoH: 160px;
+}
+
+
+/* Letras Header */
+:root{
+    --F-logoHeader: 1.3rem;
+    --F-nomeHeader: .7rem;
+    --F-btnAvanc: 2rem;
+    --F-weightBold:  bold;
+    --F-weight500:  500;
+    --F-weight600:  600;
+    --F-weight700:  700;
+    --F-weight800:  800;
+    --F-weight900:  900;
+}
+
+
+/* Padding e Margin */
+:root{
+    --P-Box-mensagem: 8px;
+    --P-mensagem: 10px;
+    --M-right: 10px;
+    --M-bottom: 10px;
+    --M-top: 10px;
+    --M-left: 10px;
+    --MT-areaJogo: 5%;
+    --P-header: 5px 7%;
+
+}
+
+/* Texto Jogo */
+:root{
+    --textoDesk1366: .6rem;
+}
+
+
+
+body{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    max-width: 1920px;
+    max-height: 1080px;
+    background: var(--fundo);
+}
+/***
+****INICIO header****
+***/
+
+.headerNav{
+    background-color: var(--header);
+    width: 100%;
+    padding: var(--P-header);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+}
+
+.headerNav .logo{
+    font-weight: var(--F-weightBold);
+    font-size: var(--F-logoHeader);
+    color: var(--branco);
+}
+
+.navbar .ulNav{
+    display: flex;
+    gap: 30px;
+}
+.ulNav .liNav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--T-nav);
+    height: var(--T-nav);
+    border-radius: var(--R-nav);
+    overflow: hidden;
+    
+
+}
+.ulNav .liNav:nth-child(1){
+    background-color: var(--branco);
+}
+.ulNav .liNav a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.ulNav .liNav img{
+    width: 15px;
+    height: 15px;
+}
+.headerNav .perfil{
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headerNav .perfil .avatar{
+    width: var(--T-avatar);
+    height: var(--T-avatar);
+    border-radius: var(--R-avatar);
+}
+.headerNav .perfil .nomeUser{
+    font-size: var(--F-nomeHeader);
+    color: var(--branco);
+}
+
+
+
+
+/*
+****SECTION FRUTAS****
+*/
+.jogo{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+}
+/*
+**** FIM - SECTION FRUTAS****
+*/
+
+
+
+
+
+
+/*
+****AREA DO JOGO:****
+*/
+.area-jogo{
+    position: relative;
+    width: 600px;
+    height: 500px;
+    background: url('./img/jogoFruta/fundoAreaJogo.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 3px solid var(--header);
+    border-radius: 10px;
+    z-index: 1;
+    overflow: hidden;
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+/*
+****FIM - AREA DO JOGO:****
+*/
+
+
+
+/*
+*****************
+TOPO DO JOGO MOEDAS - BARRA DE ACERTO - AUDIO!!!!!
+*****************
+*/
+
+.area-jogo .topo{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    padding: 5px 5%;
+}
+.topo .moedas{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    pointer-events: none;
+}
+.topo .moedas i{
+    color: var(--moeda);
+    font-size: 1.5em;
+    font-weight: 600;
+}
+.topo .moedas span{
+    color: var(--moeda);
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.topo .barra {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    border: 1px solid var(--borda);
+    border-radius: 4px;
+    width: 250px;
+    height: 20px;
+    overflow: hidden;
+  }
+  
+  .topo .barra::after {
+    position: absolute;
+    content: '';
+    width: 90%;
+    height: 3px;
+    border: 10px;
+    background: #ffffff36;
+    top: 5px;
+    left: 5%;
+    right: 5%;
+  }
+  
+  .topo .barra .acerto {
+    animation: barra 1s ease-in-out forwards;
+  }
+
+
+/*
+*****************
+FIMMM ---> TOPO DO JOGO MOEDAS - BARRA DE ACERTO - AUDIO!!!!!
+*****************
+*/
+
+
+
+/*
+*****************
+INICIO - JOGO!!!!!
+*****************
+*/
+
+.area-jogo .area-itens{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+}
+.area-itens .repetir{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+}
+.area-itens .repetir .audioRepetir{
+    width: 60px;
+}
+
+
+
+
+
+
+
+
+.area-itens .areaFruta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 130px;
+}
+.area-itens .areaFruta .fruta{
+    width: 90px;
+}
+
+
+
+
+
+
+
+
+
+.area-itens .palavras{
+    width: 250px;
+    height: 50px;
+}
+
+.area-itens .palavras .boxPalavra{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;    
+    border-bottom: 2px solid var(--borda);
+}
+.area-itens .palavras .silBox{
+    width: 60px;
+    height: 40px;
+    animation: silabas 1s ease-in-out forwards;
+}
+
+
+@keyframes silabas {
+    0%{
+        transform: rotate(0deg)
+        scale(1);
+        opacity: 0;
+    }
+    20%{
+        opacity: 1;
+    }
+    30%{
+        transform: rotate(-10deg)
+        scale(1.2);
+    }
+    60%{
+        transform: rotate(10deg)
+        scale(1.2);
+        
+    }
+    100%{
+        transform: rotate(0deg)
+        scale(1);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.area-itens .silabas{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    gap: 15px;
+}
+
+
+
+
+
+.boxSilabas{
+    display: flex;
+    background: #157DBE;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 40px;
+    border-radius: 5px;
+}
+.sil{
+    width: 100%;
+    height: 100%;
+}
+
+
+.moveRetorne{
+    animation: silabasRetornando 1s ease-in-out forwards;
+}
+
+@keyframes silabasRetornando {
+    0%{ 
+        transform: scale(0);
+        margin-bottom: 0px;
+    }
+    50%{
+        transform: scale(1.2);
+        margin-bottom: 50px;
+    }
+    100%{
+        margin-bottom: 0px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.area-itens .acerto{
+    width: 200px;
+    height: 50px;
+}
+
+.area-itens .acerto .button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 40px;
+    border: 2px solid var(--borda-btnOff);
+    background-color: var(--cor-btnOff);
+    border-radius: 5px;
+}
+
+.button .verificar{
+    width: 20px;
+}
+
+
+
+/*
+*****************
+FIM - JOGO!!!!!
+*****************
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 769px){
+    .menu-mobile,
+    .area-jogo .mobile-aud{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 414px){
+}
+
+@media only screen and (max-width: 768px){
+    .jogo{
+        padding: 0px;
+    }
+    .area-jogo{
+        width: 100%;
+        height: 100%;
+        background-color: #00000054;
+        backdrop-filter: blur(2px);
+        border: none;
+    }
+
+    .area-jogo .topo{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+        width: 100%;
+        gap: 20px;
+        padding: 5px 5%;
+    }
+
+    .area-jogo .topo .moedas i,
+    .area-jogo .topo .moedas span{
+        font-size: 2em;
+        color: var(--branco);
+    }
+
+    .topo .barra {
+        height: 30px;
+    }
+    .headerNav{
+        display: none;
+    }
+    .area-jogo .area-itens{
+        margin-top: 160px;
+    }
+
+}
+
+@media only screen and (min-height: 1080px){
+
+    .logo{
+        color: var(--branco);
+        font-size: 3em;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .navegacao a{
+        width: 60px;
+        height: 60px;
+        border-radius: 60px;
+    }
+    .navegacao a i{
+        font-size: 1.5em;
+    }
+
+    .area-perfil a{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .perfil{
+        width: 60px;
+        height: 60px;
+        border-radius: 60px;
+    }
+    .perfil img{
+        height: 100%;
+        width: 100%;
+    }
+    
+    .area-perfil p{
+        font-size: 1.5em;
+    }
+
+    .area-jogo{
+        width: 1000px;
+        height: 800px; 
+    }
+    .area-jogo .audio{
+        top: 40px;
+        right: 40px;
+        width: 80px;
+        height: 80px;
+
+    }
+
+    .area-jogo .box-comecar h1{
+        font-size: 3.5em;
+    }
+
+    .area-jogo .box-comecar .btn-play{
+        z-index: 2;
+        width: 200px;
+        height: 50px;
+        font-size: 1.5em;
+    }
+
+    .area-jogo .topo{
+        margin-top: 40px;
+    }
+    .topo .moedas{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        pointer-events: none;
+    }
+    .topo .moedas i{
+        color: var(--moeda);
+        font-size: 2em;
+        font-weight: 600;
+    }
+    .topo .moedas span{
+        color: var(--moeda);
+        font-size: 2em;
+        font-weight: 600;
+    }
+    
+    .topo .barra {
+        position: relative;
+        display: flex;
+        margin: 0 auto;
+        border: 1px solid var(--borda-barra);
+        border-radius: 4px;
+        width: 400px;
+        height: 30px;
+        overflow: hidden;
+      }
+
+    
+
+}

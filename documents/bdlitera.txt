@@ -1,0 +1,2 @@
+O banco com o nome "bdlitera" possui um cadastro de admin e o componente "banido", de tipo "tinyint(1)", na "tbusuario".
+O banco com o nome "bdlitera-1" não possui cadastros e não possui o componente "banido" na "tbusuario"

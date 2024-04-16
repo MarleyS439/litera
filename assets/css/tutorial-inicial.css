@@ -1,0 +1,111 @@
+@import url(./default.css);
+@import url(./animations.css);
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+
+    body {
+        overflow: hidden;
+    }
+
+    #t {
+        -webkit-animation: pulsate-fwd 1s ease-in-out infinite both;
+        animation: pulsate-fwd 1s ease-in-out infinite both;
+        z-index: 2000;
+    }
+
+    #aa {
+        -webkit-animation: pulsate-fwd 1s ease-in-out infinite both;
+        animation: pulsate-fwd 1s ease-in-out infinite both;
+    }
+
+    .overlay-itens2 {
+        content: "";
+        position: absolute;
+        background-color: #00000050;
+        height: 120vh;
+        width: 100vw;
+        z-index: 1001;
+    }
+
+    #t {
+        position: relative;
+        z-index: 8999999;
+        padding: 15px;
+        margin: 10px;
+        -webkit-animation: pulsate-fwd 1s ease-in-out infinite both;
+        animation: pulsate-fwd 1s ease-in-out infinite both;
+    }
+
+    #tt p {
+        position: relative;
+        z-index: 1002;
+        background-color: var(--blue0);
+        border-radius: 5px;
+    }
+
+    .background-card-game {
+        background-color: var(--blue0);
+        padding: 10px;
+    }
+}
+
+/* Tablets */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    body {
+        overflow: hidden;
+    }
+
+    .overlay-itens1 {
+        content: "";
+        position: absolute;
+        z-index: 9000;
+        background-color: #00000050;
+        height: 120vh;
+        width: 100vw;
+    }
+
+    #first {
+        z-index: 10000;
+        box-shadow: rgba(255, 255, 255, 0.945) 0px 5px 15px;
+        -webkit-animation: pulsate-fwd 1s ease-in-out infinite both;
+        animation: pulsate-fwd 1s ease-in-out infinite both;
+        padding: 10px;
+        background-color: var(--blue0);
+    }
+
+    #first p {
+        color: var(--black2);
+    }
+}
+
+/* Desktops */
+@media screen and (min-width: 1025px) {
+
+    body {
+        overflow: hidden;
+    }
+
+    .overlay-itens1 {
+        content: "";
+        position: absolute;
+        z-index: 9000;
+        background-color: #00000050;
+        height: 120vh;
+        width: 100vw;
+    }
+
+    #first {
+        z-index: 10000;
+        box-shadow: rgba(255, 255, 255, 0.945) 0px 5px 15px;
+        -webkit-animation: pulsate-fwd 1s ease-in-out infinite both;
+        animation: pulsate-fwd 1s ease-in-out infinite both;
+        padding: 10px;
+        background-color: var(--blue0);
+    }
+
+    #first p {
+        color: var(--black2);
+    }
+
+}

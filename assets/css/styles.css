@@ -1,0 +1,42 @@
+@import url(./default.css);
+@import url(./animations.css);
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+
+@media screen and (min-width: 1025px) {
+    .desktop-view {
+        width: 100%;
+        height: 100%;
+        background-image: url(../images/v1070-03\ 1.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 5%;
+        overflow-x: hidden;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .container {
+        background-color: var(--blue0);
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .image-left {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .options {
+        background-color: var(--white);
+        padding: 5%;
+    }
+
+}
