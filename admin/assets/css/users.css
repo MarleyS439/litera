@@ -68,7 +68,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   position: relative;
-  top: 10%;
+  top: 5%;
 }
 
 th,
@@ -365,7 +365,7 @@ a{
     height: 100vh;
     padding: 1.5vh 1vh;
     padding-bottom: 100vh;
-    border-radius: 1.5rem;
+    border-radius: 1%;
     user-select: none;
     max-width: 18rem;
     min-width: 4rem;
@@ -445,7 +445,7 @@ a{
   /*? menu links */
   .sidebar-links {
     margin-top: 1rem;
-    padding-bottom: 53.5vh;
+    padding-bottom: 50vh;
   }
 
   .sidebar-links ul {
@@ -467,7 +467,10 @@ a{
     height: 1.75rem;
     min-width: 1.75rem;
   }
-
+  .sidebar-links svg{
+    stroke: var(--text-link);
+    color: var(--text-link);
+  }
   .sidebar-links li a:hover {
     background-color: var(--sidebar-primary-hover);
   }
@@ -890,6 +893,26 @@ a{
   }
   #refazer:hover {
     background-color: rgb(57, 213, 86);
+  }
+
+  .add-button{
+    background-color: rgb(25, 255, 25);
+    height: 40px;
+    width: 40px;
+    border: none;
+    font-size: 25px;
+    border-radius: 10px;
+    margin-top: 2%;
+  }
+
+  .add-button:hover{
+    background-color: rgb(175, 255, 175);
+  }
+
+  .button-container{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
   }
 }
 

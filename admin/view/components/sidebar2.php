@@ -42,6 +42,15 @@
                 </div>
             </a>
 
+            <a class="item" href="loja.php">
+                <div class="icon" href="Loja.php">
+                    <img src="../assets/images/icons/trophy.png" alt="">
+                </div>
+                <div class="nameOption">
+                    <span>Conquistas</span>
+                </div>
+            </a>
+
             <a class="item" href="users.php">
                 <div class="icon">
                     <img src="../assets/images/icons/user-icon.png" alt="">

@@ -9,7 +9,6 @@ if (!isset($_SESSION['authAdmin'])) {
 }
 // variavel para todas as informaçoes do usuario
 $usuarioAutenticado = $_SESSION['authAdmin'];
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
@@ -24,6 +23,7 @@ $usuarioAutenticado = $_SESSION['authAdmin'];
     <title>Administrador | Home</title>
     <link rel="shortcut icon" href="../assets/images/icons/Litera Icon2.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../admin/assets/css/users.css">
+    
 </head>
 
 <body>
@@ -41,6 +41,7 @@ $usuarioAutenticado = $_SESSION['authAdmin'];
             <div class="title">
                 <h2>Usuários cadastrados</h2>
             </div>
+           
             <!-- Nesta table, deve ser feito um foreach para resgatar os usuários cadastrados.-->
         </div>
 </body>
