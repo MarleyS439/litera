@@ -1,4 +1,4 @@
-<?php
+    <?php
 // caminho conexao com banco
 require_once(__DIR__."../../config/conexao.php");
 
@@ -81,6 +81,17 @@ public static function setMoney($cod, $dinheiro)
     $conexao = Conexao::conectar();
     $query = "UPDATE tbusuario SET
         dinheiroUsuario = ?
+        WHERE codUsuario = ?";
+    $stmt = $conexao->prepare($query);
+    $stmt->bindValue(1, $dinheiro);
+    $stmt->bindValue(2, $cod);
+    return $stmt->execute();
+}
+public static function setGamesPoints($cod, $dinheiro)
+{
+    $conexao = Conexao::conectar();
+    $query = "UPDATE tbusuario SET
+        dinheiroUsuario = dinheiroUsuario + ?
         WHERE codUsuario = ?";
     $stmt = $conexao->prepare($query);
     $stmt->bindValue(1, $dinheiro);
