@@ -8,6 +8,25 @@ if (!isset($_SESSION['authUser'])) {
     exit();
 }
 // variavel para todas as informaçoes do usuario
+$usuarioAutenticado = $_SESSION['authUser'];
+$passou_tutorial = $usuarioAutenticado['tutorial'];
+// verificar se o user esta banido
+if ($usuarioAutenticado['banido'] != 0) {
+    // caso não esteja, redirecionar a login e indique que o user foi banido
+    header("Location: ./login.php?status=erro3");
+    exit();
+}
+?>
+<?php
+// session
+session_start();
+// verificação se o user esta logado
+if (!isset($_SESSION['authUser'])) {
+    // caso não esteja, redirecione a login e indique que para realizar o login
+    header("Location: ./login.php?status=erro2");
+    exit();
+}
+// variavel para todas as informaçoes do usuario
 require_once "../../dao/usuarioDao.php";
 $codUser = $_SESSION['authUser'];
 $usuarioAutenticado = UsuarioDao::selectById($codUser['cod']);
@@ -30,6 +49,7 @@ if ($usuarioAutenticado['banido'] != 0) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9b58b8faa9.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
@@ -46,6 +66,7 @@ if ($usuarioAutenticado['banido'] != 0) {
         </nav>
         <a href="#" class="perfil">
             <img src="img/sapo.png" class="avatar">
+            <span class="nomeUser" name="userName">João</span>
             <span class="nomeUser" name="userName"><?php echo $usuarioAutenticado['nomeUsuario']?></span>
         </a>
         <div class="menu-mobile">
@@ -64,6 +85,7 @@ if ($usuarioAutenticado['banido'] != 0) {
             </div>
         </div>
     </header>
+
 
 
 
@@ -135,6 +157,7 @@ if ($usuarioAutenticado['banido'] != 0) {
                     <div class="acerto" id="v5"></div>
                 </div>
 
+
             </div>
 
             <div class="baloes">
@@ -153,6 +176,8 @@ if ($usuarioAutenticado['banido'] != 0) {
                 <h1>Vamos <span>começar</span>!</h1>
                 <button class="btn-play" id="botao">Começar</button>
             </div>
+
+            <input type="hidden" name="id" id="id" value="<?php echo $usuarioAutenticado['cod'] ?>">
 
             <input type="hidden" name="id" id="id" value="<?php echo $usuarioAutenticado['codUsuario'] ?>">
 

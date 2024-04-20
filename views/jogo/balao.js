@@ -234,13 +234,6 @@ function fazerPergunta() {
 
           // Envia a requisição com os dados convertidos para JSON
           xhr.send(JSON.stringify(dados));
-
-          function redirect() {
-            window.location.href = "../home.php";
-          }
-
-          setTimeout(redirect, 7000)
-
         }, 4700)
       }
       //caso a resposta esteja errada
