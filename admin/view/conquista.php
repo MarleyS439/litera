@@ -46,8 +46,10 @@ $usuarios = UsuarioDao::selectAll();
             </div>
             <!-- Nesta table, deve ser feito um foreach para resgatar os usuários cadastrados.-->
             <div class="button-container">
-                <button class="add-button">+</button>
+                <button class="openInsert insert" id="openModal">+</button>
             </div>
+
+            <?php include('../view/components/createAchivimenteModal.php'); ?>
             <table>
                 <thead>
                     <tr>
@@ -63,8 +65,6 @@ $usuarios = UsuarioDao::selectAll();
                             <td><?php echo $usuario['codUsuario'] ?></td>
                             <td><?php echo $usuario['nomeUsuario'] ?></td>
                             <td><?php echo $usuario['emailUsuario'] ?></td>
-                            <td><?php echo $usuario['pontuacaoUsuario'] ?></td>
-                            <td><?php echo $usuario['dinheiroUsuario'] ?></td>
                             <td>
                                 <div class="btn-action">
                                     <button type="submit" class="openBlockUser block" data-id="<?php echo $usuario['codUsuario'] ?>">
@@ -113,6 +113,8 @@ $usuarios = UsuarioDao::selectAll();
             });
         });
     </script>
+
+    <script src="../assets/javascript/index.js"></script>
 
 </body>
 

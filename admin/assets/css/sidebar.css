@@ -68,6 +68,11 @@ body.collapsed .hide {
   pointer-events: none;
 }
 
+.search__wrapper p {
+  color: red;
+  font-size: 50px;
+}
+
 /*? sidebar top */
 .sidebar-top-wrapper {
   display: flex;

@@ -25,26 +25,26 @@ $usuarios = UsuarioDao::selectAll();
     <meta name="author" content="Illumi">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador | Usuários</title>
+    <link rel="stylesheet" href="../../admin/assets/css/sidebar-admin.css">
     <link rel="shortcut icon" href="../assets/images/icons/Litera Icon2.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../admin/assets/css/users.css">
 </head>
 
 <body>
-    <div class="topo">
-        <?php
-        include('../view/components/topbar.php');
-        ?>
-    </div>
 
     <div class="sides">
-        <?php
-        include('../view/components/sidebar.php');
-        ?>
+
+        <?php include('../view/components/sidebar-admin.php'); ?>
+
         <div class="information">
             <div class="title">
                 <h2>Usuários cadastrados</h2>
             </div>
             <!-- Nesta table, deve ser feito um foreach para resgatar os usuários cadastrados.-->
+            <div class="search-container">
+                <h2 class="title-search">Pesquisa: </h2>
+                <input type="text" id="searchInput" class="input-search" placeholder="Nome, E-mail e ID" onkeyup="searchUsers()">
+            </div>
             <table>
                 <thead>
                     <tr>
@@ -67,7 +67,7 @@ $usuarios = UsuarioDao::selectAll();
                             <td><?php echo $usuario['pontuacaoUsuario'] ?></td>
                             <td><?php echo $usuario['dinheiroUsuario'] ?></td>
                             <td><?php echo $usuario['nivel'] ?></td>
-                            <td><?php echo ($usuario['banido'] != 0) ? "Banido" : "Normal"; ?></td>
+                            <td><?php echo ($usuario['banido'] != 0) ? "Banido" : "Ativo"; ?></td>
                             <td>
                                 <div class="btn-action">
                                     <?php if (!$usuario['banido']) : ?>
@@ -76,7 +76,7 @@ $usuarios = UsuarioDao::selectAll();
                                         </button>
                                     <?php else : ?>
                                         <button type="submit" class="openBlockUser block banir-refazer" data-id="<?php echo $usuario['codUsuario'] ?>">
-                                            <img src="../assets/images/icons/check.png" alt="block">
+                                            <img src="../assets/images/icons/check.svg" alt="block">
                                         </button>
                                     <?php endif; ?>
                                     <?php include('../view/components/modalBlockUser.php'); ?>
@@ -96,6 +96,7 @@ $usuarios = UsuarioDao::selectAll();
     </div>
 
     <script src="../assets/javascript/modais.js"></script>
+    <script src="../assets/javascript/search.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

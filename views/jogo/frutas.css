@@ -210,6 +210,88 @@ body{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+****COMEÇAR JOGO - AREA DO JOGO:****
+*/
+
+.area-jogo .comecar-jogo{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: var(--fundo);
+    z-index: 1;
+}
+
+.area-jogo .comecar-jogo h1{
+    font-size: 2.5em;
+    color: var(--header);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.area-jogo .comecar-jogo button{
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    color: var(--header);
+    background: var(--branco);
+    border: 1px solid var(--header);
+    animation: btn-play 1s ease-in-out infinite alternate;
+    transition: .6s;
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+.area-jogo .comecar-jogo button:hover{
+    background: var(--header);
+    color: var(--branco);
+    border: 1px solid var(--branco);
+}
+
+@keyframes btn-play {
+    100%{
+        transform: scale(1.1);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 *****************
 TOPO DO JOGO MOEDAS - BARRA DE ACERTO - AUDIO!!!!!
@@ -445,12 +527,12 @@ INICIO - JOGO!!!!!
 
 
 
-.area-itens .acerto{
+.area-itens .acertoBtn{
     width: 200px;
     height: 50px;
 }
 
-.area-itens .acerto .button{
+.area-itens .acertoBtn .button{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -474,8 +556,193 @@ FIM - JOGO!!!!!
 */
 
 
+/*
+*****************
+FIM DO JOGO MODAL!!!!!
+*****************
+*/
+.area-jogo .final{
+    display: none;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    background: #000000d3;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.area-jogo .final span{
+    font-weight: 900;
+    color: var(--borda-barra);
+}
 
 
+.area-jogo .final p{
+    font-size: 1.5em;
+}
+.area-jogo .final .total_moedas{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    color: var(--borda-barra);
+    font-size: 2em;
+}
+
+
+.final .text-fim{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+}
+
+.text-fim p{
+    margin-top: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--text-fim);
+    font-weight: var(--F-weightBold);
+    width: 330px;
+    height: 50px;
+    text-align: center;
+    background-color: var(--background-fim);
+    border: 2px solid var(--border-fim);
+    border-radius: var(--R-BtnFim-e-Text-Fim);
+}
+.final .btn-fim{
+    gap: 20%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+}
+.btn-fim .btnFinal {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 60px;
+    border-radius: var(--R-BtnFim-e-Text-Fim);
+    cursor: url("./img/mao2.svg"), auto;
+}
+.btn-fim .btnFinal img{
+    width: 35px;
+}
+
+
+
+
+
+.btn-fim .btnFinal:nth-child(2){
+    position: relative;
+    border: 2px solid var(--borda-btnFim1);
+    background-color: var(--cor-btnFim1);
+    cursor: url("./img/mao2.svg"), auto;
+}
+.btn-fim .btnFinal:nth-child(2)::after{
+    position: absolute;
+    content: 'Avançar';
+    font-weight: 600;
+    bottom: -30px;
+    color: var(--branco);
+    text-shadow: 0px 0px 5px var(--borda-btnFim1);
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+.btn-fim .btnFinal:nth-child(1){
+    position: relative;
+    border: 2px solid var(--borda-btnFim2);
+    background-color: var(--cor-btnFim2);
+    cursor: url("./img/mao2.svg"), auto;
+}
+.btn-fim .btnFinal:nth-child(1)::after{
+    position: absolute;
+    content: 'Recomeçar';
+    font-weight: 600;
+    bottom: -30px;
+    color: var(--branco);
+    text-shadow: 0px 0px 5px var(--borda-btnFim2);
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.area-jogo .effeitoAcerto{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    z-index: 999;
+}
+
+.area-jogo .effeitoAcerto .joinhaUp{
+    width: 100px;
+    height: 100px;
+}
+
+.area-jogo .effeitoAcerto .joinhaDown{
+    display: none;
+    width: 100px;
+    height: 100px;
+}
 
 
 

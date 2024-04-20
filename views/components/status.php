@@ -49,7 +49,7 @@
         </div>
 
         <div class="level">
-            <p>Melhor desempenho em: </p>
+            <p>Melhor desempenho em:</p>
         </div>
     </div>
 

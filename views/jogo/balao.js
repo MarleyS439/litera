@@ -1,6 +1,6 @@
 const toggle = document.querySelector('.toggle')
 const menu = document.querySelector('.menu')
-toggle.onclick = function(){
+toggle.onclick = function () {
   menu.classList.toggle('active')
 }
 let b1 = document.getElementById('b1')
@@ -23,114 +23,114 @@ let audio = new Audio()
 let falaSrc = ''
 
 function comecarJogo() {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
 
-      var telaComece = document.getElementById('comece');
+    var telaComece = document.getElementById('comece');
 
-      comece.addEventListener('click', function() {
-        telaComece.classList.add('fadeOut');
-        setTimeout(() => {
-          telaComece.style.display = 'none'
-        }, 1000)
-        falaSrc = 'audios/botao.mp3';
-        audio.src = falaSrc
-        audio.play();
-      })
-
-      
-
-      comece.addEventListener('click', function() {
+    comece.addEventListener('click', function () {
+      telaComece.classList.add('fadeOut');
       setTimeout(() => {
-          falaSrc  = 'Audios/Escolha a Letra Falada.mp3'
-          audio.src = falaSrc 
-          audio.play()
+        telaComece.style.display = 'none'
+      }, 1000)
+      falaSrc = 'audios/botao.mp3';
+      audio.src = falaSrc
+      audio.play();
+    })
 
-          setTimeout(() => {
-          audio.onended = function() {
+
+
+    comece.addEventListener('click', function () {
+      setTimeout(() => {
+        falaSrc = 'Audios/Escolha a Letra Falada.mp3'
+        audio.src = falaSrc
+        audio.play()
+
+        setTimeout(() => {
+          audio.onended = function () {
             // Faça algo quando o áudio terminar a reprodução
-            if(audio.onended){
+            if (audio.onended) {
               console.log("O áudio terminou de reproduzir.")
               // Resolva a promessa quando a execução terminar
               resolve();
-             }
             }
-          }, 2000)
+          }
+        }, 2000)
       }, 1500)
-      
-      })
+
+    })
 
 
-      
-
-      audio.onplay = function() {
-          icoAudioOff.style.display = 'none';
-          icoAudioOn.style.display = 'block';
-          icoAudioOff_mob.style.display = 'none';
-          icoAudioOn_mob.style.display = 'block';
-      };
-
-      audio.onpause = function() {
-          icoAudioOff.style.display = 'block';
-          icoAudioOn.style.display = 'none';
-          icoAudioOff_mob.style.display = 'block';
-          icoAudioOn_mob.style.display = 'none';
-      };
-  });
-}
-  /*audio.onended = function() {
-    // Faça algo quando o áudio terminar a reprodução
-    if(audio.onended){
-      console.log("O áudio terminou de reproduzir.")
-      fazerPergunta()
-     }
-    }*/
-
-  function  selecaoBalao(balao){
-
-    if( balao == b1 ){
-      falaSrc  = 'Audios/A.mp3'
-      audio.src = falaSrc 
-      audio.play()
-    } else if( balao == b2 ){
-      falaSrc  = 'Audios/E.mp3'
-      audio.src = falaSrc 
-      audio.play()
-    } else if( balao == b3 ){
-      falaSrc  = 'Audios/I.mp3'
-      audio.src = falaSrc 
-      audio.play()
-    } else if( balao == b4 ){
-      falaSrc  = 'Audios/O.mp3'
-      audio.src = falaSrc 
-      audio.play()
-    } else if( balao == b5 ){
-      falaSrc  = 'Audios/U.mp3'
-      audio.src = falaSrc 
-      audio.play()
-    }
-    
 
 
-    audio.onplay = function() {
+    audio.onplay = function () {
       icoAudioOff.style.display = 'none';
       icoAudioOn.style.display = 'block';
       icoAudioOff_mob.style.display = 'none';
       icoAudioOn_mob.style.display = 'block';
     };
 
-    audio.onpause = function() {
-        icoAudioOff.style.display = 'block';
-        icoAudioOn.style.display = 'none';
-        icoAudioOff_mob.style.display = 'block';
-        icoAudioOn_mob.style.display = 'none';
+    audio.onpause = function () {
+      icoAudioOff.style.display = 'block';
+      icoAudioOn.style.display = 'none';
+      icoAudioOff_mob.style.display = 'block';
+      icoAudioOn_mob.style.display = 'none';
     };
+  });
+}
+/*audio.onended = function() {
+  // Faça algo quando o áudio terminar a reprodução
+  if(audio.onended){
+    console.log("O áudio terminou de reproduzir.")
+    fazerPergunta()
+   }
+  }*/
+
+function selecaoBalao(balao) {
+
+  if (balao == b1) {
+    falaSrc = 'Audios/A.mp3'
+    audio.src = falaSrc
+    audio.play()
+  } else if (balao == b2) {
+    falaSrc = 'Audios/E.mp3'
+    audio.src = falaSrc
+    audio.play()
+  } else if (balao == b3) {
+    falaSrc = 'Audios/I.mp3'
+    audio.src = falaSrc
+    audio.play()
+  } else if (balao == b4) {
+    falaSrc = 'Audios/O.mp3'
+    audio.src = falaSrc
+    audio.play()
+  } else if (balao == b5) {
+    falaSrc = 'Audios/U.mp3'
+    audio.src = falaSrc
+    audio.play()
   }
 
 
-  function aumentarMoedas() {
-    moedas = moedas + moedas + Math.floor(Math.random() * moedas);
-    moedas++;
-    document.getElementById('moeda').textContent = moedas;
+
+  audio.onplay = function () {
+    icoAudioOff.style.display = 'none';
+    icoAudioOn.style.display = 'block';
+    icoAudioOff_mob.style.display = 'none';
+    icoAudioOn_mob.style.display = 'block';
+  };
+
+  audio.onpause = function () {
+    icoAudioOff.style.display = 'block';
+    icoAudioOn.style.display = 'none';
+    icoAudioOff_mob.style.display = 'block';
+    icoAudioOn_mob.style.display = 'none';
+  };
+}
+
+
+function aumentarMoedas() {
+  moedas = moedas + moedas + Math.floor(Math.random() * moedas);
+  moedas++;
+  document.getElementById('moeda').textContent = moedas;
 }
 
 
@@ -142,107 +142,143 @@ function atualizarBarraVidas() {
 
   // Atualiza a largura de cada elemento .acerto
   let acertos = document.querySelectorAll('.acerto');
-  acertos.forEach(function(acerto) {
+  acertos.forEach(function (acerto) {
     acerto.style.width = largura;
   });
 }
-  
 
-function fazerPergunta() { 
+
+function fazerPergunta() {
   // Array de perguntas com as fontes de áudio correspondentes
   var perguntas = ['Audios/A.mp3', 'Audios/E.mp3', 'Audios/I.mp3', 'Audios/O.mp3', 'Audios/U.mp3']
-  
+
   // Reproduz o áudio da primeira pergunta
   var perguntaAtual = 0 // Índice da pergunta atual[
-    setTimeout(function() {
-      audio.src = perguntas[perguntaAtual]
-      audio.play()  
-    }, 400)
-  
-  
-  
+  setTimeout(function () {
+    audio.src = perguntas[perguntaAtual]
+    audio.play()
+  }, 400)
+
+
+
   // Função para responder à pergunta
   function responderPergunta(balao) {
     // Verifica se a resposta do usuário está correta
     if (balao.id === 'b1' && perguntaAtual === 0 ||
-        balao.id === 'b2' && perguntaAtual === 1 ||
-        balao.id === 'b3' && perguntaAtual === 2 ||
-        balao.id === 'b4' && perguntaAtual === 3 ||
-        balao.id === 'b5' && perguntaAtual === 4) {
-        console.log('Resposta correta!')
+      balao.id === 'b2' && perguntaAtual === 1 ||
+      balao.id === 'b3' && perguntaAtual === 2 ||
+      balao.id === 'b4' && perguntaAtual === 3 ||
+      balao.id === 'b5' && perguntaAtual === 4) {
+      console.log('Resposta correta!')
 
-        if (vidas <= 5) {
-          document.getElementById('v' + vidas).style.backgroundColor = '#3EF150'
-          vidas++
-          atualizarBarraVidas()
-        }
-        aumentarMoedas()
-          setTimeout(function() {
-            audio.src = 'Audios/Resposta Correta.mp3'
-            audio.play()
-          },1000)
-          setTimeout(function() {
-            audio.src = 'Audios/bolha.mp3'
-            audio.play()
-            balao.style.display = 'none'
-          }, 3000)
-      
-       
-        
-        
-      
+      if (vidas <= 5) {
+        document.getElementById('v' + vidas).style.backgroundColor = '#3EF150'
+        vidas++
+        atualizarBarraVidas()
+      }
+      aumentarMoedas()
+      setTimeout(function () {
+        audio.src = 'Audios/Resposta Correta.mp3'
+        audio.play()
+      }, 1000)
+      setTimeout(function () {
+        audio.src = 'Audios/bolha.mp3'
+        audio.play()
+        balao.style.display = 'none'
+      }, 3000)
+
+
+
+
+
       // Avança para a próxima pergunta
       perguntaAtual++
       if (perguntaAtual < perguntas.length) {
-        setTimeout(function() {
+        setTimeout(function () {
           audio.src = perguntas[perguntaAtual]
           audio.play()
         }, 4600)
       } else {
-        setTimeout(function (){
+        setTimeout(function () {
 
           audio.src = 'Audios/Fim de Jogo.mp3'
           audio.play()
           fim.style.display = 'flex'
           pontos_fim.textContent = moedas += ',00';
+
+          // lógica de inserção no banco
+          const dados = {
+            id: document.getElementById("id").value,
+            money: moedas,
+          }
+
+          // Cria o objeto XMLHttpRequest
+          const xhr = new XMLHttpRequest();
+
+          // Define o método e a URL para a requisição
+          xhr.open('POST', '../../controller/insertMoney.php', true);
+
+          // Define o cabeçalho da requisição
+          xhr.setRequestHeader('Content-Type', 'application/json');
+
+          // Função de callback para quando a requisição estiver completa
+          xhr.onload = function () {
+            if (xhr.status >= 200 && xhr.status < 300) {
+              // Requisição bem-sucedida, você pode lidar com a resposta aqui
+              console.log(xhr.responseText);
+            } else {
+              // Trate os erros de requisição aqui
+              console.error('Erro ao enviar requisição');
+            }
+          };
+
+          // Envia a requisição com os dados convertidos para JSON
+          xhr.send(JSON.stringify(dados));
+
+          function redirect() {
+            window.location.href = "../home.php";
+          }
+
+          setTimeout(redirect, 7000)
+
         }, 4700)
       }
       //caso a resposta esteja errada
     } else {
-      setTimeout(function (){
-      audio.src = 'Audios/Resposta Errada.mp3'
-      audio.play()
+      setTimeout(function () {
+        audio.src = 'Audios/Resposta Errada.mp3'
+        audio.play()
       }, 1000)
     }
-    
+
   }
-  
+
   // Adiciona event listeners aos botões
-  b1.addEventListener('click', function() {
+  b1.addEventListener('click', function () {
     responderPergunta(b1)
   })
-  b2.addEventListener('click', function() {
+  b2.addEventListener('click', function () {
     responderPergunta(b2)
   })
-  b3.addEventListener('click', function() {
+  b3.addEventListener('click', function () {
     responderPergunta(b3)
   })
-  b4.addEventListener('click', function() {
+  b4.addEventListener('click', function () {
     responderPergunta(b4)
   })
-  b5.addEventListener('click', function() {
+  b5.addEventListener('click', function () {
     responderPergunta(b5)
   })
-  repetir.addEventListener('click', function() {
-      falaSrc  = 'Audios/Escolha a Letra Falada.mp3'
-      audio.src = falaSrc 
-      audio.play()
-    setTimeout(function() {
+  repetir.addEventListener('click', function () {
+    falaSrc = 'Audios/Escolha a Letra Falada.mp3'
+    audio.src = falaSrc
+    audio.play()
+    setTimeout(function () {
       audio.src = perguntas[perguntaAtual];
       audio.play();
       console.log('Repetindo!')
-    },2300)
-    
+    }, 2300)
+
   })
 }
 

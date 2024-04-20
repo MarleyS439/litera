@@ -103,6 +103,8 @@
         font-size: 1.1rem;
     }
 
+    
+    
     .background-card-game {
         border: 5px solid var(--blue2);
         background-image: url(../images/Frame-game1.png);
@@ -126,7 +128,7 @@
         box-shadow: 0px -10px 5px #00000020;
         padding: 2% 5%;
     }
-
+    
     .bottom-navigation-bar a {
         margin: 2% 5%;
         padding: 1%;
@@ -134,22 +136,55 @@
         color: var(--black2);
         transition: 200ms ease-out;
     }
-
+    
     .bottom-navigation-bar a img {
         width: 36px;
         height: auto;
         margin: 0px 5px;
     }
-
+    
     #store {
         width: 38px;
         height: 40px;
     }
-}
+
+    /* Referente a mapeação dos niveis*/
+    
+    .game .title-game-map p {
+        font-family: var(--font-poppins-bold);
+        margin: 1% 0%;
+        font-size: 1.6rem;
+        text-align: center;
+        color: #1C96E1;
+    }
+    .fase-list {
+        position: absolute;
+        left: 40%;
+    }
+    .game-1{
+        position: relative;
+        left: 10vw;
+    }
+    .game-2{
+        position: relative;
+        left: 0vw;
+    }
+    .game-3{
+        position: relative;
+        left:10vw;
+    }
+    .game-4{
+        position: relative;
+        right:0vw;
+    }
+    .game-5{
+        position: relative;
+        left:10vw;
+    }
+    
 
 /* Tablets */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-
     .mobile-view {
         display: none;
     }
@@ -229,6 +264,7 @@
         justify-content: center;
         align-items: center;
         margin: 0% 0% 0% 5%;
+
     }
 
     .profile-pic {
@@ -293,6 +329,7 @@
         border-radius: 10px;
         text-decoration: none;
         cursor: pointer;
+        padding: 10px;
     }
 
     .game-item:hover {
@@ -325,6 +362,113 @@
         display: flex;
         justify-content: center;
         margin-bottom: 12%;
+    }
+
+    .modal-content {
+        font-family: 'Mulish', sans-serif;
+        background-color: var(--background);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 1rem;
+    }
+
+    .edit-btn {
+        border-radius: 25%;
+        appearance: none;
+        padding: 1vw 0.5vw;
+        color: #323AC0;
+        outline: none;
+        border: none;
+        display: flex;
+        box-shadow: rgb(63, 63, 63) 0px 1px 6px;
+        cursor: pointer;
+        position: absolute;
+        right: 2vw;
+        top: 20%;
+    }
+
+    .edit-name-dialog {
+        border-radius: 0.75rem;
+        box-shadow: rgba(149, 157, 167, 0.2) 0px 8px 24px;
+        max-width: 36rem;
+        margin: 0 auto;
+        width: 100%;
+        margin-top: 4rem;
+        border: none;
+        animation: fadeInAnimation ease-in-out 0.5s forwards;
+    }
+
+    .close-btn {
+        background-color: inherit;
+        cursor: pointer;
+        border: none;
+    }
+
+    .edit-name-dialog header {
+        display: flex;
+        min-height: 4vh;
+        padding: 1.5vh 2vw 0.75vh 2vw;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1% solid #F3F3F4
+    }
+
+    .edit-name-dialog--fadeout {
+        animation: fadeOutAnimation ease-in-out.5s forwards
+    }
+
+    .save-name-dialog__content {
+        padding: 2vw;
+    }
+
+    .save-name-wrapper {
+        display: flex;
+        color: #9BA2A4;
+        border-radius: 0.5rem;
+        font-weight: 700;
+        justify-content: space-between;
+        background-color: #F3F3F4;
+        padding: 0.25;
+        padding-left: 1.5rem;
+    }
+
+    .save-name-wrapper input {
+        outline: none;
+        border: none;
+        width: 100%;
+        font-weight: 800;
+        background-color: inherit;
+        font-size: 1.2rem;
+    }
+
+    .save-name-wrapper button {
+        color: #323AC0;
+        background-color: white;
+        white-space: nowrap;
+        padding: 0.5vh 1vw;
+        border-radius: 0.4vw;
+        font-weight: 800;
+        cursor: pointer;
+        display: flex;
+        gap: 0.5%;
+        font-size: 1.1rem;
+        align-items: center;
+        border: none;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 3px 6px;
+    }
+
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        100% {
+            opacity: 1;
+            visibility: visible
+        }
     }
 
     .avatar-container {
@@ -471,9 +615,9 @@
     }
 
     .navigation a:hover {
-        background-color: var(--white);
+        background-color: #ffffff65;
         transition: 200ms;
-        border-radius: 45px;
+        border-radius: 5px;
     }
 
     .navigation a:hover svg {
@@ -485,20 +629,14 @@
         justify-content: center;
         align-items: center;
         margin: 0% 0% 0% 5%;
-    }
-
-    .profile-pic {
-        display: flex;
-        align-items: center;
-    }
-
-    .profile-pic span {
-        margin: 0% 3%;
-        font-family: var(--font-poppins-bold);
-    }
+        opacity: 1;
+    };
+    .img-logoff{
+        width: 3%;
+    }    
 
     .profile .profile-pic img {
-        width: 32px;
+        width: 0px;
         height: auto;
     }
 
@@ -583,17 +721,129 @@
         margin-bottom: 12%;
     }
 
+    .modal-content {
+        font-family: 'Mulish', sans-serif;
+        background-color: var(--background);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 1rem;
+    }
+
+    .edit-btn {
+        border-radius: 25%;
+        appearance: none;
+        padding: 1vw 0.5vw;
+        color: #323AC0;
+        outline: none;
+        border: none;
+        display: flex;
+        box-shadow: rgb(63, 63, 63) 0px 1px 6px;
+        cursor: pointer;
+        position: absolute;
+        right: 2vw;
+        top: 20%;
+    }
+
+    .edit-name-dialog {
+        border-radius: 0.75rem;
+        box-shadow: rgba(149, 157, 167, 0.2) 0px 8px 24px;
+        max-width: 36rem;
+        margin: 0 auto;
+        width: 100%;
+        margin-top: 4rem;
+        border: none;
+        animation: fadeInAnimation ease-in-out 0.5s forwards;
+    }
+
+    .close-btn {
+        background-color: inherit;
+        cursor: pointer;
+        border: none;
+    }
+
+    .edit-name-dialog header {
+        display: flex;
+        min-height: 4vh;
+        padding: 1.5vh 2vw 0.75vh 2vw;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1% solid #F3F3F4
+    }
+
+    .edit-name-dialog--fadeout {
+        animation: fadeOutAnimation ease-in-out.5s forwards
+    }
+
+    .save-name-dialog__content {
+        padding: 2vw;
+    }
+
+    .save-name-wrapper {
+        display: flex;
+        color: #9BA2A4;
+        border-radius: 0.5rem;
+        font-weight: 700;
+        justify-content: space-between;
+        background-color: #F3F3F4;
+        padding: 0.25;
+        padding-left: 1.5rem;
+    }
+
+    .save-name-wrapper input {
+        outline: none;
+        border: none;
+        width: 100%;
+        font-weight: 800;
+        background-color: inherit;
+        font-size: 1.2rem;
+    }
+
+    .save-name-wrapper button {
+        color: #323AC0;
+        background-color: white;
+        white-space: nowrap;
+        padding: 0.5vh 1vw;
+        border-radius: 0.4vw;
+        font-weight: 800;
+        cursor: pointer;
+        display: flex;
+        gap: 0.5%;
+        font-size: 1.1rem;
+        align-items: center;
+        border: none;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 3px 6px;
+    }
+
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        100% {
+            opacity: 1;
+            visibility: visible
+        }
+    }
+
     .avatar-container {
         background-color: var(--blue2);
         border-radius: 5px;
-        padding: 0% 3%;
+        padding: 2% 3%;
     }
 
     .name-user span {
-        color: var(--white);
+        color: var(--black2);
         font-family: var(--font-poppins-bold);
         font-size: 1.2rem;
         z-index: 15;
+    }
+
+    #campo,
+    #salvar {
+        display: none;
     }
 
     .ava {
@@ -668,4 +918,9 @@
     .games-desktop {
         padding: 0;
     }
+
+    .img-logoff{
+        width: 32px;
+    }
+}
 }

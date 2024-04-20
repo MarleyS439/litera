@@ -29,11 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 'cod' => $usuarioDao['codUsuario'],
                 'nome' => $usuarioDao['nomeUsuario'],
                 'email' => $usuarioDao['emailUsuario'],
+                'senha' => $_POST['passwd_user'],
                 'pontuacao' => $usuarioDao['pontuacaoUsuario'],
                 'dinheiro' => $usuarioDao['dinheiroUsuario'],
                 'tutorial' => $usuarioDao['tutorial'],
                 'banido' => $usuarioDao['banido'],
-                'tutorial' => false,
             ];
             // Iniciar a sessão apenas se as credenciais estiverem corretas
             session_start();

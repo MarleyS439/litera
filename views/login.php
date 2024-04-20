@@ -10,7 +10,7 @@
     <title>Litera | Login</title>
     <link rel="shortcut icon" href="../assets/images/litera.png" type="image/x-icon">
     <link rel="stylesheet" href="../assets/css/login-view.css">
-    <!--<link rel="stylesheet" href="../assets/css/login.css"> -->
+    <!-- <link rel="stylesheet" href="../assets/css/login.css"> -->
 </head>
 
 <body>
@@ -41,7 +41,13 @@
                         <label for="passwUser">Senha</label>
                         <input type="password" name="passwd_user" id="passwUser" required>
                     </div>
-
+                    <?php if (isset($_GET['status'])) : ?>
+                        <?php if ($_GET['status'] == 'erro1') : ?>
+                            <p style="color: red;">Credenciais inválidas ou incorretas</p>
+                        <?php else : ?>
+                            <p style="color: red;"></p>
+                        <?php endif ?>
+                    <?php endif ?>
                     <div class="item">
                         <button type="submit">Continuar</button>
                     </div>
@@ -51,11 +57,39 @@
                     </div>
 
                     <div class="return">
-                        <a href="../index.php">Voltar</a>
+                        <a href="./../index.php">Voltar</a>
                     </div>
                 </form>
             </div>
         </div>
+        <?php if (isset($_GET['status'])) : ?>
+            <?php if ($_GET['status'] == 'sucess') : ?>
+                <div class="notification">
+                    <div class="notification_body">
+                        <span> Conta Criada com Sucesso, realize login! &#128512</span>
+                    </div>
+                    <div class="notification_progress"></div>
+                </div>
+            <?php elseif ($_GET['status'] == 'erro2') : ?>
+                <div class="notification-erro2">
+                    <div class="notification_body">
+                        <img class="icon-alert"  src="../assets/images/icons/icon _warning triangle outline_.svg" class="notification_icon" alt="block">
+                        <span> Realize login para ter acesso ao Litera</span>
+                    </div>
+                    <div class="notification_progress-erro2"></div>
+                </div>
+            <?php elseif ($_GET['status'] == 'erro3') : ?>
+                <div class="notification-erro3">
+                    <div class="notification_body">
+                        <img class="icon-alert" width="25" src="../assets/images/icons/icon _ban_.svg" class="notification_icon" alt="block">
+                        <span>Conta temporariamente suspensa</span>
+                    </div>
+                    <div class="notification_progress-erro3"></div>
+                </div>
+            <?php else : ?>
+                <p style="color: red;"></p>
+            <?php endif ?>
+        <?php endif ?>
     </div>
 
 </body>

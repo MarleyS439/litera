@@ -72,7 +72,7 @@
                                 <i id="arrow" class="fa-solid fa-chevron-down"></i> <!-- Ícone Chevon agora está isolado do lado oposto -->
                             </button>
                         </div>
-                        <div class="conteudo-card">
+                        <div class="conteudo-card active">
                             <p>Com o <span>Litera</span> será possível que o responsável tenha acesso ao desempenho da criança e possa saber em que partes ela deve melhorar.</p>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                                 <i id="arrow" class="fa-solid fa-chevron-down"></i>
                             </button>
                         </div>
-                        <div class="conteudo-card">
+                        <div class="conteudo-card ">
                             <p>O <span>Litera</span> é uma plataforma acessível pois é totalmente gratuita sem exigir que o usuário faça inscrição em um tipo de plano</p>
                         </div>
                     </div>
@@ -220,7 +220,7 @@
                 </div>
             </div>
         </section>
-        <section>
+        <!-- <section>
             <div id="section-final">
                 <div id="title-section-final">
                     <p>Fique por dentro das novidades </p>
@@ -237,7 +237,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
     </main>
 
     <section id="footer">
@@ -261,17 +261,18 @@
             </div>
 
             <div id="div-social-media">
-                <img id="img-litera" src="./assets/images/footer/litera-img.png">
+                <img id="img-litera" src="./assets/images/litera-img.png">
+                <hr>
                 <div id="div-social-media-img">
                     <div id="div-img">
                         <div id="images">
-                            <img id="img" src="./assets/images/footer/facebook.png" href="https://www.facebook.com/?locale=pt_BR" alt="face">
+                            <img id="img-social" src="./assets/images/facebook.png" href="https://www.facebook.com/?locale=pt_BR" alt="face">
                         </div>
                         <div id="images">
-                            <img id="img" src="./assets/images/footer/instagram.png" alt="insta">
+                            <img id="img-social" src="./assets/images/instagram.png" alt="insta">
                         </div>
                         <div id="images">
-                            <img id="img" src="./assets/images/footer/x.png" alt="x">
+                            <img id="img-social" src="./assets/images/x.png" alt="x">
                         </div>
                     </div>
                 </div>
@@ -298,9 +299,10 @@
             </div>
 
             <div id="div-voltar-topo">
-                <img id="img-seta" src="./assets/images/footer/seta-cima.png" alt="x">
+                <a href="#section-1">
+                    <img  id="img-seta" src="./assets/images/seta-cima.png" alt="x">
+                </a>
             </div>
-
         </div>
 
     </section>

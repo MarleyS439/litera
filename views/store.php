@@ -2,15 +2,17 @@
 // session
 session_start();
 // verificação se o user esta logado
-if(!isset($_SESSION['authUser'])){
+if (!isset($_SESSION['authUser'])) {
     // caso não esteja, redirecione a login e indique que para realizar o login
     header("Location: ./login.php?status=erro2");
     exit();
 }
 // variavel para todas as informaçoes do usuario
-$usuarioAutenticado = $_SESSION['authUser'];
+require_once "../dao/usuarioDao.php";
+$codUser = $_SESSION['authUser'];
+$usuarioAutenticado = UsuarioDao::selectById($codUser['cod']);
 // verificar se o user esta banido
-if($usuarioAutenticado['banido']!=0){
+if ($usuarioAutenticado['banido'] != 0) {
     // caso não esteja, redirecionar a login e indique que o user foi banido
     header("Location: ./login.php?status=erro3");
     exit();

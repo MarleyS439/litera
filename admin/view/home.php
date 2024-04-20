@@ -9,6 +9,14 @@ if (!isset($_SESSION['authAdmin'])) {
 }
 // variavel para todas as informaçoes do usuario
 $usuarioAutenticado = $_SESSION['authAdmin'];
+
+include_once('../controller/processingChart.php');
+include_once('../controller/processingDashboard.php');
+?>
+<!-- pegar as informações do banco -->
+<?php
+require_once "../../dao/adminDao.php";
+$infos = AdminDao::selectAllLitera();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
@@ -21,29 +29,60 @@ $usuarioAutenticado = $_SESSION['authAdmin'];
     <meta name="author" content="Illumi">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador | Home</title>
+    <link rel="stylesheet" href="../../admin/assets/css/sidebar-admin.css">
     <link rel="shortcut icon" href="../assets/images/icons/Litera Icon2.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../admin/assets/css/users.css">
-    
 </head>
 
 <body>
-    <div class="topo">
-        <?php
-        include('../view/components/topbar.php');
-        ?>
+    <div class="sides">
+        <?php include('../view/components/sidebar-admin.php'); ?>
+
+        <div class="information-home">
+
+            <div class="container">
+                <div class="card-container">
+                    <h4>Usuários cadastrados</h4>
+                    <div class="card">
+                        <p class="font-card"><?php echo $quantidade_usuarios ?></p>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <h4>Compras nas ultimas 24h</h4>
+                    <div class="card">
+                        <p class="font-card"><?php echo $quantidade_compras ?></p>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <h4>Sem valor</h4>
+                    <div class="card">
+                        <p class="font-card">0</p>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <h4>Sem valor</h4>
+                    <div class="card">
+                        <p class="font-card">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <canvas id="myChart" class="chart-container" width="1160" height="300"></canvas>
+            </div>
+
+            <input type="hidden" name="mes" id="mes" value="<?php echo date('n') ?>">
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script>
+                var quantidade_por_mes = <?php echo json_encode($quantidade_por_mes); ?>
+            </script>
+            <script src="../assets/javascript/charts.js"></script>
+
+
+        </div>
     </div>
 
-    <div class="sides">
-        <?php
-        include('../view/components/sidebar.php');
-        ?>
-        <div class="information">
-            <div class="title">
-                <h2>Usuários cadastrados</h2>
-            </div>
-           
-            <!-- Nesta table, deve ser feito um foreach para resgatar os usuários cadastrados.-->
-        </div>
+
 </body>
 
 </html>

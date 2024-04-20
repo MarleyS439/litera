@@ -42,6 +42,16 @@
   --notification-primary-erro2-color: #fcf125;
   --notification-primary-erro3-bg: #471467b1;
   --notification-primary-erro3-color: #90b8fe;
+  --primary: #323AC0;
+  --text: #252728;
+  --headline: #1A1E1F;
+  --gray-text: #6D7679;
+  --white: #fff;
+  --background: #F8F8FF;
+  --gray-dark: #9BA2A4;
+  --gray-light: #F3F3F4;
+  --red: #f70000d5;
+
 
   --font-poppins-bold: 'Poppins-Bold', Sans-serif;
   --font-poppins-regular: 'Poppins-Regular', Sans-serif;

@@ -25,8 +25,9 @@
 
         <div class="item-form-edit">
             <label for="">Dinheiro</label>
-            <input type="number" name="dinheiro_user" id="dinheiro_user" value="<?=$dinheiro_user?>">
+            <input class="modal-input" type="number" name="dinheiro_user" id="dinheiro_user" value="<?=$dinheiro_user?>">
         </div>
+
         <div class="item-form-edit  btn-s">
             <button type="submit">Confirmar alterações</button>
         </div>

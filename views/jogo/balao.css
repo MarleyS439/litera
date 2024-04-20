@@ -578,7 +578,7 @@ FIM DO JOGO!!!!!
     flex-direction: column;
     top: 0;
     left: 0;
-    background: var(--fundo-jogo);
+    background: #000000d3;
     width: 100%;
     height: 100%;
     z-index: 3;
@@ -589,6 +589,8 @@ FIM DO JOGO!!!!!
     font-weight: 600;
     color:var(--moeda);
 }
+
+
 .area-jogo .fim span{
     font-weight: 900;
     color: var(--borda-barra);
@@ -950,6 +952,33 @@ CONCLUSÃO FIM DO JOGO!!!!!
         transform: translateY(100%);
     }
 }
+
+
+
+.area-jogo .effeitoAcerto{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    z-index: 999;
+}
+
+.area-jogo .effeitoAcerto .joinhaUp{
+    width: 100px;
+    height: 100px;
+}
+
+.area-jogo .effeitoAcerto .joinhaDown{
+    display: none;
+    width: 100px;
+    height: 100px;
+}
+
+
 
 
 
@@ -1318,6 +1347,119 @@ MEDIA SCREENS!!!!!
     
 
 }
+
+
+
+
+
+
+
+
+
+
+.area-jogo .final{
+    display: none;
+    position: absolute;
+    align-items: center;
+    flex-direction: column;
+    background: #000000d3;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.final .text-fim{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+}
+
+.text-fim p{
+    margin-top: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--text-fim);
+    font-weight: var(--F-weightBold);
+    width: 330px;
+    height: 50px;
+    text-align: center;
+    background-color: var(--background-fim);
+    border: 2px solid var(--border-fim);
+    border-radius: var(--R-BtnFim-e-Text-Fim);
+}
+.final .btn-fim{
+    gap: 20%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+}
+.btn-fim .btnFinal {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 60px;
+    border-radius: var(--R-BtnFim-e-Text-Fim);
+    cursor: url("./img/mao2.svg"), auto;
+}
+.btn-fim .btnFinal img{
+    width: 35px;
+}
+
+
+
+
+
+.btn-fim .btnFinal:nth-child(2){
+    position: relative;
+    border: 2px solid var(--borda-btnFim1);
+    background-color: var(--cor-btnFim1);
+    cursor: url("./img/mao2.svg"), auto;
+}
+.btn-fim .btnFinal:nth-child(2)::after{
+    position: absolute;
+    content: 'Avançar';
+    font-weight: 600;
+    bottom: -30px;
+    color: var(--branco);
+    text-shadow: 0px 0px 5px var(--borda-btnFim1);
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+.btn-fim .btnFinal:nth-child(1){
+    position: relative;
+    border: 2px solid var(--borda-btnFim2);
+    background-color: var(--cor-btnFim2);
+    cursor: url("./img/mao2.svg"), auto;
+}
+.btn-fim .btnFinal:nth-child(1)::after{
+    position: absolute;
+    content: 'Recomeçar';
+    font-weight: 600;
+    bottom: -30px;
+    color: var(--branco);
+    text-shadow: 0px 0px 5px var(--borda-btnFim2);
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

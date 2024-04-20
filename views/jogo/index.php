@@ -1,3 +1,23 @@
+<?php
+// session
+session_start();
+// verificação se o user esta logado
+if (!isset($_SESSION['authUser'])) {
+    // caso não esteja, redirecione a login e indique que para realizar o login
+    header("Location: ./login.php?status=erro2");
+    exit();
+}
+// variavel para todas as informaçoes do usuario
+require_once "../../dao/usuarioDao.php";
+$codUser = $_SESSION['authUser'];
+$usuarioAutenticado = UsuarioDao::selectById($codUser['cod']);
+// verificar se o user esta banido
+if ($usuarioAutenticado['banido'] != 0) {
+    // caso não esteja, redirecionar a login e indique que o user foi banido
+    header("Location: ./login.php?status=erro3");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -28,13 +48,47 @@
         </nav>
         <a href="#" class="perfil">
             <img src="img/sapo.png" class="avatar">
-            <span class="nomeUser" name="userName">João</span>   
+            <span class="nomeUser" name="userName"><?php echo $usuarioAutenticado['nomeUsuario']?></span>   
         </a>
     </header>
         
 
     <section class="jogo">
-       <div class="area-jogo">
+        <div class="area-jogo">
+            <div class="final" id="finalizar">
+                <div class="text-fim">
+                    <p>FIM DE JOGO</p>
+                </div>
+                <p>Sua Pontuação: <span class="total_moedas" id="final_point"></span></p>
+                <div class="btn-fim">
+                    <a href="index.php" class="btnFinal"><img src="img/recomecar.svg" alt=""></a>
+                    <a href="../home.php" class="btnFinal"><img src="img/avancar.svg" alt=""></a>
+                </div>
+            </div>
+
+            
+
+            <div class="comecar-jogo" id="boxComece">
+                <h1>Vamos começar!</h1>
+                <button id="comece">Começar!</button>
+            </div>
+
+
+            <div class="effeitoAcerto" id="effeitoA">
+                <img src="img/acerto.png" alt="" class="joinhaUp" id="acertouUp">
+                <img src="img/errou.png" alt="" class="joinhaDown" id="errada">
+            </div>
+
+
+
+
+
+
+
+
+
+
+
             <div class="topo">
                 <div class="moedas" id="mobile">
                     <i class="fa-solid fa-coins"></i><span id="moeda">0</span>
@@ -45,6 +99,9 @@
                     <div class="acerto" id="v3"></div>
                     <div class="acerto" id="v4"></div>
                     <div class="acerto" id="v5"></div>
+                    <div class="acerto" id="v6"></div>
+                    <div class="acerto" id="v7"></div>
+                    <div class="acerto" id="v8"></div>
                 </div>
                 
             </div>
@@ -81,13 +138,16 @@
                     </div>
                     
                 </div>
-                <div class="acerto">
+                <div class="acertoBtn">
                     <div class="button" id="verific">
                         <img class="verificar" src="img/jogoFruta/verificarX.svg" alt="">
                     </div>
                 </div>
             </div>
-       </div>
+
+            <input type="hidden" name="id" id="id" value="<?php echo $usuarioAutenticado['codUsuario'] ?>">
+
+        </div>
     </section>
     <script src="frutas.js"></script>
 </body>

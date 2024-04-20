@@ -46,6 +46,16 @@ class CompraItemDao
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public static function contByIdUser($cod)
+    {
+        $conexao = Conexao::conectar();
+        $query = "SELECT COUNT(*) FROM tbcompraitem WHERE codUsuario = ?";
+        $stmt = $conexao->prepare($query);
+        $stmt->bindValue(1, $cod);
+        $stmt->execute();
+        return $stmt->fetchColumn();
+    }
     
     public static function delete($cod)
     {

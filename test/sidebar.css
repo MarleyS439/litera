@@ -1,0 +1,134 @@
+@import url(../assets/css/default.css);
+
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .sidebar-component {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 20vw;
+        height: 100vh;
+    }
+
+    .title-admin {
+        padding: 5%;
+    }
+
+    .title-admin h1 {
+        color: var(--white);
+        font-family: var(--font-poppins-bold);
+    }
+
+    .title-admin span {
+        color: var(--white);
+    }
+
+    .container-options {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--black2);
+        padding: 5%;
+        align-items: top;
+        height: 100%;
+    }
+
+    .options {
+        justify-content: center;
+        height: 100%;
+    }
+
+    .options a {
+        border: 2px solid var(--dark-blue);
+        text-decoration: none;
+        color: var(--white);
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        padding: 5%;
+        transition: 300ms ease-in-out;
+    }
+
+    .options a:hover {
+        background-color: var(--dark-blue);
+    }
+
+    .options span {
+        margin: 5px;
+    }
+
+    .options img {
+        width: 45px;
+    }
+
+}
+
+@media screen and (min-width: 1025px) {
+
+    .sidebar-component {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 20vw;
+        height: 100vh;
+    }
+
+    .title-admin {
+        padding: 5%;
+    }
+
+    .title-admin h1 {
+        color: var(--white);
+        font-family: var(--font-poppins-bold);
+    }
+
+    .title-admin span {
+        color: var(--white);
+    }
+
+    .container-options {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--black2);
+        padding: 5%;
+        align-items: top;
+        height: 100%;
+    }
+
+    .options {
+        justify-content: center;
+        height: 100%;
+    }
+
+    .options a {
+        border: 2px solid var(--dark-blue);
+        text-decoration: none;
+        color: var(--white);
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        padding: 5%;
+        transition: 300ms ease-in-out;
+    }
+
+    .options a:hover {
+        background-color: var(--dark-blue);
+    }
+
+    .options span {
+        margin: 5px;
+    }
+
+    .options img {
+        width: 45px;
+    }
+
+
+}

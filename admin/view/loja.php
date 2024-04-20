@@ -27,19 +27,12 @@ $usuarios = UsuarioDao::selectAll();
     <title>Administrador | Loja</title>
     <link rel="shortcut icon" href="../assets/images/icons/Litera Icon2.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../admin/assets/css/users.css">
+    <link rel="stylesheet" href="../../admin/assets/css/sidebar-admin.css">
 </head>
 
 <body>
-    <div class="topo">
-        <?php
-        include('../view/components/topbar.php');
-        ?>
-    </div>
-
     <div class="sides">
-        <?php
-        include('../view/components/sidebar.php');
-        ?>
+        <?php include('../view/components/sidebar-admin.php'); ?>
         <div class="information">
             <div class="title">
                 <h2>Usuários cadastrados</h2>

@@ -39,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $usuarioDao = new UsuarioDao();
                     $usuarioDao->insert($usuario);
                     session_start();
+                  
                     header('Location: ../views/login.php?status=sucess');
                 }catch (Exception $e){
                     header('Location: ../views/register.php?status=erro2');

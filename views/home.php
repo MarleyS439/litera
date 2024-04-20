@@ -8,8 +8,9 @@ if (!isset($_SESSION['authUser'])) {
     exit();
 }
 // variavel para todas as informaçoes do usuario
-$usuarioAutenticado = $_SESSION['authUser'];
-$passou_tutorial = $usuarioAutenticado['tutorial'];
+require_once "../dao/usuarioDao.php";
+$codUser = $_SESSION['authUser'];
+$usuarioAutenticado = UsuarioDao::selectById($codUser['cod']);
 // verificar se o user esta banido
 if ($usuarioAutenticado['banido'] != 0) {
     // caso não esteja, redirecionar a login e indique que o user foi banido
@@ -31,7 +32,7 @@ if ($usuarioAutenticado['banido'] != 0) {
     <link rel="stylesheet" type="text/css" href="../assets/css/home.css">
     <?php
 
-    if ($passou_tutorial == false) {
+    if ($usuarioAutenticado['tutorial'] == 0 ) {
         echo '<link rel="stylesheet" type="text/css" href="../assets/css/tutorial-inicial.css">';
     }
     ?>
@@ -47,8 +48,9 @@ if ($usuarioAutenticado['banido'] != 0) {
     </div>
     <div class="desktop-view">
         <?php
-        include('../views/components/navbarHome.php');
+            include('../views/components/navbarHome.php');
         ?>
+    
 
         <main class="main-desktop">
             <div class="games-desktop">
@@ -57,30 +59,40 @@ if ($usuarioAutenticado['banido'] != 0) {
                 </div>
 
                 <div class="games-desktop-itens">
-                    <a class="game-item" id="first" href="../views/jogo/index.php">
+                    <?php
+                        if($usuarioAutenticado['tutorial'] == 0){
+                    ?>
+                    <a class="game-item" id="first" href="../views/tutorial/tutorial-jogo1/tutorial.php">
                         <div class="title-game-item">
                             <p>Caça às vogais</p>
+                            <div class="bg-game"></div>
+                        </div>
+                    </a>
+                    <?php }else{ ?>
+                        <a class="game-item" id="first" href="../views/jogo/map.php">
+                        <div class="title-game-item">
+                            <p>Caça às vogais</p>
+                            <div class="bg-game"></div>
+                        </div>
+                    </a>
+                    <?php } ?>
+                    <a class="game-item" href="../views/jogo/index.php">
+                        <div class="title-game-item">
+                            <p>Ditado</p>
                             <div class="bg-game"></div>
                         </div>
                     </a>
 
                     <a class="game-item">
                         <div class="title-game-item">
-                            <p>Caça às vogais</p>
+                            <p>Jogo</p>
                             <div class="bg-game"></div>
                         </div>
                     </a>
 
                     <a class="game-item">
                         <div class="title-game-item">
-                            <p>Caça às vogais</p>
-                            <div class="bg-game"></div>
-                        </div>
-                    </a>
-
-                    <a class="game-item">
-                        <div class="title-game-item">
-                            <p>Caça às vogais</p>
+                            <p>Jogo</p>
                             <div class="bg-game"></div>
                         </div>
                     </a>
@@ -118,7 +130,7 @@ if ($usuarioAutenticado['banido'] != 0) {
             </div>
 
             <div class="games-list">
-                <a class="game" id="t" href="../views/jogo/index.php">
+                <a class="game" id="t" href="../views/jogo/map.php">
                     <div class="title-game" id="aa">
                         <p>Caça às Letras</p>
                     </div>
@@ -170,6 +182,7 @@ if ($usuarioAutenticado['banido'] != 0) {
 
         </div>
     </div>
+    <script src="./../assets/javascript/modal.js"></script>
 </body>
 
 </html>

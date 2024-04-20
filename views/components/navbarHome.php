@@ -24,10 +24,17 @@
     </div>
 
 
-    <div class="profile">
+    <!-- <div class="profile">
         <div class="profile-pic">
             <span><?php echo $usuarioAutenticado['nome']?></span>
             <img src="../assets/images/icons/profile.svg" alt="">
         </div>
+    </div> -->
+    <div>
+        <a href="../controller/logoutUser.php" title="logout">
+            <img class="img-logoff" src="../assets/images/icons/exit-svgrepo-com.svg" alt="exit">
+        </a>
+
     </div>
 </nav>
+<script src="https://kit.fontawesome.com/a3e37e504d.js" crossorigin="anonymous"></script>

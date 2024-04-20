@@ -70,4 +70,41 @@ class AdminDao
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    public static function selectAllLitera()
+    {
+        $conexao = Conexao::conectar();
+    
+        // Query to get count of administrators
+        $queryAdmins = "SELECT COUNT(codAdmin) AS adminCount FROM tbadmin";
+        $stmtAdmins = $conexao->prepare($queryAdmins);
+        $stmtAdmins->execute();
+        $adminsCount = $stmtAdmins->fetch(PDO::FETCH_ASSOC)['adminCount'];
+    
+        // Query to get count of all users
+        $queryUsers = "SELECT COUNT(codUsuario) AS userCount FROM tbusuario";
+        $stmtUsers = $conexao->prepare($queryUsers);
+        $stmtUsers->execute();
+        $usersCount = $stmtUsers->fetch(PDO::FETCH_ASSOC)['userCount'];
+    
+        // Query to get count of active users
+        $queryActiveUsers = "SELECT COUNT(codUsuario) AS activeUserCount FROM tbusuario WHERE banido = 0";
+        $stmtActiveUsers = $conexao->prepare($queryActiveUsers);
+        $stmtActiveUsers->execute();
+        $activeUsersCount = $stmtActiveUsers->fetch(PDO::FETCH_ASSOC)['activeUserCount'];
+    
+        // Query to get count of banned users
+        $queryBannedUsers = "SELECT COUNT(codUsuario) AS bannedUserCount FROM tbusuario WHERE banido = 1";
+        $stmtBannedUsers = $conexao->prepare($queryBannedUsers);
+        $stmtBannedUsers->execute();
+        $bannedUsersCount = $stmtBannedUsers->fetch(PDO::FETCH_ASSOC)['bannedUserCount'];
+    
+        // Return counts in an associative array
+        return [
+            'adminCount' => $adminsCount,
+            'userCount' => $usersCount,
+            'activeUserCount' => $activeUsersCount,
+            'bannedUserCount' => $bannedUsersCount
+        ];
+    }
+
 }
