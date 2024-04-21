@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $resultado = UsuarioDao::setGamesPoints($id, $money);
 
             if ($resultado) {
-                echo "Atualização feita com sucesso!x'";
+                echo "Atualização feita com sucesso!x' money";
             } else {
                 echo "Erro ao atualizar o dinheiro do usuário";
             }

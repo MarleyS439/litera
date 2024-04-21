@@ -5,6 +5,7 @@ setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
 
 // Obter o nome do mês em português
 $mesPorExtenso = strftime("%B", strtotime($usuarioAutenticado['dataCriacao']));
+
 ?>
 <div class="profile-menu">
     <div class="title-profile-menu">
@@ -64,14 +65,27 @@ $mesPorExtenso = strftime("%B", strtotime($usuarioAutenticado['dataCriacao']));
             <div class="">
                 <span>Nível: <?php echo $usuarioAutenticado['nivel'] ?></span>
             </div>
-
+            
             <div class="">
                 <span>Quantidade de itens: <?php echo CompraItemDao::contByIdUser($usuarioAutenticado['codUsuario']) ?></span>
             </div>
-
+            
             <div class="">
                 <span>Melhor desempenho: </span>
             </div>
+            <div class="">
+                <span>Pontuação Total: <?php echo $usuarioAutenticado['pontuacaoUsuario'] ?></span>
+            </div>
+            <div class="label-progresso">
+                <span>Progresso para o proximo nivel</span>
+            </div>
+            <!-- barra de progresso -->
+            <div class="">
+                <div class="barra">
+                    <div class="progresso"></div>
+                </div>
+            </div>
+    
         </div>
 
     </div>

@@ -79,16 +79,6 @@ if ($usuarioAutenticado['banido'] != 0) {
                 <img src="img/errou.png" alt="" class="joinhaDown" id="errada">
             </div>
 
-
-
-
-
-
-
-
-
-
-
             <div class="topo">
                 <div class="moedas" id="mobile">
                     <i class="fa-solid fa-coins"></i><span id="moeda">0</span>

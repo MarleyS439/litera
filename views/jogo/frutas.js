@@ -1596,9 +1596,37 @@ function fazerPergunta() {
                   console.error("Erro ao enviar requisição");
                 }
               };
-
               // Envia a requisição com os dados convertidos para JSON
               xhr.send(JSON.stringify(dados));
+
+
+              //logica de banco para pontuação e o nivel
+              const nivelInsert = {
+                id: document.getElementById("id").value,
+                pontuacao: 50,
+              };
+
+              // Cria o objeto XMLHttpRequest
+              const xhr2 = new XMLHttpRequest();
+
+              // Define o método e a URL para a requisição
+              xhr2.open("POST", "../../controller/insertPontuacao.php", true);
+
+              // Define o cabeçalho da requisição
+              xhr2.setRequestHeader("Content-Type", "application/json");
+
+              // Função de callback para quando a requisição estiver completa
+              xhr2.onload = function () {
+                if (xhr2.status >= 200 && xhr2.status < 300) {
+                  // Requisição bem-sucedida, você pode lidar com a resposta aqui
+                  console.log(xhr2.responseText);
+                } else {
+                  // Trate os erros de requisição aqui
+                  console.error("Erro ao enviar requisição");
+                }
+              };
+              // Envia a requisição com os dados convertidos para JSON
+              xhr2.send(JSON.stringify(nivelInsert));
 
             }, 3000);
           }

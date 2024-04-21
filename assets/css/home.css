@@ -1,8 +1,6 @@
 @import url(./default.css);
 @import url(./animations.css);
 
-
-
 /* Mobile */
 @media screen and (max-width: 768px) {
 
@@ -103,8 +101,6 @@
         font-size: 1.1rem;
     }
 
-    
-    
     .background-card-game {
         border: 5px solid var(--blue2);
         background-image: url(../images/Frame-game1.png);
@@ -128,7 +124,7 @@
         box-shadow: 0px -10px 5px #00000020;
         padding: 2% 5%;
     }
-    
+
     .bottom-navigation-bar a {
         margin: 2% 5%;
         padding: 1%;
@@ -136,20 +132,20 @@
         color: var(--black2);
         transition: 200ms ease-out;
     }
-    
+
     .bottom-navigation-bar a img {
         width: 36px;
         height: auto;
         margin: 0px 5px;
     }
-    
+
     #store {
         width: 38px;
         height: 40px;
     }
 
     /* Referente a mapeação dos niveis*/
-    
+
     .game .title-game-map p {
         font-family: var(--font-poppins-bold);
         margin: 1% 0%;
@@ -157,33 +153,40 @@
         text-align: center;
         color: #1C96E1;
     }
+
     .fase-list {
         position: absolute;
         left: 40%;
     }
-    .game-1{
+
+    .game-1 {
         position: relative;
         left: 10vw;
     }
-    .game-2{
+
+    .game-2 {
         position: relative;
         left: 0vw;
     }
-    .game-3{
-        position: relative;
-        left:10vw;
-    }
-    .game-4{
-        position: relative;
-        right:0vw;
-    }
-    .game-5{
-        position: relative;
-        left:10vw;
-    }
-    
 
-/* Tablets */
+    .game-3 {
+        position: relative;
+        left: 10vw;
+    }
+
+    .game-4 {
+        position: relative;
+        right: 0vw;
+    }
+
+    .game-5 {
+        position: relative;
+        left: 10vw;
+    }
+
+
+    /* Tablets */
+}
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .mobile-view {
         display: none;
@@ -630,10 +633,13 @@
         align-items: center;
         margin: 0% 0% 0% 5%;
         opacity: 1;
-    };
-    .img-logoff{
+    }
+
+    ;
+
+    .img-logoff {
         width: 3%;
-    }    
+    }
 
     .profile .profile-pic img {
         width: 0px;
@@ -919,8 +925,23 @@
         padding: 0;
     }
 
-    .img-logoff{
+    .img-logoff {
         width: 32px;
     }
-}
+    .label-progresso{
+        font-size: 14px;
+        text-align: center;
+    }
+    .barra{
+        width: 100%;
+        height: 20px;
+        padding: 1px 1px;
+        border-radius: 10px;
+        border: solid 2px var(--blue6);
+    }
+    .barra .progresso{
+        background-color: var(--blue6);
+        height: 100%;
+        border-radius: 10px;
+    }
 }
