@@ -1,0 +1,335 @@
+@import url(default.css);
+@import url(animations.css);
+
+@media screen and (max-width: 768px) {
+    .container-page {
+        display: flex;
+        flex-direction: column;
+        padding: 5%;
+        justify-content: center;
+        background-color: var(--dark-blue);
+        height: 100vh;
+        -webkit-animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+        animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    }
+
+    .sidea {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .lit {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .lit h2 {
+        margin: 5px;
+        font-family: var(--font-poppins-bold);
+        font-size: 3rem;
+        color: var(--white);
+    }
+
+    .litera img {
+        width: 130px;
+        height: auto;
+    }
+
+    .lit span {
+        display: none;
+    }
+
+    .sideb {
+        background-color: var(--white);
+        border-radius: 8px;
+        padding: 5%;
+    }
+
+    .title-form h2 {
+        font-family: var(--font-poppins-bold);
+        color: var(--black2);
+    }
+
+    form,
+    .inputs,
+    input {
+        width: 100%;
+    }
+
+    form input {
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid var(--line-border);
+        background-color: var(--white2);
+    }
+
+    form label {
+        font-family: var(--font-poppins-bold);
+        color: var(--black2);
+    }
+
+    form .inputs {
+        margin: 10px 0px;
+    }
+
+    .send button {
+        margin-top: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        width: 100%;
+        border: none;
+        background-color: var(--blue3);
+        border-radius: 8px;
+        color: var(--white);
+        font-family: var(--font-poppins-bold);
+    }
+
+    .send button img {
+        width: 20px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container-page {
+        display: flex;
+        justify-content: space-between;
+        height: 100vh;
+    }
+
+    .sidea {
+        color: var(--white);
+        background-color: var(--dark-blue);
+        padding: 5%;
+        width: 70vw;
+    }
+
+    .lit {
+        display: flex;
+        justify-content: left;
+        position: relative;
+        flex-direction: column;
+        left: 10%;
+        transition: 300ms ease-in-out;
+    }
+
+    .litera img {
+        width: 350px;
+        margin: 10px;
+    }
+
+    .sidea h2 {
+        font-family: var(--font-poppins-bold);
+        font-size: 5rem;
+    }
+
+    .sidea span {
+        font-family: var(--font-poppins-bold);
+    }
+
+    .litera {
+        margin: 10px;
+    }
+
+    .sideb {
+        background-color: var(--white);
+        color: var(--black2);
+        width: 40vw;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        z-index: 10;
+    }
+
+    .sideb input {
+        width: 100%;
+        padding: 8px;
+        border-radius: 8px;
+        border: none;
+        background-color: var(--white2);
+        border: 1px solid var(--line-border);
+    }
+
+    .inputs {
+        margin: 5px 0px;
+    }
+
+    .title-form {
+        padding: 8%;
+    }
+
+    .title-form h2 {
+        font-family: var(--font-poppins-bold);
+    }
+
+    form {
+        padding: 0% 8%;
+        width: 100%;
+        align-items: center;
+        flex-direction: column;
+        justify-content: left;
+    }
+
+    form label {
+        font-family: var(--font-poppins-bold);
+    }
+
+    .send {
+        display: flex;
+        width: 100%;
+        margin-top: 10%;
+    }
+
+    .send button {
+        background-color: var(--blue3);
+        border: none;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        width: 100%;
+        color: var(--white);
+        cursor: pointer;
+        transition: 200ms ease-in-out;
+    }
+
+    .send span {
+        font-family: var(--font-poppins-bold);
+    }
+
+    .send button:hover {
+        background-color: var(--dark-blue);
+    }
+
+    .send button img {
+        width: 20px;
+        height: auto;
+        margin: 5px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .container-page {
+        display: flex;
+        justify-content: space-between;
+        height: 100vh;
+    }
+
+    .sidea {
+        color: var(--white);
+        background-color: var(--dark-blue);
+        padding: 5%;
+        width: 70vw;
+    }
+
+    .lit {
+        display: flex;
+        justify-content: left;
+        position: relative;
+        flex-direction: column;
+        left: 20%;
+        transition: 300ms ease-in-out;
+    }
+
+    .litera img {
+        width: 350px;
+        margin: 10px;
+    }
+
+    .sidea h2 {
+        font-family: var(--font-poppins-bold);
+        font-size: 5rem;
+    }
+
+    .sidea span {
+        font-family: var(--font-poppins-bold);
+    }
+
+    .litera {
+        margin: 10px;
+    }
+
+    .sideb {
+        background-color: var(--white);
+        color: var(--black2);
+        width: 40vw;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        z-index: 10;
+    }
+
+    .sideb input {
+        width: 100%;
+        padding: 8px;
+        border-radius: 8px;
+        border: none;
+        background-color: var(--white2);
+        border: 1px solid var(--line-border);
+    }
+
+    .inputs {
+        margin: 5px 0px;
+    }
+
+    .title-form {
+        padding: 8%;
+    }
+
+    .title-form h2 {
+        font-family: var(--font-poppins-bold);
+    }
+
+    form {
+        padding: 0% 8%;
+        width: 100%;
+        align-items: center;
+        flex-direction: column;
+        justify-content: left;
+    }
+
+    form label {
+        font-family: var(--font-poppins-bold);
+    }
+
+    .send {
+        display: flex;
+        width: 100%;
+        margin-top: 10%;
+    }
+
+    .send button {
+        background-color: var(--blue3);
+        border: none;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        width: 100%;
+        color: var(--white);
+        cursor: pointer;
+        transition: 200ms ease-in-out;
+    }
+
+    .send span {
+        font-family: var(--font-poppins-bold);
+    }
+
+    .send button:hover {
+        background-color: var(--dark-blue);
+    }
+
+    .send button img {
+        width: 20px;
+        height: auto;
+        margin: 5px;
+    }
+
+}

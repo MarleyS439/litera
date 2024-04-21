@@ -8,15 +8,56 @@
     <meta name="author" content="Illumi">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Litera | Login</title>
-    <link rel="shortcut icon" href="../assets/images/litera.png" type="image/x-icon">
-    <link rel="stylesheet" href="../assets/css/login-view.css">
-    <!-- <link rel="stylesheet" href="../assets/css/login.css"> -->
+    <link rel="stylesheet" href="../assets/css/login-page.css">
+    <link rel="shortcut icon" href="../assets/images/icons/favicon.ico" type="image/x-icon">
+    <!--<link rel="stylesheet" href="../assets/css/login-view.css"> -->
 </head>
 
 <body>
 
-    <!-- Do not have more mobile-view div. Now is a unique div -->
-    <div class="desktop-view">
+    <div class="container-page">
+        <div class="sidea">
+            <div class="lit">
+                <h2>Litera</h2>
+                <span>Alfabetizando novas gerações</span>
+                <div class="litera">
+                    <img src="../assets/images/arara 2.svg" alt="">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="sideb">
+            <div class="title-form">
+                <h2>Entrar</h2>
+            </div>
+
+            <form action="" method="post">
+                <div class="inputs">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email_user" id="email" placeholder="E-mail do responsável" required>
+                </div>
+
+                <div class="inputs">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="pass_user" id="senha" placeholder="Palavra passe" required>
+                </div>
+
+                <div class="advisor">
+                    <!-- Aqui vai as informações de autenticação de login -->
+                </div>
+
+                <div class="send">
+                    <button type="submit">
+                        <span>Continuar</span>
+                        <img src="../assets/images/icons/enter-icon.svg" alt="">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--   <div class="desktop-view">
         <div class="container-desktop">
             <div class="content">
                 <div class="title">
@@ -90,7 +131,7 @@
                 <p style="color: red;"></p>
             <?php endif ?>
         <?php endif ?>
-    </div>
+    </div> -->
 
 </body>
 <script src="../assets/javascript/emptyField.js"></script>
