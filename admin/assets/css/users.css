@@ -881,7 +881,6 @@ a {
 
   .title {
     text-align: center;
-    margin-bottom: 5%;
     margin-top: 2%;
   }
 
@@ -1034,6 +1033,7 @@ a {
   .search-container{
     display: flex;
     margin-bottom: 2%;
+    margin-top: 5%;
   }
 
   .title-search{
@@ -1058,7 +1058,7 @@ a {
 
   .card{
     background-color: #4180AB;
-    width: 250px;
+    width: 14rem;
     height: 120px;
     border-radius: 10px;
   }

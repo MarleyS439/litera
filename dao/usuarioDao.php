@@ -142,30 +142,6 @@ class UsuarioDao
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-    public static function countUsers()
-    {
-        $conexao = Conexao::conectar();
-        $query = "SELECT COUNT(*) AS total_usuarios FROM tbusuario";
-        $stmt = $conexao->prepare($query);
-        $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        // Retorna apenas o valor da contagem
-        return $result['total_usuarios'];
-    }
-    public static function countBuys()
-    {
-        $conexao = Conexao::conectar();
-        $query = "SELECT COUNT(*) AS quantidade FROM tbcompraitem WHERE MONTH(dataCompra) = ? AND DAY(dataCompra) = ?";
-        $stmt = $conexao->prepare($query);
-        $stmt->bindValue(1, date('n'));
-        $stmt->bindValue(2, date('d'));
-        $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        // Retorna apenas o valor da contagem
-        return $result['quantidade'];
-    }
     public static function selectPontuacaoNivel($cod)
     {
         $conexao = Conexao::conectar();

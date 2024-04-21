@@ -11,7 +11,6 @@ if (!isset($_SESSION['authAdmin'])) {
 $usuarioAutenticado = $_SESSION['authAdmin'];
 
 include_once('../controller/processingChart.php');
-include_once('../controller/processingDashboard.php');
 ?>
 <!-- pegar as informações do banco -->
 <?php
@@ -39,30 +38,33 @@ $infos = AdminDao::selectAllLitera();
         <?php include('../view/components/sidebar-admin.php'); ?>
 
         <div class="information-home">
+            <div class="title">
+                <h2>Dashboard</h2>
+            </div>
 
             <div class="container">
                 <div class="card-container">
                     <h4>Usuários cadastrados</h4>
                     <div class="card">
-                        <p class="font-card"><?php echo $quantidade_usuarios ?></p>
+                        <p class="font-card"><?php echo $infos['userCount'] ?></p>
                     </div>
                 </div>
                 <div class="card-container">
                     <h4>Compras nas ultimas 24h</h4>
                     <div class="card">
-                        <p class="font-card"><?php echo $quantidade_compras ?></p>
+                        <p class="font-card"><?php echo $infos['countBuys'] ?></p>
                     </div>
                 </div>
                 <div class="card-container">
-                    <h4>Sem valor</h4>
+                    <h4>Contas ativas</h4>
                     <div class="card">
-                        <p class="font-card">0</p>
+                        <p class="font-card"><?php echo $infos['activeUserCount'] ?></p>
                     </div>
                 </div>
                 <div class="card-container">
-                    <h4>Sem valor</h4>
+                    <h4>Contas banidas</h4>
                     <div class="card">
-                        <p class="font-card">0</p>
+                        <p class="font-card"><?php echo $infos['bannedUserCount'] ?></p>
                     </div>
                 </div>
             </div>

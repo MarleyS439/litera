@@ -35,76 +35,11 @@ $usuarios = UsuarioDao::selectAll();
         <?php include('../view/components/sidebar-admin.php'); ?>
         <div class="information">
             <div class="title">
-                <h2>Usuários cadastrados</h2>
+                <h2>Itens Loja</h2>
             </div>
-            <!-- Nesta table, deve ser feito um foreach para resgatar os usuários cadastrados.-->
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome de usuário</th>
-                        <th>E-mail</th>
-                        <th>Pontuação</th>
-                        <th>Dinheiro</th>
-                        <th>Ação</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($usuarios as $usuario) : ?>
-                        <tr>
-                            <td><?php echo $usuario['codUsuario'] ?></td>
-                            <td><?php echo $usuario['nomeUsuario'] ?></td>
-                            <td><?php echo $usuario['emailUsuario'] ?></td>
-                            <td><?php echo $usuario['pontuacaoUsuario'] ?></td>
-                            <td><?php echo $usuario['dinheiroUsuario'] ?></td>
-                            <td>
-                                <div class="btn-action">
-                                    <button type="submit" class="openBlockUser block" data-id="<?php echo $usuario['codUsuario'] ?>">
-                                        <img src="../assets/images/icons/ban-svgrepo-com 1.png" alt="">
-                                    </button>
-                                    <?php include('../view/components/modalBlockUser.php'); ?>
-                                    <button type="button" class="openEditUser edit" data-id="<?php echo $usuario['codUsuario'] ?>">
-                                        <img src="../assets/images/icons/Vector.png" alt="">
-                                    </button>
 
-                                    <?php include('../view/components/editAccountModal.php'); ?>
-                                </div>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-
-                </tbody>
-            </table>
         </div>
     </div>
-
-    <script src="../assets/javascript/modais.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Seleciona todos os botões "Editar usuário" e adiciona um evento de clique a cada um
-            document.querySelectorAll('.openEditUser').forEach(function(button) {
-                button.addEventListener('click', function() {
-                    // Captura o ID do usuário associado ao botão clicado
-                    const userId = this.dataset.id;
-
-                    // Seleciona o modal "Editar usuário" correspondente ao usuário
-                    const modalEditUser = document.getElementById('modalEditUser_' + userId);
-
-                    // Exibe o modal
-                    modalEditUser.style.display = 'flex';
-                });
-            });
-
-            // Adiciona um evento de clique ao botão de fechar o modal de edição de usuário
-            document.querySelectorAll('.modalEditInfo #close').forEach(function(button) {
-                button.addEventListener('click', function() {
-                    // Oculta o modal
-                    this.closest('.modalEditInfo').style.display = 'none';
-                });
-            });
-        });
-    </script>
 
 </body>
 

@@ -98,12 +98,20 @@ class AdminDao
         $stmtBannedUsers->execute();
         $bannedUsersCount = $stmtBannedUsers->fetch(PDO::FETCH_ASSOC)['bannedUserCount'];
     
+        $queryCountBuys = "SELECT COUNT(*) AS countBuys FROM tbcompraitem WHERE MONTH(dataCompra) = ? AND DAY(dataCompra) = ?";
+        $stmtCountBuys = $conexao->prepare($queryCountBuys);
+        $stmtCountBuys->bindValue(1, date('n'));
+        $stmtCountBuys->bindValue(2, date('d'));
+        $stmtCountBuys->execute();
+        $countBuys = $stmtCountBuys->fetch(PDO::FETCH_ASSOC)['countBuys'];
+
         // Return counts in an associative array
         return [
             'adminCount' => $adminsCount,
             'userCount' => $usersCount,
             'activeUserCount' => $activeUsersCount,
-            'bannedUserCount' => $bannedUsersCount
+            'bannedUserCount' => $bannedUsersCount,
+            'countBuys' => $countBuys
         ];
     }
 
