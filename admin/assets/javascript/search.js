@@ -2,10 +2,10 @@ function searchUsers() {
     // Obtém o valor do campo de pesquisa
     var input = document.getElementById("searchInput");
     var filter = input.value.toUpperCase();
-    
+
     // Seleciona a tabela
     var table = document.querySelector("table");
-    
+
     // Seleciona todas as linhas da tabela
     var rows = table.querySelectorAll("tr");
 
@@ -15,7 +15,7 @@ function searchUsers() {
         var found = false;
 
         // Itera sobre as células da linha (começando da segunda célula)
-        for (var j = 1; j < cells.length; j++) {
+        for (var j = 0; j < 3; j++) { // Limitando a pesquisa às três primeiras colunas
             var cell = cells[j];
             if (cell) {
                 var txtValue = cell.textContent || cell.innerText;

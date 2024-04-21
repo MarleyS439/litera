@@ -1,10 +1,28 @@
 <?php
 require_once "../dao/compraItemDao.php";
 
-setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+// Array associativo com os nomes dos meses em português
+$meses = array(
+    1 => 'Janeiro',
+    2 => 'Fevereiro',
+    3 => 'Março',
+    4 => 'Abril',
+    5 => 'Maio',
+    6 => 'Junho',
+    7 => 'Julho',
+    8 => 'Agosto',
+    9 => 'Setembro',
+    10 => 'Outubro',
+    11 => 'Novembro',
+    12 => 'Dezembro'
+);
+
+// Obter o número do mês
+$numeroMes = date('n', strtotime($usuarioAutenticado['dataCriacao']));
 
 // Obter o nome do mês em português
-$mesPorExtenso = strftime("%B", strtotime($usuarioAutenticado['dataCriacao']));
+$mesPorExtenso = $meses[$numeroMes];
+
 
 ?>
 <div class="profile-menu">
@@ -54,7 +72,7 @@ $mesPorExtenso = strftime("%B", strtotime($usuarioAutenticado['dataCriacao']));
     </div>
     <div class="infomation-user">
         <div class="enter-coin">
-            <span>Entrou em <?php echo ucfirst($mesPorExtenso)?> de <?php echo explode("-", $usuarioAutenticado['dataCriacao'])[0] ?></span>
+            <span>Entrou em <?php echo ucfirst($mesPorExtenso) ?> de <?php echo explode("-", $usuarioAutenticado['dataCriacao'])[0] ?></span>
             <div class="coins">
                 <img src="../assets/images/icons/coin.svg" alt="">
                 <span><?php echo $usuarioAutenticado['dinheiroUsuario'] ?></span>
@@ -65,11 +83,11 @@ $mesPorExtenso = strftime("%B", strtotime($usuarioAutenticado['dataCriacao']));
             <div class="">
                 <span>Nível: <?php echo $usuarioAutenticado['nivel'] ?></span>
             </div>
-            
+
             <div class="">
                 <span>Quantidade de itens: <?php echo CompraItemDao::contByIdUser($usuarioAutenticado['codUsuario']) ?></span>
             </div>
-            
+
             <div class="">
                 <span>Melhor desempenho: </span>
             </div>
@@ -85,7 +103,7 @@ $mesPorExtenso = strftime("%B", strtotime($usuarioAutenticado['dataCriacao']));
                     <div class="progresso"></div>
                 </div>
             </div>
-    
+
         </div>
 
     </div>

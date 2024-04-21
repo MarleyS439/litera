@@ -69,8 +69,8 @@ $infos = AdminDao::selectAllLitera();
                 </div>
             </div>
 
-            <div>
-                <canvas id="myChart" class="chart-container" width="1160" height="300"></canvas>
+            <div class="chart-container-area">
+                <canvas id="myChart" class="chart-container" width="1175" height="300"></canvas>
             </div>
 
             <input type="hidden" name="mes" id="mes" value="<?php echo date('n') ?>">

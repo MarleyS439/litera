@@ -48,7 +48,7 @@ $usuarios = UsuarioDao::selectAll();
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>#   </th>
                         <th>Nome de usuário</th>
                         <th>E-mail</th>
                         <th>Pontuação</th>
