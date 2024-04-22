@@ -1,5 +1,4 @@
 <?php
-// session
 session_start();
 // verificação se o user esta logado
 if (!isset($_SESSION['authUser'])) {
@@ -54,6 +53,9 @@ if ($usuarioAutenticado['banido'] != 0) {
         
 
     <section class="jogo">
+        
+
+
         <div class="area-jogo">
             <div class="final" id="finalizar">
                 <div class="text-fim">
@@ -96,6 +98,9 @@ if ($usuarioAutenticado['banido'] != 0) {
                 
             </div>
             <div class="area-itens">
+                
+                
+
                 <div class="repetir" id='repetir'>
                     <img class="audioRepetir" src="img/jogoFruta/audio.svg" alt="audio">
                 </div>

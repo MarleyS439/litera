@@ -1,0 +1,70 @@
+/* Importação de fontes tipográficas locais */
+@font-face {
+    font-family: "Poppins-Black";
+    src: url(../fonts/Poppins/Poppins-Black.ttf);
+}
+
+@font-face {
+    font-family: "Poppins-BlackItalic";
+    src: url(../fonts/Poppins/Poppins-BlackItalic.ttf);
+}
+
+@font-face {
+    font-family: "Poppins-Bold";
+    src: url(../fonts/Poppins/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Poppins-Regular";
+    src: url(../fonts/Poppins/Poppins-Regular.ttf);
+}
+
+:root {
+    /* Colors */
+    --blue0: #ebf7ff;
+    --blue2: #6ac3fa;
+    --blue3: #1187cf;
+    --blue4: #1639b1;
+    --blue5: #1639b1;
+    --blue6: #4180AB;
+    --white: #ffffff;
+    --black: #000;
+    --gray: #353636;
+    --light-gray: #c9d3d9;
+    --light-gray2: #bdd1de;
+    --primary-color: #191919;
+    --primary: #408cf9;
+    --sidebar-primary-hover: #2b2b2f;
+    --sidebar-background: #141318;
+    --background: #f3f5f6;
+    --text-link: #ffffff;
+    --expand-button: #408cf9;
+    --logout: #fa7575;
+    --search-background: #2b2b2f;
+    --primary-color: #191919;
+    --primary: #408cf9;
+    --white: #ffffff;
+    --sidebar-primary-hover: #2b2b2f;
+    --sidebar-background: #141318;
+    --background: #f3f5f6;
+    --text-link: #ffffff;
+    --expand-button: #408cf9;
+    --logout: #fa7575;
+    --search-background: #2b2b2f;
+
+    /* Fontes */
+    --font-poppins-regular: 'Poppins-Regular';
+}
+
+/* Estilos de toda a página */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-poppins-regular);
+}
+
+
+body {
+    background-color: var(--blue0);
+}

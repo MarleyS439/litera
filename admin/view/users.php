@@ -19,36 +19,50 @@ $usuarios = UsuarioDao::selectAll();
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="Illumi">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../admin/assets/css/admin.css">
+    <link rel="shortcut icon" href="../../assets/images/icons/favicon.ico" type="image/x-icon">
     <title>Administrador | Usuários</title>
-    <link rel="stylesheet" href="../../admin/assets/css/sidebar-admin.css">
-    <link rel="shortcut icon" href="../assets/images/icons/Litera Icon2.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../../admin/assets/css/users.css">
 </head>
 
 <body>
 
     <div class="sides">
-
         <?php include('../view/components/sidebar-admin.php'); ?>
-
         <div class="information">
+
             <div class="title">
                 <h2>Usuários cadastrados</h2>
             </div>
-            <!-- Nesta table, deve ser feito um foreach para resgatar os usuários cadastrados.-->
+
+            <!-- Caixa de pesquisa de usuários -->
             <div class="search-container">
-                <h2 class="title-search">Pesquisa: </h2>
-                <input type="text" id="searchInput" class="input-search" placeholder="Nome, E-mail e ID" onkeyup="searchUsers()">
+                <div class="ce">
+                    <span class="title-search">
+                        <span>Pesquisar</span>
+                        <img src="../assets/images/icons/search-svgrepo-com.svg" alt="">
+                    </span>
+                    <input type="text" id="searchInput" class="input-search" placeholder="Nome, E-mail e ID" onkeyup="searchUsers()">
+                </div>
+
+                <div class="">
+                    <span>Filtrar</span>
+                    <select name="filtro" id="">
+                        <option value="Ativos">Ativos</option>
+                        <option value="Banidos">Banidos</option>
+                    </select>
+                </div>
             </div>
+
+
+            <!-- Tabela de listagem de usuários -->
             <table>
                 <thead>
                     <tr>
-                        <th>#   </th>
+                        <th># </th>
                         <th>Nome de usuário</th>
                         <th>E-mail</th>
                         <th>Pontuação</th>
@@ -58,6 +72,7 @@ $usuarios = UsuarioDao::selectAll();
                         <th>Ação</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     <?php foreach ($usuarios as $usuario) : ?>
                         <tr>
@@ -68,17 +83,20 @@ $usuarios = UsuarioDao::selectAll();
                             <td><?php echo $usuario['dinheiroUsuario'] ?></td>
                             <td><?php echo $usuario['nivel'] ?></td>
                             <td><?php echo ($usuario['banido'] != 0) ? "Banido" : "Ativo"; ?></td>
-                            <td>
+                            <td class="action">
                                 <div class="btn-action">
+
                                     <?php if (!$usuario['banido']) : ?>
                                         <button type="submit" class="openBlockUser block banir" data-id="<?php echo $usuario['codUsuario'] ?>">
                                             <img src="../assets/images/icons/ban-svgrepo-com 1.png" alt="block">
                                         </button>
                                     <?php else : ?>
+
                                         <button type="submit" class="openBlockUser block banir-refazer" data-id="<?php echo $usuario['codUsuario'] ?>">
                                             <img src="../assets/images/icons/check.svg" alt="block">
                                         </button>
                                     <?php endif; ?>
+
                                     <?php include('../view/components/modalBlockUser.php'); ?>
                                     <button type="button" class="openEditUser edit" data-id="<?php echo $usuario['codUsuario'] ?>">
                                         <img src="../assets/images/icons/Vector.png" alt="edit">
@@ -92,6 +110,7 @@ $usuarios = UsuarioDao::selectAll();
 
                 </tbody>
             </table>
+
         </div>
     </div>
 

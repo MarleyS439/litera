@@ -19,21 +19,19 @@ $usuarios = UsuarioDao::selectAll();
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
     <meta name="author" content="Illumi">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrador | Loja</title>
-    <link rel="shortcut icon" href="../assets/images/icons/Litera Icon2.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../../admin/assets/css/users.css">
+    <link rel="shortcut icon" href="../../assets/images/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../admin/assets/css/admin.css">
     <link rel="stylesheet" href="../../admin/assets/css/sidebar-admin.css">
+
+    <title>Administrador | Loja</title>
 </head>
 
 <body>
     <div class="sides">
         <?php include('../view/components/sidebar-admin.php'); ?>
-        
+
         <div class="information">
             <div class="information-home">
                 <div class="flex-title">
@@ -48,9 +46,9 @@ $usuarios = UsuarioDao::selectAll();
                     </div>
                 </div>
                 <div class="modalAreaCenter">
-                    <?php require_once('./components/addItemModal.php'); ?>
+                    <?php require_once('./components/modal.php'); ?>
                 </div>
-                <div class="container-loja"> 
+                <div class="container-loja">
                     <div class="card-container">
                         <h4>Sem dados</h4>
                         <div class="card">

@@ -151,9 +151,14 @@ function fazerPergunta() {
   let silabasSelecionadas = [];
   let areaSilabas = [];
 
+  
+
+
+
   // Função para responder à pergunta
   function responderPergunta(silaba) {
     if (perguntaAtual === 0 && audioAtual === 0) {
+      
       if (silaba === silaba1) {
         silabaSrc = "Falas Jogo Silabas/maça/ça.mp3";
         audio.src = silabaSrc;

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,7 +16,7 @@
 basta você usar :root assim você irá criar variaveis de cores para o seu webSite Ass: Matheus */
 
 /* Cores */
-:root{
+:root {
     --branco: #FFFFFF;
     --header: #1C96E1;
     --fundo: #C1E6FD;
@@ -40,7 +40,7 @@ basta você usar :root assim você irá criar variaveis de cores para o seu webS
 }
 
 /* Arredondamento de Bordas */
-:root{
+:root {
     --R-areaJogoBorda: 10px;
     --R-btnBorda: 10px;
     --R-barraBorda: 5px;
@@ -52,7 +52,7 @@ basta você usar :root assim você irá criar variaveis de cores para o seu webS
 }
 
 /* TAMANHOS */
-:root{
+:root {
     --T-btnAvanc: 50px;
     --T-nav: 30px;
     --T-avatar: 30px;
@@ -63,21 +63,21 @@ basta você usar :root assim você irá criar variaveis de cores para o seu webS
 
 
 /* Letras Header */
-:root{
+:root {
     --F-logoHeader: 1.3rem;
     --F-nomeHeader: .7rem;
     --F-btnAvanc: 2rem;
-    --F-weightBold:  bold;
-    --F-weight500:  500;
-    --F-weight600:  600;
-    --F-weight700:  700;
-    --F-weight800:  800;
-    --F-weight900:  900;
+    --F-weightBold: bold;
+    --F-weight500: 500;
+    --F-weight600: 600;
+    --F-weight700: 700;
+    --F-weight800: 800;
+    --F-weight900: 900;
 }
 
 
 /* Padding e Margin */
-:root{
+:root {
     --P-Box-mensagem: 8px;
     --P-mensagem: 10px;
     --M-right: 10px;
@@ -90,9 +90,10 @@ basta você usar :root assim você irá criar variaveis de cores para o seu webS
 }
 
 /* Texto Jogo */
-:root{
+:root {
     --textoDesk1366: .6rem;
 }
+
 /* Para fazer o uso dessas variaveis você usa  var(--header) por exemplo "background: var(--header);" */
 
 /***
@@ -103,7 +104,7 @@ basta você usar :root assim você irá criar variaveis de cores para o seu webS
 /***
 ****CORPO DO SITE!****
 ***/
-body{
+body {
     width: 100%;
     height: 100vh;
     max-width: 1920px;
@@ -118,7 +119,7 @@ body{
 ***/
 
 
-.headerNav{
+.headerNav {
     background-color: var(--header);
     width: 100%;
     padding: var(--P-header);
@@ -128,17 +129,18 @@ body{
     position: fixed;
 }
 
-.headerNav .logo{
+.headerNav .logo {
     font-weight: var(--F-weightBold);
     font-size: var(--F-logoHeader);
     color: var(--branco);
 }
 
-.navbar .ulNav{
+.navbar .ulNav {
     display: flex;
     gap: 30px;
 }
-.ulNav .liNav{
+
+.ulNav .liNav {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,35 +148,41 @@ body{
     height: var(--T-nav);
     border-radius: var(--R-nav);
     overflow: hidden;
-    
+
 
 }
-.ulNav .liNav:nth-child(1){
+
+.ulNav .liNav:nth-child(1) {
     background-color: var(--branco);
 }
-.ulNav .liNav a{
+
+.ulNav .liNav a {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
 }
-.ulNav .liNav img{
+
+.ulNav .liNav img {
     width: 15px;
     height: 15px;
 }
-.headerNav .perfil{
+
+.headerNav .perfil {
     gap: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.headerNav .perfil .avatar{
+
+.headerNav .perfil .avatar {
     width: var(--T-avatar);
     height: var(--T-avatar);
     border-radius: var(--R-avatar);
 }
-.headerNav .perfil .nomeUser{
+
+.headerNav .perfil .nomeUser {
     font-size: var(--F-nomeHeader);
     color: var(--branco);
 }
@@ -186,7 +194,7 @@ body{
 
 
 /***** CONTAINER PARA O JOGO! *****/
-.container{
+.container {
     background: var(--fundo);
     width: 100%;
     height: 100%;
@@ -194,12 +202,13 @@ body{
     align-items: center;
     justify-content: center;
 }
+
 /***** FIM CONTAINER PARA O JOGO! *****/
 
 /***** INICIO JOGO! *****/
 
 
-.area-jogo .comeco{
+.area-jogo .comeco {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -210,7 +219,8 @@ body{
     background: #000000d3;
     z-index: 2;
 }
-.comeco .btnComecar{
+
+.comeco .btnComecar {
     padding: 15px;
     cursor: pointer;
     border: 2px solid var(--border-fim);
@@ -221,6 +231,7 @@ body{
     color: var(--branco);
     text-shadow: 0px 0px 5px var(--text-fim);
 }
+
 .area-jogo {
     position: relative;
     display: flex;
@@ -249,14 +260,15 @@ body{
 
 
 
-.area-jogo .barra{
+.area-jogo .barra {
     display: flex;
     justify-content: center;
     align-items: end;
     width: 100%;
     height: 11%;
 }
-.barra .contagem{
+
+.barra .contagem {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -267,7 +279,8 @@ body{
     overflow: hidden;
 
 }
-.barra .contagem::after{
+
+.barra .contagem::after {
     position: absolute;
     content: '';
     left: 2%;
@@ -277,12 +290,14 @@ body{
     width: 96%;
     background: #ffffff93;
 }
-.barra .contagem .cor{
+
+.barra .contagem .cor {
     background-color: transparent;
     width: 100%;
     height: 100%;
 }
-.barra .contagem .cor{
+
+.barra .contagem .cor {
     background-color: transparent;
     width: 100%;
     height: 100%;
@@ -290,7 +305,7 @@ body{
 
 
 
-.area-jogo .box-mensagem{
+.area-jogo .box-mensagem {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -298,7 +313,8 @@ body{
     height: 20%;
     padding: var(--P-Box-mensagem);
 }
-.area-jogo .box-mensagem .mensagem{
+
+.area-jogo .box-mensagem .mensagem {
     display: flex;
     align-items: center;
     height: 100%;
@@ -308,7 +324,7 @@ body{
     padding: var(--P-mensagem);
 }
 
-.mensagem .texto{
+.mensagem .texto {
     color: var(--branco);
     font-size: var(--textoDesk1366);
     text-align: center;
@@ -317,19 +333,21 @@ body{
 }
 
 
-.area-jogo .letra{
+.area-jogo .letra {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 15%;
 }
-.area-jogo .letra img{
+
+.area-jogo .letra img {
     height: var(--T-letraFalada);
     width: var(--T-letraFalada);
     display: none;
 }
-.area-jogo .balao{
+
+.area-jogo .balao {
     display: flex;
     gap: 30%;
     flex-direction: row;
@@ -338,13 +356,14 @@ body{
     width: 100%;
     height: 30%;
 }
-.area-jogo .balao img{
+
+.area-jogo .balao img {
     display: none;
     width: var(--T-balaoW);
     height: var(--T-balaoH);
 }
 
-.area-jogo .balao img:nth-child(3){
+.area-jogo .balao img:nth-child(3) {
     cursor: pointer;
 }
 
@@ -357,7 +376,7 @@ body{
 /* 
 **** BOTAO QUE VERIFICA SE ESTA CORRETO ****
 */
-.area-jogo .botao{
+.area-jogo .botao {
     position: absolute;
     bottom: 0;
     margin-bottom: 8%;
@@ -366,7 +385,8 @@ body{
     justify-content: center;
     width: 100%;
 }
-.botao .verific{
+
+.botao .verific {
 
     display: none;
     align-items: center;
@@ -378,10 +398,11 @@ body{
     border: 2px solid var(--borda-btnOff);
 }
 
-.botao .verific img{
+.botao .verific img {
     width: 20px;
 }
-.botao .verific2{
+
+.botao .verific2 {
     display: none;
     align-items: center;
     justify-content: center;
@@ -392,7 +413,7 @@ body{
     border: 2px solid var(--borda-btnOn);
 }
 
-.botao .verific2 img{
+.botao .verific2 img {
     width: 20px;
 }
 
@@ -411,7 +432,7 @@ body{
 
 
 
-.area-jogo .btnProx{
+.area-jogo .btnProx {
     position: absolute;
     right: var(--M-right);
     bottom: var(--M-bottom);
@@ -427,7 +448,7 @@ body{
     z-index: 1;
 }
 
-.area-jogo .proximo{
+.area-jogo .proximo {
     display: none;
     position: absolute;
     width: 100%;
@@ -446,13 +467,13 @@ body{
 }
 
 @keyframes proxima {
-    0%{
+    0% {
         right: 40px;
     }
-    100%{
+
+    100% {
         right: 60px;
-        transform: scale(1.3) 
-                   rotate(90deg);
+        transform: scale(1.3) rotate(90deg);
     }
 }
 
@@ -487,7 +508,7 @@ body{
 
 
 
-.area-jogo .tutorial{
+.area-jogo .tutorial {
     position: absolute;
     display: none;
     align-items: center;
@@ -496,14 +517,15 @@ body{
     width: 100%;
     height: 100%;
 }
-.tutorial .text-fim{
+
+.tutorial .text-fim {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 50%;
 }
 
-.text-fim p{
+.text-fim p {
     margin-top: 15%;
     display: flex;
     align-items: center;
@@ -518,13 +540,15 @@ body{
     border: 2px solid var(--border-fim);
     border-radius: var(--R-BtnFim-e-Text-Fim);
 }
-.tutorial .btn-fim{
+
+.tutorial .btn-fim {
     gap: 20%;
     display: flex;
     justify-content: center;
     width: 100%;
     height: 50%;
 }
+
 .btn-fim .btnFinal {
     margin-top: 10%;
     display: flex;
@@ -535,7 +559,8 @@ body{
     border-radius: var(--R-BtnFim-e-Text-Fim);
     cursor: pointer;
 }
-.btn-fim .btnFinal img{
+
+.btn-fim .btnFinal img {
     width: 35px;
 }
 
@@ -543,12 +568,13 @@ body{
 
 
 
-.btn-fim .btnFinal:nth-child(2){
+.btn-fim .btnFinal:nth-child(2) {
     position: relative;
     border: 2px solid var(--borda-btnFim1);
     background-color: var(--cor-btnFim1);
 }
-.btn-fim .btnFinal:nth-child(2)::after{
+
+.btn-fim .btnFinal:nth-child(2)::after {
     position: absolute;
     content: 'Avançar';
     font-weight: 600;
@@ -557,12 +583,13 @@ body{
     text-shadow: 0px 0px 5px var(--borda-btnFim1);
 }
 
-.btn-fim .btnFinal:nth-child(1){
+.btn-fim .btnFinal:nth-child(1) {
     position: relative;
     border: 2px solid var(--borda-btnFim2);
     background-color: var(--cor-btnFim2);
 }
-.btn-fim .btnFinal:nth-child(1)::after{
+
+.btn-fim .btnFinal:nth-child(1)::after {
     position: absolute;
     content: 'Recomeçar';
     font-weight: 600;
@@ -597,7 +624,7 @@ body{
 
 
 
-.area-jogo .selecao{
+.area-jogo .selecao {
     display: none;
     position: absolute;
     width: 100%;
@@ -616,53 +643,46 @@ body{
 
 
 @keyframes mao {
-    0%{
+    0% {
         bottom: 0%;
         right: 0%;
     }
-    25%{
+
+    25% {
         bottom: 35%;
         right: 42%;
-        transform: rotate(-30deg)
-        rotateY(40deg);
-        
+        transform: rotate(-30deg) rotateY(40deg);
+
     }
-    30%{
+
+    30% {
         bottom: 35%;
         right: 42%;
         transform: scale(.5) rotate(-30deg);
-        
+
     }
-    60%{
+
+    60% {
         bottom: 35%;
         right: 42%;
         transform: scale(1);
     }
-    80%{
+
+    80% {
         bottom: 2%;
         right: 42%;
     }
-    90%{
+
+    90% {
         bottom: 2%;
         right: 42%;
-        transform: scale(.7)
-        rotate(-30deg)
-        rotateY(40deg);
+        transform: scale(.7) rotate(-30deg) rotateY(40deg);
     }
-    100%{
+
+    100% {
         bottom: 2%;
         right: 42%;
         transform: scale(1.2);
     }
-    
+
 }
-
-
-
-
-
-
-
-
-
-

@@ -8,8 +8,8 @@
     <meta name="keywords" content="">
     <meta name="author" content="Illumi">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Litera</title>
-    <link rel="shortcut icon" href="../assets/images/icons/Litera Icon2.ico" type="image/x-icon">
+    <title>Litera | Finalizar cadastro</title>
+    <link rel="shortcut icon" href="../assets/images/icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../assets/css/register.css">
 </head>
 
@@ -29,32 +29,17 @@
 
         <div class="sideb">
             <div class="title-form">
-                <h2>Seja bem-vindo</h2>
-                <span>Vamos criar a sua conta</span>
+                <h2>Olá, $nome_responsavel</h2>
+                <span>Precisamos de mais algumas informações</span>
             </div>
 
             <form action="" method="post">
                 <div class="inputs">
-                    <label for="responsavel">Nome do responsável</label>
-                    <input type="text" name="nome_responsavel" id="responsavel" placeholder="Nome completo" required>
+                    <label for="crianca">Nome da criança</label>
+                    <input type="text" name="nome_crianca" id="crianca" placeholder="Digite o nome do seu filho(a) ou tutelada" required>
                 </div>
 
-                <div class="inputs">
-                    <label for="email">E-mail</label>
-                    <input type="email" name="email_responsavel" id="email" placeholder="Digite seu melhor e-mail" required>
-                </div>
-
-                <div class="inputs">
-                    <label for="senha">Senha</label>
-                    <input type="password" name="passe" id="senha" placeholder="Palavra passe" required>
-                </div>
-
-                <div class="inputs">
-                    <label for="comfirm">Confirmar senha</label>
-                    <input type="password" name="confirm_pass" id="confirm" placeholder="Confirmar palavra passe" required>
-                </div>
-
-               <!-- <div class="t-inputs">
+                <div class="t-inputs">
                     <div class="inputs">
                         <label for="idade">Nascimento</label>
                         <input type="date" name="idade_crianca" id="idade" placeholder="">
@@ -68,11 +53,6 @@
                             <option value="Feminino">Feminino</option>
                         </select>
                     </div>
-                </div> -->
-
-                <div class="non">
-                    <p>Já possui cadastro?</p>
-                    <a href="login.php">Faça login</a>
                 </div>
 
                 <div class="advisor">
@@ -81,7 +61,7 @@
 
                 <div class="send">
                     <button type="submit">
-                        <span>Próximo</span>
+                        <span>Continuar</span>
                         <img src="../assets/images/icons/next-svgrepo-com.svg" alt="">
                     </button>
                 </div>

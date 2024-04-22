@@ -7,7 +7,9 @@
         flex-direction: column;
         padding: 5%;
         justify-content: center;
-        background-color: var(--dark-blue);
+        background-image: url(../images/v1015-104a\ 3.png);
+        background-repeat: no-repeat;
+        background-size: cover;
         height: 100vh;
         -webkit-animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
         animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
@@ -102,7 +104,9 @@
 
     .sidea {
         color: var(--white);
-        background-color: var(--dark-blue);
+        background-image: url(../images/v1015-104a\ 3.png);
+        background-repeat: no-repeat;
+        background-size: cover;
         padding: 5%;
         width: 70vw;
     }
@@ -114,6 +118,10 @@
         flex-direction: column;
         left: 10%;
         transition: 300ms ease-in-out;
+    }
+
+    .lit span {
+        margin-top: -3%;
     }
 
     .litera img {
@@ -222,18 +230,24 @@
 
     .sidea {
         color: var(--white);
-        background-color: var(--dark-blue);
+        background-image: url(../images/v1015-104a\ 3.png);
+        background-repeat: no-repeat;
+        background-size: cover;
         padding: 5%;
         width: 70vw;
     }
 
     .lit {
         display: flex;
-        justify-content: left;
+        justify-content: center;
         position: relative;
         flex-direction: column;
-        left: 20%;
+        align-items: center;
         transition: 300ms ease-in-out;
+    }
+
+    .lit span {
+        margin-top: -3%;
     }
 
     .litera img {
@@ -243,11 +257,13 @@
 
     .sidea h2 {
         font-family: var(--font-poppins-bold);
-        font-size: 5rem;
+        font-size: 6rem;
+        text-shadow: 1px 1px 1px #00000070;
     }
 
     .sidea span {
         font-family: var(--font-poppins-bold);
+        text-shadow: 1px 1px 1px #00000070;
     }
 
     .litera {
@@ -330,6 +346,17 @@
         width: 20px;
         height: auto;
         margin: 5px;
+    }
+
+    .non {
+        display: flex;
+        margin-top: 2%;
+    }
+
+    .non a {
+        text-decoration: none;
+        color: var(--blue3);
+        margin: 0px 10px;
     }
 
 }

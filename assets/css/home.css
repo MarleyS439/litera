@@ -187,6 +187,7 @@
 
     /* Tablets */
 }
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .mobile-view {
         display: none;
@@ -928,20 +929,90 @@
     .img-logoff {
         width: 32px;
     }
-    .label-progresso{
+
+    .label-progresso {
         font-size: 14px;
         text-align: center;
     }
-    .barra{
+
+    .barra {
         width: 100%;
         height: 20px;
         padding: 1px 1px;
         border-radius: 10px;
         border: solid 2px var(--blue6);
     }
-    .barra .progresso{
+
+    .barra .progresso {
         background-color: var(--blue6);
         height: 100%;
         border-radius: 10px;
     }
+
+    /* Referente a tela de fases desktop */
+    .game {
+        position: relative;
+        left: 50%;
+        padding: 1%;
+        margin: 0% 0% 5% 0%;
+        text-decoration: none;
+        color: var(--black2);
+        transition: 200ms ease-in-out;
+    }
+
+    .background-card-game {
+        border: 5px solid var(--blue2);
+        background-image: url(../images/fase/Frame\ 59\ 1.svg);
+        width: 50vw;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 25px;
+        height: 20vh;
+        box-shadow: 1px 5px 1px #00000020;
+    }
+
+    .game .title-game-map p {
+        font-family: var(--font-poppins-bold);
+        margin: 1% 0%;
+        font-size: 1.8rem;
+        text-align: center;
+        color: #1C96E1;
+    }
+
+    .fase-list {
+        position: relative;
+        bottom: 40%;
+        right: 48%;
+        margin-top: 30vh;
+        margin-bottom: 10vh;
+    }
+    .game-0{
+        position: relative;
+        right: 5vw;
+    }
+    .game-1 {
+        position: relative;
+        left: 0vw;
+    }
+
+    .game-2 {
+        position: relative;
+        left: 5vw;
+    }
+
+    .game-3 {
+        position: relative;
+        left: 2vw;
+    }
+
+    .game-4 {
+        position: relative;
+        right: 2vw;
+    }
+
+    .game-5 {
+        position: relative;
+        left: 10vw;
+    }
+
 }

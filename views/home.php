@@ -51,12 +51,12 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
     }
     ?>
     <title>Litera | Início</title>
-    <style>
+    <!--<style>
         /* Estilo da div com base na porcentagem */
         .barra .progresso {
             width: <?php echo $porcentagem; ?>%;
         }
-    </style>
+    </style> -->
 </head>
 
 <body>
@@ -88,7 +88,7 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
                     </div>
                 </a>
                 <?php }else{ ?>
-                    <a class="game-item" id="first" href="../views/jogo/balao.php">
+                    <a class="game-item" id="first" href="../views/jogo/map.php">
                     <div class="title-game-item">
                         <p>Caça às vogais</p>
                         <div class="bg-game"></div>
