@@ -261,7 +261,7 @@
             </div>
 
             <div id="div-social-media">
-                <img id="img-litera" src="./assets/images/litera-img.png">
+                <img id="img-litera" src="./assets/images/footer/Litera.png">
                 <hr>
                 <div id="div-social-media-img">
                     <div id="div-img">
@@ -282,11 +282,11 @@
 
         <div id="footer-2">
             <div id="div-saiba-mais">
-                <h3 id="saiba-mais-titulo">saiba mais</h3>
-                <p id="info-saiba-mais"> perguntas frequentes (FAQ) </p>
-                <p id="info-saiba-mais"> politica de privacidade </p>
-                <p id="info-saiba-mais"> termos de serviço </p>
-                <p id="info-saiba-mais"> central de ajuda e suporte </p>
+                <h3 id="saiba-mais-titulo">Saiba mais</h3>
+                <p id="info-saiba-mais"> Perguntas frequentes (FAQ) </p>
+                <p id="info-saiba-mais"> Politica de privacidade </p>
+                <p id="info-saiba-mais"> Termos de serviço </p>
+                <p id="info-saiba-mais"> Central de ajuda e suporte </p>
 
             </div>
 

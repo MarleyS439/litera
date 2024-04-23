@@ -14,8 +14,10 @@
 </head>
 
 <body>
+    
+
     <!-- Views de desktop -->
-    <div class="desktop-screen">
+    <!-- <div class="desktop-screen">
 
         <div class="container-desktop">
 
@@ -74,10 +76,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- View de tablet e mobile -->
-    <div class="mobile-screen">
+    <!-- <div class="mobile-screen">
         <div class="logo">
             <img src="../assets/images/LOGOTIPO (cópia).png" alt="">
         </div>
@@ -104,7 +106,7 @@
 
             </form>
         </div>
-    </div>
+    </div> -->
 
 </body>
 

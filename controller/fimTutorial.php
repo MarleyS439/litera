@@ -10,7 +10,7 @@
     // var_dump($usuarioAutenticado['cod'])
     try {
         $usuarioDao = UsuarioDao::setTutorial($usuarioAutenticado['cod'], $tutorialStatus);
-        header("Location: ../views/home.php");
+        header("Location: ../views/map.php");
     }
     catch (Exception $e) {
         echo 'Exceção capturada: ',  $e->getMessage(), "\n";

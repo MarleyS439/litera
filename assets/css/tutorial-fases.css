@@ -2,7 +2,7 @@
 @import url(./animations.css);
 
 /* Mobile */
-/* @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
     body {
         overflow: hidden;
@@ -12,6 +12,11 @@
         -webkit-animation: pulsate-fwd 1s ease-in-out infinite both;
         animation: pulsate-fwd 1s ease-in-out infinite both;
         z-index: 2000;
+        background-color: white;
+        border-radius: 45%;
+    }
+    #game-0 p{
+        animation: none;
     }
 
     #aa {
@@ -48,7 +53,7 @@
         background-color: var(--blue0);
         padding: 10px;
     }
-} */
+} 
 
 /* Tablets */
 /* @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -77,7 +82,7 @@
     #first p {
         color: var(--black2);
     }
-} */
+}
 
 /* Desktops */
 @media screen and (min-width: 1025px) {

@@ -24,7 +24,7 @@ if ($usuarioAutenticado['banido'] != 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../assets/css/home.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/map.css">
     <?php
     if ($usuarioAutenticado['tutorial'] == 0) {
         echo '<link rel="stylesheet" type="text/css" href="../../assets/css/tutorial-fases.css">';
@@ -39,9 +39,48 @@ if ($usuarioAutenticado['banido'] != 0) {
 
     </div>
     <div class="desktop-view">
-        <?php
-        include('../../views/components/navbarHome.php');
-        ?>
+
+
+        <nav class="navbar">
+            <div class="logo-area">
+                <img src="../../assets/images/litera.png" alt="Litera">
+                <span>Litera</span>
+            </div>
+
+            <div class="navigation">
+                <ul>
+                    <li class="home-icon">
+                        <a href="#">
+                            <svg width="28" height="31">
+                                <image href="../../assets/images/icons/home-icon-desktop.svg" width="28" height="31" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="store-icon">
+                        <a href="#">
+                            <svg width="28" height="31">
+                                <image href="../../assets/images/icons/store-icon-desktop.svg" width="28" height="31" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <!-- <div class="profile">
+        <div class="profile-pic">
+            <span><?php echo $usuarioAutenticado['nome'] ?></span>
+            <img src="../assets/images/icons/profile.svg" alt="">
+        </div>
+    </div> -->
+            <div>
+                <a href="../controller/logoutUser.php" title="logout">
+                    <img class="img-logoff" src="../../assets/images/icons/exit-svgrepo-com.svg" alt="exit">
+                </a>
+
+            </div>
+        </nav>
+
         <div class="overlay-itens2"></div>
 
         <div class="top-bar">
@@ -61,7 +100,7 @@ if ($usuarioAutenticado['banido'] != 0) {
             <div class="games-list-map">
                 <a class="game" id="t">
 
-                    <div class="background-card-game" id="aa"></div>
+                    <div class="background-card-game" id="aa"></div>    
                     <div class="title-game-map" id="aa">
                         <p>Caça às Letras</p>
                     </div>
@@ -94,7 +133,7 @@ if ($usuarioAutenticado['banido'] != 0) {
                     <div class="game-2">
                         <p>Fase 2</p>
                         <?php
-                        if ($usuarioAutenticado['pontuacaoUsuario'] >= 100 and $usuarioAutenticado['pontuacaoUsuario'] < 260) {
+                        if ($usuarioAutenticado['nivel'] >= 2 and $usuarioAutenticado['nivel'] < 3) {
                         ?>
                             <a href="../jogo/balao.php">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
@@ -109,7 +148,7 @@ if ($usuarioAutenticado['banido'] != 0) {
                     <div class="game-3">
                         <p>Fase 3</p>
                         <?php
-                        if ($usuarioAutenticado['pontuacaoUsuario'] >= 260 and $usuarioAutenticado['pontuacaoUsuario'] < 420) {
+                        if ($usuarioAutenticado['nivel'] >= 3 and $usuarioAutenticado['nivel'] < 4) {
                         ?>
                             <a href="../jogo/balao.php">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
@@ -124,7 +163,7 @@ if ($usuarioAutenticado['banido'] != 0) {
                     <div class="game-4">
                         <p>Fase 3</p>
                         <?php
-                        if ($usuarioAutenticado['pontuacaoUsuario'] >= 420 and $usuarioAutenticado['pontuacaoUsuario'] < 800) {
+                        if ($usuarioAutenticado['nivel'] >= 4 and $usuarioAutenticado['nivel'] < 5) {
                         ?>
                             <a href="#">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
@@ -161,10 +200,10 @@ if ($usuarioAutenticado['banido'] != 0) {
         <main>
 
             <div class="games-list-map">
-                <a class="game" id="t">
+                <a class="game" >
 
-                    <div class="background-card-game" id="aa"></div>
-                    <div class="title-game-map" id="aa">
+                    <div class="background-card-game"></div>
+                    <div class="title-game-map" >
                         <p>Caça às Letras</p>
                     </div>
                 </a>
@@ -172,10 +211,10 @@ if ($usuarioAutenticado['banido'] != 0) {
             </div>
             <div class="fase-list">
                 <div>
-                    <div class="game-0">
+                    <div class="game-0" id="t">
                         <p>Tutorial</p>
                         <a href="../tutorial/tutorial-jogo1/tutorial.php">
-                            <img src="../../assets/images/fase/map-on.png" alt="">
+                            <img  id="aa" src="../../assets/images/fase/map-on.png" alt="">
                         </a>
                     </div>
                     <div class="game-1">
@@ -196,45 +235,45 @@ if ($usuarioAutenticado['banido'] != 0) {
                     <div class="game-2">
                         <p>Fase 2</p>
                         <?php
-                        if ($usuarioAutenticado['tutorial'] == 0) {
+                        if ($usuarioAutenticado['nivel'] >= 2 and $usuarioAutenticado['nivel'] < 3) {
                         ?>
-                            <a href="#">
-                                <img src="../../assets/images/fase/map-off.png" alt="">
+                            <a href="../jogo/balao.php">
+                                <img src="../../assets/images/fase/map-on.png" alt="">
                             </a>
 
                         <?php } else { ?>
-                            <a href="../jogo/balao.php">
-                                <img src="../../assets/images/fase/map-on.png" alt="">
+                            <a href="#">
+                                <img src="../../assets/images/fase/map-off.png" alt="">
                             </a>
                         <?php } ?>
                     </div>
                     <div class="game-3">
                         <p>Fase 3</p>
                         <?php
-                        if ($usuarioAutenticado['tutorial'] == 0) {
+                        if ($usuarioAutenticado['nivel'] >= 3 and $usuarioAutenticado['nivel'] < 4) {
                         ?>
-                            <a href="#">
-                                <img src="../../assets/images/fase/map-off.png" alt="">
+                            <a href="../jogo/balao.php">
+                                <img src="../../assets/images/fase/map-on.png" alt="">
                             </a>
 
                         <?php } else { ?>
-                            <a href="../jogo/balao.php">
-                                <img src="../../assets/images/fase/map-on.png" alt="">
+                            <a href="#">
+                                <img src="../../assets/images/fase/map-off.png" alt="">
                             </a>
                         <?php } ?>
                     </div>
                     <div class="game-4">
                         <p>Fase 3</p>
                         <?php
-                        if ($usuarioAutenticado['tutorial'] == 0) {
+                        if ($usuarioAutenticado['nivel'] >= 4 and $usuarioAutenticado['nivel'] < 5) {
                         ?>
                             <a href="#">
-                                <img src="../../assets/images/fase/map-off.png" alt="">
+                                <img src="../../assets/images/fase/map-on.png" alt="">
                             </a>
 
                         <?php } else { ?>
                             <a href="#">
-                                <img src="../../assets/images/fase/map-on.png" alt="">
+                                <img src="../../assets/images/fase/map-off.png" alt="">
                             </a>
                         <?php } ?>
                     </div>

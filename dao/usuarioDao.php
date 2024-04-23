@@ -110,6 +110,17 @@ class UsuarioDao
         $stmt->bindValue(2, $cod);
         return $stmt->execute();
     }
+    public static function searchUser($dados)
+    {
+        $conexao = Conexao::conectar();
+        $query = "SELECT * FROM tbusuario WHERE nomeUsuario LIKE :search";
+        $stmt = $conexao->prepare($query);
+        $search = "%$dados%";
+        $stmt->bindParam(':search', $search, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
     public static function checkCredentials($emailUsuario, $senhaUsuario)
     {
         $conexao = Conexao::conectar();
@@ -162,6 +173,6 @@ class UsuarioDao
         $stmt->bindValue(1, $pontuacaoTotal);
         $stmt->bindValue(2, $nivel);
         $stmt->bindValue(3, $id);
-        return $stmt->execute();   
+        return $stmt->execute();
     }
 }

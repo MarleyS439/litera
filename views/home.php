@@ -18,20 +18,22 @@ if ($usuarioAutenticado['banido'] != 0) {
     exit();
 }
 ?>
+
 <?php
 // if e else para atualizar o progresso
 $porcentagem = 0;
 
-if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontuacaoUsuario'] > 0 ) {
+if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontuacaoUsuario'] > 0) {
     $porcentagem = ($usuarioAutenticado['pontuacaoUsuario'] / 100) * 100;
 } else if ($usuarioAutenticado['pontuacaoUsuario'] < 260 && $usuarioAutenticado['pontuacaoUsuario'] > 100) {
     $porcentagem = ($usuarioAutenticado['pontuacaoUsuario'] / 260) * 100;
 } else if ($usuarioAutenticado['pontuacaoUsuario'] < 700 && $usuarioAutenticado['pontuacaoUsuario'] > 260) {
     $porcentagem = ($usuarioAutenticado['pontuacaoUsuario'] / 700) * 100;
-}else if ($usuarioAutenticado['pontuacaoUsuario'] == 0 || $usuarioAutenticado['pontuacaoUsuario'] == 100 || $usuarioAutenticado['pontuacaoUsuario'] == 260 ||$usuarioAutenticado['pontuacaoUsuario'] == 460) {
-    $porcentagem = 5 ;
+} else if ($usuarioAutenticado['pontuacaoUsuario'] == 0) {
+    $porcentagem = 5;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
 
@@ -46,17 +48,17 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
     <link rel="stylesheet" type="text/css" href="../assets/css/home.css">
     <?php
 
-    if ($usuarioAutenticado['tutorial'] == 0 ) {
+    if ($usuarioAutenticado['tutorial'] == 0) {
         echo '<link rel="stylesheet" type="text/css" href="../assets/css/tutorial-inicial.css">';
     }
     ?>
     <title>Litera | Início</title>
-    <!--<style>
+    <style>
         /* Estilo da div com base na porcentagem */
         .barra .progresso {
             width: <?php echo $porcentagem; ?>%;
         }
-    </style> -->
+    </style>
 </head>
 
 <body>
@@ -64,67 +66,58 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
 
     <div class="overlay-itens1">
 
-</div>
-<div class="desktop-view">
-    <?php
-        include('../views/components/navbarHome.php');
-    ?>
-
-
-    <main class="main-desktop">
-        <div class="games-desktop">
-            <div class="title-desktop-room">
-                <h2>Sala de Jogos</h2>
-            </div>
-
-            <div class="games-desktop-itens">
-                <?php
-                    if($usuarioAutenticado['tutorial'] == 0){
-                ?>
-                <a class="game-item" id="first" href="../views/tutorial/tutorial-jogo1/tutorial.php">
-                    <div class="title-game-item">
-                        <p>Caça às vogais</p>
-                        <div class="bg-game"></div>
-                    </div>
-                </a>
-                <?php }else{ ?>
-                    <a class="game-item" id="first" href="../views/jogo/map.php">
-                    <div class="title-game-item">
-                        <p>Caça às vogais</p>
-                        <div class="bg-game"></div>
-                    </div>
-                </a>
-                <?php } ?>
-                <a class="game-item" href="../views/jogo/index.php">
-                    <div class="title-game-item">
-                        <p>Ditado</p>
-                        <div class="bg-game"></div>
-                    </div>
-                </a>
-
-                <a class="game-item">
-                    <div class="title-game-item">
-                        <p>Jogo</p>
-                        <div class="bg-game"></div>
-                    </div>
-                </a>
-
-                <a class="game-item">
-                    <div class="title-game-item">
-                        <p>Jogo</p>
-                        <div class="bg-game"></div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <?php include('../views/components/menu-profile.php'); ?>
-    </main>
-    <div class="information-litera">
-        <p>&copy; Litera 2024 | Versão 1.0</p>
-
     </div>
-</div>
+    <div class="desktop-view">
+        <?php
+        include('../views/components/navbarHome.php');
+        ?>
+
+
+        <main class="main-desktop">
+            <div class="games-desktop">
+                <div class="title-desktop-room">
+                    <h2>Sala de Jogos</h2>
+                </div>
+
+                <div class="games-desktop-itens">
+
+                    <a class="game-item" id="first" href="../views/jogo/map.php">
+                        <div class="title-game-item">
+                            <p>Caça às vogais</p>
+                            <div class="bg-game"></div>
+                        </div>
+                    </a>
+
+                    <a class="game-item" href="../views/jogo/index.php">
+                        <div class="title-game-item">
+                            <p>Ditado</p>
+                            <div class="bg-game" id=""></div>
+                        </div>
+                    </a>
+
+                    <a class="game-item">
+                        <div class="title-game-item">
+                            <p>Jogo</p>
+                            <div class="bg-game"></div>
+                        </div>
+                    </a>
+
+                    <a class="game-item">
+                        <div class="title-game-item">
+                            <p>Jogo</p>
+                            <div class="bg-game"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <?php include('../views/components/menu-profile.php'); ?>
+        </main>
+        <div class="information-litera">
+            <p>&copy; Litera 2024 | Versão 1.0</p>
+
+        </div>
+    </div>
 
     <!-- Mobile View -->
     <div class="mobile-view">

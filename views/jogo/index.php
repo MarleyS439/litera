@@ -62,6 +62,7 @@ if ($usuarioAutenticado['banido'] != 0) {
                     <p>FIM DE JOGO</p>
                 </div>
                 <p>Sua Pontuação: <span class="total_moedas" id="final_point"></span></p>
+                <p>Quantidade de Erros: <span class="total_moedas" id="final_error"></span></p>
                 <div class="btn-fim">
                     <a href="index.php" class="btnFinal"><img src="img/recomecar.svg" alt=""></a>
                     <a href="../home.php" class="btnFinal"><img src="img/avancar.svg" alt=""></a>
@@ -99,11 +100,14 @@ if ($usuarioAutenticado['banido'] != 0) {
             </div>
             <div class="area-itens">
                 
-                
+                <button id="retornar">repetindo</button>
 
                 <div class="repetir" id='repetir'>
                     <img class="audioRepetir" src="img/jogoFruta/audio.svg" alt="audio">
                 </div>
+
+
+
                 <div class="areaFruta">
                     <img class="fruta" alt="" id="fruta">
                 </div>
