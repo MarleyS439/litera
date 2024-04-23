@@ -1,18 +1,22 @@
 <?php
 require_once("../dao/usuarioDao.php");
+require_once("../dao/dadosJogoUsuarioDao.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data = json_decode(file_get_contents('php://input'), true);
     if ($data !== null) {
         $id = $data['id'];
-        $money = $data['money'];
+        $idFase = $data['idFase'];
+        $pontos = $data['pontos'];
+        $acertos = $data['acertos'];
+        $erros = $data['erros'];
 
         try {
             // Atualiza o dinheiro do usuário no banco de dados
-            $resultado = UsuarioDao::setGamesPoints($id, $money);
+            $resultado = DadosJogoUsuarioDao::insert($id, $idFase, $pontos, $acertos, $erros);
 
             if ($resultado) {
-                echo "Atualização feita com sucesso!' money";
+                echo "Insert feito com sucesso!";
             } else {
                 echo "Erro ao atualizar o dinheiro do usuário";
             }

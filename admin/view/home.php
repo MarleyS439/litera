@@ -31,6 +31,7 @@ $infos = AdminDao::selectAllLitera();
     <link rel="stylesheet" href="../../admin/assets/css/sidebar-admin.css">
     <link rel="shortcut icon" href="../../assets/images/icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../admin/assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 
 <body>
@@ -42,7 +43,7 @@ $infos = AdminDao::selectAllLitera();
                 <h2>Dashboard</h2>
             </div>
 
-            <div class="container">
+            <div class="container animate__animated animate__fadeInDown">
                 <div class="card-container">
                     <h4>Usuários cadastrados</h4>
                     <div class="card">
@@ -69,8 +70,8 @@ $infos = AdminDao::selectAllLitera();
                 </div>
             </div>
 
-            <div class="chart-container-area">
-                <canvas id="myChart" class="chart-container" width="1175" height="300"></canvas>
+            <div class="chart-container-area animate__animated animate__fadeInDown">
+                <canvas id="myChart" class="chart-container"></canvas>
             </div>
 
             <input type="hidden" name="mes" id="mes" value="<?php echo date('n') ?>">

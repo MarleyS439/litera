@@ -8,7 +8,7 @@ let vidas = 1;
 // EXIBIR PONTOS NO FIM
 let pontos_fim = document.getElementById("final_point");
 
-let pontos_errados = document.getElementById('final_error')
+let pontos_errados = document.getElementById("final_error");
 
 // BOX INICIO DO JOGO!
 const comeco = document.getElementById("boxComece");
@@ -23,7 +23,7 @@ let silabaSrc = "";
 let moedas = 3;
 
 // CONTAGEM DE ERROS!
-let errado = 0
+let errado = 0;
 
 // BOX DAS SILABAS AO REMOVER SOME TODAS AS SILABAS.... {SILABA1} etc.. e {sil1}.
 let box1 = document.getElementById("bx1");
@@ -70,8 +70,7 @@ let audio = new Audio();
 
 // Adiciona evento de clique ao botão de áudio
 
-
-function silabasErradas(){
+function silabasErradas() {
   errado++;
 }
 
@@ -158,21 +157,14 @@ function fazerPergunta() {
     }, 200);
   });
 
-  
-
-
-  const retorne = document.getElementById('retornar')
+  const retorne = document.getElementById("retornar");
   let silabasSelecionadas = [];
   let areaSilabas = [];
-  retorne.style.display = "none"
-  
-
-
+  retorne.style.display = "none";
 
   // Função para responder à pergunta
   function responderPergunta(silaba) {
     if (perguntaAtual === 0 && audioAtual === 0) {
-      
       if (silaba === silaba1) {
         silabaSrc = "Falas Jogo Silabas/maça/ça.mp3";
         audio.src = silabaSrc;
@@ -198,7 +190,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil1.src = areaSilabas[0];
         sil1.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil2
@@ -206,7 +198,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil2.src = areaSilabas[1];
         sil2.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil3
@@ -214,7 +206,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil3.src = areaSilabas[2];
         sil3.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil4
@@ -222,7 +214,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil4.src = areaSilabas[3];
         sil4.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se todas as sílabas foram selecionadas
@@ -263,7 +255,6 @@ function fazerPergunta() {
             setTimeout(function () {
               acertou.style.display = "none";
               retorne.style.display = "none";
-
 
               //cor do botão cinza novamente
               btnVerific.style.borderColor = "#5A7C90";
@@ -319,8 +310,8 @@ function fazerPergunta() {
             errou.style.display = "none";
             acertou.style.display = "none";
 
-            silabasErradas()
-            console.log("Erros:" +errado)
+            silabasErradas();
+            console.log("Erros:" + errado);
 
             areaSilabas = [];
             sil1.src = "";
@@ -387,7 +378,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil1.src = areaSilabas[0];
         sil1.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil2
@@ -395,7 +386,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil2.src = areaSilabas[1];
         sil2.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil3
@@ -403,7 +394,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil3.src = areaSilabas[2];
         sil3.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil4
@@ -411,7 +402,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil4.src = areaSilabas[3];
         sil4.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       if (silabasSelecionadas.length === 3) {
@@ -453,8 +444,7 @@ function fazerPergunta() {
           if (perguntaAtual < perguntas.length) {
             setTimeout(function () {
               acertou.style.display = "none";
-              retorne.style.display = "none"
-
+              retorne.style.display = "none";
 
               //cor do botão cinza novamente
               btnVerific.style.borderColor = "#5A7C90";
@@ -508,8 +498,8 @@ function fazerPergunta() {
           errou.style.display = "block";
           acertou.style.display = "flex";
           acerto.style.display = "none";
-          silabasErradas()
-          console.log("Erros:" +errado)
+          silabasErradas();
+          console.log("Erros:" + errado);
 
           // Limpar o array se a resposta estiver errada após ambas as sílabas serem informadas
           setTimeout(function () {
@@ -585,7 +575,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil1.src = areaSilabas[0];
         sil1.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil2
@@ -593,7 +583,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil2.src = areaSilabas[1];
         sil2.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil3
@@ -601,7 +591,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil3.src = areaSilabas[2];
         sil3.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil4
@@ -609,7 +599,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil4.src = areaSilabas[3];
         sil4.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       if (silabasSelecionadas.length === 4) {
@@ -704,8 +694,8 @@ function fazerPergunta() {
           errou.style.display = "block";
           acertou.style.display = "flex";
           acerto.style.display = "none";
-          silabasErradas()
-          console.log("Erros:" +errado)
+          silabasErradas();
+          console.log("Erros:" + errado);
 
           // Limpar o array se a resposta estiver errada após ambas as sílabas serem informadas
 
@@ -779,7 +769,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil1.src = areaSilabas[0];
         sil1.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil2
@@ -787,7 +777,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil2.src = areaSilabas[1];
         sil2.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil3
@@ -795,7 +785,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil3.src = areaSilabas[2];
         sil3.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil4
@@ -803,7 +793,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil4.src = areaSilabas[3];
         sil4.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       if (silabasSelecionadas.length === 3) {
@@ -896,9 +886,9 @@ function fazerPergunta() {
           errou.style.display = "block";
           acertou.style.display = "flex";
           acerto.style.display = "none";
-          silabasErradas()
-          console.log("Erros:" +errado)
-          
+          silabasErradas();
+          console.log("Erros:" + errado);
+
           // Limpar o array se a resposta estiver errada após ambas as sílabas serem informadas
 
           setTimeout(function () {
@@ -970,7 +960,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil1.src = areaSilabas[0];
         sil1.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil2
@@ -978,7 +968,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil2.src = areaSilabas[1];
         sil2.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil3
@@ -986,7 +976,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil3.src = areaSilabas[2];
         sil3.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil4
@@ -994,7 +984,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil4.src = areaSilabas[3];
         sil4.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       if (silabasSelecionadas.length === 3) {
@@ -1089,8 +1079,8 @@ function fazerPergunta() {
           errou.style.display = "block";
           acertou.style.display = "flex";
           acerto.style.display = "none";
-          silabasErradas()
-          console.log("Erros:" +errado)
+          silabasErradas();
+          console.log("Erros:" + errado);
 
           // Limpar o array se a resposta estiver errada após ambas as sílabas serem informadas
 
@@ -1167,7 +1157,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil1.src = areaSilabas[0];
         sil1.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil2
@@ -1175,7 +1165,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil2.src = areaSilabas[1];
         sil2.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil3
@@ -1183,7 +1173,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil3.src = areaSilabas[2];
         sil3.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil4
@@ -1191,7 +1181,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil4.src = areaSilabas[3];
         sil4.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       if (silabasSelecionadas.length === 4) {
@@ -1287,8 +1277,8 @@ function fazerPergunta() {
           errou.style.display = "block";
           acertou.style.display = "flex";
           acerto.style.display = "none";
-          silabasErradas()
-          console.log("Erros:" +errado)
+          silabasErradas();
+          console.log("Erros:" + errado);
 
           // Limpar o array se a resposta estiver errada após ambas as sílabas serem informadas
 
@@ -1363,7 +1353,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil1.src = areaSilabas[0];
         sil1.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil2
@@ -1371,7 +1361,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil2.src = areaSilabas[1];
         sil2.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil3
@@ -1379,7 +1369,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil3.src = areaSilabas[2];
         sil3.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil4
@@ -1387,7 +1377,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil4.src = areaSilabas[3];
         sil4.style.display = "block";
-        retorne.style.display = "block"
+        retorne.style.display = "block";
       }
 
       if (silabasSelecionadas.length === 3) {
@@ -1479,8 +1469,8 @@ function fazerPergunta() {
           errou.style.display = "block";
           acertou.style.display = "flex";
           acerto.style.display = "none";
-          silabasErradas()
-          console.log("Erros:" +errado)
+          silabasErradas();
+          console.log("Erros:" + errado);
 
           // Limpar o array se a resposta estiver errada após ambas as sílabas serem informadas
           setTimeout(function () {
@@ -1548,7 +1538,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil1.src = areaSilabas[0];
         sil1.style.display = "block";
-        retorne.style.display = 'block'
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil2
@@ -1556,7 +1546,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil2.src = areaSilabas[1];
         sil2.style.display = "block";
-        retorne.style.display = 'block'
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil3
@@ -1564,7 +1554,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil3.src = areaSilabas[2];
         sil3.style.display = "block";
-        retorne.style.display = 'block'
+        retorne.style.display = "block";
       }
 
       // Verifica se há uma imagem para exibir no sil4
@@ -1572,7 +1562,7 @@ function fazerPergunta() {
         // Define a imagem e torna o campo de imagem visível
         sil4.src = areaSilabas[3];
         sil4.style.display = "block";
-        retorne.style.display = 'block'
+        retorne.style.display = "block";
       }
 
       if (silabasSelecionadas.length === 2) {
@@ -1658,6 +1648,8 @@ function fazerPergunta() {
               const dados = {
                 id: document.getElementById("id").value,
                 money: moedas,
+                acerto: acerto,
+                erros: errado,
               };
 
               // Cria o objeto XMLHttpRequest
@@ -1681,7 +1673,6 @@ function fazerPergunta() {
               };
               // Envia a requisição com os dados convertidos para JSON
               xhr.send(JSON.stringify(dados));
-
 
               //logica de banco para pontuação e o nivel
               const nivelInsert = {
@@ -1711,6 +1702,35 @@ function fazerPergunta() {
               // Envia a requisição com os dados convertidos para JSON
               xhr2.send(JSON.stringify(nivelInsert));
 
+              const dadosFase = {
+                id: document.getElementById("id").value,
+                idFase: 2,
+                acerto: 8,
+                erros: errado,
+                pontos: 50,
+              };
+
+              // Cria o objeto XMLHttpRequest
+              const xhrDadosFase = new XMLHttpRequest();
+
+              // Define o método e a URL para a requisição
+              xhrDadosFase.open("POST", "../../controller/insertDadosFase.php", true);
+
+              // Define o cabeçalho da requisição
+              xhrDadosFase.setRequestHeader("Content-Type", "application/json");
+
+              // Função de callback para quando a requisição estiver completa
+              xhrDadosFase.onload = function () {
+                if (xhrDadosFase.status >= 200 && xhrDadosFase.status < 300) {
+                  // Requisição bem-sucedida, você pode lidar com a resposta aqui
+                  console.log(xhrDadosFase.responseText);
+                } else {
+                  // Trate os erros de requisição aqui
+                  console.error("Erro ao enviar requisição");
+                }
+              };
+              // Envia a requisição com os dados convertidos para JSON
+              xhrDadosFase.send(JSON.stringify(dadosFase));
             }, 3000);
           }
         } else {
@@ -1718,8 +1738,8 @@ function fazerPergunta() {
           errou.style.display = "block";
           acertou.style.display = "flex";
           acerto.style.display = "none";
-          silabasErradas()
-          console.log("Erros:" +errado)
+          silabasErradas();
+          console.log("Erros:" + errado);
 
           // Limpar o array se a resposta estiver errada após ambas as sílabas serem informadas
 
@@ -1791,55 +1811,55 @@ function fazerPergunta() {
   });
 
   // Event listener para o botão "retorne"
-  retorne.addEventListener('click', function() {
+  retorne.addEventListener("click", function () {
     // Verifica se há sílabas selecionadas para remover
     if (silabasSelecionadas.length > 0) {
-        // Remove a última sílaba selecionada do array
-        var ultimaSilabaSelecionada = silabasSelecionadas.pop();
+      // Remove a última sílaba selecionada do array
+      var ultimaSilabaSelecionada = silabasSelecionadas.pop();
 
-        // Exibe a última sílaba selecionada novamente
-        var silabaSelecionada = document.getElementById(ultimaSilabaSelecionada);
-        silabaSelecionada.style.display = 'block';
-        
-        // Atualiza os campos de imagem correspondentes para ocultar a sílaba
-        var indiceSilaba = areaSilabas.indexOf(silabaSelecionada.src.substring(silabaSelecionada.src.indexOf('img')));
-        if (indiceSilaba !== -1) {
-            areaSilabas.splice(indiceSilaba, 1);
-            if(indiceSilaba === 0){
-                sil1.src = '';
-                sil1.style.display = 'none';
-            }else if(indiceSilaba === 1){
-                sil2.src = '';
-                sil2.style.display = 'none';
-            }else if(indiceSilaba === 2){
-                sil3.src = '';
-                sil3.style.display = 'none';
-            }else if(indiceSilaba === 3){
-                sil4.src = '';
-                sil4.style.display = 'none';
-            }
+      // Exibe a última sílaba selecionada novamente
+      var silabaSelecionada = document.getElementById(ultimaSilabaSelecionada);
+      silabaSelecionada.style.display = "block";
+
+      // Atualiza os campos de imagem correspondentes para ocultar a sílaba
+      var indiceSilaba = areaSilabas.indexOf(
+        silabaSelecionada.src.substring(silabaSelecionada.src.indexOf("img"))
+      );
+      if (indiceSilaba !== -1) {
+        areaSilabas.splice(indiceSilaba, 1);
+        if (indiceSilaba === 0) {
+          sil1.src = "";
+          sil1.style.display = "none";
+        } else if (indiceSilaba === 1) {
+          sil2.src = "";
+          sil2.style.display = "none";
+        } else if (indiceSilaba === 2) {
+          sil3.src = "";
+          sil3.style.display = "none";
+        } else if (indiceSilaba === 3) {
+          sil4.src = "";
+          sil4.style.display = "none";
         }
+      }
     }
-    
+
     // Se o array de sílabas selecionadas estiver vazio, reexibe todas as sílabas originais
     if (silabasSelecionadas.length === 0) {
-        sil1.src = '';
-        sil2.src = '';
-        sil3.src = '';
-        sil4.src = '';
-        sil1.style.display = 'none';
-        sil2.style.display = 'none';
-        sil3.style.display = 'none';
-        sil4.style.display = 'none';
-        
-        areaSilabas = []; // Limpa o array de áreas de 
-        
-        retorne.style.display = "none"
-            
-        
+      sil1.src = "";
+      sil2.src = "";
+      sil3.src = "";
+      sil4.src = "";
+      sil1.style.display = "none";
+      sil2.style.display = "none";
+      sil3.style.display = "none";
+      sil4.style.display = "none";
+
+      areaSilabas = []; // Limpa o array de áreas de
+
+      retorne.style.display = "none";
     }
-    
-    console.log('exibindo tudo:', areaSilabas);
+
+    console.log("exibindo tudo:", areaSilabas);
   });
 }
 

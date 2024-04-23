@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12-Abr-2024 às 22:35
+-- Tempo de geração: 23-Abr-2024 às 22:39
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `bdlitera`
+-- Banco de dados: `dblitera`
 --
 
 -- --------------------------------------------------------
@@ -116,6 +116,21 @@ CREATE TABLE `tbconquistausuario` (
   `codConquistaUsuario` int(11) NOT NULL,
   `codUsuario` int(11) NOT NULL,
   `codConquista` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tbdadosjogousuario`
+--
+
+CREATE TABLE `tbdadosjogousuario` (
+  `codDadosJogoUsuario` int(11) NOT NULL,
+  `codJogo` int(11) NOT NULL,
+  `codUsuario` int(11) NOT NULL,
+  `maxPontuacao` bigint(20) NOT NULL,
+  `qtndAcertos` int(11) NOT NULL,
+  `qtndErros` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -224,6 +239,7 @@ CREATE TABLE `tbusuario` (
   `tutorial` tinyint(1) NOT NULL,
   `banido` tinyint(1) NOT NULL,
   `nivel` int(11) NOT NULL,
+  `fasesConcluidas` int(11) NOT NULL,
   `dataCriacao` date NOT NULL,
   `dataModfc` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -282,6 +298,12 @@ ALTER TABLE `tbconquistausuario`
   ADD PRIMARY KEY (`codConquistaUsuario`),
   ADD KEY `UsuarioConquista` (`codUsuario`),
   ADD KEY `ConquistaUsuario` (`codConquista`);
+
+--
+-- Índices para tabela `tbdadosjogousuario`
+--
+ALTER TABLE `tbdadosjogousuario`
+  ADD PRIMARY KEY (`codDadosJogoUsuario`);
 
 --
 -- Índices para tabela `tbgenero`
@@ -383,6 +405,12 @@ ALTER TABLE `tbconquistausuario`
   MODIFY `codConquistaUsuario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de tabela `tbdadosjogousuario`
+--
+ALTER TABLE `tbdadosjogousuario`
+  MODIFY `codDadosJogoUsuario` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `tbgenero`
 --
 ALTER TABLE `tbgenero`
@@ -422,7 +450,7 @@ ALTER TABLE `tbtipoitem`
 -- AUTO_INCREMENT de tabela `tbusuario`
 --
 ALTER TABLE `tbusuario`
-  MODIFY `codUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `codUsuario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restrições para despejos de tabelas

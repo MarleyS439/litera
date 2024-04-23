@@ -33,25 +33,25 @@
                 <span>Vamos criar a sua conta</span>
             </div>
 
-            <form action="" method="post">
+            <form action="../controller/processRegister.php" method="post">
                 <div class="inputs">
                     <label for="responsavel">Nome do responsável</label>
-                    <input type="text" name="nome_responsavel" id="responsavel" placeholder="Nome completo" required>
+                    <input type="text" name="name_user" id="responsavel" placeholder="Nome completo" required>
                 </div>
 
                 <div class="inputs">
                     <label for="email">E-mail</label>
-                    <input type="email" name="email_responsavel" id="email" placeholder="Digite seu melhor e-mail" required>
+                    <input type="email" name="email_user" id="email" placeholder="Digite seu melhor e-mail" required>
                 </div>
 
                 <div class="inputs">
                     <label for="senha">Senha</label>
-                    <input type="password" name="passe" id="senha" placeholder="Palavra passe" required>
+                    <input type="password" name="passwd_user" id="senha" placeholder="Palavra passe" required>
                 </div>
 
                 <div class="inputs">
                     <label for="comfirm">Confirmar senha</label>
-                    <input type="password" name="confirm_pass" id="confirm" placeholder="Confirmar palavra passe" required>
+                    <input type="password" name="confirm_passwd_user" id="confirm" placeholder="Confirmar palavra passe" required>
                 </div>
 
                <!-- <div class="t-inputs">

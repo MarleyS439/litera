@@ -979,6 +979,8 @@
 
   .chart-container-area {
     margin-top: 1rem;
+    width: 80%;
+    height: auto;
   }
 
   .chart-container {

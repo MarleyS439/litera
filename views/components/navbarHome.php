@@ -7,7 +7,7 @@
     <div class="navigation">
         <ul>
             <li class="home-icon">
-                <a href="../home.php">
+                <a href="../views/home.php">
                     <svg width="28" height="31">
                         <image href="../assets/images/icons/home-icon-desktop.svg" width="28" height="31" />
                     </svg>

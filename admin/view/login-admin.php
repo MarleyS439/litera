@@ -20,7 +20,7 @@
             </div>
 
             <div class="form-container">
-                <form action="" method="post">
+                <form action="../controller/processingAdminLogin.php" method="post">
                     <div class="title-area">
                         <h3>Área Administrativa</h3>
                     </div>
@@ -32,7 +32,7 @@
 
                     <div class="inputs">
                         <label for="pass">Senha</label>
-                        <input type="password" name="pass_admin" id="pass" placeholder="" required>
+                        <input type="password" name="passwd_admin" id="pass" placeholder="" required>
                     </div>
 
                     <div class="advisor">

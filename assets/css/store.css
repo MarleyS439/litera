@@ -45,10 +45,10 @@ body {
         display: flex;
         position: relative;
         top: 10vh;
-        justify-content: left;
+        justify-content: center;
         padding: 0;
         transition: 500ms ease-in-out .1s;
-        flex-direction: column;
+        flex-direction: row;
         border-right: 1px solid var(--blue2);
     }
 
@@ -67,7 +67,7 @@ body {
         border-radius: 8px;
         margin: 10px;
         box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-        width: 50 vw;
+        width: 25vw;
         margin-top: 5%;
     }
 
@@ -84,7 +84,7 @@ body {
 
     .cards a p {
         background-color: var(--blue3);
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 
     .access-card {
@@ -367,9 +367,13 @@ body {
 @media screen and (min-width: 1025px) {
     /* Estilos para PCs */
 
+    .desktop-view{
+        height: 100vh;
+    }
     .page{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
+        width: 90vw;
     }
     .contain {
         display: flex;
@@ -379,21 +383,55 @@ body {
         padding: 0;
         transition: 500ms ease-in-out .1s;
         flex-direction: column;
+        margin-right: 5vw;
+    }
+    .form-avatar{
+        display: flex;
+        flex-direction: row;
     }
     .inventory{
-        
+        position: relative;
+        top: 10vh;
+        width: 50vw;
+        height: 50vh;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .card-item{
+        width: 8VW;
+        height: 12vh;
+        border-radius: 5%;
+        border: 2px solid var(--blue3);
+        flex: 0 0 cal(100% /5);
+        margin: 0.5vh 1vw;
+    }
+    .card-item p{
+        text-align: center;
+        font-size: 4rem;
+        color: var(--blue3);
     }
     .items{
-        position: absolute;
-        right: 7vw;
+        position: relative;
+        left: 7vw;
     }
+    .img-avatar{
+        position: relative;
+        width: 20vw;
+        height: 40vh;
+        position: relative;
+        top: 10vh;
+        background-color:var(--blue2);
+        border-radius: 5%;
+    }
+}
     .buttons{
-        margin-bottom: 5%;
+        position: relative;
+        margin-top: 15vh;
         width: 20vw;
         display: flex;
         justify-content: space-between;
     }
-    .buttons input{
+    .buttons button{
         padding: 5%;
         background-color: #1C96E1;
         border-radius: 15px;
@@ -549,7 +587,6 @@ body {
     display: flex;
     justify-content: center;
     }
-
-}
+    
 
 @media screen and (max-width: 1447px) {}
