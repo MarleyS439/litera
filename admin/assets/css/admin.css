@@ -879,7 +879,7 @@
 
   /* area teste card */
   .information-home input {
-    display: block;
+    display: none;
     position: absolute;
   }
 
@@ -954,6 +954,29 @@
     color: #000000;
   }
 
+  .card-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* Adicione esta linha */
+    margin-top: 5%;
+    flex-direction: column;
+  }
+
+  .card-container .card {
+    width: 18rem;
+    height: 150px;
+    background-color: var(--blue6);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+  }
+
   .chart-container-area {
     margin-top: 1rem;
   }
@@ -1004,7 +1027,6 @@
     margin: 0px 0px 0px 5px;
   }
 
-
   .container-loja {
     display: flex;
     width: 100%;
@@ -1028,7 +1050,7 @@
     padding-top: 3%;
   }
 
-  .search-game{
+  .search-game {
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -1036,18 +1058,7 @@
     margin-bottom: 5%;
   }
 
-  .card-container input{
-    width: 375px;
-    height: 50px;
-    padding-left: 2%;
-    font-size: 20px;
-    border-radius: 5px;
-    border: 2px solid black;
-    user-select: none;
-      text-align: center;
-  }
-
-  .card-container select{
+  .card-container input {
     width: 375px;
     height: 50px;
     padding-left: 2%;
@@ -1058,8 +1069,20 @@
     text-align: center;
   }
 
-  .card-container h3{
+  .card-container select {
+    width: 375px;
+    height: 50px;
+    padding-left: 2%;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 2px solid black;
+    user-select: none;
+    text-align: center;
+  }
+
+  .card-container h3 {
     text-align: center;
     margin-bottom: 2%;
   }
+
 }
