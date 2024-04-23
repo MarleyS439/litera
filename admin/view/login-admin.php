@@ -8,7 +8,7 @@
     <meta name="author" content="Illumi">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Litera | Administrador </title>
-    <link rel="shortcut icon" href="../assets/images/icons/Litera Icon2.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/images/icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../assets/css/login-admin.css">
 </head>
 
@@ -27,12 +27,12 @@
 
                     <div class="inputs">
                         <label for="emailAdmin">E-mail do administrador</label>
-                        <input type="email" name="email_admin" id="emailAdmin" placeholder="admin@litera.com">
+                        <input type="email" name="email_admin" id="emailAdmin" placeholder="admin@litera.com" required>
                     </div>
 
                     <div class="inputs">
                         <label for="pass">Senha</label>
-                        <input type="password" name="pass_admin" id="pass" placeholder="">
+                        <input type="password" name="pass_admin" id="pass" placeholder="" required>
                     </div>
 
                     <div class="advisor">
@@ -41,6 +41,13 @@
 
                     <div class="inputs btn">
                         <button type="submit">Entrar</button>
+                    </div>
+
+                    <div class="inputs litera">
+                        <a href="../../index.php" target="_blank" title="Ir para o site Litera">
+                            <span>Litera</span>
+                            <img src="../assets/images/icons/external-link-svgrepo-com.svg" alt="">
+                        </a>
                     </div>
                 </form>
             </div>

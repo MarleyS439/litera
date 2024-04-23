@@ -71,6 +71,7 @@
         border: none;
         background-color: var(--blue-admin1);
         padding: 8px;
+        font-size: 1.01rem;
         border-radius: 8px;
         color: var(--white);
         font-weight: bold;
@@ -84,5 +85,32 @@
 
     .btn {
         margin-top: 5%;
+    }
+
+    .litera {
+        margin-top: 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inputs a {
+        width: min-content;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        color: var(--black3);
+        transition: 250ms ease-in-out;
+    }
+
+    .inputs a:hover {
+        color: var(--blue-admin1);
+        text-decoration: underline;
+    }
+
+    .inputs a img {
+        padding: 2px;
+        width: 20px;
+        height: auto;
     }
 }
