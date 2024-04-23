@@ -30,6 +30,7 @@
     --white: #ffffff;
     --black: #000;
     --gray: #353636;
+    --black3: #353636;
     --light-gray: #c9d3d9;
     --light-gray2: #bdd1de;
     --primary-color: #191919;
@@ -52,8 +53,13 @@
     --logout: #fa7575;
     --search-background: #2b2b2f;
 
+    --blue-admin1: #4180AB;
+    --blue-light-admin: #BDD1DE;
+    --bg: #E4EBF0;
+
     /* Fontes */
     --font-poppins-regular: 'Poppins-Regular';
+    --font-poppins-bold: 'Poppins-Bold';
 }
 
 /* Estilos de toda a página */

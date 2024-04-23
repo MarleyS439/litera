@@ -81,7 +81,7 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
 
                 <div class="games-desktop-itens">
 
-                    <a class="game-item" id="first" href="../views/jogo/map.php">
+                    <a class="game-item" id="first" href="../views/jogo/map1.php">
                         <div class="title-game-item">
                             <p>Caça às vogais</p>
                             <div class="bg-game"></div>

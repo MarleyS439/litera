@@ -3,18 +3,50 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=7">
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="Illumi">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Litera | Administrador </title>
     <link rel="shortcut icon" href="../assets/images/icons/Litera Icon2.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/login-admin.css">
 </head>
 
 <body>
-    
+    <div class="container">
+        <div class="login-container">
+            <div class="title">
+                <h2>Litera</h2>
+            </div>
+
+            <div class="form-container">
+                <form action="" method="post">
+                    <div class="title-area">
+                        <h3>Área Administrativa</h3>
+                    </div>
+
+                    <div class="inputs">
+                        <label for="emailAdmin">E-mail do administrador</label>
+                        <input type="email" name="email_admin" id="emailAdmin" placeholder="admin@litera.com">
+                    </div>
+
+                    <div class="inputs">
+                        <label for="pass">Senha</label>
+                        <input type="password" name="pass_admin" id="pass" placeholder="">
+                    </div>
+
+                    <div class="advisor">
+                        <!-- Aqui vão informações sobre a autenticação -->
+                    </div>
+
+                    <div class="inputs btn">
+                        <button type="submit">Entrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Views de desktop -->
     <!-- <div class="desktop-screen">

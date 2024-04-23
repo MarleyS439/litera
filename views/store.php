@@ -29,46 +29,60 @@ if ($usuarioAutenticado['banido'] != 0) {
 
 <body>
     <?php
-    include('../views/components/topbar.php');
+    include('../views/components/navbarHome.php');
     ?>
 
     <div class="title-container">
         <h2>Loja de produtos</h2>
     </div>
 
-    <div class="contain">
-
-        <div class="cards">
-            <a href="" class="access-card">
-                <div class="name-card">
-                    <p>Roupas</p>
-                </div>
-                <div class="figure-card">
-                    <img src="../assets/images/icons/shirt-icon.png" alt="Roupas">
-                </div>
-            </a>
+    <div class="page">
+        <div class="contain">
+    
+            <div class="cards">
+                <a href="" class="access-card">
+                    <div class="name-card">
+                        <p>Roupas</p>
+                    </div>
+                    <div class="figure-card">
+                        <img src="../assets/images/icons/shirt-icon.png" alt="Roupas">
+                    </div>
+                </a>
+            </div>
+    
+            <div class="cards">
+                <a href="" class="access-card">
+                    <div class="name-card">
+                        <p>Chapéus</p>
+                    </div>
+                    <div class="figure-card">
+                        <img src="../assets/images/icons/hat-icon.png" alt="Chápeus">
+                    </div>
+                </a>
+            </div>
+    
+            <div class="cards">
+                <a href="" class="access-card">
+                    <div class="name-card">
+                        <p>Acessórios</p>
+                    </div>
+                    <div class="figure-card">
+                        <img src="../assets/images/icons/glass-icon.png" alt="Acessórios">
+                    </div>
+                </a>
+            </div>
         </div>
-
-        <div class="cards">
-            <a href="" class="access-card">
-                <div class="name-card">
-                    <p>Chapéus</p>
-                </div>
-                <div class="figure-card">
-                    <img src="../assets/images/icons/hat-icon.png" alt="Chápeus">
-                </div>
-            </a>
+        <div class="inventory">
+            <
         </div>
+    </div>
+    <div class="items">
+        <div class="img">
 
-        <div class="cards">
-            <a href="" class="access-card">
-                <div class="name-card">
-                    <p>Acessórios</p>
-                </div>
-                <div class="figure-card">
-                    <img src="../assets/images/icons/glass-icon.png" alt="Acessórios">
-                </div>
-            </a>
+        </div>
+        <div class="buttons">
+            <input type="submit" value="Cancelar">
+            <input type="submit" value="Comprar">
         </div>
     </div>
 </body>

@@ -1,0 +1,88 @@
+@import url(default.css);
+@import url(animations.css);
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+
+@media screen and (min-width: 1025px) {
+    .container {
+        background-color: var(--blue-admin1);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .title {
+        display: flex;
+        justify-content: center;
+    }
+
+    .title h2 {
+        font-family: var(--font-poppins-bold);
+        color: var(--white);
+        font-size: 4rem;
+        text-shadow: 1px 2px 2px #00000080;
+    }
+
+    .form-container {
+        display: flex;
+        justify-content: center;
+        background-color: var(--bg);
+        width: 30vw;
+        border-radius: 8px;
+        padding: 10%;
+        flex-direction: column;
+        align-content: center;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+
+    .title-area {
+        display: flex;
+        justify-content: center;
+    }
+
+    .title-area h3 {
+        font-size: 1.6rem;
+        color: var(--black3);
+        font-family: var(--font-poppins-bold);
+        margin: 5% 0%;
+    }
+
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        margin: 2% 0%;
+    }
+
+    .inputs label {
+        font-weight: bold;
+    }
+
+    .inputs input {
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid var(--blue-admin1);
+        background-color: var(--blue-light-admin);
+    }
+
+    .inputs button {
+        border: none;
+        background-color: var(--blue-admin1);
+        padding: 8px;
+        border-radius: 8px;
+        color: var(--white);
+        font-weight: bold;
+        cursor: pointer;
+        transition: 200ms ease-in-out;
+    }
+
+    .inputs button:hover {
+        background-color: #519fd3;
+    }
+
+    .btn {
+        margin-top: 5%;
+    }
+}
