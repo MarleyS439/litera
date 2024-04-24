@@ -878,10 +878,6 @@
   }
 
   /* area teste card */
-  .information-home input {
-    display: none;
-    position: absolute;
-  }
 
   article {
     position: relative;

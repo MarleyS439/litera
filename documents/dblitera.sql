@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Abr-2024 às 22:39
+-- Tempo de geração: 24/04/2024 às 02:22
 -- Versão do servidor: 10.4.28-MariaDB
--- versão do PHP: 8.2.4
+-- Versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbadmin`
+-- Estrutura para tabela `tbadmin`
 --
 
 CREATE TABLE `tbadmin` (
@@ -35,7 +35,7 @@ CREATE TABLE `tbadmin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `tbadmin`
+-- Despejando dados para a tabela `tbadmin`
 --
 
 INSERT INTO `tbadmin` (`codAdmin`, `nomeAdmin`, `emailAdmin`, `senhaAdmin`) VALUES
@@ -44,7 +44,7 @@ INSERT INTO `tbadmin` (`codAdmin`, `nomeAdmin`, `emailAdmin`, `senhaAdmin`) VALU
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbavatar`
+-- Estrutura para tabela `tbavatar`
 --
 
 CREATE TABLE `tbavatar` (
@@ -58,20 +58,29 @@ CREATE TABLE `tbavatar` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbcabelo`
+-- Estrutura para tabela `tbcabelo`
 --
 
 CREATE TABLE `tbcabelo` (
   `codCabelo` int(11) NOT NULL,
   `nomeCabelo` varchar(50) NOT NULL,
+  `precoCabelo` int(11) NOT NULL,
   `imgCabelo` varchar(50) NOT NULL,
   `tokenCabelo` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `tbcabelo`
+--
+
+INSERT INTO `tbcabelo` (`codCabelo`, `nomeCabelo`, `precoCabelo`, `imgCabelo`, `tokenCabelo`) VALUES
+(1, 'Cabelo Feminino', 0, '9c6d7cf8e99a94dae3b0e7849b97b132.jpg', 'a3edc8bd43333b27a67ebcf053814160'),
+(2, 'Cabelo Masculino', 0, '98e21116972c84c51c6b757e5eb9dda8.jpg', '5ef7236669147041a3713e530c2dc7ba');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbcategoria`
+-- Estrutura para tabela `tbcategoria`
 --
 
 CREATE TABLE `tbcategoria` (
@@ -82,7 +91,7 @@ CREATE TABLE `tbcategoria` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbcompraitem`
+-- Estrutura para tabela `tbcompraitem`
 --
 
 CREATE TABLE `tbcompraitem` (
@@ -95,7 +104,7 @@ CREATE TABLE `tbcompraitem` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbconquista`
+-- Estrutura para tabela `tbconquista`
 --
 
 CREATE TABLE `tbconquista` (
@@ -109,7 +118,7 @@ CREATE TABLE `tbconquista` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbconquistausuario`
+-- Estrutura para tabela `tbconquistausuario`
 --
 
 CREATE TABLE `tbconquistausuario` (
@@ -121,7 +130,7 @@ CREATE TABLE `tbconquistausuario` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbdadosjogousuario`
+-- Estrutura para tabela `tbdadosjogousuario`
 --
 
 CREATE TABLE `tbdadosjogousuario` (
@@ -136,20 +145,29 @@ CREATE TABLE `tbdadosjogousuario` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbgenero`
+-- Estrutura para tabela `tbgenero`
 --
 
 CREATE TABLE `tbgenero` (
   `codGenero` int(11) NOT NULL,
   `nomeGenero` varchar(50) NOT NULL,
+  `precoGenero` int(11) NOT NULL,
   `imgGenero` varchar(50) NOT NULL,
   `tokenGenero` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `tbgenero`
+--
+
+INSERT INTO `tbgenero` (`codGenero`, `nomeGenero`, `precoGenero`, `imgGenero`, `tokenGenero`) VALUES
+(1, 'Avatar Feminino', 0, '5020e94dccf09f34c45eca3dfcf5ca61.jpg', 'fa2c991a1f51d21a2a23ff37e2aa27f4'),
+(2, 'Avatar Masculino', 0, 'fb5d1c27ff697dffa11ced29aa15fe13.jpg', '12a7906c5d92ad293b8257d9327fdb66');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbitem`
+-- Estrutura para tabela `tbitem`
 --
 
 CREATE TABLE `tbitem` (
@@ -162,7 +180,7 @@ CREATE TABLE `tbitem` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbjogo`
+-- Estrutura para tabela `tbjogo`
 --
 
 CREATE TABLE `tbjogo` (
@@ -177,7 +195,7 @@ CREATE TABLE `tbjogo` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbnivel`
+-- Estrutura para tabela `tbnivel`
 --
 
 CREATE TABLE `tbnivel` (
@@ -189,7 +207,7 @@ CREATE TABLE `tbnivel` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbprogressousuario`
+-- Estrutura para tabela `tbprogressousuario`
 --
 
 CREATE TABLE `tbprogressousuario` (
@@ -202,20 +220,29 @@ CREATE TABLE `tbprogressousuario` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbroupa`
+-- Estrutura para tabela `tbroupa`
 --
 
 CREATE TABLE `tbroupa` (
   `codRoupa` int(11) NOT NULL,
   `nomeRoupa` varchar(50) NOT NULL,
+  `precoRoupa` int(11) NOT NULL,
   `imgRoupa` varchar(50) NOT NULL,
   `tokenRoupa` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `tbroupa`
+--
+
+INSERT INTO `tbroupa` (`codRoupa`, `nomeRoupa`, `precoRoupa`, `imgRoupa`, `tokenRoupa`) VALUES
+(1, 'Camiseta Amarela', 0, '4d1465f52d3637e2d5d2c1b7ace4c7d7.jpg', 'df80c8dc7318eb60ec80c56594f0bd18'),
+(2, 'Camiseta Roxa', 0, 'a5336d6aecc6cb0e6de9f5b9f27ebb99.jpg', '9eaca6c27be2ce043ac7ad9b3183e206');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbtipoitem`
+-- Estrutura para tabela `tbtipoitem`
 --
 
 CREATE TABLE `tbtipoitem` (
@@ -226,7 +253,7 @@ CREATE TABLE `tbtipoitem` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbusuario`
+-- Estrutura para tabela `tbusuario`
 --
 
 CREATE TABLE `tbusuario` (
@@ -249,14 +276,14 @@ CREATE TABLE `tbusuario` (
 --
 
 --
--- Índices para tabela `tbadmin`
+-- Índices de tabela `tbadmin`
 --
 ALTER TABLE `tbadmin`
   ADD PRIMARY KEY (`codAdmin`),
   ADD UNIQUE KEY `emailAdmin` (`emailAdmin`);
 
 --
--- Índices para tabela `tbavatar`
+-- Índices de tabela `tbavatar`
 --
 ALTER TABLE `tbavatar`
   ADD PRIMARY KEY (`codAvatar`),
@@ -266,19 +293,19 @@ ALTER TABLE `tbavatar`
   ADD KEY `UsuarioAvatar` (`codUsuario`);
 
 --
--- Índices para tabela `tbcabelo`
+-- Índices de tabela `tbcabelo`
 --
 ALTER TABLE `tbcabelo`
   ADD PRIMARY KEY (`codCabelo`);
 
 --
--- Índices para tabela `tbcategoria`
+-- Índices de tabela `tbcategoria`
 --
 ALTER TABLE `tbcategoria`
   ADD PRIMARY KEY (`codCategoria`);
 
 --
--- Índices para tabela `tbcompraitem`
+-- Índices de tabela `tbcompraitem`
 --
 ALTER TABLE `tbcompraitem`
   ADD PRIMARY KEY (`codCompraItem`),
@@ -286,13 +313,13 @@ ALTER TABLE `tbcompraitem`
   ADD KEY `CompraUsuario` (`codUsuario`);
 
 --
--- Índices para tabela `tbconquista`
+-- Índices de tabela `tbconquista`
 --
 ALTER TABLE `tbconquista`
   ADD PRIMARY KEY (`codConquista`);
 
 --
--- Índices para tabela `tbconquistausuario`
+-- Índices de tabela `tbconquistausuario`
 --
 ALTER TABLE `tbconquistausuario`
   ADD PRIMARY KEY (`codConquistaUsuario`),
@@ -300,26 +327,26 @@ ALTER TABLE `tbconquistausuario`
   ADD KEY `ConquistaUsuario` (`codConquista`);
 
 --
--- Índices para tabela `tbdadosjogousuario`
+-- Índices de tabela `tbdadosjogousuario`
 --
 ALTER TABLE `tbdadosjogousuario`
   ADD PRIMARY KEY (`codDadosJogoUsuario`);
 
 --
--- Índices para tabela `tbgenero`
+-- Índices de tabela `tbgenero`
 --
 ALTER TABLE `tbgenero`
   ADD PRIMARY KEY (`codGenero`);
 
 --
--- Índices para tabela `tbitem`
+-- Índices de tabela `tbitem`
 --
 ALTER TABLE `tbitem`
   ADD PRIMARY KEY (`codItem`),
   ADD KEY `TipoItem` (`codTipoItem`);
 
 --
--- Índices para tabela `tbjogo`
+-- Índices de tabela `tbjogo`
 --
 ALTER TABLE `tbjogo`
   ADD PRIMARY KEY (`codJogo`),
@@ -327,39 +354,39 @@ ALTER TABLE `tbjogo`
   ADD KEY `NivelJogo` (`codNivel`);
 
 --
--- Índices para tabela `tbnivel`
+-- Índices de tabela `tbnivel`
 --
 ALTER TABLE `tbnivel`
   ADD PRIMARY KEY (`codNivel`);
 
 --
--- Índices para tabela `tbprogressousuario`
+-- Índices de tabela `tbprogressousuario`
 --
 ALTER TABLE `tbprogressousuario`
   ADD KEY `UsuarioProgresso` (`codUsuario`),
   ADD KEY `JogoProgresso` (`codJogo`);
 
 --
--- Índices para tabela `tbroupa`
+-- Índices de tabela `tbroupa`
 --
 ALTER TABLE `tbroupa`
   ADD PRIMARY KEY (`codRoupa`);
 
 --
--- Índices para tabela `tbtipoitem`
+-- Índices de tabela `tbtipoitem`
 --
 ALTER TABLE `tbtipoitem`
   ADD PRIMARY KEY (`codTipoItem`);
 
 --
--- Índices para tabela `tbusuario`
+-- Índices de tabela `tbusuario`
 --
 ALTER TABLE `tbusuario`
   ADD PRIMARY KEY (`codUsuario`),
   ADD UNIQUE KEY `emailUsuario` (`emailUsuario`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
@@ -378,7 +405,7 @@ ALTER TABLE `tbavatar`
 -- AUTO_INCREMENT de tabela `tbcabelo`
 --
 ALTER TABLE `tbcabelo`
-  MODIFY `codCabelo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codCabelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tbcategoria`
@@ -414,7 +441,7 @@ ALTER TABLE `tbdadosjogousuario`
 -- AUTO_INCREMENT de tabela `tbgenero`
 --
 ALTER TABLE `tbgenero`
-  MODIFY `codGenero` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codGenero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tbitem`
@@ -438,7 +465,7 @@ ALTER TABLE `tbnivel`
 -- AUTO_INCREMENT de tabela `tbroupa`
 --
 ALTER TABLE `tbroupa`
-  MODIFY `codRoupa` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codRoupa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tbtipoitem`
@@ -453,11 +480,11 @@ ALTER TABLE `tbusuario`
   MODIFY `codUsuario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Restrições para despejos de tabelas
+-- Restrições para tabelas despejadas
 --
 
 --
--- Limitadores para a tabela `tbavatar`
+-- Restrições para tabelas `tbavatar`
 --
 ALTER TABLE `tbavatar`
   ADD CONSTRAINT `CabeloAvatar` FOREIGN KEY (`codCabelo`) REFERENCES `tbcabelo` (`codCabelo`),
@@ -466,34 +493,34 @@ ALTER TABLE `tbavatar`
   ADD CONSTRAINT `UsuarioAvatar` FOREIGN KEY (`codUsuario`) REFERENCES `tbusuario` (`codUsuario`);
 
 --
--- Limitadores para a tabela `tbcompraitem`
+-- Restrições para tabelas `tbcompraitem`
 --
 ALTER TABLE `tbcompraitem`
   ADD CONSTRAINT `CompraItem` FOREIGN KEY (`codItem`) REFERENCES `tbitem` (`codItem`),
   ADD CONSTRAINT `CompraUsuario` FOREIGN KEY (`codUsuario`) REFERENCES `tbusuario` (`codUsuario`);
 
 --
--- Limitadores para a tabela `tbconquistausuario`
+-- Restrições para tabelas `tbconquistausuario`
 --
 ALTER TABLE `tbconquistausuario`
   ADD CONSTRAINT `ConquistaUsuario` FOREIGN KEY (`codConquista`) REFERENCES `tbconquista` (`codConquista`),
   ADD CONSTRAINT `UsuarioConquista` FOREIGN KEY (`codUsuario`) REFERENCES `tbusuario` (`codUsuario`);
 
 --
--- Limitadores para a tabela `tbitem`
+-- Restrições para tabelas `tbitem`
 --
 ALTER TABLE `tbitem`
   ADD CONSTRAINT `TipoItem` FOREIGN KEY (`codTipoItem`) REFERENCES `tbtipoitem` (`codTipoItem`);
 
 --
--- Limitadores para a tabela `tbjogo`
+-- Restrições para tabelas `tbjogo`
 --
 ALTER TABLE `tbjogo`
   ADD CONSTRAINT `CategoriaJogo` FOREIGN KEY (`codCategoria`) REFERENCES `tbcategoria` (`codCategoria`),
   ADD CONSTRAINT `NivelJogo` FOREIGN KEY (`codNivel`) REFERENCES `tbnivel` (`codNivel`);
 
 --
--- Limitadores para a tabela `tbprogressousuario`
+-- Restrições para tabelas `tbprogressousuario`
 --
 ALTER TABLE `tbprogressousuario`
   ADD CONSTRAINT `JogoProgresso` FOREIGN KEY (`codJogo`) REFERENCES `tbjogo` (`codJogo`),

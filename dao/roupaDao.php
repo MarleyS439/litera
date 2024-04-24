@@ -1,17 +1,21 @@
 <?php
+require_once(__DIR__."../../config/conexao.php");
+
 class RoupaDao
 {
     public static function insert($roupa)
     {
         $conexao = Conexao::conectar();
-        $query = "INSERT INTO tbroupa (codRoupa, nomeRoupa, imgRoupa, tokenRoupa) VALUES (?,?,?,?)";
+        $query = "INSERT INTO tbroupa (codRoupa, nomeRoupa, precoRoupa, imgRoupa, tokenRoupa) VALUES (?,?,?,?,?)";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $roupa->getCodRoupa());
         $stmt->bindValue(2, $roupa->getNomeRoupa());
-        $stmt->bindValue(3, $roupa->getImgRoupa());
-        $stmt->bindValue(4, $roupa->getTokenRoupa());
+        $stmt->bindValue(3, $roupa->getPrecoRoupa());
+        $stmt->bindValue(4, $roupa->getImgRoupa());
+        $stmt->bindValue(5, $roupa->getTokenRoupa());
         $stmt->execute();
     }
+
     public static function selectAll()
     {
         $conexao = Conexao::conectar();
@@ -20,6 +24,7 @@ class RoupaDao
         $stmt->execute();
         return $stmt->fetchAll();
     }
+
     public static function selectById($cod)
     {
         $conexao = Conexao::conectar();
@@ -29,6 +34,7 @@ class RoupaDao
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
     public static function delete($cod)
     {
         $conexao = Conexao::conectar();
@@ -38,18 +44,19 @@ class RoupaDao
         $resultado = $stmt->execute();
         return $resultado;
     }
+
     public static function update($cod, $roupa)
     {
         $conexao = Conexao::conectar();
         $query = "UPDATE tbroupa SET
-            codRoupa = ?, 
             nomeRoupa = ?, 
+            precoRoupa = ?, 
             imgRoupa = ?, 
             tokenRoupa = ?
             WHERE codRoupa = ?";
         $stmt = $conexao->prepare($query);
-        $stmt->bindValue(1, $roupa->getCodRoupa());
-        $stmt->bindValue(2, $roupa->getNomeRoupa());
+        $stmt->bindValue(1, $roupa->getNomeRoupa());
+        $stmt->bindValue(2, $roupa->getPrecoRoupa());
         $stmt->bindValue(3, $roupa->getImgRoupa());
         $stmt->bindValue(4, $roupa->getTokenRoupa());
         $stmt->bindValue(5, $cod);
