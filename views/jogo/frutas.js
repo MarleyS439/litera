@@ -1876,6 +1876,9 @@ function fazerPergunta() {
   });
 }
 
+
+document.getElementById('fecharCheia').style.display = 'none'
+
 function openFullscreen() {
   if (document.documentElement.requestFullscreen) {
     document.documentElement.requestFullscreen();
@@ -1886,6 +1889,9 @@ function openFullscreen() {
   } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
     document.documentElement.msRequestFullscreen();
   }
+  document.getElementById('fecharCheia').style.display = 'block'
+  document.getElementById('abrirCheia').style.display = 'none'
+  
 }
 
 // Opcional: fechar tela cheia
@@ -1899,6 +1905,8 @@ function closeFullscreen() {
     } else if (document.msExitFullscreen) { /* IE/Edge */
          document.msExitFullscreen();
      }
+     document.getElementById('fecharCheia').style.display = 'none'
+      document.getElementById('abrirCheia').style.display = 'block'
  }
 
 

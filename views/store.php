@@ -114,6 +114,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                 </div>
             </form>
         </div>
+    </div>
         <!-- Mobile View -->
         <div class="mobile-view">
 
@@ -131,7 +132,44 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                 </div>
             </div>
 
+            <form action="../controller/insertAvatar.php" method="POST" class="form-avatar">
+                <!-- Adicione o input hidden aqui -->
+                <input type="hidden" name="roupa" id="roupa-hidden" value="">
 
+                <div class="inventory">
+                    <?php
+                    foreach ($roupa as $roupas) { ?>
+                        <div class="card-item">
+                            <img src="../assets/images/perfil/roupa/<?php echo $roupas['imgRoupa'] ?>" alt="<?php echo $roupas['nomeRoupa'] ?>" data-value="<?php echo $roupas['codRoupa'] ?>">
+                        </div>
+                    <?php } ?>
+                </div>
+                <div class="items">
+                    <div class="container-avatar">
+                        <div class="base">
+                            <img src="../assets/images/perfil/genero/<?php echo $avatar["imgGenero"] ?>" alt="">
+                            <div class="cabelo">
+                                <img src="../assets/images/perfil/cabelo/<?php echo $avatar["imgCabelo"] ?>" alt="">
+                            </div>
+                            <div class="roupa">
+                                <img src="../assets/images/perfil/roupa/<?php echo $avatar["imgRoupa"] ?>" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button type="submit">
+                            <p>Cancelar</p>
+                        </button>
+                        <input type="hidden" name="codUser" value="<?php echo $codUser['cod'] ?>">
+                        <input type="hidden" name="itemAvatar" value="comprarRoupa">
+                        <button type="submit">
+                            <p>Comprar</p>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+                    
             <div class="bottom-navigation-bar">
 
                 <a href="./home.php">

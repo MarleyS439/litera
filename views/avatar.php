@@ -125,6 +125,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
             </div>
             <div class="conteinerOpcoes">
                 <form action="../controller/insertAvatar.php" method="post" onchange="atualizarImagemRoupa()">
+                <button type="submit">Proximo</button>
                     <?php
                     foreach ($roupa as $roupas) : ?>
                         <div class="opcoes">
@@ -135,7 +136,6 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                     <?php endforeach; ?>
                     <input type="hidden" name="codUser" value="<?php echo $codUser['cod'] ?>">
                     <input type="hidden" name="itemAvatar" value="roupa">
-                    <button type="submit">Proximo</button>
                 </form>
             </div>
         <?php else : 

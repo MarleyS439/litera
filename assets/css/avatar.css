@@ -1,57 +1,114 @@
 @import url(./default.css);
 @import url(./animations.css);
 
-:root{
+:root {
     --white-blue: #EBF7FF;
+    --black: #000000;
+    --border-blue: #1C96E1;
 }
+
 /* Mobile */
-@media screen and (max-width: 768px) {
-
-
-}
+@media screen and (max-width: 768px) {}
 
 /* Tablets */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  
-}
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
 
 /* Desktops */
 @media screen and (min-width: 1025px) {
-   body{
-    background-color: var(--white-blue) ;
-   }
-    .conteinerAvatarCriacao{
+    body {
+        background-color: var(--white-blue);
+    }
+
+    .conteinerAvatarCriacao {
         width: 100%;
         min-height: 90vh;
-        
     }
+
+    .top {
+        width: 100%;
+        height: 15vh;
+        display: flex;
+        align-items: center;
+        padding-left: 10%;
+    }
+
+    .top {
+        color: var(--black);
+        font-family: var(--font-poppins-bold);
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .conteinerImg {
+        width: 100%;
+        height: 35vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cardItem {
+        width: 20%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        border: solid 3px var(--border-blue);
+        border-radius: 20px;
+        background-color: #5ca3cf;
+    }
+
     .base {
         position: relative;
         display: inline-block;
     }
-    
+
     .base img {
         display: block;
         margin: 0 auto;
         width: 135px;
     }
-    
+
     .cabelo img {
         position: absolute;
         top: 0;
         left: 50%;
-        transform: translatey(-20%) translateX(-50%);
+        transform: translateY(-20%) translateX(-50%);
         width: 120px;
     }
-    
+
     .roupa img {
         position: absolute;
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        width: 115px;
+        width: 117px;
     }
 
+    .conteinerOpcoes form {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 2vh;
+    }
 
+    .opcoes {
+        width: 10%;
+        height: 20vh;
+        border: solid 3px var(--border-blue);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative; /* Adicionado */
+    }
 
+    /* Ajuste para o input radio */
+    .input-opcao {
+        position: absolute;
+        opacity: 0;
+        width: 100%; /* Ajustado */
+        height: 100%; /* Ajustado */
+    }
 }

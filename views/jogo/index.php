@@ -86,8 +86,9 @@ if ($usuarioAutenticado['banido'] != 0) {
                 </div>
 
                 <div class="header" id="header">
-                    <button onclick="openFullscreen()" class="fullScreen"></button>
-                    <button onclick="closeFullscreen()" class="fullScreen"></button>
+                    <a href="../../views/home.php" class="homeScreen"></a>
+                    <button onclick="openFullscreen()" class="fullScreen" id="abrirCheia"></button>
+                    <button onclick="closeFullscreen()" class="fullScreen" id="fecharCheia"></button>
                  </div>
                 
             </div>

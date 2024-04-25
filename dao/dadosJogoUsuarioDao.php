@@ -22,12 +22,13 @@ class DadosJogoUsuarioDao
         $stmt->execute();
         return $stmt->fetchAll();
     }
-    public static function selectById($cod)
+    public static function selectById($codUser, $codJogo)
     {
         $conexao = Conexao::conectar();
-        $query = "SELECT * FROM tbdadosjogousuario WHERE codDadosJogoUsuario = ?";
+        $query = "SELECT * FROM tbdadosjogousuario WHERE codUsuario = ? AND codJogo = ?";
         $stmt = $conexao->prepare($query);
-        $stmt->bindValue(1, $cod);
+        $stmt->bindValue(1, $codUser);
+        $stmt->bindValue(2, $codJogo);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
@@ -42,15 +43,22 @@ class DadosJogoUsuarioDao
     }
     public static function update($codJogo, $codUsuario, $maxPontuacao, $qntdAcertos, $qntdErros)
     {
-        $conexao = Conexao::conectar();
-        $query = "UPDATE tbdadosjogousuario SET maxPontuacao = ?, qtndAcertos = qtndAcertos + ?, qtndErros = qtndErros + ? WHERE codJogo = ? AND codUsuario = ?";
-        $stmt = $conexao->prepare($query);
-        $stmt->bindValue(1, $maxPontuacao);
-        $stmt->bindValue(2, $qntdAcertos);
-        $stmt->bindValue(3, $qntdErros);
-        $stmt->bindValue(4, $codJogo);
-        $stmt->bindValue(5, $codUsuario);
-        return $stmt->execute();        
+        try {
+            $conexao = Conexao::conectar();
+            $query = "UPDATE tbdadosjogousuario SET maxPontuacao = ?, qtndAcertos = qtndAcertos + ?, qtndErros = qtndErros + ? WHERE codJogo = ? AND codUsuario = ?";
+            $stmt = $conexao->prepare($query);
+            $stmt->bindValue(1, $maxPontuacao);
+            $stmt->bindValue(2, $qntdAcertos);
+            $stmt->bindValue(3, $qntdErros);
+            $stmt->bindValue(4, $codJogo);
+            $stmt->bindValue(5, $codUsuario);
+            $resultado = $stmt->execute();
+            return $resultado;
+        } catch (PDOException $e) {
+            // Exibe uma mensagem de erro em caso de falha na execução da consulta
+            echo "Erro ao executar a consulta: " . $e->getMessage();
+            return false; // Retorna false para indicar que houve erro na execução da consulta
+        }
     }
     public static function searchUser($idUser, $idJogo)
     {
