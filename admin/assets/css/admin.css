@@ -646,6 +646,7 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     -webkit-animation: slide-in-bck-top 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation: slide-in-bck-top 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    z-index: 9999;
   }
 
   #modalAddItem {
@@ -1054,10 +1055,54 @@
     width: 90%;
     justify-content: space-evenly;
   }
-  .cards{
+  .container-cards .cards{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 18%;
-    border: 1px solid red;
-    margin: 1% 0%;
+    height: 30vh;
+    border: 3px solid var(--blue3);
+    border-radius: 10px;
+    margin: 2% 2%;
+    transition: .6s;
+    background: #fff;
+    overflow: hidden;
+  }
+  .container-cards .cards::before{
+    content: '';
+    position: absolute;
+    background: var(--blue3);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    left: 0;
+    bottom: 0;
+    height: 30%;
+    width: 100%;
+    z-index: 0; 
+  }
+  #itemCabelo{
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+  }
+  #itemCards{
+    z-index: 1;
+  }
+  .container-cards .cards:hover{
+    transform: scale(1.3);
+    background: #fff;
+    z-index: 1;
+
+  }
+  .nomeItem{
+    position: absolute;
+    bottom: 0;
+    padding: 0.5vh 2.3vw;
+    text-align: center;
+    font-weight: 500;
+    color: #fff;
   }
   .search-game {
     display: flex;
@@ -1094,4 +1139,74 @@
     margin-bottom: 2%;
   }
 
+    /* Estilo para o container do select */
+  .select-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* Estilo para o select */
+  .selecao {
+    padding: 10px 40px 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    cursor: pointer;
+    appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6"><polygon points="0,0 12,0 6,6" fill="%23333"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  }
+
+  /* Estilo para as opções do select */
+  .selecao option {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #fff;
+  }
+
+  /* Estilo para o foco */
+  .selecao:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Estilo para o hover */
+  .selecao:hover {
+    border-color: #aaa;
+  }
+
+  /* Estilo para o dropdown */
+  .selecao + .select-items {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #fff;
+    display: none;
+  }
+
+  /* Estilo para a seta dropdown */
+  .selecao::-ms-expand,
+  .selecao::-webkit-select-arrow {
+    display: none;
+  }
+
+  /* Mostrar as opções quando o select está em foco ou hover */
+  .selecao:focus + .select-items,
+  .selecao:hover + .select-items {
+    display: block;
+  }
+
+  
+  
 }

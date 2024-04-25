@@ -9,7 +9,7 @@ class Avatar
     }
     public function setCodAvatar($codAvatar)
     {
-        $this->$codAvatar = $codAvatar;
+        $this-> codAvatar = $codAvatar;
     }
     public function getCodCabelo()
     {
@@ -17,7 +17,7 @@ class Avatar
     }
     public function setCodCabelo($codCabelo)
     {
-        $this->$codCabelo = $codCabelo;
+        $this-> codCabelo = $codCabelo;
     }
     public function getCodRoupa()
     {
@@ -25,7 +25,7 @@ class Avatar
     }
     public function setCodRoupa($codRoupa)
     {
-        $this->$codRoupa = $codRoupa;
+        $this-> codRoupa = $codRoupa;
     }
     public function getCodGenero()
     {
@@ -33,14 +33,14 @@ class Avatar
     }
     public function setCodGenro($codGenero)
     {
-        $this->$codGenero =  $codGenero;
+        $this-> codGenero =  $codGenero;
     }
-    public function getCodUsusario()
+    public function getCodUsuario()
     {
         return $this->codUsuario;
     }
-    public function setCodUsusario($codUsuario)
+    public function setCodUsuario($codUsuario)
     {
-        $this->$codUsuario = $codUsuario;
+        $this-> codUsuario = $codUsuario;
     }
 }

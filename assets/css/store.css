@@ -398,22 +398,28 @@ body {
         flex-wrap: wrap;
     }
     .card-item{
-        width: 8VW;
-        height: 12vh;
+        width: 10VW;
+        height: 14vh;
         border-radius: 5%;
         border: 2px solid var(--blue3);
         flex: 0 0 cal(100% /5);
-        margin: 0.5vh 1vw;
+        margin: 0.2vh 1vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .card-item p{
         text-align: center;
         font-size: 4rem;
         color: var(--blue3);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     
-.card-item:hover {
+    .card-item:hover {
     background-color: #f0f0f0;
-}
+    }
     .items{
         position: relative;
         left: 7vw;
@@ -422,13 +428,14 @@ body {
     .container-avatar{
         width: 20vw;
         height: 40vh;
-        top: 10vh;
+        margin-top: 25%;
         background-color:var(--blue2);
         border-radius: 5%;
         overflow: hidden;
         display: flex;
         align-items: end;
         justify-content: center;
+        position: relative;
     }
     
     .base {
@@ -456,12 +463,13 @@ body {
         left: 50%;
         transform: translateX(-50%);
         width: 145px;
+        z-index: 3;
     }
 
 
     .buttons{
         position: relative;
-        margin-top: 15vh;
+        margin-top: 5vh;
         width: 20vw;
         display: flex;
         justify-content: space-between;

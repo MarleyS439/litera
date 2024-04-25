@@ -713,11 +713,11 @@
     font-weight: bold;
     display: flex;
     align-items: center;
-    width: 9%;
+    width: 10%;
   }
 
   .logo-area img {
-    width: 40%;
+    width: 50%;
   }
 
   .logo-area p {

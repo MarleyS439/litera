@@ -49,12 +49,12 @@ $usuarios = UsuarioDao::selectAll();
                 <script src="../assets/javascript/search.js"></script>
                 <div class="card-container animate__animated animate__fadeInDown">
                     <h3>Jogo</h3>
-                    <select name="" id="select-jogo">
-                        <option selected>Selecione o jogo</option>
-                        <option>Caça as palavras</option>
-                        <option>Adivinhe as figuras</option>
-                        <option>Jogo 3</option>
-                        <option>Jogo 4</option>
+                    <select name="selectJogo" id="selectJogo">
+                        <option value="0" selected>Selecione o jogo</option>
+                        <option value="1">Caça as palavras</option>
+                        <option value="2">Adivinhe as figuras</option>
+                        <option value="3">Jogo 3</option>
+                        <option value="4">Jogo 4</option>
                     </select>
                 </div>
             </div>
@@ -63,25 +63,25 @@ $usuarios = UsuarioDao::selectAll();
                 <div class="card-container">
                     <h4>Fases concluídas</h4>
                     <div class="card">
-                        <p class="font-card" id="card-1">0</p>
+                        <p class="font-card" id="card-1">-</p>
                     </div>
                 </div>
                 <div class="card-container">
                     <h4>Pontuação máxima</h4>
                     <div class="card">
-                        <p class="font-card" id="card-2">0</p>
+                        <p class="font-card" id="card-2">-</p>
                     </div>
                 </div>
                 <div class="card-container">
                     <h4>Quantidade média de acertos</h4>
                     <div class="card">
-                        <p class="font-card" id="card-3">0</p>
+                        <p class="font-card" id="card-3">-</p>
                     </div>
                 </div>
                 <div class="card-container">
                     <h4>Quantidade média de erros</h4>
                     <div class="card">
-                        <p class="font-card" id="card-4">0</p>
+                        <p class="font-card" id="card-4">-</p>
                     </div>
                 </div>
             </div>

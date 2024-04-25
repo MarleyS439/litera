@@ -37,6 +37,14 @@ class UsuarioDao
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    public static function selectByLastId()
+    {
+        $conexao = Conexao::conectar();
+        $query = "SELECT * FROM tbusuario ORDER BY codUsuario DESC LIMIT 1";
+        $stmt = $conexao->prepare($query);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
     public static function delete($cod)
     {
         $conexao = Conexao::conectar();
@@ -136,7 +144,7 @@ class UsuarioDao
     {
         $conexao = Conexao::conectar();
         $query = "UPDATE tbusuario SET
-        dinheiroUsuario = dinheiroUsuario + ?, dataModfc = ?
+        dinheiroUsuario = dinheiroUsuario + ?, dataModfc = ?, fasesConcluidas = fasesConcluidas + 1
         WHERE codUsuario = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $dinheiro);

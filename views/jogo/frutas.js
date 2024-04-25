@@ -305,6 +305,7 @@ function fazerPergunta() {
           errou.style.display = "block";
           acertou.style.display = "flex";
           acerto.style.display = "none";
+          retorne.style.display = "none";
 
           setTimeout(function () {
             errou.style.display = "none";
@@ -498,6 +499,7 @@ function fazerPergunta() {
           errou.style.display = "block";
           acertou.style.display = "flex";
           acerto.style.display = "none";
+          retorne.style.display = "none";
           silabasErradas();
           console.log("Erros:" + errado);
 
@@ -694,6 +696,7 @@ function fazerPergunta() {
           errou.style.display = "block";
           acertou.style.display = "flex";
           acerto.style.display = "none";
+          retorne.style.display = "none";
           silabasErradas();
           console.log("Erros:" + errado);
 
@@ -886,6 +889,7 @@ function fazerPergunta() {
           errou.style.display = "block";
           acertou.style.display = "flex";
           acerto.style.display = "none";
+          retorne.style.display = "none";
           silabasErradas();
           console.log("Erros:" + errado);
 
@@ -1079,6 +1083,7 @@ function fazerPergunta() {
           errou.style.display = "block";
           acertou.style.display = "flex";
           acerto.style.display = "none";
+          retorne.style.display = "none";
           silabasErradas();
           console.log("Erros:" + errado);
 
@@ -1277,6 +1282,7 @@ function fazerPergunta() {
           errou.style.display = "block";
           acertou.style.display = "flex";
           acerto.style.display = "none";
+          retorne.style.display = "none";
           silabasErradas();
           console.log("Erros:" + errado);
 
@@ -1469,6 +1475,7 @@ function fazerPergunta() {
           errou.style.display = "block";
           acertou.style.display = "flex";
           acerto.style.display = "none";
+          retorne.style.display = "none";
           silabasErradas();
           console.log("Erros:" + errado);
 
@@ -1636,6 +1643,7 @@ function fazerPergunta() {
               console.log("FIM!");
               acertou.style.display = "none";
               fim.style.display = "block";
+              retorne.style.display = "none";
 
               silabaSrc = "Audios/Fim de Jogo.mp3";
               audio.src = silabaSrc;
@@ -1703,12 +1711,14 @@ function fazerPergunta() {
               // Envia a requisição com os dados convertidos para JSON
               xhr2.send(JSON.stringify(nivelInsert));
 
+              // Seu script JavaScript
               const dadosFase = {
                 id: document.getElementById("id").value,
                 idFase: 2,
-                acerto: 8,
-                erros: errado,
-                pontos: 50,
+                money: moedas,
+                acertos: 8,
+                erros: errado ? errado : 0,
+                pontos: 50
               };
 
               // Cria o objeto XMLHttpRequest
@@ -1730,6 +1740,7 @@ function fazerPergunta() {
                   console.error("Erro ao enviar requisição");
                 }
               };
+
               // Envia a requisição com os dados convertidos para JSON
               xhrDadosFase.send(JSON.stringify(dadosFase));
             }, 3000);
@@ -1739,6 +1750,7 @@ function fazerPergunta() {
           errou.style.display = "block";
           acertou.style.display = "flex";
           acerto.style.display = "none";
+          retorne.style.display = "none";
           silabasErradas();
           console.log("Erros:" + errado);
 
@@ -1863,5 +1875,42 @@ function fazerPergunta() {
     console.log("exibindo tudo:", areaSilabas);
   });
 }
+
+function openFullscreen() {
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+  } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
+    document.documentElement.mozRequestFullScreen();
+  } else if (document.documentElement.webkitRequestFullscreen) { /* Chrome, Safari e Opera */
+    document.documentElement.webkitRequestFullscreen();
+  } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
+    document.documentElement.msRequestFullscreen();
+  }
+}
+
+// Opcional: fechar tela cheia
+function closeFullscreen() {
+     if (document.exitFullscreen) {
+         document.exitFullscreen();
+     } else if (document.mozCancelFullScreen) { /* Firefox */
+         document.mozCancelFullScreen();
+     } else if (document.webkitExitFullscreen) { /* Chrome, Safari e Opera */
+         document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { /* IE/Edge */
+         document.msExitFullscreen();
+     }
+ }
+
+
+
+
+
+
+
+
+
+
+
+
 
 fazerPergunta();

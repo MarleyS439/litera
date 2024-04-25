@@ -17,6 +17,10 @@ if ($usuarioAutenticado['banido'] != 0) {
     header("Location: ./login.php?status=erro3");
     exit();
 }
+require('../dao/roupaDao.php');
+$roupa = RoupaDao::selectAll();
+require('../dao/AvatarDao.php');
+$avatar = AvatarDao::selectByIdUser($codUser['cod']);
 ?>
 
 <head>
@@ -73,77 +77,94 @@ if ($usuarioAutenticado['banido'] != 0) {
                     </a>
                 </div>
             </div>
-            <form action="" method="POST" class="form-avatar">
+            <form action="../controller/insertAvatar.php" method="POST" class="form-avatar">
+                <!-- Adicione o input hidden aqui -->
+                <input type="hidden" name="roupa" id="roupa-hidden" value="">
+
                 <div class="inventory">
                     <?php
-                    $itens = [
-                        ['id' => 1, 'nome' => 'item 1', 'imagem' => '../assets/images/facebook.png'],
-                        ['id' => 2, 'nome' => 'item 2', 'imagem' => '../assets/images/instagram.png'],
-                        ['id' => 3, 'nome' => 'item 3', 'imagem' => 'item.jpg']
-                    ];
-                    foreach ($itens as $item) {
-                        echo '<div class="card-item" data-id="' . $item['id'] . '" onclick="atualizarImagem(this)">';
-                        echo '<img src="' . $item['imagem'] . ' " alt="' . $item['nome'] . '">';
-                        echo '</div>';
-                    }
-                    ?>
+                    foreach ($roupa as $roupas) { ?>
+                        <div class="card-item">
+                            <img src="../assets/images/perfil/roupa/<?php echo $roupas['imgRoupa'] ?>" alt="<?php echo $roupas['nomeRoupa'] ?>" data-value="<?php echo $roupas['codRoupa'] ?>">
+                        </div>
+                    <?php } ?>
                 </div>
                 <div class="items">
                     <div class="container-avatar">
-
                         <div class="base">
-                            <img src="../assets/images/perfil/genero/fb5d1c27ff697dffa11ced29aa15fe13.jpg" alt="">
+                            <img src="../assets/images/perfil/genero/<?php echo $avatar["imgGenero"] ?>" alt="">
                             <div class="cabelo">
-                                <img src="../assets/images/perfil/cabelo/98e21116972c84c51c6b757e5eb9dda8.jpg" alt="">
+                                <img src="../assets/images/perfil/cabelo/<?php echo $avatar["imgCabelo"] ?>" alt="">
                             </div>
                             <div class="roupa">
-                                <img src="../assets/images/perfil/roupa/4d1465f52d3637e2d5d2c1b7ace4c7d7.jpg" alt="">
+                                <img src="../assets/images/perfil/roupa/<?php echo $avatar["imgRoupa"] ?>" alt="">
                             </div>
                         </div>
-
                     </div>
                     <div class="buttons">
                         <button type="submit">
                             <p>Cancelar</p>
                         </button>
-                        <button type="submit" value="Comprar">
+                        <input type="hidden" name="codUser" value="<?php echo $codUser['cod'] ?>">
+                        <input type="hidden" name="itemAvatar" value="comprarRoupa">
+                        <button type="submit">
                             <p>Comprar</p>
                         </button>
                     </div>
                 </div>
             </form>
         </div>
-    </div>
-    <div class="mobile-view">
+        <!-- Mobile View -->
+        <div class="mobile-view">
+
+            <div class="overlay-itens2"></div>
+
+            <div class="top-bar">
+                <div class="info-user">
+                    <img src="../assets/images/icons/profile.svg" alt="">
+                    <span><?php echo ($usuarioAutenticado['nomeUsuario']) ?></span>
+                </div>
+
+                <div class="credits">
+                    <img src="../assets/images/icons/coin.svg" alt="">
+                    <span><?php echo ($usuarioAutenticado['pontuacaoUsuario']) ?></span>
+                </div>
+            </div>
 
 
-        <div class="bottom-navigation-bar">
+            <div class="bottom-navigation-bar">
 
-            <a href="#">
-                <img src="../assets/images/icons/home-icon.svg" alt="Início" id="home">
-            </a>
+                <a href="./home.php">
+                    <img src="../assets/images/icons/home-icon.svg" alt="Início" id="home">
+                </a>
 
-            <a href="#">
-                <img src="../assets/images/icons/store-icon.svg" alt="Loja" id="store">
-            </a>
+                <a href="./store.php">
+                    <img src="../assets/images/icons/store-icon.svg" alt="Loja" id="store">
+                </a>
 
-            <a href="#">
-                <img src="../assets/images/icons/profile-icon.svg" alt="Perfil" id="profile">
-            </a>
+                <a href="#">
+                    <img src="../assets/images/icons/profile-icon.svg" alt="Perfil" id="profile">
+                </a>
 
-        </div>
-    </div>
+            </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var cardItems = document.querySelectorAll('.inventory .card-item');
+                    var roupaAvatar = document.querySelector('.container-avatar .roupa img');
+                    var roupaHiddenInput = document.getElementById('roupa-hidden'); // Adicione esta linha para obter a referência ao input hidden
 
-    <script>
-        function atualizarImagem(element) {
-            var itemId = element.getAttribute('data-id');
+                    cardItems.forEach(function(card) {
+                        card.addEventListener('click', function() {
+                            var imgSrc = this.querySelector('img').getAttribute('src');
+                            var img = this.querySelector('img').getAttribute('data-value');
+                            roupaAvatar.setAttribute('src', imgSrc);
+                            // Atualize o valor do input hidden com a informação da roupa
+                            roupaHiddenInput.value = img;
+                        });
+                    });
+                });
+            </script>
 
-            var imgSrc = element.querySelector('img').getAttribute('src')
-
-            var imgAvatar = document.querySelector('.img-avatar');
-            imgAvatar.innerHTML = '<img src= "' + imgSrc + '" alt="Avatar">'
-        }
-    </script>
 </body>
 
 </html>

@@ -11,17 +11,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         try {
             // Pesquisa o usuário no banco de dados
-            $id = UsuarioDao::searchUser($data['search']); // Correção aqui
-            $resultado = DadosJogoUsuarioDao::searchUser($id['codUsuario']);
+            $id = UsuarioDao::searchUser($data['search']);
+            $resultado = DadosJogoUsuarioDao::searchUser($id['codUsuario'], $data['selectJogo']);
 
             if ($resultado) {
                 $response = [
-                    'usuario' => $id,
-                    'dadosJogo' => $resultado 
+                    'fasesConcluidas' => $id['fasesConcluidas'], // Acessando o valor 'fasesConcluidas' do array $id
+                    'dadosJogo' => $resultado // Correção aqui, para acessar o primeiro objeto do array
                 ];
-                echo json_encode($response); // Retorna o usuário encontrado como JSON
+                echo json_encode($response);
             } else {
-                echo "Usuário não encontrado";
+                echo json_encode("Usuário não encontrado");
             }
         } catch (PDOException $e) {
             echo "Erro na conexão com o banco de dados: " . $e->getMessage();

@@ -38,7 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Iniciar a sessão apenas se as credenciais estiverem corretas
             session_start();
             $_SESSION["authUser"] = $authUser;
-            header("Location: ../views/home.php");
+            if($usuarioDao['tutorial'] == 0){
+                header("Location: ../views/avatar.php?ststus=base");
+            }else{
+                header("Location: ../views/home.php");
+            }
         } else {
             // caso negado, redirecionar para a página de login com uma mensagem de erro
             header("Location: ../views/login.php?status=erro1");

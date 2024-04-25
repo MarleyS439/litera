@@ -1,6 +1,7 @@
 <?php
 // caminhos para os arquivos dao e model
 require_once("../dao/usuarioDao.php");
+require_once("../dao/dadosJogoUsuarioDao.php");
 require_once(__DIR__."../../models/usuario.php");
 // variavel que vai mandar os dados para o model
 $usuario = new Usuario();
@@ -38,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 try{
                     $usuarioDao = new UsuarioDao();
                     $usuarioDao->insert($usuario);
+                    DadosJogoUsuarioDao::insert(UsuarioDao::selectByLastId()['codUsuario']);
                     session_start();
                   
                     header('Location: ../views/login.php?status=sucess');

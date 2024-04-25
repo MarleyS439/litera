@@ -713,6 +713,10 @@
         position: absolute;
         right: 2vw;
         top: 20%;
+        background-image: url(../images/icons/edit-3-svgrepo-com.svg);
+        width: 2vw;
+        background-size: 2vw;
+        background-repeat: no-repeat;
     }
 
     .edit-name-dialog {
@@ -801,6 +805,10 @@
         background-color: var(--blue2);
         border-radius: 5px;
         padding: 2% 3%;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: end;
     }
 
     .name-user span {
@@ -909,6 +917,33 @@
         background-color: var(--blue6);
         height: 100%;
         border-radius: 10px;
+    }
+
+    .base {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .base img {
+        display: block;
+        margin: 0 auto;
+        width: 135px;
+    }
+    
+    .cabelo img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translatey(-20%) translateX(-50%);
+        width: 120px;
+    }
+    
+    .roupa img {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 115px;
     }
 
 

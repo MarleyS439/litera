@@ -1,0 +1,57 @@
+@import url(./default.css);
+@import url(./animations.css);
+
+:root{
+    --white-blue: #EBF7FF;
+}
+/* Mobile */
+@media screen and (max-width: 768px) {
+
+
+}
+
+/* Tablets */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  
+}
+
+/* Desktops */
+@media screen and (min-width: 1025px) {
+   body{
+    background-color: var(--white-blue) ;
+   }
+    .conteinerAvatarCriacao{
+        width: 100%;
+        min-height: 90vh;
+        
+    }
+    .base {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .base img {
+        display: block;
+        margin: 0 auto;
+        width: 135px;
+    }
+    
+    .cabelo img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translatey(-20%) translateX(-50%);
+        width: 120px;
+    }
+    
+    .roupa img {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 115px;
+    }
+
+
+
+}

@@ -1,13 +1,25 @@
 function search() {
-  // lógica de inserção no banco
-  const dados = {
-    search: document.getElementById("search_user").value,
-  };
+  const searchValue = document.getElementById("search_user").value;
+  const selectValue = document.getElementById("selectJogo").value;
 
-  if (dados.search.length > 0) {
+  if (searchValue.trim() !== "" || selectValue !== "0") {
+    // lógica de inserção no banco
+    const dados = {
+      search: searchValue,
+      selectJogo: selectValue,
+    };
+
+    let cards = [
+      document.getElementById("card-1"),
+      document.getElementById("card-2"),
+      document.getElementById("card-3"),
+      document.getElementById("card-4"),
+    ];
+
     container.style.display = "flex";
     container.classList.remove("animate__fadeOutUp");
     container.classList.add("animate__animated", "animate__fadeInDown");
+
     // Cria o objeto XMLHttpRequest
     const xhr = new XMLHttpRequest();
 
@@ -21,20 +33,20 @@ function search() {
     xhr.onload = function () {
       if (xhr.status >= 200 && xhr.status < 300) {
         // Requisição bem-sucedida, você pode lidar com a resposta aqui
-        console.log(xhr.responseText);
         let response = JSON.parse(xhr.responseText);
+        console.log(response);
 
-        let cards = [
-          document.getElementById("card-1"),
-          document.getElementById("card-2"),
-          document.getElementById("card-3"),
-          document.getElementById("card-4"),
-        ];
-
-        cards[1].textContent = response.maxPontuacao;
-        cards[2].textContent = response.qtndAcertos; 
-        cards[3].textContent = response.qtndErros; 
-
+        if (response !== "Usuário não encontrado") {
+          cards[0].textContent = response.fasesConcluidas;
+          cards[1].textContent = response.dadosJogo.maxPontuacao;
+          cards[2].textContent = response.dadosJogo.qtndAcertos;
+          cards[3].textContent = response.dadosJogo.qtndErros;
+        } else {
+          cards[0].textContent = "-";
+          cards[1].textContent = "-";
+          cards[2].textContent = "-";
+          cards[3].textContent = "-";
+        }
       } else {
         // Trate os erros de requisição aqui
         console.error("Erro ao enviar requisição");
@@ -44,13 +56,18 @@ function search() {
     // Envia a requisição com os dados convertidos para JSON
     xhr.send(JSON.stringify(dados));
   } else {
-    container.classList.add("animate__animated", "animate__fadeOutUp");
-    setTimeout(function () {
-      container.style.display = "none";
-      container.classList.remove("animate__fadeOutUp");
-    }, 500);
+    container.style.display = "none";
+    container.classList.remove("animate__fadeInDown");
+    container.classList.add("animate__fadeOutUp");
   }
 }
+
+// Adiciona ouvintes de evento para o evento 'input' do campo de pesquisa e 'change' do select
+document.getElementById("search_user").addEventListener("input", search);
+document.getElementById("selectJogo").addEventListener("change", search);
+
+
+
 
 function searchUsers() {
   // Obtém o valor do campo de pesquisa

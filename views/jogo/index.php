@@ -36,27 +36,15 @@ if ($usuarioAutenticado['banido'] != 0) {
 </head>
 
 <body>
-
-    <header class="headerNav">
-        <a href="#" class="logo">Litera</a>
-        <nav class="navbar">
-            <ul class="ulNav">
-                <li class="liNav"><a href="#"><img src="img/home.svg"></a></li>
-                <li class="liNav"><a href="#"><img src="img/store.svg"></a></li>
-            </ul>
-        </nav>
-        <a href="#" class="perfil">
-            <img src="img/sapo.png" class="avatar">
-            <span class="nomeUser" name="userName"><?php echo $usuarioAutenticado['nomeUsuario']?></span>   
-        </a>
-    </header>
         
-
     <section class="jogo">
         
 
 
         <div class="area-jogo">
+
+            
+
             <div class="final" id="finalizar">
                 <div class="text-fim">
                     <p>FIM DE JOGO</p>
@@ -96,11 +84,16 @@ if ($usuarioAutenticado['banido'] != 0) {
                     <div class="acerto" id="v7"></div>
                     <div class="acerto" id="v8"></div>
                 </div>
+
+                <div class="header" id="header">
+                    <button onclick="openFullscreen()" class="fullScreen"></button>
+                    <button onclick="closeFullscreen()" class="fullScreen"></button>
+                 </div>
                 
             </div>
             <div class="area-itens">
                 
-                <button id="retornar">repetindo</button>
+                
 
                 <div class="repetir" id='repetir'>
                     <img class="audioRepetir" src="img/jogoFruta/audio.svg" alt="audio">
@@ -120,6 +113,9 @@ if ($usuarioAutenticado['banido'] != 0) {
                     </div>
                 </div>
                 <div class="silabas">
+
+                    <button id="retornar" class="retornar"><img src="img/retornarSil.svg" alt="<"></button>
+
                     <div class="boxSilabas" id="bx1">
                         <img class="sil" src="" alt="" id="silaba1">
                     </div>

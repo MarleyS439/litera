@@ -1,5 +1,8 @@
 <?php
 require_once "../dao/compraItemDao.php";
+require('../dao/AvatarDao.php');
+$codUser = $_SESSION['authUser'];
+$avatar = AvatarDao::selectByIdUser($codUser['cod']);
 
 // Array associativo com os nomes dos meses em português
 $meses = array(
@@ -34,14 +37,14 @@ $mesPorExtenso = $meses[$numeroMes];
     </div>
     <div class="modalContent">
         <button class="edit-btn">
-            <i class="fa-solid fa-pen-to-square fa-xl" size="26"></i>
+            <img src="../../assets/images/icons/edit-3-svgrepo-com.svg" alt="">
         </button>
         <dialog class="edit-name-dialog">
             <form action="../controller/updateUser.php" method="POST">
                 <header>
                     <h2>Edite seu nome de Usuário</h2>
                     <button class="close-btn secundary" type="button">
-                        <i class="fa-solid fa-xmark"></i>
+                        X
                     </button>
                 </header>
                 <div class="save-name-dialog__content">
@@ -65,9 +68,14 @@ $mesPorExtenso = $meses[$numeroMes];
     </form> -->
 
     <div class="avatar-container">
-        <div class="ava">
-            <div class="circle"></div>
-            <div class="semi-circle"></div>
+        <div class="base">
+            <img src="../assets/images/perfil/genero/<?php echo $avatar["imgGenero"]?>" alt="">
+            <div class="cabelo">
+                <img src="../assets/images/perfil/cabelo/<?php echo $avatar["imgCabelo"]?>" alt="">
+            </div>
+            <div class="roupa">
+                <img src="../assets/images/perfil/roupa/<?php echo $avatar["imgRoupa"]?>" alt="">
+            </div>
         </div>
     </div>
     <div class="infomation-user">
@@ -108,7 +116,6 @@ $mesPorExtenso = $meses[$numeroMes];
 
     </div>
 </div>
-<script src="https://kit.fontawesome.com/a3e37e504d.js" crossorigin="anonymous"></script>
 <script>
     const modalDialog = document.querySelector(".edit-name-dialog")
     const editBtn = document.querySelector(".edit-btn")

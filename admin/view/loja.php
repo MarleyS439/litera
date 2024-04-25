@@ -48,12 +48,12 @@ $genero = GeneroDao::selectAll();
                     <div class="title">
                         <h2>Itens Loja</h2>
                     </div>
-                    <div>
-                        <select id="" onchange="mostrarOpcao()">
+                    <div class="select-container">
+                        <select id="filtro-cards" onchange="mostrarOpcao()" class="selecao">
                             <option value="">Tudo</option>
-                            <option value="">Cabelos</option>
-                            <option value="">Roupas</option>
-                            <option value="">Peles</option>
+                            <option value="cabelos">Cabelos</option>
+                            <option value="roupas">Roupas</option>
+                            <option value="peles">Peles</option>
                         </select>
                     </div>
                 </div>
@@ -66,23 +66,29 @@ $genero = GeneroDao::selectAll();
 
                         <?php
                         foreach ($cabelo as $cabelos) : ?>
-                            <div class="cards">
-                                <img src="../../assets/images/perfil/cabelo/<?php echo $cabelos["imgCabelo"] ?>" alt="cabelios salvos">
-                                <p><?php echo $cabelos['nomeCabelo'] ?></p>
+                            <div class="cards cardCabelos">
+                                <img id="itemCabelo" src="../../assets/images/perfil/cabelo/<?php echo $cabelos["imgCabelo"] ?>" alt="cabelios salvos">
+                                <div class="nomeItem">
+                                    <p><?php echo $cabelos['nomeCabelo'] ?></p>
+                                </div>
                             </div>
                         <?php endforeach; ?>
                         <?php
                         foreach ($roupa as $roupas) : ?>
-                            <div class="cards">
-                                <img src="../../assets/images/perfil/roupa/<?php echo $roupas["imgRoupa"] ?>" alt="cabelios salvos">
-                                <p><?php echo $roupas['nomeRoupa'] ?></p>
+                            <div class="cards cardRoupas">
+                                <img id="itemCards" src="../../assets/images/perfil/roupa/<?php echo $roupas["imgRoupa"] ?>" alt="cabelios salvos">
+                                <div class="nomeItem" >
+                                    <p><?php echo $roupas['nomeRoupa'] ?></p>
+                                </div>
                             </div>
                         <?php endforeach; ?>
                         <?php
                         foreach ($genero as $generos) : ?>
-                            <div class="cards">
-                                <img src="../../assets/images/perfil/genero/<?php echo $generos["imgGenero"] ?>" alt="cabelios salvos">
-                                <p><?php echo $generos['nomeGenero'] ?></p>
+                            <div class="cards cardPeles">
+                                <img id="itemCards" src="../../assets/images/perfil/genero/<?php echo $generos["imgGenero"] ?>" alt="cabelios salvos">
+                                <div class="nomeItem">
+                                    <p><?php echo $generos['nomeGenero'] ?></p>
+                                </div>
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -93,7 +99,42 @@ $genero = GeneroDao::selectAll();
     </div>
     </div>
 
+<script>
 
+    function mostrarOpcao() {
+        // Obtém o elemento select pelo id
+        var filtro = document.getElementById("filtro-cards");
+
+        // Obtém os elementos cards pela classe
+        let cabelos = document.querySelectorAll('.cardCabelos');
+        let roupas = document.querySelectorAll('.cardRoupas');
+        let peles = document.querySelectorAll('.cardPeles');
+
+        // Obtém o valor da opção selecionada
+        var valorFiltro = filtro.value;
+
+        // Define todos os elementos como visíveis inicialmente
+        cabelos.forEach(cabelo => cabelo.style.display = 'flex');
+        roupas.forEach(roupa => roupa.style.display = 'flex');
+        peles.forEach(pele => pele.style.display = 'flex');
+
+        // Oculta os elementos baseado na seleção
+        if (valorFiltro === 'cabelos') {
+            roupas.forEach(roupa => roupa.style.display = 'none');
+            peles.forEach(pele => pele.style.display = 'none');
+        } else if (valorFiltro === 'roupas') {
+            cabelos.forEach(cabelo => cabelo.style.display = 'none');
+            peles.forEach(pele => pele.style.display = 'none');
+        } else if (valorFiltro === 'peles') {
+            cabelos.forEach(cabelo => cabelo.style.display = 'none');
+            roupas.forEach(roupa => roupa.style.display = 'none');
+        }
+
+        
+        
+    }
+
+</script>
 </body>
 
 </html>

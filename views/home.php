@@ -127,12 +127,12 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
         <div class="top-bar">
             <div class="info-user">
                 <img src="../assets/images/icons/profile.svg" alt="">
-                <span>Nome usuário</span>
+                <span><?php echo ($usuarioAutenticado['nomeUsuario'])?></span>
             </div>
 
             <div class="credits">
                 <img src="../assets/images/icons/coin.svg" alt="">
-                <span>500</span>
+                <span><?php echo ($usuarioAutenticado['pontuacaoUsuario'])?></span>
             </div>
         </div>
 
@@ -142,7 +142,7 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
             </div>
 
             <div class="games-list">
-                <a class="game" id="t" href="../views/jogo/map.php">
+                <a class="game" id="t" href="../views/jogo/map1.php">
                     <div class="title-game" id="aa">
                         <p>Caça às Letras</p>
                     </div>
@@ -177,11 +177,11 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
         </main>
         <div class="bottom-navigation-bar">
 
-            <a href="#">
+            <a href="./home.php">
                 <img src="../assets/images/icons/home-icon.svg" alt="Início" id="home">
             </a>
 
-            <a href="#">
+            <a href="./store.php">
                 <img src="../assets/images/icons/store-icon.svg" alt="Loja" id="store">
             </a>
 

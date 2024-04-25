@@ -1,4 +1,5 @@
 <?php
+require_once(__DIR__ . "../../config/conexao.php");
 
 class AvatarDao
 {
@@ -44,6 +45,22 @@ class AvatarDao
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    public static function selectByIdUser($cod)
+    {
+        $conexao = Conexao::conectar();
+        $query = "SELECT tbavatar.*, tbroupa.imgRoupa, tbcabelo.imgCabelo, tbgenero.imgGenero 
+    FROM 
+        tbavatar 
+        INNER JOIN tbroupa ON tbavatar.codRoupa = tbroupa.codRoupa 
+        INNER JOIN tbcabelo ON tbavatar.codCabelo = tbcabelo.codCabelo 
+        INNER JOIN tbgenero ON tbavatar.codGenero = tbgenero.codGenero  
+    WHERE 
+        tbavatar.codUsuario = ?";
+        $stmt = $conexao->prepare($query);
+        $stmt->bindValue(1, $cod);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 
     public static function selectById($cod)
     {
@@ -82,6 +99,26 @@ class AvatarDao
         $stmt->bindValue(5, $cod);
         return $stmt->execute();
     }
+    public static function updateCabelo($cod, $avatar)
+    {
+        $conexao = Conexao::conectar();
+        $query = "UPDATE tbavatar SET
+                        codCabelo = ?
+                  WHERE codUsuario = ?";
+        $stmt = $conexao->prepare($query);
+        $stmt->bindValue(1, $avatar->getCodCabelo());
+        $stmt->bindValue(2, $cod);
+        return $stmt->execute();
+    }
+    public static function updateRoupa($cod, $avatar)
+    {
+        $conexao = Conexao::conectar();
+        $query = "UPDATE tbavatar SET
+                        codRoupa = ?
+                  WHERE codUsuario = ?";
+        $stmt = $conexao->prepare($query);
+        $stmt->bindValue(1, $avatar->getCodRoupa());
+        $stmt->bindValue(2, $cod);
+        return $stmt->execute();
+    }
 }
-
-?>
