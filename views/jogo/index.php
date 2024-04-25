@@ -49,8 +49,8 @@ if ($usuarioAutenticado['banido'] != 0) {
                 <div class="text-fim">
                     <p>FIM DE JOGO</p>
                 </div>
-                <p>Sua Pontuação: <span class="total_moedas" id="final_point"></span></p>
-                <p>Quantidade de Erros: <span class="total_moedas" id="final_error"></span></p>
+                <p id="corPontuacao">Sua Pontuação: <span class="total_moedas" id="final_point"></span></p>
+                <p id="corErros">Quantidade de Erros: <span class="total_moedas" id="final_error"></span></p>
                 <div class="btn-fim">
                     <a href="index.php" class="btnFinal"><img src="img/recomecar.svg" alt=""></a>
                     <a href="../home.php" class="btnFinal"><img src="img/avancar.svg" alt=""></a>

@@ -22,8 +22,8 @@ let audio = new Audio()
 
 let falaSrc = ''
 
-
-
+// CONTAGEM DE ERROS!
+let errado = 0;
 
 function comecarJogo() {
   return new Promise(function (resolve, reject) {
@@ -129,6 +129,9 @@ function selecaoBalao(balao) {
   };
 }
 
+function silabasErradas() {
+  errado++;
+}
 
 function aumentarMoedas() {
   moedas = moedas + moedas + Math.floor(Math.random() * moedas);
@@ -495,30 +498,30 @@ function fazerPergunta() {
   let audioPlaying = false;
 
   function playAudio(src) {
-      audioPlaying = true;
-      audio.src = src;
-      audio.play();
-      audio.onended = function() {
-          audioPlaying = false;
-          // Desbloqueia os botões após o áudio terminar
-          enableButtons();
-      };
+    audioPlaying = true;
+    audio.src = src;
+    audio.play();
+    audio.onended = function () {
+      audioPlaying = false;
+      // Desbloqueia os botões após o áudio terminar
+      enableButtons();
+    };
   }
 
   function disableButtons() {
-      b1.disabled = true;
-      b2.disabled = true;
-      b3.disabled = true;
-      b4.disabled = true;
-      b5.disabled = true;
+    b1.disabled = true;
+    b2.disabled = true;
+    b3.disabled = true;
+    b4.disabled = true;
+    b5.disabled = true;
   }
 
   function enableButtons() {
-      b1.disabled = false;
-      b2.disabled = false;
-      b3.disabled = false;
-      b4.disabled = false;
-      b5.disabled = false;
+    b1.disabled = false;
+    b2.disabled = false;
+    b3.disabled = false;
+    b4.disabled = false;
+    b5.disabled = false;
   }
 
   var perguntas = ['Audios/A.mp3', 'Audios/E.mp3', 'Audios/I.mp3', 'Audios/O.mp3', 'Audios/U.mp3'];
@@ -527,150 +530,181 @@ function fazerPergunta() {
 
   // Reproduz o áudio da primeira pergunta
   setTimeout(function () {
-      playAudio(perguntas[perguntaAtual]);
-      // Bloqueia os botões enquanto o áudio da pergunta está tocando
-      disableButtons();
+    playAudio(perguntas[perguntaAtual]);
+    // Bloqueia os botões enquanto o áudio da pergunta está tocando
+    disableButtons();
   }, 400);
 
   function responderPergunta(balao) {
-      if (audioPlaying) {
-          return; // Sai da função se o áudio estiver tocando
+    if (audioPlaying) {
+      return; // Sai da função se o áudio estiver tocando
+    }
+
+    // Verifica se a resposta do usuário está correta
+    if (balao.id === 'b' + (perguntaAtual + 1)) {
+      console.log('Resposta correta!');
+      if (vidas <= 5) {
+        document.getElementById('v' + vidas).style.backgroundColor = '#3EF150';
+        vidas++;
+        atualizarBarraVidas();
       }
+      aumentarMoedas();
+      setTimeout(function () {
+        playAudio('Audios/Resposta Correta.mp3');
+      }, 1000);
+      setTimeout(function () {
+        playAudio('Audios/bolha.mp3');
+        balao.style.display = 'none';
+      }, 3000);
 
-      // Verifica se a resposta do usuário está correta
-      if (balao.id === 'b' + (perguntaAtual + 1)) {
-          console.log('Resposta correta!');
-          if (vidas <= 5) {
-              document.getElementById('v' + vidas).style.backgroundColor = '#3EF150';
-              vidas++;
-              atualizarBarraVidas();
-          }
-          aumentarMoedas();
-          setTimeout(function () {
-              playAudio('Audios/Resposta Correta.mp3');
-          }, 1000);
-          setTimeout(function () {
-              playAudio('Audios/bolha.mp3');
-              balao.style.display = 'none';
-          }, 3000);
-
-          // Avança para a próxima pergunta
-          perguntaAtual++;
-          if (perguntaAtual < perguntas.length) {
-              setTimeout(function () {
-                  playAudio(perguntas[perguntaAtual]);
-                  // Bloqueia os botões enquanto o áudio da pergunta está tocando
-                  disableButtons();
-              }, 4600);
-          } else {
-              setTimeout(function () {
-                  playAudio('Audios/Fim de Jogo.mp3');
-                  fim.style.display = 'flex';
-                  pontos_fim.textContent = moedas + ',00';
-
-                  // lógica de inserção no banco
-                  const dados = {
-                      id: document.getElementById("id").value,
-                      money: moedas,
-                  };
-
-                  // Cria o objeto XMLHttpRequest
-                  const xhr = new XMLHttpRequest();
-
-                  // Define o método e a URL para a requisição
-                  xhr.open('POST', '../../controller/insertMoney.php', true);
-
-                  // Define o cabeçalho da requisição
-                  xhr.setRequestHeader('Content-Type', 'application/json');
-
-                  // Função de callback para quando a requisição estiver completa
-                  xhr.onload = function () {
-                      if (xhr.status >= 200 && xhr.status < 300) {
-                          // Requisição bem-sucedida, você pode lidar com a resposta aqui
-                          console.log(xhr.responseText);
-                      } else {
-                          // Trate os erros de requisição aqui
-                          console.error('Erro ao enviar requisição');
-                      }
-                  };
-
-                  // Envia a requisição com os dados convertidos para JSON
-                  xhr.send(JSON.stringify(dados));
-
-                  //logica de banco para pontuação e o nivel
-                  const nivelInsert = {
-                      id: document.getElementById("id").value,
-                      pontuacao: 50,
-                  };
-
-                  // Cria o objeto XMLHttpRequest
-                  const xhr2 = new XMLHttpRequest();
-
-                  // Define o método e a URL para a requisição
-                  xhr2.open("POST", "../../controller/insertPontuacao.php", true);
-
-                  // Define o cabeçalho da requisição
-                  xhr2.setRequestHeader("Content-Type", "application/json");
-
-                  // Função de callback para quando a requisição estiver completa
-                  xhr2.onload = function () {
-                      if (xhr2.status >= 200 && xhr2.status < 300) {
-                          // Requisição bem-sucedida, você pode lidar com a resposta aqui
-                          console.log(xhr2.responseText);
-                      } else {
-                          // Trate os erros de requisição aqui
-                          console.error("Erro ao enviar requisição");
-                      }
-                  };
-
-                  // Envia a requisição com os dados convertidos para JSON
-                  xhr2.send(JSON.stringify(nivelInsert));
-
-              }, 4700);
-          }
+      // Avança para a próxima pergunta
+      perguntaAtual++;
+      if (perguntaAtual < perguntas.length) {
+        setTimeout(function () {
+          playAudio(perguntas[perguntaAtual]);
+          // Bloqueia os botões enquanto o áudio da pergunta está tocando
+          disableButtons();
+        }, 4600);
       } else {
-          setTimeout(function () {
-              playAudio('Audios/Resposta Errada.mp3');
-          }, 1000);
+        setTimeout(function () {
+          playAudio('Audios/Fim de Jogo.mp3');
+          fim.style.display = 'flex';
+          pontos_fim.textContent = moedas + ',00';
+
+          // lógica de inserção no banco
+          const dados = {
+            id: document.getElementById("id").value,
+            money: moedas,
+          };
+
+          // Cria o objeto XMLHttpRequest
+          const xhr = new XMLHttpRequest();
+
+          // Define o método e a URL para a requisição
+          xhr.open("POST", "../../controller/insertMoney.php", true);
+
+          // Define o cabeçalho da requisição
+          xhr.setRequestHeader("Content-Type", "application/json");
+
+          // Função de callback para quando a requisição estiver completa
+          xhr.onload = function () {
+            if (xhr.status >= 200 && xhr.status < 300) {
+              // Requisição bem-sucedida, você pode lidar com a resposta aqui
+              console.log(xhr.responseText);
+            } else {
+              // Trate os erros de requisição aqui
+              console.error("Erro ao enviar requisição");
+            }
+          };
+          // Envia a requisição com os dados convertidos para JSON
+          xhr.send(JSON.stringify(dados));
+
+          //logica de banco para pontuação e o nivel
+          const nivelInsert = {
+            id: document.getElementById("id").value,
+            pontuacao: 50,
+          };
+
+          // Cria o objeto XMLHttpRequest
+          const xhr2 = new XMLHttpRequest();
+
+          // Define o método e a URL para a requisição
+          xhr2.open("POST", "../../controller/insertPontuacao.php", true);
+
+          // Define o cabeçalho da requisição
+          xhr2.setRequestHeader("Content-Type", "application/json");
+
+          // Função de callback para quando a requisição estiver completa
+          xhr2.onload = function () {
+            if (xhr2.status >= 200 && xhr2.status < 300) {
+              // Requisição bem-sucedida, você pode lidar com a resposta aqui
+              console.log(xhr2.responseText);
+            } else {
+              // Trate os erros de requisição aqui
+              console.error("Erro ao enviar requisição");
+            }
+          };
+          // Envia a requisição com os dados convertidos para JSON
+          xhr2.send(JSON.stringify(nivelInsert));
+
+          // Seu script JavaScript
+          const dadosFase = {
+            id: document.getElementById("id").value,
+            idFase: 1,
+            money: moedas,
+            acertos: 5,
+            erros: errado ? errado : 0,
+            pontos: 50
+          };
+
+          // Cria o objeto XMLHttpRequest
+          const xhrDadosFase = new XMLHttpRequest();
+
+          // Define o método e a URL para a requisição
+          xhrDadosFase.open("POST", "../../controller/insertDadosFase.php", true);
+
+          // Define o cabeçalho da requisição
+          xhrDadosFase.setRequestHeader("Content-Type", "application/json");
+
+          // Função de callback para quando a requisição estiver completa
+          xhrDadosFase.onload = function () {
+            if (xhrDadosFase.status >= 200 && xhrDadosFase.status < 300) {
+              // Requisição bem-sucedida, você pode lidar com a resposta aqui
+              console.log(xhrDadosFase.responseText);
+            } else {
+              // Trate os erros de requisição aqui
+              console.error("Erro ao enviar requisição");
+            }
+          };
+
+          // Envia a requisição com os dados convertidos para JSON
+          xhrDadosFase.send(JSON.stringify(dadosFase));
+        }, 4700);
       }
+    } else {
+      setTimeout(function () {
+        playAudio('Audios/Resposta Errada.mp3');
+        silabasErradas();
+      }, 1000);
+    }
   }
 
   // Adiciona event listeners aos botões
   b1.addEventListener('click', function () {
-      responderPergunta(this);
-      // Bloqueia os botões após a resposta ser dada
-      disableButtons();
+    responderPergunta(this);
+    // Bloqueia os botões após a resposta ser dada
+    disableButtons();
   });
   b2.addEventListener('click', function () {
-      responderPergunta(this);
-      // Bloqueia os botões após a resposta ser dada
-      disableButtons();
+    responderPergunta(this);
+    // Bloqueia os botões após a resposta ser dada
+    disableButtons();
   });
   b3.addEventListener('click', function () {
-      responderPergunta(this);
-      // Bloqueia os botões após a resposta ser dada
-      disableButtons();
+    responderPergunta(this);
+    // Bloqueia os botões após a resposta ser dada
+    disableButtons();
   });
   b4.addEventListener('click', function () {
-      responderPergunta(this);
-      // Bloqueia os botões após a resposta ser dada
-      disableButtons();
+    responderPergunta(this);
+    // Bloqueia os botões após a resposta ser dada
+    disableButtons();
   });
   b5.addEventListener('click', function () {
-      responderPergunta(this);
-      // Bloqueia os botões após a resposta ser dada
-      disableButtons();
+    responderPergunta(this);
+    // Bloqueia os botões após a resposta ser dada
+    disableButtons();
   });
 
   repetir.addEventListener('click', function () {
-      falaSrc = 'Audios/Escolha a Letra Falada.mp3';
-      audio.src = falaSrc;
+    falaSrc = 'Audios/Escolha a Letra Falada.mp3';
+    audio.src = falaSrc;
+    audio.play();
+    setTimeout(function () {
+      audio.src = perguntas[perguntaAtual];
       audio.play();
-      setTimeout(function () {
-          audio.src = perguntas[perguntaAtual];
-          audio.play();
-          console.log('Repetindo!');
-      }, 2300);
+      console.log('Repetindo!');
+    }, 2300);
   });
 }
 

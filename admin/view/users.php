@@ -50,9 +50,10 @@ $usuarios = UsuarioDao::selectAll();
 
                 <div class="">
                     <span>Filtrar</span>
-                    <select name="filtro" id="">
-                        <option value="Ativos">Ativos</option>
-                        <option value="Banidos">Banidos</option>
+                    <select name="filtro" id="status" onchange="filterUsers()">
+                        <option value="Todos">Todos</option>
+                        <option value="Ativo">Ativos</option>
+                        <option value="Banido">Banidos</option>
                     </select>
                 </div>
             </div>

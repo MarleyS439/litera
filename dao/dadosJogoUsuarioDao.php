@@ -52,14 +52,14 @@ class DadosJogoUsuarioDao
             $stmt->bindValue(3, $qntdErros);
             $stmt->bindValue(4, $codJogo);
             $stmt->bindValue(5, $codUsuario);
-            $resultado = $stmt->execute();
-            return $resultado;
+            return $stmt->execute();
         } catch (PDOException $e) {
             // Exibe uma mensagem de erro em caso de falha na execução da consulta
             echo "Erro ao executar a consulta: " . $e->getMessage();
             return false; // Retorna false para indicar que houve erro na execução da consulta
         }
     }
+
     public static function searchUser($idUser, $idJogo)
     {
         $conexao = Conexao::conectar();

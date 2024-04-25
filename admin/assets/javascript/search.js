@@ -16,7 +16,8 @@ function search() {
       document.getElementById("card-4"),
     ];
 
-    container.style.display = "flex";
+  container.style.display = "flex";
+    container.style.flexWrap = "wrap";
     container.classList.remove("animate__fadeOutUp");
     container.classList.add("animate__animated", "animate__fadeInDown");
 
@@ -66,6 +67,31 @@ function search() {
 document.getElementById("search_user").addEventListener("input", search);
 document.getElementById("selectJogo").addEventListener("change", search);
 
+
+
+function filterUsers() {
+  // Obtém o valor do filtro de status
+  var status = document.getElementById("status").value.toUpperCase();
+
+  // Seleciona a tabela
+  var table = document.querySelector("table");
+
+  // Seleciona todas as linhas da tabela
+  var rows = table.querySelectorAll("tbody tr");
+
+  // Itera sobre as linhas da tabela
+  for (var i = 0; i < rows.length; i++) {
+      var cells = rows[i].querySelectorAll("td");
+      var cellStatus = cells[6].textContent.toUpperCase(); // Obtém o status da célula
+
+      // Exibe ou oculta a linha da tabela com base no filtro selecionado
+      if (status === "TODOS" || cellStatus === status) {
+          rows[i].style.display = "";
+      } else {
+          rows[i].style.display = "none";
+      }
+  }
+}
 
 
 

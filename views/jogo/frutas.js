@@ -1642,7 +1642,7 @@ function fazerPergunta() {
             setTimeout(function () {
               console.log("FIM!");
               acertou.style.display = "none";
-              fim.style.display = "block";
+              fim.style.display = "flex";
               retorne.style.display = "none";
 
               silabaSrc = "Audios/Fim de Jogo.mp3";
@@ -1655,10 +1655,7 @@ function fazerPergunta() {
               // lógica de inserção no banco
               const dados = {
                 id: document.getElementById("id").value,
-                idFase: 2,
                 money: moedas,
-                acerto: 8,
-                erros: errado ? errado : 0
               };
 
               // Cria o objeto XMLHttpRequest
@@ -1891,23 +1888,23 @@ function openFullscreen() {
   }
   document.getElementById('fecharCheia').style.display = 'block'
   document.getElementById('abrirCheia').style.display = 'none'
-  
+
 }
 
 // Opcional: fechar tela cheia
 function closeFullscreen() {
-     if (document.exitFullscreen) {
-         document.exitFullscreen();
-     } else if (document.mozCancelFullScreen) { /* Firefox */
-         document.mozCancelFullScreen();
-     } else if (document.webkitExitFullscreen) { /* Chrome, Safari e Opera */
-         document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) { /* IE/Edge */
-         document.msExitFullscreen();
-     }
-     document.getElementById('fecharCheia').style.display = 'none'
-      document.getElementById('abrirCheia').style.display = 'block'
- }
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) { /* Firefox */
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) { /* Chrome, Safari e Opera */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE/Edge */
+    document.msExitFullscreen();
+  }
+  document.getElementById('fecharCheia').style.display = 'none'
+  document.getElementById('abrirCheia').style.display = 'block'
+}
 
 
 

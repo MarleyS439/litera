@@ -28,6 +28,7 @@
     --borda-btnFim2: #E1C01C;
     --cor-btnFim1: #9CFFA5;
     --cor-btnFim2: #FFEE9C;
+    --cor-vermelho: #f34747;
 
 }
 
@@ -591,11 +592,18 @@ FIM DO JOGO MODAL!!!!!
 .area-jogo .final span {
     font-weight: 900;
     color: var(--borda-barra);
+    
 }
 
 
 .area-jogo .final p {
     font-size: 1.5em;
+}
+#corPontuacao{
+    color: var(--text-fim);
+}
+#corErros{
+    color: var(--cor-vermelho);
 }
 
 .area-jogo .final .total_moedas {

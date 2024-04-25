@@ -569,8 +569,7 @@ FIM ---> AREA DOS BALÕES!!!!!
 FIM DO JOGO!!!!!
 *****************
 */
-
-.area-jogo .fim{
+.area-jogo .final {
     display: none;
     position: absolute;
     align-items: center;
@@ -584,28 +583,115 @@ FIM DO JOGO!!!!!
     z-index: 3;
 }
 
-.area-jogo .fim .titulo-fim{
-    font-size: 2.5em;
-    font-weight: 600;
-    color:var(--moeda);
-}
-
-
-.area-jogo .fim span{
+.area-jogo .final span {
     font-weight: 900;
     color: var(--borda-barra);
+    
 }
 
 
-.area-jogo .fim p{
+.area-jogo .final p {
     font-size: 1.5em;
 }
-.area-jogo .fim .total_moedas{
+#corPontuacao{
+    color: var(--text-fim);
+}
+#corErros{
+    color: var(--cor-vermelho);
+}
+
+.area-jogo .final .total_moedas {
     font-family: 'Times New Roman', Times, serif;
     font-weight: 700;
     color: var(--borda-barra);
     font-size: 2em;
 }
+
+
+.final .text-fim {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+}
+
+.text-fim p {
+    margin-top: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--text-fim);
+    font-weight: var(--F-weightBold);
+    width: 330px;
+    height: 50px;
+    text-align: center;
+    background-color: var(--background-fim);
+    border: 2px solid var(--border-fim);
+    border-radius: var(--R-BtnFim-e-Text-Fim);
+}
+
+.final .btn-fim {
+    gap: 20%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+}
+
+.btn-fim .btnFinal {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 60px;
+    border-radius: var(--R-BtnFim-e-Text-Fim);
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+.btn-fim .btnFinal img {
+    width: 35px;
+}
+
+
+
+
+
+.btn-fim .btnFinal:nth-child(2) {
+    position: relative;
+    border: 2px solid var(--borda-btnFim1);
+    background-color: var(--cor-btnFim1);
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+.btn-fim .btnFinal:nth-child(2)::after {
+    position: absolute;
+    content: 'Avançar';
+    font-weight: 600;
+    bottom: -30px;
+    color: var(--branco);
+    text-shadow: 0px 0px 5px var(--borda-btnFim1);
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+.btn-fim .btnFinal:nth-child(1) {
+    position: relative;
+    border: 2px solid var(--borda-btnFim2);
+    background-color: var(--cor-btnFim2);
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+.btn-fim .btnFinal:nth-child(1)::after {
+    position: absolute;
+    content: 'Recomeçar';
+    font-weight: 600;
+    bottom: -30px;
+    color: var(--branco);
+    text-shadow: 0px 0px 5px var(--borda-btnFim2);
+    cursor: url("./img/mao2.svg"), auto;
+}
+
 
 /*
 *****************

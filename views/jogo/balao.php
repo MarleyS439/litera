@@ -48,7 +48,7 @@ if ($usuarioAutenticado['banido'] != 0) {
         <a href="#" class="perfil">
             <img src="img/sapo.png" class="avatar">
             <!-- <span class="nomeUser" name="userName">João</span> -->
-            <span class="nomeUser" name="userName"><?php echo $usuarioAutenticado['nomeUsuario']?></span>
+            <span class="nomeUser" name="userName"></span>
         </a>
         <div class="menu-mobile">
             <a href="" class="logo-mob">Litera</a>
@@ -110,11 +110,14 @@ if ($usuarioAutenticado['banido'] != 0) {
 
 
         <div class="area-jogo">
+
             <div class="final" id="fim">
-                <h1 class="text-fim">Fase <span>Concluída!</span></h1>
-                <p>Sua Pontuação: <span class="total_moedas" id="final_point"></span></p>
+                <div class="text-fim">
+                    <p>FIM DE JOGO</p>
+                </div>
+                <p id="corPontuacao">Sua Pontuação: <span class="total_moedas" id="final_point"></span></p>
                 <div class="btn-fim">
-                    <a href="balao.php" class="btnFinal"><img src="img/recomecar.svg" alt=""></a>
+                    <a href="index.php" class="btnFinal"><img src="img/recomecar.svg" alt=""></a>
                     <a href="../home.php" class="btnFinal"><img src="img/avancar.svg" alt=""></a>
                 </div>
             </div>

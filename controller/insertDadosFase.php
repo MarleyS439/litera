@@ -14,8 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Consulta da pontuação de usuário
             $pontuacao = DadosJogoUsuarioDao::selectById($id, $idFase);
             // Atualiza os dados do jogo do usuário no banco de dados
-            $resultado = DadosJogoUsuarioDao::update($id, $idFase, $pontuacao['maxPontuacao'], $acertos, $erros);
-            var_dump($resultado);
+            $resultado = DadosJogoUsuarioDao::update($id, $idFase, $pontos, $acertos, $erros);          
             if ($resultado) {
                 echo "Insert feito com sucesso!";
             } else {
@@ -30,4 +29,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     echo "Método de requisição inválido"; // Responde ao cliente se o método de requisição for inválido
 }
-?>
