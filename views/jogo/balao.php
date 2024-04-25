@@ -115,7 +115,7 @@ if ($usuarioAutenticado['banido'] != 0) {
                 <p>Sua Pontuação: <span class="total_moedas" id="final_point"></span></p>
                 <div class="btn-fim">
                     <a href="balao.php" class="btnFinal"><img src="img/recomecar.svg" alt=""></a>
-                    <a href="../home.php" class="btnFinal"><img src="img/avancar.svg" alt=""></a>
+                    <a href="../map1.php" class="btnFinal"><img src="img/avancar.svg" alt=""></a>
                 </div>
             </div>
 

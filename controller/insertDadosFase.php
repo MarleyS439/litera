@@ -8,17 +8,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $id = $data['id'];
         $idFase = $data['idFase'];
         $pontos = $data['pontos'];
-        $acertos = $data['acertos'];
+        $acertos = $data['acerto'];
         $erros = $data['erros'];
 
         try {
             // Atualiza o dinheiro do usuário no banco de dados
-            $resultado = DadosJogoUsuarioDao::insert($id, $idFase, $pontos, $acertos, $erros);
+            $resultado = DadosJogoUsuarioDao::update($id, $idFase, $pontos, $acertos, $erros);
 
             if ($resultado) {
                 echo "Insert feito com sucesso!";
             } else {
-                echo "Erro ao atualizar o dinheiro do usuário";
+                echo "Erro ao inserir os valore!";
             }
         } catch (PDOException $e) {
             echo "Erro na conexão com o banco de dados: " . $e->getMessage();

@@ -410,20 +410,55 @@ body {
         font-size: 4rem;
         color: var(--blue3);
     }
+    
+.card-item:hover {
+    background-color: #f0f0f0;
+}
     .items{
         position: relative;
         left: 7vw;
     }
-    .img-avatar{
-        position: relative;
+
+    .container-avatar{
         width: 20vw;
         height: 40vh;
-        position: relative;
         top: 10vh;
         background-color:var(--blue2);
         border-radius: 5%;
+        overflow: hidden;
+        display: flex;
+        align-items: end;
+        justify-content: center;
     }
-}
+    
+    .base {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .base img {
+        display: block;
+        margin: 0 auto;
+        width: 170px;
+    }
+    
+    .cabelo img {
+        position: absolute;
+        top: -35;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 160px;
+    }
+    
+    .roupa img {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 145px;
+    }
+
+
     .buttons{
         position: relative;
         margin-top: 15vh;
@@ -588,5 +623,5 @@ body {
     justify-content: center;
     }
     
-
+}
 @media screen and (max-width: 1447px) {}

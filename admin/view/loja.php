@@ -10,8 +10,12 @@ if (!isset($_SESSION['authAdmin'])) {
 // variavel para todas as informaçoes do usuario
 $usuarioAutenticado = $_SESSION['authAdmin'];
 
-require('../../dao/usuarioDao.php');
-$usuarios = UsuarioDao::selectAll();
+require('../../dao/cabeloDao.php');
+require('../../dao/generoDao.php');
+require('../../dao/roupaDao.php');
+$cabelo = CabeloDao::selectAll();
+$roupa = RoupaDao::selectAll();
+$genero = GeneroDao::selectAll();
 
 ?>
 <!DOCTYPE html>
@@ -44,28 +48,51 @@ $usuarios = UsuarioDao::selectAll();
                     <div class="title">
                         <h2>Itens Loja</h2>
                     </div>
+                    <div>
+                        <select id="" onchange="mostrarOpcao()">
+                            <option value="">Tudo</option>
+                            <option value="">Cabelos</option>
+                            <option value="">Roupas</option>
+                            <option value="">Peles</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="modalAreaCenter">
                     <?php require_once('./components/modal.php'); ?>
                 </div>
+
                 <div class="container-loja">
-                    <div class="card-container">
-                        <h4>Sem dados</h4>
-                        <div class="card">
-                            <p class="font-card"></p>
-                        </div>
+                    <div class="container-cards">
+
+                        <?php
+                        foreach ($cabelo as $cabelos) : ?>
+                            <div class="cards">
+                                <img src="../../assets/images/perfil/cabelo/<?php echo $cabelos["imgCabelo"] ?>" alt="cabelios salvos">
+                                <p><?php echo $cabelos['nomeCabelo'] ?></p>
+                            </div>
+                        <?php endforeach; ?>
+                        <?php
+                        foreach ($roupa as $roupas) : ?>
+                            <div class="cards">
+                                <img src="../../assets/images/perfil/roupa/<?php echo $roupas["imgRoupa"] ?>" alt="cabelios salvos">
+                                <p><?php echo $roupas['nomeRoupa'] ?></p>
+                            </div>
+                        <?php endforeach; ?>
+                        <?php
+                        foreach ($genero as $generos) : ?>
+                            <div class="cards">
+                                <img src="../../assets/images/perfil/genero/<?php echo $generos["imgGenero"] ?>" alt="cabelios salvos">
+                                <p><?php echo $generos['nomeGenero'] ?></p>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
-                    <div class="card-container">
-                        <h4>Sem dados</h4>
-                        <div class="card">
-                            <p class="font-card"></p>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
     </div>
     </div>
+
 
 </body>
 

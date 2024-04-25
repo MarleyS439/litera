@@ -75,20 +75,33 @@ if ($usuarioAutenticado['banido'] != 0) {
             </div>
             <form action="" method="POST" class="form-avatar">
                 <div class="inventory">
-                        <?php
-                            $i =0;
-                            while ($i < 18){
-                            ?>        
-                            <div class="card-item">
-                                <p>?</p>
-                            </div>
-                            <?php
-                            $i++;
-                            }
-                            ?>
+                    <?php
+                    $itens = [
+                        ['id' => 1, 'nome' => 'item 1', 'imagem' => '../assets/images/facebook.png'],
+                        ['id' => 2, 'nome' => 'item 2', 'imagem' => '../assets/images/instagram.png'],
+                        ['id' => 3, 'nome' => 'item 3', 'imagem' => 'item.jpg']
+                    ];
+                    foreach ($itens as $item) {
+                        echo '<div class="card-item" data-id="' . $item['id'] . '" onclick="atualizarImagem(this)">';
+                        echo '<img src="' . $item['imagem'] . ' " alt="' . $item['nome'] . '">';
+                        echo '</div>';
+                    }
+                    ?>
                 </div>
                 <div class="items">
-                    <div class="img-avatar"></div>
+                    <div class="container-avatar">
+
+                        <div class="base">
+                            <img src="../assets/images/perfil/genero/fb5d1c27ff697dffa11ced29aa15fe13.jpg" alt="">
+                            <div class="cabelo">
+                                <img src="../assets/images/perfil/cabelo/98e21116972c84c51c6b757e5eb9dda8.jpg" alt="">
+                            </div>
+                            <div class="roupa">
+                                <img src="../assets/images/perfil/roupa/4d1465f52d3637e2d5d2c1b7ace4c7d7.jpg" alt="">
+                            </div>
+                        </div>
+
+                    </div>
                     <div class="buttons">
                         <button type="submit">
                             <p>Cancelar</p>
@@ -97,29 +110,40 @@ if ($usuarioAutenticado['banido'] != 0) {
                             <p>Comprar</p>
                         </button>
                     </div>
-                </div>           
+                </div>
             </form>
         </div>
     </div>
     <div class="mobile-view">
 
 
-    <div class="bottom-navigation-bar">
+        <div class="bottom-navigation-bar">
 
-        <a href="#">
-            <img src="../assets/images/icons/home-icon.svg" alt="Início" id="home">
-        </a>
+            <a href="#">
+                <img src="../assets/images/icons/home-icon.svg" alt="Início" id="home">
+            </a>
 
-        <a href="#">
-            <img src="../assets/images/icons/store-icon.svg" alt="Loja" id="store">
-        </a>
+            <a href="#">
+                <img src="../assets/images/icons/store-icon.svg" alt="Loja" id="store">
+            </a>
 
-        <a href="#">
-            <img src="../assets/images/icons/profile-icon.svg" alt="Perfil" id="profile">
-        </a>
+            <a href="#">
+                <img src="../assets/images/icons/profile-icon.svg" alt="Perfil" id="profile">
+            </a>
 
+        </div>
     </div>
-</div>
+
+    <script>
+        function atualizarImagem(element) {
+            var itemId = element.getAttribute('data-id');
+
+            var imgSrc = element.querySelector('img').getAttribute('src')
+
+            var imgAvatar = document.querySelector('.img-avatar');
+            imgAvatar.innerHTML = '<img src= "' + imgSrc + '" alt="Avatar">'
+        }
+    </script>
 </body>
 
 </html>

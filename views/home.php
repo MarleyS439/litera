@@ -25,9 +25,9 @@ $porcentagem = 0;
 
 if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontuacaoUsuario'] > 0) {
     $porcentagem = ($usuarioAutenticado['pontuacaoUsuario'] / 100) * 100;
-} else if ($usuarioAutenticado['pontuacaoUsuario'] < 260 && $usuarioAutenticado['pontuacaoUsuario'] > 100) {
+} else if ($usuarioAutenticado['pontuacaoUsuario'] < 260 && $usuarioAutenticado['pontuacaoUsuario'] >= 100) {
     $porcentagem = ($usuarioAutenticado['pontuacaoUsuario'] / 260) * 100;
-} else if ($usuarioAutenticado['pontuacaoUsuario'] < 700 && $usuarioAutenticado['pontuacaoUsuario'] > 260) {
+} else if ($usuarioAutenticado['pontuacaoUsuario'] < 700 && $usuarioAutenticado['pontuacaoUsuario'] >= 260) {
     $porcentagem = ($usuarioAutenticado['pontuacaoUsuario'] / 700) * 100;
 } else if ($usuarioAutenticado['pontuacaoUsuario'] == 0) {
     $porcentagem = 5;

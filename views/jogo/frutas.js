@@ -1647,9 +1647,10 @@ function fazerPergunta() {
               // lógica de inserção no banco
               const dados = {
                 id: document.getElementById("id").value,
+                idFase: 2,
                 money: moedas,
-                acerto: acerto,
-                erros: errado,
+                acerto: 8,
+                erros: errado ? errado : 0
               };
 
               // Cria o objeto XMLHttpRequest

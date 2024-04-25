@@ -30,6 +30,11 @@ function search() {
           document.getElementById("card-3"),
           document.getElementById("card-4"),
         ];
+
+        cards[1].textContent = response.maxPontuacao;
+        cards[2].textContent = response.qtndAcertos; 
+        cards[3].textContent = response.qtndErros; 
+
       } else {
         // Trate os erros de requisição aqui
         console.error("Erro ao enviar requisição");

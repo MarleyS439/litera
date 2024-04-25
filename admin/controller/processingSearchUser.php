@@ -1,6 +1,7 @@
 <?php
 // link dao e model
 require_once("../../dao/usuarioDao.php");
+require_once("../../dao/dadosJogoUsuarioDao.php");
 require_once(__DIR__ . "../../../models/usuario.php");
 
 $usuario = new Usuario();
@@ -10,10 +11,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         try {
             // Pesquisa o usuário no banco de dados
-            $resultado = UsuarioDao::searchUser($data['search']);
+            $id = UsuarioDao::searchUser($data['search']); // Correção aqui
+            $resultado = DadosJogoUsuarioDao::searchUser($id['codUsuario']);
 
             if ($resultado) {
-                echo json_encode($resultado); // Retorna o usuário encontrado como JSON
+                $response = [
+                    'usuario' => $id,
+                    'dadosJogo' => $resultado 
+                ];
+                echo json_encode($response); // Retorna o usuário encontrado como JSON
             } else {
                 echo "Usuário não encontrado";
             }
