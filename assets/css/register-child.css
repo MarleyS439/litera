@@ -75,23 +75,6 @@
         font-family: var(--font-poppins-bold);
         color: var(--black2);
     }
-
-    .non {
-        display: flex;
-        align-items: center;
-        margin-top: 5%;
-    }
-
-    .non a {
-        margin: 0px 10px;
-        color: var(--blue3);
-        text-decoration: none;
-        transition: 200ms ease-in-out;
-    }
-
-    .non a:hover {
-        color: var(--blue2);
-    }
 }
 
 /* Telas de dispositivos tablets */
@@ -205,22 +188,6 @@
         backdrop-filter: blur(2px);
         -webkit-backdrop-filter: blur(2px);
     }
-
-    .non {
-        display: flex;
-        align-items: center;
-    }
-
-    .non a {
-        margin: 0px 10px;
-        color: var(--blue3);
-        text-decoration: none;
-        transition: 200ms ease-in-out;
-    }
-
-    .non a:hover {
-        color: var(--blue2);
-    }
 }
 
 /* Telas de dispositivos desktops */
@@ -257,6 +224,7 @@
 
     .container-form {
         position: relative;
+        top: 3%;
         display: flex;
         justify-content: center;
         align-content: center;
@@ -332,22 +300,6 @@
         height: 100vh;
         backdrop-filter: blur(2px);
         -webkit-backdrop-filter: blur(2px);
-    }
-
-    .non {
-        display: flex;
-        align-items: center;
-    }
-
-    .non a {
-        margin: 0px 10px;
-        color: var(--blue3);
-        text-decoration: none;
-        transition: 200ms ease-in-out;
-    }
-
-    .non a:hover {
-        color: var(--blue2);
     }
 
 }
