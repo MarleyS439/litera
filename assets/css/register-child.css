@@ -28,53 +28,7 @@
         width: 80px;
     }
 
-    .container-form {
-        padding: 6%;
-        display: flex;
-        flex-direction: column;
-    }
 
-    .container-form form {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .inputs {
-        display: flex;
-        flex-direction: column;
-        margin: 1% 0%;
-    }
-
-    .inputs input {
-        background-color: var(--white2);
-        padding: 8px;
-        border-radius: 8px;
-        border: 1px solid var(--line-border);
-    }
-
-    .btn {
-        margin-top: 10%;
-    }
-
-    .inputs button {
-        background-color: var(--blue3);
-        border: none;
-        padding: 8px;
-        border-radius: 8px;
-        color: var(--white);
-        font-weight: bold;
-        box-shadow: 1px 2px 1px #00000099;
-        font-size: 1.01rem;
-    }
-
-    .title-form {
-        margin: 5% 0%;
-    }
-
-    .title-form h2 {
-        font-family: var(--font-poppins-bold);
-        color: var(--black2);
-    }
 }
 
 /* Telas de dispositivos tablets */
@@ -108,76 +62,7 @@
         height: auto;
     }
 
-    .container-form {
-        position: relative;
-        top: 3%;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        background-color: var(--white);
-        margin: 0% 25%;
-        flex-direction: column;
-        padding: 2% 5%;
-        border-radius: 8px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        transition: 300ms ease-in-out;
-    }
 
-    .title-form {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        width: 100%;
-        margin: 2% 0%;
-    }
-
-    .title-form h2 {
-        margin: 2% 0%;
-        font-family: var(--font-poppins-bold);
-        color: var(--black2);
-    }
-
-    .title-form p {
-        color: var(--blue3);
-    }
-
-    .inputs {
-        display: flex;
-        flex-direction: column;
-        margin: 3% 0%;
-    }
-
-    .inputs label {
-        margin: 2px 0px;
-    }
-
-    .inputs input {
-        padding: 8px;
-        border: 1px solid var(--line-border);
-        background-color: var(--white2);
-        border-radius: 8px;
-    }
-
-    .inputs button {
-        padding: 8px;
-        box-shadow: 1px 2px 1px #00000099;
-        background-color: var(--blue3);
-        border-radius: 8px;
-        color: var(--white);
-        font-weight: bold;
-        transition: 200ms ease-in-out;
-        cursor: pointer;
-        font-size: 1.01rem;
-    }
-
-    .inputs button:hover {
-        background-color: var(--blue2);
-        transform: translate(-2px, -1px);
-    }
-
-    .btn {
-        margin-top: 5%;
-    }
 
     .overlay {
         content: "";
@@ -222,74 +107,50 @@
         height: auto;
     }
 
-    .container-form {
-        position: relative;
-        top: 3%;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        background-color: var(--white);
-        margin: 0% 32%;
-        flex-direction: column;
-        padding: 2% 5%;
-        border-radius: 8px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        transition: 300ms ease-in-out;
-    }
-
     .title-form {
         display: flex;
         justify-content: center;
-        flex-direction: column;
-        width: 100%;
-        margin: 2% 0%;
+        position: relative;
+        padding: 5% 0%;
     }
 
     .title-form h2 {
-        margin: 2% 0%;
-        font-family: var(--font-poppins-bold);
-    }
-
-    .title-form p {
-        color: var(--blue3);
-    }
-
-    .inputs {
-        display: flex;
-        flex-direction: column;
-        margin: 3% 0%;
-    }
-
-    .inputs label {
-        margin: 2px 0px;
-    }
-
-    .inputs input {
-        padding: 8px;
-        border: 1px solid var(--line-border);
-        background-color: var(--white2);
-        border-radius: 8px;
-    }
-
-    .inputs button {
-        padding: 8px;
-        box-shadow: 1px 2px 1px #00000099;
-        background-color: var(--blue3);
-        border-radius: 8px;
         color: var(--white);
-        font-weight: bold;
-        transition: 200ms ease-in-out;
+        text-shadow: 1px 2px 2px #000;
+        font-size: 2rem;
+    }
+
+    .container-add-profile {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        transition: 300ms ease-in-out;
+    }
+
+    .add {
+        display: flex;
+        justify-content: center;
+    }
+
+    .add button {
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        border-radius: 60px;
         cursor: pointer;
-        font-size: 1.01rem;
     }
 
-    .inputs button:hover {
-        background-color: var(--blue2);
-        transform: translate(-2px, -1px);
+    .add button img {
+        transition: 200ms ease-in-out;
+        width: 80px;
+        border-radius: 50%
     }
 
-    .btn {
-        margin-top: 5%;
+    .add button img:hover {
+        box-shadow: 1px 2px 3px #000;
+        transform: translate(2px, 2px);
     }
 
     .overlay {
@@ -300,6 +161,131 @@
         height: 100vh;
         backdrop-filter: blur(2px);
         -webkit-backdrop-filter: blur(2px);
+    }
+
+    .modal-add-profile {
+        display: none;
+        padding: 2% 5% 2% 5%;
+        border-radius: 8px;
+        position: absolute;
+        top: 15%;
+        left: 26%;
+        width: 45vw;
+        color: var(--black2);
+        background-color: var(--white);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 54px 55px, rgba(0, 0, 0, 0.16) 0px -12px 30px, rgba(0, 0, 0, 0.16) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+        -webkit-animation: slide-in-fwd-top 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: slide-in-fwd-top 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    .modal-add-profile .title-modal {
+        display: flex;
+        justify-content: center;
+    }
+
+    .modal-add-profile .title-modal p {
+        display: flex;
+        font-family: var(--font-poppins-bold);
+        color: var(--black2);
+        padding: 2%;
+    }
+
+    .modal-add-profile .cancel button {
+        display: flex;
+        align-content: center;
+        background-color: var(--white);
+        border-radius: 50px;
+        cursor: pointer;
+        border: none;
+    }
+
+
+    .modal-add-profile .cancel img {
+        border-radius: 50px;
+        border: none;
+        width: 32px;
+        transition: 300ms ease-in-out;
+    }
+
+    .modal-add-profile .cancel img:hover {
+        box-shadow: 1px 2px 3px #000;
+        transform: translate(0px, -2px)
+    }
+
+    .cancel {
+        position: absolute;
+        top: -4%;
+        right: -2%;
+    }
+
+    .select-icon {
+        display: flex;
+        justify-content: center;
+    }
+
+    .select-icon img {
+        width: 100px    ;
+    }
+
+    .inputs-modal {
+        display: flex;
+        flex-direction: column;
+        margin: 8px 0px;
+    }
+
+    .inputs-modal input[type="text"] {
+        background-color: var(--white2);
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid var(--line-border);
+    }
+
+    .inpu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .two {
+        display: flex;
+        justify-content: space-between;
+        margin: 3% 0%;
+    }
+
+    .inputs-modal button {
+        background-color: var(--blue3);
+        padding: 8px;
+        border: 1px solid var(--black2);
+        border-radius: 8px;
+        color: var(--white);
+        font-weight: bold;
+        font-size: 1.01rem;
+        cursor: pointer;
+        transition: 200ms ease-in-out;
+    }
+
+    .inputs-modal button:hover {
+        background-color: var(--blue2);
+        transform: translate(-2px, 2px);
+        box-shadow: 2px 2px 2px #000;
+    }
+
+    .inpu input,
+    select {
+        background-color: var(--white2);
+        border: 1px solid var(--line-border);
+        border-radius: 8px;
+        padding: 8px;
+    }
+
+    .title-profile-select {
+        display: flex;
+        justify-content: center;
+    }
+
+    .title-profile-select p {
+        color: var(--black2);
+        font-family: var(--font-poppins-bold);
     }
 
 }
