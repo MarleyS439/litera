@@ -41,17 +41,16 @@ class DadosJogoUsuarioDao
         $resultado = $stmt->execute();
         return $resultado;
     }
-    public static function update($codJogo, $codUsuario, $maxPontuacao, $qntdAcertos, $qntdErros)
+    public static function update($maxPontuacao, $qntdAcertos, $qntdErros, $cod)
     {
         try {
             $conexao = Conexao::conectar();
-            $query = "UPDATE tbdadosjogousuario SET maxPontuacao = ?, qtndAcertos = qtndAcertos + ?, qtndErros = qtndErros + ? WHERE codJogo = ? AND codUsuario = ?";
+            $query = "UPDATE tbdadosjogousuario SET maxPontuacao = ?, qtndAcertos = qtndAcertos + ?, qtndErros = qtndErros + ? WHERE codDadosJogoUsuario = ?";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $maxPontuacao);
             $stmt->bindValue(2, $qntdAcertos);
             $stmt->bindValue(3, $qntdErros);
-            $stmt->bindValue(4, $codJogo);
-            $stmt->bindValue(5, $codUsuario);
+            $stmt->bindValue(4, $cod);
             return $stmt->execute();
         } catch (PDOException $e) {
             // Exibe uma mensagem de erro em caso de falha na execução da consulta

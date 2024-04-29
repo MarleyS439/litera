@@ -27,24 +27,24 @@
                 <p>Vamos criar a sua conta</p>
             </div>
 
-            <form action="" method="post">
+            <form action="../controller/processRegister.php" method="post">
                 <div class="inputs">
                     <label for="">Nome do responsável</label>
-                    <input type="text" name="" id="" placeholder="Digite o seu nome" required>
+                    <input type="text" name="name_user" id="" placeholder="Digite o seu nome" required>
                 </div>
 
                 <div class="inputs">
                     <label for="">E-mail</label>
-                    <input type="email" name="" id="" placeholder="email@email.com" required>
+                    <input type="email" name="email_user" id="" placeholder="email@email.com" required>
                 </div>
 
                 <div class="inputs">
                     <label for="">Senha</label>
-                    <input type="password" name="" id="" placeholder="Digite sua senha" required>
+                    <input type="password" name="passwd_user" id="" placeholder="Digite sua senha" required>
                 </div>
                 <div class="inputs">
                     <label for="">Confirmar senha</label>
-                    <input type="password" name="" id="" placeholder="Confirme sua senha" required>
+                    <input type="password" name="confirm_passwd_user" id="" placeholder="Confirme sua senha" required>
                 </div>
 
                 <div class="inputs btn">

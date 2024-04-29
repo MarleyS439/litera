@@ -52,7 +52,7 @@
                 $infoUsuario = UsuarioDao::selectById($cod);
                 $moeda = $infoUsuario['dinheiroUsuario'];
                 if($moeda >= 100){
-                    $money = $money - 100;
+                    $money = $moeda - 100;
                     try{
                         $avatarDao = new AvatarDao();
                         $avatarDao->updateRoupa( $cod,$avatar);

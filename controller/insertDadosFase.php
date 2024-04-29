@@ -12,9 +12,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $erros = $data['erros'];
         try {
             // Consulta da pontuação de usuário
-            $pontuacao = DadosJogoUsuarioDao::selectById($id, $idFase);
+            $dadosUser = DadosJogoUsuarioDao::selectById($id, $idFase);
+            if ($dadosUser['maxPontuacao'] < $pontos) {
+                $resultado = DadosJogoUsuarioDao::update($pontos, $acertos, $erros, $dadosUser['codDadosJogoUsuario']);          
+            } else {
+                $resultado = DadosJogoUsuarioDao::update($dadosUser['maxPontuacao'], $acertos, $erros, $dadosUser['codDadosJogoUsuario']);          
+            }
             // Atualiza os dados do jogo do usuário no banco de dados
-            $resultado = DadosJogoUsuarioDao::update($id, $idFase, $pontos, $acertos, $erros);          
             if ($resultado) {
                 echo "Insert feito com sucesso!";
             } else {

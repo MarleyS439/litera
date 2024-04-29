@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="./../assets/css/navbar.css">
 <nav class="navbar">
     <div class="logo-area">
         <img src="../assets/images/litera.png" alt="Litera">
@@ -17,6 +18,13 @@
                 <a href="../views/store.php">
                     <svg width="28" height="31">
                         <image href="../assets/images/icons/store-icon-desktop.svg" width="28" height="31" />
+                    </svg>
+                </a>
+            </li>
+            <li class="profile-icon">
+                <a href="../views/user.php">
+                    <svg width="28" height="31">
+                        <image href="../assets/images/icons/profile-icon-desktop.svg" width="28" height="31" />
                     </svg>
                 </a>
             </li>

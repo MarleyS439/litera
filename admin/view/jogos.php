@@ -59,7 +59,7 @@ $usuarios = UsuarioDao::selectAll();
                 </div>
             </div>
 
-            <div class="container animate__animated animate__fadeInDown" id="container">
+            <div class="container animate__animated" id="container">
                 <div class="card-container">
                     <h4>Fases concluídas</h4>
                     <div class="card">

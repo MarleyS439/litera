@@ -80,7 +80,23 @@
 
                         <div class="select-icon carrossel">
 
-                            <div class="">
+                            <div class="icon">
+                                <input type="radio" name="avatar" class="input-icon-avatar" value="Frame 190.png">
+                                <img src="../assets/images/icons/Frame 190.png" class="icons-image" alt="">
+                            </div>
+                            <div class="icon">
+                                <input type="radio" name="avatar" class="input-icon-avatar" value="Frame 190.png" checked>
+                                <img src="../assets/images/icons/Frame 196.png" class="icons-image" alt="">
+                            </div>
+                            <div class="icon">
+                                <input type="radio" name="avatar" class="input-icon-avatar" value="Frame 190.png">
+                                <img src="../assets/images/icons/Frame 197.png" class="icons-image" alt="">
+                            </div>
+                            <div class="icon">
+                                <input type="radio" name="avatar" class="input-icon-avatar" value="Frame 190.png">
+                                <img src="../assets/images/icons/Frame 198.png" class="icons-image" alt="">
+                            </div>
+                            <!-- <div class="">
                                 <img src="../assets/images/icons/Frame 190.png" alt="">
                             </div>
 
@@ -94,8 +110,8 @@
 
                             <div class="">
                                 <img src="../assets/images/icons/Frame 198.png" alt="">
-                            </div>
-            
+                            </div> -->
+
                         </div>
                     </div>
 

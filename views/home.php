@@ -39,7 +39,7 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
 
 <head>
 
-    <meta charset="UTF-8">
+    <meta charset="UTF-8">z
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
@@ -68,9 +68,7 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
 
     </div>
     <div class="desktop-view">
-        <?php
-        include('../views/components/navbarHome.php');
-        ?>
+        <?php include('../views/components/navbarHome.php'); ?>
 
 
         <main class="main-desktop">

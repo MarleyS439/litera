@@ -37,7 +37,7 @@ $mesPorExtenso = $meses[$numeroMes];
     </div>
     <div class="modalContent">
         <button class="edit-btn">
-            <img src="../../assets/images/icons/edit-3-svgrepo-com.svg" alt="">
+            
         </button>
         <dialog class="edit-name-dialog">
             <form action="../controller/updateUser.php" method="POST">

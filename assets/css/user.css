@@ -1,0 +1,91 @@
+@import url(default.css);
+@import url(animations.css);
+
+@media screen and (max-width:768px){}
+@media screen and (min-width:769px) and (max-width:768px){}
+@media screen and (min-width:1025px){
+    .mobile-view{
+        display: none;
+    }
+    .container{
+        position: relative;
+        top: 20vh;
+        left: 28vw;
+    }
+    .profile-title{
+        position: relative;
+        bottom: 5vh;
+        left: 20vw;
+    }
+    .box{
+        position: absolute;
+        width: 45vw;
+        height: 60vh;
+        display: flex;
+        flex-direction: row;
+        border: 3px solid var(--blue2);
+        border-radius: 15px;
+        justify-content: space-evenly;
+        padding-top: 3vh;
+        font-size: 1.5rem;
+        font-weight: bolder;
+    }
+    .avatar{
+        background-color: var(--blue2);
+        border-radius: 5px;
+        padding: 2% 3%;
+        height: 27vh;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        width: 15vw;
+    }
+
+    .base {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .base img {
+        display: block;
+        margin: 0 auto;
+        width: 135px;
+    }
+    
+    .cabelo img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translatey(-20%) translateX(-50%);
+        width: 120px;
+    }
+    
+    .roupa img {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 115px;
+    }
+    .nivel{
+        display: flex;
+        flex-direction: row;
+    }
+    .nivel-number{
+        background-color: var(--blue2);
+        width: 1.5vw;
+        border-radius: 10px;
+        text-align: center;
+        color: white;
+        font-weight: bolder;
+        font-size: 1.3  rem;
+        padding-top: 0.5vh;
+        margin-left: 0.5vw;
+    }
+    .conquistas{
+        position: relative;
+        top: 15vh;
+        right:8vw;
+    }
+    
+}

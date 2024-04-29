@@ -105,8 +105,8 @@
         box-shadow: rgba(255, 255, 255, 0.945) 0px 5px 15px;
         -webkit-animation: pulsate-fwd 1s ease-in-out infinite both;
         animation: pulsate-fwd 1s ease-in-out infinite both;
-        width: 7vw;
-        padding: 1vh 1vw 1vh 1.5vw;
+        width: 5vw;
+        padding: 1vh 1vw 1vh 1vw;
         background-color: var(--blue0);
         border-radius: 40%;
     }

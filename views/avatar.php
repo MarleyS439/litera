@@ -49,6 +49,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
             <p>Crie seu Avatar</p>
         </div>
         <?php if ($_GET['status'] == 'base') :  ?>
+
             <div class="conteinerImg">
                 <div class="cardItem">
                     <div class="base">
@@ -78,6 +79,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                     <button type="submit">Proximo</button>
                 </form>
             </div>
+
         <?php elseif ($_GET['status'] == 'cabelo') :  ?>
             <div class="conteinerImg">
                 <div class="cardItem">
@@ -85,7 +87,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                         <!-- Adicione o atributo data-img com o valor de $generos['imgGenero'] -->
                         <img src="../assets/images/perfil/genero/<?php echo $avatar["imgGenero"] ?>" alt="">
                         <div class="cabelo">
-                            <img  id="cod" src="../assets/images/perfil/cabelo/98e21116972c84c51c6b757e5eb9dda8.jpg" alt="">
+                            <img id="cod" src="../assets/images/perfil/cabelo/98e21116972c84c51c6b757e5eb9dda8.jpg" alt="">
                         </div>
                         <div class="roupa">
                             <img src="../assets/images/perfil/roupa/4d1465f52d3637e2d5d2c1b7ace4c7d7.jpg" alt="">
@@ -108,6 +110,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                     <button type="submit">Proximo</button>
                 </form>
             </div>
+
         <?php elseif ($_GET['status'] == 'roupa') :  ?>
             <div class="conteinerImg">
                 <div class="cardItem">
@@ -118,14 +121,14 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                             <img src="../assets/images/perfil/cabelo/<?php echo $avatar["imgCabelo"] ?>" alt="">
                         </div>
                         <div class="roupa">
-                            <img  id="cod" src="../assets/images/perfil/roupa/4d1465f52d3637e2d5d2c1b7ace4c7d7.jpg" alt="">
+                            <img id="cod" src="../assets/images/perfil/roupa/4d1465f52d3637e2d5d2c1b7ace4c7d7.jpg" alt="">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="conteinerOpcoes">
                 <form action="../controller/insertAvatar.php" method="post" onchange="atualizarImagemRoupa()">
-                <button type="submit">Proximo</button>
+                    <button type="submit">Proximo</button>
                     <?php
                     foreach ($roupa as $roupas) : ?>
                         <div class="opcoes">
@@ -138,10 +141,10 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                     <input type="hidden" name="itemAvatar" value="roupa">
                 </form>
             </div>
-        <?php else : 
-                header('Location: ../views/home.php');
-         endif ?>
-        
+        <?php else :
+            header('Location: ../views/home.php');
+        endif ?>
+
     </div>
 </body>
 

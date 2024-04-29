@@ -16,3 +16,4 @@ buttonCancelAddProfile.addEventListener("click", function () {
     buttonAddProfile.style.display = "inherit";
     title.style.display = "flex";
 });
+
