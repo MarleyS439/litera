@@ -4,7 +4,9 @@
 :root {
     --white-blue: #EBF7FF;
     --black: #000000;
+    --white: #fff;
     --border-blue: #1C96E1;
+    --border-azul-2: #9CD9FF;
 }
 
 /* Mobile */
@@ -22,6 +24,9 @@
     .conteinerAvatarCriacao {
         width: 100%;
         min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .top {
@@ -30,32 +35,30 @@
         display: flex;
         align-items: center;
         padding-left: 10%;
-    }
-
-    .top {
         color: var(--black);
         font-family: var(--font-poppins-bold);
         font-size: 30px;
         font-weight: 700;
     }
 
-    .conteinerImg {
+    /* avatar */
+    .containerAvatar {
         width: 100%;
         height: 35vh;
         display: flex;
         justify-content: center;
         align-items: center;
+        /* background-color: red; */
     }
 
     .cardItem {
-        width: 20%;
-        height: 100%;
+        width: 300px;
+        height: 230px;
+        border: solid 3px var(--border-blue);
+        border-radius: 20px;
         display: flex;
         justify-content: center;
         align-items: end;
-        border: solid 3px var(--border-blue);
-        border-radius: 20px;
-        background-color: #5ca3cf;
     }
 
     .base {
@@ -85,15 +88,171 @@
         width: 117px;
     }
 
-    .conteinerOpcoes form {
+    /* etapas */
+    .etapa {
+        width: 30%;
+        height: 10vh;
+        border-radius: 20px;
+        background-color: var(--border-azul-2);
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .etapa .card,
+    .etapa .etapaAtu {
+        width: 14%;
+        height: 90%;
+        border-radius: 10px;
+        background-color: var(--white);
+    }
+
+    .etapa .etapaAtu {
+        background-color: var(--border-blue);
+    }
+
+    .avancar {
+        width: 100%;
+        height: 7vh;
+        display: flex;
+        justify-content: start;
+        padding-left: 10%;
+        margin-bottom: 1vh;
+    }
+
+    .avancar button {
+        padding: 5px 20px 5px 20px;
+        border: none;
+        border-radius: 10px;
+        background-color: var(--border-blue);
+        color: white;
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    form {
+        width: 100%;
+        margin-bottom: 1vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .containerOpcoes {
+        width: 80%;
+        min-height: 20vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around
+    }
+
+    .opcoes {
+        width: 17%;
+        height: 220px;
+        border: solid 3px var(--border-blue);
+        display: flex;
+        flex-direction: column;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 5px 0px 0px 0px;
+        border-radius: 20px;
+    }
+    .opcoes img {
+        width: 150px;
+    }
+
+    .input-opcao {
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .opcoes-cabelo {
+        width: 17%;
+        height: 150px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* .conteinerImg {
+        width: 100%;
+        height: 35vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cardItem {
+        width: 20%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        border: solid 3px var(--border-blue);
+        border-radius: 20px;
+        background-color: #5ca3cf;
+    } */
+
+    /* .base {
+        position: relative;
+        display: inline-block;
+    } */
+
+    /* .base img {
+        display: block;
+        margin: 0 auto;
+        width: 135px;
+    }
+
+    .cabelo img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateY(-20%) translateX(-50%);
+        width: 120px;
+    } */
+
+    /* .roupa img {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 117px;
+    } */
+
+    /* .conteinerOpcoes form {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
         margin-top: 2vh;
-    }
+    } */
 
-    .opcoes {
+    /* .opcoes {
         width: 10%;
         height: 20vh;
         border: solid 3px var(--border-blue);
@@ -101,14 +260,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        position: relative; /* Adicionado */
-    }
+        position: relative;
+    } */
 
     /* Ajuste para o input radio */
-    .input-opcao {
-        position: absolute;
-        opacity: 0;
-        width: 100%; /* Ajustado */
-        height: 100%; /* Ajustado */
-    }
+
 }
