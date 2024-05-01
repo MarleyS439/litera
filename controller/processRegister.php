@@ -32,7 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $usuario->setDinheiroUsuario(0);
                 // iniciando o tutorial como 0, 0=false
                 $usuario->setTutorial(0);
+                $usuario->setBanido(0);
                 $usuario->setNivel(1);
+                $usuario->setFasesConcluidas(0);
                 $usuario->setDataCriacao(date('Y-m-d'));
                 $usuario->setDataModfc(date('Y-m-d'));
                 // try catch para inserção no banco 
@@ -44,7 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   
                     header('Location: ../views/login.php?status=sucess');
                 }catch (Exception $e){
-                    header('Location: ../views/register.php?status=erro2');
+                    // header('Location: ../views/register.php?status=erro2');
+                    echo($e);
                 }
                 echo "Cadastro realizado com sucesso!";
             } else {

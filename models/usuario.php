@@ -3,7 +3,7 @@
 class Usuario
 {
     // variaveis do banco
-    public $codUsuario, $nomeUsuario, $emailUsuario, $senhaUsuario, $pontuacaoUsuario, $dinheiroUsuario, $tutorial, $banido, $nivel, $dataCriacao, $dataModfc;
+    public $codUsuario, $nomeUsuario, $emailUsuario, $senhaUsuario, $pontuacaoUsuario, $dinheiroUsuario, $tutorial, $banido, $nivel, $fasesConcluidas, $dataCriacao, $dataModfc;
     // funcoes
     public function getCodUsuario()
     {
@@ -82,6 +82,14 @@ class Usuario
     public function setNivel($nivel)
     {
         $this->nivel = $nivel;
+    }
+    public function getFasesConcluidas()
+    {
+        return $this-> fasesConcluidas;
+    }
+    public function setFasesConcluidas($fasesConcluidas)
+    {
+        $this->fasesConcluidas = $fasesConcluidas;
     }
     public function getDataCriacao()
     {

@@ -7,7 +7,7 @@ class UsuarioDao
     public static function insert($usuario)
     {
         $conexao = Conexao::conectar();
-        $query = "INSERT INTO tbusuario (nomeUsuario, emailUsuario, senhaUsuario, pontuacaoUsuario, dinheiroUsuario, tutorial, nivel, dataCriacao, dataModfc) VALUES (?,?,?,?,?,?,?,?,?)";
+        $query = "INSERT INTO tbusuario (nomeUsuario, emailUsuario, senhaUsuario, pontuacaoUsuario, dinheiroUsuario, tutorial, banido, nivel, fasesConcluidas, dataCriacao, dataModfc) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $usuario->getNomeUsuario());
         $stmt->bindValue(2, $usuario->getEmailUsuario());
@@ -15,9 +15,11 @@ class UsuarioDao
         $stmt->bindValue(4, $usuario->getPontuacaoUsuario());
         $stmt->bindValue(5, $usuario->getDinheiroUsuario());
         $stmt->bindValue(6, $usuario->getTutorial());
-        $stmt->bindValue(7, $usuario->getNivel());
-        $stmt->bindValue(8, $usuario->getDataCriacao());
-        $stmt->bindValue(9, $usuario->getDataModfc());
+        $stmt->bindValue(7, $usuario->getBanido());
+        $stmt->bindValue(8, $usuario->getNivel());
+        $stmt->bindValue(9, $usuario->getFasesConcluidas());
+        $stmt->bindValue(10, $usuario->getDataCriacao());
+        $stmt->bindValue(11, $usuario->getDataModfc());
         $stmt->execute();
     }
     public static function selectAll()
