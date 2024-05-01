@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector('.prev').addEventListener('click', (event) => {
         event.stopPropagation(); // Evita que o evento de clique seja propagado
         if (counter <= 0) return;
-        carouselSlide.style.transition = 'transform 0.5s ease-in-out';
+        carouselSlide.style.border = 'transform 0.5s ease-in-out';
         counter--;
         carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
     });

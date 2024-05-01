@@ -97,6 +97,7 @@
         display: flex;
         align-items: center;
         justify-content: space-evenly;
+        margin-bottom: 5vh;
     }
 
     .etapa .card,
@@ -105,19 +106,38 @@
         height: 90%;
         border-radius: 10px;
         background-color: var(--white);
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
     }
 
     .etapa .etapaAtu {
         background-color: var(--border-blue);
+        
     }
-
+    .genero{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .genero img{
+        width: 5vw;
+        height: 5vh;
+        margin: -5%;
+    } 
+    .genderMale{
+        width: 10vw;
+        height: 5vh;
+    }
     .avancar {
         width: 100%;
         height: 7vh;
         display: flex;
-        justify-content: start;
-        padding-left: 10%;
-        margin-bottom: 1vh;
+        justify-content: end;
+        padding-right: 10%;
+        margin-top: -15vh;
     }
 
     .avancar button {

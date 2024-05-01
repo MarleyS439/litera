@@ -7,6 +7,9 @@ if (!isset($_SESSION['authUser'])) {
     header("Location: ./login.php?status=erro2");
     exit();
 }
+if ($_SESSION['authUser'] == null){
+    header('Location: ./login.php?status=erro4');
+}
 // variavel para todas as informaçoes do usuario
 require_once "../dao/usuarioDao.php";
 $codUser = $_SESSION['authUser'];

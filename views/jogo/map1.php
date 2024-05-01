@@ -41,45 +41,7 @@ if ($usuarioAutenticado['banido'] != 0) {
     <div class="desktop-view">
 
 
-        <nav class="navbar">
-            <div class="logo-area">
-                <img src="../../assets/images/litera.png" alt="Litera">
-                <span>Litera</span>
-            </div>
-
-            <div class="navigation">
-                <ul>
-                    <li class="home-icon">
-                        <a href="../home.php">
-                            <svg width="28" height="31">
-                                <image href="../../assets/images/icons/home-icon-desktop.svg" width="28" height="31" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="store-icon">
-                        <a href="../store.php">
-                            <svg width="28" height="31">
-                                <image href="../../assets/images/icons/store-icon-desktop.svg" width="28" height="31" />
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-
-            <!-- <div class="profile">
-        <div class="profile-pic">
-            <span><?php echo $usuarioAutenticado['nome'] ?></span>
-            <img src="../assets/images/icons/profile.svg" alt="">
-        </div>
-    </div> -->
-            <div>
-                <a href="../controller/logoutUser.php" title="logout">
-                    <img class="img-logoff" src="../../assets/images/icons/exit-svgrepo-com.svg" alt="exit">
-                </a>
-
-            </div>
-        </nav>
+    <?php include('../views/components/navbarHome.php'); ?>
 
         <div class="overlay-itens2"></div>
 

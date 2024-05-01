@@ -17,6 +17,9 @@ if ($usuarioAutenticado['banido'] != 0) {
     header("Location: ./login.php?status=erro3");
     exit();
 }
+if ($_SESSION['authUser'] == null){
+    header('Location: ./login.php?status=erro4');
+}
 ?>
 <!-- inport das img  -->
 <?php
@@ -58,22 +61,19 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                 </div>
             </div>
             <div class="etapa">
-                <div class="card etapaAtu">
-                    <img src="#" alt="genero">
+                <div class="card etapaAtu genero">
+                    <img src="./../assets/images/icons/male.svg" class="genderMale" alt="genero">
+                    <img src="./../assets/images/icons/female.svg" alt="genero">
                 </div>
                 <div class="card">
-                    <img src="#" alt="cabelo">
+                    <img src="./../assets/images/icons/comb.svg" alt="cabelo">
                 </div>
                 <div class="card">
-                    <img src="#" alt="roupa">
+                    <img src="./../assets/images/icons/shirt.svg" alt="roupa">
                 </div>
             </div>
             <form action="../controller/insertAvatar.php" method="post" onchange="atualizarImagemBase()">
-                <div class="avancar">
-                    <input type="hidden" name="codUser" value="<?php echo $codUser['cod'] ?>">
-                    <input type="hidden" name="itemAvatar" value="base">
-                    <button type="submit">Proximo</button>
-                </div>
+                
                 <div class="containerOpcoes">
                     <?php foreach ($genero as $generos) : ?>
                         <div class="opcoes">
@@ -81,6 +81,11 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                             <img src="../assets/images/perfil/genero/<?php echo $generos["imgGenero"] ?>" alt="base">
                         </div>
                     <?php endforeach; ?>
+                </div>
+                <div class="avancar">
+                    <input type="hidden" name="codUser" value="<?php echo $codUser['cod'] ?>">
+                    <input type="hidden" name="itemAvatar" value="base">
+                    <button type="submit">Proximo</button>
                 </div>
             </form>
             <!-- <div class="conteinerImg">
@@ -121,23 +126,20 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                     </div>
                 </div>
             </div>
-            <div class="etapa">
-                <div class="card ">
-                    <img src="#" alt="genero">
+            <div class="etapa ">
+                <div class="card genero">
+                <img src="./../assets/images/icons/male.svg" class="genderMale" alt="genero">
+                    <img src="./../assets/images/icons/female.svg" alt="genero">
                 </div>
                 <div class="card etapaAtu">
-                    <img src="#" alt="cabelo">
+                    <img src="./../assets/images/icons/comb-color.svg" alt="cabelo">
                 </div>
                 <div class="card">
-                    <img src="#" alt="roupa">
+                    <img src="./../assets/images/icons/shirt.svg" alt="roupa">
                 </div>
             </div>
             <form action="../controller/insertAvatar.php" method="post" onchange="atualizarImagemCabelo()">
-                <div class="avancar">
-                    <input type="hidden" name="codUser" value="<?php echo $codUser['cod'] ?>">
-                    <input type="hidden" name="itemAvatar" value="cabelo">
-                    <button type="submit">Proximo</button>
-                </div>
+                
                 <div class="containerOpcoes">
                     <?php foreach ($cabelo as $cabelos) : ?>
                         <div class="opcoes opcoes-cabelo">
@@ -145,6 +147,11 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                             <img src="../assets/images/perfil/cabelo/<?php echo $cabelos["imgCabelo"] ?>" alt="base">    
                         </div>
                     <?php endforeach; ?>
+                </div>
+                <div class="avancar">
+                    <input type="hidden" name="codUser" value="<?php echo $codUser['cod'] ?>">
+                    <input type="hidden" name="itemAvatar" value="cabelo">
+                    <button type="submit">Proximo</button>
                 </div>
             </form>
 
@@ -163,22 +170,19 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                 </div>
             </div>
             <div class="etapa">
-                <div class="card ">
-                    <img src="#" alt="genero">
+                <div class="card genero ">
+                <img src="./../assets/images/icons/male.svg" class="genderMale" alt="genero">
+                    <img src="./../assets/images/icons/female.svg" alt="genero">
                 </div>
                 <div class="card ">
-                    <img src="#" alt="cabelo">
+                    <img src="./../assets/images/icons/comb.svg" alt="cabelo">
                 </div>
                 <div class="card etapaAtu">
-                    <img src="#" alt="roupa">
+                    <img src="./../assets/images/icons/shirt-color.svg" alt="roupa">
                 </div>
             </div>
             <form action="../controller/insertAvatar.php" method="post" onchange="atualizarImagemRoupa()">
-                <div class="avancar">
-                    <input type="hidden" name="codUser" value="<?php echo $codUser['cod'] ?>">
-                    <input type="hidden" name="itemAvatar" value="roupa">
-                    <button type="submit">Proximo</button>
-                </div>
+                
                 <div class="containerOpcoes">
                     <?php  foreach ($roupa as $roupas) : ?>
                         <div class="opcoes opcoes-cabelo">
@@ -186,6 +190,11 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                             <img src="../assets/images/perfil/roupa/<?php echo $roupas["imgRoupa"] ?>" alt="base">
                         </div>
                     <?php endforeach; ?>
+                </div>
+                <div class="avancar">
+                    <input type="hidden" name="codUser" value="<?php echo $codUser['cod'] ?>">
+                    <input type="hidden" name="itemAvatar" value="roupa">
+                    <button type="submit">Proximo</button>
                 </div>
             </form>
             

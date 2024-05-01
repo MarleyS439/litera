@@ -17,6 +17,9 @@ if ($usuarioAutenticado['banido'] != 0) {
     header("Location: ./login.php?status=erro3");
     exit();
 }
+if ($_SESSION['authUser'] == null){
+    header('Location: ./login.php?status=erro4');
+}
 ?>
 
 <?php
@@ -39,13 +42,13 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
 
 <head>
 
-    <meta charset="UTF-8">z
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
 
     <link rel="shortcut icon" href="../assets/images/litera.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="../assets/css/home.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/home.css">          
     <?php
 
     if ($usuarioAutenticado['tutorial'] == 0) {
@@ -56,7 +59,7 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
     <style>
         /* Estilo da div com base na porcentagem */
         .barra .progresso {
-            width: <?php echo $porcentagem; ?>%;
+            width: <?php echo $porcentagem; ?>%
         }
     </style>
 </head>
