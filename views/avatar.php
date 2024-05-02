@@ -17,21 +17,24 @@ if ($usuarioAutenticado['banido'] != 0) {
     header("Location: ./login.php?status=erro3");
     exit();
 }
-if ($_SESSION['authUser'] == null){
+if ($_SESSION['authUser'] == null) {
     header('Location: ./login.php?status=erro4');
 }
 ?>
-<!-- inport das img  -->
+<!-- import das img  -->
 <?php
 require('../dao/cabeloDao.php');
 require('../dao/generoDao.php');
 require('../dao/roupaDao.php');
-require('../dao/AvatarDao.php');
+require('../dao/avatarDao.php');
+
 $cabelo = CabeloDao::selectAll();
 $roupa = RoupaDao::selectAll();
 $genero = GeneroDao::selectAll();
 $avatar = AvatarDao::selectByIdUser($codUser['cod']);
-// var_dump($avatar)
+
+
+
 ?>
 
 
@@ -73,7 +76,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                 </div>
             </div>
             <form action="../controller/insertAvatar.php" method="post" onchange="atualizarImagemBase()">
-                
+
                 <div class="containerOpcoes">
                     <?php foreach ($genero as $generos) : ?>
                         <div class="opcoes">
@@ -128,7 +131,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
             </div>
             <div class="etapa ">
                 <div class="card genero">
-                <img src="./../assets/images/icons/male.svg" class="genderMale" alt="genero">
+                    <img src="./../assets/images/icons/male.svg" class="genderMale" alt="genero">
                     <img src="./../assets/images/icons/female.svg" alt="genero">
                 </div>
                 <div class="card etapaAtu">
@@ -139,12 +142,12 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                 </div>
             </div>
             <form action="../controller/insertAvatar.php" method="post" onchange="atualizarImagemCabelo()">
-                
+
                 <div class="containerOpcoes">
                     <?php foreach ($cabelo as $cabelos) : ?>
                         <div class="opcoes opcoes-cabelo">
                             <input required type="radio" name="cabelo" class="input-opcao" value="<?php echo $cabelos['codCabelo'] ?>" data-img="<?php echo $cabelos["imgCabelo"] ?>">
-                            <img src="../assets/images/perfil/cabelo/<?php echo $cabelos["imgCabelo"] ?>" alt="base">    
+                            <img src="../assets/images/perfil/cabelo/<?php echo $cabelos["imgCabelo"] ?>" alt="base">
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -171,7 +174,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
             </div>
             <div class="etapa">
                 <div class="card genero ">
-                <img src="./../assets/images/icons/male.svg" class="genderMale" alt="genero">
+                    <img src="./../assets/images/icons/male.svg" class="genderMale" alt="genero">
                     <img src="./../assets/images/icons/female.svg" alt="genero">
                 </div>
                 <div class="card ">
@@ -182,9 +185,9 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                 </div>
             </div>
             <form action="../controller/insertAvatar.php" method="post" onchange="atualizarImagemRoupa()">
-                
+
                 <div class="containerOpcoes">
-                    <?php  foreach ($roupa as $roupas) : ?>
+                    <?php foreach ($roupa as $roupas) : ?>
                         <div class="opcoes opcoes-cabelo">
                             <input required type="radio" name="roupa" class="input-opcao" value="<?php echo $roupas['codRoupa'] ?>" data-img="<?php echo $roupas["imgRoupa"] ?>">
                             <img src="../assets/images/perfil/roupa/<?php echo $roupas["imgRoupa"] ?>" alt="base">
@@ -197,8 +200,8 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                     <button type="submit">Proximo</button>
                 </div>
             </form>
-            
-            
+
+
             <!-- <div class="conteinerImg">
                 <div class="cardItem">
                     <div class="base">

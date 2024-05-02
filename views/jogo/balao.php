@@ -32,13 +32,17 @@ if ($usuarioAutenticado['banido'] != 0) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9b58b8faa9.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <link rel="shortcut icon" href="../../assets/images/icons/favicon.ico" type="image/x-icon">
+    <title>Demo | Balões</title>
 </head>
 
 <body>
 
     <header class="headerNav">
-        <a href="#" class="logo">Litera</a>
+        <a href="../../views/home.php" class="logo">
+            <img src="../../assets/images/arara 2.svg" alt="">
+            <span>Litera</span>
+        </a>
         <nav class="navbar">
             <ul class="ulNav">
                 <li class="liNav"><a href="#"><img src="img/home.svg"></a></li>

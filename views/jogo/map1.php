@@ -25,52 +25,89 @@ if ($usuarioAutenticado['banido'] != 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../assets/css/map.css">
+    <link rel="shortcut icon" href="../../assets/images/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../assets/css/navbar.css">
     <?php
     if ($usuarioAutenticado['tutorial'] == 0) {
         echo '<link rel="stylesheet" type="text/css" href="../../assets/css/tutorial-fases.css">';
     }
     ?>
 
-    <title>Document</title>
+    <title>Acertar Balões | Selecionar Fase</title>
 </head>
 
 <body>
-    <div class="overlay-itens1">
-
-    </div>
+    <!-- <div class="overlay-itens1"></div> -->
     <div class="desktop-view">
 
+        <nav class="navbar">
+            <div class="logo-area">
+                <img src="../../assets/images/litera.png" alt="Litera">
+                <span>Litera</span>
+            </div>
 
-    <?php include('../views/components/navbarHome.php'); ?>
+            <div class="navigation">
+                <ul>
+                    <li class="home-icon">
+                        <a href="../../views/home.php">
+                            <svg width="28" height="31">
+                                <image href="../../assets/images/icons/home-icon-desktop.svg" width="28" height="31" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="store-icon">
+                        <a href="../../views/store.php">
+                            <svg width="28" height="31">
+                                <image href="../../assets/images/icons/store-icon-desktop.svg" width="28" height="31" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="profile-icon">
+                        <a href="../../views/user-profile.php">
+                            <svg width="28" height="31">
+                                <image href="../../assets/images/icons/profile-icon-desktop.svg" width="28" height="31" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="profile-info">
+                <div class="name-user">
+                    <span><?php echo $usuarioAutenticado['nomeUsuario']; ?></span>
+                </div>
+                <div class="level">
+                    <span><?php echo $usuarioAutenticado['nivel']; ?></span>
+                </div>
+                <div class="coin">
+                    <svg width="36" height="36">
+                        <image href="../../assets/images/icons/coin2.svg" width="35" height="36" />
+                    </svg>
+                </div>
+
+                <div class="name-user">
+                    <span><?php echo $usuarioAutenticado['dinheiroUsuario']; ?></span>
+                </div>
+            </div>
+
+        </nav>
 
         <div class="overlay-itens2"></div>
 
-        <div class="top-bar">
-            <div class="info-user">
-                <img src="../assets/images/icons/profile.svg" alt="">
-                <span>Nome usuário</span>
-            </div>
-
-            <div class="credits">
-                <img src="../assets/images/icons/coin.svg" alt="">
-                <span>500</span>
-            </div>
-        </div>
-
         <main>
+            <div class="dots">
 
-            <div class="games-list-map">
-                <a class="game" id="t">
+                <div class="games-list-map">
+                    <a class="game" id="t">
+                        <div class="title-game-map" id="aa">
+                            <p>Caça às Letras</p>
+                        </div>
+                    </a>
 
-                    <div class="background-card-game" id="aa"></div>    
-                    <div class="title-game-map" id="aa">
-                        <p>Caça às Letras</p>
-                    </div>
-                </a>
+                </div>
 
-            </div>
-            <div class="fase-list">
-                <div>
+                <div class="fase-list">
+
                     <div class="game-0" id="first">
                         <p>Tutorial</p>
                         <a href="../tutorial/tutorial-jogo1/tutorial.php">
@@ -162,10 +199,10 @@ if ($usuarioAutenticado['banido'] != 0) {
         <main>
 
             <div class="games-list-map">
-                <a class="game" >
+                <a class="game">
 
                     <div class="background-card-game"></div>
-                    <div class="title-game-map" >
+                    <div class="title-game-map">
                         <p>Caça às Letras</p>
                     </div>
                 </a>
@@ -176,7 +213,7 @@ if ($usuarioAutenticado['banido'] != 0) {
                     <div class="game-0" id="t">
                         <p>Tutorial</p>
                         <a href="../tutorial/tutorial-jogo1/tutorial.php">
-                            <img  id="aa" src="../../assets/images/fase/map-on.png" alt="">
+                            <img id="aa" src="../../assets/images/fase/map-on.png" alt="">
                         </a>
                     </div>
                     <div class="game-1">

@@ -1,9 +1,10 @@
 <?php
 // caminhos para os arquivos dao e model
 require_once("../dao/usuarioDao.php");
-require_once(__DIR__."../../models/usuario.php");
+require_once(__DIR__ . "../../models/usuario.php");
 // variavel que vai mandar os dados para o model
 $usuario = new Usuario();
+
 // Verifica se o cadastro pode ser realizado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Faz a verificação se todos os campos foram preenchidos corretamente
@@ -38,9 +39,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Iniciar a sessão apenas se as credenciais estiverem corretas
             session_start();
             $_SESSION["authUser"] = $authUser;
-            if($authUser['tutorial'] == 0){
+            if ($authUser['tutorial'] == 0) {
                 header("Location: ../views/avatar.php?status=base");
-            }else{
+            } else {
                 header("Location: ../views/home.php");
             }
         } else {

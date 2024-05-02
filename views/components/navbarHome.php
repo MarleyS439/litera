@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="./../assets/css/navbar.css">
 <nav class="navbar">
     <div class="logo-area">
         <img src="../assets/images/litera.png" alt="Litera">
@@ -22,7 +21,7 @@
                 </a>
             </li>
             <li class="profile-icon">
-                <a href="../views/user.php">
+                <a href="../views/user-profile.php">
                     <svg width="28" height="31">
                         <image href="../assets/images/icons/profile-icon-desktop.svg" width="28" height="31" />
                     </svg>
@@ -34,15 +33,34 @@
 
     <!-- <div class="profile">
         <div class="profile-pic">
-            <span><?php echo $usuarioAutenticado['nome']?></span>
+            <span>Nome</span>
             <img src="../assets/images/icons/profile.svg" alt="">
         </div>
-    </div> -->
-    <div>
-        <a href="../controller/logoutUser.php" title="logout">
-            <img class="img-logoff" src="../assets/images/icons/exit-svgrepo-com.svg" alt="exit">
-        </a>
 
+        <div class="logout-area">
+            <a href="../controller/logoutUser.php" title="logout">
+                <img class="img-logoff" src="../assets/images/icons/exit-svgrepo-com.svg" alt="exit">
+            </a>
+        </div>
+    </div> -->
+
+    <div class="profile-info">
+        <div class="name-user">
+            <span><?php echo $usuarioAutenticado['nomeUsuario']; ?></span>
+        </div>
+        <div class="level">
+            <span><?php echo $usuarioAutenticado['nivel']; ?></span>
+        </div>
+        <div class="coin">
+            <svg width="36" height="36">
+                <image href="../assets/images/icons/coin2.svg" width="35" height="36" />
+            </svg>
+        </div>
+
+        <div class="name-user">
+            <span><?php echo $usuarioAutenticado['dinheiroUsuario']; ?></span>
+        </div>
     </div>
+
 </nav>
-<script src="https://kit.fontawesome.com/a3e37e504d.js" crossorigin="anonymous"></script>
+<!-- <script src="https://kit.fontawesome.com/a3e37e504d.js" crossorigin="anonymous"></script> -->

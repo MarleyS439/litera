@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -8,7 +8,10 @@
     color: #000;
 }
 
-:root{
+@import url(../../assets/css/navbar.css);
+@import url(../../assets/css/default.css);
+
+:root {
     --branco: #FFFFFF;
     --header: #1C96E1;
     --fundo: #C1E6FD;
@@ -32,7 +35,7 @@
 }
 
 /* Arredondamento de Bordas */
-:root{
+:root {
     --R-areaJogoBorda: 10px;
     --R-btnBorda: 10px;
     --R-barraBorda: 5px;
@@ -44,7 +47,7 @@
 }
 
 /* TAMANHOS */
-:root{
+:root {
     --T-btnAvanc: 50px;
     --T-nav: 30px;
     --T-avatar: 30px;
@@ -55,21 +58,21 @@
 
 
 /* Letras Header */
-:root{
+:root {
     --F-logoHeader: 1.3rem;
     --F-nomeHeader: .7rem;
     --F-btnAvanc: 2rem;
-    --F-weightBold:  bold;
-    --F-weight500:  500;
-    --F-weight600:  600;
-    --F-weight700:  700;
-    --F-weight800:  800;
-    --F-weight900:  900;
+    --F-weightBold: bold;
+    --F-weight500: 500;
+    --F-weight600: 600;
+    --F-weight700: 700;
+    --F-weight800: 800;
+    --F-weight900: 900;
 }
 
 
 /* Padding e Margin */
-:root{
+:root {
     --P-Box-mensagem: 8px;
     --P-mensagem: 10px;
     --M-right: 10px;
@@ -82,13 +85,13 @@
 }
 
 /* Texto Jogo */
-:root{
+:root {
     --textoDesk1366: .6rem;
 }
 
 
 
-body{
+body {
     display: flex;
     justify-content: center;
     margin: 0 auto;
@@ -97,12 +100,14 @@ body{
     max-width: 1920px;
     max-height: 1080px;
     background: var(--fundo);
+    cursor: url(../../assets/images/icons/MAOZINHA.png), auto;
 }
+
 /***
 ****INICIO header****
 ***/
 
-.headerNav{
+.headerNav {
     background-color: var(--header);
     width: 100%;
     padding: var(--P-header);
@@ -112,17 +117,35 @@ body{
     position: fixed;
 }
 
-.headerNav .logo{
+.headerNav .logo {
     font-weight: var(--F-weightBold);
     font-size: var(--F-logoHeader);
     color: var(--branco);
+    display: flex;
+    align-items: center;
+    
 }
 
-.navbar .ulNav{
+.logo img {
+    width: 70px;
+    background-color: white;
+    border-radius: 45px;
+}
+
+.logo span {
+    margin: 0% 1%;
+    font-family: var(--font-poppins-bold);
+    color: var(--white);
+}
+
+
+.navbar .ulNav {
     display: flex;
     gap: 30px;
 }
-.ulNav .liNav{
+
+
+.ulNav .liNav {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -130,35 +153,41 @@ body{
     height: var(--T-nav);
     border-radius: var(--R-nav);
     overflow: hidden;
-    
+
 
 }
-.ulNav .liNav:nth-child(1){
+
+.ulNav .liNav:nth-child(1) {
     background-color: var(--branco);
 }
-.ulNav .liNav a{
+
+.ulNav .liNav a {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
 }
-.ulNav .liNav img{
+
+.ulNav .liNav img {
     width: 15px;
     height: 15px;
 }
-.headerNav .perfil{
+
+.headerNav .perfil {
     gap: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.headerNav .perfil .avatar{
+
+.headerNav .perfil .avatar {
     width: var(--T-avatar);
     height: var(--T-avatar);
     border-radius: var(--R-avatar);
 }
-.headerNav .perfil .nomeUser{
+
+.headerNav .perfil .nomeUser {
     font-size: var(--F-nomeHeader);
     color: var(--branco);
 }
@@ -168,7 +197,7 @@ body{
 ***/
 
 
-.navegacao a i{
+.navegacao a i {
     width: 100%;
     height: 100%;
     background: transparent;
@@ -179,10 +208,11 @@ body{
     color: var(--nav-azul);
 }
 
-.navegacao #nav-jogos{
+.navegacao #nav-jogos {
     background-color: transparent;
 }
-.navegacao #nav-jogos i{
+
+.navegacao #nav-jogos i {
     color: var(--branco);
 }
 
@@ -197,7 +227,7 @@ body{
 /*
 ****SECTION BALAO****
 */
-.jogo-balao{
+.jogo-balao {
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -206,6 +236,7 @@ body{
     width: 100%;
     padding: 30px;
 }
+
 /*
 **** FIM - SECTION BALAO****
 */
@@ -214,7 +245,7 @@ body{
 /*
 ****AREA DO JOGO:****
 */
-.area-jogo{
+.area-jogo {
     position: relative;
     width: 600px;
     height: 500px;
@@ -239,7 +270,7 @@ body{
 INICIO COMEÇO JOGO!!!!!
 *****************
 */
-.area-jogo .box-comecar{
+.area-jogo .box-comecar {
     position: absolute;
     flex-direction: column;
     display: flex;
@@ -252,35 +283,38 @@ INICIO COMEÇO JOGO!!!!!
     height: 100%;
 }
 
-.fadeOut{
+.fadeOut {
     animation: fadeOut 1s ease-in-out forwards;
 }
-  
-  @keyframes fadeOut {
+
+@keyframes fadeOut {
     0% {
-      opacity: 1;
+        opacity: 1;
     }
+
     100% {
-      opacity: 0;
-      display: none;
+        opacity: 0;
+        display: none;
     }
-  }
+}
 
 
 
-.area-jogo .box-comecar h1{
+.area-jogo .box-comecar h1 {
     font-size: 2.5em;
     color: var(--header);
     font-weight: 600;
     z-index: 2;
     margin-bottom: 20px;
 }
-.area-jogo .box-comecar span{
+
+.area-jogo .box-comecar span {
     z-index: 2;
     font-weight: 600;
     color: var(--barra);
 }
-.area-jogo .box-comecar .btn-play{
+
+.area-jogo .box-comecar .btn-play {
     z-index: 2;
     width: 150px;
     height: 40px;
@@ -293,17 +327,19 @@ INICIO COMEÇO JOGO!!!!!
     transition: .6s;
     cursor: url("./img/mao2.svg"), auto;
 }
-.area-jogo .box-comecar .btn-play:hover{
+
+.area-jogo .box-comecar .btn-play:hover {
     background: var(--header);
     color: var(--branco);
     border: 1px solid var(--branco);
 }
 
 @keyframes btn-play {
-    100%{
+    100% {
         transform: scale(1.1);
     }
 }
+
 /*
 *****************
 FIM COMEÇO JOGO!!!!!
@@ -320,7 +356,7 @@ FIM COMEÇO JOGO!!!!!
 INICIO Ico audio!!!!!
 *****************
 */
-.area-jogo .audio{
+.area-jogo .audio {
     position: absolute;
     top: 20px;
     right: 5%;
@@ -328,40 +364,43 @@ INICIO Ico audio!!!!!
     height: 20px;
     z-index: 1;
 }
-.area-jogo .audio i{
+
+.area-jogo .audio i {
     color: var(--audio);
     font-size: 1.5em;
 }
 
-.area-jogo .audio #off{
+.area-jogo .audio #off {
     color: var(--borda-btnOff);
     animation: audioOff .5s linear infinite alternate;
 }
 
 @keyframes audioOff {
-    0%{
+    0% {
         transform: rotate(-7deg);
     }
-    100%{
+
+    100% {
         transform: rotate(7deg);
     }
 }
 
-.area-jogo .audio #on{
+.area-jogo .audio #on {
     color: var(--header);
     animation: audioOn .5s linear infinite alternate;
 }
 
 @keyframes audioOn {
-    0%{
+    0% {
         transform: rotate(-10deg);
     }
-    100%{
+
+    100% {
         transform: scale(1.3);
     }
 }
 
-.area-jogo .microfone{
+.area-jogo .microfone {
     position: absolute;
     bottom: 5px;
     right: 5px;
@@ -374,14 +413,16 @@ INICIO Ico audio!!!!!
     font-size: 1.5em;
     overflow: hidden;
 }
-.area-jogo .microfone i{
+
+.area-jogo .microfone i {
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--header);
     cursor: url("./img/mao2.svg"), auto;
 }
-.area-jogo .microfone i:hover{
+
+.area-jogo .microfone i:hover {
     color: var(--branco);
     background-color: var(--header);
     width: 100%;
@@ -403,25 +444,28 @@ TOPO DO JOGO MOEDAS - BARRA DE ACERTO - AUDIO!!!!!
 *****************
 */
 
-.area-jogo .topo{
+.area-jogo .topo {
     display: flex;
     align-items: center;
     margin-top: 20px;
     width: 100%;
     padding: 5px 5%;
 }
-.topo .moedas{
+
+.topo .moedas {
     display: flex;
     align-items: center;
     gap: 5px;
     pointer-events: none;
 }
-.topo .moedas i{
+
+.topo .moedas i {
     color: var(--moeda);
     font-size: 1.5em;
     font-weight: 600;
 }
-.topo .moedas span{
+
+.topo .moedas span {
     color: var(--moeda);
     font-size: 1.5em;
     font-weight: 600;
@@ -436,9 +480,9 @@ TOPO DO JOGO MOEDAS - BARRA DE ACERTO - AUDIO!!!!!
     width: 250px;
     height: 20px;
     overflow: hidden;
-  }
-  
-  .topo .barra::after {
+}
+
+.topo .barra::after {
     position: absolute;
     content: '';
     width: 90%;
@@ -448,11 +492,11 @@ TOPO DO JOGO MOEDAS - BARRA DE ACERTO - AUDIO!!!!!
     top: 5px;
     left: 5%;
     right: 5%;
-  }
-  
-  .topo .barra .acerto {
+}
+
+.topo .barra .acerto {
     animation: barra 1s ease-in-out forwards;
-  }
+}
 
 
 /*
@@ -460,7 +504,7 @@ TOPO DO JOGO MOEDAS - BARRA DE ACERTO - AUDIO!!!!!
 FIMMM ---> TOPO DO JOGO MOEDAS - BARRA DE ACERTO - AUDIO!!!!!
 *****************
 */
-  
+
 
 
 
@@ -470,7 +514,7 @@ FIMMM ---> TOPO DO JOGO MOEDAS - BARRA DE ACERTO - AUDIO!!!!!
 AREA DOS BALÕES!!!!!
 *****************
 */
-.area-jogo .baloes{
+.area-jogo .baloes {
     position: relative;
     display: flex;
     justify-content: center;
@@ -480,11 +524,12 @@ AREA DOS BALÕES!!!!!
 }
 
 
-.area-jogo .baloes .box-balao{
+.area-jogo .baloes .box-balao {
     position: relative;
     width: 80%;
     height: 60%;
 }
+
 .area-jogo .baloes .box-balao .balao1 {
     position: absolute;
     width: 45px;
@@ -492,6 +537,7 @@ AREA DOS BALÕES!!!!!
     animation: balao 2s linear infinite alternate;
     animation-delay: 0s;
 }
+
 .area-jogo .baloes .box-balao .balao2 {
     position: absolute;
     width: 35px;
@@ -530,26 +576,30 @@ AREA DOS BALÕES!!!!!
 
 
 @keyframes balao {
-    0%{
+    0% {
         transform: translateY(0%);
     }
-    50%{
+
+    50% {
         transform: rotate(-5deg);
     }
-    80%{
+
+    80% {
         transform: rotate(5deg);
     }
-    100%{
+
+    100% {
         transform: translateY(-20%);
     }
 
 }
 
-@keyframes balao-aumento{
-    0%{
+@keyframes balao-aumento {
+    0% {
         transform: translateY(20%);
     }
-    100%{
+
+    100% {
         transform: scale(1.4)
     }
 }
@@ -586,22 +636,25 @@ FIM DO JOGO!!!!!
 .area-jogo .final span {
     font-weight: 900;
     color: var(--borda-barra);
-    
+
 }
 
 
 .area-jogo .final p {
     font-size: 1.5em;
 }
-#corPontuacao{
+
+#corPontuacao {
     color: var(--text-fim);
+    font-family: "Poppins", sans-serif;
 }
-#corErros{
+
+#corErros {
     color: var(--cor-vermelho);
 }
 
 .area-jogo .final .total_moedas {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 700;
     color: var(--borda-barra);
     font-size: 2em;
@@ -702,11 +755,12 @@ CONCLUSÃO FIM DO JOGO!!!!!
 
 
 /* Efeitos Estrelar */
-.jogo-balao .container{
+.jogo-balao .container {
     position: absolute;
     width: 100%;
     height: 100%;
 }
+
 .jogo-balao .container .effect-estrelar .letra1 {
     position: absolute;
     top: 10%;
@@ -1028,11 +1082,13 @@ CONCLUSÃO FIM DO JOGO!!!!!
     animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
     animation-delay: 3.2s;
 }
+
 @keyframes letras-quem-somos {
     0% {
         opacity: 1;
         transform: translateY(0);
     }
+
     100% {
         opacity: 0;
         transform: translateY(100%);
@@ -1041,7 +1097,7 @@ CONCLUSÃO FIM DO JOGO!!!!!
 
 
 
-.area-jogo .effeitoAcerto{
+.area-jogo .effeitoAcerto {
     display: none;
     justify-content: center;
     align-items: center;
@@ -1053,12 +1109,12 @@ CONCLUSÃO FIM DO JOGO!!!!!
     z-index: 999;
 }
 
-.area-jogo .effeitoAcerto .joinhaUp{
+.area-jogo .effeitoAcerto .joinhaUp {
     width: 100px;
     height: 100px;
 }
 
-.area-jogo .effeitoAcerto .joinhaDown{
+.area-jogo .effeitoAcerto .joinhaDown {
     display: none;
     width: 100px;
     height: 100px;
@@ -1073,24 +1129,24 @@ CONCLUSÃO FIM DO JOGO!!!!!
 MEDIA SCREENS!!!!!
 *****************
 */
-@media screen and (min-width: 769px){
+@media screen and (min-width: 769px) {
+
     .menu-mobile,
-    .area-jogo .mobile-aud{
+    .area-jogo .mobile-aud {
         display: none;
     }
 
 
 }
 
-@media only screen and (max-width: 414px){
+@media only screen and (max-width: 414px) {}
 
-}
-
-@media only screen and (max-width: 768px){
-    .jogo-balao{
+@media only screen and (max-width: 768px) {
+    .jogo-balao {
         padding: 0px;
     }
-    .area-jogo{
+
+    .area-jogo {
         width: 100%;
         height: 100%;
         background-color: #00000054;
@@ -1107,6 +1163,7 @@ MEDIA SCREENS!!!!!
         animation: balao 2s linear infinite alternate;
         animation-delay: 0s;
     }
+
     .area-jogo .baloes .box-balao .balao2 {
         position: absolute;
         width: 55px;
@@ -1115,7 +1172,7 @@ MEDIA SCREENS!!!!!
         animation: balao 2s linear infinite alternate;
         animation-delay: 0.2s;
     }
-    
+
     .area-jogo .baloes .box-balao .balao3 {
         position: absolute;
         width: 65px;
@@ -1124,7 +1181,7 @@ MEDIA SCREENS!!!!!
         animation: balao 2s linear infinite alternate;
         animation-delay: 0.4s;
     }
-    
+
     .area-jogo .baloes .box-balao .balao4 {
         position: absolute;
         width: 70px;
@@ -1133,7 +1190,7 @@ MEDIA SCREENS!!!!!
         animation: balao 2s linear infinite alternate;
         animation-delay: 0.6s;
     }
-    
+
     .area-jogo .baloes .box-balao .balao5 {
 
         width: 80px;
@@ -1143,30 +1200,32 @@ MEDIA SCREENS!!!!!
         animation-delay: 0.8s;
     }
 
-    .nav-bar{
+    .nav-bar {
         display: none;
     }
 
-   header{
-    top: -45px;
-    background: transparent;
-   }
-   header .menu-mobile{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    header {
+        top: -45px;
+        background: transparent;
+    }
+
+    header .menu-mobile {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
 
-   }
-    header .menu-mobile .logo-mob{
+    }
+
+    header .menu-mobile .logo-mob {
         color: var(--branco);
         font-weight: 600;
         font-size: 3em;
     }
 
-    header .menu-mobile .menu{
-        
+    header .menu-mobile .menu {
+
         position: relative;
         margin-right: -70px;
         display: flex;
@@ -1176,20 +1235,21 @@ MEDIA SCREENS!!!!!
         height: 200px;
     }
 
-    header .menu-mobile .menu li{
+    header .menu-mobile .menu li {
         position: absolute;
         left: 0;
         transform-origin: 100px;
         transition: .5s;
         transition-delay: calc(0.1s * var(--i));
         transform: rotate(0deg) translateX(70px);
-        
+
     }
 
-    header .menu-mobile .menu.active li{
+    header .menu-mobile .menu.active li {
         transform: rotate(calc(-230deg / 4 * var(--i)));
     }
-    header .menu-mobile .menu li a{
+
+    header .menu-mobile .menu li a {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1200,11 +1260,12 @@ MEDIA SCREENS!!!!!
         border: 1px solid #b9b9b9;
         transform: rotate(calc(-230deg / -4 * var(--i)));
     }
-    header .menu-mobile .menu li a i{
+
+    header .menu-mobile .menu li a i {
         color: #1C96E1;
     }
 
-    header .menu-mobile .menu .toggle{
+    header .menu-mobile .menu .toggle {
         position: absolute;
         width: 60px;
         height: 60px;
@@ -1218,18 +1279,19 @@ MEDIA SCREENS!!!!!
         cursor: pointer;
         font-size: 1.5em;
         transition: transform 1.25s;
-        
+
     }
-    header .menu-mobile .menu .toggle i{
+
+    header .menu-mobile .menu .toggle i {
         color: #b9b9b9;
     }
 
-    .menu.active .toggle{
+    .menu.active .toggle {
         transform: rotate(315deg);
     }
 
 
-    .area-jogo .topo{
+    .area-jogo .topo {
         position: absolute;
         display: flex;
         justify-content: center;
@@ -1241,103 +1303,110 @@ MEDIA SCREENS!!!!!
     }
 
     .area-jogo .topo .moedas i,
-    .area-jogo .topo .moedas span{
+    .area-jogo .topo .moedas span {
         font-size: 2em;
         color: var(--branco);
     }
 
     .topo .barra {
         height: 30px;
-        
-      }
 
-      .area-jogo .audio{
+    }
+
+    .area-jogo .audio {
         display: none;
-      }
-    .area-jogo .mobile-aud{
+    }
+
+    .area-jogo .mobile-aud {
         position: absolute;
         bottom: 20px;
         left: 5%;
 
     }
 
-    .area-jogo .mobile-aud i{
+    .area-jogo .mobile-aud i {
         color: var(--audio);
         font-size: 1.5em;
     }
-    
-    .area-jogo .mobile-aud #offmob{
+
+    .area-jogo .mobile-aud #offmob {
         color: var(--vermelho);
         animation: audioOff .5s linear infinite alternate;
     }
-    
+
     @keyframes audioOff {
-        0%{
+        0% {
             transform: rotate(-7deg);
         }
-        100%{
+
+        100% {
             transform: rotate(7deg);
         }
     }
-    
-    .area-jogo .mobile-aud #onmob{
+
+    .area-jogo .mobile-aud #onmob {
         color: var(--verde);
         animation: audioOn .5s linear infinite alternate;
     }
-    
+
     @keyframes audioOn {
-        0%{
+        0% {
             transform: rotate(-10deg);
         }
-        100%{
+
+        100% {
             transform: scale(1.3);
         }
     }
 }
 
 
-@media only screen and (min-height: 1080px){
+@media only screen and (min-height: 1080px) {
 
-    .logo{
+    .logo {
         color: var(--branco);
         font-size: 3em;
         font-weight: bold;
         letter-spacing: 1px;
     }
 
-    .navegacao a{
+    .navegacao a {
         width: 60px;
         height: 60px;
         border-radius: 60px;
     }
-    .navegacao a i{
+
+    .navegacao a i {
         font-size: 1.5em;
     }
 
-    .area-perfil a{
+    .area-perfil a {
         display: flex;
         gap: 10px;
         align-items: center;
     }
-    .perfil{
+
+    .perfil {
         width: 60px;
         height: 60px;
         border-radius: 60px;
     }
-    .perfil img{
+
+    .perfil img {
         height: 100%;
         width: 100%;
     }
-    
-    .area-perfil p{
+
+    .area-perfil p {
         font-size: 1.5em;
     }
 
-    .area-jogo{
+    .area-jogo {
         width: 1000px;
-        height: 800px; 
+        height: 800px;
     }
-    .area-jogo .audio{
+
+    .area-jogo .audio {
         top: 40px;
         right: 40px;
         width: 80px;
@@ -1345,37 +1414,40 @@ MEDIA SCREENS!!!!!
 
     }
 
-    .area-jogo .box-comecar h1{
+    .area-jogo .box-comecar h1 {
         font-size: 3.5em;
     }
 
-    .area-jogo .box-comecar .btn-play{
+    .area-jogo .box-comecar .btn-play {
         z-index: 2;
         width: 200px;
         height: 50px;
         font-size: 1.5em;
     }
 
-    .area-jogo .topo{
+    .area-jogo .topo {
         margin-top: 40px;
     }
-    .topo .moedas{
+
+    .topo .moedas {
         display: flex;
         align-items: center;
         gap: 10px;
         pointer-events: none;
     }
-    .topo .moedas i{
+
+    .topo .moedas i {
         color: var(--moeda);
         font-size: 2em;
         font-weight: 600;
     }
-    .topo .moedas span{
+
+    .topo .moedas span {
         color: var(--moeda);
         font-size: 2em;
         font-weight: 600;
     }
-    
+
     .topo .barra {
         position: relative;
         display: flex;
@@ -1385,16 +1457,17 @@ MEDIA SCREENS!!!!!
         width: 400px;
         height: 30px;
         overflow: hidden;
-      }
+    }
 
 
-      .area-jogo .baloes .box-balao .balao1 {
+    .area-jogo .baloes .box-balao .balao1 {
         position: absolute;
         width: 100px;
         top: 0;
         animation: balao 2s linear infinite alternate;
         animation-delay: 0s;
     }
+
     .area-jogo .baloes .box-balao .balao2 {
         position: absolute;
         width: 90px;
@@ -1403,7 +1476,7 @@ MEDIA SCREENS!!!!!
         animation: balao 2s linear infinite alternate;
         animation-delay: 0.2s;
     }
-    
+
     .area-jogo .baloes .box-balao .balao3 {
         position: absolute;
         width: 85px;
@@ -1412,7 +1485,7 @@ MEDIA SCREENS!!!!!
         animation: balao 2s linear infinite alternate;
         animation-delay: 0.4s;
     }
-    
+
     .area-jogo .baloes .box-balao .balao4 {
         position: absolute;
         width: 90px;
@@ -1421,7 +1494,7 @@ MEDIA SCREENS!!!!!
         animation: balao 2s linear infinite alternate;
         animation-delay: 0.6s;
     }
-    
+
     .area-jogo .baloes .box-balao .balao5 {
         position: absolute;
         width: 100px;
@@ -1430,7 +1503,7 @@ MEDIA SCREENS!!!!!
         animation: balao-aumento 2s linear infinite alternate;
         animation-delay: 0.8s;
     }
-    
+
 
 }
 
@@ -1443,7 +1516,7 @@ MEDIA SCREENS!!!!!
 
 
 
-.area-jogo .final{
+.area-jogo .final {
     display: none;
     position: absolute;
     align-items: center;
@@ -1454,14 +1527,14 @@ MEDIA SCREENS!!!!!
     z-index: 1;
 }
 
-.final .text-fim{
+.final .text-fim {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 50%;
 }
 
-.text-fim p{
+.text-fim p {
     margin-top: 15%;
     display: flex;
     align-items: center;
@@ -1476,13 +1549,15 @@ MEDIA SCREENS!!!!!
     border: 2px solid var(--border-fim);
     border-radius: var(--R-BtnFim-e-Text-Fim);
 }
-.final .btn-fim{
+
+.final .btn-fim {
     gap: 20%;
     display: flex;
     justify-content: center;
     width: 100%;
     height: 50%;
 }
+
 .btn-fim .btnFinal {
     margin-top: 10%;
     display: flex;
@@ -1493,7 +1568,8 @@ MEDIA SCREENS!!!!!
     border-radius: var(--R-BtnFim-e-Text-Fim);
     cursor: url("./img/mao2.svg"), auto;
 }
-.btn-fim .btnFinal img{
+
+.btn-fim .btnFinal img {
     width: 35px;
 }
 
@@ -1501,13 +1577,14 @@ MEDIA SCREENS!!!!!
 
 
 
-.btn-fim .btnFinal:nth-child(2){
+.btn-fim .btnFinal:nth-child(2) {
     position: relative;
     border: 2px solid var(--borda-btnFim1);
     background-color: var(--cor-btnFim1);
     cursor: url("./img/mao2.svg"), auto;
 }
-.btn-fim .btnFinal:nth-child(2)::after{
+
+.btn-fim .btnFinal:nth-child(2)::after {
     position: absolute;
     content: 'Avançar';
     font-weight: 600;
@@ -1517,13 +1594,14 @@ MEDIA SCREENS!!!!!
     cursor: url("./img/mao2.svg"), auto;
 }
 
-.btn-fim .btnFinal:nth-child(1){
+.btn-fim .btnFinal:nth-child(1) {
     position: relative;
     border: 2px solid var(--borda-btnFim2);
     background-color: var(--cor-btnFim2);
     cursor: url("./img/mao2.svg"), auto;
 }
-.btn-fim .btnFinal:nth-child(1)::after{
+
+.btn-fim .btnFinal:nth-child(1)::after {
     position: absolute;
     content: 'Recomeçar';
     font-weight: 600;
@@ -1532,23 +1610,3 @@ MEDIA SCREENS!!!!!
     text-shadow: 0px 0px 5px var(--borda-btnFim2);
     cursor: url("./img/mao2.svg"), auto;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

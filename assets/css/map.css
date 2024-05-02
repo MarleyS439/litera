@@ -1,7 +1,8 @@
 @import url(./home.css);
-@import url(./animations.css);  
+@import url(./animations.css);
+@import url(./default.css);
 
-@media screen and (max-width:768px){
+@media screen and (max-width:768px) {
 
     .game .title-game-map p {
         font-family: var(--font-poppins-bold);
@@ -9,6 +10,8 @@
         font-size: 1.6rem;
         text-align: center;
         color: #1C96E1;
+        position: relative;
+        top: 10vh;
     }
 
     .fase-list {
@@ -41,12 +44,18 @@
         left: 10vw;
     }
 }
-@media screen and (min-width:1025px){
+
+@media screen and (min-width:1025px) {
+
+    main {
+        display: flex;
+        justify-content: center;
+    }
+
     .game {
-        position: relative;
-        left: 50%;
-        padding: 1%;
-        margin: 0% 0% 5% 0%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
         text-decoration: none;
         color: var(--black2);
         transition: 200ms ease-in-out;
@@ -65,45 +74,83 @@
 
     .game .title-game-map p {
         font-family: var(--font-poppins-bold);
-        margin: 1% 0%;
-        font-size: 1.8rem;
-        text-align: center;
-        color: #1C96E1;
+        padding: 5%;
+        font-size: 1.2rem;
+        display: flex;
+        color: var(--green-dark);
+        position: relative;
+        border: 5px solid var(--green-line);
+        top: 10vh;
+        border-radius: 8px;
+        text-wrap: nowrap;
+        width: max-content;
+        background-color: var(--green-fill);
+    }
+
+    .title-game-map {
+        position: relative;
+        top: 20%
     }
 
     .fase-list {
-        position: relative;
-        bottom: 40%;
-        right: 48%;
-        margin-top: 30vh;
-        margin-bottom: 10vh;
+        display: grid;
+        justify-content: center;
     }
-    .game-0{
+
+    .game-0 {
         position: relative;
         right: 5vw;
     }
+
+    .game-0 a {
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+    }
+
     .game-1 {
         position: relative;
         left: 0vw;
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+    }
+
+    .game-1 a,
+    .game-2 a,    
+    .game-3 a,
+    .game-4 a,
+    .game-5 a {
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+
     }
 
     .game-2 {
         position: relative;
         left: 5vw;
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+
     }
 
     .game-3 {
         position: relative;
         left: 2vw;
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+
     }
 
     .game-4 {
         position: relative;
         right: 2vw;
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+
     }
 
     .game-5 {
         position: relative;
         left: 10vw;
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+
+    }
+
+    .dots {
+        display: grid;
+        align-items: center;
     }
 }
