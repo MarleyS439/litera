@@ -52,15 +52,18 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
         <div class="top">
             <p>Crie seu Avatar</p>
         </div>
+        <!-- verificação da etapa atravez da url, confome a resposta apresenta uma parte -->
         <?php if ($_GET['status'] == 'base') :  ?>
             <div class="containerAvatar">
                 <div class="cardItem">
                     <div class="base">
+                        <!-- img do avatar apenas com a base -->
                         <img id="cod" src="../assets/images/perfil/genero/fb5d1c27ff697dffa11ced29aa15fe13.jpg" alt="">
                     </div>
                 </div>
             </div>
             <div class="etapa">
+                <!-- card com as etapas para o usuario ver onde esta -->
                 <div class="card etapaAtu genero">
                     <img src="./../assets/images/icons/male.svg" class="genderMale" alt="genero">
                     <img src="./../assets/images/icons/female.svg" alt="genero">
