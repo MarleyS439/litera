@@ -1,14 +1,15 @@
 @import url(./default.css);
 @import url(./animations.css);
 
-@media screen and (max-width:768px){
+@media screen and (max-width:768px) {
+
     /* TopBar */
     .top-bar {
         position: fixed;
         width: 100%;
         display: flex;
         justify-content: space-between;
-        padding: 5%;
+        padding: 2% 5%;
         align-items: center;
         color: var(--black2);
         z-index: 1000;
@@ -55,8 +56,8 @@
         margin: 2px;
         padding: 5px;
     }
-    
-    
+
+
     /* BottomBar */
     .bottom-navigation-bar {
         z-index: 1000;
@@ -85,17 +86,18 @@
         margin: 0px 5px;
     }
 }
-@media screen and (min-width: 769px) and (max-width:1024px){
+
+@media screen and (min-width: 769px) and (max-width:1024px) {
     nav {
         position: fixed;
         width: 100%;
         background-color: var(--blue3);
-        padding: 0% 5%;
+        padding: 0% 2% 0% 5%;
         color: var(--white);
         display: flex;
         justify-content: space-between;
         align-items: center;
-        box-shadow: 2px 2px 2px #00000070;
+        box-shadow: 0px 3px 1px #000;
         z-index: 999;
     }
 
@@ -112,8 +114,11 @@
     }
 
     .logo-area img {
-        width: 55px;
-        height: auto;
+        width: 56px;
+        height: 55px;
+        background-color: var(--white);
+        border-radius: 50%;
+        padding: 5px;
     }
 
     .navigation ul {
@@ -146,6 +151,7 @@
         background-color: var(--white);
         transition: 200ms;
         border-radius: 45px;
+        cursor: url(../images/icons/MAOZINHA.png), auto;
     }
 
     .navigation a:hover svg {
@@ -174,25 +180,65 @@
         width: 32px;
         height: auto;
     }
+
+    .profile-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0%
+    }
+
+    .profile-info .name-user {
+        font-family: var(--font-poppins-bold);
+        margin: 0px 5px;
+    }
+
+    .name-user span {
+        color: var(--whitee);
+    }
+
+    .level {
+        background-color: var(--white);
+        border-radius: 80px;
+        width: 36px;
+        margin: 0px 5px;
+        padding: 2px;
+        display: flex;
+        height: 36px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .level span {
+        color: var(--blue3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: var(--font-poppins-bold);
+    }
+
+    .coin {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 3px;
+    }
 }
-@media screen and (min-width:1025px){
+
+@media screen and (min-width:1025px) {
+
     nav {
         position: fixed;
         width: 100%;
         background-color: var(--blue3);
-        padding: 0% 5%;
+        padding: 0% 2% 0% 5%;
         color: var(--white);
         display: flex;
         justify-content: space-between;
         align-items: center;
-        box-shadow: 2px 2px 2px #00000070;
+        box-shadow: 0px 3px 1px #000;
         z-index: 999;
         top: 0;
-    }
-
-    .games-desktop {
-        position: relative;
-        padding: 5%;
     }
 
 
@@ -204,13 +250,17 @@
 
     .logo-area span {
         font-family: var(--font-poppins-bold);
-        font-size: 1.5rem;
+        font-size: 2em;
         margin: 0% 2%;
+        color: var(--white);
     }
 
     .logo-area img {
-        width: 55px;
-        height: auto;
+        width: 58px;
+        height: 55px;
+        background-color: var(--white);
+        border-radius: 50%;
+        padding: 5px;
     }
 
     .navigation ul {
@@ -230,8 +280,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 5px;
+        padding: 8px;
         transition: 200ms ease-out;
+        border-radius: 50%;
     }
 
     .navigation a img {
@@ -240,13 +291,11 @@
     }
 
     .navigation a:hover {
-        background-color: #ffffff65;
-        transition: 200ms;
-        border-radius: 5px;
-    }
-
-    .navigation a:hover svg {
-        fill: #000;
+        background-color: var(--blue2);
+        transition: 200ms ease-in-out;
+        border-radius: 50%;
+        padding: 12px;
+        cursor: url(../images/icons/MAOZINHA.png), auto;
     }
 
     .profile {
@@ -257,12 +306,54 @@
         opacity: 1;
     }
 
-    .img-logoff {
-        width: 40%;
+    .profile-pic span {
+        color: var(--black2);
     }
 
-    .profile .profile-pic img {
-        width: 0px;
-        height: auto;
+    .profile-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0%
+    }
+
+    .profile-info .name-user {
+        font-family: var(--font-poppins-bold);
+        margin: 0px 2px;
+    }
+
+    .name-user span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--white);
+        font-size: 1rem;
+    }
+
+    .level {
+        background-color: var(--white);
+        border-radius: 80px;
+        width: 36px;
+        margin: 0px 2px;
+        padding: 2px;
+        display: flex;
+        height: 36px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .level span {
+        color: var(--blue3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: var(--font-poppins-bold);
+    }
+
+    .coin {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 5px;
     }
 }

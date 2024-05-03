@@ -1,40 +1,6 @@
 @import url(./home.css);
-@font-face {
-    font-family: 'Poppins-Black';
-    src: url(../fonts/Poppins/Poppins-Black.ttf);
-}
+@import url(./default.css);
 
-@font-face {
-    font-family: 'Poppins-BlackItalic';
-    src: url(../fonts/Poppins/Poppins-BlackItalic.ttf);
-}
-
-@font-face {
-    font-family: 'Poppins-Bold';
-    src: url(../fonts/Poppins/Poppins-Bold.ttf);
-}
-
-@font-face {
-    font-family: 'Poppins-Regular';
-    src: url(../fonts/Poppins/Poppins-Regular.ttf);
-}
-
-:root {
-    --blue0: #ebf7ff;
-    --blue2: #6ac3fa;
-    --blue3: #1187cf;
-    --blue4: #1639b1;
-    --blue5: #1639b1;
-    --white: #ffffff;
-    --black: #000;
-}
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins-Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-}
 
 body {
     background-color: var(--blue0);
@@ -97,25 +63,28 @@ body {
         margin: 2px;
         padding: 5px;
     }
-    .items{
+
+    .items {
         position: relative;
     }
-    .container-avatar{
+
+    .container-avatar {
         position: absolute;
-        top:20vh;
+        top: 20vh;
         left: 30%;
     }
+
     .base {
         position: relative;
         display: inline-block;
     }
-    
+
     .base img {
         display: block;
         margin: 0 auto;
         width: 170px;
     }
-    
+
     .cabelo img {
         position: absolute;
         top: -35;
@@ -123,19 +92,21 @@ body {
         transform: translateX(-50%);
         width: 160px;
     }
-    
+
     .roupa img {
         position: absolute;
-        bottom: 2%  ;
+        bottom: 2%;
         left: 51%;
         transform: translateX(-50%);
         width: 145px;
         z-index: 3;
     }
-    .inventory{
+
+    .inventory {
         display: none;
     }
-    .buttons{
+
+    .buttons {
         position: absolute;
         top: 50vh;
         left: 35vw;
@@ -145,7 +116,8 @@ body {
         display: flex;
         flex: row;
     }
-    .buttons button{
+
+    .buttons button {
         padding: 5%;
         background-color: #1C96E1;
         border-radius: 15px;
@@ -343,22 +315,24 @@ body {
     }
 
     .statistics {
-    display: flex;
-    justify-content: center;
+        display: flex;
+        justify-content: center;
     }
 }
 
 @media screen and (min-width: 1025px) {
     /* Estilos para PCs */
 
-    .desktop-view{
+    .desktop-view {
         height: 100vh;
     }
-    .page{
+
+    .page {
         display: flex;
         justify-content: space-evenly;
         width: 90vw;
     }
+
     .contain {
         display: flex;
         position: relative;
@@ -369,11 +343,13 @@ body {
         flex-direction: column;
         margin-right: 5vw;
     }
-    .form-avatar{
+
+    .form-avatar {
         display: flex;
         flex-direction: row;
     }
-    .inventory{
+
+    .inventory {
         position: relative;
         top: 10vh;
         width: 50vw;
@@ -381,7 +357,8 @@ body {
         display: flex;
         flex-wrap: wrap;
     }
-    .card-item{
+
+    .card-item {
         width: 10VW;
         height: 14vh;
         border-radius: 5%;
@@ -392,7 +369,8 @@ body {
         justify-content: center;
         align-items: center;
     }
-    .card-item p{
+
+    .card-item p {
         text-align: center;
         font-size: 4rem;
         color: var(--blue3);
@@ -400,20 +378,21 @@ body {
         justify-content: center;
         align-items: center;
     }
-    
+
     .card-item:hover {
-    background-color: #f0f0f0;
+        background-color: #f0f0f0;
     }
-    .items{
+
+    .items {
         position: relative;
         left: 7vw;
     }
 
-    .container-avatar{
+    .container-avatar {
         width: 20vw;
         height: 40vh;
         margin-top: 25%;
-        background-color:var(--blue2);
+        background-color: var(--blue2);
         border-radius: 5%;
         overflow: hidden;
         display: flex;
@@ -421,18 +400,18 @@ body {
         justify-content: center;
         position: relative;
     }
-    
+
     .base {
         position: relative;
         display: inline-block;
     }
-    
+
     .base img {
         display: block;
         margin: 0 auto;
         width: 170px;
     }
-    
+
     .cabelo img {
         position: absolute;
         top: -35;
@@ -440,7 +419,7 @@ body {
         transform: translateX(-50%);
         width: 160px;
     }
-    
+
     .roupa img {
         position: absolute;
         bottom: 0;
@@ -451,20 +430,22 @@ body {
     }
 
 
-    .buttons{
+    .buttons {
         position: relative;
         margin-top: 5vh;
         width: 20vw;
         display: flex;
         justify-content: space-between;
     }
-    .buttons button{
+
+    .buttons button {
         padding: 5%;
         background-color: #1C96E1;
         border-radius: 15px;
         border: none;
         color: white;
         font-family: var(--font-poppins-bold);
+        cursor: url(../images/icons/MAOZINHA.png), auto;
     }
 
     .suit-cards {
@@ -496,6 +477,7 @@ body {
         width: 100%;
         text-decoration: none;
         color: var(--blue0);
+        cursor: url(../images/icons/MAOZINHA.png), auto;
     }
 
     .cards a p {
@@ -611,9 +593,10 @@ body {
     }
 
     .statistics {
-    display: flex;
-    justify-content: center;
+        display: flex;
+        justify-content: center;
     }
-    
+
 }
+
 @media screen and (max-width: 1447px) {}

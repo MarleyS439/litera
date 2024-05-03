@@ -1,5 +1,6 @@
 @import url(./default.css);
 @import url(./animations.css);
+@import url(./navbar.css);
 
 /* Mobile */
 @media screen and (max-width: 768px) {
@@ -15,7 +16,8 @@
         background-color: white;
         border-radius: 45%;
     }
-    #game-0 p{
+
+    #game-0 p {
         animation: none;
     }
 
@@ -53,10 +55,10 @@
         background-color: var(--blue0);
         padding: 10px;
     }
-} 
+}
 
 /* Tablets */
-/* @media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
     body {
         overflow: hidden;
     }

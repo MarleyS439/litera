@@ -97,15 +97,12 @@
 
     #first {
         z-index: 10000;
-        box-shadow: rgba(255, 255, 255, 0.945) 0px 5px 15px;
         -webkit-animation: pulsate-fwd 1s ease-in-out infinite both;
         animation: pulsate-fwd 1s ease-in-out infinite both;
-        padding: 7px 7px 10 px 7px    ;
-        background-color: var(--blue0);
     }
 
     #first p {
-        color: var(--black2);
+        color: var(--white);
     }
 
 }

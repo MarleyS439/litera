@@ -37,7 +37,7 @@ $mesPorExtenso = $meses[$numeroMes];
     </div>
     <div class="modalContent">
         <button class="edit-btn">
-            
+
         </button>
         <dialog class="edit-name-dialog">
             <form action="../controller/updateUser.php" method="POST">
@@ -69,12 +69,12 @@ $mesPorExtenso = $meses[$numeroMes];
 
     <div class="avatar-container">
         <div class="base">
-            <img src="../assets/images/perfil/genero/<?php echo $avatar["imgGenero"]?>" alt="">
+            <img src="../assets/images/perfil/genero/<?php echo $avatar["imgGenero"] ?>" alt="">
             <div class="cabelo">
-                <img src="../assets/images/perfil/cabelo/<?php echo $avatar["imgCabelo"]?>" alt="">
+                <img src="../assets/images/perfil/cabelo/<?php echo $avatar["imgCabelo"] ?>" alt="">
             </div>
             <div class="roupa">
-                <img src="../assets/images/perfil/roupa/<?php echo $avatar["imgRoupa"]?>" alt="">
+                <img src="../assets/images/perfil/roupa/<?php echo $avatar["imgRoupa"] ?>" alt="">
             </div>
         </div>
     </div>
