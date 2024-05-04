@@ -1,8 +1,8 @@
 <?php
     // select para pegar todos os dados
-    $usuarios = UsuarioDao::selectById($usuario['codUsuario']);
+    $usuarios = PerfilDao::selectById($usuario['codPerfil']);
     // variaveis para que o nome e o email apareção
-    $dinheiro_user = $usuarios['dinheiroUsuario'];
+    $dinheiro_user = $usuarios['dinheiroPerfil'];
 ?>
 <div class="modalEditInfo" id="modalEditUser_<?php echo $usuario['codUsuario'] ?>">
     <form action="../controller/processingUser.php" method="POST">
@@ -18,8 +18,7 @@
             <h3>Quantidade de dinheiro</h3>
         </div>
         <div class="item-form-edit">
-            <input type="hidden" value="<?php echo ($usuario['codUsuario'])?>" name="codUsuario" id="codUsuario">
-            <input type="hidden" value="<?php echo ($usuario['emailUsuario'])?>" name="" id="codUsuario">
+            <input type="hidden" value="<?php echo ($usuario['codPerfil'])?>" name="codUsuario" id="codUsuario">
             <input type="hidden" value="update" id="acao" name="acao">
         </div>
 

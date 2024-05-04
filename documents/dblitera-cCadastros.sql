@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04/05/2024 às 18:26
+-- Tempo de geração: 04/05/2024 às 22:22
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -136,26 +136,6 @@ CREATE TABLE `tbdadosusuarios` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tbdependente`
---
-
-CREATE TABLE `tbdependente` (
-  `codDependente` int(11) NOT NULL,
-  `codUsuario` int(11) NOT NULL,
-  `nomeDependente` varchar(100) NOT NULL,
-  `pontuacaoDependente` int(11) NOT NULL,
-  `dinheiroDependente` int(11) NOT NULL,
-  `tutorial` tinyint(1) NOT NULL,
-  `nivel` int(11) NOT NULL,
-  `fasesConcluidas` int(11) NOT NULL,
-  `dataNasc` date NOT NULL,
-  `dataCriacao` date NOT NULL,
-  `dataModfc` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Estrutura para tabela `tbgenero`
 --
 
@@ -209,6 +189,37 @@ CREATE TABLE `tbnivel` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `tbperfil`
+--
+
+CREATE TABLE `tbperfil` (
+  `codPerfil` int(11) NOT NULL,
+  `codUsuario` int(11) NOT NULL,
+  `nomePerfil` varchar(100) NOT NULL,
+  `generoPerfil` varchar(30) NOT NULL,
+  `iconPerfil` varchar(50) NOT NULL,
+  `pontuacaoPerfil` int(11) NOT NULL,
+  `dinheiroPerfil` int(11) NOT NULL,
+  `tutorial` tinyint(1) NOT NULL,
+  `nivel` int(11) NOT NULL,
+  `fasesConcluidas` int(11) NOT NULL,
+  `dataNasc` date NOT NULL,
+  `dataCriacao` date NOT NULL,
+  `dataModfc` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tbperfil`
+--
+
+INSERT INTO `tbperfil` (`codPerfil`, `codUsuario`, `nomePerfil`, `generoPerfil`, `iconPerfil`, `pontuacaoPerfil`, `dinheiroPerfil`, `tutorial`, `nivel`, `fasesConcluidas`, `dataNasc`, `dataCriacao`, `dataModfc`) VALUES
+(1, 7, 'Matheus Gomes', 'Feminino', 'Frame 197.png', 0, 0, 0, 1, 0, '1999-06-08', '2024-05-04', '2024-05-04'),
+(2, 8, 'mcLovin_Junior', 'Masculino', 'Frame 197.png', 0, 0, 0, 1, 0, '2006-12-15', '2024-05-04', '2024-05-04'),
+(3, 8, 'Botomoto', 'nao-definir', 'Frame 197.png', 0, 0, 0, 0, 0, '2008-07-17', '2024-05-04', '2024-05-04');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `tbprogressousuario`
 --
 
@@ -256,6 +267,14 @@ CREATE TABLE `tbusuario` (
   `senhaUsuario` varchar(15) NOT NULL,
   `banido` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tbusuario`
+--
+
+INSERT INTO `tbusuario` (`codUsuario`, `nomeUsuario`, `emailUsuario`, `senhaUsuario`, `banido`) VALUES
+(7, 'Matheus Campos', 'campos@gmail.com', '1234', 0),
+(8, 'mcLovin', 'mclovin@gmail.com', '1234', 0);
 
 --
 -- Índices para tabelas despejadas
@@ -321,13 +340,6 @@ ALTER TABLE `tbdadosusuarios`
   ADD KEY `DadosDependente` (`codDependente`);
 
 --
--- Índices de tabela `tbdependente`
---
-ALTER TABLE `tbdependente`
-  ADD PRIMARY KEY (`codDependente`),
-  ADD KEY `UsuarioDependente` (`codUsuario`);
-
---
 -- Índices de tabela `tbgenero`
 --
 ALTER TABLE `tbgenero`
@@ -353,6 +365,13 @@ ALTER TABLE `tbjogo`
 --
 ALTER TABLE `tbnivel`
   ADD PRIMARY KEY (`codNivel`);
+
+--
+-- Índices de tabela `tbperfil`
+--
+ALTER TABLE `tbperfil`
+  ADD PRIMARY KEY (`codPerfil`),
+  ADD KEY `UsuarioDependente` (`codUsuario`);
 
 --
 -- Índices de tabela `tbprogressousuario`
@@ -433,12 +452,6 @@ ALTER TABLE `tbdadosusuarios`
   MODIFY `codDadosJogoUsuario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tbdependente`
---
-ALTER TABLE `tbdependente`
-  MODIFY `codDependente` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de tabela `tbgenero`
 --
 ALTER TABLE `tbgenero`
@@ -463,6 +476,12 @@ ALTER TABLE `tbnivel`
   MODIFY `codNivel` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de tabela `tbperfil`
+--
+ALTER TABLE `tbperfil`
+  MODIFY `codPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de tabela `tbroupa`
 --
 ALTER TABLE `tbroupa`
@@ -478,7 +497,7 @@ ALTER TABLE `tbtipoitem`
 -- AUTO_INCREMENT de tabela `tbusuario`
 --
 ALTER TABLE `tbusuario`
-  MODIFY `codUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `codUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restrições para tabelas despejadas
@@ -491,7 +510,7 @@ ALTER TABLE `tbavatar`
   ADD CONSTRAINT `CabeloAvatar` FOREIGN KEY (`codCabelo`) REFERENCES `tbcabelo` (`codCabelo`),
   ADD CONSTRAINT `GeneroAvatar` FOREIGN KEY (`codGenero`) REFERENCES `tbgenero` (`codGenero`),
   ADD CONSTRAINT `RoupaAvatar` FOREIGN KEY (`codRoupa`) REFERENCES `tbroupa` (`codRoupa`),
-  ADD CONSTRAINT `UsuarioAvatar` FOREIGN KEY (`codDependente`) REFERENCES `tbdependente` (`codDependente`);
+  ADD CONSTRAINT `UsuarioAvatar` FOREIGN KEY (`codDependente`) REFERENCES `tbperfil` (`codPerfil`);
 
 --
 -- Restrições para tabelas `tbcompraitem`
@@ -511,14 +530,8 @@ ALTER TABLE `tbconquistausuario`
 -- Restrições para tabelas `tbdadosusuarios`
 --
 ALTER TABLE `tbdadosusuarios`
-  ADD CONSTRAINT `DadosDependente` FOREIGN KEY (`codDependente`) REFERENCES `tbdependente` (`codDependente`),
+  ADD CONSTRAINT `DadosDependente` FOREIGN KEY (`codDependente`) REFERENCES `tbperfil` (`codPerfil`),
   ADD CONSTRAINT `DadosJojo` FOREIGN KEY (`codJogo`) REFERENCES `tbjogo` (`codJogo`);
-
---
--- Restrições para tabelas `tbdependente`
---
-ALTER TABLE `tbdependente`
-  ADD CONSTRAINT `UsuarioDependente` FOREIGN KEY (`codUsuario`) REFERENCES `tbusuario` (`codUsuario`);
 
 --
 -- Restrições para tabelas `tbitem`
@@ -532,6 +545,12 @@ ALTER TABLE `tbitem`
 ALTER TABLE `tbjogo`
   ADD CONSTRAINT `CategoriaJogo` FOREIGN KEY (`codCategoria`) REFERENCES `tbcategoria` (`codCategoria`),
   ADD CONSTRAINT `NivelJogo` FOREIGN KEY (`codNivel`) REFERENCES `tbnivel` (`codNivel`);
+
+--
+-- Restrições para tabelas `tbperfil`
+--
+ALTER TABLE `tbperfil`
+  ADD CONSTRAINT `UsuarioDependente` FOREIGN KEY (`codUsuario`) REFERENCES `tbusuario` (`codUsuario`);
 
 --
 -- Restrições para tabelas `tbprogressousuario`

@@ -53,10 +53,11 @@
                 $moeda = $infoUsuario['dinheiroUsuario'];
                 if($moeda >= 100){
                     $money = $moeda - 100;
+                    // echo($money);
                     try{
                         $avatarDao = new AvatarDao();
                         $avatarDao->updateRoupa( $cod,$avatar);
-                        $resultado = UsuarioDao::setGamesPoints($cod, $money);
+                        $resultado = UsuarioDao::setMoney($cod, $money);
 
                         session_start();
                         header('Location: ../views/home.php');

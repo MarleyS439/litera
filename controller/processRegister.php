@@ -1,7 +1,6 @@
 <?php
 // caminhos para os arquivos dao e model
 require_once("../dao/usuarioDao.php");
-require_once("../dao/dadosJogoUsuarioDao.php");
 require_once(__DIR__."../../models/usuario.php");
 // variavel que vai mandar os dados para o model
 $usuario = new Usuario();
@@ -27,23 +26,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $usuario->setNomeUsuario($_POST['name_user']);
                 $usuario->setEmailUsuario($_POST['email_user']);
                 $usuario->setSenhaUsuario($_POST['passwd_user']);
-                // dados que não podem ser nulos iniciados como zero
-                $usuario->setPontuacaoUsuario(0);
-                $usuario->setDinheiroUsuario(0);
-                // iniciando o tutorial como 0, 0=false
-                $usuario->setTutorial(0);
                 $usuario->setBanido(0);
-                $usuario->setNivel(1);
-                $usuario->setFasesConcluidas(0);
-                $usuario->setDataCriacao(date('Y-m-d'));
-                $usuario->setDataModfc(date('Y-m-d'));
                 // try catch para inserção no banco 
                 try{
                     $usuarioDao = new UsuarioDao();
                     $usuarioDao->insert($usuario);
-                    DadosJogoUsuarioDao::insert(UsuarioDao::selectByLastId()['codUsuario']);
                     session_start();
-                  
                     header('Location: ../views/login.php?status=sucess');
                 }catch (Exception $e){
                     // header('Location: ../views/register.php?status=erro2');

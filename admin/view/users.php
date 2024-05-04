@@ -10,8 +10,8 @@ if (!isset($_SESSION['authAdmin'])) {
 // variavel para todas as informaçoes do usuario
 $usuarioAutenticado = $_SESSION['authAdmin'];
 
-require('../../dao/usuarioDao.php');
-$usuarios = UsuarioDao::selectAll();
+require('../../dao/PerfilDao.php');
+$usuarios = PerfilDao::selectAll();
 
 ?>
 <!DOCTYPE html>
@@ -64,8 +64,8 @@ $usuarios = UsuarioDao::selectAll();
                 <thead>
                     <tr>
                         <th># </th>
-                        <th>Nome de usuário</th>
-                        <th>E-mail</th>
+                        <th>Nome do Usuário</th>
+                        <th>Nome do Responsável</th>
                         <th>Pontuação</th>
                         <th>Dinheiro</th>
                         <th>Nível</th>
@@ -77,16 +77,15 @@ $usuarios = UsuarioDao::selectAll();
                 <tbody>
                     <?php foreach ($usuarios as $usuario) : ?>
                         <tr>
-                            <td><?php echo $usuario['codUsuario'] ?></td>
+                            <td><?php echo $usuario['codPerfil'] ?></td>
+                            <td><?php echo $usuario['nomePerfil'] ?></td>
                             <td><?php echo $usuario['nomeUsuario'] ?></td>
-                            <td><?php echo $usuario['emailUsuario'] ?></td>
-                            <td><?php echo $usuario['pontuacaoUsuario'] ?></td>
-                            <td><?php echo $usuario['dinheiroUsuario'] ?></td>
+                            <td><?php echo $usuario['pontuacaoPerfil'] ?></td>
+                            <td><?php echo $usuario['dinheiroPerfil'] ?></td>
                             <td><?php echo $usuario['nivel'] ?></td>
                             <td><?php echo ($usuario['banido'] != 0) ? "Banido" : "Ativo"; ?></td>
                             <td class="action">
                                 <div class="btn-action">
-
                                     <?php if (!$usuario['banido']) : ?>
                                         <button type="submit" class="openBlockUser block banir" data-id="<?php echo $usuario['codUsuario'] ?>">
                                             <img src="../assets/images/icons/ban-svgrepo-com 1.png" alt="block">

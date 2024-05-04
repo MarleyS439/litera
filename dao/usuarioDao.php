@@ -7,19 +7,12 @@ class UsuarioDao
     public static function insert($usuario)
     {
         $conexao = Conexao::conectar();
-        $query = "INSERT INTO tbusuario (nomeUsuario, emailUsuario, senhaUsuario, pontuacaoUsuario, dinheiroUsuario, tutorial, banido, nivel, fasesConcluidas, dataCriacao, dataModfc) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+        $query = "INSERT INTO tbusuario (nomeUsuario, emailUsuario, senhaUsuario, banido) VALUES (?,?,?,?)";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $usuario->getNomeUsuario());
         $stmt->bindValue(2, $usuario->getEmailUsuario());
         $stmt->bindValue(3, $usuario->getSenhaUsuario());
-        $stmt->bindValue(4, $usuario->getPontuacaoUsuario());
-        $stmt->bindValue(5, $usuario->getDinheiroUsuario());
-        $stmt->bindValue(6, $usuario->getTutorial());
-        $stmt->bindValue(7, $usuario->getBanido());
-        $stmt->bindValue(8, $usuario->getNivel());
-        $stmt->bindValue(9, $usuario->getFasesConcluidas());
-        $stmt->bindValue(10, $usuario->getDataCriacao());
-        $stmt->bindValue(11, $usuario->getDataModfc());
+        $stmt->bindValue(4, $usuario->getBanido());
         $stmt->execute();
     }
     public static function selectAll()
@@ -36,14 +29,6 @@ class UsuarioDao
         $query = "SELECT * FROM tbusuario WHERE codUsuario = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $cod);
-        $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
-    }
-    public static function selectByLastId()
-    {
-        $conexao = Conexao::conectar();
-        $query = "SELECT * FROM tbusuario ORDER BY codUsuario DESC LIMIT 1";
-        $stmt = $conexao->prepare($query);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
@@ -72,41 +57,13 @@ class UsuarioDao
         $query = "UPDATE tbusuario SET
         nomeUsuario = ?,
         emailUsuario = ?,
-        senhaUsuario = ?,
-        pontuacaoUsuario = ?,
-        dinheiroUsuario = ?,
-        tutorial = ?
+        senhaUsuario = ?
         WHERE codUsuario = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $usuario->getNomeUsuario());
         $stmt->bindValue(2, $usuario->getEmailUsuario());
         $stmt->bindValue(3, $usuario->getSenhaUsuario());
-        $stmt->bindValue(4, $usuario->getPontuacaoUsuario());
-        $stmt->bindValue(5, $usuario->getDinheiroUsuario());
-        $stmt->bindValue(6, $usuario->getTutorial());
-        $stmt->bindValue(7, $cod);
-        return $stmt->execute();
-    }
-    public static function setMoney($cod, $dinheiro)
-    {
-        $conexao = Conexao::conectar();
-        $query = "UPDATE tbusuario SET
-        dinheiroUsuario = ?
-        WHERE codUsuario = ?";
-        $stmt = $conexao->prepare($query);
-        $stmt->bindValue(1, $dinheiro);
-        $stmt->bindValue(2, $cod);
-        return $stmt->execute();
-    }
-    public static function setTutorial($cod, $tutorial)
-    {
-        $conexao = Conexao::conectar();
-        $query = "UPDATE tbusuario SET
-        tutorial = ?
-        WHERE codUsuario = ?";
-        $stmt = $conexao->prepare($query);
-        $stmt->bindValue(1, $tutorial);
-        $stmt->bindValue(2, $cod);
+        $stmt->bindValue(4, $cod);
         return $stmt->execute();
     }
     public static function updateName($cod, $usuario)
@@ -120,17 +77,6 @@ class UsuarioDao
         $stmt->bindValue(2, $cod);
         return $stmt->execute();
     }
-    public static function searchUser($dados)
-    {
-        $conexao = Conexao::conectar();
-        $query = "SELECT * FROM tbusuario WHERE nomeUsuario LIKE :search";
-        $stmt = $conexao->prepare($query);
-        $search = "%$dados%";
-        $stmt->bindParam(':search', $search, PDO::PARAM_STR);
-        $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
-    }
-
     public static function checkCredentials($emailUsuario, $senhaUsuario)
     {
         $conexao = Conexao::conectar();
@@ -142,47 +88,5 @@ class UsuarioDao
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-    public static function setGamesPoints($cod, $dinheiro)
-    {
-        $conexao = Conexao::conectar();
-        $query = "UPDATE tbusuario SET
-        dinheiroUsuario = dinheiroUsuario + ?, dataModfc = ?, fasesConcluidas = fasesConcluidas + 1
-        WHERE codUsuario = ?";
-        $stmt = $conexao->prepare($query);
-        $stmt->bindValue(1, $dinheiro);
-        $stmt->bindValue(2, date('Y-m-d'));
-        $stmt->bindValue(3, $cod);
-        return $stmt->execute();
-    }
-    public static function countMonth($month)
-    {
-        $conexao = Conexao::conectar();
-        $query = "SELECT COUNT(*) AS quantidade FROM tbusuario WHERE MONTH(dataCriacao) = ?";
-        $stmt = $conexao->prepare($query);
-        $stmt->bindValue(1, $month);
-        $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
-    }
-    public static function selectPontuacaoNivel($cod)
-    {
-        $conexao = Conexao::conectar();
-        $query = "SELECT pontuacaoUsuario, nivel FROM tbusuario WHERE codUsuario = ?";
-        $stmt = $conexao->prepare($query);
-        $stmt->bindValue(1, $cod);
-        $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
-    }
-    public static function setPontuacaoNivel($id, $pontuacaoTotal, $nivel)
-    {
-        $conexao = Conexao::conectar();
-        $query = "UPDATE tbusuario SET
-        pontuacaoUsuario = ?,
-        nivel = ?
-        WHERE codUsuario = ?";
-        $stmt = $conexao->prepare($query);
-        $stmt->bindValue(1, $pontuacaoTotal);
-        $stmt->bindValue(2, $nivel);
-        $stmt->bindValue(3, $id);
-        return $stmt->execute();
-    }
+    
 }

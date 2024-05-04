@@ -2,8 +2,11 @@
 // link dao e model
 require_once("../../dao/usuarioDao.php");
 require_once(__DIR__ . "../../../models/usuario.php");
+require_once("../../dao/perfilDao.php");
+require_once(__DIR__ . "../../../models/perfil.php");
 // variavel que vai mandar os dados para o model
 $usuario = new Usuario();
+$perfil = new Perfil();
 // switch case para cada metodo, suspend e update 
 switch ($_POST['acao']) {
         // caso seja banido
@@ -35,18 +38,18 @@ switch ($_POST['acao']) {
         // verificação se esta vazio
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Faz a verificação se todos os campos foram preenchidos corretamente
-            if (!empty($_POST['dinheiro_user'] )) {
+            if ($_POST['dinheiro_user'] >= 0) {
                 // Todos os campos estão preenchidos corretamente
                 // Aqui deve ser processado o INSERT dos dados, em seguida direcionar o usuário para o Login
                 try {
-                    $usuarioDao = UsuarioDao::setMoney($_POST["codUsuario"], $_POST['dinheiro_user']);
+                    $usuarioDao = PerfilDao::setMoney($_POST["codUsuario"], $_POST['dinheiro_user']);
                     header("Location: ../view/users.php?success");
                 } catch (Exception $e) {
                     echo 'Exceção capturada: ',  $e->getMessage(), "\n";
                 }
             } else {
                 // Para o caso de o usuário não digitar nada. Por segurança, para caso desative as formas obrigatórioas de FORM required
-                echo "Todos os campos são obrigatórios.";
+                header("Location: ../view/users.php");
             }
         }
         break;

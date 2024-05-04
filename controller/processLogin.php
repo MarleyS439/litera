@@ -31,19 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 'nome' => $usuarioDao['nomeUsuario'],
                 'email' => $usuarioDao['emailUsuario'],
                 'senha' => $_POST['passwd_user'],
-                'pontuacao' => $usuarioDao['pontuacaoUsuario'],
-                'dinheiro' => $usuarioDao['dinheiroUsuario'],
-                'tutorial' => $usuarioDao['tutorial'],
                 'banido' => $usuarioDao['banido'],
             ];
             // Iniciar a sessão apenas se as credenciais estiverem corretas
             session_start();
             $_SESSION["authUser"] = $authUser;
-            if ($authUser['tutorial'] == 0) {
-                header("Location: ../views/avatar.php?status=base");
-            } else {
-                header("Location: ../views/home.php");
-            }
+            header("Location: ../views/profile.php");
         } else {
             // caso negado, redirecionar para a página de login com uma mensagem de erro
             header("Location: ../views/login.php?status=erro1");

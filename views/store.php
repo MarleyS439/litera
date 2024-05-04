@@ -145,7 +145,8 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                 </div>
             </div>
             <form action="../controller/insertAvatar.php" method="POST" class="form-avatar">
-                <!-- Adicione o input hidden aqui -->
+                <!-- Adicione o input hidden aqui, responsavel pelo cod da roupa  -->
+                <!--  !!!IMPORTANTE N REMOVER, SUJEITO A TIJOLADA!!!! -->
                 <input type="hidden" name="roupa" id="roupa-hidden" value="">
 
                 <div class="inventory">

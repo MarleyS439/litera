@@ -6,14 +6,16 @@
             <div class="title-modal">
                 <h3>Banir usuário</h3>
             </div>
-            <p>Deseja realmente banir o usuário ID(<span id="userIdSpan"><?php echo $usuario['codUsuario']; ?></span>)?</p>
+            <p>Deseja realmente banir o usuário ID(<b><span id="userIdSpan"><?php echo $usuario['codUsuario']; ?></b></span>)?</p>
+            <p>Nome do Responsável: <span id="userIdSpan"><b><?php echo $usuario['nomeUsuario']; ?></span></b></p>
             <p id="notice">Este usuário não poderá mais utilizar o Litera</p>
         <?php else : ?>
             <div class="title-modal">
                 <h3>Desbanir usuário</h3>
             </div>
-            <p>Deseja realmente desbanir o usuário ID(<span id="userIdSpan"><?php echo $usuario['codUsuario']; ?></span>)?</p>
-            <p id="notice">Este usuário poderá voltar a utilizar o Litera</p>
+            <p>Deseja realmente banir o usuário ID(<b><span id="userIdSpan"><?php echo $usuario['codUsuario']; ?></b></span>)?</p>
+            <p>Nome do Responsável: <span id="userIdSpan"><b><?php echo $usuario['nomeUsuario']; ?></span></b></p>
+            <p id="notice">Este usuário não poderá mais utilizar o Litera</p>
         <?php endif; ?>
     </div>
 
