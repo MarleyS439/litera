@@ -1,7 +1,7 @@
 <?php
 class Avatar
 {
-    public $codAvatar, $codCabelo, $codRoupa, $codGenero, $codUsuario;
+    public $codAvatar, $codCabelo, $codRoupa, $codGenero, $codPerfil;
 
     public function getCodAvatar()
     {
@@ -9,7 +9,7 @@ class Avatar
     }
     public function setCodAvatar($codAvatar)
     {
-        $this-> codAvatar = $codAvatar;
+        $this->codAvatar = $codAvatar;
     }
     public function getCodCabelo()
     {
@@ -17,7 +17,7 @@ class Avatar
     }
     public function setCodCabelo($codCabelo)
     {
-        $this-> codCabelo = $codCabelo;
+        $this->codCabelo = $codCabelo;
     }
     public function getCodRoupa()
     {
@@ -25,22 +25,22 @@ class Avatar
     }
     public function setCodRoupa($codRoupa)
     {
-        $this-> codRoupa = $codRoupa;
+        $this->codRoupa = $codRoupa;
     }
     public function getCodGenero()
     {
         return $this->codGenero;
     }
-    public function setCodGenro($codGenero)
+    public function setCodGenero($codGenero)
     {
-        $this-> codGenero =  $codGenero;
+        $this->codGenero =  $codGenero;
     }
-    public function getCodUsuario()
+    public function getCodPerfil()
     {
-        return $this->codUsuario;
+        return $this->codPerfil;
     }
-    public function setCodUsuario($codUsuario)
+    public function setCodPerfil($codPerfil)
     {
-        $this-> codUsuario = $codUsuario;
+        $this->codPerfil = $codPerfil;
     }
 }
