@@ -62,7 +62,7 @@ class DadosJogoUsuarioDao
     public static function searchUser($idUser, $idJogo)
     {
         $conexao = Conexao::conectar();
-        $query = "SELECT * FROM tbdadosusuarios WHERE codUsuario = ? AND codJogo = ?";
+        $query = "SELECT * FROM tbdadosusuarios WHERE codDependente = ? AND codJogo = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $idUser);
         $stmt->bindValue(2, $idJogo);

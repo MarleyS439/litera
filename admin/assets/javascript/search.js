@@ -16,7 +16,7 @@ function search() {
       document.getElementById("card-4"),
     ];
 
-  container.style.display = "flex";
+    container.style.display = "flex";
     container.style.flexWrap = "wrap";
     container.classList.remove("animate__fadeOutUp");
     container.classList.add("animate__animated", "animate__fadeInDown");
@@ -63,9 +63,10 @@ function search() {
   }
 }
 
-// Adiciona ouvintes de evento para o evento 'input' do campo de pesquisa e 'change' do select
-document.getElementById("search_user").addEventListener("input", search);
+// Adiciona ouvintes de evento para o evento 'change' do campo de pesquisa e do select
+document.getElementById("search_user").addEventListener("change", search);
 document.getElementById("selectJogo").addEventListener("change", search);
+
 
 
 
