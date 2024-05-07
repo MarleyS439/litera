@@ -6,25 +6,25 @@ class AvatarDao
     public static function insert($avatar)
     {
         $conexao = Conexao::conectar();
-        $query = "INSERT INTO tbavatar (codAvatar, codRoupa, codCabelo, codGenero, codUsuario) VALUES (?,?,?,?,?)";
+        $query = "INSERT INTO tbavatar (codAvatar, codRoupa, codCabelo, codGenero, codPerfil) VALUES (?,?,?,?,?)";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $avatar->getCodAvatar());
         $stmt->bindValue(2, $avatar->getCodRoupa());
         $stmt->bindValue(3, $avatar->getCodCabelo());
         $stmt->bindValue(4, $avatar->getCodGenero());
-        $stmt->bindValue(5, $avatar->getCodUsuario());
+        $stmt->bindValue(5, $avatar->getCodPerfil());
         $stmt->execute();
     }
 
     public static function selectAll()
     {
         $conexao = Conexao::conectar();
-        $query = "SELECT tbavatar.*, tbroupa.*, tbcabelo.*, tbgenero.*, tbusuario.* 
+        $query = "SELECT tbavatar.*, tbroupa.*, tbcabelo.*, tbgenero.*, tbperfil.* 
                   FROM tbavatar 
                   INNER JOIN tbroupa ON tbavatar.codRoupa = tbroupa.codRoupa
                   INNER JOIN tbcabelo ON tbavatar.codCabelo = tbcabelo.codCabelo
                   INNER JOIN tbgenero ON tbavatar.codGenero = tbgenero.codGenero
-                  INNER JOIN tbusuario ON tbavatar.codUsuario = tbusuario.codUsuario";
+                  INNER JOIN tbperfil ON tbavatar.codPerfil = tbperfil.codPerfil";
         $stmt = $conexao->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -33,12 +33,12 @@ class AvatarDao
     public static function selectAllById($cod)
     {
         $conexao = Conexao::conectar();
-        $query = "SELECT tbavatar.*, tbroupa.*, tbcabelo.*, tbgenero.*, tbusuario.* 
+        $query = "SELECT tbavatar.*, tbroupa.*, tbcabelo.*, tbgenero.*, tbperfil.* 
                   FROM tbavatar 
                   INNER JOIN tbroupa ON tbavatar.codRoupa = tbroupa.codRoupa
                   INNER JOIN tbcabelo ON tbavatar.codCabelo = tbcabelo.codCabelo
                   INNER JOIN tbgenero ON tbavatar.codGenero = tbgenero.codGenero
-                  INNER JOIN tbusuario ON tbavatar.codUsuario = tbusuario.codUsuario
+                  INNER JOIN tbperfil ON tbavatar.codPerfil = tbperfil.codPerfil
                   WHERE codAvatar = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $cod);
@@ -55,7 +55,7 @@ class AvatarDao
         INNER JOIN tbcabelo ON tbavatar.codCabelo = tbcabelo.codCabelo 
         INNER JOIN tbgenero ON tbavatar.codGenero = tbgenero.codGenero  
     WHERE 
-        tbavatar.codUsuario = ?";
+        tbavatar.codPerfil = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $cod);
         $stmt->execute();
@@ -89,13 +89,13 @@ class AvatarDao
                     codRoupa = ?,
                     codCabelo = ?,
                     codGenero = ?,
-                    codUsuario = ?
+                    codPerfil = ?
                   WHERE codAvatar = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $avatar->getCodRoupa());
         $stmt->bindValue(2, $avatar->getCodCabelo());
         $stmt->bindValue(3, $avatar->getCodGenero());
-        $stmt->bindValue(4, $avatar->getCodUsuario());
+        $stmt->bindValue(4, $avatar->getCodPerfil());
         $stmt->bindValue(5, $cod);
         return $stmt->execute();
     }
@@ -104,7 +104,7 @@ class AvatarDao
         $conexao = Conexao::conectar();
         $query = "UPDATE tbavatar SET
                         codCabelo = ?
-                  WHERE codUsuario = ?";
+                  WHERE codPerfil = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $avatar->getCodCabelo());
         $stmt->bindValue(2, $cod);
@@ -115,7 +115,7 @@ class AvatarDao
         $conexao = Conexao::conectar();
         $query = "UPDATE tbavatar SET
                         codRoupa = ?
-                  WHERE codUsuario = ?";
+                  WHERE codPerfil = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $avatar->getCodRoupa());
         $stmt->bindValue(2, $cod);
