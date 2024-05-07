@@ -6,7 +6,7 @@ class DadosJogoUsuarioDao
     public static function insert($codUsuario)
     {
         $conexao = Conexao::conectar();
-        $query1 = "INSERT INTO tbdadosjogousuario (codJogo, codUsuario, maxPontuacao, qtndAcertos, qtndErros) VALUES (1,?,0,0,0), (2,?,0,0,0)";
+        $query1 = "INSERT INTO tbdadosusuarios (codJogo, codDependente, maxPontuacao, qtndAcertos, qtndErros) VALUES (1,?,0,0,0), (2,?,0,0,0)";
         $stmt1 = $conexao->prepare($query1);
         $stmt1->bindValue(1, $codUsuario);
         $stmt1->bindValue(2, $codUsuario);
@@ -17,7 +17,7 @@ class DadosJogoUsuarioDao
     public static function selectAll()
     {
         $conexao = Conexao::conectar();
-        $query = "SELECT * FROM tbdadosjogousuario";
+        $query = "SELECT * FROM tbdadosusuarios";
         $stmt = $conexao->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll();
@@ -25,7 +25,7 @@ class DadosJogoUsuarioDao
     public static function selectById($codUser, $codJogo)
     {
         $conexao = Conexao::conectar();
-        $query = "SELECT * FROM tbdadosjogousuario WHERE codUsuario = ? AND codJogo = ?";
+        $query = "SELECT * FROM tbdadosusuarios WHERE codUsuario = ? AND codJogo = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $codUser);
         $stmt->bindValue(2, $codJogo);
@@ -35,7 +35,7 @@ class DadosJogoUsuarioDao
     public static function delete($cod)
     {
         $conexao = Conexao::conectar();
-        $query = "DELETE FROM tbdadosjogousuario WHERE codTipoItem = ?";
+        $query = "DELETE FROM tbdadosusuarios WHERE codTipoItem = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $cod);
         $resultado = $stmt->execute();
@@ -45,7 +45,7 @@ class DadosJogoUsuarioDao
     {
         try {
             $conexao = Conexao::conectar();
-            $query = "UPDATE tbdadosjogousuario SET maxPontuacao = ?, qtndAcertos = qtndAcertos + ?, qtndErros = qtndErros + ? WHERE codDadosJogoUsuario = ?";
+            $query = "UPDATE tbdadosusuarios SET maxPontuacao = ?, qtndAcertos = qtndAcertos + ?, qtndErros = qtndErros + ? WHERE coddadosusuario = ?";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $maxPontuacao);
             $stmt->bindValue(2, $qntdAcertos);
@@ -62,7 +62,7 @@ class DadosJogoUsuarioDao
     public static function searchUser($idUser, $idJogo)
     {
         $conexao = Conexao::conectar();
-        $query = "SELECT * FROM tbdadosjogousuario WHERE codUsuario = ? AND codJogo = ?";
+        $query = "SELECT * FROM tbdadosusuarios WHERE codUsuario = ? AND codJogo = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $idUser);
         $stmt->bindValue(2, $idJogo);

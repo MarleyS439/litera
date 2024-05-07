@@ -134,6 +134,16 @@ class PerfilDao{
         $stmt->bindValue(3, $id);
         return $stmt->execute();
     }
+    public static function searchUser($dados)
+    {
+        $conexao = Conexao::conectar();
+        $query = "SELECT * FROM tbperfil WHERE nomePerfil LIKE :search";
+        $stmt = $conexao->prepare($query);
+        $search = "%$dados%";
+        $stmt->bindParam(':search', $search, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }
 
 

@@ -1,6 +1,6 @@
 <?php
 // link dao e model
-require_once("../../dao/usuarioDao.php");
+require_once("../../dao/perfilDao.php");
 require_once("../../dao/dadosJogoUsuarioDao.php");
 require_once(__DIR__ . "../../../models/usuario.php");
 
@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         try {
             // Pesquisa o usuário no banco de dados
-            $id = UsuarioDao::searchUser($data['search']);
+            $id = PerfilDao::searchUser($data['search']);
             $resultado = DadosJogoUsuarioDao::searchUser($id['codUsuario'], $data['selectJogo']);
 
             if ($resultado) {
