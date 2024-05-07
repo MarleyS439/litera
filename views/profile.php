@@ -51,13 +51,14 @@ if ($_SESSION['authUser'] == null) {
         </div>
 
         <div class="container-add-profile">
-            <?php if($perfil['codPerfil'] <= 0) { ?>
-                <div class="title-form">
-                    <h2 id="h2">Parece que ainda não há um perfil, vamos criar um?</h2>
-                </div>
-            <?php } else{ ?>
+            <?php if (is_array($perfil) && !empty($perfil)) { ?>
                 <div class="title-form">
                     <h2 id="h2">Escolha um perfil</h2>
+                </div>
+            <?php } else{ ?>
+            
+                <div class="title-form">
+                    <h2 id="h2">Parece que ainda não há um perfil, vamos criar um?</h2>
                 </div>
             <?php } ?>
             <div class="add">
@@ -95,8 +96,6 @@ if ($_SESSION['authUser'] == null) {
                 <?php endif; ?>
             <?php endforeach; ?>
         </form>
-            <?php else: ?>
-                <p>Nenhum perfil encontrado.</p> 
             <?php endif; ?>
         </div>
         <!-- Modal de adicionar perfil -->
@@ -174,7 +173,6 @@ if ($_SESSION['authUser'] == null) {
         </div>
     </div>
     <script src="../assets/javascript/modal-add-profile.js"></script>
-    
 </body>
 
 </html>

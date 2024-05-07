@@ -310,11 +310,22 @@
         height: auto;
         overflow: hidden;
     }
+    .cards-perfil{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .cards {
-        position: absolute;
-        z-index: 99999; 
         width: 10vw;      
-        height: 20vh;      
+        height: 20vh;
+        flex-direction: column;     
+    }
+    .cards a{
+        text-align: center;
+    }
+    .cards a img{
+        width: 10vw;
+        height: 20vh;
     }
     
 }
