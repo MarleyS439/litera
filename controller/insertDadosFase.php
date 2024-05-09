@@ -1,5 +1,5 @@
 <?php
-require_once("../dao/usuarioDao.php");
+require_once("../dao/perfilDao.php");
 require_once("../dao/dadosJogoUsuarioDao.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             // Consulta da pontuação de usuário
             $dadosUser = DadosJogoUsuarioDao::selectById($id, $idFase);
+            // echo $dadosUser+' codUs'+$id +" codf"+ $idFase;
             if ($dadosUser['maxPontuacao'] < $pontos) {
                 $resultado = DadosJogoUsuarioDao::update($pontos, $acertos, $erros, $dadosUser['codDadosJogoUsuario']);          
             } else {

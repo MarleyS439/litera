@@ -2,15 +2,17 @@
 // session
 session_start();
 // verificação se o user esta logado
-if (!isset($_SESSION['authUser'])) {
+if (!isset($_SESSION['authPerfil'])) {
     // caso não esteja, redirecione a login e indique que para realizar o login
     header("Location: ./login.php?status=erro2");
     exit();
 }
 // variavel para todas as informaçoes do usuario
+require_once "../dao/perfilDao.php";
 require_once "../dao/usuarioDao.php";
-$codUser = $_SESSION['authUser'];
-$usuarioAutenticado = UsuarioDao::selectById($codUser['cod']);
+$codUser = $_SESSION['authPerfil'];
+$perfilAutenticado = PerfilDao::selectById($codUser['codPerfil']);
+$usuarioAutenticado =  UsuarioDao::selectById($codUser['codUser']);
 // verificar se o user esta banido
 if ($usuarioAutenticado['banido'] != 0) {
     // caso não esteja, redirecionar a login e indique que o user foi banido
@@ -31,10 +33,8 @@ require('../dao/avatarDao.php');
 $cabelo = CabeloDao::selectAll();
 $roupa = RoupaDao::selectAll();
 $genero = GeneroDao::selectAll();
-$avatar = AvatarDao::selectByIdUser($codUser['cod']);
-
-
-
+$avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
+// var_dump($codUser);
 ?>
 
 
@@ -89,7 +89,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                     <?php endforeach; ?>
                 </div>
                 <div class="avancar">
-                    <input type="hidden" name="codUser" value="<?php echo $codUser['cod'] ?>">
+                    <input type="hidden" name="codUser" value="<?php echo $codUser['codPerfil'] ?>">
                     <input type="hidden" name="itemAvatar" value="base">
                     <button type="submit">Proximo</button>
                 </div>
@@ -155,7 +155,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                     <?php endforeach; ?>
                 </div>
                 <div class="avancar">
-                    <input type="hidden" name="codUser" value="<?php echo $codUser['cod'] ?>">
+                    <input type="hidden" name="codUser" value="<?php echo $codUser['codPerfil'] ?>">
                     <input type="hidden" name="itemAvatar" value="cabelo">
                     <button type="submit">Proximo</button>
                 </div>
@@ -198,7 +198,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['cod']);
                     <?php endforeach; ?>
                 </div>
                 <div class="avancar">
-                    <input type="hidden" name="codUser" value="<?php echo $codUser['cod'] ?>">
+                    <input type="hidden" name="codUser" value="<?php echo $codUser['codPerfil'] ?>">
                     <input type="hidden" name="itemAvatar" value="roupa">
                     <button type="submit">Proximo</button>
                 </div>

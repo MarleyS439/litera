@@ -1,8 +1,8 @@
 <?php
 require_once "../dao/compraItemDao.php";
 require('../dao/AvatarDao.php');
-$codUser = $_SESSION['authUser'];
-$avatar = AvatarDao::selectByIdUser($codUser['cod']);
+$codPerfil = $_SESSION['authPerfil'];
+$avatar = AvatarDao::selectByIdUser($codPerfil['codPerfil']);
 
 // Array associativo com os nomes dos meses em português
 $meses = array(
@@ -21,7 +21,7 @@ $meses = array(
 );
 
 // Obter o número do mês
-$numeroMes = date('n', strtotime($usuarioAutenticado['dataCriacao']));
+$numeroMes = date('n', strtotime($perfilAutenticado['dataCriacao']));
 
 // Obter o nome do mês em português
 $mesPorExtenso = $meses[$numeroMes];
@@ -33,7 +33,7 @@ $mesPorExtenso = $meses[$numeroMes];
         <h4>Seu perfil</h4>
     </div>
     <div class="name-user">
-        <span><?php echo $usuarioAutenticado['nomeUsuario'] ?></span>
+        <span><?php echo $perfilAutenticado['nomePerfil'] ?></span>
     </div>
     <div class="modalContent">
         <button class="edit-btn">
@@ -49,10 +49,10 @@ $mesPorExtenso = $meses[$numeroMes];
                 </header>
                 <div class="save-name-dialog__content">
                     <div class="save-name-wrapper">
-                        <input id="edit-name-input" name="id_user" type="hidden" value="<?php echo ($usuarioAutenticado['codUsuario']) ?>">
-                        <input id="edit-name-input" name="email_user" type="hidden" value="<?php echo ($usuarioAutenticado['emailUsuario']) ?>">
-                        <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo ($usuarioAutenticado['senhaUsuario']) ?>">
-                        <input id="edit-name-input" name="name_user" type="text" value="<?php echo ($usuarioAutenticado['nomeUsuario']) ?>" required>
+                        <input id="edit-name-input" name="id_user" type="hidden" value="<?php echo ($perfilAutenticado['codUsuario']) ?>">
+                        <input id="edit-name-input" name="email_user" type="hidden" value="<?php echo ($perfilAutenticado['emailUsuario']) ?>">
+                        <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo ($perfilAutenticado['senhaUsuario']) ?>">
+                        <input id="edit-name-input" name="name_user" type="text" value="<?php echo ($perfilAutenticado['nomeUsuario']) ?>" required>
                         <button class="save-btn" type="submit">
                             <span>Salvar</span>
                         </button>
@@ -80,27 +80,27 @@ $mesPorExtenso = $meses[$numeroMes];
     </div>
     <div class="infomation-user">
         <div class="enter-coin">
-            <span>Entrou em <?php echo ucfirst($mesPorExtenso) ?> de <?php echo explode("-", $usuarioAutenticado['dataCriacao'])[0] ?></span>
+            <span>Entrou em <?php echo ucfirst($mesPorExtenso) ?> de <?php echo explode("-", $perfilAutenticado['dataCriacao'])[0] ?></span>
             <div class="coins">
                 <img src="../assets/images/icons/coin.svg" alt="">
-                <span><?php echo $usuarioAutenticado['dinheiroUsuario'] ?></span>
+                <span><?php echo $perfilAutenticado['dinheiroPerfil'] ?></span>
             </div>
         </div>
 
         <div class="infos">
             <div class="">
-                <span>Nível: <?php echo $usuarioAutenticado['nivel'] ?></span>
+                <span>Nível: <?php echo $perfilAutenticado['nivel'] ?></span>
             </div>
 
             <div class="">
-                <span>Quantidade de itens: <?php echo CompraItemDao::contByIdUser($usuarioAutenticado['codUsuario']) ?></span>
+                <span>Quantidade de itens: <?php echo CompraItemDao::contByIdUser($perfilAutenticado['codPerfil']) ?></span>
             </div>
 
             <div class="">
                 <span>Melhor desempenho: </span>
             </div>
             <div class="">
-                <span>Pontuação Total: <?php echo $usuarioAutenticado['pontuacaoUsuario'] ?></span>
+                <span>Pontuação Total: <?php echo $perfilAutenticado['pontuacaoPerfil'] ?></span>
             </div>
             <div class="label-progresso">
                 <span>Progresso para o proximo nivel</span>

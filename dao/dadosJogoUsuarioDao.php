@@ -25,7 +25,7 @@ class DadosJogoUsuarioDao
     public static function selectById($codUser, $codJogo)
     {
         $conexao = Conexao::conectar();
-        $query = "SELECT * FROM tbdadosusuarios WHERE codUsuario = ? AND codJogo = ?";
+        $query = "SELECT * FROM tbdadosusuarios WHERE codDependente = ? AND codJogo = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $codUser);
         $stmt->bindValue(2, $codJogo);
@@ -45,7 +45,7 @@ class DadosJogoUsuarioDao
     {
         try {
             $conexao = Conexao::conectar();
-            $query = "UPDATE tbdadosusuarios SET maxPontuacao = ?, qtndAcertos = qtndAcertos + ?, qtndErros = qtndErros + ? WHERE coddadosusuario = ?";
+            $query = "UPDATE tbdadosusuarios SET maxPontuacao = ?, qtndAcertos = qtndAcertos + ?, qtndErros = qtndErros + ? WHERE codDadosJogoUsuario = ?";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $maxPontuacao);
             $stmt->bindValue(2, $qntdAcertos);

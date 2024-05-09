@@ -1,5 +1,5 @@
 <?php
-require_once("../dao/usuarioDao.php");
+require_once("../dao/perfilDao.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nivelInsert = json_decode(file_get_contents('php://input'), true);
@@ -8,8 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $pontuacaoJogo = $nivelInsert['pontuacao'];
 
         // Obter informações do banco de dados para as contas
-        $infoPontuacao = UsuarioDao::selectPontuacaoNivel($id);
-        $pontuacaoTotal = $infoPontuacao['pontuacaoUsuario'] + $pontuacaoJogo;
+        $infoPontuacao = PerfilDao::selectPontuacaoNivel($id);
+        $pontuacaoTotal = $infoPontuacao['pontuacaoPerfil'] + $pontuacaoJogo;
         $nivelNovo = 0; // Inicialmente, o novo nível é o mesmo que o nível atual
 
         // Atualização do nível com base na pontuação total
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         try {
             // Atualiza a pontuação e o nível do usuário no banco de dados
-            $resultado = UsuarioDao::setPontuacaoNivel($id, $pontuacaoTotal, $nivelNovo);
+            $resultado = PerfilDao::setPontuacaoNivel($id, $pontuacaoTotal, $nivelNovo);
 
             if ($resultado) {
                 echo "Atualização feita com sucesso!";

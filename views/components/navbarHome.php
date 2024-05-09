@@ -1,3 +1,7 @@
+<?php
+require_once "../dao/usuarioDao.php";
+require_once "../dao/perfilDao.php";
+?>
 <nav class="navbar">
     <div class="logo-area">
         <img src="../assets/images/litera.png" alt="Litera">
@@ -46,10 +50,10 @@
 
     <div class="profile-info">
         <div class="name-user">
-            <span><?php echo $usuarioAutenticado['nomeUsuario']; ?></span>
+            <span><?php echo $perfilAutenticado['nomePerfil']; ?></span>
         </div>
         <div class="level">
-            <span><?php echo $usuarioAutenticado['nivel']; ?></span>
+            <span><?php echo $perfilAutenticado['nivel']; ?></span>
         </div>
         <div class="coin">
             <svg width="36" height="36">
@@ -58,7 +62,7 @@
         </div>
 
         <div class="name-user">
-            <span><?php echo $usuarioAutenticado['dinheiroUsuario']; ?></span>
+            <span><?php echo $perfilAutenticado['dinheiroPerfil']; ?></span>
         </div>
     </div>
 

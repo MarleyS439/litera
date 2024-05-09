@@ -5,8 +5,10 @@ require_once(__DIR__ . "../../models/perfil.php");
 require_once("../dao/avatarDao.php");
 // variavel que vai mandar os dados para o model
 $Perfil = new Perfil();
-if (isset($_GET['id'])) {
+if (isset($_GET['id']) && isset($_GET['coduser'])) {
     $idPerfil = $_GET['id'];
+    $codUser = $_GET['coduser'];
+    // var_dump($codUser);
     // busca a todos os dados cadastrados sobre o perfil
     $datePerfil = PerfilDao::selectById($idPerfil);
     // var_dump($datePerfil);
@@ -24,6 +26,7 @@ if (isset($_GET['id'])) {
             'fasesConcluidas' => $datePerfil['fasesConcluidas'],
             'dataNasc' => $datePerfil['dataNasc'],
             'dataCriacao' => $datePerfil['dataCriacao'],
+            'codUser' => $codUser,
         ];
         // var_dump($authPerfil);
         session_start();

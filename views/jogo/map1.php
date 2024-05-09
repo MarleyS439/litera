@@ -2,21 +2,27 @@
 // session
 session_start();
 // verificação se o user esta logado
-if (!isset($_SESSION['authUser'])) {
+if (!isset($_SESSION['authPerfil'])) {
     // caso não esteja, redirecione a login e indique que para realizar o login
     header("Location: ./login.php?status=erro2");
     exit();
 }
 // variavel para todas as informaçoes do usuario
+require_once "../../dao/perfilDao.php";
 require_once "../../dao/usuarioDao.php";
-$codUser = $_SESSION['authUser'];
-$usuarioAutenticado = UsuarioDao::selectById($codUser['cod']);
+$codUser = $_SESSION['authPerfil'];
+$perfilAutenticado = PerfilDao::selectById($codUser['codPerfil']);
+$usuarioAutenticado =  UsuarioDao::selectById($codUser['codUser']);
 // verificar se o user esta banido
 if ($usuarioAutenticado['banido'] != 0) {
     // caso não esteja, redirecionar a login e indique que o user foi banido
     header("Location: ./login.php?status=erro3");
     exit();
 }
+if ($_SESSION['authUser'] == null) {
+    header('Location: ./login.php?status=erro4');
+}
+// var_dump($perfilAutenticado);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
@@ -74,10 +80,10 @@ if ($usuarioAutenticado['banido'] != 0) {
 
             <div class="profile-info">
                 <div class="name-user">
-                    <span><?php echo $usuarioAutenticado['nomeUsuario']; ?></span>
+                    <span><?php echo $perfilAutenticado['nomePerfil']; ?></span>
                 </div>
                 <div class="level">
-                    <span><?php echo $usuarioAutenticado['nivel']; ?></span>
+                    <span><?php echo $perfilAutenticado['nivel']; ?></span>
                 </div>
                 <div class="coin">
                     <svg width="36" height="36">
@@ -86,7 +92,7 @@ if ($usuarioAutenticado['banido'] != 0) {
                 </div>
 
                 <div class="name-user">
-                    <span><?php echo $usuarioAutenticado['dinheiroUsuario']; ?></span>
+                    <span><?php echo $perfilAutenticado['dinheiroPerfil']; ?></span>
                 </div>
             </div>
 
@@ -117,7 +123,7 @@ if ($usuarioAutenticado['banido'] != 0) {
                     <div class="game-1">
                         <p>Fase 1</p>
                         <?php
-                        if ($usuarioAutenticado['tutorial'] == 0) {
+                        if ($perfilAutenticado['tutorial'] == 0) {
                         ?>
                             <a href="#">
                                 <img src="../../assets/images/fase/map-off.png" alt="">
@@ -132,7 +138,7 @@ if ($usuarioAutenticado['banido'] != 0) {
                     <div class="game-2">
                         <p>Fase 2</p>
                         <?php
-                        if ($usuarioAutenticado['nivel'] >= 2 and $usuarioAutenticado['nivel'] < 3) {
+                        if ($perfilAutenticado['nivel'] >= 2 and $perfilAutenticado['nivel'] < 3) {
                         ?>
                             <a href="../jogo/balao.php">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
@@ -147,7 +153,7 @@ if ($usuarioAutenticado['banido'] != 0) {
                     <div class="game-3">
                         <p>Fase 3</p>
                         <?php
-                        if ($usuarioAutenticado['nivel'] >= 3 and $usuarioAutenticado['nivel'] < 4) {
+                        if ($perfilAutenticado['nivel'] >= 3 and $perfilAutenticado['nivel'] < 4) {
                         ?>
                             <a href="../jogo/balao.php">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
@@ -162,7 +168,7 @@ if ($usuarioAutenticado['banido'] != 0) {
                     <div class="game-4">
                         <p>Fase 3</p>
                         <?php
-                        if ($usuarioAutenticado['nivel'] >= 4 and $usuarioAutenticado['nivel'] < 5) {
+                        if ($perfilAutenticado['nivel'] >= 4 and $perfilAutenticado['nivel'] < 5) {
                         ?>
                             <a href="#">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
@@ -219,7 +225,7 @@ if ($usuarioAutenticado['banido'] != 0) {
                     <div class="game-1">
                         <p>Fase 1</p>
                         <?php
-                        if ($usuarioAutenticado['tutorial'] == 0) {
+                        if ($perfilAutenticado['tutorial'] == 0) {
                         ?>
                             <a href="#">
                                 <img src="../../assets/images/fase/map-off.png" alt="">
@@ -234,7 +240,7 @@ if ($usuarioAutenticado['banido'] != 0) {
                     <div class="game-2">
                         <p>Fase 2</p>
                         <?php
-                        if ($usuarioAutenticado['nivel'] >= 2 and $usuarioAutenticado['nivel'] < 3) {
+                        if ($perfilAutenticado['nivel'] >= 2 and $perfilAutenticado['nivel'] < 3) {
                         ?>
                             <a href="../jogo/balao.php">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
@@ -249,7 +255,7 @@ if ($usuarioAutenticado['banido'] != 0) {
                     <div class="game-3">
                         <p>Fase 3</p>
                         <?php
-                        if ($usuarioAutenticado['nivel'] >= 3 and $usuarioAutenticado['nivel'] < 4) {
+                        if ($perfilAutenticado['nivel'] >= 3 and $perfilAutenticado['nivel'] < 4) {
                         ?>
                             <a href="../jogo/balao.php">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
@@ -264,7 +270,7 @@ if ($usuarioAutenticado['banido'] != 0) {
                     <div class="game-4">
                         <p>Fase 3</p>
                         <?php
-                        if ($usuarioAutenticado['nivel'] >= 4 and $usuarioAutenticado['nivel'] < 5) {
+                        if ($perfilAutenticado['nivel'] >= 4 and $perfilAutenticado['nivel'] < 5) {
                         ?>
                             <a href="#">
                                 <img src="../../assets/images/fase/map-on.png" alt="">

@@ -38,7 +38,15 @@ class PerfilDao{
         $stmt = $conexao->prepare($query);
         $stmt ->bindvalue(1, $cod);
         $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll();
+    }
+    public static function countById($cod){
+        $conexao = Conexao::conectar();
+        $query = "SELECT COUNT(codPerfil) FROM tbperfil WHERE codUsuario = ?";
+        $stmt = $conexao->prepare($query);
+        $stmt ->bindvalue(1, $cod);
+        $stmt->execute();
+        return $stmt->fetchColumn();
     }
     
     // public static function delete($cod){
@@ -84,7 +92,7 @@ class PerfilDao{
     {
         $conexao = Conexao::conectar();
         $query = "UPDATE tbperfil SET
-        dinheiroUsuario = dinheiroUsuario + ?, dataModfc = ?, fasesConcluidas = fasesConcluidas + 1
+        dinheiroPerfil = dinheiroPerfil + ?, dataModfc = ?, fasesConcluidas = fasesConcluidas + 1
         WHERE codUsuario = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $dinheiro);
@@ -103,6 +111,17 @@ class PerfilDao{
         $stmt->bindValue(2, $cod);
         return $stmt->execute();
     }
+    public static function setTutorial($cod, $tutorial)
+    {
+        $conexao = Conexao::conectar();
+        $query = "UPDATE tbperfil SET
+        tutorial = ?
+        WHERE codPerfil = ?";
+        $stmt = $conexao->prepare($query);
+        $stmt->bindValue(1, $tutorial);
+        $stmt->bindValue(2, $cod);
+        return $stmt->execute();
+    }
     public static function countMonth($month)
     {
         $conexao = Conexao::conectar();
@@ -115,7 +134,7 @@ class PerfilDao{
     public static function selectPontuacaoNivel($cod)
     {
         $conexao = Conexao::conectar();
-        $query = "SELECT pontuacaoUsuario, nivel FROM tbperfil WHERE codUsuario = ?";
+        $query = "SELECT pontuacaoPerfil, nivel FROM tbperfil WHERE codPerfil = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $cod);
         $stmt->execute();
@@ -125,7 +144,7 @@ class PerfilDao{
     {
         $conexao = Conexao::conectar();
         $query = "UPDATE tbperfil SET
-        pontuacaoUsuario = ?,
+        pontuacaoPerfil = ?,
         nivel = ?
         WHERE codUsuario = ?";
         $stmt = $conexao->prepare($query);

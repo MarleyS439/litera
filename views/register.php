@@ -27,7 +27,7 @@
                 <p>Vamos criar a sua conta</p>
             </div>
 
-            <form action="../controller/processRegister.php" method="post">
+            <form action="./emailValidation.php" method="post">
                 <div class="inputs">
                     <label for="">Nome do responsável</label>
                     <input type="text" name="name_user" id="" placeholder="Digite o seu nome" required>

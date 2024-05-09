@@ -1,18 +1,19 @@
 <?php
    require_once("../dao/avatarDao.php");
-   require_once("../dao/usuarioDao.php");
+   require_once("../dao/perfilDao.php");
    require_once(__DIR__ . "../../models/avatar.php");
-   require_once(__DIR__ . "../../models/usuario.php");
+   require_once(__DIR__ . "../../models/perfil.php");
    $avatar = new Avatar();
-   $usuario = new Usuario();
-   $usuarioDao = new UsuarioDao();
+   $Perfil = new Perfil();
+
+   $PerfilDao = new PerfilDao();
 
    switch($_POST['itemAvatar']){
         case 'base':
-            $avatar -> setCodGenro($_POST['genero']);
+            $avatar -> setCodGenero($_POST['genero']);
             $avatar -> setCodCabelo(1);
             $avatar -> setCodRoupa(1);
-            $avatar -> setCodUsuario($_POST['codUser']);
+            $avatar -> setCodPerfil($_POST['codUser']);
             try{
                 $avatarDao = new AvatarDao();
                 $avatarDao->insert($avatar);
@@ -49,15 +50,16 @@
             case 'comprarRoupa':
                 $avatar -> setCodRoupa($_POST['roupa']);
                 $cod = $_POST['codUser'];
-                $infoUsuario = UsuarioDao::selectById($cod);
-                $moeda = $infoUsuario['dinheiroUsuario'];
+                $infoUsuario = PerfilDao::selectById($cod);
+                $moeda = $infoUsuario['dinheiroPerfil'];
+                // var_dump($moeda);
                 if($moeda >= 100){
                     $money = $moeda - 100;
                     // echo($money);
                     try{
                         $avatarDao = new AvatarDao();
                         $avatarDao->updateRoupa( $cod,$avatar);
-                        $resultado = UsuarioDao::setMoney($cod, $money);
+                        $resultado = PerfilDao::setMoney($cod, $money);
 
                         session_start();
                         header('Location: ../views/home.php');

@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             // Pesquisa o usuário no banco de dados
             $id = PerfilDao::searchUser($data['search']);
-            $resultado = DadosJogoUsuarioDao::searchUser($id['codUsuario'], $data['selectJogo']);
+            $resultado = DadosJogoUsuarioDao::searchUser($id['codPerfil'], $data['selectJogo']);
 
             if ($resultado) {
                 $response = [

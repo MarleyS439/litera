@@ -1,15 +1,15 @@
 <?php
-require_once("../dao/usuarioDao.php");
+require_once("../dao/perfilDao.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data = json_decode(file_get_contents('php://input'), true);
     if ($data !== null) {
         $id = $data['id'];
         $money = $data['money'];
-
+        // var_dump($id);
         try {
             // Atualiza o dinheiro do usuário no banco de dados
-            $resultado = UsuarioDao::setGamesPoints($id, $money);
+            $resultado = PerfilDao::setGamesPoints($id, $money);
 
             if ($resultado) {
                 echo "Atualização feita com sucesso!' money";

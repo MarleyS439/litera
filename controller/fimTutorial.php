@@ -1,15 +1,15 @@
 <?php
    session_start();
-    $usuarioAutenticado = $_SESSION['authUser'];
+    $usuarioAutenticado = $_SESSION['authPerfil'];
     // caminhos para os arquivos dao e model
-    require_once("../dao/usuarioDao.php");
-    require_once(__DIR__."../../models/usuario.php");
+    require_once("../dao/perfilDao.php");
+    require_once(__DIR__."../../models/perfil.php");
     // variavel que vai mandar os dados para o model
-    $usuario = new Usuario();
+    $perfil = new Perfil();
     $tutorialStatus = 1;
     // var_dump($usuarioAutenticado['cod'])
     try {
-        $usuarioDao = UsuarioDao::setTutorial($usuarioAutenticado['cod'], $tutorialStatus);
+        $perfilDao = PerfilDao::setTutorial($usuarioAutenticado['codPerfil'], $tutorialStatus);
         header("Location: ../views/home.php");
     }
     catch (Exception $e) {

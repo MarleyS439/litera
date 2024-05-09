@@ -9,11 +9,13 @@ if (!isset($_SESSION['authUser'])) {
     exit();
 }
 // variavel para todas as informaçoes do usuario
+require_once "../dao/perfilDao.php";
 require_once "../dao/usuarioDao.php";
 $codUser = $_SESSION['authUser'];
+$perfilAutenticado = PerfilDao::selectById($codUser['codPerfil']);
 $usuarioAutenticado = UsuarioDao::selectById($codUser['cod']);
 // verificar se o user esta banido
-if ($usuarioAutenticado['banido'] != 0) {
+if ($perfilAutenticado['banido'] != 0) {
     // caso não esteja, redirecionar a login e indique que o user foi banido
     header("Location: ./login.php?status=erro3");
     exit();
@@ -39,7 +41,7 @@ $meses = array(
     12 => 'Dezembro'
 );
 // Obter o número do mês
-$numeroMes = date('n', strtotime($usuarioAutenticado['dataCriacao']));
+$numeroMes = date('n', strtotime($perfilAutenticado['dataCriacao']));
 
 // Obter o nome do mês em português
 $mesPorExtenso = $meses[$numeroMes];
@@ -51,15 +53,65 @@ $mesPorExtenso = $meses[$numeroMes];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
     <link rel="stylesheet" href="../assets/css/user.css">
     <title>Document</title>
 </head>
 
 <body>
     <div class="desktop-view">
-        <?php
-        include('../views/components/navbarHome.php');
-        ?>
+        <nav class="navbar">
+            <div class="logo-area">
+                <img src="../assets/images/litera.png" alt="Litera">
+                <span>Litera</span>
+            </div>
+
+            <div class="navigation">
+                <ul>
+                    <li class="home-icon">
+                        <a href="../views/home.php">
+                            <svg width="28" height="31">
+                                <image href="../assets/images/icons/home-icon-desktop.svg" width="28" height="31" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="store-icon">
+                        <a href="../views/store.php">
+                            <svg width="28" height="31">
+                                <image href="../assets/images/icons/store-icon-desktop.svg" width="28" height="31" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="profile-icon">
+                        <a href="../views/user-profile.php">
+                            <svg width="28" height="31">
+                                <image href="../assets/images/icons/profile-icon-desktop.svg" width="28" height="31" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="profile-info">
+                <div class="name-user">
+                    <span><?php echo $perfilAutenticado['nomePerfil']; ?></span>
+                </div>
+                <div class="level">
+                    <span><?php echo $perfilAutenticado['nivel']; ?></span>
+                </div>
+                <div class="coin">
+                    <svg width="36" height="36">
+                        <image href="../assets/images/icons/coin2.svg" width="35" height="36" />
+                    </svg>
+                </div>
+
+                <div class="name-user">
+                    <span><?php echo $perfilAutenticado['dinheiroPerfil']; ?></span>
+                </div>
+            </div>
+
+        </nav>
         <div class="container">
             <h2 class="profile-title">Seu perfil</h2>
             <div class="box">
@@ -77,11 +129,11 @@ $mesPorExtenso = $meses[$numeroMes];
                     </div>
                 </div>
                 <div class="title-info">
-                    <p><?php echo $usuarioAutenticado['nomeUsuario']?></p>
+                    <p><?php echo $perfilAutenticado['nomePerfil']?></p>
                     <div class="nivel">
                         <p>Nível</p>
                         <div class="nivel-number">
-                            <span><?php echo $usuarioAutenticado['nivel']?></span>
+                            <span><?php echo $perfilAutenticado['nivel']?></span>
                         </div>
                     </div>
                     <p>Proximo nível</p>
@@ -90,9 +142,9 @@ $mesPorExtenso = $meses[$numeroMes];
                             <div class="progresso"></div>
                         </div>
                     </div>
-                    <p>Pontos: <?php echo $usuarioAutenticado['dinheiroUsuario'] ?></p>
+                    <p>Pontos: <?php echo $perfilAutenticado['dinheiroPerfil'] ?></p>
                     <div class="enter-coin">
-                        <span>Entrou em <?php echo ucfirst($mesPorExtenso) ?> de <?php echo explode("-", $usuarioAutenticado['dataCriacao'])[0] ?></span>
+                        <span>Entrou em <?php echo ucfirst($mesPorExtenso) ?> de <?php echo explode("-", $perfilAutenticado['dataCriacao'])[0] ?></span>
                         
                     </div>
                     <div class="conquistas">

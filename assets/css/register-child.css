@@ -27,6 +27,11 @@
     .arara img {
         width: 80px;
     }
+    .cards-perfil{
+        display: grid;
+        grid-template-columns: 100px 100px;
+        grid-auto-rows: 100px;
+    }
 
 
 }
@@ -132,6 +137,8 @@
     .add {
         display: flex;
         justify-content: center;
+        margin-left: 7%;
+
     }
 
     .add button {
@@ -305,16 +312,14 @@
         /* width: 100px; */
         transition: 100ms;      
     }
-    .carrossel {
-        width: 100%; 
-        height: auto;
-        overflow: hidden;
-    }
+    
     .cards-perfil{
         display: flex;
         justify-content: center;
         align-items: center;
-    }
+        position: relative;
+        gap: 5%;
+        }
     .cards {
         width: 10vw;      
         height: 20vh;
@@ -322,10 +327,17 @@
     }
     .cards a{
         text-align: center;
+        text-decoration: none;
+        color: white;
     }
     .cards a img{
         width: 10vw;
         height: 20vh;
+    }
+    .box-perfil{
+        display: flex;
+        justify-content: center;
+        
     }
     
 }

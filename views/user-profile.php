@@ -1,18 +1,18 @@
 <?php
-// variavel para todas as informaçoes do usuario
-require_once "../dao/usuarioDao.php";
-
 // session
 session_start();
 // verificação se o user esta logado
-if (!isset($_SESSION['authUser'])) {
+if (!isset($_SESSION['authPerfil'])) {
     // caso não esteja, redirecione a login e indique que para realizar o login
     header("Location: ./login.php?status=erro2");
     exit();
 }
-
-$codUser = $_SESSION['authUser'];
-$usuarioAutenticado = UsuarioDao::selectById($codUser['cod']);
+// variavel para todas as informaçoes do usuario
+require_once "../dao/perfilDao.php";
+require_once "../dao/usuarioDao.php";
+$codUser = $_SESSION['authPerfil'];
+$perfilAutenticado = PerfilDao::selectById($codUser['codPerfil']);
+$usuarioAutenticado =  UsuarioDao::selectById($codUser['codUser']);
 // verificar se o user esta banido
 if ($usuarioAutenticado['banido'] != 0) {
     // caso não esteja, redirecionar a login e indique que o user foi banido
@@ -22,19 +22,20 @@ if ($usuarioAutenticado['banido'] != 0) {
 if ($_SESSION['authUser'] == null) {
     header('Location: ./login.php?status=erro4');
 }
+var_dump($perfilAutenticado);
 ?>
 
 <?php
 // if e else para atualizar o progresso
 $porcentagem = 0;
 
-if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontuacaoUsuario'] > 0) {
-    $porcentagem = ($usuarioAutenticado['pontuacaoUsuario'] / 100) * 100;
-} else if ($usuarioAutenticado['pontuacaoUsuario'] < 260 && $usuarioAutenticado['pontuacaoUsuario'] >= 100) {
-    $porcentagem = ($usuarioAutenticado['pontuacaoUsuario'] / 260) * 100;
-} else if ($usuarioAutenticado['pontuacaoUsuario'] < 700 && $usuarioAutenticado['pontuacaoUsuario'] >= 260) {
-    $porcentagem = ($usuarioAutenticado['pontuacaoUsuario'] / 700) * 100;
-} else if ($usuarioAutenticado['pontuacaoUsuario'] == 0) {
+if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacaoPerfil'] > 0) {
+    $porcentagem = ($usuarioAutenticado['pontuacaoPerfil'] / 100) * 100;
+} else if ($perfilAutenticado['pontuacaoPerfil'] < 260 && $perfilAutenticado['pontuacaoPerfil'] >= 100) {
+    $porcentagem = ($usuarioAutenticado['pontuacaoPerfil'] / 260) * 100;
+} else if ($perfilAutenticado['pontuacaoPerfil'] < 700 && $perfilAutenticado['pontuacaoPerfil'] >= 260) {
+    $porcentagem = ($usuarioAutenticado['pontuacaoPerfil'] / 700) * 100;
+} else if ($perfilAutenticado['pontuacaoPerfil'] == 0) {
     $porcentagem = 5;
 }
 ?>
@@ -86,10 +87,10 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
 
         <div class="profile-info">
             <div class="name-user">
-                <span><?php echo $usuarioAutenticado['nomeUsuario']; ?></span>
+                <span><?php echo $perfilAutenticado['nomePerfil']; ?></span>
             </div>
             <div class="level">
-                <span><?php echo $usuarioAutenticado['nivel']; ?></span>
+                <span><?php echo $perfilAutenticado['nivel']; ?></span>
             </div>
             <div class="coin">
                 <svg width="36" height="36">
@@ -98,7 +99,7 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
             </div>
 
             <div class="name-user">
-                <span><?php echo $usuarioAutenticado['dinheiroUsuario']; ?></span>
+                <span><?php echo $perfilAutenticado['dinheiroPerfil']; ?></span>
             </div>
         </div>
 
@@ -128,7 +129,7 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
         );
 
         // Obter o número do mês
-        $numeroMes = date('n', strtotime($usuarioAutenticado['dataCriacao']));
+        $numeroMes = date('n', strtotime($perfilAutenticado['dataCriacao']));
 
         // Obter o nome do mês em português
         $mesPorExtenso = $meses[$numeroMes];
@@ -140,7 +141,7 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
                 <h4>Seu perfil</h4>
             </div>
             <div class="name-user">
-                <span><?php echo $usuarioAutenticado['nomeUsuario'] ?></span>
+                <span><?php echo $perfilAutenticado['nomePerfil'] ?></span>
             </div>
             <div class="modalContent">
                 <button class="edit-btn">
@@ -156,10 +157,10 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
                         </header>
                         <div class="save-name-dialog__content">
                             <div class="save-name-wrapper">
-                                <input id="edit-name-input" name="id_user" type="hidden" value="<?php echo ($usuarioAutenticado['codUsuario']) ?>">
-                                <input id="edit-name-input" name="email_user" type="hidden" value="<?php echo ($usuarioAutenticado['emailUsuario']) ?>">
-                                <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo ($usuarioAutenticado['senhaUsuario']) ?>">
-                                <input id="edit-name-input" name="name_user" type="text" value="<?php echo ($usuarioAutenticado['nomeUsuario']) ?>" required>
+                                <input id="edit-name-input" name="id_user" type="hidden" value="<?php echo ($perfilAutenticado['codUsuario']) ?>">
+                                <input id="edit-name-input" name="email_user" type="hidden" value="<?php echo ($perfilAutenticado['emailUsuario']) ?>">
+                                <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo ($perfilAutenticado['senhaUsuario']) ?>">
+                                <input id="edit-name-input" name="name_user" type="text" value="<?php echo ($perfilAutenticado['nomeUsuario']) ?>" required>
                                 <button class="save-btn" type="submit">
                                     <span>Salvar</span>
                                 </button>
@@ -169,7 +170,7 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
                 </dialog>
             </div>
             <!-- <form action="" method="POST" id="modal">
-            <input id="campo" type="text" value="<?php echo ($usuarioAutenticado['nome']) ?>" name="nome"> 
+            <input id="campo" type="text" value="<?php echo ($perfilAutenticado['nome']) ?>" name="nome"> 
             <button id="editar" id="modal" >Editar</button>
             <input type="submit" value="salvar" id="salvar">
     </form> -->
@@ -187,27 +188,27 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
             </div>
             <div class="infomation-user">
                 <div class="enter-coin">
-                    <span>Entrou em <?php echo ucfirst($mesPorExtenso) ?> de <?php echo explode("-", $usuarioAutenticado['dataCriacao'])[0] ?></span>
+                    <span>Entrou em <?php echo ucfirst($mesPorExtenso) ?> de <?php echo explode("-", $perfilAutenticado['dataCriacao'])[0] ?></span>
                     <div class="coins">
                         <img src="../assets/images/icons/coin.svg" alt="">
-                        <span><?php echo $usuarioAutenticado['dinheiroUsuario'] ?></span>
+                        <span><?php echo $perfilAutenticado['dinheiroPerfil'] ?></span>
                     </div>
                 </div>
 
                 <div class="infos">
                     <div class="">
-                        <span>Nível: <?php echo $usuarioAutenticado['nivel'] ?></span>
+                        <span>Nível: <?php echo $perfilAutenticado['nivel'] ?></span>
                     </div>
 
                     <div class="">
-                        <span>Quantidade de itens: <?php echo CompraItemDao::contByIdUser($usuarioAutenticado['codUsuario']) ?></span>
+                        <span>Quantidade de itens: <?php echo CompraItemDao::contByIdUser($perfilAutenticado['codPerfil']) ?></span>
                     </div>
 
                     <div class="">
                         <span>Melhor desempenho: </span>
                     </div>
                     <div class="">
-                        <span>Pontuação Total: <?php echo $usuarioAutenticado['pontuacaoUsuario'] ?></span>
+                        <span>Pontuação Total: <?php echo $perfilAutenticado['pontuacaoPerfil'] ?></span>
                     </div>
                     <div class="label-progresso">
                         <span>Progresso para o proximo nivel</span>

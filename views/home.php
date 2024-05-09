@@ -1,18 +1,18 @@
 <?php
-// variavel para todas as informaçoes do usuario
-require_once "../dao/usuarioDao.php";
-
 // session
 session_start();
 // verificação se o user esta logado
-if (!isset($_SESSION['authUser'])) {
+if (!isset($_SESSION['authPerfil'])) {
     // caso não esteja, redirecione a login e indique que para realizar o login
     header("Location: ./login.php?status=erro2");
     exit();
 }
-
-$codUser = $_SESSION['authUser'];
-$usuarioAutenticado = UsuarioDao::selectById($codUser['cod']);
+// variavel para todas as informaçoes do usuario
+require_once "../dao/perfilDao.php";
+require_once "../dao/usuarioDao.php";
+$codUser = $_SESSION['authPerfil'];
+$perfilAutenticado = PerfilDao::selectById($codUser['codPerfil']);
+$usuarioAutenticado =  UsuarioDao::selectById($codUser['codUser']);
 // verificar se o user esta banido
 if ($usuarioAutenticado['banido'] != 0) {
     // caso não esteja, redirecionar a login e indique que o user foi banido
@@ -22,19 +22,19 @@ if ($usuarioAutenticado['banido'] != 0) {
 if ($_SESSION['authUser'] == null) {
     header('Location: ./login.php?status=erro4');
 }
+// var_dump($perfilAutenticado);
 ?>
-
 <?php
 // if e else para atualizar o progresso
 $porcentagem = 0;
 
-if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontuacaoUsuario'] > 0) {
-    $porcentagem = ($usuarioAutenticado['pontuacaoUsuario'] / 100) * 100;
-} else if ($usuarioAutenticado['pontuacaoUsuario'] < 260 && $usuarioAutenticado['pontuacaoUsuario'] >= 100) {
-    $porcentagem = ($usuarioAutenticado['pontuacaoUsuario'] / 260) * 100;
-} else if ($usuarioAutenticado['pontuacaoUsuario'] < 700 && $usuarioAutenticado['pontuacaoUsuario'] >= 260) {
-    $porcentagem = ($usuarioAutenticado['pontuacaoUsuario'] / 700) * 100;
-} else if ($usuarioAutenticado['pontuacaoUsuario'] == 0) {
+if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacaoPerfil'] > 0) {
+    $porcentagem = ($perfilAutenticado['pontuacaoPerfil'] / 100) * 100;
+} else if ($perfilAutenticado['pontuacaoPerfil'] < 260 && $perfilAutenticado['pontuacaoPerfil'] >= 100) {
+    $porcentagem = ($perfilAutenticado['pontuacaoPerfil'] / 260) * 100;
+} else if ($perfilAutenticado['pontuacaoPerfil'] < 700 && $perfilAutenticado['pontuacaoPerfil'] >= 260) {
+    $porcentagem = ($perfilAutenticado['pontuacaoPerfil'] / 700) * 100;
+} else if ($perfilAutenticado['pontuacaoPerfil'] == 0) {
     $porcentagem = 5;
 }
 ?>
@@ -50,7 +50,7 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
     <link rel="stylesheet" type="text/css" href="../assets/css/home.css">
     <link rel="stylesheet" href="./../assets/css/navbar.css">
 
-    <?php if ($usuarioAutenticado['tutorial'] == 0) {
+    <?php if ($perfilAutenticado['tutorial'] == 0) {
         echo '<link rel="stylesheet" type="text/css" href="../assets/css/tutorial-inicial.css">';
     } ?>
     <title>Litera | Sala de Jogos</title>
@@ -63,7 +63,7 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
 </head>
 
 <body>
-    <!-- Desktop and Tablet View -->
+    
     <div class="overlay-itens1">
 
         <div class="mobile-view">
@@ -73,12 +73,12 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
             <div class="top-bar">
                 <div class="info-user">
                     <img src="../assets/images/icons/profile.svg" alt="">
-                    <span><?php echo ($usuarioAutenticado['nomeUsuario']) ?></span>
+                    <span><?php echo ($perfilAutenticado['nomePerfil']) ?></span>
                 </div>
 
                 <div class="credits">
                     <img src="../assets/images/icons/coin2.svg" alt="">
-                    <span><?php echo ($usuarioAutenticado['dinheiroUsuario']) ?></span>
+                    <span><?php echo ($perfilAutenticado['dinheiroPerfil']) ?></span>
                 </div>
             </div>
 
@@ -184,7 +184,7 @@ if ($usuarioAutenticado['pontuacaoUsuario'] < 100 && $usuarioAutenticado['pontua
         </main>
     </div>
 
-    <!-- Mobile View -->
+   
 
     <script src="./../assets/javascript/modal.js"></script>
 </body>

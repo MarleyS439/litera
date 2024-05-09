@@ -350,4 +350,23 @@
         color: var(--blue2);
     }
 
+    .input-cod h2 {
+        text-align: center;
+    }
+
+    .input-cod p {
+        text-align: center;
+        color: black;
+    }
+
+    .input-cod input {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .input-cod a {
+        cursor: pointer;
+    }
+
+
 }

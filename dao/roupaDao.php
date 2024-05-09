@@ -6,13 +6,12 @@ class RoupaDao
     public static function insert($roupa)
     {
         $conexao = Conexao::conectar();
-        $query = "INSERT INTO tbroupa (codRoupa, nomeRoupa, precoRoupa, imgRoupa, tokenRoupa) VALUES (?,?,?,?,?)";
+        $query = "INSERT INTO tbroupa (nomeRoupa, precoRoupa, imgRoupa, tokenRoupa) VALUES (?,?,?,?)";
         $stmt = $conexao->prepare($query);
-        $stmt->bindValue(1, $roupa->getCodRoupa());
-        $stmt->bindValue(2, $roupa->getNomeRoupa());
-        $stmt->bindValue(3, $roupa->getPrecoRoupa());
-        $stmt->bindValue(4, $roupa->getImgRoupa());
-        $stmt->bindValue(5, $roupa->getTokenRoupa());
+        $stmt->bindValue(1, $roupa->getNomeRoupa());
+        $stmt->bindValue(2, $roupa->getPrecoRoupa());
+        $stmt->bindValue(3, $roupa->getImgRoupa());
+        $stmt->bindValue(4, $roupa->getTokenRoupa());
         $stmt->execute();
     }
 
