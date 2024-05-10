@@ -22,7 +22,7 @@ try {
     $mail->Port       = 465; // Porta do servidor SMTP
 
     // Configuração do e-mail
-    $mail->setFrom('seu_email@gmail.com', 'Seu Nome');
+    $mail->setFrom('litera@gmail.com', 'Litera');
     $mail->addAddress($dadosUsuario['email_user'], $dadosUsuario['name_user']);
     $mail->Subject = 'Código de verificação - Litera';
 
@@ -35,7 +35,6 @@ try {
 
     // Enviando o e-mail
     $mail->send();
-    echo 'E-mail enviado com sucesso!';
 } catch (Exception $e) {
     echo "Erro ao enviar o e-mail: {$mail->ErrorInfo}";
 }
