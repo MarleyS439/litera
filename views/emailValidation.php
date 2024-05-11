@@ -41,7 +41,7 @@ require_once('../controller/processingVerificationEmail.php');
                 <input type="hidden" name="cod" value="<?php echo $numero_aleatorio ?>">
                 <input type="hidden" name="name_user" value="<?php echo $dadosUsuario['name_user']  ?>">
                 <input type="hidden" name="email_user" value="<?php echo $dadosUsuario['email_user']  ?>">
-                <input type="hidden" name="passwd_u ser" value="<?php echo $dadosUsuario['passwd_user']  ?>">
+                <input type="hidden" name="passwd_user" value="<?php echo $dadosUsuario['passwd_user']  ?>">
                 <input type="hidden" name="confirm_passwd_user" value="<?php echo $dadosUsuario['confirm_passwd_user']  ?>">
                 <div class="inputs btn">
                     <button type="submit">Criar</button>

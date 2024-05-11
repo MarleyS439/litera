@@ -16,3 +16,5 @@
         echo 'Exceção capturada: ',  $e->getMessage(), "\n";
     }
 ?>
+
+!
