@@ -144,12 +144,12 @@ try {
     <h1>Você está quase lá!</h1>
     <p>Só mais um passo pra você se tornar parte da familia litera. Por favor insira o código de verificação no site para finalizar a criação da sua conta</p>
     <div class='container'>
-        <div class='cards'>1</div>
-        <div class='cards'>2</div>
-        <div class='cards'>3</div>
-        <div class='cards'>4</div>
-        <div class='cards'>5</div>
-        <div class='cards'>6</div>
+        <div class='cards'>". $num_char[0] ."</div>
+        <div class='cards'>". $num_char[1] ."</div>
+        <div class='cards'>". $num_char[2] ."</div>
+        <div class='cards'>". $num_char[3] ."</div>
+        <div class='cards'>". $num_char[4] ."</div>
+        <div class='cards'>". $num_char[5] ."</div>
     </div>
 </body>
 
