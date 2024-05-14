@@ -39,16 +39,16 @@ Contribuições são bem-vindas! Sinta-se à vontade para enviar sugestões, cor
 - **E-mail:** ciclano@example.com
 
 ### Kauã da Silva Barbosa
-- **Cargo:** Especialista em Educação Infantil
-- **E-mail:** beltrano@example.com
+- **Cargo:** Full-Stack
+- **E-mail:** kauadasilvabarbosa06@gmail.com
 
 ### Mariana Moreira dos Santos
 - **Cargo:** DBA
-- **E-mail:** mariana@gmail.com
+- **E-mail:** mh15122006@gmail.com
 
 ### Matheus Campos de Menezes
 - **Cargo:** DBA
-- **E-mail:** mariana@gmail.com
+- **E-mail:** matheusmenezescampos@gmail.com
 
 ### Matheus Gomes de Oliveira
 - **Cargo:** DBA
@@ -60,7 +60,7 @@ Contribuições são bem-vindas! Sinta-se à vontade para enviar sugestões, cor
 
 ### Matheus Merlim Costa da Silva
 - **Cargo:** DBA
-- **E-mail:** mariana@gmail.com
+- **E-mail:** matheusmerlim9@gmail.com
 
 ### Milena Fernandes Oliveira
 - **Cargo:** DBA
@@ -68,11 +68,11 @@ Contribuições são bem-vindas! Sinta-se à vontade para enviar sugestões, cor
 
 ### Renan de Castro Teixeira
 - **Cargo:** DBA
-- **E-mail:** mariana@gmail.com
+- **E-mail:** castroteixeira2019@gmail.com
 
 ### Vitor Mota Novais de Jesus
 - **Cargo:** Designer
-- **E-mail:** mariana@gmail.com
+- **E-mail:** vitormotanovais@gmail.com
 
 ## Contato Geral
 
