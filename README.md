@@ -31,8 +31,8 @@ Contribuições são bem-vindas! Sinta-se à vontade para enviar sugestões, cor
 ## Equipe de Desenvolvimento
 
 ### Felipe Félix da Rocha Lima
-- **Cargo:** Desenvolvedor PHP
-- **E-mail:** fulano@example.com
+- **Cargo:** Designer
+- **E-mail:** felipe.frlima@gmail.com
 
 ### Heitor de Oliveira Alves da Silva
 - **Cargo:** Designer de Jogos
