@@ -339,5 +339,54 @@
         justify-content: center;
         
     }
+    .modal-edit-profile {
+        display: none;
+        padding: 2% 5% 2% 5%;
+        border-radius: 8px;
+        position: absolute;
+        top: 15%;
+        left: 26%;
+        width: 45vw;
+        color: var(--black2);
+        background-color: var(--white);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 54px 55px, rgba(0, 0, 0, 0.16) 0px -12px 30px, rgba(0, 0, 0, 0.16) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+        -webkit-animation: slide-in-fwd-top 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: slide-in-fwd-top 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    .modal-edit-profile .title-modal {
+        display: flex;
+        justify-content: center;
+    }
+
+    .modal-edit-profile .title-modal p {
+        display: flex;
+        font-family: var(--font-poppins-bold);
+        color: var(--black2);
+        padding: 2%;
+    }
+
+    .modal-edit-profile .cancel button {
+        display: flex;
+        align-content: center;
+        background-color: var(--white);
+        border-radius: 50px;
+        cursor: pointer;
+        border: none;
+    }
+
+
+    .modal-edit-profile .cancel img {
+        border-radius: 50px;
+        border: none;
+        width: 32px;
+        transition: 300ms ease-in-out;
+    }
+
+    .modal-edit-profile .cancel img:hover {
+        box-shadow: 1px 2px 3px #000;
+        transform: translate(0px, -2px)
+    }
     
 }

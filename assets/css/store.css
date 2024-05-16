@@ -82,15 +82,15 @@ body {
     .base img {
         display: block;
         margin: 0 auto;
-        width: 170px;
+        width: 140px;
     }
 
     .cabelo img {
         position: absolute;
-        top: -35;
+        top: -15;
         left: 50%;
         transform: translateX(-50%);
-        width: 160px;
+        width: 120px;
     }
 
     .roupa img {
@@ -98,7 +98,7 @@ body {
         bottom: 2%;
         left: 51%;
         transform: translateX(-50%);
-        width: 145px;
+        width: 115px;
         z-index: 3;
     }
 
@@ -409,15 +409,15 @@ body {
     .base img {
         display: block;
         margin: 0 auto;
-        width: 170px;
+        width: 140px;
     }
 
     .cabelo img {
         position: absolute;
-        top: -35;
+        top: -15;
         left: 50%;
         transform: translateX(-50%);
-        width: 160px;
+        width: 120px;
     }
 
     .roupa img {
@@ -425,7 +425,7 @@ body {
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        width: 145px;
+        width: 115px;
         z-index: 3;
     }
 

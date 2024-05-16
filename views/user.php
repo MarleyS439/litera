@@ -11,19 +11,19 @@ if (!isset($_SESSION['authUser'])) {
 // variavel para todas as informaçoes do usuario
 require_once "../dao/perfilDao.php";
 require_once "../dao/usuarioDao.php";
-$codUser = $_SESSION['authUser'];
+$codUser = $_SESSION['authPerfil'];
+// var_dump($codUser);
 $perfilAutenticado = PerfilDao::selectById($codUser['codPerfil']);
-$usuarioAutenticado = UsuarioDao::selectById($codUser['cod']);
+$usuarioAutenticado = UsuarioDao::selectById($codUser['codUser']);
 // verificar se o user esta banido
-if ($perfilAutenticado['banido'] != 0) {
+if ($usuarioAutenticado['banido'] != 0) {
     // caso não esteja, redirecionar a login e indique que o user foi banido
     header("Location: ./login.php?status=erro3");
     exit();
 }
 require_once "../dao/compraItemDao.php";
 require('../dao/AvatarDao.php');
-$codUser = $_SESSION['authUser'];
-$avatar = AvatarDao::selectByIdUser($codUser['cod']);
+$avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
 
 // Criando array com todos os meses do ano
 $meses = array(

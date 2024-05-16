@@ -67,6 +67,7 @@
                 </div>
             </form>
         </div>
+        
     </div>
     <!-- Do not have more mobile-view div. Now is a unique div -->
     <!-- <div class="desktop-view">

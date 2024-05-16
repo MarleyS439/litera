@@ -93,7 +93,7 @@ class PerfilDao{
         $conexao = Conexao::conectar();
         $query = "UPDATE tbperfil SET
         dinheiroPerfil = dinheiroPerfil + ?, dataModfc = ?, fasesConcluidas = fasesConcluidas + 1
-        WHERE codUsuario = ?";
+        WHERE codPerfil = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $dinheiro);
         $stmt->bindValue(2, date('Y-m-d'));
@@ -146,7 +146,7 @@ class PerfilDao{
         $query = "UPDATE tbperfil SET
         pontuacaoPerfil = ?,
         nivel = ?
-        WHERE codUsuario = ?";
+        WHERE codPerfil = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $pontuacaoTotal);
         $stmt->bindValue(2, $nivel);

@@ -69,7 +69,7 @@
     .base img {
         display: block;
         margin: 0 auto;
-        width: 135px;
+        width: 120px;
     }
 
     .cabelo img {
@@ -77,7 +77,7 @@
         top: 0;
         left: 50%;
         transform: translateY(-20%) translateX(-50%);
-        width: 120px;
+        width: 105px;
     }
 
     .roupa img {
@@ -85,7 +85,7 @@
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        width: 117px;
+        width: 100px;
     }
 
     /* etapas */
@@ -181,7 +181,7 @@
         border-radius: 20px;
     }
     .opcoes img {
-        width: 150px;
+        width: 120px;
     }
 
     .input-opcao {

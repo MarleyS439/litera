@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $resultado = PerfilDao::setPontuacaoNivel($id, $pontuacaoTotal, $nivelNovo);
 
             if ($resultado) {
-                echo "Atualização feita com sucesso!";
+                echo "Atualização feita com sucesso! pontuacao: ".$pontuacaoTotal." nivel: ".$nivelNovo. " perfil ".$id ;
             } else {
                 echo "Erro ao atualizar o nível e a pontuação do usuário";
             }

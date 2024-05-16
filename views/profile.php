@@ -67,106 +67,128 @@ if ($_SESSION['authUser'] == null) {
             <?php } ?>
             <div class="box-perfil">
                 <div class="cards-perfil">
-                <?php if (is_array($perfil) && !empty($perfil)) : ?>
-                    <?php foreach ($perfil as $perfils) : ?>
-                        <!-- <?php var_dump($perfils) ?> -->
-                        <div class="cards">
-                            <a href="../controller/conectionPerfil.php?id=<?php echo $perfils['codPerfil'];?>&coduser=<?php echo $codUser['cod']?>">
-                                <img src="../assets/images/icons/<?php echo $perfils['iconPerfil'] ?>" alt="">
-                                <p><?php echo $perfils['nomePerfil']; ?></p>
-                            </a>
-                        </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
+                    <?php if (is_array($perfil) && !empty($perfil)) : 
+                            foreach ($perfil as $perfils) : ?>
+                            <!-- <?php var_dump($perfils) ?> -->
+                           <div class="cards">
+                                <button type="button" class="editProfile">editar</button>
+                                <a href="../controller/conectionPerfil.php?id=<?php echo $perfils['codPerfil']; ?>&coduser=<?php echo $codUser['cod'] ?>">
+                                    <img src="../assets/images/icons/<?php echo $perfils['iconPerfil'] ?>" alt="">
+                                    <p><?php echo $perfils['nomePerfil']; ?></p>
+                                </a>
+                            </div> 
+                        <?php endforeach;
+                    endif; ?>
                 </div>
-                <?php if($qntdPerfil <5) {?>
+                <?php if ($qntdPerfil < 5) { ?>
                     <div class="add">
                         <button type="submit" id="addProfile" title="Criar um novo perfil">
                             <img src="../assets/images/icons/addbtn.png" alt="">
                         </button>
-                    </div>                  
+                    </div>
                 <?php }; ?>
             </div>
         </div>
-        
-        
 
 
-            <!-- Modal de adicionar perfil -->
-            <div class="modal-add-profile" id="modalAddProfile">
 
-                <div class="cancel">
-                    <button type="button" id="cancelAddProfile" title="Cancelar">
-                        <img src="../assets/images/icons/cancel-img.png" alt="">
-                    </button>
-                </div>
 
-                <div class="title-modal">
-                    <p>Adicionar perfil</p>
-                </div>
+        <!-- Modal de adicionar perfil -->
+        <div class="modal-add-profile" id="modalAddProfile">
 
-                <div class="">
-                    <form action="../controller/processRegisterPerfis.php" method="post">
-                        <!-- cod do usuario responsavel -->
-                        <input type="hidden" value="<?php echo $codUser['cod'] ?>" name="codUser">
-                        <div class="inputs-modal">
-                            <label for="nome_perfil">Nome</label>
-                            <input type="text" name="nome_perfil" id="nome_perfil" placeholder="João">
+            <div class="cancel">
+                <button type="button" id="cancelAddProfile" title="Cancelar">
+                    <img src="../assets/images/icons/cancel-img.png" alt="">
+                </button>
+            </div>
+
+            <div class="title-modal">
+                <p>Adicionar perfil</p>
+            </div>
+
+            <div class="">
+                <form action="../controller/processRegisterPerfis.php" method="post">
+                    <!-- cod do usuario responsavel -->
+                    <input type="hidden" value="<?php echo $codUser['cod'] ?>" name="codUser">
+                    <div class="inputs-modal">
+                        <label for="nome_perfil">Nome</label>
+                        <input type="text" name="nome_perfil" id="nome_perfil" placeholder="João">
+                    </div>
+
+
+                    <div class="two">
+                        <div class="inpu">
+                            <label for="data_nasc">Data de nascimento</label>
+                            <input type="date" name="data_nasc" id="data_nasc">
                         </div>
+                        <div class="inpu">
+                            <label for="genero">Gênero</label>
+                            <select name="genero" id="genero">
+                                <option value="null">-</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Feminino">Feminino</option>
+                                <option value="nao-definir">Não definir</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="profile-select-icon">
+                        <div class="title-profile-select">
+                            <p>Selecione a foto de perfil</p>
+                        </div>
+                        <input type="hidden" name="imagem_perfil" id="imagem_perfil">
 
 
-                        <div class="two">
-                            <div class="inpu">
-                                <label for="data_nasc">Data de nascimento</label>
-                                <input type="date" name="data_nasc" id="data_nasc">
+                        <div class="select-icon carrossel">
+
+                            <div class="icon">
+                                <input type="radio" name="avatar" class="input-icon-avatar" value="Frame 190.png">
+                                <img src="../assets/images/icons/Frame 190.png" class="icons-image" alt="">
                             </div>
-                            <div class="inpu">
-                                <label for="genero">Gênero</label>
-                                <select name="genero" id="genero">
-                                    <option value="null">-</option>
-                                    <option value="Masculino">Masculino</option>
-                                    <option value="Feminino">Feminino</option>
-                                    <option value="nao-definir">Não definir</option>
-                                </select>
+                            <div class="icon">
+                                <input type="radio" name="avatar" class="input-icon-avatar" value="Frame 196.png" checked>
+                                <img src="../assets/images/icons/Frame 196.png" class="icons-image" alt="">
+                            </div>
+                            <div class="icon">
+                                <input type="radio" name="avatar" class="input-icon-avatar" value="Frame 197.png">
+                                <img src="../assets/images/icons/Frame 197.png" class="icons-image" alt="">
+                            </div>
+                            <div class="icon">
+                                <input type="radio" name="avatar" class="input-icon-avatar" value="Frame 198.png">
+                                <img src="../assets/images/icons/Frame 198.png" class="icons-image" alt="">
                             </div>
                         </div>
+                    </div>
 
-                        <div class="profile-select-icon">
-                            <div class="title-profile-select">
-                                <p>Selecione a foto de perfil</p>
-                            </div>
-                            <input type="hidden" name="imagem_perfil" id="imagem_perfil">
-
-
-                            <div class="select-icon carrossel">
-
-                                <div class="icon">
-                                    <input type="radio" name="avatar" class="input-icon-avatar" value="Frame 190.png">
-                                    <img src="../assets/images/icons/Frame 190.png" class="icons-image" alt="">
-                                </div>
-                                <div class="icon">
-                                    <input type="radio" name="avatar" class="input-icon-avatar" value="Frame 196.png" checked>
-                                    <img src="../assets/images/icons/Frame 196.png" class="icons-image" alt="">
-                                </div>
-                                <div class="icon">
-                                    <input type="radio" name="avatar" class="input-icon-avatar" value="Frame 197.png">
-                                    <img src="../assets/images/icons/Frame 197.png" class="icons-image" alt="">
-                                </div>
-                                <div class="icon">
-                                    <input type="radio" name="avatar" class="input-icon-avatar" value="Frame 198.png">
-                                    <img src="../assets/images/icons/Frame 198.png" class="icons-image" alt="">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="inputs-modal-buttom">
-                            <button type="submit" class="salvar-btn">Adicionar</button>
-                        </div>
-                    </form>
-                </div>
+                    <div class="inputs-modal-buttom">
+                        <button type="submit" class="salvar-btn">Adicionar</button>
+                    </div>
+                </form>
             </div>
         </div>
-        <script src="../assets/javascript/modal-add-profile.js"></script>
+
+        <div class="modal-edit-profile" id="modalEditProfile">
+            <div class="cancel">
+                <button type="button" id="cancelEditProfile" title="Cancelar">
+                    <img src="../assets/images/icons/cancel-img.png" alt="">
+                </button>
+            </div>
+            <div class="title-modal">
+                <p>Editar perfil</p>
+            </div>
+            <div class="">
+                <form action="">
+                    <input type="hidden" value="<?php echo $codUser['cod'] ?>" name="codUser">
+                    <div class="">
+                        <label for=""></label>
+                        <input type="text" name="nome_perfil" id="nome_perfil" placeholder="<?php echo $codUser["nomePerfil"] ?>">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/javascript/modal-edit-profile.js"></script>
+    <script src="../assets/javascript/modal-add-profile.js"></script>
 </body>
 
 </html>

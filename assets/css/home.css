@@ -448,7 +448,7 @@
         top: 0;
         left: 50%;
         transform: translatey(-20%) translateX(-50%);
-        width: 120px;
+        width: 115px;
     }
 
     .roupa img {
@@ -456,7 +456,7 @@
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        width: 115px;
+        width: 110px;
     }
 }
 
@@ -840,7 +840,7 @@
         top: 0;
         left: 50%;
         transform: translatey(-20%) translateX(-50%);
-        width: 120px;
+        width: 115px;
     }
 
     .roupa img {
@@ -848,6 +848,6 @@
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        width: 115px;
+        width: 110px;
     }
 }

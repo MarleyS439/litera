@@ -188,5 +188,8 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
 
     <script src="./../assets/javascript/modal.js"></script>
 </body>
+<?php 
+// var_dump($codUser['codPerfil']);
 
+?>
 </html>

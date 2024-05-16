@@ -1,7 +1,7 @@
 var buttonAddProfile = document.getElementById("addProfile");
 var modalAddProfile = document.getElementById("modalAddProfile");
 var buttonCancelAddProfile = document.getElementById("cancelAddProfile");
-var title = document.getElementById("h2");
+
 
 // Abre o modal de adicionar o perfil
 buttonAddProfile.addEventListener("click", function () {
@@ -11,7 +11,5 @@ buttonAddProfile.addEventListener("click", function () {
 // Fecha o modal de adicionar o perfil
 buttonCancelAddProfile.addEventListener("click", function () {
     modalAddProfile.style.display = "none";
-
-   
 });
 
