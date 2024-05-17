@@ -33,43 +33,62 @@
                 </ul>
             </div>
 
-            <div class="action-btn">
-                <a href="#">Começar
-                    <img src="../assets/images/icons/arrow-sm-right-svgrepo-com.svg" alt="">
-                </a>
+            <div class="action-btn" id="menu">
+                <a href="#">Começar</a>
+
+                <!-- Div que simula um botão de clique para abrir o menu oculto -->
+                <div class="menu-mobile" id="openBtn">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
             </div>
         </nav>
 
-        <!-- Container de intens do header -->
-        <div class="container-header">
-            <div class="stitle">
-                <div class="big-title">
-                    <h1>Aprender com jogos educativos</h1>
-                    <h3>Litera - Alfabetização para novas gerações</h3>
-                </div>
-                <div class="cta">
-                    <a href="#">Saiba mais</a>
-                </div>
+        <!-- Menu oculto-->
+        <div class="side-menu" id="hiddenMenu">
+            <ul>
+                <li><a href="" title="">Início</a></li>
+                <li><a href="" title="">Sobre</a></li>
+                <li><a href="" title="">Blog</a></li>
+                <li><a href="" title="">Preço</a></li>
+                <li><a href="" title="">Contato</a></li>
+            </ul>
+
+            <div class="close-menu-mobile" id="closeBtn">
+                <img src="../assets/images/icons/cancel-svgrepo-com.svg">
             </div>
 
-            <div class="image">
-                <img src="../assets/images/crianças (1)-min.png" alt="">
+            <div class="cta-mobile">
+            <a href="">Entre ou cadastre-se</a>
+            </div>
+
+        </div>
+
+        <div>
+            <!-- Container de itens do header -->
+            <div class="container-header">
+                <div class="sidea">
+
+                </div>
+
+                <div class="sideb">
+                    <img src="../assets/images/crianças (1)-min.png" alt="">
+                </div>
             </div>
         </div>
     </header>
 
 
-
-
-
+    <!--Seção principal-->
     <main>
         <section>
 
         </section>
     </main>
 
+    <!--Footer-->
     <footer>
-
         <div class="items-footer">
             <div class="item-footer">
 
@@ -77,7 +96,6 @@
                     <img src="../assets/images/arara 2.svg" alt="">
                     <h4>Litera</h4>
                 </div>
-
 
                 <a href="" title="Conheças todos os recursos">Recursos</a>
                 <a href="" title="Temos soluções diversas. Acesse e saiba mais.">Soluções</a>
@@ -110,7 +128,6 @@
                 <a href="">Parceiros de integração</a>
             </div>
 
-
         </div>
 
         <div class="title-social-media">
@@ -132,6 +149,7 @@
         <div class="copy">
             &copy; 2023 · Litera. Todos os direitos reservados. Desenvolvido por <a href="">Illumi</a>
         </div>
+
     </footer>
 
 
@@ -139,24 +157,64 @@
     <!-- Script para movimentação do Navbar -->
     <script>
         /* Variável para capturar a largura da tela */
-        var larguraTela = screen.width;
-        var navbar = document.getElementById('navbar');
+        // var larguraTela = screen.width;
+        // var navbar = document.getElementById('navbar');
 
 
         /* Caso a largura da tela seja maior ou igual a 770, ele ativa o script */
-        if (larguraTela > 770) {
-            /* Ao fazer scroll de 20px, ele muda o tamanho do navbar */
-            window.addEventListener('scroll', function() {
-                if (window.scrollY >= 20) {
-                    navbar.style.width = 'calc(100vw - 5%)';
-                    navbar.style.margin = '10px';
-                    navbar.style.boxShadow = "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;";
-                } else {
-                    navbar.style.width = '100%';
-                    navbar.style.margin = "0px 10px";
-                }
-            });
-        }
+        // if (larguraTela > 770) {
+        //     /* Ao fazer scroll de 20px, ele muda o tamanho do navbar */
+        //     window.addEventListener('scroll', function() {
+        //         if (window.scrollY >= 20) {
+        //             navbar.style.width = 'calc(100vw - 5%)';
+        //             navbar.style.margin = '10px';
+        //             navbar.style.boxShadow = "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;";
+        //         } else {
+        //             navbar.style.width = '100%';
+        //             navbar.style.margin = "0px 10px";
+        //         }
+        //     });
+        // }
+
+        // if (larguraTela < 768) {
+        //     window.addEventListener('scroll', function() {
+        //         if (window.screenY >= 20) {
+        //             navbar.style.width = '100%';
+        //             navbar.style.margin = '0px';
+        //         }
+        //     })
+        // }
+    </script>
+
+    <!-- Script para menu lateral mobile -->
+    <script>
+        // Botão de abrir o menu
+        let openMenuBtn = document.getElementById('openBtn');
+
+        // Menu lateral
+        let menu = document.getElementById('hiddenMenu');
+
+        // Corpo do site
+        let bodySite = document.body;
+
+        // Função para abrir o menu
+        openBtn.addEventListener('click', function() {
+            if (menu.style.display = 'none') {
+                menu.style.display = 'block';
+                menu.style.position = 'fixed';
+                bodySite.style.overflowY = 'hidden';
+            }
+        });
+
+        // Botão de fechar o menu
+        let closeMenuBtn = document.getElementById('closeBtn');
+
+        closeBtn.addEventListener('click', function() {
+            menu.style.display = 'none';
+            bodySite.style.overflowY = 'auto';
+        });
+
+
     </script>
 </body>
 
