@@ -66,12 +66,12 @@ if ($_SESSION['authUser'] == null) {
                 </div>
             <?php } ?>
             <div class="box-perfil">
-                <div class="cards-perfil">
-                    <?php if (is_array($perfil) && !empty($perfil)) : 
+                <?php if (is_array($perfil) && !empty($perfil)) : 
                             foreach ($perfil as $perfils) : ?>
                             <!-- <?php var_dump($perfils) ?> -->
-                           <div class="cards">
-                                <button type="button" class="editProfile">editar</button>
+                            <div class="cards-perfil">
+                                <div class="cards">
+                               <div class="overlay-card" id="card-modal"></div>
                                 <a href="../controller/conectionPerfil.php?id=<?php echo $perfils['codPerfil']; ?>&coduser=<?php echo $codUser['cod'] ?>">
                                     <img src="../assets/images/icons/<?php echo $perfils['iconPerfil'] ?>" alt="">
                                     <p><?php echo $perfils['nomePerfil']; ?></p>
@@ -87,6 +87,8 @@ if ($_SESSION['authUser'] == null) {
                         </button>
                     </div>
                 <?php }; ?>
+                
+                <button class="edit-perfil" id="open-edit"><img src="../assets/images/icons/edit-icon-perfil.svg" alt=""></button>
             </div>
         </div>
 
@@ -177,11 +179,20 @@ if ($_SESSION['authUser'] == null) {
                 <p>Editar perfil</p>
             </div>
             <div class="">
-                <form action="">
+                <form action="../controller/processRegisterPerfis.php">
                     <input type="hidden" value="<?php echo $codUser['cod'] ?>" name="codUser">
                     <div class="">
                         <label for=""></label>
-                        <input type="text" name="nome_perfil" id="nome_perfil" placeholder="<?php echo $codUser["nomePerfil"] ?>">
+                        <input id="edit-name-input" name="id_user" type="hidden" value="<?php echo isset($perfil['codPerfil']) ? $perfil['codPerfil'] : '' ?>">
+                        <input id="edit-name-input" name="email_user" type="hidden" value="<?php echo isset($codUser['generoPerfil']) ? $codUser['generoPerfil'] : '' ?>">
+                        <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['iconPerfil']) ? $codUser['iconPerfil'] : '' ?>">
+                        <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['pontuacaoPerfil']) ? $codUser['pontuacaoPerfil'] : '' ?>">
+                        <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['dinheiroPerfil']) ? $codUser['dinheiroPerfil'] : '' ?>">
+                        <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['tutorial']) ? $codUser['tutorial'] : '' ?>">
+                        <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['nivel']) ? $codUser['nivel'] : '' ?>">
+                        <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['fasesConcluidas']) ? $codUser['fasesConcluidas'] : '' ?>">
+                        <input type="text" name="nome_perfil" id="nome_perfil" placeholder="<?php echo isset($codUser['nomePerfil']) ? $codUser['nomePerfil'] : '' ?>">
+                        <input type="submit" value="Enviar">
                     </div>
                 </form>
             </div>

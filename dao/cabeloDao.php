@@ -5,7 +5,7 @@ class CabeloDao
     public static function insert($cabelo)
     {
         $conexao = Conexao::conectar();
-        $query = "INSERT INTO tbcabelo(nomeCabelo, precoCabelo, imgCabelo, tokenCabelo) VALUES (?,?,?,?)";
+        $query = "INSERT INTO tbcabelo(nomeCabelo, imgCabelo, tokenCabelo) VALUES (?,?,?,?)";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $cabelo->getNomeCabelo());
         $stmt->bindValue(2, $cabelo->getPrecoCabelo());
