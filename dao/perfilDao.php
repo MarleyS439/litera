@@ -5,17 +5,19 @@ require_once (__DIR__ . '../../config/conexao.php');
 class PerfilDao{
     public static function insert($perfis){
         $conexao = Conexao::conectar();
-        $query = "INSERT INTO tbperfil(codUsuario, nomePerfil, generoPerfil, iconPerfil, tutorial, nivel, dataNasc, dataCriacao, dataModfc) VALUES ( ?,?, ?, ?, ?, ?, ?, ?, ?)";        
+        $query = "INSERT INTO tbperfil(codUsuario, nomePerfil, generoPerfil, iconPerfil, dinheiroPerfil, tutorial, nivel, dataNasc, dataCriacao, dataModfc) VALUES ( ?,?,?, ?, ?, ?, ?, ?, ?, ?)";        
         $stmt = $conexao->prepare($query);
         $stmt -> bindvalue(1, $perfis->getCodUsuario());
         $stmt -> bindvalue(2, $perfis->getNomePerfil());
         $stmt -> bindvalue(3, $perfis->getGeneroPerfil());
         $stmt -> bindvalue(4, $perfis->getIconPerfil());
-        $stmt -> bindvalue(5, $perfis->getTutorial());
-        $stmt -> bindvalue(6, $perfis->getNivel());
-        $stmt -> bindvalue(7, $perfis->getDataNasc());
-        $stmt -> bindvalue(8, $perfis->getDataCriacao());
-        $stmt -> bindvalue(9, $perfis->getDataModfc());
+        $stmt -> bindvalue(5, $perfis->getDinheiroPerfil());
+        $stmt -> bindvalue(6, $perfis->getTutorial());
+        $stmt -> bindvalue(7, $perfis->getNivel());
+        $stmt -> bindvalue(8, 0);
+        $stmt -> bindvalue(9, $perfis->getDataNasc());
+        $stmt -> bindvalue(10, $perfis->getDataCriacao());
+        $stmt -> bindvalue(11, $perfis->getDataModfc());
         $stmt ->execute();
     }
     public static function selectAll(){
