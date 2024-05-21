@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $perfis->setNomePerfil($_POST['nome_perfil']);
         $perfis->setGeneroPerfil($_POST['genero']);
         $perfis->setIconPerfil($_POST['avatar']);
+        $perfis->setTutorial(0);
         $perfis->setDataNasc($_POST['data_nasc']);
         $perfis->setNivel(1);      
         $perfis->setDataCriacao(date("Y-m-d"));      

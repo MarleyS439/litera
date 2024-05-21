@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 18/05/2024 às 01:54
--- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
+-- Host: localhost
+-- Tempo de geração: 21/05/2024 às 20:09
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `dblitera`
+-- Banco de dados: `dbLitera`
 --
 
 -- --------------------------------------------------------
@@ -55,6 +55,13 @@ CREATE TABLE `tbavatar` (
   `codPerfil` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `tbavatar`
+--
+
+INSERT INTO `tbavatar` (`codAvatar`, `codRoupa`, `codCabelo`, `codGenero`, `codPerfil`) VALUES
+(1, 1, 1, 1, 4);
+
 -- --------------------------------------------------------
 
 --
@@ -64,9 +71,18 @@ CREATE TABLE `tbavatar` (
 CREATE TABLE `tbcabelo` (
   `codCabelo` int(11) NOT NULL,
   `nomeCabelo` varchar(50) NOT NULL,
+  `precoCabelo` int(11) NOT NULL,
   `imgCabelo` varchar(50) NOT NULL,
   `tokenCabelo` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tbcabelo`
+--
+
+INSERT INTO `tbcabelo` (`codCabelo`, `nomeCabelo`, `precoCabelo`, `imgCabelo`, `tokenCabelo`) VALUES
+(1, 'Cabelo Top', 0, 'bb69b1ff5b4cea72ae8ffbbeb088027d.jpg', '6574023345d1dfdf80b695e690cefc50'),
+(2, 'cabelo Felipe ', 0, 'f179881d725a99d5782a971f84eb7a62.jpg', '19b5163872c9d0d05adc31719f670dd2');
 
 -- --------------------------------------------------------
 
@@ -133,6 +149,14 @@ CREATE TABLE `tbdadosusuarios` (
   `qtndErros` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `tbdadosusuarios`
+--
+
+INSERT INTO `tbdadosusuarios` (`codDadosJogoUsuario`, `codJogo`, `codDependente`, `maxPontuacao`, `qtndAcertos`, `qtndErros`) VALUES
+(5, 1, 5, 0, 0, 0),
+(6, 2, 5, 0, 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -142,9 +166,18 @@ CREATE TABLE `tbdadosusuarios` (
 CREATE TABLE `tbgenero` (
   `codGenero` int(11) NOT NULL,
   `nomeGenero` varchar(50) NOT NULL,
+  `precoGenero` int(11) NOT NULL,
   `imgGenero` varchar(50) NOT NULL,
   `tokenGenero` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tbgenero`
+--
+
+INSERT INTO `tbgenero` (`codGenero`, `nomeGenero`, `precoGenero`, `imgGenero`, `tokenGenero`) VALUES
+(1, 'genero nulo', 0, 'e204caf49569222bc33753005ca07653.jpg', '68e3fe91a425202f5471c56c95f4d0cf'),
+(2, 'Felipe', 0, '58fde547b4ea0b4dad86fad4f6262598.jpg', '2e0e22187c58e8aab0b43fd265f1e280');
 
 -- --------------------------------------------------------
 
@@ -198,15 +231,24 @@ CREATE TABLE `tbperfil` (
   `nomePerfil` varchar(100) NOT NULL,
   `generoPerfil` varchar(30) NOT NULL,
   `iconPerfil` varchar(50) NOT NULL,
-  `pontuacaoPerfil` int(11) NOT NULL,
-  `dinheiroPerfil` int(11) NOT NULL,
+  `pontuacaoPerfil` int(11) DEFAULT NULL,
+  `dinheiroPerfil` int(11) DEFAULT NULL,
   `tutorial` tinyint(1) NOT NULL,
-  `nivel` int(11) NOT NULL,
-  `fasesConcluidas` int(11) NOT NULL,
+  `nivel` int(11) DEFAULT NULL,
+  `fasesConcluidas` int(11) DEFAULT NULL,
   `dataNasc` date NOT NULL,
   `dataCriacao` date NOT NULL,
   `dataModfc` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tbperfil`
+--
+
+INSERT INTO `tbperfil` (`codPerfil`, `codUsuario`, `nomePerfil`, `generoPerfil`, `iconPerfil`, `pontuacaoPerfil`, `dinheiroPerfil`, `tutorial`, `nivel`, `fasesConcluidas`, `dataNasc`, `dataCriacao`, `dataModfc`) VALUES
+(4, 1, 'Matheus Campos', 'Masculino', 'Frame 196.png', NULL, NULL, 0, 1, NULL, '2006-12-22', '2024-05-21', '2024-05-21'),
+(5, 1, 'Matheus Henrique', 'nao-definir', 'Frame 190.png', NULL, NULL, 0, 1, NULL, '2006-12-15', '2024-05-21', '2024-05-21'),
+(6, 1, 'Matheus Henrique', 'nao-definir', 'Frame 190.png', NULL, NULL, 0, 1, NULL, '2006-12-15', '2024-05-21', '2024-05-21');
 
 -- --------------------------------------------------------
 
@@ -230,9 +272,18 @@ CREATE TABLE `tbprogressousuario` (
 CREATE TABLE `tbroupa` (
   `codRoupa` int(11) NOT NULL,
   `nomeRoupa` varchar(50) NOT NULL,
+  `precoRoupa` int(11) NOT NULL,
   `imgRoupa` varchar(50) NOT NULL,
   `tokenRoupa` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tbroupa`
+--
+
+INSERT INTO `tbroupa` (`codRoupa`, `nomeRoupa`, `precoRoupa`, `imgRoupa`, `tokenRoupa`) VALUES
+(1, 'Roupa Teste', 0, '624be995f7dcb77f07bd98035aa1a23f.jpg', 'ea39342e27cfc8cac339e1c9bf6776b5'),
+(2, 'Roupa Branca', 0, '120fa382f360c4cb9b57f2c3cf71c62e.jpg', 'f0256aa7cc7c713a507d9fe14e191377');
 
 -- --------------------------------------------------------
 
@@ -258,6 +309,13 @@ CREATE TABLE `tbusuario` (
   `senhaUsuario` varchar(15) NOT NULL,
   `banido` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tbusuario`
+--
+
+INSERT INTO `tbusuario` (`codUsuario`, `nomeUsuario`, `emailUsuario`, `senhaUsuario`, `banido`) VALUES
+(1, 'Marley', 'marleysantos439@gmail.com', ':W@yJ7.9~K>m@tG', 0);
 
 --
 -- Índices para tabelas despejadas
@@ -396,13 +454,13 @@ ALTER TABLE `tbadmin`
 -- AUTO_INCREMENT de tabela `tbavatar`
 --
 ALTER TABLE `tbavatar`
-  MODIFY `codAvatar` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codAvatar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `tbcabelo`
 --
 ALTER TABLE `tbcabelo`
-  MODIFY `codCabelo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codCabelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tbcategoria`
@@ -432,13 +490,13 @@ ALTER TABLE `tbconquistausuario`
 -- AUTO_INCREMENT de tabela `tbdadosusuarios`
 --
 ALTER TABLE `tbdadosusuarios`
-  MODIFY `codDadosJogoUsuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codDadosJogoUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `tbgenero`
 --
 ALTER TABLE `tbgenero`
-  MODIFY `codGenero` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codGenero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tbitem`
@@ -462,13 +520,13 @@ ALTER TABLE `tbnivel`
 -- AUTO_INCREMENT de tabela `tbperfil`
 --
 ALTER TABLE `tbperfil`
-  MODIFY `codPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `codPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `tbroupa`
 --
 ALTER TABLE `tbroupa`
-  MODIFY `codRoupa` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codRoupa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tbtipoitem`
@@ -480,7 +538,7 @@ ALTER TABLE `tbtipoitem`
 -- AUTO_INCREMENT de tabela `tbusuario`
 --
 ALTER TABLE `tbusuario`
-  MODIFY `codUsuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restrições para tabelas despejadas
@@ -513,8 +571,7 @@ ALTER TABLE `tbconquistausuario`
 -- Restrições para tabelas `tbdadosusuarios`
 --
 ALTER TABLE `tbdadosusuarios`
-  ADD CONSTRAINT `DadosDependente` FOREIGN KEY (`codDependente`) REFERENCES `tbperfil` (`codPerfil`),
-  ADD CONSTRAINT `DadosJojo` FOREIGN KEY (`codJogo`) REFERENCES `tbjogo` (`codJogo`);
+  ADD CONSTRAINT `DadosDependente` FOREIGN KEY (`codDependente`) REFERENCES `tbperfil` (`codPerfil`);
 
 --
 -- Restrições para tabelas `tbitem`
