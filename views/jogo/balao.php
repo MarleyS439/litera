@@ -54,7 +54,7 @@ if ($_SESSION['authUser'] == null) {
                 <p id="corPontuacao">Sua Pontuação: <span class="total_moedas" id="final_point"></span></p>
                 <p id="corErros">Quantidade de Erros: <span class="total_moedas" id="final_error"></span></p>
                 <div class="btn-fim">
-                    <a href="index.php" class="btnFinal"><img src="img/recomecar.svg" alt=""></a>
+                    <a href="balao.php" class="btnFinal"><img src="img/recomecar.svg" alt=""></a>
                     <div class="btnFinal" id="abrirModal">
                         <p class="textoResultados">?</p>
                     </div>

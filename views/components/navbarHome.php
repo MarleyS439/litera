@@ -25,7 +25,7 @@ require_once "../dao/perfilDao.php";
                 </a>
             </li>
             <li class="profile-icon">
-                <a href="../views/user-profile.php">
+                <a href="../views/perfil-profile.php">
                     <svg width="28" height="31">
                         <image href="../assets/images/icons/profile-icon-desktop.svg" width="28" height="31" />
                     </svg>

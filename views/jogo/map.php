@@ -257,11 +257,11 @@ if ($_SESSION['authUser'] == null) {
                 <img src="../../assets/images/icons/home-icon.svg" alt="Início" id="home">
             </a>
 
-            <a href="#">
+            <a href="../views/store.php">
                 <img src="../../assets/images/icons/store-icon.svg" alt="Loja" id="store">
             </a>
 
-            <a href="#">
+            <a href="../views/perfil-profile.php">
                 <img src="../../assets/images/icons/profile-icon.svg" alt="Perfil" id="profile">
             </a>
 

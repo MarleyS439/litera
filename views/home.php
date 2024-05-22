@@ -131,7 +131,7 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
                     <img src="../assets/images/icons/store-icon.svg" alt="Loja" id="store">
                 </a>
 
-                <a href="../views/user-profile.php">
+                <a href="../views/perfil-profile.php">
                     <img src="../assets/images/icons/profile-icon.svg" alt="Perfil" id="profile">
                 </a>
 

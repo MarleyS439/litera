@@ -88,7 +88,7 @@ if ($_SESSION['authUser'] == null) {
                     </div>
                 <?php }; ?>
                 
-                <button class="edit-perfil" id="open-edit"><img src="../assets/images/icons/edit-icon-perfil.svg" alt=""></button>
+                <!-- <button class="edit-perfil" id="open-edit"><img src="../assets/images/icons/edit-icon-perfil.svg" alt=""></button> -->
             </div>
         </div>
 

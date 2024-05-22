@@ -159,9 +159,10 @@ try {
     </body>
     
     </html>";
-
     // Adiciona a imagem ao e-mail
     $mail->addEmbeddedImage($logo, 'imagem');
+
+    $mail->AltBody = 'Código de verificação: ' . $num_string;
 
     // Enviando o e-mail
     $mail->send();
