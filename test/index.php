@@ -60,16 +60,20 @@
             </div>
 
             <div class="cta-mobile">
-            <a href="">Entre ou cadastre-se</a>
+                <a href="">Entre ou cadastre-se</a>
             </div>
-
         </div>
 
-        <div>
+        <div class="hero">
             <!-- Container de itens do header -->
             <div class="container-header">
                 <div class="sidea">
+                    <h1>Aprender com Jogos Educativos</h1>
+                    <h2>Litera - Alfabetização Para Novas Gerações</h2>
 
+                    <div class="cta-div">
+                        <a href="">Saiba mais</a>
+                    </div>
                 </div>
 
                 <div class="sideb">
@@ -137,11 +141,11 @@
         <!-- Links de redes sociais -->
         <div class="social-media">
 
-            <i class="fa-brands fa-instagram" title="Instagram"></i>
-            <i class="fa-brands fa-facebook" title="Facebook"></i>
-            <i class="fa-brands fa-x-twitter" title="Twitter/X"></i>
-            <i class="fa-brands fa-pinterest" title="Pinterest"></i>
-            <i class="fa-brands fa-youtube" title="YouTube"></i>
+            <i class="fa-brands fa-instagram" title="Instagram" id="instagram"></i>
+            <i class="fa-brands fa-facebook" title="Facebook" id="facebook"></i>
+            <i class="fa-brands fa-x-twitter" title="Twitter/X" id="x"></i>
+            <i class="fa-brands fa-pinterest" title="Pinterest" id="pin"></i>
+            <i class="fa-brands fa-youtube" title="YouTube" id="youtube"></i>
 
         </div>
 

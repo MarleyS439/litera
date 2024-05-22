@@ -22,7 +22,7 @@ if ($usuarioAutenticado['banido'] != 0) {
 if ($_SESSION['authUser'] == null) {
     header('Location: ./login.php?status=erro4');
 }
-var_dump($perfilAutenticado);
+
 ?>
 
 <?php

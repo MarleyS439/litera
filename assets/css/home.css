@@ -81,11 +81,15 @@
         color: var(--black2);
     }
 
-    #aa {
-        background-image: url(../images/Frame\ 150.png);
+    #game1 {
+        background-image: url(../../assets/images/Frame\ 150.png);
         background-size: cover;
-        background-repeat: no-repeat;
     }
+
+    #game2 {
+        background-image: url(../../assets/images/Frame\ 33.png);
+    }
+
 
 }
 
@@ -136,7 +140,6 @@
 
 
     .bg-game {
-        background-image: url(../images/Frame\ 149.png);
         background-size: cover;
         background-repeat: no-repeat;
         width: 400px;
@@ -570,10 +573,9 @@
         position: relative;
         top: 5vh;
         width: 100%;
-        background-image: url(../images/Group\ 51.png);
+        background-image: url(../images/fundoHome.png);
         background-repeat: no-repeat;
         background-size: 100%;
-        margin: 0% 2%;
         height: 100%;
     }
 
