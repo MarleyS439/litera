@@ -1,0 +1,140 @@
+@import url(./default.css);
+@import url(./animations.css);
+
+:root {
+    --filter-black: #00000035;
+    --azul-card: #6AC3FA;
+    --color-azul: #1C96E1;
+    --black: #000;
+    --white: #fff;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {}
+
+/* Tablets */
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+
+/* Desktops */
+@media screen and (min-width: 1025px) {
+    body {
+        background-image: url(../images/profile-user.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .container {
+        height: 100vh;
+        padding: 10px;
+        z-index: 1;
+        background-color: var(--filter-black);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card {
+        margin-top: 2%;
+        width: 65%;
+        height: 80%;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    .title-card {
+        width: 100%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .title-card p {
+        text-align: center;
+        font-size: 26px;
+        font-weight: 800;
+    }
+
+    .infos-card {
+        width: 100%;
+        height: 42%;
+        display: flex;
+        padding: 0px 5%;
+    }
+
+    .infos-card .area-avatar {
+        width: 35%;
+        height: 100%;
+        background-color: var(--azul-card);
+        border-radius: 10px;
+    }
+
+    .infos-card .area-infos {
+        width: 65%;
+        height: 100%;
+    }
+
+    .infos-principais {
+        display: flex;
+        padding: 5% 5%;
+        justify-content: space-between;
+    }
+
+    .infos-principais span {
+        font-size: 30px;
+        font-weight: 900;
+        font-family: var(--font-poppins-bold);
+    }
+
+    .infos-principais .user {
+        color: var(--color-azul);
+    }
+
+    .infos-principais div {
+        display: flex;
+    }
+
+    .infos-principais div>div {
+        width: 40px;
+        height: 40px;
+        background-color: var(--color-azul);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+    }
+
+    .infos-principais div>div>span {
+        color: white;
+    }
+
+    .data-inicio {
+        width: 100%;
+        padding: 0px 5%;
+    }
+
+    .data-inicio span,
+    .progresso span {
+        font-family: var(--font-poppins);
+        font-size: 24px;
+        color: var(--black);
+    }
+
+    .progresso {
+        width: 100%;
+        padding: 10px 5%;
+    }
+
+    .progresso .barra {
+        width: 100%;
+        height: 30px;
+        border: solid 1px var(--black);
+        border-radius: 5px;
+    }
+
+    .progresso .barra>.barra-progesso {
+        background-color: var(--azul-card);     
+    }
+
+}

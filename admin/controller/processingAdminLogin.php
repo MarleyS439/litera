@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     header("Location: ../view/home.php");
                 }else{
                     // caso negado, redirecionar para a página de login com uma mensagem de erro
-                     header("Location: ../view/index.php?status=erro1");
+                     header("Location: ../view/login-admin.php?status=erro1");
                 }
             } else {
                 echo "Email inválido.";

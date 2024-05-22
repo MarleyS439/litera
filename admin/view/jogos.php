@@ -51,8 +51,8 @@ $usuarios = UsuarioDao::selectAll();
                     <h3>Jogo</h3>
                     <select name="selectJogo" id="selectJogo">
                         <option value="0" selected>Selecione o jogo</option>
-                        <option value="1">Caça as palavras</option>
-                        <option value="2">Adivinhe as figuras</option>
+                        <option value="2">Montar Sílabas</option>
+                        <option value="1">Acertar Balões</option>
                         <option value="3">Jogo 3</option>
                         <option value="4">Jogo 4</option>
                     </select>

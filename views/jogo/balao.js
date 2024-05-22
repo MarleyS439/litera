@@ -1,807 +1,991 @@
-const toggle = document.querySelector('.toggle')
-const menu = document.querySelector('.menu')
-toggle.onclick = function () {
-  menu.classList.toggle('active')
-}
-let b1 = document.getElementById('b1')
-let b2 = document.getElementById('b2')
-let b3 = document.getElementById('b3')
-let b4 = document.getElementById('b4')
-let b5 = document.getElementById('b5')
-let pontos_fim = document.getElementById('final_point')
-let fim = document.getElementById('fim')
-let moedas = 3
-let vidas = 1
-let icoAudioOff = document.getElementById('off')
-let icoAudioOn = document.getElementById('on')
-let icoAudioOff_mob = document.getElementById('offmob')
-let icoAudioOn_mob = document.getElementById('onmob')
-let comece = document.getElementById('botao');
-let repetir = document.getElementById('repetir')
-let audio = new Audio()
 
-let falaSrc = ''
+
+
+//BALÕES!!
+
+let balaoA = document.getElementById("b1");
+let balaoE = document.getElementById("b2");
+let balaoI = document.getElementById("b3");
+let balaoO = document.getElementById("b4");
+let balaoU = document.getElementById("b5");
+var squares = document.querySelectorAll('.square');
+
+
+//VERIFICADOR!!
+var verificar = document.getElementById("verificar");
+
+
+
+// VIDAS:
+let vidas = 1;
+
+// EXIBIR PONTOS NO FIM
+let pontos_fim = document.getElementById("final_point");
+
+let pontos_fim2 = document.getElementById("final_point2");
+
+let pontos_fim3 = document.getElementById("final_point3");
+
+let pontos_errados = document.getElementById("final_error");
+
+let pontos_errados2 = document.getElementById("final_error2");
+
+let pontos_errados3 = document.getElementById("final_error3");
+
+let pontos_acertos = document.getElementById("final_acerto");
+
+let pontos_acertos2 = document.getElementById("final_acerto2");
+
+// BOX INICIO DO JOGO!
+const comeco = document.getElementById("boxComece");
+
+// AUDIOS PERGUNTA
+let perguntaSrc = "";
+
+// AUDIOS INICIO DA FRASE
+let fraseSrc = "";
+
+// MOEDAS CONTAGEM
+let moedas = 30;
 
 // CONTAGEM DE ERROS!
 let errado = 0;
 
-function comecarJogo() {
-  return new Promise(function (resolve, reject) {
-
-    var telaComece = document.getElementById('comece');
-
-    comece.addEventListener('click', function () {
-      telaComece.classList.add('fadeOut');
-      setTimeout(() => {
-        telaComece.style.display = 'none'
-      }, 1000)
-      falaSrc = 'audios/botao.mp3';
-      audio.src = falaSrc
-      audio.play();
-    })
-
-
-
-    comece.addEventListener('click', function () {
-      setTimeout(() => {
-        falaSrc = 'Audios/Escolha a Letra Falada.mp3'
-        audio.src = falaSrc
-        audio.play()
-
-        setTimeout(() => {
-          audio.onended = function () {
-            // Faça algo quando o áudio terminar a reprodução
-            if (audio.onended) {
-              console.log("O áudio terminou de reproduzir.")
-              // Resolva a promessa quando a execução terminar
-              resolve();
-            }
-          }
-        }, 2000)
-      }, 1500)
-
-    })
+// CONTAGEM DE ACERTOS!
+let acertado = 0;
 
 
 
 
-    audio.onplay = function () {
-      icoAudioOff.style.display = 'none';
-      icoAudioOn.style.display = 'block';
-      icoAudioOff_mob.style.display = 'none';
-      icoAudioOn_mob.style.display = 'block';
-    };
 
-    audio.onpause = function () {
-      icoAudioOff.style.display = 'block';
-      icoAudioOn.style.display = 'none';
-      icoAudioOff_mob.style.display = 'block';
-      icoAudioOn_mob.style.display = 'none';
-    };
-  });
-}
-/*audio.onended = function() {
-  // Faça algo quando o áudio terminar a reprodução
-  if(audio.onended){
-    console.log("O áudio terminou de reproduzir.")
-    fazerPergunta()
-   }
-  }*/
+// BUTTONS...
+const comece = document.getElementById("comece");
 
-function selecaoBalao(balao) {
+// ACERTOS
+const acertou = document.getElementById("acertou");
 
-  if (balao == b1) {
-    falaSrc = 'Audios/A.mp3'
-    audio.src = falaSrc
-    audio.play()
-  } else if (balao == b2) {
-    falaSrc = 'Audios/E.mp3'
-    audio.src = falaSrc
-    audio.play()
-  } else if (balao == b3) {
-    falaSrc = 'Audios/I.mp3'
-    audio.src = falaSrc
-    audio.play()
-  } else if (balao == b4) {
-    falaSrc = 'Audios/O.mp3'
-    audio.src = falaSrc
-    audio.play()
-  } else if (balao == b5) {
-    falaSrc = 'Audios/U.mp3'
-    audio.src = falaSrc
-    audio.play()
-  }
+const acertoPergunta = document.getElementById("joia");
+
+// ERROS
+const errou = document.getElementById("errada");
+
+// FIM DO JOGO
+const fim = document.getElementById("finalizar");
+
+//falas
+let audio = new Audio();
+
+let letra = new Audio();
+
+let clickLetra = new Audio();
+
+let acertoeErro = new Audio();
+
+let verificarCerta = new Audio();
+
+let audioRetorne = new Audio();
+
+//música
+var audioBackground = new Audio();
+
+// Selecionar o elemento onde o cronômetro será exibido
+let cronometroElement = document.getElementById("cronometro");
+
+// Variável para armazenar o tempo em segundos
+let segundos = 0;
+
+// Atribui as imagens das sílabas e da fruta aos elementos correspondentes
+
+// imgSilaba = 'img/jogoFruta/silabas/MA.svg'
+// silaba3.src = imgSilaba
+
+// Adiciona evento de clique ao botão de áudio
 
 
+function particulasEfeito(){
+  if(!activado) return;
 
-  audio.onplay = function () {
-    icoAudioOff.style.display = 'none';
-    icoAudioOn.style.display = 'block';
-    icoAudioOff_mob.style.display = 'none';
-    icoAudioOn_mob.style.display = 'block';
-  };
+        const particulasContainer = activado.querySelector('.particulas');
+        particulasContainer.style.display = "flex";
+        const colors = ['#ff0000', '#ff6600', '#ff00ff', '#00ff00', '#00ffff', '#ffff00'];
 
-  audio.onpause = function () {
-    icoAudioOff.style.display = 'block';
-    icoAudioOn.style.display = 'none';
-    icoAudioOff_mob.style.display = 'block';
-    icoAudioOn_mob.style.display = 'none';
-  };
+        function getRandomColor() {
+        return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        for (let i = 0; i < 20; i++) {
+        const particula = document.createElement('div');
+        particula.classList.add('particula');
+        particula.style.backgroundColor = getRandomColor();
+        particula.style.left = `${Math.random() * 100}%`;
+        particula.style.top = `${Math.random() * 100}%`;
+        particulasContainer.appendChild(particula);
+
+        // Remover a partícula após a animação
+        particula.addEventListener('animationend', () => {
+            particula.remove();
+        });
+      }
+
 }
 
-function silabasErradas() {
+function baloesErradas() {
   errado++;
 }
 
-function aumentarMoedas() {
-  moedas = moedas + moedas + Math.floor(Math.random() * moedas);
-  moedas++;
-  document.getElementById('moeda').textContent = moedas;
+function baloesAcertados() {
+  acertado++;
 }
 
-
+function aumentarMoedas() {
+  moedas = moedas + moedas - Math.floor(Math.random() * moedas);
+  moedas++;
+  document.getElementById("moeda").textContent = moedas;
+}
 
 function atualizarBarraVidas() {
   // Calcula a largura percentual da barra para cada vida
-  let larguraPercentual = 100 / 5; // Considerando 3 vidas
-  let largura = larguraPercentual * vidas + '%';
+  let larguraPercentual = 100 / 2; // Considerando 3 vidas
+  let largura = larguraPercentual * vidas + "%";
 
   // Atualiza a largura de cada elemento .acerto
-  let acertos = document.querySelectorAll('.acerto');
+  let acertos = document.querySelectorAll(".acerto");
   acertos.forEach(function (acerto) {
     acerto.style.width = largura;
   });
 }
 
-
-/*function fazerPergunta() {
-
-  let audioPlaying = false;
-
-  function playAudio(src) {
-      audioPlaying = true;
-      audio.src = src;
-      audio.play();
-      audio.onended = function() {
-          audioPlaying = false;
-      };
-  }
-
-  var perguntas = ['Audios/A.mp3', 'Audios/E.mp3', 'Audios/I.mp3', 'Audios/O.mp3', 'Audios/U.mp3'];
-
-  var perguntaAtual = 0;
-
-  // Reproduz o áudio da primeira pergunta
-  setTimeout(function () {
-      playAudio(perguntas[perguntaAtual]);
-  }, 400);
-
-  function responderPergunta(balao) {
-      if (audioPlaying) {
-          return; // Sai da função se o áudio estiver tocando
-      }
-
-      // Verifica se a resposta do usuário está correta
-      if (balao.id === 'b' + (perguntaAtual + 1)) {
-          console.log('Resposta correta!');
-          if (vidas <= 5) {
-              document.getElementById('v' + vidas).style.backgroundColor = '#3EF150';
-              vidas++;
-              atualizarBarraVidas();
-          }
-          aumentarMoedas();
-          setTimeout(function () {
-              playAudio('Audios/Resposta Correta.mp3');
-          }, 1000);
-          setTimeout(function () {
-              playAudio('Audios/bolha.mp3');
-              balao.style.display = 'none';
-          }, 3000);
-
-          // Avança para a próxima pergunta
-          perguntaAtual++;
-          if (perguntaAtual < perguntas.length) {
-              setTimeout(function () {
-                  playAudio(perguntas[perguntaAtual]);
-              }, 4600);
-          } else {
-              setTimeout(function () {
-                  playAudio('Audios/Fim de Jogo.mp3');
-                  fim.style.display = 'flex';
-                  pontos_fim.textContent = moedas + ',00';
-
-                  // lógica de inserção no banco
-                  const dados = {
-                      id: document.getElementById("id").value,
-                      money: moedas,
-                  };
-
-                  // Cria o objeto XMLHttpRequest
-                  const xhr = new XMLHttpRequest();
-
-                  // Define o método e a URL para a requisição
-                  xhr.open('POST', '../../controller/insertMoney.php', true);
-
-                  // Define o cabeçalho da requisição
-                  xhr.setRequestHeader('Content-Type', 'application/json');
-
-                  // Função de callback para quando a requisição estiver completa
-                  xhr.onload = function () {
-                      if (xhr.status >= 200 && xhr.status < 300) {
-                          // Requisição bem-sucedida, você pode lidar com a resposta aqui
-                          console.log(xhr.responseText);
-                      } else {
-                          // Trate os erros de requisição aqui
-                          console.error('Erro ao enviar requisição');
-                      }
-                  };
-
-                  // Envia a requisição com os dados convertidos para JSON
-                  xhr.send(JSON.stringify(dados));
-
-                  //logica de banco para pontuação e o nivel
-                  const nivelInsert = {
-                      id: document.getElementById("id").value,
-                      pontuacao: 50,
-                  };
-
-                  // Cria o objeto XMLHttpRequest
-                  const xhr2 = new XMLHttpRequest();
-
-                  // Define o método e a URL para a requisição
-                  xhr2.open("POST", "../../controller/insertPontuacao.php", true);
-
-                  // Define o cabeçalho da requisição
-                  xhr2.setRequestHeader("Content-Type", "application/json");
-
-                  // Função de callback para quando a requisição estiver completa
-                  xhr2.onload = function () {
-                      if (xhr2.status >= 200 && xhr2.status < 300) {
-                          // Requisição bem-sucedida, você pode lidar com a resposta aqui
-                          console.log(xhr2.responseText);
-                      } else {
-                          // Trate os erros de requisição aqui
-                          console.error("Erro ao enviar requisição");
-                      }
-                  };
-
-                  // Envia a requisição com os dados convertidos para JSON
-                  xhr2.send(JSON.stringify(nivelInsert));
-
-              }, 4700);
-          }
-      } else {
-          setTimeout(function () {
-              playAudio('Audios/Resposta Errada.mp3');
-          }, 1000);
-      }
-  }
-
-  // Adiciona event listeners aos botões
-  b1.addEventListener('click', function () {
-    responderPergunta(this)
-  })
-  b2.addEventListener('click', function () {
-    responderPergunta(this)
-  })
-  b3.addEventListener('click', function () {
-    responderPergunta(this)
-  })
-  b4.addEventListener('click', function () {
-    responderPergunta(this)
-  })
-  b5.addEventListener('click', function () {
-    responderPergunta(this)
-  })
-
-
-
-  repetir.addEventListener('click', function () {
-    falaSrc = 'Audios/Escolha a Letra Falada.mp3'
-    audio.src = falaSrc
-    audio.play()
-    setTimeout(function () {
-      audio.src = perguntas[perguntaAtual];
-      audio.play();
-      console.log('Repetindo!')
-    }, 2300)
-
-  })
-}*/
-
-/*function fazerPergunta() {
-
-  let audioPlaying = false;
-
-  function playAudio(src) {
-      audioPlaying = true;
-      audio.src = src;
-      audio.play();
-      audio.onended = function() {
-          audioPlaying = false;
-          // Desbloqueia os botões após o áudio terminar
-          enableButtons();
-      };
-  }
-
-  function disableButtons() {
-      b1.disabled = true;
-      b2.disabled = true;
-      b3.disabled = true;
-      b4.disabled = true;
-      b5.disabled = true;
-  }
-
-  function enableButtons() {
-      b1.disabled = false;
-      b2.disabled = false;
-      b3.disabled = false;
-      b4.disabled = false;
-      b5.disabled = false;
-  }
-
-  var perguntas = ['Audios/A.mp3', 'Audios/E.mp3', 'Audios/I.mp3', 'Audios/O.mp3', 'Audios/U.mp3'];
-
-  var perguntaAtual = 0;
-
-  // Reproduz o áudio da primeira pergunta
-  setTimeout(function () {
-      playAudio(perguntas[perguntaAtual]);
-      // Bloqueia os botões enquanto o áudio da pergunta está tocando
-      disableButtons();
-  }, 400);
-
-  function responderPergunta(balao) {
-      if (audioPlaying) {
-          return; // Sai da função se o áudio estiver tocando
-      }
-
-      // Verifica se a resposta do usuário está correta
-      if (balao.id === 'b' + (perguntaAtual + 1)) {
-          console.log('Resposta correta!');
-          if (vidas <= 5) {
-              document.getElementById('v' + vidas).style.backgroundColor = '#3EF150';
-              vidas++;
-              atualizarBarraVidas();
-          }
-          aumentarMoedas();
-          setTimeout(function () {
-              playAudio('Audios/Resposta Correta.mp3');
-          }, 1000);
-          setTimeout(function () {
-              playAudio('Audios/bolha.mp3');
-              balao.style.display = 'none';
-          }, 3000);
-
-          // Avança para a próxima pergunta
-          perguntaAtual++;
-          if (perguntaAtual < perguntas.length) {
-              setTimeout(function () {
-                  playAudio(perguntas[perguntaAtual]);
-                  // Bloqueia os botões enquanto o áudio da pergunta está tocando
-                  disableButtons();
-              }, 4600);
-          } else {
-              setTimeout(function () {
-                  playAudio('Audios/Fim de Jogo.mp3');
-                  fim.style.display = 'flex';
-                  pontos_fim.textContent = moedas + ',00';
-
-                  // lógica de inserção no banco
-                  const dados = {
-                      id: document.getElementById("id").value,
-                      money: moedas,
-                  };
-
-                  // Cria o objeto XMLHttpRequest
-                  const xhr = new XMLHttpRequest();
-
-                  // Define o método e a URL para a requisição
-                  xhr.open('POST', '../../controller/insertMoney.php', true);
-
-                  // Define o cabeçalho da requisição
-                  xhr.setRequestHeader('Content-Type', 'application/json');
-
-                  // Função de callback para quando a requisição estiver completa
-                  xhr.onload = function () {
-                      if (xhr.status >= 200 && xhr.status < 300) {
-                          // Requisição bem-sucedida, você pode lidar com a resposta aqui
-                          console.log(xhr.responseText);
-                      } else {
-                          // Trate os erros de requisição aqui
-                          console.error('Erro ao enviar requisição');
-                      }
-                  };
-
-                  // Envia a requisição com os dados convertidos para JSON
-                  xhr.send(JSON.stringify(dados));
-
-                  //logica de banco para pontuação e o nivel
-                  const nivelInsert = {
-                      id: document.getElementById("id").value,
-                      pontuacao: 50,
-                  };
-
-                  // Cria o objeto XMLHttpRequest
-                  const xhr2 = new XMLHttpRequest();
-
-                  // Define o método e a URL para a requisição
-                  xhr2.open("POST", "../../controller/insertPontuacao.php", true);
-
-                  // Define o cabeçalho da requisição
-                  xhr2.setRequestHeader("Content-Type", "application/json");
-
-                  // Função de callback para quando a requisição estiver completa
-                  xhr2.onload = function () {
-                      if (xhr2.status >= 200 && xhr2.status < 300) {
-                          // Requisição bem-sucedida, você pode lidar com a resposta aqui
-                          console.log(xhr2.responseText);
-                      } else {
-                          // Trate os erros de requisição aqui
-                          console.error("Erro ao enviar requisição");
-                      }
-                  };
-
-                  // Envia a requisição com os dados convertidos para JSON
-                  xhr2.send(JSON.stringify(nivelInsert));
-
-              }, 4700);
-          }
-      } else {
-          setTimeout(function () {
-              playAudio('Audios/Resposta Errada.mp3');
-          }, 1000);
-      }
-  }
-
-  // Adiciona event listeners aos botões
-  b1.addEventListener('click', function () {
-      responderPergunta(this);
-      // Bloqueia os botões após a resposta ser dada
-      disableButtons();
-  });
-  b2.addEventListener('click', function () {
-      responderPergunta(this);
-      // Bloqueia os botões após a resposta ser dada
-      disableButtons();
-  });
-  b3.addEventListener('click', function () {
-      responderPergunta(this);
-      // Bloqueia os botões após a resposta ser dada
-      disableButtons();
-  });
-  b4.addEventListener('click', function () {
-      responderPergunta(this);
-      // Bloqueia os botões após a resposta ser dada
-      disableButtons();
-  });
-  b5.addEventListener('click', function () {
-      responderPergunta(this);
-      // Bloqueia os botões após a resposta ser dada
-      disableButtons();
-  });
-
-  repetir.addEventListener('click', function () {
-      falaSrc = 'Audios/Escolha a Letra Falada.mp3';
-      audio.src = falaSrc;
-      audio.play();
-      setTimeout(function () {
-          audio.src = perguntas[perguntaAtual];
-          audio.play();
-          console.log('Repetindo!');
-      }, 2300);
-  });
-}*/
-
 function fazerPergunta() {
 
-  let audioPlaying = false;
-
-  function playAudio(src) {
-    audioPlaying = true;
-    audio.src = src;
-    audio.play();
-    audio.onended = function () {
-      audioPlaying = false;
-      // Desbloqueia os botões após o áudio terminar
-      enableButtons();
-    };
-  }
-
-  function disableButtons() {
-    b1.disabled = true;
-    b2.disabled = true;
-    b3.disabled = true;
-    b4.disabled = true;
-    b5.disabled = true;
-  }
-
-  function enableButtons() {
-    b1.disabled = false;
-    b2.disabled = false;
-    b3.disabled = false;
-    b4.disabled = false;
-    b5.disabled = false;
-  }
-
-  var perguntas = ['Audios/A.mp3', 'Audios/E.mp3', 'Audios/I.mp3', 'Audios/O.mp3', 'Audios/U.mp3'];
+  var perguntas = ['Audios/A.mp3','Audios/E.mp3','Audios/I.mp3',
+  'Audios/O.mp3','Audios/U.mp3'];
 
   var perguntaAtual = 0;
 
-  // Reproduz o áudio da primeira pergunta
-  setTimeout(function () {
-    playAudio(perguntas[perguntaAtual]);
-    // Bloqueia os botões enquanto o áudio da pergunta está tocando
-    disableButtons();
-  }, 400);
+  comece.addEventListener("click", function () {
+
+    let mutar = document.getElementById("mutarEdesmutar");
+
+    // Reproduzir música de fundo
+    audioBackground.src = "Falas Jogo Silabas/musica.mp3";
+    audioBackground.play();
+
+    // Definir estado inicial de mudo como falso (não mutado)
+    var isMuted = false;
+
+    // Event listener para o botão de mutar/desmutar
+    mutar.addEventListener('click', function() {
+        // Alternar entre mutar e desmutar
+        if (isMuted) {
+            audioBackground.volume = 0.1; // Definir volume de volta para o normal
+            isMuted = false;
+            mutar.style.background = "url('./img/icoPlay.svg')";
+            mutar.style.backgroundSize = "cover";
+            mutar.style.backgroundPosition = "center center";
+        } else {
+            audioBackground.volume = 0; // Mudo
+            isMuted = true;
+            mutar.style.background = "url('./img/icoMuted.svg')";
+            mutar.style.backgroundSize = "cover";
+            mutar.style.backgroundPosition = "center center";
+            
+        }
+    });
+
+    // Event listener para quando a música acabar
+    audioBackground.addEventListener('ended', function() {
+      // Reproduzir a música novamente
+      audioBackground.currentTime = 0; // Reiniciar a música
+      audioBackground.play();
+    });
+
+    // Iniciar a reprodução da música
+    audioBackground.play();
+
+    audioBackground.volume = 0.1;
+    
+
+
+    function atualizarCronometro() {
+      // Incrementar os segundos
+      segundos++;
+      
+      // Calcular horas, minutos e segundos
+      let horas = Math.floor(segundos / 3600);
+      let minutos = Math.floor((segundos % 3600) / 60);
+      let seg = segundos % 60;
+      
+      // Exibir o cronômetro no formato hh:mm:ss
+      cronometroElement.textContent = 
+          (horas < 10 ? "0" + horas : horas) + ":" +
+          (minutos < 10 ? "0" + minutos : minutos) + ":" +
+          (seg < 10 ? "0" + seg : seg);
+    }
+  
+    // Iniciar o cronômetro
+    let intervalId = setInterval(atualizarCronometro, 1000); // Atualiza a cada segundo
+    
+    // Exemplo de como parar o cronômetro após 10 segundos
+    setTimeout(function() {
+        clearInterval(intervalId); // Parar o intervalo
+    },  3600000);
+
+
+
+    fraseSrc = 'Audios/Escolha a Letra Falada.mp3';
+    audio.src = fraseSrc;
+    audio.play();
+
+    setTimeout(function () {
+      console.log(perguntas[perguntaAtual]);
+
+      setTimeout(function () {
+        perguntaSrc = perguntas[perguntaAtual];
+        letra.src = perguntaSrc;
+        letra.play();
+      }, 2200);
+    }, 400);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+    
+
+      comeco.style.display = "none";
+
+  
+  });
+
+
+  
 
   function responderPergunta(balao) {
-    if (audioPlaying) {
-      return; // Sai da função se o áudio estiver tocando
+    console.log("Pergunta atual:", perguntaAtual);
+    if(perguntaAtual === 0){
+      if(balao === "A"){
+        particulasEfeito();
+
+        activado.style.animation = 'explode .7s forwards';
+
+        // Remover o quadrado após a explosão
+        setTimeout(function() {
+        activado.style.display = 'none';
+        }, 500);
+
+        
+        
+        fundo.style.display = "none";
+        verificar.style.display = "none";
+
+        console.log("A pressionado!!")
+        if (vidas <= 8) {
+          document.getElementById("v" + vidas).style.backgroundColor =
+            "#3EF150";
+          vidas++;
+          atualizarBarraVidas();
+        }
+
+          aumentarMoedas();
+          console.log("Resposta correta!");
+
+          verificarCerta.src = "Falas jogo Balao/explodir.mp3";
+          verificarCerta.play();
+
+          baloesAcertados()
+          console.log("vc acertou:" +acertado);
+          
+          setTimeout(function () {
+            acertou.style.display = "flex";
+            acertoeErro.src = "Falas jogo Balao/Resposta correta.mp3";
+            acertoeErro.play();
+            
+          }, 500);
+
+          // Avança para a próxima pergunta
+          perguntaAtual++;
+          if (perguntaAtual < perguntas.length) {
+            setTimeout(function () {
+              acertou.style.display = "none";
+              perguntaSrc = perguntas[perguntaAtual];
+              letra.src = perguntaSrc;
+              letra.play();
+        
+              letra.volume = 1;
+              
+              
+            }, 3000);
+            console.log("Proxima pergunta: " +perguntas[perguntaAtual]);
+          }
+          else {
+            setTimeout(function () {
+              console.log("FIM!");
+            }, 2500);
+          }
+      }
+      else {
+        console.log("Errada!");
+        baloesErradas()
+        console.log("resposta errada: "+errado)
+        setTimeout(function () {        
+          closeSquare()
+            
+        }, 1400);
+        setTimeout(function () {
+          errou.style.display = "flex";
+          
+          acertoeErro.src = "Falas jogo Balao/Resposta errada.mp3";
+          acertoeErro.play();
+        
+          setTimeout(function () {
+            errou.style.display = "none";
+          }, 2500);
+        }, 500);
+        
+       
+          
+
+        
+        
+      }
+     
     }
+    else if(perguntaAtual === 1){
+      if(balao === "E"){
+        particulasEfeito();
 
-    // Verifica se a resposta do usuário está correta
-    if (balao.id === 'b' + (perguntaAtual + 1)) {
-      console.log('Resposta correta!');
-      if (vidas <= 5) {
-        document.getElementById('v' + vidas).style.backgroundColor = '#3EF150';
-        vidas++;
-        atualizarBarraVidas();
+        activado.style.animation = 'explode .7s forwards';
+
+        // Remover o quadrado após a explosão
+        setTimeout(function() {
+        activado.style.display = 'none';
+        }, 500);
+
+        
+        fundo.style.display = "none";
+        verificar.style.display = "none";
+        console.log("E pressionado!!")
+        if (vidas <= 8) {
+          document.getElementById("v" + vidas).style.backgroundColor =
+            "#3EF150";
+          vidas++;
+          atualizarBarraVidas();
+        }
+
+          aumentarMoedas();
+          console.log("Resposta correta!");
+
+          verificarCerta.src = "Falas jogo Balao/explodir.mp3";
+          verificarCerta.play();
+
+          baloesAcertados()
+          console.log("vc acertou:" +acertado);
+          setTimeout(function () {
+            acertou.style.display = "flex";
+            acertoeErro.src = "Falas jogo Balao/Resposta correta.mp3";
+            acertoeErro.play();
+          }, 500);
+
+          
+
+          // Avança para a próxima pergunta
+          perguntaAtual++;
+          if (perguntaAtual < perguntas.length) {
+            setTimeout(function () {
+  
+              acertou.style.display = "none";
+                
+              
+    
+
+              perguntaSrc = perguntas[perguntaAtual];
+              letra.src = perguntaSrc;
+              letra.play();
+        
+              letra.volume = 1;
+              
+              
+            }, 3000);
+            console.log("Proxima pergunta: " +perguntas[perguntaAtual]);
+          }
+          else {
+            setTimeout(function () {
+              console.log("FIM!");
+            }, 2500);
+          }
       }
-      aumentarMoedas();
-      setTimeout(function () {
-        playAudio('Audios/Resposta Correta.mp3');
-      }, 1000);
-      setTimeout(function () {
-        playAudio('Audios/bolha.mp3');
-        balao.style.display = 'none';
-      }, 3000);
-
-      // Avança para a próxima pergunta
-      perguntaAtual++;
-      if (perguntaAtual < perguntas.length) {
+      else {
+        console.log("Errada!");
+        baloesErradas()
+        console.log("resposta errada: "+errado)
+        setTimeout(function () {        
+          closeSquare()
+            
+        }, 1400);
         setTimeout(function () {
-          playAudio(perguntas[perguntaAtual]);
-          // Bloqueia os botões enquanto o áudio da pergunta está tocando
-          disableButtons();
-        }, 4600);
-      } else {
-        setTimeout(function () {
-          playAudio('Audios/Fim de Jogo.mp3');
-          fim.style.display = 'flex';
-          pontos_fim.textContent = moedas + ',00';
-
-          // lógica de inserção no banco
-          const dados = {
-            id: document.getElementById("id").value,
-            money: moedas,
-          };
-
-          // Cria o objeto XMLHttpRequest
-          const xhr = new XMLHttpRequest();
-
-          // Define o método e a URL para a requisição
-          xhr.open("POST", "../../controller/insertMoney.php", true);
-
-          // Define o cabeçalho da requisição
-          xhr.setRequestHeader("Content-Type", "application/json");
-
-          // Função de callback para quando a requisição estiver completa
-          xhr.onload = function () {
-            if (xhr.status >= 200 && xhr.status < 300) {
-              // Requisição bem-sucedida, você pode lidar com a resposta aqui
-              console.log(xhr.responseText);
-            } else {
-              // Trate os erros de requisição aqui
-              console.error("Erro ao enviar requisição");
-            }
-          };
-          // Envia a requisição com os dados convertidos para JSON
-          xhr.send(JSON.stringify(dados));
-
-          //logica de banco para pontuação e o nivel
-          const nivelInsert = {
-            id: document.getElementById("id").value,
-            pontuacao: 50,
-          };
-
-          // Cria o objeto XMLHttpRequest
-          const xhr2 = new XMLHttpRequest();
-
-          // Define o método e a URL para a requisição
-          xhr2.open("POST", "../../controller/insertPontuacao.php", true);
-
-          // Define o cabeçalho da requisição
-          xhr2.setRequestHeader("Content-Type", "application/json");
-
-          // Função de callback para quando a requisição estiver completa
-          xhr2.onload = function () {
-            if (xhr2.status >= 200 && xhr2.status < 300) {
-              // Requisição bem-sucedida, você pode lidar com a resposta aqui
-              console.log(xhr2.responseText);
-            } else {
-              // Trate os erros de requisição aqui
-              console.error("Erro ao enviar requisição");
-            }
-          };
-          // Envia a requisição com os dados convertidos para JSON
-          xhr2.send(JSON.stringify(nivelInsert));
-
-          // Seu script JavaScript
-          const dadosFase = {
-            id: document.getElementById("id").value,
-            idFase: 1,
-            money: moedas,
-            acertos: 5,
-            erros: errado ? errado : 0,
-            pontos: 50
-          };
-
-          // Cria o objeto XMLHttpRequest
-          const xhrDadosFase = new XMLHttpRequest();
-
-          // Define o método e a URL para a requisição
-          xhrDadosFase.open("POST", "../../controller/insertDadosFase.php", true);
-
-          // Define o cabeçalho da requisição
-          xhrDadosFase.setRequestHeader("Content-Type", "application/json");
-
-          // Função de callback para quando a requisição estiver completa
-          xhrDadosFase.onload = function () {
-            if (xhrDadosFase.status >= 200 && xhrDadosFase.status < 300) {
-              // Requisição bem-sucedida, você pode lidar com a resposta aqui
-              console.log(xhrDadosFase.responseText);
-            } else {
-              // Trate os erros de requisição aqui
-              console.error("Erro ao enviar requisição");
-            }
-          };
-
-          // Envia a requisição com os dados convertidos para JSON
-          xhrDadosFase.send(JSON.stringify(dadosFase));
-        }, 4700);
+          errou.style.display = "flex";
+          
+          acertoeErro.src = "Falas jogo Balao/Resposta errada.mp3";
+          acertoeErro.play();
+        
+          setTimeout(function () {
+            errou.style.display = "none";
+          }, 2500);
+        }, 500); 
       }
-    } else {
-      setTimeout(function () {
-        playAudio('Audios/Resposta Errada.mp3');
-        silabasErradas();
-      }, 1000);
+     
+    }
+    else if(perguntaAtual === 2){
+      if(balao === "I"){
+
+        particulasEfeito();
+
+        activado.style.animation = 'explode .7s forwards';
+
+        // Remover o quadrado após a explosão
+        setTimeout(function() {
+        activado.style.display = 'none';
+        }, 500);
+
+      
+        fundo.style.display = "none";
+        verificar.style.display = "none";
+        console.log("I pressionado!!")
+        if (vidas <= 8) {
+          document.getElementById("v" + vidas).style.backgroundColor =
+            "#3EF150";
+          vidas++;
+          atualizarBarraVidas();
+        }
+
+          aumentarMoedas();
+          console.log("Resposta correta!");
+          verificarCerta.src = "Falas jogo Balao/explodir.mp3";
+          verificarCerta.play();
+
+          baloesAcertados()
+          console.log("vc acertou:" +acertado);
+
+          setTimeout(function () {
+            acertou.style.display = "flex";
+            acertoeErro.src = "Falas jogo Balao/Resposta correta.mp3";
+            acertoeErro.play();
+          }, 500);
+
+          
+
+          // Avança para a próxima pergunta
+          perguntaAtual++;
+          if (perguntaAtual < perguntas.length) {
+            setTimeout(function () {
+
+              
+              acertou.style.display = "none";
+                
+    
+              perguntaSrc = perguntas[perguntaAtual];
+              letra.src = perguntaSrc;
+              letra.play();
+        
+              letra.volume = 1;
+              
+              
+            }, 3000);
+            console.log("Proxima pergunta: " +perguntas[perguntaAtual]);
+          }
+          else {
+            setTimeout(function () {
+              console.log("FIM!");
+            }, 2500);
+          }
+      }
+      else {
+        console.log("Errada!");
+        baloesErradas()
+        console.log("resposta errada: "+errado)
+        setTimeout(function () {        
+          closeSquare()
+            
+        }, 1400);
+        setTimeout(function () {
+          errou.style.display = "flex";
+          
+          acertoeErro.src = "Falas jogo Balao/Resposta errada.mp3";
+          acertoeErro.play();
+        
+          setTimeout(function () {
+            errou.style.display = "none";
+          }, 2500);
+        }, 500);
+      }
+     
+    }
+    else if(perguntaAtual === 3){
+      if(balao === "O"){
+
+        particulasEfeito();
+
+        activado.style.animation = 'explode .7s forwards';
+
+        // Remover o quadrado após a explosão
+        setTimeout(function() {
+        activado.style.display = 'none';
+        }, 500);
+
+        
+        fundo.style.display = "none";
+        verificar.style.display = "none";
+        console.log("O pressionado!!")
+        if (vidas <= 8) {
+          document.getElementById("v" + vidas).style.backgroundColor =
+            "#3EF150";
+          vidas++;
+          atualizarBarraVidas();
+        }
+
+          aumentarMoedas();
+          console.log("Resposta correta!");
+          verificarCerta.src = "Falas jogo Balao/explodir.mp3";
+          verificarCerta.play();
+
+          baloesAcertados()
+          console.log("vc acertou:" +acertado);
+
+          setTimeout(function () {
+            acertou.style.display = "flex";
+            acertoeErro.src = "Falas jogo Balao/Resposta correta.mp3";
+            acertoeErro.play();
+          }, 500);
+
+          
+
+          // Avança para a próxima pergunta
+          perguntaAtual++;
+          if (perguntaAtual < perguntas.length) {
+            setTimeout(function () {
+
+              
+              acertou.style.display = "none";
+                
+             
+    
+
+              perguntaSrc = perguntas[perguntaAtual];
+              letra.src = perguntaSrc;
+              letra.play();
+        
+              letra.volume = 1;
+              
+              
+            }, 3000);
+            console.log("Proxima pergunta: " +perguntas[perguntaAtual]);
+          }
+          else {
+            setTimeout(function () {
+              console.log("FIM!");
+            }, 2500);
+          }
+      }
+      else {
+        console.log("Errada!");
+        baloesErradas()
+        console.log("resposta errada: "+errado)
+        setTimeout(function () {        
+          closeSquare()
+            
+        }, 1400);
+        setTimeout(function () {
+          errou.style.display = "flex";
+          
+          acertoeErro.src = "Falas jogo Balao/Resposta errada.mp3";
+          acertoeErro.play();
+        
+          setTimeout(function () {
+            errou.style.display = "none";
+          }, 2500);
+        }, 500);
+      }
+     
+    }
+    else if(perguntaAtual === 4){
+      if(balao === "U"){
+        
+        particulasEfeito();
+
+
+        activado.style.animation = 'explode .7s forwards';
+
+        // Remover o quadrado após a explosão
+        setTimeout(function() {
+        activado.style.display = 'none';
+        }, 500);
+
+        
+        fundo.style.display = "none";
+        verificar.style.display = "none";
+        console.log("O pressionado!!")
+        if (vidas <= 8) {
+          document.getElementById("v" + vidas).style.backgroundColor =
+            "#3EF150";
+          vidas++;
+          atualizarBarraVidas();
+        }
+
+          aumentarMoedas();
+          console.log("Resposta correta!");
+          verificarCerta.src = "Falas jogo Balao/explodir.mp3";
+          verificarCerta.play();
+
+          baloesAcertados()
+          console.log("vc acertou:" +acertado);
+
+          setTimeout(function () {
+            acertou.style.display = "flex";
+            acertoeErro.src = "Falas jogo Balao/Resposta correta.mp3";
+            acertoeErro.play();
+          }, 500);
+
+          
+
+          // Avança para a próxima pergunta
+          perguntaAtual++;
+          if (perguntaAtual < perguntas.length) {
+            setTimeout(function () {
+
+            
+              acertou.style.display = "none";
+         
+    
+              perguntaSrc = perguntas[perguntaAtual];
+              letra.src = perguntaSrc;
+              letra.play();
+        
+              letra.volume = 1;
+              
+              
+            }, 3000);
+            console.log("Proxima pergunta: " +perguntas[perguntaAtual]);
+          }
+          else {
+            setTimeout(function () {
+              console.log("FIM!");
+              fim.style.display = "flex";
+              acertou.style.display = "none";
+              pontos_fim.textContent = moedas += ",00";
+              pontos_errados.textContent = errado;
+
+              
+              // lógica de inserção no banco ajax Ajax AJAX 
+              const dados = {
+                id: document.getElementById("id").value,
+                money: moedas,
+              };
+
+              // Cria o objeto XMLHttpRequest
+              const xhr = new XMLHttpRequest();
+
+              // Define o método e a URL para a requisição
+              xhr.open("POST", "../../controller/insertMoney.php", true);
+
+              // Define o cabeçalho da requisição
+              xhr.setRequestHeader("Content-Type", "application/json");
+
+              // Função de callback para quando a requisição estiver completa
+              xhr.onload = function () {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                  // Requisição bem-sucedida, você pode lidar com a resposta aqui
+                  console.log(xhr.responseText);
+                } else {
+                  // Trate os erros de requisição aqui
+                  console.error("Erro ao enviar requisição");
+                }
+              };
+              // Envia a requisição com os dados convertidos para JSON
+              xhr.send(JSON.stringify(dados));
+
+              //logica de banco para pontuação e o nivel
+              const nivelInsert = {
+                id: document.getElementById("id").value,
+                pontuacao: 50,
+              };
+
+              // Cria o objeto XMLHttpRequest
+              const xhr2 = new XMLHttpRequest();
+
+              // Define o método e a URL para a requisição
+              xhr2.open("POST", "../../controller/insertPontuacao.php", true);
+
+              // Define o cabeçalho da requisição
+              xhr2.setRequestHeader("Content-Type", "application/json");
+
+              // Função de callback para quando a requisição estiver completa
+              xhr2.onload = function () {
+                if (xhr2.status >= 200 && xhr2.status < 300) {
+                  // Requisição bem-sucedida, você pode lidar com a resposta aqui
+                  console.log(xhr2.responseText);
+                } else {
+                  // Trate os erros de requisição aqui
+                  console.error("Erro ao enviar requisição");
+                }
+              };
+              // Envia a requisição com os dados convertidos para JSON
+              xhr2.send(JSON.stringify(nivelInsert));
+
+              // Seu script JavaScript
+              const dadosFase = {
+                id: document.getElementById("id").value,
+                idFase: 2,
+                money: moedas,
+                acertos: 8,
+                erros: errado ? errado : 0,
+                pontos: 50
+              };
+
+              // Cria o objeto XMLHttpRequest
+              const xhrDadosFase = new XMLHttpRequest();
+
+              // Define o método e a URL para a requisição
+              xhrDadosFase.open("POST", "../../controller/insertDadosFase.php", true);
+
+              // Define o cabeçalho da requisição
+              xhrDadosFase.setRequestHeader("Content-Type", "application/json");
+
+              // Função de callback para quando a requisição estiver completa
+              xhrDadosFase.onload = function () {
+                if (xhrDadosFase.status >= 200 && xhrDadosFase.status < 300) {
+                  // Requisição bem-sucedida, você pode lidar com a resposta aqui
+                  console.log(xhrDadosFase.responseText);
+                } else {
+                  // Trate os erros de requisição aqui
+                  console.error("Erro ao enviar requisição");
+                }
+              };
+
+              // Envia a requisição com os dados convertidos para JSON
+              xhrDadosFase.send(JSON.stringify(dadosFase));
+            }, 2500);
+          }
+      }
+      else {
+        console.log("Errada!");
+        baloesErradas()
+        console.log("resposta errada: "+errado)
+        setTimeout(function () {        
+          closeSquare()
+            
+        }, 1400);
+        setTimeout(function () {
+          errou.style.display = "flex";
+          
+          acertoeErro.src = "Falas jogo Balao/Resposta errada.mp3";
+          acertoeErro.play();
+        
+          setTimeout(function () {
+            errou.style.display = "none";
+          }, 2500);
+        }, 500);
+      }
+     
     }
   }
 
-  // Adiciona event listeners aos botões
-  b1.addEventListener('click', function () {
-    responderPergunta(this);
-    // Bloqueia os botões após a resposta ser dada
-    disableButtons();
-  });
-  b2.addEventListener('click', function () {
-    responderPergunta(this);
-    // Bloqueia os botões após a resposta ser dada
-    disableButtons();
-  });
-  b3.addEventListener('click', function () {
-    responderPergunta(this);
-    // Bloqueia os botões após a resposta ser dada
-    disableButtons();
-  });
-  b4.addEventListener('click', function () {
-    responderPergunta(this);
-    // Bloqueia os botões após a resposta ser dada
-    disableButtons();
-  });
-  b5.addEventListener('click', function () {
-    responderPergunta(this);
-    // Bloqueia os botões após a resposta ser dada
-    disableButtons();
-  });
+// Variável para armazenar o balão selecionado
+var balaoSelecionado;
 
-  repetir.addEventListener('click', function () {
-    falaSrc = 'Audios/Escolha a Letra Falada.mp3';
-    audio.src = falaSrc;
-    audio.play();
-    setTimeout(function () {
-      audio.src = perguntas[perguntaAtual];
-      audio.play();
-      console.log('Repetindo!');
-    }, 2300);
-  });
+// Adiciona eventos de clique para cada balão
+balaoA.addEventListener("click", function() {
+    balaoSelecionado = "A"; // Armazena o balão selecionado
+    clickLetra.src = "Falas jogo Balao/click.mp3"
+    clickLetra.play();
+});
+
+balaoE.addEventListener("click", function() {
+    balaoSelecionado = "E"; // Armazena o balão selecionado
+    clickLetra.src = "Falas jogo Balao/click.mp3"
+    clickLetra.play();
+});
+
+balaoI.addEventListener("click", function() {
+    balaoSelecionado = "I"; // Armazena o balão selecionado
+    clickLetra.src = "Falas jogo Balao/click.mp3"
+    clickLetra.play();
+});
+
+balaoO.addEventListener("click", function() {
+    balaoSelecionado = "O"; // Armazena o balão selecionado
+    clickLetra.src = "Falas jogo Balao/click.mp3"
+    clickLetra.play();
+});
+
+balaoU.addEventListener("click", function() {
+    balaoSelecionado = "U"; // Armazena o balão selecionado
+    clickLetra.src = "Falas jogo Balao/click.mp3"
+    clickLetra.play();
+});
+
+// Adiciona um evento de clique para o botão de verificação
+verificar.addEventListener("click", function() {
+    if (balaoSelecionado) {
+      console.log(balaoSelecionado);
+        // Chama a função responderPergunta com o balão selecionado
+        responderPergunta(balaoSelecionado);
+    } else {
+        console.log("Nenhum balão selecionado!");
+    }
+});
+  
+
 }
 
 
+/*document.getElementById('fecharCheia').style.display = 'none'
 
+function openFullscreen() {
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+  } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
+   /* document.documentElement.mozRequestFullScreen();
+  } else if (document.documentElement.webkitRequestFullscreen) { /* Chrome, Safari e Opera */
+  /*  document.documentElement.webkitRequestFullscreen();
+  } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
+  /*  document.documentElement.msRequestFullscreen();
+ }
+  document.getElementById('fecharCheia').style.display = 'block'
+  document.getElementById('abrirCheia').style.display = 'none'
 
+}
 
+// Opcional: fechar tela cheia
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Chamada da função comecarJogo com then() para fazerPergunta quando a promessa for resolvida
-comecarJogo().then(fazerPergunta)
-
-/* perguntas corrigidas */
-/*function fazerPergunta() { 
-  // Array de perguntas com as fontes de áudio correspondentes
-  var perguntas = ['Audios/A.mp3', 'Audios/E.mp3', 'Audios/I.mp3', 'Audios/O.mp3', 'Audios/U.mp3'];
-  
-  // Reproduz o áudio da primeira pergunta
-  var perguntaAtual = 0; // Índice da pergunta atual
-  audio.src = perguntas[perguntaAtual];
-  audio.play();
-  
-  // Função para responder à pergunta
-  function responderPergunta(balao) {
-    // Verifica se a resposta do usuário está correta
-    if (balao.id === 'b1' && perguntaAtual === 0 ||
-        balao.id === 'b2' && perguntaAtual === 1 ||
-        balao.id === 'b3' && perguntaAtual === 2 ||
-        balao.id === 'b4' && perguntaAtual === 3 ||
-        balao.id === 'b5' && perguntaAtual === 4) {
-        console.log('Resposta correta!');
-        audio.src = 'Audios/parabens.mp3';
-        audio.play();
-        
-      
-      // Avança para a próxima pergunta
-      perguntaAtual++;
-      if (perguntaAtual < perguntas.length) {
-        setTimeout(function() {
-          audio.src = perguntas[perguntaAtual];
-          audio.play();
-        }, 3000);
-      } else {
-        console.log('Fim das perguntas.');
-      }
-    } else {
-      // Repete a pergunta atual
-      setTimeout(function() {
-        
-        repetir.addEventListener('click', function() {
-          falaSrc  = 'Audios/Escolha a Letra Falada.mp3'
-          audio.src = falaSrc 
-          audio.play()
-          audio.src = perguntas[perguntaAtual];
-          audio.play();
-        })
-        
-      }, 2000);
-    }
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) { /* Firefox */
+   /* document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) { /* Chrome, Safari e Opera */
+   /* document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE/Edge */
+  /*  document.msExitFullscreen();
   }
-  
-  // Adiciona event listeners aos botões
-  b1.addEventListener('click', function() {
-    responderPergunta(b1);
-  });
-  b2.addEventListener('click', function() {
-    responderPergunta(b2);
-  });
-  b3.addEventListener('click', function() {
-    responderPergunta(b3);
-  });
-  b4.addEventListener('click', function() {
-    responderPergunta(b4);
-  });
-  b5.addEventListener('click', function() {
-    responderPergunta(b5);
-  });
+  document.getElementById('fecharCheia').style.display = 'none'
+  document.getElementById('abrirCheia').style.display = 'block'
 }*/
 
+
+
+
+
+
+// Seleciona o botão final
+const btnFinal = document.getElementById('abrirModal');
+
+// Seleciona o modal
+const modal = document.getElementById('modal');
+
+// Seleciona o elemento para fechar o modal
+const closeBtn = document.querySelector('.close');
+
+// Adiciona um evento de clique ao botão final
+btnFinal.addEventListener('click', function() {
+  // Exibe o modal
+  modal.style.display = 'block';
+});
+
+// Adiciona um evento de clique ao elemento para fechar o modal
+closeBtn.addEventListener('click', function() {
+  // Fecha o modal
+  modal.style.display = 'none';
+});
+
+// Fecha o modal quando o usuário clica fora dele
+window.addEventListener('click', function(event) {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+var fundo = document.getElementById("fundo");
+var fechar = document.getElementById("fechado");
+var verificar = document.getElementById("verificar");
+var activadoBalao = null;
+var activado = null;
+
+function moveToCenter(square) {
+var balao = square.querySelector('.balao');
+square.style.top = 'calc(50% - 50px)';
+square.style.right = 'calc(50% - 50px)';
+balao.classList.add('zoomed');
+square.style.zIndex = 2;
+fundo.style.display = "flex";
+verificar.style.display = "flex";
+activado = square;
+activadoBalao = balao;
+console.log(activado);
+}
+
+function moveToCenterBottom(square){
+  var balao = square.querySelector('.balao');
+square.style.bottom = 'calc(50% - 50px)';
+square.style.left = 'calc(50% - 50px)';
+balao.classList.add('zoomed');
+square.style.zIndex = 2;
+fundo.style.display = "flex";
+verificar.style.display = "flex";
+activado = square;
+activadoBalao = balao;
+console.log(activado);
+
+}
+
+function closeSquare() {
+
+  clickLetra.src = "Falas jogo Balao/retornando.mp3"
+  clickLetra.play();
+var squares = document.querySelectorAll('.square');
+squares.forEach(square => {
+    square.style.top = '';
+    square.style.right = '';
+    square.style.bottom = '';
+    square.style.left = '';
+    square.style.zIndex = 0;
+});
+fundo.style.display = "none";
+verificar.style.display = "none";
+
+activado = null;
+
+if (activadoBalao) {
+  activadoBalao.classList.remove('zoomed');
+  activadoBalao = null;
+}else{
+  console.log("zoom no balão esta desativado")
+}
+
+}
+
+
+fazerPergunta();

@@ -176,6 +176,7 @@
     .profile-menu {
         border-left: 1px solid var(--blue2);
         height: 100vh;
+     
     }
 
     .games-desktop {
@@ -563,10 +564,21 @@
         -webkit-animation: pulsate-fwd 1s ease-in-out infinite both;
         animation: pulsate-fwd 1s ease-in-out infinite both;
     }
-
+    .menu-profile-child{
+        display: flex;
+        /* background-color: powderblue; */
+        align-items: center;
+        justify-content: center;
+    }
     .profile-menu {
-        border-left: 1px solid var(--blue2);
+        padding-top: 1%;
         height: 100vh;
+        padding: 5% 2%;
+        width: 27%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* background-color: red; */
     }
 
     .games-desktop {
@@ -596,10 +608,6 @@
         justify-content: center ;
     }
 
-    .profile-menu {
-        padding: 5% 2%;
-        width: 27%;
-    }
 
     .title-profile-menu {
         display: flex;

@@ -22,7 +22,7 @@ if ($usuarioAutenticado['banido'] != 0) {
 if ($_SESSION['authUser'] == null) {
     header('Location: ./login.php?status=erro4');
 }
-// var_dump($perfilAutenticado);
+// var_dump($usuarioAutenticado);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
@@ -34,7 +34,7 @@ if ($_SESSION['authUser'] == null) {
     <link rel="shortcut icon" href="../../assets/images/icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../assets/css/navbar.css">
     <?php
-    if ($usuarioAutenticado['tutorial'] == 0) {
+    if ($perfilAutenticado['tutorial'] == 0) {
         echo '<link rel="stylesheet" type="text/css" href="../../assets/css/tutorial-fases.css">';
     }
     ?>

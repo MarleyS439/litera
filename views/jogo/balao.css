@@ -1,20 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Press+Start+2P&display=swap');
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    list-style: none;
     text-decoration: none;
-    color: #000;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+    color: #000000;
 }
 
-@import url(../../assets/css/navbar.css);
-@import url(../../assets/css/default.css);
-
 :root {
+    --color--header: #A54F1E;
+    --border--header: #511E0B;
     --branco: #FFFFFF;
-    --header: #1C96E1;
-    --fundo: #C1E6FD;
+    --borda-resultados: #79A2BB;
+    --header: #511E0B;
+    --fundo: #d6ad95;
     --borda: #000000;
     --barraPreenc: #3EF150;
     --mensagem: #00000083;
@@ -31,6 +33,7 @@
     --borda-btnFim2: #E1C01C;
     --cor-btnFim1: #9CFFA5;
     --cor-btnFim2: #FFEE9C;
+    --cor-vermelho: #f34747;
 
 }
 
@@ -94,152 +97,48 @@
 body {
     display: flex;
     justify-content: center;
+    background-color: var(--fundo);
+    background: url('./img/fundoBalao.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     margin: 0 auto;
+    overflow: hidden;
     width: 100%;
     height: 100vh;
     max-width: 1920px;
-    max-height: 1080px;
-    background: var(--fundo);
-    cursor: url(../../assets/images/icons/MAOZINHA.png), auto;
+    max-height: 1280px;
+
 }
 
 /***
 ****INICIO header****
 ***/
 
-.headerNav {
-    background-color: var(--header);
-    width: 100%;
-    padding: var(--P-header);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-}
-
-.headerNav .logo {
-    font-weight: var(--F-weightBold);
-    font-size: var(--F-logoHeader);
-    color: var(--branco);
-    display: flex;
-    align-items: center;
-    
-}
-
-.logo img {
-    width: 70px;
-    background-color: white;
-    border-radius: 45px;
-}
-
-.logo span {
-    margin: 0% 1%;
-    font-family: var(--font-poppins-bold);
-    color: var(--white);
-}
-
-
-.navbar .ulNav {
-    display: flex;
-    gap: 30px;
-}
-
-
-.ulNav .liNav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: var(--T-nav);
-    height: var(--T-nav);
-    border-radius: var(--R-nav);
-    overflow: hidden;
-
-
-}
-
-.ulNav .liNav:nth-child(1) {
-    background-color: var(--branco);
-}
-
-.ulNav .liNav a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-
-.ulNav .liNav img {
-    width: 15px;
-    height: 15px;
-}
-
-.headerNav .perfil {
-    gap: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.headerNav .perfil .avatar {
-    width: var(--T-avatar);
-    height: var(--T-avatar);
-    border-radius: var(--R-avatar);
-}
-
-.headerNav .perfil .nomeUser {
-    font-size: var(--F-nomeHeader);
-    color: var(--branco);
-}
-
 /***
 ****FIM header****
 ***/
 
 
-.navegacao a i {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1em;
-    color: var(--nav-azul);
-}
-
-.navegacao #nav-jogos {
-    background-color: transparent;
-}
-
-.navegacao #nav-jogos i {
-    color: var(--branco);
-}
-
-
-
-
-
-
-
-
-
 /*
-****SECTION BALAO****
+****SECTION FRUTAS****
 */
-.jogo-balao {
+.jogo {
     display: flex;
     align-items: flex-end;
     justify-content: center;
     position: relative;
     height: 100%;
     width: 100%;
-    padding: 30px;
 }
 
 /*
-**** FIM - SECTION BALAO****
+**** FIM - SECTION FRUTAS****
 */
+
+
+
+
 
 
 /*
@@ -247,12 +146,9 @@ body {
 */
 .area-jogo {
     position: relative;
-    width: 600px;
-    height: 500px;
-    background: url('./img/v1015-104a\ 2.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: 3px solid var(--header);
+    width: 100%;
+    height: 100%;
+    background: transparent;
     border-radius: 10px;
     z-index: 1;
     overflow: hidden;
@@ -265,57 +161,50 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
-*****************
-INICIO COMEÇO JOGO!!!!!
-*****************
+****COMEÇAR JOGO - AREA DO JOGO:****
 */
-.area-jogo .box-comecar {
+
+.area-jogo .comecar-jogo {
     position: absolute;
-    flex-direction: column;
     display: flex;
-    align-items: center;
     justify-content: center;
-    z-index: 2;
-    top: 0;
-    background: var(--fundo);
+    align-items: center;
+    flex-direction: column;
     width: 100%;
     height: 100%;
+    background: var(--fundo);
+    z-index: 1;
 }
 
-.fadeOut {
-    animation: fadeOut 1s ease-in-out forwards;
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-        display: none;
-    }
-}
-
-
-
-.area-jogo .box-comecar h1 {
+.area-jogo .comecar-jogo h1 {
     font-size: 2.5em;
     color: var(--header);
     font-weight: 600;
-    z-index: 2;
     margin-bottom: 20px;
 }
 
-.area-jogo .box-comecar span {
-    z-index: 2;
-    font-weight: 600;
-    color: var(--barra);
-}
-
-.area-jogo .box-comecar .btn-play {
-    z-index: 2;
+.area-jogo .comecar-jogo button {
     width: 150px;
     height: 40px;
     border: none;
@@ -328,7 +217,7 @@ INICIO COMEÇO JOGO!!!!!
     cursor: url("./img/mao2.svg"), auto;
 }
 
-.area-jogo .box-comecar .btn-play:hover {
+.area-jogo .comecar-jogo button:hover {
     background: var(--header);
     color: var(--branco);
     border: 1px solid var(--branco);
@@ -340,101 +229,8 @@ INICIO COMEÇO JOGO!!!!!
     }
 }
 
-/*
-*****************
-FIM COMEÇO JOGO!!!!!
-*****************
-*/
 
 
-
-
-
-
-/*
-*****************
-INICIO Ico audio!!!!!
-*****************
-*/
-.area-jogo .audio {
-    position: absolute;
-    top: 20px;
-    right: 5%;
-    width: 20px;
-    height: 20px;
-    z-index: 1;
-}
-
-.area-jogo .audio i {
-    color: var(--audio);
-    font-size: 1.5em;
-}
-
-.area-jogo .audio #off {
-    color: var(--borda-btnOff);
-    animation: audioOff .5s linear infinite alternate;
-}
-
-@keyframes audioOff {
-    0% {
-        transform: rotate(-7deg);
-    }
-
-    100% {
-        transform: rotate(7deg);
-    }
-}
-
-.area-jogo .audio #on {
-    color: var(--header);
-    animation: audioOn .5s linear infinite alternate;
-}
-
-@keyframes audioOn {
-    0% {
-        transform: rotate(-10deg);
-    }
-
-    100% {
-        transform: scale(1.3);
-    }
-}
-
-.area-jogo .microfone {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    width: 60px;
-    height: 60px;
-    border-radius: 10px;
-    outline: none;
-    border: 2px solid var(--cor-btnOff);
-    cursor: url("./img/mao2.svg"), auto;
-    font-size: 1.5em;
-    overflow: hidden;
-}
-
-.area-jogo .microfone i {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--header);
-    cursor: url("./img/mao2.svg"), auto;
-}
-
-.area-jogo .microfone i:hover {
-    color: var(--branco);
-    background-color: var(--header);
-    width: 100%;
-    height: 100%;
-    cursor: url("./img/mao2.svg"), auto;
-}
-
-/*
-*****************
-FIM Ico audio!!!!!
-*****************
-*/
 
 
 
@@ -447,9 +243,57 @@ TOPO DO JOGO MOEDAS - BARRA DE ACERTO - AUDIO!!!!!
 .area-jogo .topo {
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    position: relative;
+    margin-top: 50px;
     width: 100%;
     padding: 5px 5%;
+}
+
+
+.topo .header{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    right: 100px;
+    gap: 10px;
+}
+
+.topo .header .cronometro{
+    color: #fff;
+    font-size: 1.5em;
+    font-family: "Comic Neue", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.topo .header .homeScreen{
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
+    background: url('./img/homeIco.svg');
+    background-size: 25px 25px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: var(--color--header);
+    border: 3px solid var(--border--header);
+    outline: none;
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+.topo .header .mutarSom{
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
+    background: url('./img/icoPlay.svg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: var(--color--header);
+    border: 3px solid var(--border--header);
+    outline: none;
+    cursor: url("./img/mao2.svg"), auto;
 }
 
 .topo .moedas {
@@ -460,15 +304,17 @@ TOPO DO JOGO MOEDAS - BARRA DE ACERTO - AUDIO!!!!!
 }
 
 .topo .moedas i {
-    color: var(--moeda);
     font-size: 1.5em;
     font-weight: 600;
+    color: #000;
 }
 
 .topo .moedas span {
-    color: var(--moeda);
-    font-size: 1.5em;
+    font-size: 1.6em;
+    font-family: "Comic Neue", cursive;
     font-weight: 600;
+    font-style: normal;
+    color: #000;
 }
 
 .topo .barra {
@@ -477,7 +323,7 @@ TOPO DO JOGO MOEDAS - BARRA DE ACERTO - AUDIO!!!!!
     margin: 0 auto;
     border: 1px solid var(--borda);
     border-radius: 4px;
-    width: 250px;
+    width: 400px;
     height: 20px;
     overflow: hidden;
 }
@@ -507,116 +353,73 @@ FIMMM ---> TOPO DO JOGO MOEDAS - BARRA DE ACERTO - AUDIO!!!!!
 
 
 
-
-
 /*
 *****************
-AREA DOS BALÕES!!!!!
+INICIO - JOGO!!!!!
 *****************
 */
-.area-jogo .baloes {
-    position: relative;
+
+.area-jogo .area-itens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+}
+
+.area-itens .repetir {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+   
 }
 
-
-.area-jogo .baloes .box-balao {
-    position: relative;
-    width: 80%;
-    height: 60%;
+.area-itens .repetir .audioRepetir {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background: var(--color--header);
+    border: 3px solid var(--border--header);
+    border-radius: 10px;
 }
-
-.area-jogo .baloes .box-balao .balao1 {
-    position: absolute;
-    width: 45px;
-    top: 0;
-    animation: balao 2s linear infinite alternate;
-    animation-delay: 0s;
-}
-
-.area-jogo .baloes .box-balao .balao2 {
-    position: absolute;
+.area-itens .repetir .audioRepetir img{
     width: 35px;
-    right: 10%;
-    top: -10%;
-    animation: balao 2s linear infinite alternate;
-    animation-delay: 0.2s;
-}
-
-.area-jogo .baloes .box-balao .balao3 {
-    position: absolute;
-    width: 40px;
-    right: 20%;
-    bottom: -10%;
-    animation: balao 2s linear infinite alternate;
-    animation-delay: 0.4s;
-}
-
-.area-jogo .baloes .box-balao .balao4 {
-    position: absolute;
-    width: 50px;
-    bottom: 0;
-    left: 15%;
-    animation: balao 2s linear infinite alternate;
-    animation-delay: 0.6s;
-}
-
-.area-jogo .baloes .box-balao .balao5 {
-    position: absolute;
-    width: 55px;
-    top: 20%;
-    left: 40%;
-    animation: balao-aumento 2s linear infinite alternate;
-    animation-delay: 0.8s;
+    height: 35px;
 }
 
 
-@keyframes balao {
-    0% {
-        transform: translateY(0%);
-    }
 
-    50% {
-        transform: rotate(-5deg);
-    }
 
-    80% {
-        transform: rotate(5deg);
-    }
 
-    100% {
-        transform: translateY(-20%);
-    }
 
-}
 
-@keyframes balao-aumento {
-    0% {
-        transform: translateY(20%);
-    }
 
-    100% {
-        transform: scale(1.4)
-    }
-}
+
+
+
+
+
+
+
+
+
 
 /*
 *****************
-FIM ---> AREA DOS BALÕES!!!!!
+FIM - JOGO!!!!!
 *****************
 */
 
 
-
-
-
 /*
 *****************
-FIM DO JOGO!!!!!
+FIM DO JOGO MODAL!!!!!
 *****************
 */
 .area-jogo .final {
@@ -636,25 +439,24 @@ FIM DO JOGO!!!!!
 .area-jogo .final span {
     font-weight: 900;
     color: var(--borda-barra);
-
 }
 
 
 .area-jogo .final p {
     font-size: 1.5em;
 }
-
-#corPontuacao {
+#corPontuacao{
     color: var(--text-fim);
-    font-family: "Poppins", sans-serif;
 }
-
-#corErros {
+#corErros{
     color: var(--cor-vermelho);
+}
+#corAcertos{
+    color: var(--barraPreenc);
 }
 
 .area-jogo .final .total_moedas {
-    font-family: "Poppins", sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: 700;
     color: var(--borda-barra);
     font-size: 2em;
@@ -685,7 +487,8 @@ FIM DO JOGO!!!!!
 }
 
 .final .btn-fim {
-    gap: 20%;
+    gap: 10%;
+    padding: 10px;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -711,22 +514,6 @@ FIM DO JOGO!!!!!
 
 
 
-.btn-fim .btnFinal:nth-child(2) {
-    position: relative;
-    border: 2px solid var(--borda-btnFim1);
-    background-color: var(--cor-btnFim1);
-    cursor: url("./img/mao2.svg"), auto;
-}
-
-.btn-fim .btnFinal:nth-child(2)::after {
-    position: absolute;
-    content: 'Avançar';
-    font-weight: 600;
-    bottom: -30px;
-    color: var(--branco);
-    text-shadow: 0px 0px 5px var(--borda-btnFim1);
-    cursor: url("./img/mao2.svg"), auto;
-}
 
 .btn-fim .btnFinal:nth-child(1) {
     position: relative;
@@ -746,550 +533,1032 @@ FIM DO JOGO!!!!!
 }
 
 
-/*
-*****************
-CONCLUSÃO FIM DO JOGO!!!!!
-*****************
-*/
-
-
-
-/* Efeitos Estrelar */
-.jogo-balao .container {
+.btn-fim .btnFinal:nth-child(2) {
+    position: relative;
+    border: 2px solid var(--borda-resultados);
+    background-color: var(--branco);
+    cursor: url("./img/mao2.svg"), auto;
+}
+.btn-fim .btnFinal .textoResultados{
+    font-size: 2em;
+    font-family: "Comic Neue", cursive;
+    font-weight: 900;
+    font-style: normal;
+    color: #79A2BB;
+}
+.btn-fim .btnFinal:nth-child(2)::after {
     position: absolute;
+    content: 'Resultados';
+    font-weight: 600;
+    bottom: -30px;
+    color: var(--branco);
+    text-shadow: 0px 0px 5px var(--borda-resultados);
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+
+
+.btn-fim .btnFinal:nth-child(3) {
+    position: relative;
+    border: 2px solid var(--borda-btnFim1);
+    background-color: var(--cor-btnFim1);
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+.btn-fim .btnFinal:nth-child(3)::after {
+    position: absolute;
+    content: 'Avançar';
+    font-weight: 600;
+    bottom: -30px;
+    color: var(--branco);
+    text-shadow: 0px 0px 5px var(--borda-btnFim1);
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+
+
+
+
+
+
+
+
+
+/* Estilo para o modal */
+.modal {
+    display: none; /* Esconde o modal por padrão */
+    position: fixed; /* Posição fixa para garantir que o modal permaneça no centro da tela */
+    z-index: 1; /* Define a ordem de empilhamento para garantir que o modal esteja na frente de outros elementos */
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-}
+    overflow: auto; /* Adiciona uma barra de rolagem quando o conteúdo do modal não couber na tela */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+  }
+  
+  /* Estilo para o conteúdo do modal */
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fefefe;
+    border-radius: 10px;
+    margin: 5% auto; /* Centraliza o modal verticalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Largura do modal */
+  }
 
-.jogo-balao .container .effect-estrelar .letra1 {
+  .headerModal{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+
+  }
+  .headerModal p{
+    color: var(--borda-resultados);
+  }
+
+  .conteudoFrutas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    overflow: hidden;
+  }
+  .areaDePontos{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+    height: 100%;
+    width: 100%;
+    padding: 20px 0px 0px 20px;
+  }
+
+  .total_modal i{
+    color: var(--text-fim);
+  }
+  .som{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--borda-resultados);
+    border: 2px solid var(--borda-btnOff);
+    width: 60px;
+    height: 40px;
+    border-radius: 5px;
+  }
+  .audioSom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+  }
+  .audioSom img{
+    width: 30px;
+    height: 30px;
+  }
+
+
+
+
+
+
+
+
+  .areaDeFrutas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    gap: 10px;
+  }
+  
+  .cardsFrutas{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+  }
+  .cardsFrutas .card{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    width: 155px;
+    height: 140px;
+  }
+  .cardsFrutas .card:nth-child(1){
+    border: 2px solid #f00;
+    background: linear-gradient(to top, #f00, hsla(0, 100%, 50%, 0.329), #fff, #fff);
+  }
+  .cardsFrutas .card:nth-child(2){
+    border: 2px solid #F3C244;
+    background: linear-gradient(to top, #F3C244, hsla(43, 88%, 61%, 0.438), #fff, #ffffff);
+  }
+  .cardsFrutas .card:nth-child(3){
+    border: 2px solid #15BE26;
+    background: linear-gradient(to top, #15BE26, #15be2671, #fff, #fff);
+  }
+  .cardsFrutas .card:nth-child(4){
+    border: 2px solid #f00;
+    background: linear-gradient(to top, #f00, hsla(0, 100%, 50%, 0.329), #fff, #fff);
+  }
+
+
+
+
+
+
+
+
+  .cardsFrutas .card img{
+    width: 70px;
+    height: 70px;
+    margin-bottom: 40px;
+
+  }
+  .cardsFrutas .card p {
+    text-align: center;
+    background: red;
+    width: 100%;
+    height: 40px;
     position: absolute;
-    top: 10%;
-    left: 10%;
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: #041431;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 0s;
-}
+    bottom: 0px;
+    border-radius: 50px 50px 0px 0px;
+    color: #fff;
+    font-weight: 500;
 
-.jogo-balao .container .effect-estrelar .letra2 {
+  }
+  .cardsFrutas .card .banana{
+    background: #F3C244;
+  }
+  .cardsFrutas .card .melancia{
+    background: #15BE26;
+  }
+  .cardsFrutas .card .morango{
+    background: #f00;
+  }
+
+
+
+
+  .cardsFrutas .card .somFruta{
     position: absolute;
-    top: 20%;
-    left: 30%;
-    font-size: 1.3rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 0.1s;
-}
+    width: 30px;
+    top: -20px;
+    right: 10px;
+  }
 
-.jogo-balao .container .effect-estrelar .letra3 {
+  
+
+
+
+
+
+
+
+
+
+
+
+  .cardsFrutas2{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+  }
+  .cardsFrutas2 .card{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    width: 155px;
+    height: 140px;
+  }
+  .cardsFrutas2 .card:nth-child(1){
+    border: 2px solid #AEC136;
+    background: linear-gradient(to top, #AEC136, #afc1367a, #fff, #fff);
+  }
+  .cardsFrutas2 .card:nth-child(2){
+    border: 2px solid #f00;
+    background: linear-gradient(to top, #f00, hsla(0, 100%, 50%, 0.329), #fff, #fff);
+  }
+  .cardsFrutas2 .card:nth-child(3){
+    border: 2px solid #F48C23;
+    background: linear-gradient(to top, #F48C23,#f48b2379, #fff, #fff);
+  }
+  .cardsFrutas2 .card:nth-child(4){
+    border: 2px solid #F48C23;
+    background: linear-gradient(to top, #F48C23,#f48b2379, #fff, #fff);
+  }
+ 
+  .cardsFrutas2 .card img{
+    width: 70px;
+    height: 70px;
+    margin-bottom: 40px;
+
+  }
+  .cardsFrutas2 .card p {
+    text-align: center;
+    background: red;
+    width: 100%;
+    height: 40px;
     position: absolute;
-    top: 50%;
-    right: 5%;
-    font-size: 3rem;
-    font-weight: 900;
+    bottom: 0px;
+    border-radius: 50px 50px 0px 0px;
+    color: #fff;
+    font-weight: 500;
 
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 0.2s;
-}
+  }
 
-.jogo-balao .container .effect-estrelar .letra4 {
+  .cardsFrutas2 .card .pera{
+    background:  #AEC136;
+  }
+  .cardsFrutas2 .card .cereja{
+    background:  #f00;
+  }
+  .cardsFrutas2 .card .abacaxi{
+    background: #F48C23;
+  }
+  .cardsFrutas2 .card .laranja{
+    background: #F48C23;
+  }
+
+
+  .cardsFrutas2 .card .somFruta{
     position: absolute;
-    top: 40%;
-    left: 5%;
-    font-size: 4rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 0.3s;
-}
+    width: 30px;
+    top: -20px;
+    right: 10px;
+  }
 
-.jogo-balao .container .effect-estrelar .letra5 {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilo para os cards */
+.swiper-slide {
+    text-align: center;
+    position: relative;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid red;
+    overflow: hidden;
+  }
+
+  .swiper-slide:nth-child(1){
+    border: 2px solid #f00;
+    background: linear-gradient(to top, #f00, hsla(0, 100%, 50%, 0.329), #fff, #fff);
+  }
+  .swiper-slide:nth-child(2){
+    border: 2px solid #F3C244;
+    background: linear-gradient(to top, #F3C244, hsla(43, 88%, 61%, 0.438), #fff, #ffffff);  
+  }
+  .swiper-slide:nth-child(3){
+    border: 2px solid #15BE26;
+    background: linear-gradient(to top, #15BE26, #15be2671, #fff, #fff); 
+  }
+  .swiper-slide:nth-child(4){
+    border: 2px solid #f00;
+    background: linear-gradient(to top, #f00, hsla(0, 100%, 50%, 0.329), #fff, #fff);
+  }
+  .swiper-slide:nth-child(5){
+    border: 2px solid #AEC136;
+    background: linear-gradient(to top, #AEC136, #afc1367a, #fff, #fff);
+  }
+  .swiper-slide:nth-child(6){
+    border: 2px solid #f00;
+    background: linear-gradient(to top, #f00, hsla(0, 100%, 50%, 0.329), #fff, #fff);
+  }
+  .swiper-slide:nth-child(7){
+    border: 2px solid #F48C23;
+    background: linear-gradient(to top, #F48C23,#f48b2379, #fff, #fff);
+  }
+  .swiper-slide:nth-child(8){
+    border: 2px solid #F48C23;
+    background: linear-gradient(to top, #F48C23,#f48b2379, #fff, #fff);
+  }
+  .swiper-slide .maca{
+    background: red;
+    border-radius: 50px 50px 0px 0px;
+    color: #fff;
+  }
+  .swiper-slide .banana{
+    background: #F3C244;
+    border-radius: 50px 50px 0px 0px;
+    color: #fff;
+  }
+  .swiper-slide .melancia{
+    background: #15BE26;
+    border-radius: 50px 50px 0px 0px;
+    color: #fff;
+  }
+  .swiper-slide .morango{
+    background: #f00;
+    border-radius: 50px 50px 0px 0px;
+    color: #fff;
+  }
+  .swiper-slide .pera{
+    background: #AEC136;
+    border-radius: 50px 50px 0px 0px;
+    color: #fff;
+  }
+  .swiper-slide .cereja{
+    background: #f00;
+    border-radius: 50px 50px 0px 0px;
+    color: #fff;
+  }
+  .swiper-slide .abacaxi{
+    background: #F48C23;
+    border-radius: 50px 50px 0px 0px;
+    color: #fff;
+  }
+  .swiper-slide .laranja{
+    background: #F48C23;
+    border-radius: 50px 50px 0px 0px;
+    color: #fff;
+  }
+  .swiper-slide img {
+    max-width: 100px;
+    height: auto;
+  }
+  .swiper-slide .somFruta{
     position: absolute;
-    top: 60%;
-    left: 15%;
-    font-size: 2rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 0.4s;
-}
-
-.jogo-balao .container .effect-estrelar .letra6 {
-    position: absolute;
-    top: 60%;
-    right: 15%;
-    font-size: 1.3rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 0.5s;
-}
-
-.jogo-balao .container .effect-estrelar .letra7 {
-    position: absolute;
-    top: 19%;
-    right: 15%;
-    font-size: 5rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 0.6s;
-}
-
-.jogo-balao .container .effect-estrelar .letra8 {
-    position: absolute;
-    top: 10%;
-    right: 2%;
-    font-size: 1.1rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 0.7s;
-}
-
-.jogo-balao .container .effect-estrelar .letra9 {
-    position: absolute;
-    top: 25%;
-    left: 8%;
-    font-size: 3rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 0.8s;
-}
-
-.jogo-balao .container .effect-estrelar .letra10 {
-    position: absolute;
-    top: 75%;
-    right: 12%;
-    font-size: 1rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 0.9s;
-}
-
-.jogo-balao .container .effect-estrelar .letra11 {
-    position: absolute;
-    top: 75%;
-    left: 6%;
-    font-size: 1.2rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 1s;
-}
-
-.jogo-balao .container .effect-estrelar .letra12 {
-    position: absolute;
-    top: 50%;
-    left: 20%;
-    font-size: 0.9rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 1.1s;
-}
-
-.jogo-balao .container .effect-estrelar .letra13 {
-    position: absolute;
-    top: 40%;
-    right: 15%;
-    font-size: 0.9rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 1.2s;
-}
-
-.jogo-balao .container .effect-estrelar .letra14 {
-    position: absolute;
-    top: 30%;
-    left: 25%;
-    font-size: 1.1rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 1.3s;
-}
-
-.jogo-balao .container .effect-estrelar .letra15 {
-    position: absolute;
-    top: 70%;
-    right: 5%;
-    font-size: 1.4rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 1.4s;
-}
-
-.jogo-balao .container .effect-estrelar .letra16 {
-    position: absolute;
-    top: 15%;
-    left: 35%;
-    font-size: 1.2rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 1.5s;
-}
-
-.jogo-balao .container .effect-estrelar .letra17 {
-    position: absolute;
-    top: 45%;
-    left: 40%;
-    font-size: 1.3rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 1.6s;
-}
-
-.jogo-balao .container .effect-estrelar .letra18 {
-    position: absolute;
-    top: 80%;
-    right: 25%;
-    font-size: 1rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 1.7s;
-}
-
-.jogo-balao .container .effect-estrelar .letra19 {
-    position: absolute;
-    top: 20%;
-    right: 30%;
-    font-size: 1.5rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 1.8s;
-}
-
-.jogo-balao .container .effect-estrelar .letra21 {
-    position: absolute;
-    top: 25%;
-    right: 10%;
-    font-size: 2rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 2s;
-}
-
-.jogo-balao .container .effect-estrelar .letra22 {
-    position: absolute;
-    top: 70%;
-    left: 10%;
-    font-size: 1.3rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 2.1s;
-}
-
-.jogo-balao .container .effect-estrelar .letra23 {
-    position: absolute;
-    top: 35%;
-    left: 5%;
-    font-size: 1rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 2.2s;
-}
-
-.jogo-balao .container .effect-estrelar .letra24 {
-    position: absolute;
-    top: 55%;
-    right: 15%;
-    font-size: 1.2rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 2.3s;
-}
-
-.jogo-balao .container .effect-estrelar .letra25 {
-    position: absolute;
-    top: 40%;
-    left: 20%;
-    font-size: 1.3rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 2.4s;
-}
-
-.jogo-balao .container .effect-estrelar .letra26 {
-    position: absolute;
-    top: 75%;
-    left: 25%;
-    font-size: 1.4rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 2.5s;
-}
-
-.jogo-balao .container .effect-estrelar .letra27 {
-    position: absolute;
-    top: 65%;
-    right: 20%;
-    font-size: 1.5rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 2.6s;
-}
-
-.jogo-balao .container .effect-estrelar .letra28 {
-    position: absolute;
-    top: 20%;
-    left: 10%;
-    font-size: 1.6rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 2.7s;
-}
-
-.jogo-balao .container .effect-estrelar .letra29 {
-    position: absolute;
-    top: 50%;
-    right: 30%;
-    font-size: 1.7rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 2.8s;
-}
-
-.jogo-balao .container .effect-estrelar .letra30 {
-    position: absolute;
-    top: 30%;
-    left: 30%;
-    font-size: 1.8rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 2.9s;
-}
-
-.jogo-balao .container .effect-estrelar .letra31 {
-    position: absolute;
-    top: 60%;
-    right: 10%;
-    font-size: 2rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 3s;
-}
-
-.jogo-balao .container .effect-estrelar .letra32 {
-    position: absolute;
-    top: 25%;
-    left: 20%;
-    font-size: 2rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 3.1s;
-}
-
-.jogo-balao .container .effect-estrelar .letra33 {
-    position: absolute;
-    top: 70%;
-    right: 8%;
-    font-size: 1.6rem;
-    font-weight: 900;
-    animation: letras-quem-somos 1.5s ease alternate-reverse infinite;
-    animation-delay: 3.2s;
-}
-
-@keyframes letras-quem-somos {
-    0% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateY(100%);
-    }
-}
+    top: 10px;
+    right:10px;
+    width: 30px;
+    height: 30px;
+  }
 
 
 
-.area-jogo .effeitoAcerto {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.confetti-container {
     display: none;
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 50px;
+    top: 0;
     left: 0;
+    height: 100%;
     width: 100%;
-    height: 20%;
-    z-index: 999;
-}
+    z-index: 10;
+  }
+  
+    
+  .confetti {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    background-color: #ffcc00; /* Cor do confete */
+    overflow: hidden;
+    opacity: 0;
+    animation: confete 3s linear infinite;
+  }
+    
+  @keyframes confete {
+    0% {
+      transform: translateY(-100vh) rotateZ(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotateZ(720deg);
+    }
+  }
 
-.area-jogo .effeitoAcerto .joinhaUp {
-    width: 100px;
-    height: 100px;
-}
 
-.area-jogo .effeitoAcerto .joinhaDown {
+
+
+
+
+
+
+
+
+
+.x-container {
     display: none;
-    width: 100px;
-    height: 100px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+
+.x {
+    position: absolute;
+    animation: p-Errada 2s linear infinite;
+    opacity: 0; /* Começa invisível */
+}
+
+@keyframes p-Errada {
+    0% {
+        transform: translateY(-100vh) rotateZ(0deg);
+        opacity: 0; /* Invisível no início */
+    }
+    20% {
+        opacity: 1; /* Torna-se visível rapidamente */
+    }
+    100% {
+        transform: translateY(100vh) rotateZ(360deg) scale(2);
+        opacity: 1; /* Mantém-se visível enquanto cai */
+    }
 }
 
 
 
 
 
-/*
-*****************
-MEDIA SCREENS!!!!!
-*****************
-*/
-@media screen and (min-width: 769px) {
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.semfundo{ 
+    display: none;
+    position: absolute;
+    justify-content: center;
+    background: transparent;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .fechado{
+
+    background-image: url("./img/retornarSil.svg");
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-top: 50px;
+    margin-left: -175px;
+    width: 65px;
+    outline: none;
+    border: 2px solid var(--borda-btnFim2);
+    background-color: var(--cor-btnFim2);
+    border-radius: 5px;
+    height: 40px;
+    z-index: 3;
+  }
+  .verificando {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border: none;
+    border-radius: 40px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    animation: forward 1s ease-in-out forwards;
+    z-index: 4;
+}
+.sombraNuvem{
+
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  box-shadow: 0px 0px 40px 10px #c9c9c9;
+  /* #9e9e9e; */
+}
+.verificando .circle{
+  bottom: -5px;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background: #fff;
+  position: absolute;
+}
+.verificando .circle:nth-child(1){
+  bottom: -5px;
+  left: -20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background: #fff;
+  position: absolute;
+}
+.verificando .circle:nth-child(2){
+  top: 5px;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+  background: #e9e9e9;
+  position: absolute;
+}
+.verificando .circle .detalhe{
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #e9e9e9;
+  z-index: 1;
+
+}
+.verificando .circle:nth-child(3){
+  bottom: -10px;
+  left: 5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
+  background: #fff;
+  position: absolute;
+}
+
+
+
+.verificando:active {
+    transform: scale(0.95);
+    background-color: #fff;
+}
+
+/* Animação de avanço */
+@keyframes forward {
+    0% {
+        transform: translateY(0)
+        scale(0);
+
+    }
+    100% {
+        transform: translateY(-100px)
+        scale(2);
+    }
+}
+
+
+
+
+
+
+
+.particulas {
+  display: none;
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  background-color: transparent;
+
+}
+
+/* Estilos para as partículas */
+.particula {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: fly 2s ease-out forwards;
+}
+
+@keyframes fly {
+  0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(-100px) scale(0.5);
+      opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  transition: all 1s ease-in-out;
+  border-radius: 100px;
+}
+
+.square-red {
+  background-color:transparent;
+  left: 10%;
+  bottom: 120px;
+  animation: balao 1.5s  linear alternate infinite;
+}
+
+.square-red2 {
+  background-color: transparent;
+  left: 30%;
+  bottom: 280px;
+  animation: balao 1.5s  linear alternate infinite;
+  animation-delay: 1s;
+}
+
+.square-green {
+  background-color: transparent;
+  top: 420px;
+  right: 20px;
+  animation: balao 1.5s  linear alternate infinite;
+  animation-delay: 1.5s;
+}
+
+.square-green2 {
+  background-color: transparent;
+  top: 40%;
+  right: 10%;
+  animation: balao 1.5s  linear alternate infinite;
+  animation-delay: .2s;
+}
+
+.square-blue {
+  background-color: transparent;
+  top: 20%;
+  right: 40%;
+  animation: balao 1.5s linear alternate infinite;
+  animation-delay: .9s;
+}
+.square img{
+  width: 100%;
+  height: 100%;
+  animation: balaoCor 2s linear alternate infinite;
+}
+
+@keyframes balaoCor{
+  0%{
+    filter: drop-shadow(0px 40px 20px #ffffff9f);
+  }
+  100%{
+    filter: drop-shadow(0px 50px 20px #ffffff33);
+   
+
+  }
+
+}
+.balao{
+  transition: all 1s ease-in-out;
+}
+.balao.zoomed {
+  transform: scale(1.8); /* Aplicando o efeito de zoom */
+  animation: none;
+  filter: drop-shadow(0px 0px 3px #000000);
+  transition: all 2s ease-in-out;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+}
+
+/* Animação de balão */
+@keyframes balao {
+  0% {
+      transform: translateY(0px)
+      rotate(7deg) ;
+  }
+  100% {
+    transform: translateY(50px)
+    rotate(-7deg);
+  }
+}
+
+/* Animação de explodir balão */
+@keyframes explode {
+  0% {
+      transform: scale(0.5);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(2.5);
+      opacity: 0;
+  }
+}
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+    .desk{
+        display: none;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .mobile{
+        display: none;
+    }
+}
+
+
+
+
+@media screen and (min-width: 769px) {
     .menu-mobile,
     .area-jogo .mobile-aud {
         display: none;
     }
-
-
+    .swiper-container{
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 414px) {}
 
 @media only screen and (max-width: 768px) {
-    .jogo-balao {
+    .cardsFrutas, .cardsFrutas2, .desk{
+        display: none;
+    }
+    .areaDePontos{
+        position: relative;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 0px 0px 0px;
+    }
+    .areaDePontos .som{
+        position: absolute;
+        top: 10px;
+        right: 0;
+    }
+
+
+    .topo .header{
+        position: absolute;
+        right: 10px;
+        top: -60px;
+    }
+
+    
+    .topo .header .fullScreen{
+        display: none;
+    }
+    .topo .header .homeScreen{
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+    }
+    .jogo {
         padding: 0px;
     }
 
     .area-jogo {
         width: 100%;
         height: 100%;
-        background-color: #00000054;
-        backdrop-filter: blur(2px);
         border: none;
-
+        background: url('./img/fundoBalao.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
-
-
-    .area-jogo .baloes .box-balao .balao1 {
-        position: absolute;
-        width: 80px;
-        top: 15%;
-        animation: balao 2s linear infinite alternate;
-        animation-delay: 0s;
-    }
-
-    .area-jogo .baloes .box-balao .balao2 {
-        position: absolute;
-        width: 55px;
-        right: 10%;
-        top: 15%;
-        animation: balao 2s linear infinite alternate;
-        animation-delay: 0.2s;
-    }
-
-    .area-jogo .baloes .box-balao .balao3 {
-        position: absolute;
-        width: 65px;
-        right: 20%;
-        bottom: -14%;
-        animation: balao 2s linear infinite alternate;
-        animation-delay: 0.4s;
-    }
-
-    .area-jogo .baloes .box-balao .balao4 {
-        position: absolute;
-        width: 70px;
-        bottom: 0;
-        left: 15%;
-        animation: balao 2s linear infinite alternate;
-        animation-delay: 0.6s;
-    }
-
-    .area-jogo .baloes .box-balao .balao5 {
-
-        width: 80px;
-        top: 43%;
-        left: 40%;
-        animation: balao-aumento 2s linear infinite alternate;
-        animation-delay: 0.8s;
-    }
-
-    .nav-bar {
-        display: none;
-    }
-
-    header {
-        top: -45px;
-        background: transparent;
-    }
-
-    header .menu-mobile {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-
-    }
-
-    header .menu-mobile .logo-mob {
-        color: var(--branco);
-        font-weight: 600;
-        font-size: 3em;
-    }
-
-    header .menu-mobile .menu {
-
-        position: relative;
-        margin-right: -70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 200px;
-        height: 200px;
-    }
-
-    header .menu-mobile .menu li {
-        position: absolute;
-        left: 0;
-        transform-origin: 100px;
-        transition: .5s;
-        transition-delay: calc(0.1s * var(--i));
-        transform: rotate(0deg) translateX(70px);
-
-    }
-
-    header .menu-mobile .menu.active li {
-        transform: rotate(calc(-230deg / 4 * var(--i)));
-    }
-
-    header .menu-mobile .menu li a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50px;
-        height: 50px;
-        border-radius: 50px;
-        background: #fff;
-        border: 1px solid #b9b9b9;
-        transform: rotate(calc(-230deg / -4 * var(--i)));
-    }
-
-    header .menu-mobile .menu li a i {
-        color: #1C96E1;
-    }
-
-    header .menu-mobile .menu .toggle {
-        position: absolute;
-        width: 60px;
-        height: 60px;
-        background: var(--branco);
-        border: 1px solid #b9b9b9;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
-        border-radius: 60px;
-        cursor: pointer;
-        font-size: 1.5em;
-        transition: transform 1.25s;
-
-    }
-
-    header .menu-mobile .menu .toggle i {
-        color: #b9b9b9;
-    }
-
-    .menu.active .toggle {
-        transform: rotate(315deg);
-    }
-
 
     .area-jogo .topo {
         position: absolute;
@@ -1304,106 +1573,45 @@ MEDIA SCREENS!!!!!
 
     .area-jogo .topo .moedas i,
     .area-jogo .topo .moedas span {
-        font-size: 2em;
+        font-size: 1.5em;
         color: var(--branco);
     }
 
     .topo .barra {
         height: 30px;
-
     }
 
-    .area-jogo .audio {
+    .headerNav {
         display: none;
     }
 
-    .area-jogo .mobile-aud {
-        position: absolute;
-        bottom: 20px;
-        left: 5%;
-
+    .area-jogo .area-itens {
+        margin-top: 160px;
     }
 
-    .area-jogo .mobile-aud i {
-        color: var(--audio);
-        font-size: 1.5em;
+    .silabas .retornar {
+
+        padding: 2px 10px;
+        bottom: 300px;
+        left: 10px;
+        border: 3px solid #E1C01C;
+        background-color: #FFEE9C;
+        border-radius: 5px;
+        z-index: 999;
     }
 
-    .area-jogo .mobile-aud #offmob {
-        color: var(--vermelho);
-        animation: audioOff .5s linear infinite alternate;
-    }
-
-    @keyframes audioOff {
-        0% {
-            transform: rotate(-7deg);
-        }
-
-        100% {
-            transform: rotate(7deg);
-        }
-    }
-
-    .area-jogo .mobile-aud #onmob {
-        color: var(--verde);
-        animation: audioOn .5s linear infinite alternate;
-    }
-
-    @keyframes audioOn {
-        0% {
-            transform: rotate(-10deg);
-        }
-
-        100% {
-            transform: scale(1.3);
-        }
-    }
 }
 
-
 @media only screen and (min-height: 1080px) {
-
-    .logo {
-        color: var(--branco);
-        font-size: 3em;
-        font-weight: bold;
-        letter-spacing: 1px;
-    }
-
-    .navegacao a {
-        width: 60px;
-        height: 60px;
-        border-radius: 60px;
-    }
-
-    .navegacao a i {
-        font-size: 1.5em;
-    }
-
-    .area-perfil a {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-    }
-
-    .perfil {
-        width: 60px;
-        height: 60px;
-        border-radius: 60px;
-    }
-
-    .perfil img {
-        height: 100%;
-        width: 100%;
-    }
-
-    .area-perfil p {
-        font-size: 1.5em;
-    }
-
+    
     .area-jogo {
-        width: 1000px;
-        height: 800px;
+        width: 100%;
+        height: 100%;
+        border: none;
+        background: url('./img/fundoBalao.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
 
     .area-jogo .audio {
@@ -1444,7 +1652,7 @@ MEDIA SCREENS!!!!!
 
     .topo .moedas span {
         color: var(--moeda);
-        font-size: 2em;
+        font-size: 1.5em;
         font-weight: 600;
     }
 
@@ -1460,153 +1668,5 @@ MEDIA SCREENS!!!!!
     }
 
 
-    .area-jogo .baloes .box-balao .balao1 {
-        position: absolute;
-        width: 100px;
-        top: 0;
-        animation: balao 2s linear infinite alternate;
-        animation-delay: 0s;
-    }
 
-    .area-jogo .baloes .box-balao .balao2 {
-        position: absolute;
-        width: 90px;
-        right: 10%;
-        top: -10%;
-        animation: balao 2s linear infinite alternate;
-        animation-delay: 0.2s;
-    }
-
-    .area-jogo .baloes .box-balao .balao3 {
-        position: absolute;
-        width: 85px;
-        right: 20%;
-        bottom: -10%;
-        animation: balao 2s linear infinite alternate;
-        animation-delay: 0.4s;
-    }
-
-    .area-jogo .baloes .box-balao .balao4 {
-        position: absolute;
-        width: 90px;
-        bottom: 0;
-        left: 15%;
-        animation: balao 2s linear infinite alternate;
-        animation-delay: 0.6s;
-    }
-
-    .area-jogo .baloes .box-balao .balao5 {
-        position: absolute;
-        width: 100px;
-        top: 20%;
-        left: 40%;
-        animation: balao-aumento 2s linear infinite alternate;
-        animation-delay: 0.8s;
-    }
-
-
-}
-
-
-
-
-
-
-
-
-
-
-.area-jogo .final {
-    display: none;
-    position: absolute;
-    align-items: center;
-    flex-direction: column;
-    background: #000000d3;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-.final .text-fim {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 50%;
-}
-
-.text-fim p {
-    margin-top: 15%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    color: var(--text-fim);
-    font-weight: var(--F-weightBold);
-    width: 330px;
-    height: 50px;
-    text-align: center;
-    background-color: var(--background-fim);
-    border: 2px solid var(--border-fim);
-    border-radius: var(--R-BtnFim-e-Text-Fim);
-}
-
-.final .btn-fim {
-    gap: 20%;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 50%;
-}
-
-.btn-fim .btnFinal {
-    margin-top: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 60px;
-    border-radius: var(--R-BtnFim-e-Text-Fim);
-    cursor: url("./img/mao2.svg"), auto;
-}
-
-.btn-fim .btnFinal img {
-    width: 35px;
-}
-
-
-
-
-
-.btn-fim .btnFinal:nth-child(2) {
-    position: relative;
-    border: 2px solid var(--borda-btnFim1);
-    background-color: var(--cor-btnFim1);
-    cursor: url("./img/mao2.svg"), auto;
-}
-
-.btn-fim .btnFinal:nth-child(2)::after {
-    position: absolute;
-    content: 'Avançar';
-    font-weight: 600;
-    bottom: -30px;
-    color: var(--branco);
-    text-shadow: 0px 0px 5px var(--borda-btnFim1);
-    cursor: url("./img/mao2.svg"), auto;
-}
-
-.btn-fim .btnFinal:nth-child(1) {
-    position: relative;
-    border: 2px solid var(--borda-btnFim2);
-    background-color: var(--cor-btnFim2);
-    cursor: url("./img/mao2.svg"), auto;
-}
-
-.btn-fim .btnFinal:nth-child(1)::after {
-    position: absolute;
-    content: 'Recomeçar';
-    font-weight: 600;
-    bottom: -30px;
-    color: var(--branco);
-    text-shadow: 0px 0px 5px var(--borda-btnFim2);
-    cursor: url("./img/mao2.svg"), auto;
 }

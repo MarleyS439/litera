@@ -4,11 +4,27 @@ let imgSil = "";
 
 // VIDAS:
 let vidas = 1;
+let intervalId = null;
 
 // EXIBIR PONTOS NO FIM
 let pontos_fim = document.getElementById("final_point");
 
+let cronometro_fim = document.getElementById("cronometroFim");
+let cronometro_fim2 = document.getElementById("cronometroFim2");
+
+let pontos_fim2 = document.getElementById("final_point2");
+
+let pontos_fim3 = document.getElementById("final_point3");
+
 let pontos_errados = document.getElementById("final_error");
+
+let pontos_errados2 = document.getElementById("final_error2");
+
+let pontos_errados3 = document.getElementById("final_error3");
+
+let pontos_acertos = document.getElementById("final_acerto");
+
+let pontos_acertos2 = document.getElementById("final_acerto2");
 
 // BOX INICIO DO JOGO!
 const comeco = document.getElementById("boxComece");
@@ -24,6 +40,9 @@ let moedas = 3;
 
 // CONTAGEM DE ERROS!
 let errado = 0;
+
+// CONTAGEM DE ACERTOS!
+let acertado = 0;
 
 // BOX DAS SILABAS AO REMOVER SOME TODAS AS SILABAS.... {SILABA1} etc.. e {sil1}.
 let box1 = document.getElementById("bx1");
@@ -48,20 +67,31 @@ const silaba4 = document.getElementById("silaba4");
 
 // BUTTONS...
 const btnAudio = document.getElementById("repetir");
-const btnVerific = document.getElementById("verific");
 const comece = document.getElementById("comece");
 
 // ACERTOS
-const acertou = document.getElementById("effeitoA");
-const acerto = document.getElementById("acertouUp");
+const acertou = document.getElementById("acertou");
+const acertoPergunta = document.getElementById("joia");
 
 // ERROS
 const errou = document.getElementById("errada");
-
+const errada = document.getElementById("joiaErrado")
 // FIM DO JOGO
 const fim = document.getElementById("finalizar");
 
+//falas
 let audio = new Audio();
+
+let audioRetorne = new Audio();
+
+//música
+var audioBackground = new Audio();
+
+// Selecionar o elemento onde o cronômetro será exibido
+let cronometroElement = document.getElementById("cronometro");
+
+// Variável para armazenar o tempo em segundos
+let segundos = 0;
 
 // Atribui as imagens das sílabas e da fruta aos elementos correspondentes
 
@@ -72,6 +102,10 @@ let audio = new Audio();
 
 function silabasErradas() {
   errado++;
+}
+
+function silabasAcertadas() {
+  acertado++;
 }
 
 function aumentarMoedas() {
@@ -121,6 +155,86 @@ function fazerPergunta() {
   var perguntaAtual = 0;
 
   comece.addEventListener("click", function () {
+
+    let mutar = document.getElementById("mutarEdesmutar");
+
+    // Reproduzir música de fundo
+    audioBackground.src = "Falas Jogo Silabas/musica.mp3";
+    audioBackground.play();
+
+    // Definir estado inicial de mudo como falso (não mutado)
+    var isMuted = false;
+
+    // Event listener para o botão de mutar/desmutar
+    mutar.addEventListener('click', function() {
+        // Alternar entre mutar e desmutar
+        if (isMuted) {
+            audioBackground.volume = 0.1; // Definir volume de volta para o normal
+            isMuted = false;
+            mutar.style.background = "url('./img/icoPlay.svg')";
+            mutar.style.backgroundSize = "cover";
+            mutar.style.backgroundPosition = "center center";
+        } else {
+            audioBackground.volume = 0; // Mudo
+            isMuted = true;
+            mutar.style.background = "url('./img/icoMuted.svg')";
+            mutar.style.backgroundSize = "cover";
+            mutar.style.backgroundPosition = "center center";
+            
+        }
+    });
+
+    // Event listener para quando a música acabar
+    audioBackground.addEventListener('ended', function() {
+      // Reproduzir a música novamente
+      audioBackground.currentTime = 0; // Reiniciar a música
+      audioBackground.play();
+    });
+
+    // Iniciar a reprodução da música
+    audioBackground.play();
+
+    audioBackground.volume = 0.1;
+
+
+    function atualizarCronometro() {
+      // Incrementar os segundos
+      segundos++;
+      
+      // Calcular horas, minutos e segundos
+      let minutos = Math.floor((segundos % 3600) / 60);
+      let seg = segundos % 60;
+      
+      // Exibir o cronômetro no formato hh:mm:ss
+      cronometroElement.textContent = 
+          (minutos < 10 ? "0" + minutos : minutos) + ":" +
+          (seg < 10 ? "0" + seg : seg);
+    }
+  
+    // Iniciar o cronômetro
+    intervalId = setInterval(atualizarCronometro, 1000); // Atualiza a cada segundo
+    
+    // Exemplo de como parar o cronômetro após 10 segundos
+    setTimeout(function() {
+        clearInterval(intervalId); // Parar o intervalo
+    },  600000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
     silabaSrc = "Falas Jogo Silabas/junte as silabas corretas.mp3";
 
     audio.src = silabaSrc;
@@ -133,10 +247,10 @@ function fazerPergunta() {
       imgFruta = perguntas[perguntaAtual];
       fruta.src = imgFruta;
 
-      imgSilaba = "img/jogoFruta/silabas/MA.svg";
+      imgSilaba = "img/jogoFruta/silabas/MA1.svg";
       silaba2.src = imgSilaba;
 
-      imgSilaba = "img/jogoFruta/silabas/ÇA.svg";
+      imgSilaba = "img/jogoFruta/silabas/ÇA1.svg";
       silaba1.src = imgSilaba;
 
       box3.style.display = "none";
@@ -157,6 +271,7 @@ function fazerPergunta() {
     }, 200);
   });
 
+
   const retorne = document.getElementById("retornar");
   let silabasSelecionadas = [];
   let areaSilabas = [];
@@ -166,11 +281,12 @@ function fazerPergunta() {
   function responderPergunta(silaba) {
     if (perguntaAtual === 0 && audioAtual === 0) {
       if (silaba === silaba1) {
-        silabaSrc = "Falas Jogo Silabas/maça/ça.mp3";
+        silabaSrc = "Falas Jogo Silabas/maça/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
+
       } else if (silaba === silaba2) {
-        silabaSrc = "Falas Jogo Silabas/maça/ma.mp3";
+        silabaSrc = "Falas Jogo Silabas/maça/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       }
@@ -233,32 +349,33 @@ function fazerPergunta() {
 
           aumentarMoedas();
           console.log("Resposta correta!");
-
-          //cor do botão por acertar novamente
-          btnVerific.style.borderColor = "#15BE26";
-          btnVerific.style.backgroundColor = "#9CFFA5";
+          silabasAcertadas()
+          console.log("vc acertou:" +acertado);
 
           setTimeout(function () {
             acertou.style.display = "flex";
-            acerto.style.display = "block";
-
-            frutaSrc = "Falas Jogo Silabas/acerto2.mp3";
+            acertoPergunta.style.display = "flex";
+            
+          }, 700);
+          
+          setTimeout(function () {
+            frutaSrc = "Falas Jogo Silabas/Resposta correta.mp3";
             audio.src = frutaSrc;
             audio.volume = 0.2;
             audio.play();
-          }, 1000);
+          }, 1300);
 
           // Avança para a próxima pergunta
           audioAtual++;
           perguntaAtual++;
+
           if (perguntaAtual < perguntas.length) {
             setTimeout(function () {
-              acertou.style.display = "none";
               retorne.style.display = "none";
+              acertou.style.display = "none";
+              acertoPergunta.style.display = "none";
 
-              //cor do botão cinza novamente
-              btnVerific.style.borderColor = "#5A7C90";
-              btnVerific.style.backgroundColor = "#79A2BB";
+            
 
               console.log(audioFruta[audioAtual]);
 
@@ -276,11 +393,11 @@ function fazerPergunta() {
 
               box3.style.display = "block";
 
-              imgSilaba = "img/jogoFruta/silabas/NA.svg";
+              imgSilaba = "img/jogoFruta/silabas/NA1.svg";
               silaba3.src = imgSilaba;
-              imgSilaba = "img/jogoFruta/silabas/BA.svg";
+              imgSilaba = "img/jogoFruta/silabas/BA1.svg";
               silaba2.src = imgSilaba;
-              imgSilaba = "img/jogoFruta/silabas/NA.svg";
+              imgSilaba = "img/jogoFruta/silabas/NA2.svg";
               silaba1.src = imgSilaba;
 
               areaSilabas = [];
@@ -294,7 +411,7 @@ function fazerPergunta() {
               silaba2.style.display = "block";
               silaba3.style.display = "block";
               silaba4.style.display = "block";
-            }, 2800);
+            }, 3000);
           } else {
             setTimeout(function () {
               console.log("FIM!");
@@ -302,15 +419,22 @@ function fazerPergunta() {
           }
         } else {
           console.log("Errada!");
-          errou.style.display = "block";
-          acertou.style.display = "flex";
-          acerto.style.display = "none";
+          
+          setTimeout(function () {
+            errou.style.display = "flex";
+            errada.style.display = "flex";
+            frutaSrc = "Falas Jogo Silabas/Resposta errada.mp3";
+            audio.src = frutaSrc;
+            audio.volume = 0.2;
+            audio.play();
+           
+          }, 1400);
+          
           retorne.style.display = "none";
 
           setTimeout(function () {
             errou.style.display = "none";
-            acertou.style.display = "none";
-
+            errada.style.display = "none";
             silabasErradas();
             console.log("Erros:" + errado);
 
@@ -335,10 +459,12 @@ function fazerPergunta() {
               box2.classList.remove("moveRetorne");
               box3.classList.remove("moveRetorne");
               box4.classList.remove("moveRetorne");
-            }, 2000);
-
+              
+            }, 3000);
+            
+            audio.volume = 1;
             silabasSelecionadas = [];
-          }, 1500);
+          }, 3000);
 
           console.log(
             "Tentativa incorreta. Silabas selecionadas reiniciadas:",
@@ -351,15 +477,15 @@ function fazerPergunta() {
     // BANANA
     else if (perguntaAtual === 1 && audioAtual === 1) {
       if (silaba === silaba1) {
-        silabaSrc = "Falas Jogo Silabas/banana/na2.mp3";
+        silabaSrc = "Falas Jogo Silabas/banana/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       } else if (silaba === silaba2) {
-        silabaSrc = "Falas Jogo Silabas/banana/ba.mp3";
+        silabaSrc = "Falas Jogo Silabas/banana/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       } else if (silaba === silaba3) {
-        silabaSrc = "Falas Jogo Silabas/banana/na1.mp3";
+        silabaSrc = "Falas Jogo Silabas/banana/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       }
@@ -422,34 +548,40 @@ function fazerPergunta() {
             atualizarBarraVidas();
           }
 
-          //cor do botão por acertar novamente
-          btnVerific.style.borderColor = "#15BE26";
-          btnVerific.style.backgroundColor = "#9CFFA5";
+    
           aumentarMoedas();
+
           console.log("Resposta correta!");
+          silabasAcertadas()
+          console.log("vc acertou:" +acertado);
+
           silabasSelecionadas = [];
 
           setTimeout(function () {
-            acertou.style.display = "flex";
-            acerto.style.display = "block";
+            acertoPergunta.style.display = "flex";
+            acertou.style.display = 'flex';
+          }, 700);
 
-            frutaSrc = "Falas Jogo Silabas/acerto2.mp3";
+          setTimeout(function () {
+          
+            frutaSrc = "Falas Jogo Silabas/Resposta correta.mp3";
             audio.src = frutaSrc;
             audio.volume = 0.2;
             audio.play();
-          }, 1000);
+          
+          }, 1300);
 
           // Avança para a próxima pergunta
           audioAtual++;
           perguntaAtual++;
           if (perguntaAtual < perguntas.length) {
             setTimeout(function () {
-              acertou.style.display = "none";
+          
               retorne.style.display = "none";
+              acertou.style.display = "none";
+              acertoPergunta.style.display = "none";
 
-              //cor do botão cinza novamente
-              btnVerific.style.borderColor = "#5A7C90";
-              btnVerific.style.backgroundColor = "#79A2BB";
+          
 
               console.log(audioFruta[audioAtual]);
 
@@ -467,13 +599,13 @@ function fazerPergunta() {
               box3.style.display = "block";
               box4.style.display = "block";
 
-              imgSilaba = "img/jogoFruta/silabas/A.svg";
+              imgSilaba = "img/jogoFruta/silabas/A1.svg";
               silaba4.src = imgSilaba;
-              imgSilaba = "img/jogoFruta/silabas/ME.svg";
+              imgSilaba = "img/jogoFruta/silabas/ME1.svg";
               silaba3.src = imgSilaba;
-              imgSilaba = "img/jogoFruta/silabas/CI.svg";
+              imgSilaba = "img/jogoFruta/silabas/CI1.svg";
               silaba2.src = imgSilaba;
-              imgSilaba = "img/jogoFruta/silabas/LAN.svg";
+              imgSilaba = "img/jogoFruta/silabas/LAN1.svg";
               silaba1.src = imgSilaba;
 
               areaSilabas = [];
@@ -488,7 +620,7 @@ function fazerPergunta() {
               silaba2.style.display = "block";
               silaba3.style.display = "block";
               silaba4.style.display = "block";
-            }, 2800);
+            }, 3000);
           } else {
             setTimeout(function () {
               console.log("FIM!");
@@ -496,17 +628,26 @@ function fazerPergunta() {
           }
         } else {
           console.log("Errada!");
-          errou.style.display = "block";
-          acertou.style.display = "flex";
-          acerto.style.display = "none";
+
+          setTimeout(function () {
+            errou.style.display = "flex";
+            errada.style.display = "flex";
+            frutaSrc = "Falas Jogo Silabas/Resposta errada.mp3";
+            audio.src = frutaSrc;
+            audio.volume = 0.2;
+            audio.play();
+           
+          }, 1400);
+
           retorne.style.display = "none";
           silabasErradas();
           console.log("Erros:" + errado);
 
           // Limpar o array se a resposta estiver errada após ambas as sílabas serem informadas
           setTimeout(function () {
+           
             errou.style.display = "none";
-            acertou.style.display = "none";
+            errada.style.display = "none";
 
             areaSilabas = [];
             sil1.src = "";
@@ -530,10 +671,14 @@ function fazerPergunta() {
               box2.classList.remove("moveRetorne");
               box3.classList.remove("moveRetorne");
               box4.classList.remove("moveRetorne");
-            }, 2000);
+            }, 3000);
+
+            audio.volume = 1;
 
             silabasSelecionadas = [];
-          }, 1000);
+          }, 3000);
+
+
           console.log(
             "Tentativa incorreta. Silabas selecionadas reiniciadas:",
             silabasSelecionadas
@@ -545,19 +690,19 @@ function fazerPergunta() {
     // MELANCIA
     else if (perguntaAtual === 2 && audioAtual === 2) {
       if (silaba === silaba1) {
-        silabaSrc = "Falas Jogo Silabas/melancia/lan.mp3";
+        silabaSrc = "Falas Jogo Silabas/melancia/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       } else if (silaba === silaba2) {
-        silabaSrc = "Falas Jogo Silabas/melancia/ci.mp3";
+        silabaSrc = "Falas Jogo Silabas/melancia/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       } else if (silaba === silaba3) {
-        silabaSrc = "Falas Jogo Silabas/melancia/me.mp3";
+        silabaSrc = "Falas Jogo Silabas/melancia/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       } else if (silaba === silaba4) {
-        silabaSrc = "Falas Jogo Silabas/melancia/a.mp3";
+        silabaSrc = "Falas Jogo Silabas/melancia/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       }
@@ -618,36 +763,41 @@ function fazerPergunta() {
             atualizarBarraVidas();
           }
 
-          //cor do botão por acertar novamente
-          btnVerific.style.borderColor = "#15BE26";
-          btnVerific.style.backgroundColor = "#9CFFA5";
+ 
 
           aumentarMoedas();
 
           console.log("Resposta correta!");
+          silabasAcertadas()
+          console.log("vc acertou:" +acertado);
+
           silabasSelecionadas = [];
 
           setTimeout(function () {
-            acertou.style.display = "flex";
-            acerto.style.display = "block";
+            acertou.style.display = 'flex';
+            acertoPergunta.style.display = "flex";
+          }, 700);
 
-            frutaSrc = "Falas Jogo Silabas/acerto2.mp3";
+          setTimeout(function () {
+          
+            frutaSrc = "Falas Jogo Silabas/Resposta correta.mp3";
             audio.src = frutaSrc;
             audio.volume = 0.2;
             audio.play();
-          }, 1000);
+        
+          }, 1300);
 
           // Avança para a próxima pergunta
           audioAtual++;
           perguntaAtual++;
           if (perguntaAtual < perguntas.length) {
             setTimeout(function () {
-              acertou.style.display = "none";
+            
               retorne.style.display = "none";
+              acertou.style.display = "none";
+              acertoPergunta.style.display = "none";
 
-              //cor do botão cinza novamente
-              btnVerific.style.borderColor = "#5A7C90";
-              btnVerific.style.backgroundColor = "#79A2BB";
+             
 
               console.log(audioFruta[audioAtual]);
 
@@ -666,11 +816,11 @@ function fazerPergunta() {
               box3.style.display = "block";
               box4.style.display = "none";
 
-              imgSilaba = "img/jogoFruta/silabas/CE.svg";
+              imgSilaba = "img/jogoFruta/silabas/CE1.svg";
               silaba3.src = imgSilaba;
-              imgSilaba = "img/jogoFruta/silabas/JA.svg";
+              imgSilaba = "img/jogoFruta/silabas/JA1.svg";
               silaba2.src = imgSilaba;
-              imgSilaba = "img/jogoFruta/silabas/RE.svg";
+              imgSilaba = "img/jogoFruta/silabas/RE1.svg";
               silaba1.src = imgSilaba;
 
               areaSilabas = [];
@@ -685,7 +835,7 @@ function fazerPergunta() {
               silaba2.style.display = "block";
               silaba3.style.display = "block";
               silaba4.style.display = "block";
-            }, 2800);
+            }, 3000);
           } else {
             setTimeout(function () {
               console.log("FIM!");
@@ -693,9 +843,17 @@ function fazerPergunta() {
           }
         } else {
           console.log("Errada!");
-          errou.style.display = "block";
-          acertou.style.display = "flex";
-          acerto.style.display = "none";
+
+          setTimeout(function () {
+            errou.style.display = "flex";
+            errada.style.display = "flex";
+            frutaSrc = "Falas Jogo Silabas/Resposta errada.mp3";
+            audio.src = frutaSrc;
+            audio.volume = 0.2;
+            audio.play();
+           
+          }, 1400);
+      
           retorne.style.display = "none";
           silabasErradas();
           console.log("Erros:" + errado);
@@ -704,7 +862,7 @@ function fazerPergunta() {
 
           setTimeout(function () {
             errou.style.display = "none";
-            acertou.style.display = "none";
+            errada.style.display = "none";
 
             areaSilabas = [];
             sil1.src = "";
@@ -728,10 +886,11 @@ function fazerPergunta() {
               box2.classList.remove("moveRetorne");
               box3.classList.remove("moveRetorne");
               box4.classList.remove("moveRetorne");
-            }, 2000);
+            }, 3000);
 
+            audio.volume = 1;
             silabasSelecionadas = [];
-          }, 1000);
+          }, 3000);
 
           console.log(
             "Tentativa incorreta. Silabas selecionadas reiniciadas:",
@@ -744,15 +903,15 @@ function fazerPergunta() {
     // CEREJA
     else if (perguntaAtual === 3 && audioAtual === 3) {
       if (silaba === silaba1) {
-        silabaSrc = "Falas Jogo Silabas/cereja/re.mp3";
+        silabaSrc = "Falas Jogo Silabas/cereja/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       } else if (silaba === silaba2) {
-        silabaSrc = "Falas Jogo Silabas/cereja/ja.mp3";
+        silabaSrc = "Falas Jogo Silabas/cereja/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       } else if (silaba === silaba3) {
-        silabaSrc = "Falas Jogo Silabas/cereja/ce.mp3";
+        silabaSrc = "Falas Jogo Silabas/cereja/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       }
@@ -812,37 +971,44 @@ function fazerPergunta() {
             atualizarBarraVidas();
           }
 
-          //cor do botão por acertar novamente
-          btnVerific.style.borderColor = "#15BE26";
-          btnVerific.style.backgroundColor = "#9CFFA5";
+      
 
           aumentarMoedas();
 
           console.log("Resposta correta!");
+          silabasAcertadas()
+          console.log("vc acertou:" +acertado);
+
           silabasSelecionadas = [];
 
           setTimeout(function () {
-            acertou.style.display = "flex";
-            acerto.style.display = "block";
+            acertou.style.display = 'flex';
+            acertoPergunta.style.display = "flex";
+          }, 700);
 
-            frutaSrc = "Falas Jogo Silabas/acerto2.mp3";
+          setTimeout(function () {
+           
+
+            frutaSrc = "Falas Jogo Silabas/Resposta correta.mp3";
             audio.src = frutaSrc;
             audio.volume = 0.2;
             audio.play();
-          }, 1000);
+           
+
+          }, 1300);
 
           // Avança para a próxima pergunta
           audioAtual++;
           perguntaAtual++;
           if (perguntaAtual < perguntas.length) {
             setTimeout(function () {
-              acertou.style.display = "none";
+          
               retorne.style.display = "none";
+              acertou.style.display = "none";
+              acertoPergunta.style.display = "none";
 
-              //cor do botão cinza novamente
-              btnVerific.style.borderColor = "#5A7C90";
-              btnVerific.style.backgroundColor = "#79A2BB";
 
+              
               console.log(audioFruta[audioAtual]);
 
               frutaSrc = audioFruta[audioAtual];
@@ -859,11 +1025,11 @@ function fazerPergunta() {
 
               box3.style.display = "block";
 
-              imgSilaba = "img/jogoFruta/silabas/GO.svg";
+              imgSilaba = "img/jogoFruta/silabas/GO1.svg";
               silaba3.src = imgSilaba;
-              imgSilaba = "img/jogoFruta/silabas/MO.svg";
+              imgSilaba = "img/jogoFruta/silabas/MO1.svg";
               silaba2.src = imgSilaba;
-              imgSilaba = "img/jogoFruta/silabas/RAN.svg";
+              imgSilaba = "img/jogoFruta/silabas/RAN1.svg";
               silaba1.src = imgSilaba;
 
               areaSilabas = [];
@@ -878,7 +1044,7 @@ function fazerPergunta() {
               silaba2.style.display = "block";
               silaba3.style.display = "block";
               silaba4.style.display = "block";
-            }, 2800);
+            }, 3000);
           } else {
             setTimeout(function () {
               console.log("FIM!");
@@ -886,9 +1052,17 @@ function fazerPergunta() {
           }
         } else {
           console.log("Errada!");
-          errou.style.display = "block";
-          acertou.style.display = "flex";
-          acerto.style.display = "none";
+
+          setTimeout(function () {
+            errou.style.display = "flex";
+            errada.style.display = "flex";
+            frutaSrc = "Falas Jogo Silabas/Resposta errada.mp3";
+            audio.src = frutaSrc;
+            audio.volume = 0.2;
+            audio.play();
+           
+          }, 1400);
+        
           retorne.style.display = "none";
           silabasErradas();
           console.log("Erros:" + errado);
@@ -896,8 +1070,9 @@ function fazerPergunta() {
           // Limpar o array se a resposta estiver errada após ambas as sílabas serem informadas
 
           setTimeout(function () {
+       
             errou.style.display = "none";
-            acertou.style.display = "none";
+            errada.style.display = "none";
 
             areaSilabas = [];
             sil1.src = "";
@@ -921,10 +1096,11 @@ function fazerPergunta() {
               box2.classList.remove("moveRetorne");
               box3.classList.remove("moveRetorne");
               box4.classList.remove("moveRetorne");
-            }, 2000);
+            }, 3000);
 
+            audio.volume = 1;
             silabasSelecionadas = [];
-          }, 1000);
+          }, 3000);
           console.log(
             "Tentativa incorreta. Silabas selecionadas reiniciadas:",
             silabasSelecionadas
@@ -936,15 +1112,15 @@ function fazerPergunta() {
     // MORANGO
     else if (perguntaAtual === 4 && audioAtual === 4) {
       if (silaba === silaba1) {
-        silabaSrc = "Falas Jogo Silabas/morango/ran.mp3";
+        silabaSrc = "Falas Jogo Silabas/morango/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       } else if (silaba === silaba2) {
-        silabaSrc = "Falas Jogo Silabas/morango/mo.mp3";
+        silabaSrc = "Falas Jogo Silabas/morango/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       } else if (silaba === silaba3) {
-        silabaSrc = "Falas Jogo Silabas/morango/go.mp3";
+        silabaSrc = "Falas Jogo Silabas/morango/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       }
@@ -1004,35 +1180,39 @@ function fazerPergunta() {
             atualizarBarraVidas();
           }
 
-          //cor do botão por acertar novamente
-          btnVerific.style.borderColor = "#15BE26";
-          btnVerific.style.backgroundColor = "#9CFFA5";
-
+        
           aumentarMoedas();
 
           console.log("Resposta correta!");
-          silabasSelecionadas = [];
-          setTimeout(function () {
-            acertou.style.display = "flex";
-            acerto.style.display = "block";
+          silabasAcertadas()
+          console.log("vc acertou:" +acertado);
 
-            frutaSrc = "Falas Jogo Silabas/acerto2.mp3";
+          silabasSelecionadas = [];
+
+          setTimeout(function () {
+            acertoPergunta.style.display = "flex";
+            acertou.style.display = 'flex';
+          }, 700);
+
+          setTimeout(function () {
+           
+            frutaSrc = "Falas Jogo Silabas/Resposta correta.mp3";
             audio.src = frutaSrc;
             audio.volume = 0.2;
             audio.play();
-          }, 1000);
+
+          }, 1300);
 
           // Avança para a próxima pergunta
           audioAtual++;
           perguntaAtual++;
           if (perguntaAtual < perguntas.length) {
             setTimeout(function () {
-              acertou.style.display = "none";
+              
               retorne.style.display = "none";
+              acertou.style.display = "none";
+              acertoPergunta.style.display = "none";
 
-              //cor do botão cinza novamente
-              btnVerific.style.borderColor = "#5A7C90";
-              btnVerific.style.backgroundColor = "#79A2BB";
 
               console.log(audioFruta[audioAtual]);
 
@@ -1051,13 +1231,13 @@ function fazerPergunta() {
               box3.style.display = "block";
               box4.style.display = "block";
 
-              imgSilaba = "img/jogoFruta/silabas/A.svg";
+              imgSilaba = "img/jogoFruta/silabas/A2.svg";
               silaba3.src = imgSilaba;
-              imgSilaba = "img/jogoFruta/silabas/XI.svg";
+              imgSilaba = "img/jogoFruta/silabas/XI1.svg";
               silaba2.src = imgSilaba;
-              imgSilaba = "img/jogoFruta/silabas/BA.svg";
+              imgSilaba = "img/jogoFruta/silabas/BA2.svg";
               silaba1.src = imgSilaba;
-              imgSilaba = "img/jogoFruta/silabas/CA.svg";
+              imgSilaba = "img/jogoFruta/silabas/CA1.svg";
               silaba4.src = imgSilaba;
 
               areaSilabas = [];
@@ -1072,7 +1252,7 @@ function fazerPergunta() {
               silaba2.style.display = "block";
               silaba3.style.display = "block";
               silaba4.style.display = "block";
-            }, 2800);
+            }, 3000);
           } else {
             setTimeout(function () {
               console.log("FIM!");
@@ -1080,9 +1260,18 @@ function fazerPergunta() {
           }
         } else {
           console.log("Errada!");
-          errou.style.display = "block";
-          acertou.style.display = "flex";
-          acerto.style.display = "none";
+
+          
+          setTimeout(function () {
+            errou.style.display = "flex";
+            errada.style.display = "flex";
+            frutaSrc = "Falas Jogo Silabas/Resposta errada.mp3";
+            audio.src = frutaSrc;
+            audio.volume = 0.2;
+            audio.play();
+           
+          }, 1400);
+      
           retorne.style.display = "none";
           silabasErradas();
           console.log("Erros:" + errado);
@@ -1091,7 +1280,7 @@ function fazerPergunta() {
 
           setTimeout(function () {
             errou.style.display = "none";
-            acertou.style.display = "none";
+            errada.style.display = "none";
 
             areaSilabas = [];
             sil1.src = "";
@@ -1115,10 +1304,12 @@ function fazerPergunta() {
               box2.classList.remove("moveRetorne");
               box3.classList.remove("moveRetorne");
               box4.classList.remove("moveRetorne");
-            }, 2000);
+            }, 3000);
 
+
+            audio.volume = 1;
             silabasSelecionadas = [];
-          }, 1000);
+          }, 3000);
           console.log(
             "Tentativa incorreta. Silabas selecionadas reiniciadas:",
             silabasSelecionadas
@@ -1130,19 +1321,19 @@ function fazerPergunta() {
     // ABACAXI
     else if (perguntaAtual === 5 && audioAtual === 5) {
       if (silaba === silaba1) {
-        silabaSrc = "Falas Jogo Silabas/abacaxi/ba.mp3";
+        silabaSrc = "Falas Jogo Silabas/abacaxi/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       } else if (silaba === silaba2) {
-        silabaSrc = "Falas Jogo Silabas/abacaxi/xi.mp3";
+        silabaSrc = "Falas Jogo Silabas/abacaxi/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       } else if (silaba === silaba3) {
-        silabaSrc = "Falas Jogo Silabas/abacaxi/a.mp3";
+        silabaSrc = "Falas Jogo Silabas/abacaxi/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       } else if (silaba === silaba4) {
-        silabaSrc = "Falas Jogo Silabas/abacaxi/ca.mp3";
+        silabaSrc = "Falas Jogo Silabas/abacaxi/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       }
@@ -1203,36 +1394,41 @@ function fazerPergunta() {
             atualizarBarraVidas();
           }
 
-          //cor do botão por acertar novamente
-          btnVerific.style.borderColor = "#15BE26";
-          btnVerific.style.backgroundColor = "#9CFFA5";
+          
 
           aumentarMoedas();
 
           console.log("Resposta correta!");
+          silabasAcertadas()
+          console.log("vc acertou:" +acertado);
+
           silabasSelecionadas = [];
 
           setTimeout(function () {
-            acertou.style.display = "flex";
-            acerto.style.display = "block";
+            acertoPergunta.style.display = "flex";
+            acertou.style.display = 'flex';
+          }, 700);
 
-            frutaSrc = "Falas Jogo Silabas/acerto2.mp3";
+          setTimeout(function () {
+            
+            frutaSrc = "Falas Jogo Silabas/Resposta correta.mp3";
             audio.src = frutaSrc;
             audio.volume = 0.2;
             audio.play();
-          }, 1000);
+
+          }, 1300);
 
           // Avança para a próxima pergunta
           audioAtual++;
           perguntaAtual++;
           if (perguntaAtual < perguntas.length) {
             setTimeout(function () {
-              acertou.style.display = "none";
+              
               retorne.style.display = "none";
+              acertou.style.display = "none";
+              acertoPergunta.style.display = "none";
 
-              //cor do botão cinza novamente
-              btnVerific.style.borderColor = "#5A7C90";
-              btnVerific.style.backgroundColor = "#79A2BB";
+              
 
               console.log(audioFruta[audioAtual]);
 
@@ -1251,11 +1447,11 @@ function fazerPergunta() {
               box3.style.display = "block";
               box4.style.display = "none";
 
-              imgSilaba = "img/jogoFruta/silabas/RAN.svg";
+              imgSilaba = "img/jogoFruta/silabas/RAN2.svg";
               silaba3.src = imgSilaba;
-              imgSilaba = "img/jogoFruta/silabas/JA.svg";
+              imgSilaba = "img/jogoFruta/silabas/JA1.svg";
               silaba2.src = imgSilaba;
-              imgSilaba = "img/jogoFruta/silabas/LA.svg";
+              imgSilaba = "img/jogoFruta/silabas/LA1.svg";
               silaba1.src = imgSilaba;
 
               areaSilabas = [];
@@ -1271,7 +1467,7 @@ function fazerPergunta() {
               silaba2.style.display = "block";
               silaba3.style.display = "block";
               silaba4.style.display = "block";
-            }, 2800);
+            }, 3000);
           } else {
             setTimeout(function () {
               console.log("FIM!");
@@ -1279,9 +1475,17 @@ function fazerPergunta() {
           }
         } else {
           console.log("Errada!");
-          errou.style.display = "block";
-          acertou.style.display = "flex";
-          acerto.style.display = "none";
+
+          setTimeout(function () {
+            errou.style.display = "flex";
+            errada.style.display = "flex";
+            frutaSrc = "Falas Jogo Silabas/Resposta errada.mp3";
+            audio.src = frutaSrc;
+            audio.volume = 0.2;
+            audio.play();
+           
+          }, 1400);
+    
           retorne.style.display = "none";
           silabasErradas();
           console.log("Erros:" + errado);
@@ -1290,7 +1494,7 @@ function fazerPergunta() {
 
           setTimeout(function () {
             errou.style.display = "none";
-            acertou.style.display = "none";
+            errada.style.display = "none";
 
             areaSilabas = [];
             sil1.src = "";
@@ -1315,10 +1519,12 @@ function fazerPergunta() {
               box2.classList.remove("moveRetorne");
               box3.classList.remove("moveRetorne");
               box4.classList.remove("moveRetorne");
-            }, 2000);
+            }, 3000);
 
+
+            audio.volume = 1;
             silabasSelecionadas = [];
-          }, 1000);
+          }, 3000);
 
           console.log(
             "Tentativa incorreta. Silabas selecionadas reiniciadas:",
@@ -1331,15 +1537,15 @@ function fazerPergunta() {
     // LARANJA
     else if (perguntaAtual === 6 && audioAtual === 6) {
       if (silaba === silaba1) {
-        silabaSrc = "Falas Jogo Silabas/laranja/la.mp3";
+        silabaSrc = "Falas Jogo Silabas/laranja/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       } else if (silaba === silaba2) {
-        silabaSrc = "Falas Jogo Silabas/laranja/ja.mp3";
+        silabaSrc = "Falas Jogo Silabas/laranja/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       } else if (silaba === silaba3) {
-        silabaSrc = "Falas Jogo Silabas/laranja/ran.mp3";
+        silabaSrc = "Falas Jogo Silabas/laranja/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       }
@@ -1399,36 +1605,41 @@ function fazerPergunta() {
             atualizarBarraVidas();
           }
 
-          //cor do botão por acertar novamente
-          btnVerific.style.borderColor = "#15BE26";
-          btnVerific.style.backgroundColor = "#9CFFA5";
+         
 
           aumentarMoedas();
 
           console.log("Resposta correta!");
+          silabasAcertadas()
+          console.log("vc acertou:" +acertado);
+
           silabasSelecionadas = [];
 
           setTimeout(function () {
-            acertou.style.display = "flex";
-            acerto.style.display = "block";
+            acertou.style.display = 'flex';
+            acertoPergunta.style.display = "flex";
+          }, 700);
 
-            frutaSrc = "Falas Jogo Silabas/acerto2.mp3";
+          setTimeout(function () {
+            
+            frutaSrc = "Falas Jogo Silabas/Resposta correta.mp3";
             audio.src = frutaSrc;
             audio.volume = 0.2;
             audio.play();
-          }, 1000);
+
+          }, 1300);
 
           // Avança para a próxima pergunta
           audioAtual++;
           perguntaAtual++;
           if (perguntaAtual < perguntas.length) {
             setTimeout(function () {
+
               acertou.style.display = "none";
               retorne.style.display = "none";
+              acertoPergunta.style.display = "none";
 
-              //cor do botão cinza novamente
-              btnVerific.style.borderColor = "#5A7C90";
-              btnVerific.style.backgroundColor = "#79A2BB";
+             
 
               console.log(audioFruta[audioAtual]);
 
@@ -1449,7 +1660,7 @@ function fazerPergunta() {
 
               imgSilaba = "img/jogoFruta/silabas/PE.svg";
               silaba2.src = imgSilaba;
-              imgSilaba = "img/jogoFruta/silabas/RA.svg";
+              imgSilaba = "img/jogoFruta/silabas/RA2.svg";
               silaba1.src = imgSilaba;
 
               areaSilabas = [];
@@ -1464,7 +1675,7 @@ function fazerPergunta() {
               silaba2.style.display = "block";
               silaba3.style.display = "block";
               silaba4.style.display = "block";
-            }, 2800);
+            }, 3000);
           } else {
             setTimeout(function () {
               console.log("FIM!");
@@ -1472,16 +1683,27 @@ function fazerPergunta() {
           }
         } else {
           console.log("Errada!");
-          errou.style.display = "block";
-          acertou.style.display = "flex";
-          acerto.style.display = "none";
+
+          setTimeout(function () {
+            errou.style.display = "flex";
+            errada.style.display = "flex";
+            frutaSrc = "Falas Jogo Silabas/Resposta errada.mp3";
+            audio.src = frutaSrc;
+            audio.volume = 0.2;
+            audio.play();
+           
+          }, 1400);
+         
           retorne.style.display = "none";
           silabasErradas();
           console.log("Erros:" + errado);
 
           // Limpar o array se a resposta estiver errada após ambas as sílabas serem informadas
           setTimeout(function () {
+
             errou.style.display = "none";
+            errada.style.display = "none";
+           
             acertou.style.display = "none";
 
             areaSilabas = [];
@@ -1506,10 +1728,11 @@ function fazerPergunta() {
               box2.classList.remove("moveRetorne");
               box3.classList.remove("moveRetorne");
               box4.classList.remove("moveRetorne");
-            }, 2000);
+            }, 3000);
 
+            audio.volume = 1;
             silabasSelecionadas = [];
-          }, 1000);
+          }, 3000);
           console.log(
             "Tentativa incorreta. Silabas selecionadas reiniciadas:",
             silabasSelecionadas
@@ -1521,11 +1744,11 @@ function fazerPergunta() {
     // FIM -> RESPONDER PERA!
     else if (perguntaAtual === 7) {
       if (silaba === silaba1) {
-        silabaSrc = "Falas Jogo Silabas/pera/ra.mp3";
+        silabaSrc = "Falas Jogo Silabas/pera/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       } else if (silaba === silaba2) {
-        silabaSrc = "Falas Jogo Silabas/pera/pe.mp3";
+        silabaSrc = "Falas Jogo Silabas/pera/selecionada.mp3";
         audio.src = silabaSrc;
         audio.play();
       }
@@ -1584,35 +1807,40 @@ function fazerPergunta() {
             atualizarBarraVidas();
           }
 
-          //cor do botão por acertar novamente
-          btnVerific.style.borderColor = "#15BE26";
-          btnVerific.style.backgroundColor = "#9CFFA5";
 
           aumentarMoedas();
 
           console.log("Resposta correta!");
-          silabasSelecionadas = [];
-          setTimeout(function () {
-            acertou.style.display = "flex";
-            acerto.style.display = "block";
+          silabasAcertadas()
+          console.log("vc acertou:" +acertado);
 
-            frutaSrc = "Falas Jogo Silabas/acerto2.mp3";
+          silabasSelecionadas = [];
+
+          setTimeout(function () {
+            acertou.style.display = 'flex';
+            acertoPergunta.style.display = "flex";
+          }, 700);
+
+          setTimeout(function () {
+      
+            frutaSrc = "Falas Jogo Silabas/Resposta correta.mp3";
             audio.src = frutaSrc;
             audio.volume = 0.2;
             audio.play();
-          }, 1000);
+
+          }, 1300);
 
           // Avança para a próxima pergunta
           audioAtual++;
           perguntaAtual++;
           if (perguntaAtual < perguntas.length) {
             setTimeout(function () {
-              acertou.style.display = "none";
+    
               retorne.style.display = "none";
+              acertou.style.display = "none";
+              acertoPergunta.style.display = "none";
 
-              //cor do botão cinza novamente
-              btnVerific.style.borderColor = "#5A7C90";
-              btnVerific.style.backgroundColor = "#79A2BB";
+          
 
               console.log(audioFruta[audioAtual]);
 
@@ -1637,22 +1865,40 @@ function fazerPergunta() {
               silaba2.style.display = "block";
               silaba3.style.display = "block";
               silaba4.style.display = "block";
-            }, 2800);
+            }, 3000);
           } else {
+          
             setTimeout(function () {
-              console.log("FIM!");
-              acertou.style.display = "none";
-              fim.style.display = "flex";
-              retorne.style.display = "none";
+              let tempoAtual = cronometroElement.textContent;
 
+              // Exibir o tempo atual
+              console.log("Tempo atual: " + tempoAtual);
+              cronometro_fim.textContent = tempoAtual;
+              cronometro_fim2.textContent = tempoAtual;
+              
+              // Parar o cronômetro
+              clearInterval(intervalId);
+              
+              console.log("FIM!");
+         
+              fim.style.display = "flex";
+              acertoPergunta.style.display = "none";
+              retorne.style.display = "none";
+              acertou.style.display = "none";
               silabaSrc = "Audios/Fim de Jogo.mp3";
               audio.src = silabaSrc;
               audio.play();
 
               pontos_fim.textContent = moedas += ",00";
+              pontos_fim2.textContent = moedas;
+              pontos_fim3.textContent = moedas;
               pontos_errados.textContent = errado;
+              pontos_errados2.textContent = errado;
+              pontos_errados3.textContent = errado;
+              pontos_acertos.textContent = acertado;
+              pontos_acertos2.textContent = acertado;
 
-              // lógica de inserção no banco
+              // lógica de inserção no banco ajax Ajax AJAX 
               const dados = {
                 id: document.getElementById("id").value,
                 money: moedas,
@@ -1740,13 +1986,24 @@ function fazerPergunta() {
 
               // Envia a requisição com os dados convertidos para JSON
               xhrDadosFase.send(JSON.stringify(dadosFase));
+
+           
             }, 3000);
           }
         } else {
           console.log("Errada!");
-          errou.style.display = "block";
-          acertou.style.display = "flex";
-          acerto.style.display = "none";
+
+          setTimeout(function () {
+            errou.style.display = "flex";
+            errada.style.display = "flex";
+            frutaSrc = "Falas Jogo Silabas/Resposta errada.mp3";
+            audio.src = frutaSrc;
+            audio.volume = 0.2;
+            audio.play();
+           
+          }, 1400);
+          
+       
           retorne.style.display = "none";
           silabasErradas();
           console.log("Erros:" + errado);
@@ -1754,7 +2011,10 @@ function fazerPergunta() {
           // Limpar o array se a resposta estiver errada após ambas as sílabas serem informadas
 
           setTimeout(function () {
+
             errou.style.display = "none";
+            errada.style.display = "none";
+            
             acertou.style.display = "none";
 
             areaSilabas = [];
@@ -1779,10 +2039,11 @@ function fazerPergunta() {
               box2.classList.remove("moveRetorne");
               box3.classList.remove("moveRetorne");
               box4.classList.remove("moveRetorne");
-            }, 2000);
+            }, 3000);
 
+            audio.volume = 1;
             silabasSelecionadas = [];
-          }, 1000);
+          }, 3000);
           console.log(
             "Tentativa incorreta. Silabas selecionadas reiniciadas:",
             silabasSelecionadas
@@ -1791,6 +2052,29 @@ function fazerPergunta() {
         }
       }
     }
+
+
+    retorne.addEventListener("click", function() {
+      // Carrega o novo áudio
+      audioRetorne.src = "Falas Jogo Silabas/retornando.mp3";
+      
+      // Event listener para verificar se o áudio foi carregado
+      audioRetorne.addEventListener("loadedmetadata", function() {
+        // Reproduz o áudio
+        audioRetorne.play();
+        audioRetorne.volume = 0.6;
+        
+        // Event listener para pausar o áudio após um curto período de tempo (500ms)
+        setTimeout(function() {
+          // Verifica se o áudio está sendo reproduzido corretamente
+          if (!audioRetorne.paused) {
+            // Pausa o áudio
+            audioRetorne.pause();
+          }
+        }, 700);
+      });
+    });
+    
   }
 
   // Adiciona event listener aos elementos das sílabas
@@ -1874,43 +2158,199 @@ function fazerPergunta() {
 }
 
 
-document.getElementById('fecharCheia').style.display = 'none'
+/*document.getElementById('fecharCheia').style.display = 'none'
 
 function openFullscreen() {
   if (document.documentElement.requestFullscreen) {
     document.documentElement.requestFullscreen();
   } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
-    document.documentElement.mozRequestFullScreen();
+   /* document.documentElement.mozRequestFullScreen();
   } else if (document.documentElement.webkitRequestFullscreen) { /* Chrome, Safari e Opera */
-    document.documentElement.webkitRequestFullscreen();
+  /*  document.documentElement.webkitRequestFullscreen();
   } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
-    document.documentElement.msRequestFullscreen();
-  }
+  /*  document.documentElement.msRequestFullscreen();
+ }
   document.getElementById('fecharCheia').style.display = 'block'
   document.getElementById('abrirCheia').style.display = 'none'
 
 }
 
 // Opcional: fechar tela cheia
+
 function closeFullscreen() {
   if (document.exitFullscreen) {
     document.exitFullscreen();
   } else if (document.mozCancelFullScreen) { /* Firefox */
-    document.mozCancelFullScreen();
+   /* document.mozCancelFullScreen();
   } else if (document.webkitExitFullscreen) { /* Chrome, Safari e Opera */
-    document.webkitExitFullscreen();
+   /* document.webkitExitFullscreen();
   } else if (document.msExitFullscreen) { /* IE/Edge */
-    document.msExitFullscreen();
+  /*  document.msExitFullscreen();
   }
   document.getElementById('fecharCheia').style.display = 'none'
   document.getElementById('abrirCheia').style.display = 'block'
+}*/
+
+let fruta1 = document.getElementById("f1");
+let fruta2 = document.getElementById("f2");
+let fruta3 = document.getElementById("f3");
+let fruta4 = document.getElementById("f4");
+let fruta5 = document.getElementById("f5");
+let fruta6 = document.getElementById("f6");
+let fruta7 = document.getElementById("f7");
+let fruta8 = document.getElementById("f8");
+
+function limaparCard(){
+  fruta1.style.transform = "none";
+  fruta2.style.transform = "none";
+  fruta3.style.transform = "none";
+  fruta4.style.transform = "none";
+  fruta5.style.transform = "none";
+  fruta6.style.transform = "none";
+  fruta7.style.transform = "none";
+  fruta8.style.transform = "none";
 }
 
+fruta1.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Falas Jogo Silabas/maça/maça.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta1.style.transform = "translateY(-20px)";
+  fruta1.style.transition = "transform 0.5s ease";
+
+  audio.addEventListener('ended', function() {
+    fruta1.style.transform = "none";
+  });
+});
+fruta2.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Falas Jogo Silabas/banana/banana.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta2.style.transform = "translateY(-20px)";
+  fruta2.style.transition = "transform 0.5s ease";
+  
+  audio.addEventListener('ended', function() {
+    fruta2.style.transform = "none";
+  });
+});
+fruta3.addEventListener('click', function() {
+  limaparCard();
+
+  // Exibe o modal
+  audio.src = "Falas Jogo Silabas/melancia/melancia.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta3.style.transform = "translateY(-20px)";
+  fruta3.style.transition = "transform 0.5s ease";
+  
+  audio.addEventListener('ended', function() {
+    fruta3.style.transform = "none";
+  });
+
+});
+fruta4.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Falas Jogo Silabas/morango/morango.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta4.style.transform = "translateY(-20px)";
+  fruta4.style.transition = "transform 0.5s ease";
+  
+  audio.addEventListener('ended', function() {
+    fruta4.style.transform = "none";
+  });
+
+});
+fruta5.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Falas Jogo Silabas/pera/pera.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta5.style.transform = "translateY(-20px)";
+  fruta5.style.transition = "transform 0.5s ease";
+  
+  audio.addEventListener('ended', function() {
+    fruta5.style.transform = "none";
+  });
+
+});
+fruta6.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Falas Jogo Silabas/cereja/cereja.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta6.style.transform = "translateY(-20px)";
+  fruta6.style.transition = "transform 0.5s ease";
+  
+  audio.addEventListener('ended', function() {
+    fruta6.style.transform = "none";
+  });
+
+});
+fruta7.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Falas Jogo Silabas/abacaxi/abacaxi.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta7.style.transform = "translateY(-20px)";
+  fruta7.style.transition = "transform 0.5s ease";
+  
+  audio.addEventListener('ended', function() {
+    fruta7.style.transform = "none";
+  });
+});
+fruta8.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Falas Jogo Silabas/laranja/laranja.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta8.style.transform = "translateY(-20px)";
+  fruta8.style.transition = "transform 0.5s ease";
+  
+  audio.addEventListener('ended', function() {
+    fruta8.style.transform = "none";
+  });
+});
 
 
 
 
+// Seleciona o botão final
+const btnFinal = document.getElementById('abrirModal');
 
+// Seleciona o modal
+const modal = document.getElementById('modal');
+
+// Seleciona o elemento para fechar o modal
+const closeBtn = document.querySelector('.close');
+
+// Adiciona um evento de clique ao botão final
+btnFinal.addEventListener('click', function() {
+  // Exibe o modal
+  modal.style.display = 'block';
+});
+
+// Adiciona um evento de clique ao elemento para fechar o modal
+closeBtn.addEventListener('click', function() {
+  // Fecha o modal
+  modal.style.display = 'none';
+});
+
+// Fecha o modal quando o usuário clica fora dele
+window.addEventListener('click', function(event) {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+});
 
 
 
