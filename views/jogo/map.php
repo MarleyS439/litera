@@ -2,21 +2,27 @@
 // session
 session_start();
 // verificação se o user esta logado
-if (!isset($_SESSION['authUser'])) {
+if (!isset($_SESSION['authPerfil'])) {
     // caso não esteja, redirecione a login e indique que para realizar o login
     header("Location: ./login.php?status=erro2");
     exit();
 }
 // variavel para todas as informaçoes do usuario
+require_once "../../dao/perfilDao.php";
 require_once "../../dao/usuarioDao.php";
-$codUser = $_SESSION['authUser'];
-$usuarioAutenticado = UsuarioDao::selectById($codUser['cod']);
+$codUser = $_SESSION['authPerfil'];
+$perfilAutenticado = PerfilDao::selectById($codUser['codPerfil']);
+$usuarioAutenticado =  UsuarioDao::selectById($codUser['codUser']);
 // verificar se o user esta banido
 if ($usuarioAutenticado['banido'] != 0) {
     // caso não esteja, redirecionar a login e indique que o user foi banido
     header("Location: ./login.php?status=erro3");
     exit();
 }
+if ($_SESSION['authUser'] == null) {
+    header('Location: ./login.php?status=erro4');
+}
+// var_dump($usuarioAutenticado);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
@@ -26,7 +32,7 @@ if ($usuarioAutenticado['banido'] != 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../assets/css/home.css">
     <?php
-    if ($usuarioAutenticado['tutorial'] == 0) {
+    if ($perfilAutenticado['tutorial'] == 0) {
         echo '<link rel="stylesheet" type="text/css" href="../../assets/css/tutorial-fases.css">';
     }
     ?>

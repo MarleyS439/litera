@@ -5,7 +5,7 @@ require_once (__DIR__ . '../../config/conexao.php');
 class PerfilDao{
     public static function insert($perfis){
         $conexao = Conexao::conectar();
-        $query = "INSERT INTO tbperfil(codUsuario, nomePerfil, generoPerfil, iconPerfil, dinheiroPerfil, tutorial, nivel, dataNasc, dataCriacao, dataModfc) VALUES ( ?,?,?, ?, ?, ?, ?, ?, ?, ?)";        
+        $query = "INSERT INTO tbperfil(codUsuario, nomePerfil, generoPerfil, iconPerfil, dinheiroPerfil, tutorial, nivel, fasesConcluidas, dataNasc, dataCriacao, dataModfc) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";        
         $stmt = $conexao->prepare($query);
         $stmt -> bindvalue(1, $perfis->getCodUsuario());
         $stmt -> bindvalue(2, $perfis->getNomePerfil());

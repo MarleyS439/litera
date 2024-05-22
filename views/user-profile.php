@@ -30,11 +30,11 @@ var_dump($perfilAutenticado);
 $porcentagem = 0;
 
 if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacaoPerfil'] > 0) {
-    $porcentagem = ($usuarioAutenticado['pontuacaoPerfil'] / 100) * 100;
+    $porcentagem = ($perfilAutenticado['pontuacaoPerfil'] / 100) * 100;
 } else if ($perfilAutenticado['pontuacaoPerfil'] < 260 && $perfilAutenticado['pontuacaoPerfil'] >= 100) {
-    $porcentagem = ($usuarioAutenticado['pontuacaoPerfil'] / 260) * 100;
+    $porcentagem = ($perfilAutenticado['pontuacaoPerfil'] / 260) * 100;
 } else if ($perfilAutenticado['pontuacaoPerfil'] < 700 && $perfilAutenticado['pontuacaoPerfil'] >= 260) {
-    $porcentagem = ($usuarioAutenticado['pontuacaoPerfil'] / 700) * 100;
+    $porcentagem = ($perfilAutenticado['pontuacaoPerfil'] / 700) * 100;
 } else if ($perfilAutenticado['pontuacaoPerfil'] == 0) {
     $porcentagem = 5;
 }
@@ -49,10 +49,16 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
     <link rel="stylesheet" href="../assets/css/navbar.css">
     <link rel="stylesheet" href="../assets/css/home.css">
     <title>Litera | Meu perfil</title>
+    <style>
+        /* Estilo da div com base na porcentagem */
+        .barra .progresso {
+            width: <?php echo $porcentagem; ?>%
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar">
+    <!-- <nav class="navbar">
         <div class="logo-area">
             <img src="../assets/images/litera.png" alt="Litera">
             <span>Litera</span>
@@ -103,14 +109,14 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
             </div>
         </div>
 
-    </nav>
+    </nav> -->
 
-    <div>
+    <div class="menu-profile-child">
         <?php
         require_once "../dao/compraItemDao.php";
         require('../dao/AvatarDao.php');
         $codUser = $_SESSION['authUser'];
-        $avatar = AvatarDao::selectByIdUser($codUser['cod']);
+        $avatar = AvatarDao::selectByIdUser($perfilAutenticado['codPerfil']);
 
         // Array associativo com os nomes dos meses em português
         $meses = array(
@@ -143,7 +149,7 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
             <div class="name-user">
                 <span><?php echo $perfilAutenticado['nomePerfil'] ?></span>
             </div>
-            <div class="modalContent">
+            <!-- <div class="modalContent">
                 <button class="edit-btn">
 
                 </button>
@@ -168,12 +174,7 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
                         </div>
                     </form>
                 </dialog>
-            </div>
-            <!-- <form action="" method="POST" id="modal">
-            <input id="campo" type="text" value="<?php echo ($perfilAutenticado['nome']) ?>" name="nome"> 
-            <button id="editar" id="modal" >Editar</button>
-            <input type="submit" value="salvar" id="salvar">
-    </form> -->
+            </div> -->
 
             <div class="avatar-container">
                 <div class="base">
