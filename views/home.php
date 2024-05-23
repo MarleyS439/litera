@@ -93,18 +93,18 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
                             <p>Acertar balões</p>
                         </div>
 
-                        <div class="background-card-game" id="aa"></div>
+                        <div class="background-card-game" id="game1"></div>
                     </a>
 
-                    <a class="game">
+                    <a class="game" href="../views/jogo/index.php">
                         <div class="title-game">
-                            <p></p>
+                            <p>Jogo das sílabas</p>
                         </div>
 
-                        <div class="background-card-game"></div>
+                        <div class="background-card-game" id="game2"></div>
                     </a>
 
-                    <a class="game">
+                    <a class="game" href="#">
                         <div class="title-game">
                             <p>Caça às Letras</p>
                         </div>
@@ -112,7 +112,7 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
                         <div class="background-card-game"></div>
                     </a>
 
-                    <a class="game">
+                    <a class="game" href="#">
                         <div class="title-game">
                             <p>Caça às Letras</p>
                         </div>

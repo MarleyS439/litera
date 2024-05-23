@@ -193,7 +193,7 @@ if ($_SESSION['authUser'] == null) {
         <div class="top-bar">
             <div class="info-user">
                 <img src="../assets/images/icons/profile.svg" alt="">
-                <span>Nome usuário</span>
+                <span><?php echo $perfilAutenticado['nomePerfil']; ?></span>
             </div>
 
             <div class="credits">
