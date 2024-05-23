@@ -1,6 +1,6 @@
 <?php
-require_once "../dao/compraItemDao.php";
-require('../dao/AvatarDao.php');
+require_once("../dao/compraItemDao.php");
+require("../dao/AvatarDao.php");
 $codPerfil = $_SESSION['authPerfil'];
 $avatar = AvatarDao::selectByIdUser($codPerfil['codPerfil']);
 

@@ -4,311 +4,344 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Litera | Suíte de jogos educacionais para auxílio à alfabetização de crianças brasileiras.">
-    <meta name="keywords" content="">
-    <meta name="author" content="Illumi">
-    <title>Litera | Alfabatização Para Novas Gerações</title>
-    <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="shortcut icon" href="./assets/images/litera.png" type="image/x-icon">
+    <title>Litera | Alfabetização para Novas Gerações</title>
+
+    <link rel="stylesheet" type="text/css" href="./assets/landing/index.css">
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/5bf5514c29.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
 
+    <!-- Header -->
     <header>
-        <nav class="navbar">
+        <!-- Navbar -->
+        <nav class="" id="navbar">
             <div class="logo-area">
-                <img src="./assets/images/LandingPage/logo-litera.png" alt="">
-                <div class="logo-img">
-                    <p>Litera</p>
-                </div>
+                <img src="./assets/images/arara 2.svg" alt="Litera">
+                <span>Litera</span>
             </div>
 
-            <div class="links">
+            <div class="navigation">
                 <ul>
                     <li><a href="#">Início</a></li>
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Recursos</a></li>
-                    <li><a href="#">Depoimentos</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Preço</a></li>
+                    <li><a href="#">Contato</a></li>
                 </ul>
             </div>
 
-            <div class="enter">
-                <div class="cadastro">
-                    <a href="views/login.php" id="entrarbtn">Login</a>
-                    <a href="views/register.php" id="cadastre">Cadastre-se</a>
+            <div class="action-btn" id="menu">
+                <a href="./views/register.php">Começar</a>
+
+                <!-- Div que simula um botão de clique para abrir o menu oculto -->
+                <div class="menu-mobile" id="openBtn">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
                 </div>
             </div>
         </nav>
+
+        <!-- Menu oculto-->
+        <div class="side-menu" id="hiddenMenu">
+            <ul>
+                <li><a href="" title="">Início</a></li>
+                <li><a href="" title="#sobre">Sobre</a></li>
+                <li><a href="" title="">Blog</a></li>
+                <li><a href="" title="">Preço</a></li>
+                <li><a href="" title="">Contato</a></li>
+            </ul>
+
+            <div class="close-menu-mobile" id="closeBtn">
+                <img src="./assets/images/icons/cancel-svgrepo-com.svg">
+            </div>
+
+            <div class="cta-mobile">
+                <a href="">Entre ou cadastre-se</a>
+            </div>
+        </div>
+
+        <div class="hero">
+            <!-- Container de itens do header -->
+            <div class="container-header">
+                <div class="sidea">
+                    <h1>Aprender com Jogos Educativos</h1>
+                    <h2>Litera - Alfabetização Para Novas Gerações</h2>
+
+                    <div class="cta-div">
+                        <a href="">Saiba mais</a>
+                    </div>
+                </div>
+
+                <div class="sideb">
+                    <img src="./assets/images/crianças (1)-min.png" alt="">
+                </div>
+            </div>
+        </div>
     </header>
 
+
+    <div class="reference" id="sobre"></div>
+
+    <!--Seção principal-->
     <main>
-        <section id="section-1">
-            <div id="section-1-apresentacao">
-                <p id="apresentacao-titulo"><span>Litera</span> alfabetizando novas gerações</p>
-                <p id="apresentacao-subtitulo">Uma suíte de <span>jogos</span> para auxílio na alfabetização dos seus filhos</p>
-                <div id="comecar">
-                    <a href="views/index.php">Começar</a>
+        <section class="cards-section">
+            <div class="title-section-cards">
+                <h2>Porquê o Litera?</h1>
+            </div>
+
+            <div class="bg"></div>
+
+            <div class="cards">
+                <div class="card" id="card1" data-bg="url(./assets/images/estrela.gif)">
+                    <div class="title-card">
+                        <div class="tag-card">
+                            <span>1</span>
+                        </div>
+
+                        <div class="content-card">
+                            <h4>Engajamento e diversão<h4>
+
+                                    <div class="content-card-p">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam.</p>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" id="card2" data-bg="url(./assets/images/asterisco.gif)">
+                    <div class="title-card">
+                        <div class="tag-card">
+                            <span>2</span>
+                        </div>
+
+                        <div class="content-card">
+                            <h4>Monitoramento de Progresso<h4>
+
+                                    <div class="content-card-p">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam.</p>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-bg="url(./assets/images/peça.gif)">
+                    <div class="title-card">
+                        <div class="tag-card">
+                            <span>3</span>
+                        </div>
+
+                        <div class="content-card">
+                            <h4>Habilidades Cognitivas<h4>
+
+                                    <div class="content-card-p">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam.</p>
+                                    </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div id="section-1-img">
-                <img src="./assets/images/LandingPage/filha-e-pai-1.png" alt="filha-e-pai-1">
+
             </div>
         </section>
 
-        <section id="section-2">
-            <div id="section-2-apresentacao">
-                <p>Por que escolher o <span>Litera</span>?</p>
-            </div>
-        </section>
 
-        <section id="section-3">
-            <div id="conteiner-section">
-                <div class="section-3-conteiner">
-                    <div class="section-3-cards">
-                        <div class="titulo-card">
-                            <button class="accordion-header">
-                                <img class="icon" src="./assets/images/icones 2/desempenho.svg" alt="">
-                                <p><span>Desempenho</span></p>
-                                <i id="arrow" class="fa-solid fa-chevron-down"></i> <!-- Ícone Chevon agora está isolado do lado oposto -->
-                            </button>
-                        </div>
-                        <div class="conteudo-card active">
-                            <p>Com o <span>Litera</span> será possível que o responsável tenha acesso ao desempenho da criança e possa saber em que partes ela deve melhorar.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="section-3-conteiner">
-                    <div class="section-3-cards">
-                        <div class="titulo-card">
-                            <button class="accordion-header">
-                                <img class="icon" src="./assets/images/icones 2/acessivel.svg" alt="">
-                                <p><span>Acessível</span></p>
-                                <i id="arrow" class="fa-solid fa-chevron-down"></i>
-                            </button>
-                        </div>
-                        <div class="conteudo-card ">
-                            <p>O <span>Litera</span> é uma plataforma acessível pois é totalmente gratuita sem exigir que o usuário faça inscrição em um tipo de plano</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="section-3-conteiner">
-                    <div class="section-3-cards">
-                        <div class="titulo-card">
-                            <button class="accordion-header">
-                                <img class="icon" src="./assets/images/icones 2/interativo.svg" alt="">
-                                <p><span>Interativo</span></p>
-                                <i id="arrow" class="fa-solid fa-chevron-down"></i>
-                            </button>
-                        </div>
-                        <div class="conteudo-card">
-                            <p>O <span>Litera</span> é uma plataforma interativa possibilitando que o usuário aprenda de forma divertida e fácil e personalize seu avatar</p>
-                        </div>
-                    </div>
-                </div>
+        <section class="video">
+            <div class="title-section-cards">
+                <h2>Vídeo Pitch</h1>
             </div>
 
-            <div id="title-litera-container">
-                <h3 id="title-literaHelp">Como o <span>Litera</span> tem ajudado?</h3>
-            </div>
-            <div class="div-justify">
-                <div class="container-justify">
-                    <h3 class="title-utility">+ 1.500</h3>
-                    <p>Pais falaram que apoiam o Litera e que ele tem sido de ajuda para os seus filhos</p>
-                </div>
-
-                <div class="container-justify">
-                    <img id="img_data" src="./assets/images/LandingPage/Frame 68.png" alt="">
-                    <div class="grafic"></div>
-                    <p>tivemos um aumento de 62% no desempenho das crianças que utilizaram o Litera</p>
-                </div>
-
-                <div class="container-justify">
-                    <h3 class="title-utility">15 min</h3>
-                    <p>jogando com Litera uma criança aprende coisas novas numa média de 15 minutos </p>
-                </div>
-            </div>
+            <video src="./assets/video/pitch.mp4" controls>
+                Seu navegador não suporta a tag de vídeo.
+            </video>
 
         </section>
 
-        <section id="section-4">
-            <div id="section-4-apresentacao">
-                <p>Totalmente <span>Gamificado!</span></p>
+
+        <section class="contato">
+            <div class="title-form">
+                <h2>Entre em contato</h2>
+            </div>
+
+            <div class="container-form">
+
+                <div class="imagem-contato">
+                    <img src="./assets/images/child.png" alt="Imagem">
+                </div>
+
+                <form action="" method="">
+                    <div class="item-form">
+                        <label for="">Nome</label>
+                        <input type="text" placeholder="Digite seu nome" required />
+                    </div>
+
+                    <div class="item-form">
+                        <label for="">E-mail</label>
+                        <input type="email" placeholder="Digite seu e-mail" required />
+                    </div>
+
+                    <div class="item-form">
+                        <label for="">Mensagem</label>
+                        <textarea name="" id="" cols="30" rows="5"></textarea>
+                    </div>
+
+                    <div class="bottom">
+                        <button type="submit">Enviar</button>
+                    </div>
+                </form>
             </div>
         </section>
-
-        <section id="section-5">
-            <div id="section-5-img">
-                <img id="img_game" src="./assets/images/Frame 66.png">
-            </div>
-            <div id="section-5-textContainer">
-                <p>O Litera possui uma suíte de jogos para que as crianças consigam aprender de uma forma divertida e diferenciada</p>
-            </div>
-
-            <div id="section-5-parte-2">
-                <div class="jogos-demonstracao">
-                    <div class="area-card-jogo card-jogo-center">
-                        <div class="card-jogo">
-                            <img src="./assets/images/LandingPage/adivinhar_jogo.png" alt="adivinhar" class="img-jogo">
-                        </div>
-                        <p>Adivinhe a figura</p>
-                    </div>
-                    <div class="area-card-jogo card-jogo-center">
-                        <div class="card-jogo">
-
-                        </div>
-                    </div>
-                    <div class="area-card-jogo card-jogo-end">
-                        <p>Acerte a vogal</p>
-                        <div class="card-jogo-vogal">
-                            <img src="./assets/images/LandingPage/vogal-jogo.png" alt="adivinhar" class="img-jogo">
-                        </div>
-                    </div>
-                    <div class="area-card-jogo card-jogo-end">
-                        <div class="card-jogo">
-
-                        </div>
-                    </div>
-
-                </div>
-                <div id="section-5-2-img">
-                    <img src="./assets/images/LandingPage/menina latina 2.png" alt="" id="img_menina">
-                </div>
-            </div>
-        </section>
-
-        <section id="section-6"></section>
-
-        <section id="section-7">
-
-            <div class="title-section-multipart">
-                <h3 id="section-7-title">Projetado para ser acessado em qualquer dispositivo e local!</h3>
-            </div>
-            <div id="section-7-conteinerConteudo">
-                <div id="section-7-containerImg">
-                    <img id="section-7-img" src="./assets/images/LandingPage/Frame 66.png" alt="">
-                </div>
-                <div id="section-7-text" class="content">
-                    <p>O Litera tem um design totalmente responsivo, possibilitando que os usuários consigam acessá-lo de diversos aparelhos e locais.</p>
-                </div>
-
-            </div>
-
-        </section>
-
-        <section id="section-8">
-            <div class="title-clientes">
-                <h3>O que os nossos clientes dizem?</h3>
-            </div>
-            <div id="area-comentario">
-                <div class="comentario">
-                    <div class="top-comentario">
-                        <img src="./assets/images/LandingPage/Ellipse 59.png" alt="" class="img-perfil-usuario">
-                        <p>Heitor de Oliveira</p>
-                    </div>
-                    <div class="comentario-user">
-                        <p>"Gostei muito dessa plataforma. Desde que a minha filha começou a usar ela tem melhorado muito a leitura."</p>
-                    </div>
-                </div>
-                <div class="comentario">
-                    <div class="top-comentario">
-                        <img src="./assets/images/LandingPage/Ellipse 60.png" alt="" class="img-perfil-usuario">
-                        <p>Carmen Satiago</p>
-                    </div>
-                    <div class="comentario-user">
-                        <p>"Depois do meu filho usar o Liitera, os seus professores têm elogiado ele, dizendo que ele melhorou muito na escrita e pronúncia."</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- <section>
-            <div id="section-final">
-                <div id="title-section-final">
-                    <p>Fique por dentro das novidades </p>
-                </div>
-                <div id="section-final-conteudo">
-                    <div id="txt-section-final">
-                        <p>Quer saber de tudo que o Litera esta fazendo? Então se increva com o seu email e saiba de todas as novidades </p>
-                    </div>
-                    <div id="area-form">
-                        <form action="" id="form">
-                            <input type="email" placeholder="Insira seu e-mail">
-                            <button type="submit">Enviar</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section> -->
     </main>
 
-    <section id="footer">
-        <div id="footer-1">
-            <div id="div-contato">
-                <h3 id="contato-titulo">informações de contato</h3>
-                <p id="info-contato"> R. Feliciano de Mendonça, 290-</p>
-                <p id="info-contato"> Guaianases, São Paulo - SP</p>
-                <p id="info-contato"> 08460-365 </p>
-                <p id="info-contato"> (11) 4002-8922 </p>
-                <p id="info-contato"> litera@hotmail.com </p>
+    <!--Footer-->
+    <footer>
+        <div class="items-footer">
+            <div class="item-footer">
 
-            </div>
-
-            <div id="div-navegacao">
-                <h3 id="navegacao-titulo"> Navegação </h3>
-                <p id="info-navegacao"> Beneficios </p>
-                <p id="info-navegacao"> Funcionalidades </p>
-                <p id="info-navegacao"> Increva-se </p>
-
-            </div>
-
-            <div id="div-social-media">
-                <img id="img-litera" src="./assets/images/footer/Litera.png">
-                <hr>
-                <div id="div-social-media-img">
-                    <div id="div-img">
-                        <div id="images">
-                            <img id="img-social" src="./assets/images/facebook.png" href="https://www.facebook.com/?locale=pt_BR" alt="face">
-                        </div>
-                        <div id="images">
-                            <img id="img-social" src="./assets/images/instagram.png" alt="insta">
-                        </div>
-                        <div id="images">
-                            <img id="img-social" src="./assets/images/x.png" alt="x">
-                        </div>
-                    </div>
+                <div class="logo-litera">
+                    <img src="./assets/images/arara 2.svg" alt="">
+                    <h4>Litera</h4>
                 </div>
+
+                <a href="" title="Conheças todos os recursos">Recursos</a>
+                <a href="" title="Temos soluções diversas. Acesse e saiba mais.">Soluções</a>
+                <a href="" title="Ficou preocupado com a Segurança da nossa plataforma? Saiba mais.">Segurança</a>
+                <a href="" title="Fique por dentro das mais recentes versões do antes de todo mundo.">Acesso antecipado</a>
+            </div>
+
+            <div class="item-footer">
+                <h4>Empresa</h4>
+                <a href="">Illumi</a>
+                <a href="">Trabalhe conosco</a>
+                <a href="">Parceiros</a>
+            </div>
+
+            <div class="item-footer">
+                <h4>Suporte</h4>
+                <a href="">Central de ajuda</a>
+                <a href="">Fale conosco</a>
+                <a href="">Privacidade e termos de uso</a>
+                <a href="">Política de cookies</a>
+                <a href="">Recursos de aprendizagem</a>
+            </div>
+
+            <div class="item-footer">
+                <h4>Comunidade</h4>
+                <a href="">Blog</a>
+                <a href="">Desenvolvedores</a>
+                <a href="">Fóruns da comunidade</a>
+                <a href="">Indicações</a>
+                <a href="">Parceiros de integração</a>
             </div>
 
         </div>
 
-        <div id="footer-2">
-            <div id="div-saiba-mais">
-                <h3 id="saiba-mais-titulo">Saiba mais</h3>
-                <p id="info-saiba-mais"> Perguntas frequentes (FAQ) </p>
-                <p id="info-saiba-mais"> Politica de privacidade </p>
-                <p id="info-saiba-mais"> Termos de serviço </p>
-                <p id="info-saiba-mais"> Central de ajuda e suporte </p>
-
-            </div>
-
-            <div id="div-inscreva-se">
-                <h3 id="inscreva-se-titulo">inscreva-se</h3>
-                <div id="div-input">
-                    <input type="email" id="email-footer" placeholder="Insira seu e-mail">
-                    <button type="submit" id="submit-btn-footer">Enviar</button>
-                </div>
-            </div>
-
-            <div id="div-voltar-topo">
-                <a href="#section-1">
-                    <img  id="img-seta" src="./assets/images/seta-cima.png" alt="x">
-                </a>
-            </div>
+        <div class="title-social-media">
+            <h4>Siga-nos nas redes sociais</h4>
         </div>
 
-    </section>
+        <!-- Links de redes sociais -->
+        <div class="social-media">
 
-    <script src="./assets/javascript/accordion.js"></script>
+            <i class="fa-brands fa-instagram" title="Instagram" id="instagram"></i>
+            <i class="fa-brands fa-facebook" title="Facebook" id="facebook"></i>
+            <i class="fa-brands fa-x-twitter" title="Twitter/X" id="x"></i>
+            <i class="fa-brands fa-pinterest" title="Pinterest" id="pin"></i>
+            <i class="fa-brands fa-youtube" title="YouTube" id="youtube"></i>
 
+        </div>
+
+        <!-- Copyright -->
+        <div class="copy">
+            &copy; 2023 · Litera. Todos os direitos reservados. Desenvolvido por <a href="">Illumi</a>
+        </div>
+
+    </footer>
+
+
+
+    <!-- Script para movimentação do Navbar -->
+    <script>
+        /* Variável para capturar a largura da tela */
+        // var larguraTela = screen.width;
+        // var navbar = document.getElementById('navbar');
+
+
+        /* Caso a largura da tela seja maior ou igual a 770, ele ativa o script */
+        // if (larguraTela > 770) {
+        //     /* Ao fazer scroll de 20px, ele muda o tamanho do navbar */
+        //     window.addEventListener('scroll', function() {
+        //         if (window.scrollY >= 20) {
+        //             navbar.style.width = 'calc(100vw - 5%)';
+        //             navbar.style.margin = '10px';
+        //             navbar.style.boxShadow = "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;";
+        //         } else {
+        //             navbar.style.width = '100%';
+        //             navbar.style.margin = "0px 10px";
+        //         }
+        //     });
+        // }
+
+        // if (larguraTela < 768) {
+        //     window.addEventListener('scroll', function() {
+        //         if (window.screenY >= 20) {
+        //             navbar.style.width = '100%';
+        //             navbar.style.margin = '0px';
+        //         }
+        //     })
+        // }
+    </script>
+
+    <!-- Script para menu lateral mobile -->
+    <script>
+        // Botão de abrir o menu
+        let openMenuBtn = document.getElementById('openBtn');
+
+        // Menu lateral
+        let menu = document.getElementById('hiddenMenu');
+
+        // Corpo do site
+        let bodySite = document.body;
+
+        // Função para abrir o menu
+        openBtn.addEventListener('click', function() {
+            if (menu.style.display = 'none') {
+                menu.style.display = 'block';
+                menu.style.position = 'fixed';
+                bodySite.style.overflowY = 'hidden';
+            }
+        });
+
+        // Botão de fechar o menu
+        let closeMenuBtn = document.getElementById('closeBtn');
+
+        closeBtn.addEventListener('click', function() {
+            menu.style.display = 'none';
+            bodySite.style.overflowY = 'auto';
+        });
+    </script>
+
+    <!--<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cardsSection = document.querySelector('.cards-section');
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                card.addEventListener('mouseover', function() {
+                    const bgImage1 = card.getAttribute('data-bg');
+
+                    cardsSection.style.backgroundImage = bgImage1;
+                    cardsSection.style.backgroundSize = '80vh';
+                    cardsSection.style.backgroundRepeat = 'no-repeat';
+
+
+                })
+            })
+        })
+    </script>-->
 </body>
 
 </html>

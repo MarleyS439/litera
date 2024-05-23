@@ -726,7 +726,9 @@
         padding: 2%;
         border-radius: 12px;
         backdrop-filter: blur(5px);
-        background-color: #ffffff85    }
+        background-color: #ffffff85;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 50px;
+    }
 
     .sidea h1 {
         color: var(--orange);
@@ -789,6 +791,7 @@
         padding: 15px 80px;
         border-radius: 12px;
         animation: float 800ms ease-in-out infinite;
+        font-size: 2rem
     }
 
     .cards {
@@ -845,6 +848,7 @@
         background-color: #ffffff80;
         margin: 0% 5%;
         border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 50px;
     }
 
     .video video {
@@ -855,6 +859,87 @@
         margin: 2% 25%;
     }
 
+
+    .contato {
+        background-color: var(--white-index);
+        padding: 5%;
+        margin: 2% 5%;
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 50px;
+    }
+
+    .title-form {
+        display: flex;
+        justify-content: center;
+    }
+
+    .title-form h2 {
+        display: flex;
+        justify-content: center;
+        color: var(--orange);
+        font-size: 2rem;
+    }
+
+    .container-form {
+        margin: 5%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .imagem-contato img {
+        width: 400px;
+    }
+
+    .container-form form {
+        background-color: var(--blue4);
+        padding: 0% 0%;
+        width: 30vw;
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 50px;
+    }
+
+    .container-form form .item-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0% 5%;
+    }
+
+    .item-form label {
+        margin: 3% 0%;
+        color: var(--white-index);
+        font-family: var(--font-poppins-bold);
+    }
+
+    .item-form input, .item-form textarea {
+        padding: 12px;
+        border-radius: 12px;
+        border: none;
+    }
+
+    .bottom {
+        margin: 0% 5%;
+    }
+
+
+    .bottom button {
+        padding: 10px;
+        margin: 2% 0%;
+        border-radius: 12px;
+        color: #0E3010;
+        width: 100%;
+        cursor: pointer;
+        background-color: var(--green);
+        border: none;
+        font-family: var(--font-poppins-bold);
+        transition: 250ms;
+    }
+
+
+    .bottom button:hover {
+        background-color: var(--yellow);
+    }
 
 
 
@@ -907,6 +992,7 @@
     .item-footer a {
         display: flex;
         margin: 10px 0px;
+        color: var(--dark-b);
     }
 
     .item-footer a:hover {

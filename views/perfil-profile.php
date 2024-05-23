@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 // session
 session_start();
@@ -8,9 +9,10 @@ if (!isset($_SESSION['authPerfil'])) {
     exit();
 }
 // variavel para todas as informaçoes do usuario
-require_once "../dao/perfilDao.php";
-require_once "../dao/usuarioDao.php";
-require('../dao/AvatarDao.php');
+require_once("../dao/perfilDao.php");
+require_once("../dao/usuarioDao.php");
+require('../dao/avatarDao.php');
+
 $codUser = $_SESSION['authPerfil'];
 $perfilAutenticado = PerfilDao::selectById($codUser['codPerfil']);
 $usuarioAutenticado =  UsuarioDao::selectById($codUser['codUser']);
@@ -41,7 +43,7 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
     $porcentagem = 5;
 }
 ?>
-<!DOCTYPE html>
+
 <html lang="pt-br">
 
 <head>
