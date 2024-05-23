@@ -26,7 +26,7 @@
             <div class="navigation">
                 <ul>
                     <li><a href="#">Início</a></li>
-                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">Preço</a></li>
                     <li><a href="#">Contato</a></li>
@@ -49,7 +49,7 @@
         <div class="side-menu" id="hiddenMenu">
             <ul>
                 <li><a href="" title="">Início</a></li>
-                <li><a href="" title="">Sobre</a></li>
+                <li><a href="" title="#sobre">Sobre</a></li>
                 <li><a href="" title="">Blog</a></li>
                 <li><a href="" title="">Preço</a></li>
                 <li><a href="" title="">Contato</a></li>
@@ -84,10 +84,85 @@
     </header>
 
 
+    <div class="reference" id="sobre"></div>
+
     <!--Seção principal-->
     <main>
-        <section>
+        <section class="cards-section">
+            <div class="title-section-cards">
+                <h2>Porquê o Litera?</h1>
+            </div>
 
+            <div class="bg"></div>
+
+            <div class="cards">
+                <div class="card" id="card1" data-bg="url(../assets/images/estrela.gif)">
+                    <div class="title-card">
+                        <div class="tag-card">
+                            <span>1</span>
+                        </div>
+
+                        <div class="content-card">
+                            <h4>Engajamento e diversão<h4>
+
+                                    <div class="content-card-p">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam.</p>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" id="card2" data-bg="url(../assets/images/asterisco.gif)">
+                    <div class="title-card">
+                        <div class="tag-card">
+                            <span>2</span>
+                        </div>
+
+                        <div class="content-card">
+                            <h4>Monitoramento de Progresso<h4>
+
+                                    <div class="content-card-p">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam.</p>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-bg="url(../assets/images/peça.gif)">
+                    <div class="title-card">
+                        <div class="tag-card">
+                            <span>3</span>
+                        </div>
+
+                        <div class="content-card">
+                            <h4>Habilidades Cognitivas<h4>
+
+                                    <div class="content-card-p">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam.</p>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </section>
+
+
+        <section class="video">
+            <div class="title-section-cards">
+                <h2>Vídeo Pitch</h1>
+            </div>
+
+            <video src="../assets/video/pitch.mp4" controls>
+                Seu navegador não suporta a tag de vídeo.
+            </video>
+
+        </section>
+
+
+        <section class="contato">
+            <div class="container-form"></div>
         </section>
     </main>
 
@@ -217,9 +292,26 @@
             menu.style.display = 'none';
             bodySite.style.overflowY = 'auto';
         });
-
-
     </script>
+
+    <!--<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cardsSection = document.querySelector('.cards-section');
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                card.addEventListener('mouseover', function() {
+                    const bgImage1 = card.getAttribute('data-bg');
+
+                    cardsSection.style.backgroundImage = bgImage1;
+                    cardsSection.style.backgroundSize = '80vh';
+                    cardsSection.style.backgroundRepeat = 'no-repeat';
+
+
+                })
+            })
+        })
+    </script>-->
 </body>
 
 </html>

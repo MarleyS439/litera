@@ -263,6 +263,11 @@
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    body {
+        background-color: var(--blue-index);
+    }
+
     nav {
         background-color: var(--white-index);
         display: flex;
@@ -445,6 +450,11 @@
         background-color: var(--yellow);
     }
 
+    /*Main*/
+    main .cards-section {
+        padding: 5%
+    }
+
 
 
     /* Footer */
@@ -568,6 +578,12 @@
 
 @media screen and (min-width: 1024px) {
 
+    body {
+        background-image: url(../assets/images/fundo.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
     /* Navbar */
     nav {
         background-color: var(--white-index);
@@ -583,6 +599,8 @@
         z-index: 100;
         margin: 10px;
         box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 50px;
+        -webkit-animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+        animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
     }
 
     .side-menu {
@@ -680,7 +698,6 @@
         display: flex;
         height: 100vh;
         justify-content: center;
-        background-image: url(../assets/images/fundo.svg);
         background-repeat: no-repeat;
         background-size: 100%;
     }
@@ -705,8 +722,11 @@
     }
 
     .sidea {
-        padding: 0% 0% 0% 5%;
-    }
+        margin: 0% 0% 0% 5%;
+        padding: 2%;
+        border-radius: 12px;
+        backdrop-filter: blur(5px);
+        background-color: #ffffff85    }
 
     .sidea h1 {
         color: var(--orange);
@@ -723,6 +743,7 @@
 
     .sideb img {
         width: 700px;
+        animation: float 2s ease-in-out infinite;
     }
 
     .cta-div {
@@ -745,9 +766,96 @@
 
 
     /*Main*/
-    main {
-        background-color: var(--blue-index);
+    main .cards-section {
+        padding: 2% 5%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-position-x: center;
     }
+
+
+    .title-section-cards {
+        display: flex;
+        justify-content: center;
+    }
+
+    .title-section-cards h2 {
+        display: flex;
+        justify-content: center;
+        color: var(--orange);
+        margin: 1%;
+        background-color: var(--white-index);
+        padding: 15px 80px;
+        border-radius: 12px;
+        animation: float 800ms ease-in-out infinite;
+    }
+
+    .cards {
+        display: flex;
+        justify-content: center;
+    }
+
+    .card {
+        width: 30vw;
+        padding: 2%;
+        margin: 2%;
+        background-color: var(--white-index);
+        color: var(--dark-b);
+        border-radius: 12px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .card:hover {
+        transition: 250ms ease;
+        transform: translate(5px, 10px);
+        transform: rotate(5deg);
+        box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;
+    }
+
+    .content-card h4 {
+        font-family: var(--font-poppins-bold);
+        color: var(--dark-b);
+        margin: 5% 0%;
+    }
+
+    .content-card-p p {
+        color: var(--blue-index);
+    }
+
+    .tag-card {
+        background-color: var(--orange);
+        border-radius: 50%;
+        width: min-content;
+        padding: 10px 18px;
+    }
+
+    .tag-card span {
+        color: var(--white-index);
+        font-family: var(--font-poppins-bold);
+    }
+
+    .video {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center
+        padding: 6%;
+        background-color: #ffffff80;
+        margin: 0% 5%;
+        border-radius: 12px;
+    }
+
+    .video video {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12px;
+        margin: 2% 25%;
+    }
+
+
 
 
     /* Footer */
@@ -879,7 +987,6 @@
         position: relative;
         top: 0;
         background-color: #ffffff99;
-        backdrop-filter: blur(10px);
     }
 
     .stitle .big-title {
