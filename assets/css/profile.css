@@ -11,6 +11,7 @@
 
 /* Mobile */
 @media screen and (max-width: 768px) {
+<<<<<<< HEAD
     .desktop-view {
         display: none;
     }
@@ -350,6 +351,21 @@
         display: none;
     }
 
+=======
+    .desktop-view{
+        display: none;
+    }
+}
+
+/* Tablets */
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+
+/* Desktops */
+@media screen and (min-width: 1025px) {
+    .mobile-view{
+        display: none;
+    }
+>>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
     body {
         background-image: url(../images/profile-user.png);
         background-size: cover;
@@ -422,13 +438,20 @@
         font-weight: 900;
         font-family: var(--font-poppins-bold);
     }
+<<<<<<< HEAD
 
     .infos-principais img {
+=======
+    .infos-principais img{
+>>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
         width: 40px;
         height: 30px;
         margin-top: 6px;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
     .infos-principais .user {
         color: var(--color-azul);
     }
@@ -480,38 +503,64 @@
     }
 
     .progresso .barra>.barra-progresso {
+<<<<<<< HEAD
         background-color: var(--azul-card);
         height: 80%;
         border-radius: 5px;
     }
 
     .conquistas-card {
+=======
+        background-color: var(--azul-card); 
+        height: 80%;
+        border-radius: 5px;
+    }
+    .conquistas-card{
+>>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
         width: 100%;
         height: 48%;
         padding: 0% 5% 2% 5%;
     }
+<<<<<<< HEAD
 
     .title-conquista {
+=======
+    .title-conquista{
+>>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
         width: 100%;
         display: flex;
         justify-content: center;
     }
+<<<<<<< HEAD
 
     .title-conquista h1 {
         margin-top: 15px;
+=======
+    .title-conquista h1{
+>>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
         text-align: center;
         font-size: 26px;
         font-family: var(--font-poppins);
     }
+<<<<<<< HEAD
 
     .conquistas-card .conquistas {
         width: 100%;
         height: 80%;
+=======
+    .conquistas-card .conquistas{
+        width: 100%;
+        height: 90%;
+>>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
         border: solid 1px var(--black);
         border-radius: 10px;
         padding: 1% 3%;
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
     /* AVATAR   */
     .base {
         position: relative;

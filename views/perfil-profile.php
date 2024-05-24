@@ -168,6 +168,7 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
         </div>
     </div>
     <div class="mobile-view">
+<<<<<<< HEAD
         <div class="container">
             <div class="topo">
                 <span>Seu Perfil</span>
@@ -220,6 +221,11 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
         </div>
 
         <div class="bottom-navigation-bar">
+=======
+
+        <div class="bottom-navigation-bar">
+
+>>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
             <a href="../views/home.php">
                 <img src="../assets/images/icons/home-icon.svg" alt="Início" id="home">
             </a>

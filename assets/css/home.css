@@ -33,8 +33,11 @@
         font-size: 2rem;
         color: var(--black2);
         font-family: var(--font-poppins-bold);
+<<<<<<< HEAD
         margin-bottom: 5vw;
 
+=======
+>>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
     }
 
     .games-list {

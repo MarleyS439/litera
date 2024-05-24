@@ -72,7 +72,11 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
                     <img src="./../assets/images/icons/female.svg" alt="genero">
                 </div>
                 <div class="card">
+<<<<<<< HEAD
                     <img class="cabeloIcon" src="./../assets/images/icons/comb.svg" alt="cabelo">
+=======
+                    <img src="./../assets/images/icons/comb.svg" alt="cabelo">
+>>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
                 </div>
                 <div class="card">
                     <img src="./../assets/images/icons/shirt.svg" alt="roupa">
@@ -138,7 +142,11 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
                     <img src="./../assets/images/icons/female.svg" alt="genero">
                 </div>
                 <div class="card etapaAtu">
+<<<<<<< HEAD
                     <img class="cabeloIcon" src="./../assets/images/icons/comb-color.svg" alt="cabelo">
+=======
+                    <img src="./../assets/images/icons/comb-color.svg" alt="cabelo">
+>>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
                 </div>
                 <div class="card">
                     <img src="./../assets/images/icons/shirt.svg" alt="roupa">
@@ -181,7 +189,11 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
                     <img src="./../assets/images/icons/female.svg" alt="genero">
                 </div>
                 <div class="card ">
+<<<<<<< HEAD
                     <img class="cabeloIcon" src="./../assets/images/icons/comb.svg" alt="cabelo">
+=======
+                    <img src="./../assets/images/icons/comb.svg" alt="cabelo">
+>>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
                 </div>
                 <div class="card etapaAtu">
                     <img src="./../assets/images/icons/shirt-color.svg" alt="roupa">

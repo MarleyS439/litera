@@ -10,6 +10,7 @@
 }
 
 /* Mobile */
+<<<<<<< HEAD
 @media screen and (max-width: 768px) {
     body {
         background-color: var(--white-blue);
@@ -197,6 +198,9 @@
         top: 30%;
     }
 }
+=======
+@media screen and (max-width: 768px) {}
+>>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
 
 /* Tablets */
 @media screen and (min-width: 769px) and (max-width: 1024px) {}

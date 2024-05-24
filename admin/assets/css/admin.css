@@ -186,12 +186,20 @@
   }
 
   .information-home .container .card-container {
+<<<<<<< HEAD
     width: 25%;
     height: 12rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
+=======
+    width: 50%;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+>>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
   }
 
   .card-container .card {
@@ -1056,7 +1064,11 @@
   .container-cards{
     display: flex;
     flex-wrap: wrap;
+<<<<<<< HEAD
     width: 100%;
+=======
+    width: 90%;
+>>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
     justify-content: space-evenly;
   }
   .container-cards .cards{
