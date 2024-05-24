@@ -1,0 +1,867 @@
+@import url(./default.css);
+@import url(./animations.css);
+
+
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+
+    .desktop-view {
+        display: none;
+    }
+
+    body {
+        background-color: var(--blue0);
+    }
+
+    .mobile-view main {
+        display: contents;
+        position: relative;
+        top: 10vh;
+        padding: 1% 5%;
+    }
+
+    .mobile-view .title {
+        display: flex;
+        padding: 0% 5%;
+        position: relative;
+        top: 15vh;
+        justify-content: left;
+    }
+
+    .mobile-view .title h2 {
+        font-size: 2rem;
+        color: var(--black2);
+        font-family: var(--font-poppins-bold);
+        margin-bottom: 5vw;
+
+    }
+
+    .games-list {
+        margin: 20% 0% 25% 0%;
+    }
+
+    .game {
+        padding: 1%;
+        margin: 0% 0% 5% 0%;
+        text-decoration: none;
+        color: var(--black2);
+        transition: 200ms ease-in-out;
+    }
+
+    .game .title-game p {
+        font-family: var(--font-poppins-bold);
+        margin: 1% 0%;
+        font-size: 1.1rem;
+    }
+
+    .background-card-game {
+        border: 5px solid var(--blue2);
+        background-image: url(../images/Frame-game1.png);
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        height: 25vh;
+        box-shadow: 1px 5px 1px #00000020;
+    }
+
+    #store {
+        width: 38px;
+        height: 40px;
+    }
+
+    .top-bar {
+        position: fixed;
+        top: 0;
+        padding: 0% 5%;
+    }
+
+    .games-list {
+        padding: 0% 5%;
+    }
+
+    main .title {
+        color: var(--black2);
+    }
+
+    #game1 {
+        background-image: url(../../assets/images/Frame\ 150.png);
+        background-size: cover;
+    }
+
+    #game2 {
+        background-image: url(../../assets/images/Frame\ 33.png);
+    }
+
+
+}
+
+/* Tablets */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    body {
+        cursor: url(../../views/jogo/jogo/img/mão.svg);
+    }
+
+    .mobile-view {
+        display: none;
+    }
+
+    .desktop-view main {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        top: 6vh;
+        color: var(--black2);
+        height: 100vh;
+        transition: 300ms ease-in-out;
+    }
+
+    .title-desktop-room {
+        padding: 1% 5%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .title-desktop-room h2 {
+        font-family: var(--font-poppins-bold);
+        color: var(--green-dark);
+        border: 5px solid var(--green-line);
+        display: flex;
+        justify-content: center;
+        background-color: var(--green-fill);
+        padding: 1% 2%;
+        border-radius: 8px;
+    }
+
+    .games-desktop-itens {
+        display: grid;
+        justify-content: center;
+        flex-wrap: wrap;
+        transition: 300ms ease-in-out;
+    }
+
+
+    .bg-game {
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 400px;
+        height: 250px;
+        border-radius: 10px;
+        border: 5px solid var(--blue2);
+        box-shadow: 0px 5px 5px #00000060;
+    }
+
+    #balls {
+        background-image: url(../images/Frame\ 150.png);
+    }
+
+    #fruits {
+        background-image: url(../images/Frame\ 33.png);
+    }
+
+    .game-item {
+        display: flex;
+        justify-content: center;
+        border-radius: 10px;
+        text-decoration: none;
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+        width: 250px;
+        transition: 300ms ease-in-out;
+    }
+
+    .game-item:hover {
+        transition: 300ms ease-in-out;
+        -webkit-animation: pulsate-fwd 1s ease-in-out infinite both;
+        animation: pulsate-fwd 1s ease-in-out infinite both;
+    }
+
+    .profile-menu {
+        border-left: 1px solid var(--blue2);
+        height: 100vh;
+     
+    }
+
+    .games-desktop {
+        position: relative;
+        top: 5vh;
+        width: 100%;
+        background-image: url(../images/Group\ 51.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        margin: 0% 2%;
+        height: 100%;
+        transition: 300ms ease-in-out;
+    }
+
+    .title-game-item p {
+        font-family: var(--font-poppins-bold);
+        color: var(--white);
+        text-shadow: 1px 2px 1px #00000070;
+        background-color: var(--blue2);
+        backdrop-filter: blur(1px);
+        border-radius: 8px;
+        position: relative;
+        top: 20%;
+        font-size: 1.3rem;
+        left: 0;
+        padding: 5%;
+        z-index: 10;
+    }
+
+    .profile-menu {
+        padding: 5% 2%;
+        width: 27%;
+    }
+
+    .title-profile-menu {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 12%;
+    }
+
+    .modal-content {
+        background-color: var(--background);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 1rem;
+    }
+
+    .edit-btn {
+        border-radius: 25%;
+        appearance: none;
+        padding: 1vw 0.5vw;
+        color: #323AC0;
+        outline: none;
+        border: none;
+        display: flex;
+        box-shadow: rgb(63, 63, 63) 0px 1px 6px;
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+        position: absolute;
+        right: 2vw;
+        top: 20%;
+        background-image: url(../images/icons/edit-3-svgrepo-com.svg);
+        width: 2vw;
+        background-size: 2vw;
+        background-repeat: no-repeat;
+    }
+
+    .edit-name-dialog {
+        border-radius: 0.75rem;
+        box-shadow: rgba(149, 157, 167, 0.2) 0px 8px 24px;
+        max-width: 36rem;
+        margin: 0 auto;
+        width: 100%;
+        margin-top: 4rem;
+        border: none;
+        animation: fadeInAnimation ease-in-out 0.5s forwards;
+    }
+
+    .close-btn {
+        background-color: inherit;
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+        border: none;
+    }
+
+    .edit-name-dialog header {
+        display: flex;
+        min-height: 4vh;
+        padding: 1.5vh 2vw 0.75vh 2vw;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1% solid #F3F3F4
+    }
+
+    .edit-name-dialog--fadeout {
+        animation: fadeOutAnimation ease-in-out.5s forwards
+    }
+
+    .save-name-dialog__content {
+        padding: 2vw;
+    }
+
+    .save-name-wrapper {
+        display: flex;
+        color: #9BA2A4;
+        border-radius: 0.5rem;
+        font-weight: 700;
+        justify-content: space-between;
+        background-color: #F3F3F4;
+        padding: 0.25;
+        padding-left: 1.5rem;
+    }
+
+    .save-name-wrapper input {
+        outline: none;
+        border: none;
+        width: 100%;
+        font-weight: 800;
+        background-color: inherit;
+        font-size: 1.2rem;
+    }
+
+    .save-name-wrapper button {
+        color: #323AC0;
+        background-color: white;
+        white-space: nowrap;
+        padding: 0.5vh 1vw;
+        border-radius: 0.4vw;
+        font-weight: 800;
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+        display: flex;
+        gap: 0.5%;
+        font-size: 1.1rem;
+        align-items: center;
+        border: none;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 3px 6px;
+    }
+
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        100% {
+            opacity: 1;
+            visibility: visible
+        }
+    }
+
+    .avatar-container {
+        background-color: var(--blue2);
+        border-radius: 5px;
+        padding: 2% 3%;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+    }
+
+    .name-user span {
+        font-family: var(--font-poppins-bold);
+        font-size: 1.2rem;
+        z-index: 15;
+    }
+
+    #campo,
+    #salvar {
+        display: none;
+    }
+
+    .ava {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 10;
+    }
+
+    .circle {
+        content: normal;
+        background-color: var(--blue3);
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+    }
+
+    .semi-circle {
+        margin-top: 5px;
+        content: normal;
+        background-color: var(--blue3);
+        height: 100px;
+        width: 150px;
+        border-radius: 100% 100% 0% 0%;
+    }
+
+    .information-user {
+        display: flex;
+    }
+
+    .enter-coin {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--black2);
+    }
+
+    .coins {
+        display: flex;
+        align-items: center;
+    }
+
+    .enter-coin img {
+        width: 30px;
+    }
+
+    .enter-coin span {
+        padding: 5px;
+        font-family: var(--font-poppins-bold);
+    }
+
+    .infos {
+        padding: 5px;
+    }
+
+    .infos span {
+        color: var(--black2);
+        font-family: var(--font-poppins-bold);
+    }
+
+    .information-litera p {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .img-logoff {
+        width: 32px;
+    }
+
+    .label-progresso {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .barra {
+        width: 100%;
+        height: 20px;
+        padding: 1px 1px;
+        border-radius: 10px;
+        border: solid 2px var(--blue6);
+    }
+
+    .barra .progresso {
+        background-color: var(--blue6);
+        height: 100%;
+        border-radius: 10px;
+    }
+
+    .base {
+        position: relative;
+        display: inline-block;
+    }
+
+    .base img {
+        display: block;
+        margin: 0 auto;
+        width: 135px;
+    }
+
+    .cabelo img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translatey(-20%) translateX(-50%);
+        width: 115px;
+    }
+
+    .roupa img {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 110px;
+    }
+}
+
+/* Desktops */
+@media screen and (min-width: 1025px) {
+    body {
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+    }
+    main .title{
+        margin-top: 50px;
+    }
+    .mobile-view {
+        display: none;
+    }
+
+    .desktop-view main {
+        display: flex;
+        position: relative;
+        top: 6vh;
+        color: var(--black2);
+        height: 100vh;
+    }
+
+    .title-desktop-room {
+        padding: 1% 5%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .title-desktop-room h2 {
+        font-family: var(--font-poppins-bold);
+        color: var(--green-dark);
+        border: 5px solid var(--green-line);
+        display: flex;
+        justify-content: center;
+        background-color: var(--green-fill);
+        padding: 1% 2%;
+        border-radius: 8px;
+    }
+
+    .games-desktop-itens {
+        padding: 0% 5%;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 5%;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "game1 game2"
+            "game3 game4";
+    }
+
+    .game1 {
+        grid-area: game1;
+    }
+
+    .game2 {
+        grid-area: game2;
+    }
+
+    .game3 {
+        grid-area: game3;
+    }
+
+    .game4 {
+        grid-area: game4;
+    }
+
+
+    .bg-game {
+        background-image: url(../images/Frame\ 149.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 400px;
+        height: 250px;
+        border-radius: 10px;
+        border: 5px solid var(--blue2);
+        box-shadow: 0px 5px 5px #00000060;
+    }
+
+    #balls {
+        background-image: url(../images/Frame\ 150.png);
+    }
+
+    #fruits {
+        background-image: url(../images/Frame\ 33.png);
+    }
+
+    .game-item {
+        display: flex;
+        justify-content: center;
+        border-radius: 10px;
+        text-decoration: none;
+        cursor: url(../images/icons/MAOZINHA.png), auto;;
+        width: 250px;
+        transition: 300ms ease-in-out;
+    }
+
+    .game-item:hover {
+        transition: 300ms ease-in-out;
+        -webkit-animation: pulsate-fwd 1s ease-in-out infinite both;
+        animation: pulsate-fwd 1s ease-in-out infinite both;
+    }
+    .menu-profile-child{
+        display: flex;
+        /* background-color: powderblue; */
+        align-items: center;
+        justify-content: center;
+    }
+    .profile-menu {
+        padding-top: 1%;
+        height: 100vh;
+        padding: 5% 2%;
+        width: 27%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* background-color: red; */
+    }
+
+    .games-desktop {
+        position: relative;
+        width: 100%;
+        background-image: url(../images/fundoHome.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+    }
+
+    .title-game-item p {
+        font-family: var(--font-poppins-bold);
+        color: var(--white);
+        text-shadow: 1px 2px 1px #00000070;
+        background-color: var(--blue2);
+        backdrop-filter: blur(1px);
+        border-radius: 8px;
+        position: relative;
+        top: 20%;
+        font-size: 1.3rem;
+        left: 0;
+        padding: 3.5%;
+        z-index: 10;
+        display: flex;
+        justify-content: center ;
+    }
+
+
+    .title-profile-menu {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 12%;
+    }
+
+    .modal-content {
+        background-color: var(--background);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 1rem;
+    }
+
+    .edit-btn {
+        border-radius: 25%;
+        appearance: none;
+        padding: 1vw 0.5vw;
+        color: #323AC0;
+        outline: none;
+        border: none;
+        display: flex;
+        box-shadow: rgb(63, 63, 63) 0px 1px 6px;
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+        position: absolute;
+        right: 2vw;
+        top: 20%;
+        background-image: url(../images/icons/edit-3-svgrepo-com.svg);
+        width: 2vw;
+        background-size: 2vw;
+        background-repeat: no-repeat;
+    }
+
+    .edit-name-dialog {
+        border-radius: 0.75rem;
+        box-shadow: rgba(149, 157, 167, 0.2) 0px 8px 24px;
+        max-width: 36rem;
+        margin: 0 auto;
+        width: 100%;
+        margin-top: 4rem;
+        border: none;
+        animation: fadeInAnimation ease-in-out 0.5s forwards;
+    }
+
+    .close-btn {
+        background-color: inherit;
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+        border: none;
+    }
+
+    .edit-name-dialog header {
+        display: flex;
+        min-height: 4vh;
+        padding: 1.5vh 2vw 0.75vh 2vw;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1% solid #F3F3F4
+    }
+
+    .edit-name-dialog--fadeout {
+        animation: fadeOutAnimation ease-in-out.5s forwards
+    }
+
+    .save-name-dialog__content {
+        padding: 2vw;
+    }
+
+    .save-name-wrapper {
+        display: flex;
+        color: #9BA2A4;
+        border-radius: 0.5rem;
+        font-weight: 700;
+        justify-content: space-between;
+        background-color: #F3F3F4;
+        padding: 0.25;
+        padding-left: 1.5rem;
+    }
+
+    .save-name-wrapper input {
+        outline: none;
+        border: none;
+        width: 100%;
+        font-weight: 800;
+        background-color: inherit;
+        font-size: 1.2rem;
+    }
+
+    .save-name-wrapper button {
+        color: #323AC0;
+        background-color: white;
+        white-space: nowrap;
+        padding: 0.5vh 1vw;
+        border-radius: 0.4vw;
+        font-weight: 800;
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+        display: flex;
+        gap: 0.5%;
+        font-size: 1.1rem;
+        align-items: center;
+        border: none;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 3px 6px;
+    }
+
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        100% {
+            opacity: 1;
+            visibility: visible
+        }
+    }
+
+    .avatar-container {
+        background-color: var(--blue2);
+        border-radius: 5px;
+        padding: 2% 3%;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+    }
+
+    .name-user span {
+        font-family: var(--font-poppins-bold);
+        font-size: 1.2rem;
+        z-index: 15;
+    }
+
+    #campo,
+    #salvar {
+        display: none;
+    }
+
+    .ava {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 10;
+    }
+
+    .circle {
+        content: normal;
+        background-color: var(--blue3);
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+    }
+
+    .semi-circle {
+        margin-top: 5px;
+        content: normal;
+        background-color: var(--blue3);
+        height: 100px;
+        width: 150px;
+        border-radius: 100% 100% 0% 0%;
+    }
+
+    .information-user {
+        display: flex;
+    }
+
+    .enter-coin {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--black2);
+    }
+
+    .coins {
+        display: flex;
+        align-items: center;
+    }
+
+    .enter-coin img {
+        width: 30px;
+    }
+
+    .enter-coin span {
+        padding: 5px;
+        font-family: var(--font-poppins-bold);
+    }
+
+    .infos {
+        padding: 5px;
+    }
+
+    .infos span {
+        color: var(--black2);
+        font-family: var(--font-poppins-bold);
+    }
+
+    .information-litera p {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .img-logoff {
+        width: 32px;
+    }
+
+    .label-progresso {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .barra {
+        width: 100%;
+        height: 20px;
+        padding: 1px 1px;
+        border-radius: 10px;
+        border: solid 2px var(--blue6);
+    }
+
+    .barra .progresso {
+        background-color: var(--blue6);
+        height: 100%;
+        border-radius: 10px;
+    }
+
+    .base {
+        position: relative;
+        display: inline-block;
+    }
+
+    .base img {
+        display: block;
+        margin: 0 auto;
+        width: 135px;
+    }
+
+    .cabelo img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translatey(-20%) translateX(-50%);
+        width: 115px;
+    }
+
+    .roupa img {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 110px;
+    }
+}

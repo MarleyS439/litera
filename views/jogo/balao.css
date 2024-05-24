@@ -1,0 +1,1684 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Press+Start+2P&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+    color: #000000;
+}
+
+:root {
+    --color--header: #A54F1E;
+    --border--header: #511E0B;
+    --branco: #FFFFFF;
+    --borda-resultados: #79A2BB;
+    --cor-audio-balao: #1C96E1;
+    --borda-audio-balao: #084D78;
+    --borda-audio-balao-desativado: #3A5C71;
+    --header: #511E0B;
+    --fundo: #d6ad95;
+    --borda: #000000;
+    --barraPreenc: #3EF150;
+    --mensagem: #00000083;
+    --bordaAvanc: #1c8126;
+    --btnAvanc: #3EF150;
+    --borda-btnOff: #5A7C90;
+    --cor-btnOff: #79A2BB;
+    --borda-btnOn: #15BE26;
+    --cor-btnOn: #9CFFA5;
+    --border-fim: #E17B1C;
+    --background-fim: #FFCC9C;
+    --text-fim: #E17B1C;
+    --borda-btnFim1: #15BE26;
+    --borda-btnFim2: #E1C01C;
+    --cor-btnFim1: #9CFFA5;
+    --cor-btnFim2: #FFEE9C;
+    --cor-vermelho: #f34747;
+
+}
+
+/* Arredondamento de Bordas */
+:root {
+    --R-areaJogoBorda: 10px;
+    --R-btnBorda: 10px;
+    --R-barraBorda: 5px;
+    --R-BoxletraJogo: 5px;
+    --R-BtnFim-e-Text-Fim: 5px;
+    --R-nav: 30px;
+    --R-avatar: 30px;
+    --R-btnAvanc: 50px;
+}
+
+/* TAMANHOS */
+:root {
+    --T-btnAvanc: 50px;
+    --T-nav: 30px;
+    --T-avatar: 30px;
+    --T-letraFalada: 60px;
+    --T-balaoW: 80px;
+    --T-balaoH: 160px;
+}
+
+
+/* Letras Header */
+:root {
+    --F-logoHeader: 1.3rem;
+    --F-nomeHeader: .7rem;
+    --F-btnAvanc: 2rem;
+    --F-weightBold: bold;
+    --F-weight500: 500;
+    --F-weight600: 600;
+    --F-weight700: 700;
+    --F-weight800: 800;
+    --F-weight900: 900;
+}
+
+
+/* Padding e Margin */
+:root {
+    --P-Box-mensagem: 8px;
+    --P-mensagem: 10px;
+    --M-right: 10px;
+    --M-bottom: 10px;
+    --M-top: 10px;
+    --M-left: 10px;
+    --MT-areaJogo: 5%;
+    --P-header: 5px 7%;
+
+}
+
+/* Texto Jogo */
+:root {
+    --textoDesk1366: .6rem;
+}
+
+
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: var(--fundo);
+    background: url('./img/fundoBalao.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    max-width: 1920px;
+    max-height: 1280px;
+
+}
+
+/***
+****INICIO header****
+***/
+
+/***
+****FIM header****
+***/
+
+
+/*
+****SECTION FRUTAS****
+*/
+.jogo {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+/*
+**** FIM - SECTION FRUTAS****
+*/
+
+
+
+
+
+
+/*
+****AREA DO JOGO:****
+*/
+.area-jogo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border-radius: 10px;
+    z-index: 1;
+    overflow: hidden;
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+/*
+****FIM - AREA DO JOGO:****
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+****COMEÇAR JOGO - AREA DO JOGO:****
+*/
+
+.area-jogo .comecar-jogo {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: var(--fundo);
+    z-index: 1;
+}
+
+.area-jogo .comecar-jogo h1 {
+    font-size: 2.5em;
+    color: var(--header);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.area-jogo .comecar-jogo button {
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    color: var(--header);
+    background: var(--branco);
+    border: 1px solid var(--header);
+    animation: btn-play 1s ease-in-out infinite alternate;
+    transition: .6s;
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+.area-jogo .comecar-jogo button:hover {
+    background: var(--header);
+    color: var(--branco);
+    border: 1px solid var(--branco);
+}
+
+@keyframes btn-play {
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+
+
+
+
+
+/*
+*****************
+TOPO DO JOGO MOEDAS - BARRA DE ACERTO - AUDIO!!!!!
+*****************
+*/
+
+.area-jogo .topo {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+    padding: 5px 5%;
+}
+
+
+.topo .header{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    right: 100px;
+    gap: 10px;
+}
+
+.topo .header .cronometro{
+    color: #fff;
+    font-size: 1.5em;
+    font-family: "Comic Neue", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.topo .header .homeScreen{
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
+    background: url('./img/homeIco.svg');
+    background-size: 25px 25px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: var(--cor-audio-balao);
+    border: 3px solid var(--borda-audio-balao);
+    outline: none;
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+.topo .header .mutarSom{
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
+    background: url('./img/homeIcoB.svg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: var(--cor-audio-balao);
+    border: 3px solid var(--borda-audio-balao);
+    outline: none;
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+.topo .moedas {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    pointer-events: none;
+}
+
+.topo .moedas i {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #000;
+}
+
+.topo .moedas span {
+    font-size: 1.6em;
+    font-family: "Comic Neue", cursive;
+    font-weight: 600;
+    font-style: normal;
+    color: #000;
+}
+
+.topo .barra {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    border: 1px solid var(--borda);
+    border-radius: 4px;
+    width: 400px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.topo .barra::after {
+    position: absolute;
+    content: '';
+    width: 90%;
+    height: 3px;
+    border: 10px;
+    background: #ffffff36;
+    top: 5px;
+    left: 5%;
+    right: 5%;
+}
+
+.topo .barra .acerto {
+    animation: barra 1s ease-in-out forwards;
+}
+
+
+/*
+*****************
+FIMMM ---> TOPO DO JOGO MOEDAS - BARRA DE ACERTO - AUDIO!!!!!
+*****************
+*/
+
+
+
+/*
+*****************
+INICIO - JOGO!!!!!
+*****************
+*/
+
+.area-jogo .area-itens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+}
+
+.area-itens .repetir {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+   
+}
+
+.area-itens .repetir .audioRepetir {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background: var(--color--header);
+    border: 3px solid var(--border--header);
+    border-radius: 10px;
+}
+.area-itens .repetir .audioRepetir img{
+    width: 35px;
+    height: 35px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+*****************
+FIM - JOGO!!!!!
+*****************
+*/
+
+
+/*
+*****************
+FIM DO JOGO MODAL!!!!!
+*****************
+*/
+.area-jogo .final {
+    display: none;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    background: #000000d3;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.area-jogo .final span {
+    font-weight: 900;
+    color: var(--borda-barra);
+}
+
+
+.area-jogo .final p {
+    font-size: 1.5em;
+}
+#corPontuacao{
+    color: var(--text-fim);
+}
+#corErros{
+    color: var(--cor-vermelho);
+}
+#corAcertos{
+    color: var(--barraPreenc);
+}
+
+.area-jogo .final .total_moedas {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    color: var(--borda-barra);
+    font-size: 2em;
+}
+
+
+.final .text-fim {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+}
+
+.text-fim p {
+    margin-top: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--text-fim);
+    font-weight: var(--F-weightBold);
+    width: 330px;
+    height: 50px;
+    text-align: center;
+    background-color: var(--background-fim);
+    border: 2px solid var(--border-fim);
+    border-radius: var(--R-BtnFim-e-Text-Fim);
+}
+
+.final .btn-fim {
+    gap: 10%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+}
+
+.btn-fim .btnFinal {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 60px;
+    border-radius: var(--R-BtnFim-e-Text-Fim);
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+.btn-fim .btnFinal img {
+    width: 35px;
+}
+
+
+
+
+
+
+.btn-fim .btnFinal:nth-child(1) {
+    position: relative;
+    border: 2px solid var(--borda-btnFim2);
+    background-color: var(--cor-btnFim2);
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+.btn-fim .btnFinal:nth-child(1)::after {
+    position: absolute;
+    content: 'Recomeçar';
+    font-weight: 600;
+    bottom: -30px;
+    color: var(--branco);
+    text-shadow: 0px 0px 5px var(--borda-btnFim2);
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+
+.btn-fim .btnFinal:nth-child(2) {
+    position: relative;
+    border: 2px solid var(--borda-resultados);
+    background-color: var(--branco);
+    cursor: url("./img/mao2.svg"), auto;
+}
+.btn-fim .btnFinal .textoResultados{
+    font-size: 2em;
+    font-family: "Comic Neue", cursive;
+    font-weight: 900;
+    font-style: normal;
+    color: #79A2BB;
+}
+.btn-fim .btnFinal:nth-child(2)::after {
+    position: absolute;
+    content: 'Resultados';
+    font-weight: 600;
+    bottom: -30px;
+    color: var(--branco);
+    text-shadow: 0px 0px 5px var(--borda-resultados);
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+
+
+.btn-fim .btnFinal:nth-child(3) {
+    position: relative;
+    border: 2px solid var(--borda-btnFim1);
+    background-color: var(--cor-btnFim1);
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+.btn-fim .btnFinal:nth-child(3)::after {
+    position: absolute;
+    content: 'Avançar';
+    font-weight: 600;
+    bottom: -30px;
+    color: var(--branco);
+    text-shadow: 0px 0px 5px var(--borda-btnFim1);
+    cursor: url("./img/mao2.svg"), auto;
+}
+
+
+
+
+
+
+
+
+
+
+/* Estilo para o modal */
+.modal {
+    display: none; /* Esconde o modal por padrão */
+    position: fixed; /* Posição fixa para garantir que o modal permaneça no centro da tela */
+    z-index: 1; /* Define a ordem de empilhamento para garantir que o modal esteja na frente de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Adiciona uma barra de rolagem quando o conteúdo do modal não couber na tela */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+  }
+  
+  /* Estilo para o conteúdo do modal */
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fefefe;
+    border-radius: 10px;
+    margin: 5% auto; /* Centraliza o modal verticalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Largura do modal */
+  }
+
+  .headerModal{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+
+  }
+  .headerModal p{
+    color: var(--borda-resultados);
+  }
+
+  .conteudoFrutas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    overflow: hidden;
+  }
+  .areaDePontos{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+    height: 100%;
+    width: 100%;
+    padding: 20px 0px 0px 20px;
+  }
+
+  .total_modal i{
+    color: var(--text-fim);
+  }
+  .som{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--borda-resultados);
+    border: 2px solid var(--borda-btnOff);
+    width: 60px;
+    height: 40px;
+    border-radius: 5px;
+  }
+  .audioSom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+  }
+  .audioSom img{
+    width: 30px;
+    height: 30px;
+  }
+
+
+
+
+
+
+
+
+  .areaDeFrutas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    gap: 10px;
+  }
+  
+  .cardsFrutas{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+  }
+  .cardsFrutas .card{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    width: 155px;
+    height: 140px;
+  }
+  .cardsFrutas .card:nth-child(1){
+    border: 2px solid #f00;
+    background: linear-gradient(to top, #f00, hsla(0, 100%, 50%, 0.329), #fff, #fff);
+  }
+  .cardsFrutas .card:nth-child(2){
+    border: 2px solid #F3C244;
+    background: linear-gradient(to top, #F3C244, hsla(43, 88%, 61%, 0.438), #fff, #ffffff);
+  }
+  .cardsFrutas .card:nth-child(3){
+    border: 2px solid #15BE26;
+    background: linear-gradient(to top, #15BE26, #15be2671, #fff, #fff);
+  }
+  .cardsFrutas .card:nth-child(4){
+    border: 2px solid #f00;
+    background: linear-gradient(to top, #f00, hsla(0, 100%, 50%, 0.329), #fff, #fff);
+  }
+
+
+
+
+
+
+
+
+  .cardsFrutas .card img{
+    width: 70px;
+    height: 70px;
+    margin-bottom: 40px;
+
+  }
+  .cardsFrutas .card p {
+    text-align: center;
+    background: red;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    bottom: 0px;
+    border-radius: 50px 50px 0px 0px;
+    color: #fff;
+    font-weight: 500;
+
+  }
+  .cardsFrutas .card .banana{
+    background: #F3C244;
+  }
+  .cardsFrutas .card .melancia{
+    background: #15BE26;
+  }
+  .cardsFrutas .card .morango{
+    background: #f00;
+  }
+
+
+
+
+  .cardsFrutas .card .somFruta{
+    position: absolute;
+    width: 30px;
+    top: -20px;
+    right: 10px;
+  }
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  .cardsFrutas2{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+  }
+  .cardsFrutas2 .card{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    width: 155px;
+    height: 140px;
+  }
+  .cardsFrutas2 .card:nth-child(1){
+    border: 2px solid #AEC136;
+    background: linear-gradient(to top, #AEC136, #afc1367a, #fff, #fff);
+  }
+  .cardsFrutas2 .card:nth-child(2){
+    border: 2px solid #f00;
+    background: linear-gradient(to top, #f00, hsla(0, 100%, 50%, 0.329), #fff, #fff);
+  }
+  .cardsFrutas2 .card:nth-child(3){
+    border: 2px solid #F48C23;
+    background: linear-gradient(to top, #F48C23,#f48b2379, #fff, #fff);
+  }
+  .cardsFrutas2 .card:nth-child(4){
+    border: 2px solid #F48C23;
+    background: linear-gradient(to top, #F48C23,#f48b2379, #fff, #fff);
+  }
+ 
+  .cardsFrutas2 .card img{
+    width: 70px;
+    height: 70px;
+    margin-bottom: 40px;
+
+  }
+  .cardsFrutas2 .card p {
+    text-align: center;
+    background: red;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    bottom: 0px;
+    border-radius: 50px 50px 0px 0px;
+    color: #fff;
+    font-weight: 500;
+
+  }
+
+  .cardsFrutas2 .card .pera{
+    background:  #AEC136;
+  }
+  .cardsFrutas2 .card .cereja{
+    background:  #f00;
+  }
+  .cardsFrutas2 .card .abacaxi{
+    background: #F48C23;
+  }
+  .cardsFrutas2 .card .laranja{
+    background: #F48C23;
+  }
+
+
+  .cardsFrutas2 .card .somFruta{
+    position: absolute;
+    width: 30px;
+    top: -20px;
+    right: 10px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilo para os cards */
+.swiper-slide {
+    text-align: center;
+    position: relative;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid red;
+    overflow: hidden;
+  }
+
+  .swiper-slide:nth-child(1){
+    border: 2px solid #f00;
+    background: linear-gradient(to top, #f00, hsla(0, 100%, 50%, 0.329), #fff, #fff);
+  }
+  .swiper-slide:nth-child(2){
+    border: 2px solid #F3C244;
+    background: linear-gradient(to top, #F3C244, hsla(43, 88%, 61%, 0.438), #fff, #ffffff);  
+  }
+  .swiper-slide:nth-child(3){
+    border: 2px solid #15BE26;
+    background: linear-gradient(to top, #15BE26, #15be2671, #fff, #fff); 
+  }
+  .swiper-slide:nth-child(4){
+    border: 2px solid #f00;
+    background: linear-gradient(to top, #f00, hsla(0, 100%, 50%, 0.329), #fff, #fff);
+  }
+  .swiper-slide:nth-child(5){
+    border: 2px solid #AEC136;
+    background: linear-gradient(to top, #AEC136, #afc1367a, #fff, #fff);
+  }
+  .swiper-slide:nth-child(6){
+    border: 2px solid #f00;
+    background: linear-gradient(to top, #f00, hsla(0, 100%, 50%, 0.329), #fff, #fff);
+  }
+  .swiper-slide:nth-child(7){
+    border: 2px solid #F48C23;
+    background: linear-gradient(to top, #F48C23,#f48b2379, #fff, #fff);
+  }
+  .swiper-slide:nth-child(8){
+    border: 2px solid #F48C23;
+    background: linear-gradient(to top, #F48C23,#f48b2379, #fff, #fff);
+  }
+  .swiper-slide .maca{
+    background: red;
+    border-radius: 50px 50px 0px 0px;
+    color: #fff;
+  }
+  .swiper-slide .banana{
+    background: #F3C244;
+    border-radius: 50px 50px 0px 0px;
+    color: #fff;
+  }
+  .swiper-slide .melancia{
+    background: #15BE26;
+    border-radius: 50px 50px 0px 0px;
+    color: #fff;
+  }
+  .swiper-slide .morango{
+    background: #f00;
+    border-radius: 50px 50px 0px 0px;
+    color: #fff;
+  }
+  .swiper-slide .pera{
+    background: #AEC136;
+    border-radius: 50px 50px 0px 0px;
+    color: #fff;
+  }
+  .swiper-slide .cereja{
+    background: #f00;
+    border-radius: 50px 50px 0px 0px;
+    color: #fff;
+  }
+  .swiper-slide .abacaxi{
+    background: #F48C23;
+    border-radius: 50px 50px 0px 0px;
+    color: #fff;
+  }
+  .swiper-slide .laranja{
+    background: #F48C23;
+    border-radius: 50px 50px 0px 0px;
+    color: #fff;
+  }
+  .swiper-slide img {
+    max-width: 100px;
+    height: auto;
+  }
+  .swiper-slide .somFruta{
+    position: absolute;
+    top: 10px;
+    right:10px;
+    width: 30px;
+    height: 30px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.confetti-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+  }
+  
+    
+  .confetti {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    background-color: #ffcc00; /* Cor do confete */
+    overflow: hidden;
+    opacity: 0;
+    animation: confete 3s linear infinite;
+  }
+    
+  @keyframes confete {
+    0% {
+      transform: translateY(-100vh) rotateZ(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotateZ(720deg);
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+.x-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+
+.x {
+    position: absolute;
+    animation: p-Errada 2s linear infinite;
+    opacity: 0; /* Começa invisível */
+}
+
+@keyframes p-Errada {
+    0% {
+        transform: translateY(-100vh) rotateZ(0deg);
+        opacity: 0; /* Invisível no início */
+    }
+    20% {
+        opacity: 1; /* Torna-se visível rapidamente */
+    }
+    100% {
+        transform: translateY(100vh) rotateZ(360deg) scale(2);
+        opacity: 1; /* Mantém-se visível enquanto cai */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.semfundo{ 
+    display: none;
+    position: absolute;
+    justify-content: center;
+    background: transparent;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .fechado{
+
+    background-image: url("./img/retornarSil.svg");
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-top: 50px;
+    margin-left: -175px;
+    width: 65px;
+    outline: none;
+    border: 2px solid var(--borda-btnFim2);
+    background-color: var(--cor-btnFim2);
+    border-radius: 5px;
+    height: 40px;
+    z-index: 3;
+    cursor: url("./img/mao2.svg"), auto;
+  }
+  .verificando {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border: none;
+    border-radius: 40px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    animation: forward 1s ease-in-out forwards;
+    z-index: 4;
+    cursor: url("./img/mao2.svg"), auto;
+}
+.verificando .verificadorImg{
+  position: absolute;
+  top: 15px;
+  width: 20px;
+  height: 20px;
+  z-index: 5;
+}
+.sombraNuvem{
+
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  box-shadow: 0px 0px 40px 10px #c9c9c9;
+  /* #9e9e9e; */
+}
+.verificando .circle{
+  bottom: -5px;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background: #fff;
+  position: absolute;
+}
+.verificando .circle:nth-child(1){
+  bottom: -5px;
+  left: -20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background: #fff;
+  position: absolute;
+}
+.verificando .circle:nth-child(2){
+  top: 5px;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+  background: #e9e9e9;
+  position: absolute;
+}
+.verificando .circle .detalhe{
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #e9e9e9;
+  z-index: 1;
+
+}
+.verificando .circle:nth-child(3){
+  bottom: -10px;
+  left: 5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
+  background: #fff;
+  position: absolute;
+}
+
+
+
+.verificando:active {
+    transform: scale(0.95);
+    background-color: #fff;
+}
+
+/* Animação de avanço */
+@keyframes forward {
+    0% {
+        transform: translateY(0)
+        scale(0);
+
+    }
+    100% {
+        transform: translateY(-100px)
+        scale(2);
+    }
+}
+
+
+
+
+
+
+
+.particulas {
+  display: none;
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  background-color: transparent;
+
+}
+
+/* Estilos para as partículas */
+.particula {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: fly 2s ease-out forwards;
+}
+
+@keyframes fly {
+  0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(-100px) scale(0.5);
+      opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  transition: all 1s ease-in-out;
+  border-radius: 100px;
+}
+
+.square-red {
+  background-color:transparent;
+  left: 10%;
+  bottom: 120px;
+  animation: balao 1.5s  linear alternate infinite;
+}
+
+.square-red2 {
+  background-color: transparent;
+  left: 30%;
+  bottom: 280px;
+  animation: balao 1.5s  linear alternate infinite;
+  animation-delay: 1s;
+}
+
+.square-green {
+  background-color: transparent;
+  top: 420px;
+  right: 20px;
+  animation: balao 1.5s  linear alternate infinite;
+  animation-delay: 1.5s;
+}
+
+.square-green2 {
+  background-color: transparent;
+  top: 40%;
+  right: 10%;
+  animation: balao 1.5s  linear alternate infinite;
+  animation-delay: .2s;
+}
+
+.square-blue {
+  background-color: transparent;
+  top: 20%;
+  right: 40%;
+  animation: balao 1.5s linear alternate infinite;
+  animation-delay: .9s;
+}
+.square img{
+  width: 100%;
+  height: 100%;
+  animation: balaoCor 2s linear alternate infinite;
+}
+
+@keyframes balaoCor{
+  0%{
+    filter: drop-shadow(0px 40px 20px #ffffff9f);
+  }
+  100%{
+    filter: drop-shadow(0px 50px 20px #ffffff33);
+   
+
+  }
+
+}
+.balao{
+  transition: all 1s ease-in-out;
+}
+.balao.zoomed {
+  transform: scale(1.8); /* Aplicando o efeito de zoom */
+  animation: none;
+  filter: drop-shadow(0px 0px 3px #000000);
+  transition: all 2s ease-in-out;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+}
+
+/* Animação de balão */
+@keyframes balao {
+  0% {
+      transform: translateY(0px)
+      rotate(7deg) ;
+  }
+  100% {
+    transform: translateY(50px)
+    rotate(-7deg);
+  }
+}
+
+/* Animação de explodir balão */
+@keyframes explode {
+  0% {
+      transform: scale(0.5);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(2.5);
+      opacity: 0;
+  }
+}
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+    .desk{
+        display: none;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .mobile{
+        display: none;
+    }
+}
+
+
+
+
+@media screen and (min-width: 769px) {
+    .menu-mobile,
+    .area-jogo .mobile-aud {
+        display: none;
+    }
+    .swiper-container{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 414px) {}
+
+@media only screen and (max-width: 768px) {
+    .cardsFrutas, .cardsFrutas2, .desk{
+        display: none;
+    }
+    .areaDePontos{
+        position: relative;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 0px 0px 0px;
+    }
+    .areaDePontos .som{
+        position: absolute;
+        top: 10px;
+        right: 0;
+    }
+
+
+    .topo .header{
+        position: absolute;
+        right: 10px;
+        top: -60px;
+    }
+
+    
+    .topo .header .fullScreen{
+        display: none;
+    }
+    .topo .header .homeScreen{
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+    }
+    .jogo {
+        padding: 0px;
+    }
+
+    .area-jogo {
+        width: 100%;
+        height: 100%;
+        border: none;
+        background: url('./img/fundoBalao.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .area-jogo .topo {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+        width: 100%;
+        gap: 20px;
+        padding: 5px 5%;
+    }
+
+    .area-jogo .topo .moedas i,
+    .area-jogo .topo .moedas span {
+        font-size: 1.5em;
+        color: var(--branco);
+    }
+
+    .topo .barra {
+        height: 30px;
+    }
+
+    .headerNav {
+        display: none;
+    }
+
+    .area-jogo .area-itens {
+        margin-top: 160px;
+    }
+
+    .silabas .retornar {
+
+        padding: 2px 10px;
+        bottom: 300px;
+        left: 10px;
+        border: 3px solid #E1C01C;
+        background-color: #FFEE9C;
+        border-radius: 5px;
+        z-index: 999;
+    }
+
+}
+
+@media only screen and (min-height: 1080px) {
+    
+    .area-jogo {
+        width: 100%;
+        height: 100%;
+        border: none;
+        background: url('./img/fundoBalao.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .area-jogo .audio {
+        top: 40px;
+        right: 40px;
+        width: 80px;
+        height: 80px;
+
+    }
+
+    .area-jogo .box-comecar h1 {
+        font-size: 3.5em;
+    }
+
+    .area-jogo .box-comecar .btn-play {
+        z-index: 2;
+        width: 200px;
+        height: 50px;
+        font-size: 1.5em;
+    }
+
+    .area-jogo .topo {
+        margin-top: 40px;
+    }
+
+    .topo .moedas {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        pointer-events: none;
+    }
+
+    .topo .moedas i {
+        color: var(--moeda);
+        font-size: 2em;
+        font-weight: 600;
+    }
+
+    .topo .moedas span {
+        color: var(--moeda);
+        font-size: 1.5em;
+        font-weight: 600;
+    }
+
+    .topo .barra {
+        position: relative;
+        display: flex;
+        margin: 0 auto;
+        border: 1px solid var(--borda-barra);
+        border-radius: 4px;
+        width: 400px;
+        height: 30px;
+        overflow: hidden;
+    }
+
+
+
+}

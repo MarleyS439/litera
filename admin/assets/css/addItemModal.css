@@ -1,0 +1,119 @@
+@import url(default.css);
+:root {
+    /* Colors */
+    --blue0: #ebf7ff;
+    --blue2: #6ac3fa;
+    --blue3: #1187cf;
+    --blue4: #1639b1;
+    --blue5: #1639b1;
+    --blue6: #4180AB;
+    --white: #ffffff;
+    --black: #000;
+    --gray: #353636;
+    --light-gray: #c9d3d9;
+    --light-gray2: #bdd1de;
+    --light-gray2-hover: #a8b9c5;
+   
+    /* Fontes */
+    --font-poppins-regular: 'Poppins-Regular';
+}
+
+#modalAddItem {
+    padding: 2%;
+    transition: 500ms ease-out 0.2s;
+    position: absolute;
+    top: 38%;
+    left: 5% !important;
+    transform: translate(-38%, -40%);
+    width: 900px !important;
+    height: 550px;
+    background-color: var(--white);
+    border-radius: 10px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    -webkit-animation: slide-in-bck-top 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: slide-in-bck-top 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.container-form-addItem{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+}
+.container-form-addItem .area-img{
+    width: 50%;
+    height: 100%;
+    background-color: var(--light-gray2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 2%;
+}
+.container-form-addItem .area-img .image-size{
+    max-width: 100%;
+    max-height: 100%;
+}
+.container-form-addItem .area-form-input{
+    width: 50%;
+    height: 100%;
+    padding: 1% 2%;
+    display: flex;
+    flex-direction: column;
+}
+.area-form-input .input-area{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+}
+.input-area label{
+    font-size: 17px;
+    font-family: var(--font-poppins-regular);
+    font-weight: 600;
+    color: var(--blue6);
+    margin-bottom: 10px;
+}
+.input-area input{
+    background: var(--light-gray2) !important;
+    border: none;
+}
+.input-area .opcoes{
+    color: var(--black);
+    background-color: var(--light-gray2);
+    height: 50%;
+    width: 60%;
+    border: none;
+    border-radius: 6px;
+    padding: 0px 6px ;
+}
+.area-form-input .opcoes option{
+    width: auto;
+    background-color: var(--light-gray2);
+    color: var(--black);
+    padding: 0px 4px;
+    border-radius: 6px;
+}
+.input-area-final{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.custom-file-input{
+    border: none;
+}
+.btn-s .btn-modal-addItem{
+    width: 60%;
+    color: var(--black) ;
+    background-color: var(--light-gray2);
+    transition: 400ms;
+}
+.btn-s .btn-modal-addItem:hover{
+    background-color: var(--light-gray2-hover);
+}
+

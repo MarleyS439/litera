@@ -1,0 +1,688 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+}
+
+/***
+****INICIO CORES PRÉ DEFINIDAS!****
+***/
+/* Para Criar cores ou pixels etc... pré definidas que não irão mudar durante o design de seu site 
+basta você usar :root assim você irá criar variaveis de cores para o seu webSite Ass: Matheus */
+
+/* Cores */
+:root {
+    --branco: #FFFFFF;
+    --header: #1C96E1;
+    --fundo: #C1E6FD;
+    --borda: #000000;
+    --barraPreenc: #3EF150;
+    --mensagem: #00000083;
+    --bordaAvanc: #1c8126;
+    --btnAvanc: #3EF150;
+    --borda-btnOff: #5A7C90;
+    --cor-btnOff: #79A2BB;
+    --borda-btnOn: #15BE26;
+    --cor-btnOn: #9CFFA5;
+    --border-fim: #E17B1C;
+    --background-fim: #FFCC9C;
+    --text-fim: #E17B1C;
+    --borda-btnFim1: #15BE26;
+    --borda-btnFim2: #E1C01C;
+    --cor-btnFim1: #9CFFA5;
+    --cor-btnFim2: #FFEE9C;
+
+}
+
+/* Arredondamento de Bordas */
+:root {
+    --R-areaJogoBorda: 10px;
+    --R-btnBorda: 10px;
+    --R-barraBorda: 5px;
+    --R-BoxletraJogo: 5px;
+    --R-BtnFim-e-Text-Fim: 5px;
+    --R-nav: 30px;
+    --R-avatar: 30px;
+    --R-btnAvanc: 50px;
+}
+
+/* TAMANHOS */
+:root {
+    --T-btnAvanc: 50px;
+    --T-nav: 30px;
+    --T-avatar: 30px;
+    --T-letraFalada: 60px;
+    --T-balaoW: 80px;
+    --T-balaoH: 160px;
+}
+
+
+/* Letras Header */
+:root {
+    --F-logoHeader: 1.3rem;
+    --F-nomeHeader: .7rem;
+    --F-btnAvanc: 2rem;
+    --F-weightBold: bold;
+    --F-weight500: 500;
+    --F-weight600: 600;
+    --F-weight700: 700;
+    --F-weight800: 800;
+    --F-weight900: 900;
+}
+
+
+/* Padding e Margin */
+:root {
+    --P-Box-mensagem: 8px;
+    --P-mensagem: 10px;
+    --M-right: 10px;
+    --M-bottom: 10px;
+    --M-top: 10px;
+    --M-left: 10px;
+    --MT-areaJogo: 5%;
+    --P-header: 5px 7%;
+
+}
+
+/* Texto Jogo */
+:root {
+    --textoDesk1366: .6rem;
+}
+
+/* Para fazer o uso dessas variaveis você usa  var(--header) por exemplo "background: var(--header);" */
+
+/***
+****FIM CORES PRÉ DEFINIDAS!****
+***/
+
+
+/***
+****CORPO DO SITE!****
+***/
+body {
+    width: 100%;
+    height: 100vh;
+    max-width: 1920px;
+    max-height: 1080px;
+    background-color: var(--fundo);
+}
+
+
+
+/***
+****INICIO header****
+***/
+
+
+.headerNav {
+    background-color: var(--header);
+    width: 100%;
+    padding: var(--P-header);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+}
+
+.headerNav .logo {
+    font-weight: var(--F-weightBold);
+    font-size: var(--F-logoHeader);
+    color: var(--branco);
+}
+
+.navbar .ulNav {
+    display: flex;
+    gap: 30px;
+}
+
+.ulNav .liNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--T-nav);
+    height: var(--T-nav);
+    border-radius: var(--R-nav);
+    overflow: hidden;
+
+
+}
+
+.ulNav .liNav:nth-child(1) {
+    background-color: var(--branco);
+}
+
+.ulNav .liNav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.ulNav .liNav img {
+    width: 15px;
+    height: 15px;
+}
+
+.headerNav .perfil {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerNav .perfil .avatar {
+    width: var(--T-avatar);
+    height: var(--T-avatar);
+    border-radius: var(--R-avatar);
+}
+
+.headerNav .perfil .nomeUser {
+    font-size: var(--F-nomeHeader);
+    color: var(--branco);
+}
+
+/***
+****FIM header****
+***/
+
+
+
+/***** CONTAINER PARA O JOGO! *****/
+.container {
+    background: var(--fundo);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/***** FIM CONTAINER PARA O JOGO! *****/
+
+/***** INICIO JOGO! *****/
+
+
+.area-jogo .comeco {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: #000000d3;
+    z-index: 2;
+}
+
+.comeco .btnComecar {
+    padding: 15px;
+    cursor: pointer;
+    border: 2px solid var(--border-fim);
+    background-color: var(--background-fim);
+    border-radius: var(--R-barraBorda);
+    font-size: 1rem;
+    font-weight: var(--F-weightBold);
+    color: var(--branco);
+    text-shadow: 0px 0px 5px var(--text-fim);
+}
+
+.area-jogo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--MT-areaJogo);
+    width: 50%;
+    height: 80%;
+    min-width: 370px;
+    min-height: 350px;
+    border: 2px solid var(--borda);
+    border-radius: var(--R-areaJogoBorda);
+    background-color: var(--branco);
+    background: url('../img/v1015-104a\ 2.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+.area-jogo .barra {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: 100%;
+    height: 11%;
+}
+
+.barra .contagem {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid var(--borda);
+    width: 70%;
+    height: 20px;
+    border-radius: var(--R-barraBorda);
+    overflow: hidden;
+
+}
+
+.barra .contagem::after {
+    position: absolute;
+    content: '';
+    left: 2%;
+    top: 3px;
+    right: 2%;
+    height: 2px;
+    width: 96%;
+    background: #ffffff93;
+}
+
+.barra .contagem .cor {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+}
+
+.barra .contagem .cor {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.area-jogo .box-mensagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+    padding: var(--P-Box-mensagem);
+}
+
+.area-jogo .box-mensagem .mensagem {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 40%;
+    border-radius: var(--R-barraBorda);
+    background-color: var(--mensagem);
+    padding: var(--P-mensagem);
+}
+
+.mensagem .texto {
+    color: var(--branco);
+    font-size: var(--textoDesk1366);
+    text-align: center;
+    font-size: 1rem;
+    font-family: var(--font-poppins-bold);
+}
+
+
+.area-jogo .letra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15%;
+}
+
+.area-jogo .letra img {
+    height: var(--T-letraFalada);
+    width: var(--T-letraFalada);
+    display: none;
+}
+
+.area-jogo .balao {
+    display: flex;
+    gap: 30%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 30%;
+}
+
+.area-jogo .balao img {
+    display: none;
+    width: var(--T-balaoW);
+    height: var(--T-balaoH);
+}
+
+.area-jogo .balao img:nth-child(3) {
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+/* 
+**** BOTAO QUE VERIFICA SE ESTA CORRETO ****
+*/
+.area-jogo .botao {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.botao .verific {
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 40px;
+    border-radius: var(--R-btnBorda);
+    background-color: var(--cor-btnOff);
+    border: 2px solid var(--borda-btnOff);
+}
+
+.botao .verific img {
+    width: 20px;
+}
+
+.botao .verific2 {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 40px;
+    border-radius: var(--R-btnBorda);
+    background-color: var(--cor-btnOn);
+    border: 2px solid var(--borda-btnOn);
+}
+
+.botao .verific2 img {
+    width: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.area-jogo .btnProx {
+    position: absolute;
+    right: var(--M-right);
+    bottom: var(--M-bottom);
+    width: var(--T-btnAvanc);
+    height: var(--T-btnAvanc);
+    border-radius: var(--R-btnAvanc);
+    background-color: var(--btnAvanc);
+    border: 2px solid var(--bordaAvanc);
+    color: var(--branco);
+    font-size: var(--F-btnAvanc);
+    cursor: pointer;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.area-jogo .proximo {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+.area-jogo .proximo img {
+    width: 80px;
+    position: absolute;
+    z-index: 1;
+    transform: rotate(90deg);
+    bottom: -5px;
+    right: 40px;
+    animation: proxima .8s linear infinite alternate;
+}
+
+@keyframes proxima {
+    0% {
+        right: 40px;
+    }
+
+    100% {
+        right: 60px;
+        transform: scale(1.3) rotate(90deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.area-jogo .tutorial {
+    position: absolute;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    background: #000000d3;
+    width: 100%;
+    height: 100%;
+}
+
+.tutorial .text-fim {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+}
+
+.text-fim p {
+    margin-top: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--text-fim);
+    font-weight: var(--F-weightBold);
+    width: 330px;
+    height: 50px;
+    text-align: center;
+    background-color: var(--background-fim);
+    border: 2px solid var(--border-fim);
+    border-radius: var(--R-BtnFim-e-Text-Fim);
+}
+
+.tutorial .btn-fim {
+    gap: 20%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+}
+
+.btn-fim .btnFinal {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 60px;
+    border-radius: var(--R-BtnFim-e-Text-Fim);
+    cursor: pointer;
+}
+
+.btn-fim .btnFinal img {
+    width: 35px;
+}
+
+
+
+
+
+.btn-fim .btnFinal:nth-child(2) {
+    position: relative;
+    border: 2px solid var(--borda-btnFim1);
+    background-color: var(--cor-btnFim1);
+}
+
+.btn-fim .btnFinal:nth-child(2)::after {
+    position: absolute;
+    content: 'Avançar';
+    font-weight: 600;
+    bottom: -30px;
+    color: var(--branco);
+    text-shadow: 0px 0px 5px var(--borda-btnFim1);
+}
+
+.btn-fim .btnFinal:nth-child(1) {
+    position: relative;
+    border: 2px solid var(--borda-btnFim2);
+    background-color: var(--cor-btnFim2);
+}
+
+.btn-fim .btnFinal:nth-child(1)::after {
+    position: absolute;
+    content: 'Recomeçar';
+    font-weight: 600;
+    bottom: -30px;
+    color: var(--branco);
+    text-shadow: 0px 0px 5px var(--borda-btnFim2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.area-jogo .selecao {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+.area-jogo .selecao img {
+    width: 100px;
+    position: absolute;
+    z-index: 1;
+    bottom: -10%;
+    right: -10%;
+    animation: mao 6s ease-out forwards;
+}
+
+
+@keyframes mao {
+    0% {
+        bottom: 0%;
+        right: 0%;
+    }
+
+    25% {
+        bottom: 35%;
+        right: 42%;
+        transform: rotate(-30deg) rotateY(40deg);
+
+    }
+
+    30% {
+        bottom: 35%;
+        right: 42%;
+        transform: scale(.5) rotate(-30deg);
+
+    }
+
+    60% {
+        bottom: 35%;
+        right: 42%;
+        transform: scale(1);
+    }
+
+    80% {
+        bottom: 2%;
+        right: 42%;
+    }
+
+    90% {
+        bottom: 2%;
+        right: 42%;
+        transform: scale(.7) rotate(-30deg) rotateY(40deg);
+    }
+
+    100% {
+        bottom: 2%;
+        right: 42%;
+        transform: scale(1.2);
+    }
+
+}

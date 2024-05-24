@@ -1,0 +1,157 @@
+@import url(./home.css);
+@import url(./animations.css);
+@import url(./default.css);
+
+@media screen and (max-width:768px) {
+
+    .game .title-game-map p {
+        font-family: var(--font-poppins-bold);
+        margin: 1% 0%;
+        font-size: 1.6rem;
+        text-align: center;
+        color: #1C96E1;
+        position: relative;
+        top: 10vh;
+    }
+
+    .fase-list {
+        position: absolute;
+        left: 40%;
+        top:45%
+    }
+
+    .game-1 {
+        position: relative;
+        left: 10vw;
+    }
+
+    .game-2 {
+        position: relative;
+        left: 0vw;
+    }
+
+    .game-3 {
+        position: relative;
+        left: 10vw;
+    }
+
+    .game-4 {
+        position: relative;
+        right: 0vw;
+    }
+
+    .game-5 {
+        position: relative;
+        left: 10vw;
+    }
+}
+
+@media screen and (min-width:1025px) {
+
+    main {
+        display: flex;
+        justify-content: center;
+    }
+
+    .game {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-decoration: none;
+        color: var(--black2);
+        transition: 200ms ease-in-out;
+    }
+
+    .background-card-game {
+        border: 5px solid var(--blue2);
+        background-image: url(../images/fase/Frame\ 59\ 1.svg);
+        width: 50vw;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 25px;
+        height: 20vh;
+        box-shadow: 1px 5px 1px #00000020;
+    }
+
+    .game .title-game-map p {
+        font-family: var(--font-poppins-bold);
+        padding: 5%;
+        font-size: 1.2rem;
+        display: flex;
+        color: var(--green-dark);
+        position: relative;
+        border: 5px solid var(--green-line);
+        top: 10vh;
+        border-radius: 8px;
+        text-wrap: nowrap;
+        width: max-content;
+        background-color: var(--green-fill);
+    }
+
+    .title-game-map {
+        position: relative;
+        top: 20%
+    }
+
+    .fase-list {
+        display: grid;
+        justify-content: center;
+    }
+
+    .game-0 {
+        position: relative;
+        right: 5vw;
+    }
+
+    .game-0 a {
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+    }
+
+    .game-1 {
+        position: relative;
+        left: 0vw;
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+    }
+
+    .game-1 a,
+    .game-2 a,    
+    .game-3 a,
+    .game-4 a,
+    .game-5 a {
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+
+    }
+
+    .game-2 {
+        position: relative;
+        left: 5vw;
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+
+    }
+
+    .game-3 {
+        position: relative;
+        left: 2vw;
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+
+    }
+
+    .game-4 {
+        position: relative;
+        right: 2vw;
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+
+    }
+
+    .game-5 {
+        position: relative;
+        left: 10vw;
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+
+    }
+
+    .dots {
+        display: grid;
+        align-items: center;
+    }
+}

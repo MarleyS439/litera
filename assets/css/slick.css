@@ -1,0 +1,14 @@
+.slick-prev,
+.slick-next {
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    z-index: 1; 
+}
+
+.slick-prev {
+    left: 10px; 
+}
+.slick-next {
+    right: 10px; 
+}

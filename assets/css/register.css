@@ -1,0 +1,372 @@
+@import url(default.css);
+@import url(animations.css);
+
+/* Telas de dispositivos móveis */
+@media screen and (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        -webkit-animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+        animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    }
+
+    .arara {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5% 0%;
+    }
+
+    .arara h2 {
+        margin: 0% 1%;
+        color: var(--blue3);
+        font-family: var(--font-poppins-bold);
+        font-size: 2rem;
+    }
+
+    .arara img {
+        width: 80px;
+    }
+
+    .container-form {
+        padding: 6%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-form form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        margin: 1% 0%;
+    }
+
+    .inputs input {
+        background-color: var(--white2);
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid var(--line-border);
+    }
+
+    .btn {
+        margin-top: 10%;
+    }
+
+    .inputs button {
+        background-color: var(--blue3);
+        border: none;
+        padding: 8px;
+        border-radius: 8px;
+        color: var(--white);
+        font-weight: bold;
+        box-shadow: 1px 2px 1px #00000099;
+        font-size: 1.01rem;
+    }
+
+    .title-form {
+        margin: 5% 0%;
+    }
+
+    .title-form h2 {
+        font-family: var(--font-poppins-bold);
+        color: var(--black2);
+    }
+
+    .non {
+        display: flex;
+        align-items: center;
+        margin-top: 5%;
+    }
+
+    .non a {
+        margin: 0px 10px;
+        color: var(--blue3);
+        text-decoration: none;
+        transition: 200ms ease-in-out;
+    }
+
+    .non a:hover {
+        color: var(--blue2);
+    }
+}
+
+/* Telas de dispositivos tablets */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        background-image: url(../images/v1015-104a\ 3.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        padding: 10px;
+        z-index: 1;
+    }
+
+    .arara {
+        display: flex;
+        position: relative;
+        align-items: center;
+        z-index: 2;
+        padding: 0% 2%;
+    }
+
+    .arara h2 {
+        margin: 0% 1%;
+        color: var(--white);
+        font-family: var(--font-poppins-bold);
+        text-shadow: 1px 1px 2px #00000030;
+    }
+
+    .arara img {
+        width: 80px;
+        height: auto;
+    }
+
+    .container-form {
+        position: relative;
+        top: 3%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        background-color: var(--white);
+        margin: 0% 25%;
+        flex-direction: column;
+        padding: 2% 5%;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        transition: 300ms ease-in-out;
+    }
+
+    .title-form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        margin: 2% 0%;
+    }
+
+    .title-form h2 {
+        margin: 2% 0%;
+        font-family: var(--font-poppins-bold);
+        color: var(--black2);
+    }
+
+    .title-form p {
+        color: var(--blue3);
+    }
+
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        margin: 3% 0%;
+    }
+
+    .inputs label {
+        margin: 2px 0px;
+    }
+
+    .inputs input {
+        padding: 8px;
+        border: 1px solid var(--line-border);
+        background-color: var(--white2);
+        border-radius: 8px;
+    }
+
+    .inputs button {
+        padding: 8px;
+        box-shadow: 1px 2px 1px #00000099;
+        background-color: var(--blue3);
+        border-radius: 8px;
+        color: var(--white);
+        font-weight: bold;
+        transition: 200ms ease-in-out;
+        cursor: pointer;
+        font-size: 1.01rem;
+    }
+
+    .inputs button:hover {
+        background-color: var(--blue2);
+        transform: translate(-2px, -1px);
+    }
+
+    .btn {
+        margin-top: 5%;
+    }
+
+    .overlay {
+        content: "";
+        background-color: #00000050;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+    }
+
+    .non {
+        display: flex;
+        align-items: center;
+    }
+
+    .non a {
+        margin: 0px 10px;
+        color: var(--blue3);
+        text-decoration: none;
+        transition: 200ms ease-in-out;
+    }
+
+    .non a:hover {
+        color: var(--blue2);
+    }
+}
+
+/* Telas de dispositivos desktops */
+@media screen and (min-width: 1025px) {
+
+    .container {
+        background-image: url(../images/v1015-104a\ 3.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        padding: 10px;
+        z-index: 1;
+    }
+
+    .arara {
+        display: flex;
+        position: relative;
+        align-items: center;
+        z-index: 2;
+        padding: 0% 2%;
+    }
+
+    .arara h2 {
+        margin: 0% 1%;
+        color: var(--white);
+        font-family: var(--font-poppins-bold);
+        text-shadow: 1px 1px 2px #00000030;
+    }
+
+    .arara img {
+        width: 80px;
+        height: auto;
+    }
+
+    .container-form {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        background-color: var(--white);
+        margin: 0% 32%;
+        flex-direction: column;
+        padding: 2% 5%;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        transition: 300ms ease-in-out;
+    }
+
+    .title-form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        margin: 2% 0%;
+    }
+
+    .title-form h2 {
+        margin: 2% 0%;
+        font-family: var(--font-poppins-bold);
+    }
+
+    .title-form p {
+        color: var(--blue3);
+    }
+
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        margin: 3% 0%;
+    }
+
+    .inputs label {
+        margin: 2px 0px;
+    }
+
+    .inputs input {
+        padding: 8px;
+        border: 1px solid var(--line-border);
+        background-color: var(--white2);
+        border-radius: 8px;
+    }
+
+    .inputs button {
+        padding: 8px;
+        box-shadow: 1px 2px 1px #00000099;
+        background-color: var(--blue3);
+        border-radius: 8px;
+        color: var(--white);
+        font-weight: bold;
+        transition: 200ms ease-in-out;
+        cursor: pointer;
+        font-size: 1.01rem;
+    }
+
+    .inputs button:hover {
+        background-color: var(--blue2);
+        transform: translate(-2px, -1px);
+    }
+
+    .btn {
+        margin-top: 5%;
+    }
+
+    .overlay {
+        content: "";
+        background-color: #00000050;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+    }
+
+    .non {
+        display: flex;
+        align-items: center;
+    }
+
+    .non a {
+        margin: 0px 10px;
+        color: var(--blue3);
+        text-decoration: none;
+        transition: 200ms ease-in-out;
+    }
+
+    .non a:hover {
+        color: var(--blue2);
+    }
+
+    .input-cod h2 {
+        text-align: center;
+    }
+
+    .input-cod p {
+        text-align: center;
+        color: black;
+    }
+
+    .input-cod input {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .input-cod a {
+        cursor: pointer;
+    }
+
+
+}

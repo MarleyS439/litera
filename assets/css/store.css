@@ -1,0 +1,602 @@
+@import url(./home.css);
+@import url(./default.css);
+
+
+body {
+    background-color: var(--blue0);
+}
+
+@media screen and (max-width: 768px) {
+    .desktop-view {
+        display: none;
+    }
+
+    .top-bar {
+        position: fixed;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 5%;
+        align-items: center;
+        color: var(--black2);
+        z-index: 1000;
+        background-color: var(--blue0);
+        border-bottom: .5px solid #00000020;
+        box-shadow: 1px 1px 1px #00000020;
+        transition: 200ms ease-in-out;
+    }
+
+    .info-user {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        width: 60%;
+    }
+
+    .info-user img {
+        width: 45px;
+        height: auto;
+    }
+
+    .info-user span {
+        font-family: var(--font-poppins-bold);
+        margin: 0% 3%;
+    }
+
+    .credits {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .credits img {
+        width: 32px;
+        height: auto;
+        margin: 0;
+    }
+
+    .credits span {
+        display: flex;
+        font-family: var(--font-poppins-bold);
+        justify-content: center;
+        align-items: center;
+        margin: 2px;
+        padding: 5px;
+    }
+
+    .items {
+        position: relative;
+    }
+
+    .container-avatar {
+        position: absolute;
+        top: 20vh;
+        left: 30%;
+    }
+
+    .base {
+        position: relative;
+        display: inline-block;
+    }
+
+    .base img {
+        display: block;
+        margin: 0 auto;
+        width: 140px;
+    }
+
+    .cabelo img {
+        position: absolute;
+        top: -15;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+    }
+
+    .roupa img {
+        position: absolute;
+        bottom: 2%;
+        left: 51%;
+        transform: translateX(-50%);
+        width: 115px;
+        z-index: 3;
+    }
+
+    .inventory {
+        display: none;
+    }
+
+    .buttons {
+        position: absolute;
+        top: 50vh;
+        left: 35vw;
+        height: 5vh;
+        width: 10vw;
+        justify-content: space-evenly;
+        display: flex;
+        flex: row;
+    }
+
+    .buttons button {
+        padding: 5%;
+        background-color: #1C96E1;
+        border-radius: 15px;
+        border: none;
+        color: white;
+        font-family: var(--font-poppins-bold);
+        margin: 0% 15%;
+
+    }
+
+    /* Navegacao da parte de baixo */
+    .bottom-navigation-bar {
+        z-index: 1000;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--white);
+        box-shadow: 0px -10px 5px #00000020;
+        padding: 2% 5%;
+    }
+
+    .bottom-navigation-bar a {
+        margin: 2% 5%;
+        padding: 1%;
+        text-decoration: none;
+        color: var(--black2);
+        transition: 200ms ease-out;
+    }
+
+    .bottom-navigation-bar a img {
+        width: 36px;
+        height: auto;
+        margin: 0px 5px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .contain {
+        display: flex;
+        position: relative;
+        top: 10vh;
+        justify-content: left;
+        padding: 0;
+        transition: 500ms ease-in-out .1s;
+        flex-direction: column;
+        border-right: 1px solid var(--blue2);
+    }
+
+    .suit-cards {
+        display: flex;
+        justify-content: left;
+        width: 80vw;
+        flex-wrap: wrap;
+        padding: 0% 5%;
+    }
+
+    .cards {
+        transition: 500ms ease-in-out .1s;
+        background-color: var(--blue3);
+        padding: 1%;
+        border-radius: 8px;
+        margin: 10px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        width: 25vw;
+        margin-top: 1%;
+        margin-left: 6%;
+    }
+
+
+    .cards a {
+        background-color: var(--blue3);
+        display: flex;
+        justify-content: center;
+        border-radius: 8px;
+        width: 100%;
+        text-decoration: none;
+        color: var(--blue0);
+    }
+
+    .cards a p {
+        background-color: var(--blue3);
+        font-size: 1.3rem;
+    }
+
+    .access-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .figure-card {
+        padding: 2%;
+        display: flex;
+        justify-content: end;
+    }
+
+    .figure-card img {
+        width: 45%;
+    }
+
+    .name-card p {
+        font-family: 'Poppins-Bold', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .description-card {
+        transition: 500ms ease-in-out .1s;
+    }
+
+    .title-container {
+        display: flex;
+        position: relative;
+        top: 10vh;
+        justify-content: left;
+        padding: 2%;
+    }
+
+    .title-container h2 {
+        padding: 0% 0% 0% 5%;
+        font-family: 'Poppins-Bold', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: var(--blue3);
+    }
+
+    .side-bar-status {
+        display: flex;
+        position: fixed;
+        justify-content: center;
+        width: 30vw;
+        border-left: 1px solid var(--blue2);
+        padding: 1%;
+        height: 100%;
+        top: -5vh;
+        flex-direction: column;
+    }
+
+    .side-status {
+        display: flex;
+        position: relative;
+        right: 0;
+    }
+
+    .container-avatar-user {
+        background-color: var(--blue2);
+        padding: 10%;
+        border-radius: 10px;
+        color: var(--blue0);
+        width: 100%;
+    }
+
+    .container-avatar-user p {
+        font-family: 'Poppins-Bold', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .avatar-user {
+        display: flex;
+        justify-content: center;
+    }
+
+    .avatar-user img {
+        width: 100px;
+    }
+
+    .status .info {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .info p {
+        display: flex;
+        justify-content: left;
+        padding: 0;
+        font-size: small;
+        align-items: center;
+    }
+
+    .info b {
+        margin: 0px 5px;
+    }
+
+    .side-status {
+        display: flex;
+        position: fixed;
+        justify-content: end;
+    }
+
+    .level {
+        margin: 5px;
+    }
+
+    .level p {
+        font-size: small;
+        font-weight: bold;
+    }
+
+    .statistics {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    /* Estilos para PCs */
+
+    .desktop-view {
+        height: 100vh;
+    }
+
+    .page {
+        display: flex;
+        justify-content: space-evenly;
+        width: 90vw;
+    }
+
+    .contain {
+        display: flex;
+        position: relative;
+        top: 10vh;
+        justify-content: left;
+        padding: 0;
+        transition: 500ms ease-in-out .1s;
+        flex-direction: column;
+        margin-right: 5vw;
+    }
+
+    .form-avatar {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .inventory {
+        position: relative;
+        top: 10vh;
+        width: 50vw;
+        height: 50vh;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card-item {
+        width: 10VW;
+        height: 14vh;
+        border-radius: 5%;
+        border: 2px solid var(--blue3);
+        flex: 0 0 cal(100% /5);
+        margin: 0.2vh 1vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-item p {
+        text-align: center;
+        font-size: 4rem;
+        color: var(--blue3);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-item:hover {
+        background-color: #f0f0f0;
+    }
+
+    .items {
+        position: relative;
+        left: 7vw;
+    }
+
+    .container-avatar {
+        width: 20vw;
+        height: 40vh;
+        margin-top: 25%;
+        background-color: var(--blue2);
+        border-radius: 5%;
+        overflow: hidden;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        position: relative;
+    }
+
+    .base {
+        position: relative;
+        display: inline-block;
+    }
+
+    .base img {
+        display: block;
+        margin: 0 auto;
+        width: 140px;
+    }
+
+    .cabelo img {
+        position: absolute;
+        top: -15;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+    }
+
+    .roupa img {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 115px;
+        z-index: 3;
+    }
+
+
+    .buttons {
+        position: relative;
+        margin-top: 5vh;
+        width: 20vw;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .buttons button {
+        padding: 5%;
+        background-color: #1C96E1;
+        border-radius: 15px;
+        border: none;
+        color: white;
+        font-family: var(--font-poppins-bold);
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+    }
+
+    .suit-cards {
+        display: flex;
+        justify-content: left;
+        width: 80vw;
+        flex-wrap: wrap;
+        padding: 0% 5%;
+    }
+
+    .cards {
+        transition: 500ms ease-in-out .1s;
+        background-color: var(--blue3);
+        padding: 1%;
+        border-radius: 8px;
+        margin: 10px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        width: 13vw;
+        margin-top: 2%;
+        margin-left: 6%;
+    }
+
+
+    .cards a {
+        background-color: var(--blue3);
+        display: flex;
+        justify-content: center;
+        border-radius: 8px;
+        width: 100%;
+        text-decoration: none;
+        color: var(--blue0);
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+    }
+
+    .cards a p {
+        background-color: var(--blue3);
+        font-size: 1.3rem;
+    }
+
+    .access-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .figure-card {
+        padding: 2%;
+        display: flex;
+        justify-content: end;
+    }
+
+    .figure-card img {
+        width: 45%;
+    }
+
+    .name-card p {
+        font-family: 'Poppins-Bold', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .description-card {
+        transition: 500ms ease-in-out .1s;
+    }
+
+    .title-container {
+        display: flex;
+        position: relative;
+        top: 10vh;
+        justify-content: center;
+        padding: 2%;
+    }
+
+    .title-container h2 {
+        padding: 0% 0% 0% 5%;
+        font-family: 'Poppins-Bold', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: var(--blue3);
+    }
+
+    .side-bar-status {
+        display: flex;
+        position: fixed;
+        justify-content: center;
+        width: 30vw;
+        padding: 1%;
+        height: 100%;
+        top: -5vh;
+        flex-direction: column;
+    }
+
+    .side-status {
+        display: flex;
+        position: relative;
+        right: 0;
+    }
+
+    .container-avatar-user {
+        background-color: var(--blue2);
+        padding: 10%;
+        border-radius: 10px;
+        color: var(--blue0);
+        width: 100%;
+    }
+
+    .container-avatar-user p {
+        font-family: 'Poppins-Bold', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .avatar-user {
+        display: flex;
+        justify-content: center;
+    }
+
+    .avatar-user img {
+        width: 100px;
+    }
+
+    .status .info {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .info p {
+        display: flex;
+        justify-content: left;
+        padding: 0;
+        font-size: small;
+        align-items: center;
+    }
+
+    .info b {
+        margin: 0px 5px;
+    }
+
+    .side-status {
+        display: flex;
+        position: fixed;
+        justify-content: end;
+    }
+
+    .level {
+        margin: 5px;
+    }
+
+    .level p {
+        font-size: small;
+        font-weight: bold;
+    }
+
+    .statistics {
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+@media screen and (max-width: 1447px) {}
