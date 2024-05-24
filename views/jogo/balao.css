@@ -15,6 +15,9 @@
     --border--header: #511E0B;
     --branco: #FFFFFF;
     --borda-resultados: #79A2BB;
+    --cor-audio-balao: #1C96E1;
+    --borda-audio-balao: #084D78;
+    --borda-audio-balao-desativado: #3A5C71;
     --header: #511E0B;
     --fundo: #d6ad95;
     --borda: #000000;
@@ -276,8 +279,8 @@ TOPO DO JOGO MOEDAS - BARRA DE ACERTO - AUDIO!!!!!
     background-size: 25px 25px;
     background-position: center center;
     background-repeat: no-repeat;
-    background-color: var(--color--header);
-    border: 3px solid var(--border--header);
+    background-color: var(--cor-audio-balao);
+    border: 3px solid var(--borda-audio-balao);
     outline: none;
     cursor: url("./img/mao2.svg"), auto;
 }
@@ -286,12 +289,12 @@ TOPO DO JOGO MOEDAS - BARRA DE ACERTO - AUDIO!!!!!
     width: 45px;
     height: 45px;
     border-radius: 45px;
-    background: url('./img/icoPlay.svg');
+    background: url('./img/homeIcoB.svg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-color: var(--color--header);
-    border: 3px solid var(--border--header);
+    background-color: var(--cor-audio-balao);
+    border: 3px solid var(--borda-audio-balao);
     outline: none;
     cursor: url("./img/mao2.svg"), auto;
 }
@@ -1178,6 +1181,7 @@ FIM DO JOGO MODAL!!!!!
     border-radius: 5px;
     height: 40px;
     z-index: 3;
+    cursor: url("./img/mao2.svg"), auto;
   }
   .verificando {
     display: none;
@@ -1196,6 +1200,14 @@ FIM DO JOGO MODAL!!!!!
     transition: background-color 0.3s, transform 0.2s;
     animation: forward 1s ease-in-out forwards;
     z-index: 4;
+    cursor: url("./img/mao2.svg"), auto;
+}
+.verificando .verificadorImg{
+  position: absolute;
+  top: 15px;
+  width: 20px;
+  height: 20px;
+  z-index: 5;
 }
 .sombraNuvem{
 

@@ -1,5 +1,6 @@
 
 
+const verificador = document.getElementById("imgVerific");
 
 //BALÕES!!
 
@@ -163,6 +164,7 @@ function fazerPergunta() {
   var perguntaAtual = 0;
 
   comece.addEventListener("click", function () {
+    
 
     let mutar = document.getElementById("mutarEdesmutar");
 
@@ -179,13 +181,13 @@ function fazerPergunta() {
         if (isMuted) {
             audioBackground.volume = 0.1; // Definir volume de volta para o normal
             isMuted = false;
-            mutar.style.background = "url('./img/icoPlay.svg')";
+            mutar.style.background = "url('./img/homeIcoB.svg')";
             mutar.style.backgroundSize = "cover";
             mutar.style.backgroundPosition = "center center";
         } else {
             audioBackground.volume = 0; // Mudo
             isMuted = true;
-            mutar.style.background = "url('./img/icoMuted.svg')";
+            mutar.style.background = "url('./img/icoPlayB.svg')";
             mutar.style.backgroundSize = "cover";
             mutar.style.backgroundPosition = "center center";
             
@@ -289,7 +291,7 @@ function fazerPergunta() {
         
         
         fundo.style.display = "none";
-        verificar.style.display = "none";
+        
 
         console.log("A pressionado!!")
         if (vidas <= 8) {
@@ -314,10 +316,19 @@ function fazerPergunta() {
             acertoeErro.play();
             
           }, 500);
+          setTimeout(function () {
+            verificar.style.display = "none";
+          }, 800);
+          verificador.style.display = "flex";
+          verificador.src = "./img/acertoV.svg";
 
           // Avança para a próxima pergunta
           perguntaAtual++;
           if (perguntaAtual < perguntas.length) {
+            setTimeout(function () {
+              verificador.src = "./img/selecionar.svg";
+            }, 800);
+            
             setTimeout(function () {
               acertou.style.display = "none";
               perguntaSrc = perguntas[perguntaAtual];
@@ -338,6 +349,18 @@ function fazerPergunta() {
       }
       else {
         console.log("Errada!");
+
+        setTimeout(function () {
+          verificar.style.display = "none";
+        }, 1600);
+        verificador.style.display = "flex";
+        verificador.src = "./img/x.svg";
+        setTimeout(function () {
+          verificador.src = "./img/selecionar.svg";
+        }, 1600);
+       
+        
+
         baloesErradas()
         console.log("resposta errada: "+errado)
         setTimeout(function () {        
@@ -376,7 +399,7 @@ function fazerPergunta() {
 
         
         fundo.style.display = "none";
-        verificar.style.display = "none";
+        
         console.log("E pressionado!!")
         if (vidas <= 8) {
           document.getElementById("v" + vidas).style.backgroundColor =
@@ -398,12 +421,19 @@ function fazerPergunta() {
             acertoeErro.src = "Falas jogo Balao/Resposta correta.mp3";
             acertoeErro.play();
           }, 500);
-
+          setTimeout(function () {
+            verificar.style.display = "none";
+          }, 800);
+          verificador.style.display = "flex";
+          verificador.src = "./img/acertoV.svg";
           
 
           // Avança para a próxima pergunta
           perguntaAtual++;
           if (perguntaAtual < perguntas.length) {
+            setTimeout(function () {
+              verificador.src = "./img/selecionar.svg";
+            }, 800);
             setTimeout(function () {
   
               acertou.style.display = "none";
@@ -429,6 +459,14 @@ function fazerPergunta() {
       }
       else {
         console.log("Errada!");
+        setTimeout(function () {
+          verificar.style.display = "none";
+        }, 1600);
+        verificador.style.display = "flex";
+        verificador.src = "./img/x.svg";
+        setTimeout(function () {
+          verificador.src = "./img/selecionar.svg";
+        }, 1600);
         baloesErradas()
         console.log("resposta errada: "+errado)
         setTimeout(function () {        
@@ -462,7 +500,7 @@ function fazerPergunta() {
 
       
         fundo.style.display = "none";
-        verificar.style.display = "none";
+        
         console.log("I pressionado!!")
         if (vidas <= 8) {
           document.getElementById("v" + vidas).style.backgroundColor =
@@ -485,11 +523,20 @@ function fazerPergunta() {
             acertoeErro.play();
           }, 500);
 
+          setTimeout(function () {
+            verificar.style.display = "none";
+          }, 800);
+          verificador.style.display = "flex";
+          verificador.src = "./img/acertoV.svg";
+
           
 
           // Avança para a próxima pergunta
           perguntaAtual++;
           if (perguntaAtual < perguntas.length) {
+            setTimeout(function () {
+              verificador.src = "./img/selecionar.svg";
+            }, 800);
             setTimeout(function () {
 
               
@@ -514,6 +561,14 @@ function fazerPergunta() {
       }
       else {
         console.log("Errada!");
+        setTimeout(function () {
+          verificar.style.display = "none";
+        }, 1600);
+        verificador.style.display = "flex";
+        verificador.src = "./img/x.svg";
+        setTimeout(function () {
+          verificador.src = "./img/selecionar.svg";
+        }, 1600);
         baloesErradas()
         console.log("resposta errada: "+errado)
         setTimeout(function () {        
@@ -547,7 +602,7 @@ function fazerPergunta() {
 
         
         fundo.style.display = "none";
-        verificar.style.display = "none";
+     
         console.log("O pressionado!!")
         if (vidas <= 8) {
           document.getElementById("v" + vidas).style.backgroundColor =
@@ -570,11 +625,20 @@ function fazerPergunta() {
             acertoeErro.play();
           }, 500);
 
+          setTimeout(function () {
+            verificar.style.display = "none";
+          }, 800);
+          verificador.style.display = "flex";
+          verificador.src = "./img/acertoV.svg";
+
           
 
           // Avança para a próxima pergunta
           perguntaAtual++;
           if (perguntaAtual < perguntas.length) {
+            setTimeout(function () {
+              verificador.src = "./img/selecionar.svg";
+            }, 800);
             setTimeout(function () {
 
               
@@ -601,6 +665,14 @@ function fazerPergunta() {
       }
       else {
         console.log("Errada!");
+        setTimeout(function () {
+          verificar.style.display = "none";
+        }, 1600);
+        verificador.style.display = "flex";
+        verificador.src = "./img/x.svg";
+        setTimeout(function () {
+          verificador.src = "./img/selecionar.svg";
+        }, 1600);
         baloesErradas()
         console.log("resposta errada: "+errado)
         setTimeout(function () {        
@@ -635,7 +707,7 @@ function fazerPergunta() {
 
         
         fundo.style.display = "none";
-        verificar.style.display = "none";
+       
         console.log("O pressionado!!")
         if (vidas <= 8) {
           document.getElementById("v" + vidas).style.backgroundColor =
@@ -658,11 +730,20 @@ function fazerPergunta() {
             acertoeErro.play();
           }, 500);
 
+          setTimeout(function () {
+            verificar.style.display = "none";
+          }, 800);
+          verificador.style.display = "flex";
+          verificador.src = "./img/acertoV.svg";
+
           
 
           // Avança para a próxima pergunta
           perguntaAtual++;
           if (perguntaAtual < perguntas.length) {
+            setTimeout(function () {
+              verificador.src = "./img/selecionar.svg";
+            }, 800);
             setTimeout(function () {
 
             
@@ -781,6 +862,14 @@ function fazerPergunta() {
       }
       else {
         console.log("Errada!");
+        setTimeout(function () {
+          verificar.style.display = "none";
+        }, 1600);
+        verificador.style.display = "flex";
+        verificador.src = "./img/x.svg";
+        setTimeout(function () {
+          verificador.src = "./img/selecionar.svg";
+        }, 1600);
         baloesErradas()
         console.log("resposta errada: "+errado)
         setTimeout(function () {        
@@ -899,23 +988,23 @@ const modal = document.getElementById('modal');
 const closeBtn = document.querySelector('.close');
 
 // Adiciona um evento de clique ao botão final
-btnFinal.addEventListener('click', function() {
-  // Exibe o modal
-  modal.style.display = 'block';
-});
+// btnFinal.addEventListener('click', function() {
+//   // Exibe o modal
+//   modal.style.display = 'block';
+// });
 
-// Adiciona um evento de clique ao elemento para fechar o modal
-closeBtn.addEventListener('click', function() {
-  // Fecha o modal
-  modal.style.display = 'none';
-});
+// // Adiciona um evento de clique ao elemento para fechar o modal
+// closeBtn.addEventListener('click', function() {
+//   // Fecha o modal
+//   modal.style.display = 'none';
+// });
 
-// Fecha o modal quando o usuário clica fora dele
-window.addEventListener('click', function(event) {
-  if (event.target === modal) {
-    modal.style.display = 'none';
-  }
-});
+// // Fecha o modal quando o usuário clica fora dele
+// window.addEventListener('click', function(event) {
+//   if (event.target === modal) {
+//     modal.style.display = 'none';
+//   }
+// });
 
 
 

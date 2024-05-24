@@ -264,11 +264,13 @@ if ($_SESSION['authUser'] == null) {
                 </div>
 
                 <div class="verificando" id="verificar">
+                    
                     <div class="circle"></div>
                     <div class="circle"><div class="detalhe"></div></div>
                     <div class="circle"></div>
                     <div class="circle"></div>
                     <div class="sombraNuvem"></div>
+                    <img class="verificadorImg" src="./img/selecionar.svg" alt="" id="imgVerific">
                 </div>
 
 

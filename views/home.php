@@ -180,7 +180,7 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
                 </div>
             </div>
 
-            <?php include('../views/components/menu-profile.php'); ?>
+            <?php //include('../views/components/menu-profile.php'); ?>
         </main>
     </div>
 

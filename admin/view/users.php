@@ -1,5 +1,7 @@
 <?php
 // session
+
+
 session_start();
 // verificação se o user esta logado
 if (!isset($_SESSION['authAdmin'])) {
@@ -32,6 +34,7 @@ $usuarios = PerfilDao::selectAll();
 
     <div class="sides">
         <?php include('../view/components/sidebar-admin.php'); ?>
+        
         <div class="information">
 
             <div class="title">
