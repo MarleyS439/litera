@@ -1,3 +1,4 @@
+/* Typographic fonts */
 @font-face {
     font-family: 'Poppins-Regular';
     src: url(../fonts/Poppins/Poppins-Regular.ttf);
@@ -8,30 +9,26 @@
     src: url(../fonts/Poppins/Poppins-Bold.ttf);
 }
 
+
+/* Variables */
+:root {
+    /* Defaul colors */
+    --litera-white: #FFF;
+    --litera-blue: #03A9F5;
+    --litera-yellow: #FFD13E;
+    --litera-light-green: #6AFA78;
+    --litera-green: #15BE26;
+    --litera-dark-green: #0E3010;
+
+    /* Default fonts */
+    --font-poppins-bold: 'Poppins-Bold';
+    --font-poppins-regular: 'Poppins-Regular', sans-serif;
+}
+
+/* Default reset */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Poppins-Regular', sans-serif;
-}
-
-
-:root {
-    --white-index: #fff;
-    --black-index: #161616;
-    --blue-index: #1187cf;
-    --blueTrasition: #0ca2ff;
-    --dark-b: #0d5d8f;
-    --green: #99F503;
-    --yellow: #FFD13E;
-    --orange: #f59403;
-    --green-light: #3EF150;
-
-        /* Cores */
-        --blue2: #142AA6;
-        --blue3: #5086F2;
-        --blue4: #5CB9F2;
-
-
-    --font-poppins-bold: 'Poppins-Bold';
+    font-family: var(--font-poppins-regular), sans-serif;
 }

@@ -33,6 +33,7 @@
                 </ul>
             </div>
 
+            <!--Botão de ação - desktop-->
             <div class="action-btn" id="menu">
                 <a href="./views/register.php">Começar</a>
 
@@ -67,24 +68,15 @@
         <div class="hero">
             <!-- Container de itens do header -->
             <div class="container-header">
-                <div class="sidea">
-                    <h1>Aprender com Jogos Educativos</h1>
-                    <h2>Litera - Alfabetização Para Novas Gerações</h2>
+                <h1>Aprender com jogos educativos</h1>
+                <h2>Enfatize o impacto dos jogos na aprendizagem</h2>
 
-                    <div class="cta-div">
-                        <a href="">Saiba mais</a>
-                    </div>
-                </div>
-
-                <div class="sideb">
-                    <img src="./assets/images/crianças (1)-min.png" alt="">
+                <div class="cta">
+                    <a href="#">Saiba mais</a>
                 </div>
             </div>
         </div>
     </header>
-
-
-    <div class="reference" id="sobre"></div>
 
     <!--Seção principal-->
     <main>
