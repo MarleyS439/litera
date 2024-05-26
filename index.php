@@ -69,7 +69,7 @@
             <!-- Container de itens do header -->
             <div class="container-header">
                 <h1>Aprender com jogos educativos</h1>
-                <h2>Enfatize o impacto dos jogos na aprendizagem</h2>
+                <h2>Suíte de jogos para alfabetização infantil</h2>
 
                 <div class="cta">
                     <a href="#">Saiba mais</a>
@@ -88,7 +88,7 @@
             <div class="bg"></div>
 
             <div class="cards">
-                <div class="card" id="card1" data-bg="url(./assets/images/estrela.gif)">
+                <div class="card" id="card1">
                     <div class="title-card">
                         <div class="tag-card">
                             <span>1</span>
@@ -104,7 +104,7 @@
                     </div>
                 </div>
 
-                <div class="card" id="card2" data-bg="url(./assets/images/asterisco.gif)">
+                <div class="card" id="card2">
                     <div class="title-card">
                         <div class="tag-card">
                             <span>2</span>
@@ -120,7 +120,7 @@
                     </div>
                 </div>
 
-                <div class="card" data-bg="url(./assets/images/peça.gif)">
+                <div class="card">
                     <div class="title-card">
                         <div class="tag-card">
                             <span>3</span>
@@ -146,9 +146,9 @@
                 <h2>Vídeo Pitch</h1>
             </div>
 
-            <video src="./assets/video/pitch.mp4" controls>
+            <!--<video src="./assets/video/pitch.mp4" controls>
                 Seu navegador não suporta a tag de vídeo.
-            </video>
+            </video>-->
 
         </section>
 
@@ -160,9 +160,9 @@
 
             <div class="container-form">
 
-                <div class="imagem-contato">
+                <!--<div class="imagem-contato">
                     <img src="./assets/images/child.png" alt="Imagem">
-                </div>
+                </div>-->
 
                 <form action="" method="">
                     <div class="item-form">
@@ -248,7 +248,9 @@
 
         <!-- Copyright -->
         <div class="copy">
-            &copy; 2023 · Litera. Todos os direitos reservados. Desenvolvido por <a href="">Illumi</a>
+            <span>
+                &copy; 2023 · Litera. Todos os direitos reservados. Desenvolvido por<a href="https://localhost/illumi">Illumi</a>
+            <span>
         </div>
 
     </footer>

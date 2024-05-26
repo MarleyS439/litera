@@ -103,6 +103,8 @@
     }
 }
 
+
+/*Efeito flutuante*/
 @keyframes float{
     0%,100%{
         transform:translatey(0)
@@ -111,6 +113,11 @@
         transform:translatey(-10px)
     }
 }
+
+
+
+
+
 
 
 

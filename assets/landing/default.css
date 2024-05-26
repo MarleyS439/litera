@@ -12,13 +12,16 @@
 
 /* Variables */
 :root {
-    /* Defaul colors */
-    --litera-white: #FFF;
+    /* Default colors */
+    --litera-black: #3b3b3b;
     --litera-blue: #03A9F5;
-    --litera-yellow: #FFD13E;
-    --litera-light-green: #6AFA78;
-    --litera-green: #15BE26;
+    --litera-dark-blue: #094D78;
     --litera-dark-green: #0E3010;
+    --litera-green: #15BE26;
+    --litera-light-blue: #B7EAFF;
+    --litera-light-green: #6AFA78;
+    --litera-white: #FFF;
+    --litera-yellow: #FFD13E;
 
     /* Default fonts */
     --font-poppins-bold: 'Poppins-Bold';
