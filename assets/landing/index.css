@@ -145,6 +145,11 @@
         display: none;
     }
 
+    #closeBtn {
+        -webkit-animation: rotate-center 1s ease-in-out both;
+        animation: rotate-center 1s ease-in-out both;
+    }
+
     /*Menu lateral*/
     .side-menu {
         display: none;
@@ -234,14 +239,113 @@
         display: none;
     }
 
+    /*Main*/
+    main {
+        background-image: url(../images/fundoNuvens.svg);
+        background-repeat: no-repeat;
+        background-size: cover
+    }
+
+    /*Cards section*/
+    main .cards-section {
+        padding: 2% 5%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-position-x: center;
+    }
+
+    .title-section-cards {
+        display: flex;
+        justify-content: center;
+    }
+
+    .title-section-cards h2 {
+        display: flex;
+        margin-top: 15px;
+        justify-content: center;
+        background-color: var(--litera-yellow);
+        padding: 5px 12px;
+        border-radius: 12px;
+        animation: float 1.5s ease-in-out infinite;
+        font-size: 2rem;
+        box-shadow: 0px 5px 2px var(--litera-black);
+    }
+
+    .cards {
+        display: flex;
+        justify-content: center;
+        padding: 2% 0%;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 80vw;
+        padding: 5%;
+        margin: 5%;
+        background-color: var(--litera-white);
+        border-radius: 12px;
+        cursor: pointer;
+        z-index: 1;
+        box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+    }
+
+    .card:hover {
+        transition: 250ms ease-out;
+        transform: rotate(5deg);
+    }
+
+    .card:not(:hover) {
+        transition: 0.5s ease-out;
+        transform: rotate(0deg);
+    }
+
+    .content-card h4 {
+        font-family: var(--font-poppins-bold);
+        margin: 3% 0%;
+        font-size: 1.5rem;
+        color: var(--litera-orange);
+    }
+
+    .content-card-p p {
+
+        font-weight: bold
+    }
+
+    .tag-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--litera-blue);
+        border-radius: 50%;
+        width: 40px;
+        padding: 8px;
+    }
+
+    .tag-card span {
+        font-family: var(--font-poppins-bold);
+        color: var(--litera-white);
+    }
+
+
+
+    /*Video Pitch*/
+    .video {
+        padding: 5%;
+    }
+
+    .video iframe {
+        width: 100%;
+    }
+
 
     /*Footer*/
     footer {
         padding: 2rem;
         background-color: var(--litera-white);
-        color: var(--white);
         border-radius: 12px 12px 0px 0px;
         flex-wrap: wrap;
+        color: var(--litera-blue);
     }
 
     footer h4 {
@@ -257,7 +361,8 @@
     .logo-litera h4 {
         margin: 0px 5px;
         font-family: var(--font-poppins-bold);
-        font-size: 2rem
+        font-size: 2rem;
+        color: var(--litera-blue);
     }
 
     .logo-litera img {
@@ -277,7 +382,7 @@
     .item-footer a {
         display: flex;
         margin: 10px 0px;
-        color: var(--white);
+        color: var(--litera-dark-blue);
     }
 
     .title-social-media {
@@ -290,28 +395,32 @@
         display: flex;
         justify-content: center;
         border-top: 1px solid white;
+        margin: 2% 0%;
     }
 
     .social-media i {
         padding: 1%;
         margin: 2%;
         font-size: 1.5rem;
+        color: #4b4b4b
     }
 
     /*Copyright*/
     .copy {
         display: flex;
         justify-content: center;
-        margin: 5% 0%;
-        font-size: .8rem;
+        font-family: var(--font-poppins-bold);
+        width: 100%;
+        text-align: center
     }
 
-    .copy a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .copy span {
+        margin: 0;
+    }
+
+    .copy a, .copy span {
         font-family: var(--font-poppins-bold);
-        color: var(--white-index);
+        color: var(--blue-index);
     }
 }
 
@@ -509,10 +618,6 @@
         box-shadow: none;
     }
 
-    main {
-        background-image: url(../images/v1015-104a\ 3.png);
-    }
-
     /*Main*/
     main {
         background-image: url(../images/fundoNuvens.svg);
@@ -554,7 +659,7 @@
     }
 
     .card {
-        width: 30vw;
+        width: 40vw;
         padding: 2%;
         margin: 2%;
         background-color: var(--litera-white);
@@ -612,104 +717,13 @@
         box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 50px;
     }
 
-    .video video {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 12px;
-        margin: 2% 25%;
-        width: 700px;
-    }
-
-
-    .contato {
-        background-color: var(--white-index);
-        padding: 5%;
-        margin: 2% 5%;
-        border-radius: 12px;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 50px;
-    }
-
-    .title-form {
-        display: flex;
-        justify-content: center;
-    }
-
-    .title-form h2 {
-        display: flex;
-        justify-content: center;
-        color: var(--orange);
-        font-size: 2rem;
-    }
-
-    .container-form {
-        margin: 5%;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-
-    .imagem-contato img {
-        width: 400px;
-    }
-
-    .container-form form {
-        background-color: var(--blue4);
-        padding: 0% 0%;
-        width: 30vw;
-        border-radius: 12px;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 50px;
-    }
-
-    .container-form form .item-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin: 0% 5%;
-    }
-
-    .item-form label {
-        margin: 3% 0%;
-        color: var(--white-index);
-        font-family: var(--font-poppins-bold);
-    }
-
-    .item-form input,
-    .item-form textarea {
-        padding: 12px;
-        border-radius: 12px;
-        border: none;
-    }
-
-    .bottom {
-        margin: 0% 5%;
-    }
-
-
-    .bottom button {
-        padding: 10px;
-        margin: 2% 0%;
-        border-radius: 12px;
-        color: #0E3010;
-        width: 100%;
-        cursor: pointer;
-        background-color: var(--green);
-        border: none;
-        font-family: var(--font-poppins-bold);
-        transition: 250ms;
-    }
-
-
-    .bottom button:hover {
-        background-color: var(--yellow);
-    }
 
 
     /* Footer */
     footer {
         padding: 2rem 3rem;
         background-color: #fff;
-        color: var(--blue-index);
+        color: var(--litera-blue);
         flex-wrap: wrap;
         width: 100%;
         border-radius: 25px 25px 0px 0px;
@@ -739,7 +753,7 @@
         font-size: 2rem;
         margin: 2% 1%;
         font-family: var(--font-poppins-bold);
-        color: var(--blue-index);
+        color: var(--litera-blue);
     }
 
     .logo-litera img {
@@ -754,6 +768,7 @@
     .item-footer a {
         display: flex;
         margin: 10px 0px;
+        color: var(--litera-dark-blue);
     }
 
     .item-footer a:hover {
@@ -764,13 +779,14 @@
     .title-social-media {
         display: flex;
         padding: 2% 1%;
-        justify-content: left;
+        justify-content: center;
     }
 
     .social-media {
         display: flex;
-        justify-content: left;
-        border-top: 1px solid white
+        justify-content: center;
+        border-top: 1px solid var(--litera-blue);
+        padding: 2% 0%;
     }
 
     .social-media i {
@@ -813,18 +829,26 @@
     /*Copyright*/
     .copy {
         display: flex;
-        justify-content: end;
+        justify-content: center;
         font-family: var(--font-poppins-bold);
+        width: 100%;
     }
 
-    .copy a {
-        margin: 0% .5%;
+    .copy span {
+        margin: 0;
+    }
+
+    .copy a, .copy span {
         font-family: var(--font-poppins-bold);
         color: var(--blue-index);
     }
 }
 
 @media screen and (min-width: 1024px) {
+
+    body {
+        background-color: var(--litera-blue);
+    }
 
     /* Navbar */
     nav {
@@ -1019,7 +1043,8 @@
     main {
         background-image: url(../images/fundoNuvens.svg);
         background-repeat: no-repeat;
-        background-size: cover
+        background-size: cover;
+        padding: 5% 0%;
     }
 
     /*Cards section*/
@@ -1050,6 +1075,7 @@
     .cards {
         display: flex;
         justify-content: center;
+        padding: 3% 0%;
     }
 
     .card {
@@ -1114,13 +1140,8 @@
         box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 50px;
     }
 
-    .video video {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 12px;
-        margin: 2% 25%;
-        width: 700px;
+    .video iframe {
+        margin: 2%
     }
 
 
@@ -1130,7 +1151,7 @@
     footer {
         padding: 2rem 3rem;
         background-color: #fff;
-        color: var(--blue-index);
+        color: var(--litera-blue);
         flex-wrap: wrap;
         width: 100%;
         border-radius: 25px 25px 0px 0px;
@@ -1160,7 +1181,7 @@
         font-size: 2rem;
         margin: 2% 1%;
         font-family: var(--font-poppins-bold);
-        color: var(--blue-index);
+        color: var(--litera-blue);
     }
 
     .logo-litera img {
@@ -1175,7 +1196,7 @@
     .item-footer a {
         display: flex;
         margin: 10px 0px;
-        color: var(--dark-b);
+        color: var(--litera-dark-blue);
     }
 
     .item-footer a:hover {
@@ -1192,12 +1213,11 @@
     .social-media {
         display: flex;
         justify-content: left;
-        border-top: 1px solid white
+        border-top: 1px solid var(--litera-blue);
     }
 
     .social-media i {
-        padding: 1%;
-        margin: 1% 1% 0% 1%;
+        margin: 1.5%;
         font-size: 1.5rem;
         cursor: pointer;
     }
@@ -1235,12 +1255,12 @@
     /*Copyright*/
     .copy {
         display: flex;
+        width: 100%;
         justify-content: end;
         font-family: var(--font-poppins-bold);
     }
 
-    .copy a {
-        margin: 0% .5%;
+    .copy a, .copy span {
         font-family: var(--font-poppins-bold);
         color: var(--blue-index);
     }
