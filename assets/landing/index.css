@@ -400,6 +400,8 @@
         border-radius: 12px;
         transition: 250ms ease-in-out;
         margin: 0px 5px;
+        position: relative;
+        top: -2px;
         border: 3px solid var(--litera-green);
         box-shadow: 0px 5px 0px var(--litera-dark-green);
     }
@@ -512,6 +514,13 @@
     }
 
     /*Main*/
+    main {
+        background-image: url(../images/fundoNuvens.svg);
+        background-repeat: no-repeat;
+        background-size: cover
+    }
+
+    /*Cards section*/
     main .cards-section {
         padding: 2% 5%;
         display: flex;
@@ -519,7 +528,6 @@
         flex-direction: column;
         background-position-x: center;
     }
-
 
     .title-section-cards {
         display: flex;
@@ -529,49 +537,57 @@
     .title-section-cards h2 {
         display: flex;
         justify-content: center;
-        color: var(--orange);
-        background-color: var(--white-index);
+        background-color: var(--litera-yellow);
         padding: 15px 100px;
         border-radius: 12px;
-        animation: float 800ms ease-in-out infinite;
-        font-size: 2rem
+        animation: float 1.5s ease-in-out infinite;
+        font-size: 2rem;
+        box-shadow: 0px 5px 2px var(--litera-black);
+        font-family: var(--font-poppins-bold);
+        color: var(--litera-black);
     }
 
     .cards {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     .card {
         width: 30vw;
         padding: 2%;
         margin: 2%;
-        background-color: var(--white-index);
+        background-color: var(--litera-white);
         color: var(--dark-b);
         border-radius: 12px;
         cursor: pointer;
         z-index: 1;
+        box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
     }
 
     .card:hover {
         transition: 250ms ease;
         transform: translate(5px, 10px);
         transform: rotate(5deg);
-        box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;
+    }
+
+    .card:not(:hover) {
+        transition: 0.5s ease-out;
+        transform: rotate(0deg);
     }
 
     .content-card h4 {
         font-family: var(--font-poppins-bold);
-        color: var(--dark-b);
+        color: var(--litera-dark-blue);
         margin: 5% 0%;
     }
 
     .content-card-p p {
-        color: var(--blue-index);
+        color: var(--litera-blue);
     }
 
     .tag-card {
-        background-color: var(--orange);
+        background-color: var(--litera-yellow);
         border-radius: 50%;
         width: min-content;
         padding: 10px 18px;
@@ -582,6 +598,8 @@
         font-family: var(--font-poppins-bold);
     }
 
+
+    /*Vídeo section*/
     .video {
         display: flex;
         justify-content: center;
@@ -887,6 +905,8 @@
         transition: 250ms ease-in-out;
         margin: 0px 5px;
         border: 3px solid var(--litera-green);
+        position: relative;
+        top: -2px;
         box-shadow: 0px 5px 0px var(--litera-dark-green);
     }
 
@@ -1002,6 +1022,7 @@
         background-size: cover
     }
 
+    /*Cards section*/
     main .cards-section {
         padding: 2% 5%;
         display: flex;
@@ -1018,12 +1039,12 @@
     .title-section-cards h2 {
         display: flex;
         justify-content: center;
-        color: var(--litera-black);
         background-color: var(--litera-yellow);
         padding: 15px 100px;
         border-radius: 12px;
-        animation: float 800ms ease-in-out infinite;
-        font-size: 2rem
+        animation: float 1.5s ease-in-out infinite;
+        font-size: 2rem;
+        box-shadow: 0px 5px 2px var(--litera-black);
     }
 
     .cards {
@@ -1036,11 +1057,10 @@
         padding: 2%;
         margin: 2%;
         background-color: var(--litera-white);
-        color: var(--dark-b);
         border-radius: 12px;
         cursor: pointer;
         z-index: 1;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
     }
 
     .card:hover {
@@ -1055,26 +1075,33 @@
 
     .content-card h4 {
         font-family: var(--font-poppins-bold);
-        color: var(--litera-dark-blue);
         margin: 5% 0%;
+        font-size: 1.5rem;
+        color: var(--litera-orange);
     }
 
     .content-card-p p {
-        color: var(--litera-blue);
+
+        font-weight: bold
     }
 
     .tag-card {
-        background-color: var(--litera-yellow);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--litera-blue);
         border-radius: 50%;
-        width: min-content;
-        padding: 10px 18px;
+        width: 40px;
+        padding: 8px;
     }
 
     .tag-card span {
-        color: var(--white-index);
         font-family: var(--font-poppins-bold);
+        color: var(--litera-white);
     }
 
+
+    /*Video section*/
     .video {
         display: flex;
         justify-content: center;
@@ -1096,86 +1123,6 @@
         width: 700px;
     }
 
-
-    .contato {
-        background-color: var(--white-index);
-        padding: 5%;
-        margin: 2% 5%;
-        border-radius: 12px;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 50px;
-    }
-
-    .title-form {
-        display: flex;
-        justify-content: center;
-    }
-
-    .title-form h2 {
-        display: flex;
-        justify-content: center;
-        color: var(--orange);
-        font-size: 2rem;
-    }
-
-    .container-form {
-        margin: 5%;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-
-    .imagem-contato img {
-        width: 400px;
-    }
-
-    .container-form form {
-        background-color: var(--blue4);
-        padding: 0% 0%;
-        width: 30vw;
-        border-radius: 12px;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 50px;
-    }
-
-    .container-form form .item-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin: 0% 5%;
-    }
-
-    .item-form label {
-        margin: 3% 0%;
-        color: var(--white-index);
-        font-family: var(--font-poppins-bold);
-    }
-
-    .item-form input,
-    .item-form textarea {
-        padding: 12px;
-        border-radius: 12px;
-        border: none;
-    }
-
-    .bottom {
-        margin: 0% 5%;
-    }
-
-    .bottom button {
-        padding: 10px;
-        margin: 2% 0%;
-        border-radius: 12px;
-        color: #0E3010;
-        width: 100%;
-        cursor: pointer;
-        background-color: var(--green);
-        border: none;
-        font-family: var(--font-poppins-bold);
-        transition: 250ms;
-    }
-
-    .bottom button:hover {
-        background-color: var(--yellow);
-    }
 
 
 

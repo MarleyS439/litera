@@ -91,15 +91,16 @@
                 <div class="card" id="card1">
                     <div class="title-card">
                         <div class="tag-card">
-                            <span>1</span>
+                            <span> 1 </span>
                         </div>
 
                         <div class="content-card">
-                            <h4>Engajamento e diversão<h4>
+                        <h4>Engajamento e Diversão</h4>
 
-                                    <div class="content-card-p">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam.</p>
-                                    </div>
+                        <div class="content-card-p">
+                            <p>Um aprendizado divertido, criativo, estimulante e extremamente envolvente que os pequenos realmente adoram.</p>
+                        </div>
+
                         </div>
                     </div>
                 </div>
@@ -111,11 +112,12 @@
                         </div>
 
                         <div class="content-card">
-                            <h4>Monitoramento de Progresso<h4>
+                        <h4>Uma plataforma inovadora</h4>
 
-                                    <div class="content-card-p">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam.</p>
-                                    </div>
+                        <div class="content-card-p">
+                            <p>Combinamos o melhor da educação com jogos para tornar o aprendizado divertido, interativo e eficaz para as crianças.</p>
+                        </div>
+
                         </div>
                     </div>
                 </div>
@@ -127,11 +129,13 @@
                         </div>
 
                         <div class="content-card">
-                            <h4>Habilidades Cognitivas<h4>
+                            <h4>Múltiplos Perfis</h4>
 
-                                    <div class="content-card-p">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam.</p>
-                                    </div>
+                            <div class="content-card-p">
+                                <p>Oferecemos a possibilidade de criar até 5 perfis individuais, cada um com seu próprio avatar, estatísticas de perfil e conquistas personalizadas.</p>
+                            </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -140,6 +144,9 @@
             </div>
         </section>
 
+        <section class="">
+
+        </section>
 
         <section class="video">
             <div class="title-section-cards">
@@ -153,39 +160,8 @@
         </section>
 
 
-        <section class="contato">
-            <div class="title-form">
-                <h2>Entre em contato</h2>
-            </div>
-
-            <div class="container-form">
-
-                <!--<div class="imagem-contato">
-                    <img src="./assets/images/child.png" alt="Imagem">
-                </div>-->
-
-                <form action="" method="">
-                    <div class="item-form">
-                        <label for="">Nome</label>
-                        <input type="text" placeholder="Digite seu nome" required />
-                    </div>
-
-                    <div class="item-form">
-                        <label for="">E-mail</label>
-                        <input type="email" placeholder="Digite seu e-mail" required />
-                    </div>
-
-                    <div class="item-form">
-                        <label for="">Mensagem</label>
-                        <textarea name="" id="" cols="30" rows="5"></textarea>
-                    </div>
-
-                    <div class="bottom">
-                        <button type="submit">Enviar</button>
-                    </div>
-                </form>
-            </div>
-        </section>
+       <section class="">
+       </section>
     </main>
 
     <!--Footer-->
