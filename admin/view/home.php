@@ -45,40 +45,59 @@ $infos = AdminDao::selectAllLitera();
 
             <div class="container animate__animated animate__fadeInDown">
                 <div class="card-container">
-                    <h4>Usuários cadastrados</h4>
                     <div class="card">
-                        <p class="font-card"><?php echo $infos['userCount'] ?></p>
+                        <img src="../assets/images/icons/Page-1.svg" alt="">
+                        <div class="text-content">
+                            <p class="font-card"><?php echo $infos['userCount'] ?></p>
+                            <h4>Usuários cadastrados</h4>
+                        </div>
                     </div>
                 </div>
                 <div class="card-container">
-                    <h4>Compras nas ultimas 24h</h4>
                     <div class="card">
-                        <p class="font-card"><?php echo $infos['countBuys'] ?></p>
+                        <img src="../assets/images/icons/Dribbble-Light-Preview.svg" alt="">
+                        <div class="text-content">
+                            <p class="font-card"><?php echo $infos['countBuys'] ?></p>
+                            <h4>Jogos nas ultimas 24h</h4>
+                        </div>
                     </div>
                 </div>
                 <div class="card-container">
-                    <h4>Contas ativas</h4>
                     <div class="card">
-                        <p class="font-card"><?php echo $infos['activeUserCount'] ?></p>
+                        <img src="../assets/images/icons/Group.svg" alt="">
+                        <div class="text-content">
+                            <p class="font-card"><?php echo $infos['activeUserCount'] ?></p>
+                            <h4>Usuários logados</h4>
+                        </div>
                     </div>
                 </div>
                 <div class="card-container">
-                    <h4>Contas banidas</h4>
                     <div class="card">
-                        <p class="font-card"><?php echo $infos['bannedUserCount'] ?></p>
+                        <img src="../assets/images/icons/Etiqueta.svg" alt="">
+                        <div class="text-content">
+                            <p class="font-card"><?php echo $infos['bannedUserCount'] ?></p>
+                            <h4>Compras nas ultimas 24h</h4>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="chart-container-area animate__animated animate__fadeInDown">
-                <canvas id="myChart" class="chart-container"></canvas>
+            <div class='chart-container animate__animated animate__fadeInDown'>
+                <div class="charts">
+                    <div class="chart-width">
+                        <canvas id="doughnutChart1" class="chart"></canvas>
+                            <canvas id="doughnutChart2" class="chart"></canvas>
+                            <canvas id="doughnutChart3" class="chart"></canvas>
+                    </div>
+                </div>
+                <div class="charts">
+                    <canvas id="lineChart" class="chart"></canvas>
+                </div>
             </div>
+
 
             <input type="hidden" name="mes" id="mes" value="<?php echo date('n') ?>">
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-            <script>
-                var quantidade_por_mes = <?php echo json_encode($quantidade_por_mes); ?>
-            </script>
             <script src="../assets/javascript/charts.js"></script>
 
 

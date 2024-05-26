@@ -12,8 +12,8 @@
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* regras de estilo para tablets */
 
+  /* regras de estilo para tablets */
   .top-bar {
     width: 100%;
     background-color: var(--gray);
@@ -174,7 +174,9 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    padding: 2%;
     flex-wrap: wrap;
+    background-color: #F3F2F7;
   }
 
   .information-home .container {
@@ -186,20 +188,10 @@
   }
 
   .information-home .container .card-container {
-<<<<<<< HEAD
     width: 25%;
-    height: 12rem;
+    height: 10rem;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
-=======
-    width: 50%;
-    height: 8rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
->>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
   }
 
   .card-container .card {
@@ -541,6 +533,7 @@
   body {
     margin: -0.8vh 0vh 0vh -1vw;
     padding: 0 1vw;
+    background-color: #F3F2F7;
   }
 
   /* .sidebar-menu {
@@ -791,7 +784,7 @@
 
   .flex-title .title {
     width: 60%;
-    text-align: start;
+    text-align: center;
   }
 
   .flex-title {
@@ -970,32 +963,74 @@
     /* Adicione esta linha */
     margin-top: 2%;
     flex-direction: column;
+    flex-wrap: wrap;
   }
 
   .card-container .card {
-    width: 18rem;
+    width: 92%;
     height: 150px;
-    background-color: var(--blue6);
-    border-radius: 10px;
+    background-color: white;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    color: white;
+    color: black;
     font-size: 50px;
     font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: start;
   }
 
-  .chart-container-area {
+  .text-content {
+    text-align: start;
+    width: 50%;
+    margin-right: 5%;
+  }
+
+  .card-container h4 {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .card-container p {
+    color: #464255;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .card-container img {
+    margin: 0 8%;
+    width: 63px;
+    height: auto;
+  }
+
+  .information-home .chart-container {
+    margin-top: 2%;
+    width: 100%;
+    height: 225px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .chart-container .charts {
+    height: 327px;
+    width: 48%;
+    border-radius: 14px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
-    margin-top: 5%;
-    width: 80%;
-    height: 400px;
+    /* Alinhar os gráficos ao centro horizontalmente */
+    align-items: center;
+    /* Alinhar os gráficos ao centro verticalmente */  
+    padding: 1% 0;  
   }
 
-  .chart-container {
-    background-color: #4180ab;
-    border-radius: 10px;
+  .chart-width {
+    display: flex;
+    justify-content: center;
+    width: 25%;
   }
 
   .search-container {
@@ -1061,17 +1096,15 @@
     text-align: center;
     padding-top: 3%;
   }
-  .container-cards{
+
+  .container-cards {
     display: flex;
     flex-wrap: wrap;
-<<<<<<< HEAD
     width: 100%;
-=======
-    width: 90%;
->>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
     justify-content: space-evenly;
   }
-  .container-cards .cards{
+
+  .container-cards .cards {
     position: relative;
     display: flex;
     justify-content: center;
@@ -1086,33 +1119,38 @@
     background: #fff;
     overflow: hidden;
   }
-  .container-cards .cards::before{
+
+  .container-cards .cards::before {
     content: '';
     position: absolute;
-    background: var(--blue3);
+    background: var(--blue3)a;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     left: 0;
     bottom: 0;
     height: 30%;
     width: 100%;
-    z-index: 0; 
+    z-index: 0;
   }
-  #itemCabelo{
+
+  #itemCabelo {
     position: absolute;
     z-index: 1;
     top: 20px;
   }
-  #itemCards{
+
+  #itemCards {
     z-index: 1;
   }
-  .container-cards .cards:hover{
+
+  .container-cards .cards:hover {
     transform: scale(1.3);
     background: #fff;
     z-index: 1;
 
   }
-  .nomeItem{
+
+  .nomeItem {
     position: absolute;
     bottom: 0;
     padding: 0.5vh 2.3vw;
@@ -1120,6 +1158,7 @@
     font-weight: 500;
     color: #fff;
   }
+
   .search-game {
     display: flex;
     justify-content: space-around;
@@ -1150,12 +1189,7 @@
     text-align: center;
   }
 
-  .card-container h3 {
-    text-align: center;
-    margin-bottom: 2%;
-  }
-
-    /* Estilo para o container do select */
+  /* Estilo para o container do select */
   .select-container {
     position: relative;
     width: 100%;
@@ -1196,7 +1230,7 @@
   }
 
   /* Estilo para o dropdown */
-  .selecao + .select-items {
+  .selecao+.select-items {
     position: absolute;
     top: 100%;
     left: 0;
@@ -1218,11 +1252,11 @@
   }
 
   /* Mostrar as opções quando o select está em foco ou hover */
-  .selecao:focus + .select-items,
-  .selecao:hover + .select-items {
+  .selecao:focus+.select-items,
+  .selecao:hover+.select-items {
     display: block;
   }
 
-  
-  
+
+
 }
