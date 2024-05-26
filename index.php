@@ -35,7 +35,7 @@
 
             <!--Botão de ação - desktop-->
             <div class="action-btn" id="menu">
-                <a href="./views/register.php">Começar</a>
+                <a href="./views/register.php">Entre ou cadastre-se</a>
 
                 <!-- Div que simula um botão de clique para abrir o menu oculto -->
                 <div class="menu-mobile" id="openBtn">
@@ -71,9 +71,9 @@
                 <h1>Aprender com jogos educativos</h1>
                 <h2>Suíte de jogos para alfabetização infantil</h2>
 
-                <div class="cta">
+                <!--<div class="cta">
                     <a href="#">Saiba mais</a>
-                </div>
+                </div>-->
             </div>
         </div>
     </header>
@@ -95,11 +95,11 @@
                         </div>
 
                         <div class="content-card">
-                        <h4>Engajamento e Diversão</h4>
+                            <h4>Engajamento e Diversão</h4>
 
-                        <div class="content-card-p">
-                            <p>Um aprendizado divertido, criativo, estimulante e extremamente envolvente que os pequenos realmente adoram.</p>
-                        </div>
+                            <div class="content-card-p">
+                                <p>Um aprendizado divertido, criativo, estimulante e extremamente envolvente que os pequenos realmente adoram.</p>
+                            </div>
 
                         </div>
                     </div>
@@ -112,11 +112,11 @@
                         </div>
 
                         <div class="content-card">
-                        <h4>Uma plataforma inovadora</h4>
+                            <h4>Uma plataforma inovadora</h4>
 
-                        <div class="content-card-p">
-                            <p>Combinamos o melhor da educação com jogos para tornar o aprendizado divertido, interativo e eficaz para as crianças.</p>
-                        </div>
+                            <div class="content-card-p">
+                                <p>Combinamos o melhor da educação com jogos para tornar o aprendizado divertido, interativo e eficaz para as crianças.</p>
+                            </div>
 
                         </div>
                     </div>
@@ -135,10 +135,10 @@
                                 <p>Oferecemos a possibilidade de criar até 5 perfis individuais, cada um com seu próprio avatar, estatísticas de perfil e conquistas personalizadas.</p>
                             </div>
 
-                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
 
             </div>
@@ -158,8 +158,8 @@
         </section>
 
 
-       <section class="">
-       </section>
+        <section class="">
+        </section>
     </main>
 
     <!--Footer-->
@@ -226,7 +226,7 @@
                 &copy; 2023 · Litera. Todos os direitos reservados. Desenvolvido por<a href="https://localhost/illumi" target="_blank"> Illumi</a>
 
                 <span>🇧🇷</span>
-            <span>
+                <span>
         </div>
 
     </footer>

@@ -578,7 +578,7 @@
 
     .container-header h2 {
         display: flex;
-        padding: 1% 5%;
+        padding: 2% 5%;
         justify-content: center;
         width: 50vw;
         border-radius: 12px;
@@ -998,7 +998,7 @@
 
     .container-header h2 {
         display: flex;
-        padding: 1% 5%;
+        padding: 2% 5%;
         justify-content: center;
         width: 50vw;
         border-radius: 12px;
