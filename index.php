@@ -80,6 +80,20 @@
 
     <!--Seção principal-->
     <main>
+        <section class="">
+            <div class="img-section">
+                <img src="./assets/images/fundo.png" alt="" />
+            </div>
+
+            <div class="">
+                <h2>Título da seção</h2>
+
+                <div class="content-section">
+                    <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.</p>
+                </div>
+            </div>
+        </section>
+
         <section class="cards-section">
             <div class="title-section-cards">
                 <h2>Porquê o Litera?</h1>
