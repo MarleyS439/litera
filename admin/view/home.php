@@ -82,16 +82,26 @@ $infos = AdminDao::selectAllLitera();
                 </div>
             </div>
 
-            <div class='chart-container animate__animated animate__fadeInDown'>
+            <div class='chart-container'>
                 <div class="charts">
-                    <div class="chart-width">
-                        <canvas id="doughnutChart1" class="chart"></canvas>
+                    <div class="chart-content">
+                        <div class="chart-title">Pie Chart</div>
+                        <div class="chart-subtitle">Overall Subtitle</div>
+                        <div class="chart-width">
+                            <canvas id="doughnutChart1" class="chart"></canvas>
                             <canvas id="doughnutChart2" class="chart"></canvas>
                             <canvas id="doughnutChart3" class="chart"></canvas>
+                        </div>
                     </div>
                 </div>
                 <div class="charts">
-                    <canvas id="lineChart" class="chart"></canvas>
+                    <div class="chart-content">
+                        <div class="chart-title">Acessos</div>
+                        <div class="chart-subtitle">Overall Subtitle</div>
+                        <div class="chart-line-width">
+                            <canvas id="lineChart" class="chart-line"></canvas>
+                        </div>
+                    </div>
                 </div>
             </div>
 

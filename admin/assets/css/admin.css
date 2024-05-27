@@ -4,6 +4,9 @@
 @import url(sidebar-admin.css);
 @import url(addItemModal.css);
 
+:root{
+
+}
 
 /* Media Querys */
 @media screen and (max-width: 768px) {
@@ -984,7 +987,6 @@
   .text-content {
     text-align: start;
     width: 50%;
-    margin-right: 5%;
   }
 
   .card-container h4 {
@@ -1024,13 +1026,61 @@
     /* Alinhar os gráficos ao centro horizontalmente */
     align-items: center;
     /* Alinhar os gráficos ao centro verticalmente */  
-    padding: 1% 0;  
+    text-align: start;
+  }
+
+  .charts {
+    margin-bottom: 5%;
+  }
+
+  .chart-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
   }
 
   .chart-width {
     display: flex;
+    align-items: center;
     justify-content: center;
-    width: 25%;
+    height: 100%;
+    width: 10vw;
+    max-width: 180px;
+    margin-bottom: 5%;
+    margin-top: 3%;
+  }
+
+  .chart {
+    width: 0;
+  }
+
+  .chart-line {
+    width: 33vw;
+    height: 12vw;
+    padding-top: 2%;
+  }
+
+  .chart-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+  }
+
+  .chart-title {
+    margin-top: 2%;
+    color: #666666;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: start;
+    width: 90%;
+  }
+  .chart-subtitle {
+    font-size: 14px;
+    color: #666;
+    text-align: start;
+    width: 90%;
   }
 
   .search-container {
