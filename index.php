@@ -80,12 +80,26 @@
 
     <!--Seção principal-->
     <main>
-        <section class="">
+        <section class="section1 left">
             <div class="img-section">
                 <img src="./assets/images/fundo.png" alt="" />
             </div>
 
-            <div class="">
+            <div class="information-section">
+                <h2>Título da seção</h2>
+
+                <div class="content-section">
+                    <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section1 right">
+            <div class="img-section">
+                <img src="./assets/images/fundo.png" alt="" />
+            </div>
+
+            <div class="information-section">
                 <h2>Título da seção</h2>
 
                 <div class="content-section">
@@ -158,22 +172,35 @@
             </div>
         </section>
 
-        <section class="">
-
-        </section>
-
-        <section class="video">
-            <div class="title-section-cards">
-                <h2>Vídeo Pitch</h1>
+        <section class="section1 left">
+            <div class="img-section">
+                <iframe width="560" height="315" style="border-radius: 12px" src="https://www.youtube.com/embed/iVGN-FqM3O4?si=8e1V8p-0VKG7cRdR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
 
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/iVGN-FqM3O4?si=8e1V8p-0VKG7cRdR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="information-section">
+                <h2>Vídeo Pitch</h2>
 
-        </section>
+                <div class="content-section">
+                    <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.</p>
+                </div>
+            </div>
+            </section>
+
+            <section class="section1 right">
+                <div class="img-section">
+                    <img src="./assets/images/fundo.png" alt="" />
+                </div>
+
+                <div class="information-section">
+                    <h2>Título da seção</h2>
+
+                    <div class="content-section">
+                        <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.</p>
+                    </div>
+                </div>
+            </section>
 
 
-        <section class="">
-        </section>
     </main>
 
     <!--Footer-->
