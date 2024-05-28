@@ -43,8 +43,8 @@ new Chart(lineChart, {
     maintainAspectRatio: false, // Permite que o gráfico se ajuste ao tamanho do contêiner pai
     scales: {
       y: {
-        beginAtZero: true
-      }
+        beginAtZero: true,
+      },
     },
     plugins: {
       legend: {
@@ -93,7 +93,7 @@ new Chart(doughnutChart1, {
         padding: {
           top: 30,
         },
-        color: 'rgb(102, 102, 102)',
+        color: "rgb(102, 102, 102)",
         font: {
           size: 24, // Tamanho da fonte do título
         },
@@ -129,7 +129,7 @@ new Chart(doughnutChart2, {
         padding: {
           top: 50,
         },
-        color: 'rgb(102, 102, 102)',
+        color: "rgb(102, 102, 102)",
         font: {
           size: 24, // Tamanho da fonte do título
         },
@@ -164,7 +164,7 @@ new Chart(doughnutChart3, {
         padding: {
           top: 50,
         },
-        color: 'rgb(102, 102, 102)',
+        color: "rgb(102, 102, 102)",
         font: {
           size: 24, // Tamanho da fonte do título
         },

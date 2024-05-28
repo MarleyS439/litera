@@ -15,7 +15,9 @@ include_once('../controller/processingChart.php');
 <!-- pegar as informações do banco -->
 <?php
 require_once "../../dao/adminDao.php";
+require_once "../../dao/dadosPartidaJogoDao.php";
 $infos = AdminDao::selectAllLitera();
+$infoPartida = DadosPartidaJogoDao::countRounds();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
@@ -57,7 +59,7 @@ $infos = AdminDao::selectAllLitera();
                     <div class="card">
                         <img src="../assets/images/icons/Dribbble-Light-Preview.svg" alt="">
                         <div class="text-content">
-                            <p class="font-card"><?php echo $infos['countBuys'] ?></p>
+                            <p class="font-card"><?php echo $infoPartida['COUNT(*)'] ?></p>
                             <h4>Jogos nas ultimas 24h</h4>
                         </div>
                     </div>
@@ -97,7 +99,7 @@ $infos = AdminDao::selectAllLitera();
                 <div class="charts">
                     <div class="chart-content">
                         <div class="chart-title">Acessos</div>
-                        <div class="chart-subtitle">Overall Subtitle</div>
+                        <div class="chart-subtitle">Acessos dos usuários durante a semana</div>
                         <div class="chart-line-width">
                             <canvas id="lineChart" class="chart-line"></canvas>
                         </div>
@@ -108,6 +110,9 @@ $infos = AdminDao::selectAllLitera();
 
             <input type="hidden" name="mes" id="mes" value="<?php echo date('n') ?>">
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script>
+                var quantidade_por_mes = <?php echo json_encode($quantidade_por_mes); ?>
+            </script>
             <script src="../assets/javascript/charts.js"></script>
 
 

@@ -33,7 +33,7 @@ try {
     $mail->addAddress($dadosUsuario['email_user'], $dadosUsuario['name_user']);
     $mail->Subject = 'Código de verificação - Litera';
 
-    $logo = '../assets/images/LandingPage/logo-litera.png';
+    $logo = '../assets/images/litera.png';
     $mail->addAttachment($logo);
 
     // Configuração de charset e codificação de texto
