@@ -86,17 +86,17 @@ class PerfilDao
     //     $stmt->bindValue(2, $cod);
     //     return $stmt->execute();
     // }
-    // public static function updateName($cod, $perfis)
-    // {
-    //     $conexao = Conexao::conectar();
-    //     $query = "UPDATE tbperfil SET
-    //     nomePerfil = ?
-    //     WHERE codPerfil = ?";
-    //     $stmt = $conexao->prepare($query);
-    //     $stmt->bindValue(1, $usuario->getNomePerfil());
-    //     $stmt->bindValue(2, $cod);
-    //     return $stmt->execute();
-    // }
+    public static function updateName($cod, $perfis)
+    {
+        $conexao = Conexao::conectar();
+        $query = "UPDATE tbperfil SET
+        nomePerfil = ?
+        WHERE codPerfil = ?";
+        $stmt = $conexao->prepare($query);
+        $stmt->bindValue(1, $perfis->getNomePerfil());
+        $stmt->bindValue(2, $cod);
+        return $stmt->execute();
+    }
 
     public static function setGamesPoints($cod, $dinheiro)
     {

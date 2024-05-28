@@ -197,7 +197,7 @@
     align-items: center;
   }
 
-  .card-container .card {
+   .card-container .card {
     width: 80%;
     height: 80%;
     background-color: var(--blue6);

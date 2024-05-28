@@ -17,7 +17,6 @@ function search() {
     ];
 
     container.style.display = "flex";
-    container.style.flexWrap = "wrap";
     container.classList.remove("animate__fadeOutUp");
     container.classList.add("animate__animated", "animate__fadeInDown");
 
@@ -57,7 +56,6 @@ function search() {
     // Envia a requisição com os dados convertidos para JSON
     xhr.send(JSON.stringify(dados));
   } else {
-    container.style.display = "none";
     container.classList.remove("animate__fadeInDown");
     container.classList.add("animate__fadeOutUp");
   }
