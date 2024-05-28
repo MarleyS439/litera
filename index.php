@@ -88,17 +88,17 @@
             </div>
 
             <div class="information-section">
-                <h2>Um projeto online e multiplataforma</h2>
+                <h2>Um Projeto Online e Multiplataforma</h2>
 
                 <div class="content-section">
-                    <p class="">O Litera foi totalmente desenvolvido e pensado para rodar em quaisquer dispositivos com navegador e acesso à internet, facilitando o acesso, sem necessidade de muitos recursos.</p>
+                    <p class="">O Litera foi totalmente desenvolvido e pensado para rodar em quaisquer dispositivos com navegador e acesso à internet, facilitando o uso, sem necessidade de muitos recursos ou instalação direta.</p>
                 </div>
             </div>
         </section>
 
         <section class="section1 right">
             <div class="img-section">
-                <img src="./assets/images/fundo.png" alt="" />
+                <img src="./assets/images/multiplataforma.png" alt="" />
             </div>
 
             <div class="information-section">
@@ -180,10 +180,10 @@
             </div>
 
             <div class="information-section">
-                <h2>Vídeo Pitch</h2>
+                <h2>Desperte a Curiosidade das Crianças com o Mundo Maravilhoso da Alfabetização!</h2>
 
                 <div class="content-section">
-                    <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.</p>
+                    <p class="">Este vídeo pitch é o seu convite para conhecer um projeto que transforma a vida das crianças. Prepare-se para se inspirar e se apaixonar pelo futuro da alfabetização!</p>
                 </div>
             </div>
             </section>
