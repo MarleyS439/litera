@@ -331,7 +331,7 @@
         margin-top: 15px;
         justify-content: center;
         background-color: var(--litera-yellow);
-        padding: 5px 12px;
+        padding: 10px 20px;
         border-radius: 12px;
         animation: float 1.5s ease-in-out infinite;
         font-size: 2rem;

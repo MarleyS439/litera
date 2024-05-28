@@ -33,11 +33,7 @@
         font-size: 2rem;
         color: var(--black2);
         font-family: var(--font-poppins-bold);
-<<<<<<< HEAD
         margin-bottom: 5vw;
-
-=======
->>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
     }
 
     .games-list {
@@ -105,10 +101,18 @@
 
     body {
         cursor: url(../../views/jogo/jogo/img/mão.svg);
+        background-image: url(../images/fundoHome1.png);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
     }
 
     .mobile-view {
         display: none;
+    }
+
+    .desktop-view {
+        height: 100vh
     }
 
     .desktop-view main {
@@ -117,7 +121,7 @@
         position: relative;
         top: 6vh;
         color: var(--black2);
-        height: 100vh;
+        /*height: 100vh;*/
         transition: 300ms ease-in-out;
     }
 
@@ -125,6 +129,8 @@
         padding: 1% 5%;
         display: flex;
         justify-content: center;
+        position: fixed;
+        width: 100%
     }
 
     .title-desktop-room h2 {
@@ -139,21 +145,23 @@
     }
 
     .games-desktop-itens {
-        display: grid;
+        display: flex;
         justify-content: center;
         flex-wrap: wrap;
         transition: 300ms ease-in-out;
+        width: 100%;
+        position: relative;
+        top: 20%;
     }
-
 
     .bg-game {
         background-size: cover;
         background-repeat: no-repeat;
-        width: 400px;
-        height: 250px;
         border-radius: 10px;
         border: 5px solid var(--blue2);
         box-shadow: 0px 5px 5px #00000060;
+        width: calc(100%) auto;
+        height: 100%;
     }
 
     #balls {
@@ -166,11 +174,10 @@
 
     .game-item {
         display: flex;
-        justify-content: center;
         border-radius: 10px;
         text-decoration: none;
+        margin:5%;
         cursor: url(../images/icons/MAOZINHA.png), auto;
-        width: 250px;
         transition: 300ms ease-in-out;
     }
 
@@ -182,8 +189,6 @@
 
     .profile-menu {
         border-left: 1px solid var(--blue2);
-        height: 100vh;
-     
     }
 
     .games-desktop {
@@ -193,8 +198,6 @@
         background-image: url(../images/Group\ 51.png);
         background-repeat: no-repeat;
         background-size: 100%;
-        margin: 0% 2%;
-        height: 100%;
         transition: 300ms ease-in-out;
     }
 
@@ -206,6 +209,7 @@
         backdrop-filter: blur(1px);
         border-radius: 8px;
         position: relative;
+        width: 30vw;
         top: 20%;
         font-size: 1.3rem;
         left: 0;
@@ -475,10 +479,15 @@
 @media screen and (min-width: 1025px) {
     body {
         cursor: url(../images/icons/MAOZINHA.png), auto;
+        background-image: url(../images/fundoHome1.png);
+        background-size: cover;
+
     }
+
     main .title{
         margin-top: 50px;
     }
+
     .mobile-view {
         display: none;
     }
@@ -509,32 +518,10 @@
     }
 
     .games-desktop-itens {
-        padding: 0% 5%;
-        display: grid;
-        justify-items: center;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 5%;
-        grid-auto-flow: row;
-        grid-template-areas:
-            "game1 game2"
-            "game3 game4";
-    }
-
-    .game1 {
-        grid-area: game1;
-    }
-
-    .game2 {
-        grid-area: game2;
-    }
-
-    .game3 {
-        grid-area: game3;
-    }
-
-    .game4 {
-        grid-area: game4;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
     }
 
 
@@ -546,7 +533,7 @@
         height: 250px;
         border-radius: 10px;
         border: 5px solid var(--blue2);
-        box-shadow: 0px 5px 5px #00000060;
+        box-shadow: 0px 5px 5px #00000080;
     }
 
     #balls {
@@ -559,11 +546,10 @@
 
     .game-item {
         display: flex;
-        justify-content: center;
         border-radius: 10px;
+        margin: 1% 5%;
         text-decoration: none;
         cursor: url(../images/icons/MAOZINHA.png), auto;;
-        width: 250px;
         transition: 300ms ease-in-out;
     }
 
@@ -574,10 +560,10 @@
     }
     .menu-profile-child{
         display: flex;
-        /* background-color: powderblue; */
         align-items: center;
         justify-content: center;
     }
+
     .profile-menu {
         padding-top: 1%;
         height: 100vh;
@@ -586,13 +572,11 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        /* background-color: red; */
     }
 
     .games-desktop {
         position: relative;
         width: 100%;
-        background-image: url(../images/fundoHome.png);
         background-repeat: no-repeat;
         background-size: cover;
         height: 100%;

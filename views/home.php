@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <?php
 // session
 session_start();
@@ -39,7 +41,7 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
 }
 ?>
 
-<!DOCTYPE html>
+
 <html lang="pt-br" dir="ltr">
 
 <head>
@@ -63,9 +65,6 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
 </head>
 
 <body>
-<<<<<<< HEAD
-
-
     <div class="mobile-view">
 
         <div class="overlay-itens2"></div>
@@ -193,139 +192,4 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
 </body>
 <?php
 // var_dump($codUser['codPerfil']);
-
 ?>
-
-</html>
-=======
-    
-    <div class="overlay-itens1">
-
-        <div class="mobile-view">
-
-            <div class="overlay-itens2"></div>
-
-            <div class="top-bar">
-                <div class="info-user">
-                    <img src="../assets/images/icons/profile.svg" alt="">
-                    <span><?php echo ($perfilAutenticado['nomePerfil']) ?></span>
-                </div>
-
-                <div class="credits">
-                    <img src="../assets/images/icons/coin2.svg" alt="">
-                    <span><?php echo ($perfilAutenticado['dinheiroPerfil']) ?></span>
-                </div>
-            </div>
-
-            <main>
-                <div class="title">
-                    <h2>Sala de Jogos</h2>
-                </div>
-
-                <div class="games-list">
-                    <a class="game" id="t" href="../views/jogo/map1.php">
-                        <div class="title-game">
-                            <p>Acertar balões</p>
-                        </div>
-
-                        <div class="background-card-game" id="game1"></div>
-                    </a>
-
-                    <a class="game" href="../views/jogo/index.php">
-                        <div class="title-game">
-                            <p>Jogo das sílabas</p>
-                        </div>
-
-                        <div class="background-card-game" id="game2"></div>
-                    </a>
-
-                    <a class="game" href="#">
-                        <div class="title-game">
-                            <p>Caça às Letras</p>
-                        </div>
-
-                        <div class="background-card-game"></div>
-                    </a>
-
-                    <a class="game" href="#">
-                        <div class="title-game">
-                            <p>Caça às Letras</p>
-                        </div>
-
-                        <div class="background-card-game"></div>
-                    </a>
-                </div>
-            </main>
-            <div class="bottom-navigation-bar">
-
-                <a href="./home.php">
-                    <img src="../assets/images/icons/home-icon.svg" alt="Início" id="home">
-                </a>
-
-                <a href="../views/store.php">
-                    <img src="../assets/images/icons/store-icon.svg" alt="Loja" id="store">
-                </a>
-
-                <a href="../views/perfil-profile.php">
-                    <img src="../assets/images/icons/profile-icon.svg" alt="Perfil" id="profile">
-                </a>
-
-            </div>
-        </div>
-
-    </div>
-    <div class="desktop-view">
-        <?php include('../views/components/navbarHome.php'); ?>
-
-        <main class="main-desktop">
-            <div class="games-desktop">
-                <div class="title-desktop-room">
-                    <h2>Sala de Jogos</h2>
-                </div>
-
-                <div class="games-desktop-itens">
-
-                    <a class="game-item game1" id="first" href="../views/jogo/map1.php">
-                        <div class="title-game-item">
-                            <p>Acertar Balões</p>
-                            <div class="bg-game" id="balls"></div>
-                        </div>
-                    </a>
-
-                    <a class="game-item game2" href="../views/jogo/index.php">
-                        <div class="title-game-item">
-                            <p>Montar Sílabas</p>
-                            <div class="bg-game" id="fruits"></div>
-                        </div>
-                    </a>
-
-                    <a class="game-item game3">
-                        <div class="title-game-item">
-                            <p>Em breve um novo jogo</p>
-                            <div class="bg-game" id=""></div>
-                        </div>
-                    </a>
-
-                    <a class="game-item game4">
-                        <div class="title-game-item">
-                            <p>Em breve um novo jogo</p>
-                            <div class="bg-game"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <?php //include('../views/components/menu-profile.php'); ?>
-        </main>
-    </div>
-
-   
-
-    <script src="./../assets/javascript/modal.js"></script>
-</body>
-<?php 
-// var_dump($codUser['codPerfil']);
-
-?>
-</html>
->>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
