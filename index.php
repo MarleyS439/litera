@@ -78,18 +78,20 @@
         </div>
     </header>
 
+    <div id="sobre"></div>
+
     <!--Seção principal-->
     <main>
         <section class="section1 left">
             <div class="img-section">
-                <img src="./assets/images/fundo.png" alt="" />
+                <img src="./assets/images/multiplataforma.png" alt="" />
             </div>
 
             <div class="information-section">
-                <h2>Título da seção</h2>
+                <h2>Um projeto online e multiplataforma</h2>
 
                 <div class="content-section">
-                    <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.</p>
+                    <p class="">O Litera foi totalmente desenvolvido e pensado para rodar em quaisquer dispositivos com navegador e acesso à internet, facilitando o acesso, sem necessidade de muitos recursos.</p>
                 </div>
             </div>
         </section>
@@ -217,6 +219,7 @@
                 <a href="#" title="Temos soluções diversas. Acesse e saiba mais.">Soluções</a>
                 <a href="#" title="Ficou preocupado com a Segurança da nossa plataforma? Saiba mais.">Segurança</a>
                 <a href="#" title="Fique por dentro das mais recentes versões do antes de todo mundo.">Acesso antecipado</a>
+                <a href="./admin/index.php">Área Administrativa</a>
             </div>
 
             <div class="item-footer">

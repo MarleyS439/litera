@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 // session
 
@@ -12,11 +13,12 @@ if (!isset($_SESSION['authAdmin'])) {
 // variavel para todas as informaçoes do usuario
 $usuarioAutenticado = $_SESSION['authAdmin'];
 
-require('../../dao/PerfilDao.php');
+require('../../dao/perfilDao.php');
+
 $usuarios = PerfilDao::selectAll();
 
 ?>
-<!DOCTYPE html>
+
 <html lang="pt-BR" dir="ltr">
 
 <head>

@@ -1,57 +1,63 @@
 <?php
 // Conexao com o banco 
-require_once (__DIR__ . '../../config/conexao.php');
+require_once(__DIR__ . '../../config/conexao.php');
 
-class PerfilDao{
-    public static function insert($perfis){
+class PerfilDao
+{
+    public static function insert($perfis)
+    {
         $conexao = Conexao::conectar();
-        $query = "INSERT INTO tbperfil(codUsuario, nomePerfil, generoPerfil, iconPerfil, dinheiroPerfil, tutorial, nivel, fasesConcluidas, dataNasc, dataCriacao, dataModfc) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";        
+        $query = "INSERT INTO tbperfil(codUsuario, nomePerfil, generoPerfil, iconPerfil, dinheiroPerfil, tutorial, nivel, fasesConcluidas, dataNasc, dataCriacao, dataModfc) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conexao->prepare($query);
-        $stmt -> bindvalue(1, $perfis->getCodUsuario());
-        $stmt -> bindvalue(2, $perfis->getNomePerfil());
-        $stmt -> bindvalue(3, $perfis->getGeneroPerfil());
-        $stmt -> bindvalue(4, $perfis->getIconPerfil());
-        $stmt -> bindvalue(5, $perfis->getDinheiroPerfil());
-        $stmt -> bindvalue(6, $perfis->getTutorial());
-        $stmt -> bindvalue(7, $perfis->getNivel());
-        $stmt -> bindvalue(8, 0);
-        $stmt -> bindvalue(9, $perfis->getDataNasc());
-        $stmt -> bindvalue(10, $perfis->getDataCriacao());
-        $stmt -> bindvalue(11, $perfis->getDataModfc());
-        $stmt ->execute();
+        $stmt->bindvalue(1, $perfis->getCodUsuario());
+        $stmt->bindvalue(2, $perfis->getNomePerfil());
+        $stmt->bindvalue(3, $perfis->getGeneroPerfil());
+        $stmt->bindvalue(4, $perfis->getIconPerfil());
+        $stmt->bindvalue(5, $perfis->getDinheiroPerfil());
+        $stmt->bindvalue(6, $perfis->getTutorial());
+        $stmt->bindvalue(7, $perfis->getNivel());
+        $stmt->bindvalue(8, 0);
+        $stmt->bindvalue(9, $perfis->getDataNasc());
+        $stmt->bindvalue(10, $perfis->getDataCriacao());
+        $stmt->bindvalue(11, $perfis->getDataModfc());
+        $stmt->execute();
     }
-    public static function selectAll(){
-    $conexao = Conexao::conectar();
-    $query = "SELECT * FROM tbperfil INNER JOIN tbusuario ON tbusuario.codUsuario = tbperfil.codUsuario";
-    $stmt = $conexao->prepare($query);
-    $stmt->execute();
-    return $stmt->fetchAll();
+    public static function selectAll()
+    {
+        $conexao = Conexao::conectar();
+        $query = "SELECT * FROM tbperfil INNER JOIN tbusuario ON tbusuario.codUsuario = tbperfil.codUsuario";
+        $stmt = $conexao->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
     }
-    public static function selectById($cod){
+    public static function selectById($cod)
+    {
         $conexao = Conexao::conectar();
         $query = "SELECT * FROM tbperfil WHERE codPerfil = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $cod);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
-    }    
-    public static function selectByIdUser($cod){
+    }
+    public static function selectByIdUser($cod)
+    {
         $conexao = Conexao::conectar();
         $query = "SELECT * FROM tbperfil WHERE codUsuario = ?";
         $stmt = $conexao->prepare($query);
-        $stmt ->bindvalue(1, $cod);
+        $stmt->bindvalue(1, $cod);
         $stmt->execute();
         return $stmt->fetchAll();
     }
-    public static function countById($cod){
+    public static function countById($cod)
+    {
         $conexao = Conexao::conectar();
         $query = "SELECT COUNT(codPerfil) FROM tbperfil WHERE codUsuario = ?";
         $stmt = $conexao->prepare($query);
-        $stmt ->bindvalue(1, $cod);
+        $stmt->bindvalue(1, $cod);
         $stmt->execute();
         return $stmt->fetchColumn();
     }
-    
+
     // public static function delete($cod){
     //     $conexao = Conexao::conectar();
     //     $query ="DELETE FROM tbperfil WHERE codPerfil = ?";
@@ -91,6 +97,7 @@ class PerfilDao{
     //     $stmt->bindValue(2, $cod);
     //     return $stmt->execute();
     // }
+
     public static function setGamesPoints($cod, $dinheiro)
     {
         $conexao = Conexao::conectar();
@@ -167,6 +174,3 @@ class PerfilDao{
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
-
-
-?>

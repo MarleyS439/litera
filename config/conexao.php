@@ -6,7 +6,7 @@ class Conexao
         try {
             //informações do banco de dados
             $servidor = "localhost";
-            $banco = "dblitera";
+            $banco = "dbLitera";
             $usuario = "root";
             $senha = "";
 
