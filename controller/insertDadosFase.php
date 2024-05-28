@@ -1,6 +1,7 @@
 <?php
 require_once("../dao/perfilDao.php");
 require_once("../dao/dadosJogoUsuarioDao.php");
+require_once("../dao/dadosPartidaJogoDao.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data = json_decode(file_get_contents('php://input'), true);
@@ -19,8 +20,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 $resultado = DadosJogoUsuarioDao::update($dadosUser['maxPontuacao'], $acertos, $erros, $dadosUser['codDadosJogoUsuario']);          
             }
+
+            $dadosFase = DadosPartidaJogoDao::insert($id, $idFase);
             // Atualiza os dados do jogo do usuário no banco de dados
-            if ($resultado) {
+            if ($resultado || $dadosFase) {
                 echo "Insert feito com sucesso!";
             } else {
                 echo "Erro ao inserir os valores!";

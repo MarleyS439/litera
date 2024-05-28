@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Litera | Login</title>
     <link rel="stylesheet" href="../assets/css/login-page.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
     <link rel="shortcut icon" href="../assets/images/icons/favicon.ico" type="image/x-icon">
 </head>
 
@@ -49,7 +50,7 @@
 
                 <div class="advisor">
                     <!-- Aqui vai as informações de autenticação de login -->
-                    <!-- <?php if (isset($_GET['status'])) : ?>
+                    <?php if (isset($_GET['status'])) : ?>
                         <?php if ($_GET['status'] == 'sucess') : ?>
                             <div class="notification">
                                 <div class="notification_body">
@@ -60,7 +61,7 @@
                         <?php elseif ($_GET['status'] == 'erro2') : ?>
                             <div class="notification-erro2">
                                 <div class="notification_body">
-                                    <img class="icon-alert"  src="../assets/images/icons/icon _warning triangle outline_.svg" class="notification_icon" alt="block">
+                                    <img class="icon-alert" width="25" src="../assets/images/icons/icon _ban_.svg" class="notification_icon" alt="block">
                                     <span> Realize login para ter acesso ao Litera</span>
                                 </div>
                                 <div class="notification_progress-erro2"></div>
@@ -68,7 +69,7 @@
                         <?php elseif ($_GET['status'] == 'erro3') : ?>
                             <div class="notification-erro3">
                                 <div class="notification_body">
-                                    <img class="icon-alert" width="25" src="../assets/images/icons/icon _ban_.svg" class="notification_icon" alt="block">
+                                    <img class="icon-alert" src="../assets/images/icons/icon _warning triangle outline_.svg" class="notification_icon" alt="block">
                                     <span>Conta temporariamente suspensa</span>
                                 </div>
                                 <div class="notification_progress-erro3"></div>
@@ -76,7 +77,7 @@
                         <?php else : ?>
                             <p style="color: red;"></p>
                         <?php endif ?>
-                    <?php endif ?> -->
+                    <?php endif ?>
                 </div>
 
                 <div class="send">

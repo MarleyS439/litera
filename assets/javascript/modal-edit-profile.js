@@ -9,6 +9,7 @@ buttonOpenEdit.addEventListener("click", function(){
         modalEditCard.style.display = "none";
     } else {
         modalEditCard.style.display = "flex";
+        
     }
 })
 
