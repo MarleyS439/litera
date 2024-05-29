@@ -1,0 +1,24 @@
+/*Importação de fontes tipográficas*/
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url(../../../../../assets/fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url(../../../../../assets/fonts/Poppins/Poppins-Bold.ttf);
+}
+
+/*Estilos padrões*/
+:root {
+    
+
+    --font-poppins-bold: 'Poppins-Bold';
+    --font-poppins-regular: 'Poppins-Regular';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
