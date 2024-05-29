@@ -66,32 +66,34 @@ if ($_SESSION['authUser'] == null) {
                 </div>
             <?php } ?>
             <div class="box-perfil">
-                <?php if (is_array($perfil) && !empty($perfil)) :
-                    foreach ($perfil as $perfils) : ?>
-                        <!-- <?php var_dump($perfils) ?> -->
-                        <div class="cards-perfil">
+                <div class="cards-perfil">
+                    <?php if (is_array($perfil) && !empty($perfil)) :
+                        foreach ($perfil as $perfils) : ?>
                             <div class="cards">
-                                <div class="overlay-card" id="card-modal"></div>
+                                <div class="overlay-card " id="card-modal"></div>
                                 <a href="../controller/conectionPerfil.php?id=<?php echo $perfils['codPerfil']; ?>&coduser=<?php echo $codUser['cod'] ?>">
                                     <img src="../assets/images/icons/<?php echo $perfils['iconPerfil'] ?>" alt="">
                                     <p><?php echo $perfils['nomePerfil']; ?></p>
                                 </a>
                             </div>
                     <?php endforeach;
-                endif; ?>
-                        </div>
-                        <?php if ($qntdPerfil < 5) { ?>
-                            <div class="add">
-                                <button type="submit" id="addProfile" title="Criar um novo perfil">
-                                    <img src="../assets/images/icons/addbtn.png" alt="">
-                                </button>
-                            </div>
-                        <?php }; ?>
+                    endif; ?>
+                </div>
+                <?php if ($qntdPerfil < 5) { ?>
+                    <div class="add">
+                        <button type="submit" id="addProfile" title="Criar um novo perfil">
+                            <img src="../assets/images/icons/addbtn.png" alt="">
+                        </button>
+                    </div>
+                <?php }; ?>
             </div>
+
         </div>
     </div>
-    <button class="edit-perfil" id="open-edit"><img src="../assets/images/icons/edit-icon-perfil.svg" alt=""></button>
-    <button class="logoutBtn"><img src="../assets/images/icons/exit-svgrepo-person.svg" alt=""></button>
+    <div class="configs">
+        <button class="edit-perfil" id="open-edit"></button>
+        <button class="logoutBtn"><img src="../assets/images/icons/exit-svgrepo-person.svg" alt=""></button>
+    </div>
 
 
 
@@ -169,32 +171,51 @@ if ($_SESSION['authUser'] == null) {
         </div>
     </div>
 
+    <!-- Modal para editar o perfil -->
     <div class="modal-edit-profile" id="modalEditProfile">
-        <div class="cancel">
-            <button type="button" id="cancelEditProfile" title="Cancelar">
-                <img src="../assets/images/icons/cancel-img.png" alt="">
-            </button>
-        </div>
+
         <div class="title-modal">
             <p>Editar perfil</p>
         </div>
         <div class="">
             <form action="../controller/processRegisterPerfis.php">
                 <input type="hidden" value="<?php echo $codUser['cod'] ?>" name="codUser">
-                <div class="">
-                    <label for=""></label>
-                    <input id="edit-name-input" name="id_user" type="hidden" value="<?php echo isset($perfil['codPerfil']) ? $perfil['codPerfil'] : '' ?>">
-                    <input id="edit-name-input" name="icon_user_user" type="image" value="<?php echo isset($codUser['iconPerfil']) ? $codUser['iconPerfil'] : '' ?>">
-                    <input type="text" name="nome_perfil" id="nome_perfil" placeholder="<?php echo isset($codUser['nomePerfil']) ? $codUser['nomePerfil'] : '' ?>">
-                    <input id="edit-name-input" name="genero_user" type="text" value="<?php echo isset($codUser['generoPerfil']) ? $codUser['generoPerfil'] : '' ?>">
-                    <input id="edit-name-input" name="data_nasc" type="text" value="<?php echo isset($codUser['dataNasc']) ? $codUser['dataNasc'] : '' ?>">
-                    <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['pontuacaoPerfil']) ? $codUser['pontuacaoPerfil'] : '' ?>">
-                    <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['dinheiroPerfil']) ? $codUser['dinheiroPerfil'] : '' ?>">
-                    <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['tutorial']) ? $codUser['tutorial'] : '' ?>">
-                    <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['nivel']) ? $codUser['nivel'] : '' ?>">
-                    <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['fasesConcluidas']) ? $codUser['fasesConcluidas'] : '' ?>">
-                    <input type="submit" value="Enviar">
+                <input id="edit-name-input" name="id_user" type="hidden" value="<?php echo isset($perfil['codPerfil']) ? $perfil['codPerfil'] : '' ?>">
+                <input id="edit-name-input" name="icon_user_user" type="image" value="<?php echo isset($codUser['iconPerfil']) ? $codUser['iconPerfil'] : '' ?>">
+                <input type="hidden" name="nome_perfil" id="nome_perfil" placeholder="<?php echo isset($codUser['nomePerfil']) ? $codUser['nomePerfil'] : '' ?>">
+
+                <input id="edit-name-input" name="genero_user" type="hidden" value="<?php echo isset($codUser['generoPerfil']) ? $codUser['generoPerfil'] : '' ?>">
+
+                <input id="edit-name-input" name="data_nasc" type="hidden" value="<?php echo isset($codUser['dataNasc']) ? $codUser['dataNasc'] : '' ?>">
+                <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['pontuacaoPerfil']) ? $codUser['pontuacaoPerfil'] : '' ?>">
+                <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['dinheiroPerfil']) ? $codUser['dinheiroPerfil'] : '' ?>">
+                <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['tutorial']) ? $codUser['tutorial'] : '' ?>">
+                <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['nivel']) ? $codUser['nivel'] : '' ?>">
+                <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['fasesConcluidas']) ? $codUser['fasesConcluidas'] : '' ?>">
+
+
+                <div class="infoP">
+
+                    <label for="">Nome:</label>
+                    <input type="text">
+
+                    <label for="">Gênero</label>
+                    <input type="text">
+
+                    <label for="">Data de Nascimento</label>
+                    <input type="text">
+
+                    <div class="option-modal-edit">
+                        <div class="cancel">
+                            <button type="button" id="cancelEditProfile" title="Cancelar">
+                                <p>Cancelar</p>
+                            </button>
+                        </div>
+                        <input type="submit" value="Alterar">
+                    </div>
+
                 </div>
+
             </form>
         </div>
     </div>
