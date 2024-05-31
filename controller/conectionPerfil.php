@@ -1,6 +1,7 @@
 <?php
 // caminhos para os arquivos dao e model
 require_once("../dao/perfilDao.php");
+require_once("../dao/acessoUsuarioDao.php");
 require_once(__DIR__ . "../../models/perfil.php");
 require_once("../dao/avatarDao.php");
 // variavel que vai mandar os dados para o model
@@ -33,10 +34,11 @@ if (isset($_GET['id']) && isset($_GET['coduser'])) {
         $_SESSION['authPerfil'] = $authPerfil;
         // verificação para ver se já existe um avatar pronto
         $avatar = AvatarDao::selectByIdUser($datePerfil['codPerfil']);
-        var_dump($avatar);
+        //var_dump($avatar);
         if ($avatar == false) {
             header("Location: ../views/avatar.php?status=base");
         } else {
+            AcessoUsuarioDao::insert($authPerfil['codPerfil']);
             header("Location: ../views/home.php");
         }
     }

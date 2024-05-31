@@ -132,15 +132,6 @@ class PerfilDao
         $stmt->bindValue(2, $cod);
         return $stmt->execute();
     }
-    public static function countMonth($month)
-    {
-        $conexao = Conexao::conectar();
-        $query = "SELECT COUNT(*) AS quantidade FROM tbperfil WHERE MONTH(dataCriacao) = ?";
-        $stmt = $conexao->prepare($query);
-        $stmt->bindValue(1, $month);
-        $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
-    }
     public static function selectPontuacaoNivel($cod)
     {
         $conexao = Conexao::conectar();

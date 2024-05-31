@@ -1,6 +1,7 @@
 <?php
 // caminhos para os arquivos dao e model
 require_once("../dao/usuarioDao.php");
+require_once("../dao/acessoUsuarioDao.php");
 require_once(__DIR__ . "../../models/usuario.php");
 // variavel que vai mandar os dados para o model
 $usuario = new Usuario();

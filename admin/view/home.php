@@ -16,8 +16,10 @@ include_once('../controller/processingChart.php');
 <?php
 require_once "../../dao/adminDao.php";
 require_once "../../dao/dadosPartidaJogoDao.php";
+require_once "../../dao/acessoUsuarioDao.php";
 $infos = AdminDao::selectAllLitera();
 $infoPartida = DadosPartidaJogoDao::countRounds();
+$infoAcessos = new AcessoUsuarioDao;
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
@@ -68,7 +70,7 @@ $infoPartida = DadosPartidaJogoDao::countRounds();
                     <div class="card">
                         <img src="../assets/images/icons/Group.svg" alt="">
                         <div class="text-content">
-                            <p class="font-card"><?php echo $infos['activeUserCount'] ?></p>
+                            <p class="font-card"><?php echo $infoAcessos->countLoggedAcoounts()['COUNT(*)']; ?></p>
                             <h4>Usuários logados</h4>
                         </div>
                     </div>
@@ -111,7 +113,7 @@ $infoPartida = DadosPartidaJogoDao::countRounds();
             <input type="hidden" name="mes" id="mes" value="<?php echo date('n') ?>">
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
             <script>
-                var quantidade_por_mes = <?php echo json_encode($quantidade_por_mes); ?>
+                var quantidade_por_semana = <?php echo json_encode($resultado); ?>
             </script>
             <script src="../assets/javascript/charts.js"></script>
 

@@ -7,7 +7,7 @@ class DadosPartidaJogoDao
     public static function insert($codPerfil, $codFase)
     {
         $conexao = Conexao::conectar();
-        $query = "INSERT INTO tbdadospartidajogo (codPerfil, codJogo, dataPartida) VALUES (?,?,?)";
+        $query = "INSERT INTO tbdadosjogo (codPerfil, codJogo, dataPartida) VALUES (?,?,?)";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $codPerfil);
         $stmt->bindValue(2, $codFase);
@@ -17,7 +17,7 @@ class DadosPartidaJogoDao
     public static function selectAll()
     {
         $conexao = Conexao::conectar();
-        $query = "SELECT * FROM tbdadospartidajogo";
+        $query = "SELECT * FROM tbdadosjogo";
         $stmt = $conexao->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll();
@@ -25,7 +25,7 @@ class DadosPartidaJogoDao
     public static function selectAllById($cod)
     {
         $conexao = Conexao::conectar();
-        $query = "SELECT * FROM tbdadospartidajogo WHERE codDadosPartiaJogo = ?";
+        $query = "SELECT * FROM tbdadosjogo WHERE codDadosPartiaJogo = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $cod);
         $stmt->execute();
@@ -35,7 +35,7 @@ class DadosPartidaJogoDao
     public static function countRounds()
     {
         $conexao = Conexao::conectar();
-        $query = "SELECT COUNT(*) FROM tbdadospartidajogo WHERE dataPartida = ?";
+        $query = "SELECT COUNT(*) FROM tbdadosjogo WHERE dataPartida = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, date('Y-m-d'));
         $stmt->execute();

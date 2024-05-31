@@ -1,7 +1,5 @@
-<!DOCTYPE html>
 <?php
 // session
-
 
 session_start();
 // verificação se o user esta logado
@@ -18,7 +16,7 @@ require('../../dao/perfilDao.php');
 $usuarios = PerfilDao::selectAll();
 
 ?>
-
+<!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
 
 <head>

@@ -14,6 +14,8 @@ const gradient = lineChart.createLinearGradient(0, 0, 0, 400);
 gradient.addColorStop(0, "rgba(110, 200, 239, 1)"); // Cor inicial
 gradient.addColorStop(1, "rgba(255, 255, 255, 0.3)"); // Cor final
 
+const resultado = JSON.parse(quantidade_por_semana)
+
 new Chart(lineChart, {
   type: "line",
   data: {
@@ -28,7 +30,7 @@ new Chart(lineChart, {
     ],
     datasets: [
       {
-        data: [12, 19, 3, 5, 2, 3, 7],
+        data: [resultado[0].totalAcessos, resultado[1].totalAcessos, resultado[2].totalAcessos, resultado[3].totalAcessos, resultado[4].totalAcessos, resultado[5].totalAcessos, resultado[6].totalAcessos],
         tension: 0.3,
         borderWidth: 1,
         borderColor: "rgb(45, 156, 219)",

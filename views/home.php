@@ -1,35 +1,29 @@
-<!DOCTYPE html>
-
 <?php
 // session
 session_start();
-// verificação se o user esta logado
+// verificação se o usuário está logado
 if (!isset($_SESSION['authPerfil'])) {
-    // caso não esteja, redirecione a login e indique que para realizar o login
+    // caso não esteja, redirecione para o login e indique que é necessário fazer login
     header("Location: ./login.php?status=erro2");
     exit();
 }
-// variavel para todas as informaçoes do usuario
+// variável para todas as informações do usuário
 require_once "../dao/perfilDao.php";
 require_once "../dao/usuarioDao.php";
 $codUser = $_SESSION['authPerfil'];
 $perfilAutenticado = PerfilDao::selectById($codUser['codPerfil']);
 $usuarioAutenticado =  UsuarioDao::selectById($codUser['codUser']);
-// verificar se o user esta banido
+// verificar se o usuário está banido
 if ($usuarioAutenticado['banido'] != 0) {
-    // caso não esteja, redirecionar a login e indique que o user foi banido
+    // caso esteja banido, redirecione para o login e indique que o usuário foi banido
     header("Location: ./login.php?status=erro3");
     exit();
 }
 if ($_SESSION['authUser'] == null) {
     header('Location: ./login.php?status=erro4');
 }
-// var_dump($perfilAutenticado);
-?>
-<?php
-// if e else para atualizar o progresso
+// calcular a porcentagem de progresso
 $porcentagem = 0;
-
 if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacaoPerfil'] > 0) {
     $porcentagem = ($perfilAutenticado['pontuacaoPerfil'] / 100) * 100;
 } else if ($perfilAutenticado['pontuacaoPerfil'] < 260 && $perfilAutenticado['pontuacaoPerfil'] >= 100) {
@@ -41,7 +35,7 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
 }
 ?>
 
-
+<!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
 
 <head>
@@ -186,10 +180,6 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
         </div>
     </div>
 
-
-
     <script src="./../assets/javascript/modal.js"></script>
 </body>
-<?php
-// var_dump($codUser['codPerfil']);
-?>
+</html>
