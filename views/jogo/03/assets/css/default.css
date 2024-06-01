@@ -25,4 +25,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font-poppins-regular), sans-serif;
+    cursor: url(../../../../../assets/images/icons/MAOZINHA.png), auto;
+
 }

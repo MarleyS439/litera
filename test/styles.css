@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.draggable {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    cursor: grab;
+}
+
+.drop-zone {
+    width: 150px;
+    height: 150px;
+    border: 2px dashed #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+}
+
+.success-message {
+    display: none;
+    color: green;
+    font-size: 20px;
+    position: absolute;
+    top: 400px;
+    left: 200px;
+}

@@ -18,6 +18,10 @@
 
             <div class="progress-bar">
                 <div class="effect"></div>
+
+                <div class="time">
+                    <span>2:30</span>
+                </div>
             </div>
 
             <div class="buttons">
@@ -35,6 +39,8 @@
             </div>
         </div>
     </div>
+
+    <!--Modal aqui via include-->
 
     <script src="assets/javascript/fullscreen.js"></script>
 </body>
