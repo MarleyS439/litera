@@ -11,6 +11,9 @@
 
 /*Estilos padrões*/
 :root {
+    --litera-black: #3b3b3b;
+    --litera-green: #15BE26;
+    --litera-light-green: #6AFA78;
     
 
     --font-poppins-bold: 'Poppins-Bold';
@@ -21,4 +24,5 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--font-poppins-regular), sans-serif;
 }
