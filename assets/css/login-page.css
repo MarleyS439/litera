@@ -93,6 +93,14 @@
     .send button img {
         width: 20px;
     }
+    .non{
+        display: flex;
+    }
+    .non a{
+        margin: 0px 12px;
+        text-decoration: none;
+        color: var(--blue3);
+    }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -218,6 +226,14 @@
         width: 20px;
         height: auto;
         margin: 5px;
+    }
+    .non{
+        display: flex;
+    }
+    .non a{
+        margin: 0px 10px;
+        text-decoration: none;
+        color: var(--blue3);
     }
 }
 

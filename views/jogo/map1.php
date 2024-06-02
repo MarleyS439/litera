@@ -130,7 +130,7 @@ if ($_SESSION['authUser'] == null) {
                             </a>
 
                         <?php } else { ?>
-                            <a href="../jogo/balao.php">
+                            <a href="../jogo/01/balao.php">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
                             </a>
                         <?php } ?>
@@ -140,7 +140,7 @@ if ($_SESSION['authUser'] == null) {
                         <?php
                         if ($perfilAutenticado['nivel'] >= 2 and $perfilAutenticado['nivel'] < 3) {
                         ?>
-                            <a href="../jogo/balao.php">
+                            <a href="../jogo/01/balao.php">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
                             </a>
 
@@ -155,7 +155,7 @@ if ($_SESSION['authUser'] == null) {
                         <?php
                         if ($perfilAutenticado['nivel'] >= 3 and $perfilAutenticado['nivel'] < 4) {
                         ?>
-                            <a href="../jogo/balao.php">
+                            <a href="../jogo/01/balao.php">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
                             </a>
 
@@ -232,7 +232,7 @@ if ($_SESSION['authUser'] == null) {
                             </a>
 
                         <?php } else { ?>
-                            <a href="../jogo/balao.php">
+                            <a href="../jogo/01/balao.php">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
                             </a>
                         <?php } ?>
@@ -242,7 +242,7 @@ if ($_SESSION['authUser'] == null) {
                         <?php
                         if ($perfilAutenticado['nivel'] >= 2 and $perfilAutenticado['nivel'] < 3) {
                         ?>
-                            <a href="../jogo/balao.php">
+                            <a href="../jogo/01/balao.php">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
                             </a>
 
@@ -257,7 +257,7 @@ if ($_SESSION['authUser'] == null) {
                         <?php
                         if ($perfilAutenticado['nivel'] >= 3 and $perfilAutenticado['nivel'] < 4) {
                         ?>
-                            <a href="../jogo/balao.php">
+                            <a href="../jogo/01/balao.php">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
                             </a>
 
