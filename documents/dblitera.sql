@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 28-Maio-2024 às 20:18
--- Versão do servidor: 10.4.28-MariaDB
--- versão do PHP: 8.2.4
+-- Host: db
+-- Generation Time: Jun 01, 2024 at 05:44 PM
+-- Server version: 8.4.0
+-- PHP Version: 8.2.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,24 +18,37 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `dblitera`
+-- Database: `dblitera`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbadmin`
+-- Table structure for table `tbacessousuario`
+--
+
+CREATE TABLE `tbacessousuario` (
+  `codAcessoUsuario` int NOT NULL,
+  `codPerfil` int NOT NULL,
+  `dataAcesso` date NOT NULL,
+  `isLogged` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbadmin`
 --
 
 CREATE TABLE `tbadmin` (
-  `codAdmin` int(11) NOT NULL,
-  `nomeAdmin` varchar(100) NOT NULL,
-  `emailAdmin` varchar(120) NOT NULL,
-  `senhaAdmin` varchar(15) NOT NULL
+  `codAdmin` int NOT NULL,
+  `nomeAdmin` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `emailAdmin` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `senhaAdmin` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `tbadmin`
+-- Dumping data for table `tbadmin`
 --
 
 INSERT INTO `tbadmin` (`codAdmin`, `nomeAdmin`, `emailAdmin`, `senhaAdmin`) VALUES
@@ -44,33 +57,33 @@ INSERT INTO `tbadmin` (`codAdmin`, `nomeAdmin`, `emailAdmin`, `senhaAdmin`) VALU
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbavatar`
+-- Table structure for table `tbavatar`
 --
 
 CREATE TABLE `tbavatar` (
-  `codAvatar` int(11) NOT NULL,
-  `codRoupa` int(11) NOT NULL,
-  `codCabelo` int(11) NOT NULL,
-  `codGenero` int(11) NOT NULL,
-  `codPerfil` int(11) NOT NULL
+  `codAvatar` int NOT NULL,
+  `codRoupa` int NOT NULL,
+  `codCabelo` int NOT NULL,
+  `codGenero` int NOT NULL,
+  `codPerfil` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbcabelo`
+-- Table structure for table `tbcabelo`
 --
 
 CREATE TABLE `tbcabelo` (
-  `codCabelo` int(11) NOT NULL,
-  `nomeCabelo` varchar(50) NOT NULL,
-  `precoCabelo` int(11) NOT NULL,
-  `imgCabelo` varchar(50) NOT NULL,
-  `tokenCabelo` varchar(40) NOT NULL
+  `codCabelo` int NOT NULL,
+  `nomeCabelo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `precoCabelo` int NOT NULL,
+  `imgCabelo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `tokenCabelo` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `tbcabelo`
+-- Dumping data for table `tbcabelo`
 --
 
 INSERT INTO `tbcabelo` (`codCabelo`, `nomeCabelo`, `precoCabelo`, `imgCabelo`, `tokenCabelo`) VALUES
@@ -80,97 +93,97 @@ INSERT INTO `tbcabelo` (`codCabelo`, `nomeCabelo`, `precoCabelo`, `imgCabelo`, `
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbcategoria`
+-- Table structure for table `tbcategoria`
 --
 
 CREATE TABLE `tbcategoria` (
-  `codCategoria` int(11) NOT NULL,
-  `categoria` varchar(30) NOT NULL
+  `codCategoria` int NOT NULL,
+  `categoria` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbcompraitem`
+-- Table structure for table `tbcompraitem`
 --
 
 CREATE TABLE `tbcompraitem` (
-  `codCompraItem` int(11) NOT NULL,
-  `codItem` int(11) NOT NULL,
-  `codUsuario` int(11) NOT NULL,
+  `codCompraItem` int NOT NULL,
+  `codItem` int NOT NULL,
+  `codPerfil` int NOT NULL,
   `dataCompra` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbconquista`
+-- Table structure for table `tbconquista`
 --
 
 CREATE TABLE `tbconquista` (
-  `codConquista` int(11) NOT NULL,
-  `nomeConquista` varchar(20) NOT NULL,
-  `descConquista` text NOT NULL,
-  `imgConquista` varchar(50) NOT NULL,
-  `tokenConquista` varchar(40) NOT NULL
+  `codConquista` int NOT NULL,
+  `nomeConquista` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `descConquista` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `imgConquista` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `tokenConquista` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbconquistausuario`
+-- Table structure for table `tbconquistausuario`
 --
 
 CREATE TABLE `tbconquistausuario` (
-  `codConquistaUsuario` int(11) NOT NULL,
-  `codUsuario` int(11) NOT NULL,
-  `codConquista` int(11) NOT NULL
+  `codConquistaUsuario` int NOT NULL,
+  `codUsuario` int NOT NULL,
+  `codConquista` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbdadosjogo`
+-- Table structure for table `tbdadosjogo`
 --
 
 CREATE TABLE `tbdadosjogo` (
-  `codDadosJogo` int(11) NOT NULL,
-  `codPerfil` int(11) NOT NULL,
-  `codJogo` int(11) NOT NULL,
+  `codDadosJogo` int NOT NULL,
+  `codPerfil` int NOT NULL,
+  `codJogo` int NOT NULL,
   `dataPartida` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbdadosusuarios`
+-- Table structure for table `tbdadosusuarios`
 --
 
 CREATE TABLE `tbdadosusuarios` (
-  `codDadosJogoUsuario` int(11) NOT NULL,
-  `codJogo` int(11) NOT NULL,
-  `codDependente` int(11) NOT NULL,
-  `maxPontuacao` bigint(20) NOT NULL,
-  `qtndAcertos` int(11) NOT NULL,
-  `qtndErros` int(11) NOT NULL
+  `codDadosJogoUsuario` int NOT NULL,
+  `codJogo` int NOT NULL,
+  `codDependente` int NOT NULL,
+  `maxPontuacao` bigint NOT NULL,
+  `qtndAcertos` int NOT NULL,
+  `qtndErros` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbgenero`
+-- Table structure for table `tbgenero`
 --
 
 CREATE TABLE `tbgenero` (
-  `codGenero` int(11) NOT NULL,
-  `nomeGenero` varchar(50) NOT NULL,
-  `precoGenero` int(11) NOT NULL,
-  `imgGenero` varchar(50) NOT NULL,
-  `tokenGenero` varchar(40) NOT NULL
+  `codGenero` int NOT NULL,
+  `nomeGenero` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `precoGenero` int NOT NULL,
+  `imgGenero` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `tokenGenero` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `tbgenero`
+-- Dumping data for table `tbgenero`
 --
 
 INSERT INTO `tbgenero` (`codGenero`, `nomeGenero`, `precoGenero`, `imgGenero`, `tokenGenero`) VALUES
@@ -180,60 +193,60 @@ INSERT INTO `tbgenero` (`codGenero`, `nomeGenero`, `precoGenero`, `imgGenero`, `
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbitem`
+-- Table structure for table `tbitem`
 --
 
 CREATE TABLE `tbitem` (
-  `codItem` int(11) NOT NULL,
-  `codTipoItem` int(11) NOT NULL,
-  `nomeItem` varchar(50) NOT NULL,
-  `valor` int(11) NOT NULL
+  `codItem` int NOT NULL,
+  `codTipoItem` int NOT NULL,
+  `nomeItem` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `valor` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbjogo`
+-- Table structure for table `tbjogo`
 --
 
 CREATE TABLE `tbjogo` (
-  `codJogo` int(11) NOT NULL,
-  `nomeJogo` varchar(50) NOT NULL,
-  `descJogo` text NOT NULL,
-  `pontucaoJogo` int(11) NOT NULL,
-  `codCategoria` int(11) NOT NULL,
-  `codNivel` int(11) NOT NULL
+  `codJogo` int NOT NULL,
+  `nomeJogo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `descJogo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `pontucaoJogo` int NOT NULL,
+  `codCategoria` int NOT NULL,
+  `codNivel` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbnivel`
+-- Table structure for table `tbnivel`
 --
 
 CREATE TABLE `tbnivel` (
-  `codNivel` int(11) NOT NULL,
-  `dificuldadeNivel` varchar(10) NOT NULL,
-  `nivel` int(11) NOT NULL
+  `codNivel` int NOT NULL,
+  `dificuldadeNivel` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `nivel` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbperfil`
+-- Table structure for table `tbperfil`
 --
 
 CREATE TABLE `tbperfil` (
-  `codPerfil` int(11) NOT NULL,
-  `codUsuario` int(11) NOT NULL,
-  `nomePerfil` varchar(100) NOT NULL,
-  `generoPerfil` varchar(30) NOT NULL,
-  `iconPerfil` varchar(50) NOT NULL,
-  `pontuacaoPerfil` int(11) DEFAULT NULL,
-  `dinheiroPerfil` int(11) DEFAULT NULL,
+  `codPerfil` int NOT NULL,
+  `codUsuario` int NOT NULL,
+  `nomePerfil` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `generoPerfil` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `iconPerfil` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `pontuacaoPerfil` int DEFAULT NULL,
+  `dinheiroPerfil` int DEFAULT NULL,
   `tutorial` tinyint(1) NOT NULL,
-  `nivel` int(11) DEFAULT NULL,
-  `fasesConcluidas` int(11) DEFAULT NULL,
+  `nivel` int DEFAULT NULL,
+  `fasesConcluidas` int DEFAULT NULL,
   `dataNasc` date NOT NULL,
   `dataCriacao` date NOT NULL,
   `dataModfc` date NOT NULL
@@ -242,32 +255,19 @@ CREATE TABLE `tbperfil` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbprogressousuario`
---
-
-CREATE TABLE `tbprogressousuario` (
-  `codProgressoUsuario` int(11) NOT NULL,
-  `codJogo` int(11) NOT NULL,
-  `codUsuario` int(11) NOT NULL,
-  `nevelAtual` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `tbroupa`
+-- Table structure for table `tbroupa`
 --
 
 CREATE TABLE `tbroupa` (
-  `codRoupa` int(11) NOT NULL,
-  `nomeRoupa` varchar(50) NOT NULL,
-  `precoRoupa` int(11) NOT NULL,
-  `imgRoupa` varchar(50) NOT NULL,
-  `tokenRoupa` varchar(40) NOT NULL
+  `codRoupa` int NOT NULL,
+  `nomeRoupa` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `precoRoupa` int NOT NULL,
+  `imgRoupa` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `tokenRoupa` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `tbroupa`
+-- Dumping data for table `tbroupa`
 --
 
 INSERT INTO `tbroupa` (`codRoupa`, `nomeRoupa`, `precoRoupa`, `imgRoupa`, `tokenRoupa`) VALUES
@@ -277,41 +277,47 @@ INSERT INTO `tbroupa` (`codRoupa`, `nomeRoupa`, `precoRoupa`, `imgRoupa`, `token
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbtipoitem`
+-- Table structure for table `tbtipoitem`
 --
 
 CREATE TABLE `tbtipoitem` (
-  `codTipoItem` int(11) NOT NULL,
-  `tipoItem` varchar(10) NOT NULL
+  `codTipoItem` int NOT NULL,
+  `tipoItem` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbusuario`
+-- Table structure for table `tbusuario`
 --
 
 CREATE TABLE `tbusuario` (
-  `codUsuario` int(11) NOT NULL,
-  `nomeUsuario` varchar(100) NOT NULL,
-  `emailUsuario` varchar(120) NOT NULL,
-  `senhaUsuario` varchar(15) NOT NULL,
+  `codUsuario` int NOT NULL,
+  `nomeUsuario` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `emailUsuario` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `senhaUsuario` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `banido` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Índices para tabelas despejadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices para tabela `tbadmin`
+-- Indexes for table `tbacessousuario`
+--
+ALTER TABLE `tbacessousuario`
+  ADD PRIMARY KEY (`codAcessoUsuario`);
+
+--
+-- Indexes for table `tbadmin`
 --
 ALTER TABLE `tbadmin`
   ADD PRIMARY KEY (`codAdmin`),
   ADD UNIQUE KEY `emailAdmin` (`emailAdmin`);
 
 --
--- Índices para tabela `tbavatar`
+-- Indexes for table `tbavatar`
 --
 ALTER TABLE `tbavatar`
   ADD PRIMARY KEY (`codAvatar`),
@@ -321,33 +327,33 @@ ALTER TABLE `tbavatar`
   ADD KEY `UsuarioAvatar` (`codPerfil`);
 
 --
--- Índices para tabela `tbcabelo`
+-- Indexes for table `tbcabelo`
 --
 ALTER TABLE `tbcabelo`
   ADD PRIMARY KEY (`codCabelo`);
 
 --
--- Índices para tabela `tbcategoria`
+-- Indexes for table `tbcategoria`
 --
 ALTER TABLE `tbcategoria`
   ADD PRIMARY KEY (`codCategoria`);
 
 --
--- Índices para tabela `tbcompraitem`
+-- Indexes for table `tbcompraitem`
 --
 ALTER TABLE `tbcompraitem`
   ADD PRIMARY KEY (`codCompraItem`),
   ADD KEY `CompraItem` (`codItem`),
-  ADD KEY `CompraUsuario` (`codUsuario`);
+  ADD KEY `CompraUsuario` (`codPerfil`);
 
 --
--- Índices para tabela `tbconquista`
+-- Indexes for table `tbconquista`
 --
 ALTER TABLE `tbconquista`
   ADD PRIMARY KEY (`codConquista`);
 
 --
--- Índices para tabela `tbconquistausuario`
+-- Indexes for table `tbconquistausuario`
 --
 ALTER TABLE `tbconquistausuario`
   ADD PRIMARY KEY (`codConquistaUsuario`),
@@ -355,13 +361,13 @@ ALTER TABLE `tbconquistausuario`
   ADD KEY `ConquistaUsuario` (`codConquista`);
 
 --
--- Índices para tabela `tbdadosjogo`
+-- Indexes for table `tbdadosjogo`
 --
 ALTER TABLE `tbdadosjogo`
   ADD PRIMARY KEY (`codDadosJogo`);
 
 --
--- Índices para tabela `tbdadosusuarios`
+-- Indexes for table `tbdadosusuarios`
 --
 ALTER TABLE `tbdadosusuarios`
   ADD PRIMARY KEY (`codDadosJogoUsuario`),
@@ -369,20 +375,20 @@ ALTER TABLE `tbdadosusuarios`
   ADD KEY `DadosDependente` (`codDependente`);
 
 --
--- Índices para tabela `tbgenero`
+-- Indexes for table `tbgenero`
 --
 ALTER TABLE `tbgenero`
   ADD PRIMARY KEY (`codGenero`);
 
 --
--- Índices para tabela `tbitem`
+-- Indexes for table `tbitem`
 --
 ALTER TABLE `tbitem`
   ADD PRIMARY KEY (`codItem`),
   ADD KEY `TipoItem` (`codTipoItem`);
 
 --
--- Índices para tabela `tbjogo`
+-- Indexes for table `tbjogo`
 --
 ALTER TABLE `tbjogo`
   ADD PRIMARY KEY (`codJogo`),
@@ -390,156 +396,155 @@ ALTER TABLE `tbjogo`
   ADD KEY `NivelJogo` (`codNivel`);
 
 --
--- Índices para tabela `tbnivel`
+-- Indexes for table `tbnivel`
 --
 ALTER TABLE `tbnivel`
   ADD PRIMARY KEY (`codNivel`);
 
 --
--- Índices para tabela `tbperfil`
+-- Indexes for table `tbperfil`
 --
 ALTER TABLE `tbperfil`
   ADD PRIMARY KEY (`codPerfil`),
   ADD KEY `UsuarioDependente` (`codUsuario`);
 
 --
--- Índices para tabela `tbprogressousuario`
---
-ALTER TABLE `tbprogressousuario`
-  ADD KEY `UsuarioProgresso` (`codUsuario`),
-  ADD KEY `JogoProgresso` (`codJogo`);
-
---
--- Índices para tabela `tbroupa`
+-- Indexes for table `tbroupa`
 --
 ALTER TABLE `tbroupa`
   ADD PRIMARY KEY (`codRoupa`);
 
 --
--- Índices para tabela `tbtipoitem`
+-- Indexes for table `tbtipoitem`
 --
 ALTER TABLE `tbtipoitem`
   ADD PRIMARY KEY (`codTipoItem`);
 
 --
--- Índices para tabela `tbusuario`
+-- Indexes for table `tbusuario`
 --
 ALTER TABLE `tbusuario`
   ADD PRIMARY KEY (`codUsuario`),
   ADD UNIQUE KEY `emailUsuario` (`emailUsuario`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `tbadmin`
+-- AUTO_INCREMENT for table `tbacessousuario`
+--
+ALTER TABLE `tbacessousuario`
+  MODIFY `codAcessoUsuario` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbadmin`
 --
 ALTER TABLE `tbadmin`
-  MODIFY `codAdmin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `codAdmin` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de tabela `tbavatar`
+-- AUTO_INCREMENT for table `tbavatar`
 --
 ALTER TABLE `tbavatar`
-  MODIFY `codAvatar` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codAvatar` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tbcabelo`
+-- AUTO_INCREMENT for table `tbcabelo`
 --
 ALTER TABLE `tbcabelo`
-  MODIFY `codCabelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `codCabelo` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de tabela `tbcategoria`
+-- AUTO_INCREMENT for table `tbcategoria`
 --
 ALTER TABLE `tbcategoria`
-  MODIFY `codCategoria` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codCategoria` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tbcompraitem`
+-- AUTO_INCREMENT for table `tbcompraitem`
 --
 ALTER TABLE `tbcompraitem`
-  MODIFY `codCompraItem` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codCompraItem` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tbconquista`
+-- AUTO_INCREMENT for table `tbconquista`
 --
 ALTER TABLE `tbconquista`
-  MODIFY `codConquista` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codConquista` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tbconquistausuario`
+-- AUTO_INCREMENT for table `tbconquistausuario`
 --
 ALTER TABLE `tbconquistausuario`
-  MODIFY `codConquistaUsuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codConquistaUsuario` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tbdadosjogo`
+-- AUTO_INCREMENT for table `tbdadosjogo`
 --
 ALTER TABLE `tbdadosjogo`
-  MODIFY `codDadosJogo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codDadosJogo` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tbdadosusuarios`
+-- AUTO_INCREMENT for table `tbdadosusuarios`
 --
 ALTER TABLE `tbdadosusuarios`
-  MODIFY `codDadosJogoUsuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codDadosJogoUsuario` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tbgenero`
+-- AUTO_INCREMENT for table `tbgenero`
 --
 ALTER TABLE `tbgenero`
-  MODIFY `codGenero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `codGenero` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de tabela `tbitem`
+-- AUTO_INCREMENT for table `tbitem`
 --
 ALTER TABLE `tbitem`
-  MODIFY `codItem` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codItem` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tbjogo`
+-- AUTO_INCREMENT for table `tbjogo`
 --
 ALTER TABLE `tbjogo`
-  MODIFY `codJogo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codJogo` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tbnivel`
+-- AUTO_INCREMENT for table `tbnivel`
 --
 ALTER TABLE `tbnivel`
-  MODIFY `codNivel` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codNivel` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tbperfil`
+-- AUTO_INCREMENT for table `tbperfil`
 --
 ALTER TABLE `tbperfil`
-  MODIFY `codPerfil` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codPerfil` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tbroupa`
+-- AUTO_INCREMENT for table `tbroupa`
 --
 ALTER TABLE `tbroupa`
-  MODIFY `codRoupa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `codRoupa` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de tabela `tbtipoitem`
+-- AUTO_INCREMENT for table `tbtipoitem`
 --
 ALTER TABLE `tbtipoitem`
-  MODIFY `codTipoItem` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codTipoItem` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tbusuario`
+-- AUTO_INCREMENT for table `tbusuario`
 --
 ALTER TABLE `tbusuario`
-  MODIFY `codUsuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codUsuario` int NOT NULL AUTO_INCREMENT;
 
 --
--- Restrições para despejos de tabelas
+-- Constraints for dumped tables
 --
 
 --
--- Limitadores para a tabela `tbavatar`
+-- Constraints for table `tbavatar`
 --
 ALTER TABLE `tbavatar`
   ADD CONSTRAINT `CabeloAvatar` FOREIGN KEY (`codCabelo`) REFERENCES `tbcabelo` (`codCabelo`),
@@ -548,44 +553,37 @@ ALTER TABLE `tbavatar`
   ADD CONSTRAINT `UsuarioAvatar` FOREIGN KEY (`codPerfil`) REFERENCES `tbperfil` (`codPerfil`);
 
 --
--- Limitadores para a tabela `tbcompraitem`
+-- Constraints for table `tbcompraitem`
 --
 ALTER TABLE `tbcompraitem`
   ADD CONSTRAINT `CompraItem` FOREIGN KEY (`codItem`) REFERENCES `tbitem` (`codItem`),
-  ADD CONSTRAINT `CompraUsuario` FOREIGN KEY (`codUsuario`) REFERENCES `tbusuario` (`codUsuario`);
+  ADD CONSTRAINT `CompraUsuario` FOREIGN KEY (`codPerfil`) REFERENCES `tbusuario` (`codUsuario`);
 
 --
--- Limitadores para a tabela `tbconquistausuario`
+-- Constraints for table `tbconquistausuario`
 --
 ALTER TABLE `tbconquistausuario`
   ADD CONSTRAINT `ConquistaUsuario` FOREIGN KEY (`codConquista`) REFERENCES `tbconquista` (`codConquista`),
   ADD CONSTRAINT `UsuarioConquista` FOREIGN KEY (`codUsuario`) REFERENCES `tbusuario` (`codUsuario`);
 
 --
--- Limitadores para a tabela `tbdadosusuarios`
+-- Constraints for table `tbdadosusuarios`
 --
 ALTER TABLE `tbdadosusuarios`
   ADD CONSTRAINT `DadosDependente` FOREIGN KEY (`codDependente`) REFERENCES `tbperfil` (`codPerfil`);
 
 --
--- Limitadores para a tabela `tbitem`
+-- Constraints for table `tbitem`
 --
 ALTER TABLE `tbitem`
   ADD CONSTRAINT `TipoItem` FOREIGN KEY (`codTipoItem`) REFERENCES `tbtipoitem` (`codTipoItem`);
 
 --
--- Limitadores para a tabela `tbjogo`
+-- Constraints for table `tbjogo`
 --
 ALTER TABLE `tbjogo`
   ADD CONSTRAINT `CategoriaJogo` FOREIGN KEY (`codCategoria`) REFERENCES `tbcategoria` (`codCategoria`),
   ADD CONSTRAINT `NivelJogo` FOREIGN KEY (`codNivel`) REFERENCES `tbnivel` (`codNivel`);
-
---
--- Limitadores para a tabela `tbprogressousuario`
---
-ALTER TABLE `tbprogressousuario`
-  ADD CONSTRAINT `JogoProgresso` FOREIGN KEY (`codJogo`) REFERENCES `tbjogo` (`codJogo`),
-  ADD CONSTRAINT `UsuarioProgresso` FOREIGN KEY (`codUsuario`) REFERENCES `tbusuario` (`codUsuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

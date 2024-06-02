@@ -29,6 +29,7 @@ require('../dao/cabeloDao.php');
 require('../dao/generoDao.php');
 require('../dao/roupaDao.php');
 require('../dao/avatarDao.php');
+require('../dao/acessoUsuarioDao.php');
 
 $cabelo = CabeloDao::selectAll();
 $roupa = RoupaDao::selectAll();
@@ -233,6 +234,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
                 </form>
             </div> -->
         <?php else :
+            AcessoUsuarioDao::insert($codUser);
             header('Location: ../views/home.php');
         endif ?>
 

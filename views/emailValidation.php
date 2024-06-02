@@ -35,7 +35,7 @@ require_once('../controller/processingVerificationEmail.php');
             <form action="../controller/processRegister.php" method="post">
                 <div class="inputs">
                     <label for="">Código</label>
-                    <input type="text" name="cod-input" id="inputField" placeholder="000000" maxlength="6" required>
+                    <input type="text" name="cod-input" id="inputField" placeholder="000000" required>
                 </div>
 
                 <input type="hidden" name="cod" value="<?php echo $numero_aleatorio ?>">
@@ -59,6 +59,9 @@ require_once('../controller/processingVerificationEmail.php');
 
                     // Remove qualquer não número do valor
                     let newValue = value.replace(/[^0-9]/g, '');
+
+                    // Limita o valor para 6 caracteres
+                    newValue = newValue.slice(0, 6);
 
                     // Atualiza o valor do campo de entrada com o novo valor filtrado
                     this.value = newValue;

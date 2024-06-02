@@ -17,6 +17,7 @@ include_once('../controller/processingChart.php');
 require_once "../../dao/adminDao.php";
 require_once "../../dao/dadosPartidaJogoDao.php";
 require_once "../../dao/acessoUsuarioDao.php";
+require_once "../../dao/compraItemDao.php";
 $infos = AdminDao::selectAllLitera();
 $infoPartida = DadosPartidaJogoDao::countRounds();
 $infoAcessos = new AcessoUsuarioDao;
@@ -79,7 +80,7 @@ $infoAcessos = new AcessoUsuarioDao;
                     <div class="card">
                         <img src="../assets/images/icons/Etiqueta.svg" alt="">
                         <div class="text-content">
-                            <p class="font-card"><?php echo $infos['bannedUserCount'] ?></p>
+                            <p class="font-card"><?php echo $infos['countBuys'] ?></p>
                             <h4>Compras nas ultimas 24h</h4>
                         </div>
                     </div>

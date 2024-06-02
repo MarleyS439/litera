@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 // session
 session_start();
@@ -44,6 +43,7 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
 }
 ?>
 
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
