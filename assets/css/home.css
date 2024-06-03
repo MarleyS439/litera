@@ -481,7 +481,7 @@
         cursor: url(../images/icons/MAOZINHA.png), auto;
         background-image: url(../images/fundoHome1.png);
         background-size: cover;
-
+        background-attachment: fixed;
     }
 
     main .title{
@@ -513,8 +513,11 @@
         display: flex;
         justify-content: center;
         background-color: var(--green-fill);
-        padding: 1% 2%;
+        padding: 1% 5%;
         border-radius: 8px;
+        position: fixed;
+        top: 15%;
+        z-index: 200;
     }
 
     .games-desktop-itens {
@@ -522,6 +525,8 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        position: relative;
+        top: 10%
     }
 
 

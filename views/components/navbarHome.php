@@ -14,21 +14,21 @@ require_once "../dao/perfilDao.php";
     <div class="navigation">
         <ul>
             <li class="home-icon">
-                <a href="../views/home.php">
+                <a href="../views/home.php" title="Início">
                     <svg width="28" height="31">
                         <image href="../assets/images/icons/home-icon-desktop.svg" width="28" height="31" />
                     </svg>
                 </a>
             </li>
             <li class="store-icon">
-                <a href="../views/store.php">
+                <a href="../views/store.php" title="Loja de Itens">
                     <svg width="28" height="31">
                         <image href="../assets/images/icons/store-icon-desktop.svg" width="28" height="31" />
                     </svg>
                 </a>
             </li>
             <li class="profile-icon">
-                <a href="../views/perfil-profile.php">
+                <a href="../views/perfil-profile.php" title="Meu Perfil">
                     <svg width="28" height="31">
                         <image href="../assets/images/icons/profile-icon-desktop.svg" width="28" height="31" />
                     </svg>
@@ -56,7 +56,7 @@ require_once "../dao/perfilDao.php";
         </div>
 
         <div class="logout-area">
-            <a href="../controller/logoutUser.php">
+            <a href="../controller/logoutUser.php" title="Sair da plataforma">
                 <img src="../assets/images/icons/exitIcon.svg" alt="Logout">
             </a>
         </div>

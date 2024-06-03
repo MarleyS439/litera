@@ -89,7 +89,7 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
                     <div class="background-card-game" id="game1"></div>
                 </a>
 
-                <a class="game" href="../views/jogo/index.php">
+                <a class="game" href="../views/jogo/02/index.php">
                     <div class="title-game">
                         <p>Jogo das sílabas</p>
                     </div>
@@ -105,7 +105,7 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
                     <div class="background-card-game"></div>
                 </a>
 
-                <a class="game" href="#">
+                <a class="game" href="../views/jogo/03/fazenda-dos-bichos.php">
                     <div class="title-game">
                         <p>Caça às Letras</p>
                     </div>
@@ -151,14 +151,14 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
                             </div>
                         </a>
 
-                        <a class="game-item game2" href="../views/jogo/index.php">
+                        <a class="game-item game2" href="../views/jogo/02/index.php">
                             <div class="title-game-item">
                                 <p>Montar Sílabas</p>
                                 <div class="bg-game" id="fruits"></div>
                             </div>
                         </a>
 
-                        <a class="game-item game3">
+                        <a class="game-item game3" href="../views/jogo/03/fazenda-dos-bichos.php">
                             <div class="title-game-item">
                                 <p>Em breve um novo jogo</p>
                                 <div class="bg-game" id=""></div>
@@ -174,8 +174,7 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
                     </div>
                 </div>
 
-                <?php //include('../views/components/menu-profile.php'); 
-                ?>
+                <?php // include('../views/components/menu-profile.php'); ?>
             </main>
         </div>
     </div>
