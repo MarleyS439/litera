@@ -241,6 +241,13 @@
         top: 0;
     }
 
+    .logout-area {
+        margin: 0% 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 
     .logo-area {
         display: flex;

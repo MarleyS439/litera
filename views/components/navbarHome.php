@@ -1,7 +1,10 @@
 <?php
+
 require_once "../dao/usuarioDao.php";
 require_once "../dao/perfilDao.php";
+
 ?>
+
 <nav class="navbar">
     <div class="logo-area">
         <img src="../assets/images/litera.png" alt="Litera">
@@ -35,19 +38,6 @@ require_once "../dao/perfilDao.php";
     </div>
 
 
-    <!-- <div class="profile">
-        <div class="profile-pic">
-            <span>Nome</span>
-            <img src="../assets/images/icons/profile.svg" alt="">
-        </div>
-
-        <div class="logout-area">
-            <a href="../controller/logoutUser.php" title="logout">
-                <img class="img-logoff" src="../assets/images/icons/exit-svgrepo-com.svg" alt="exit">
-            </a>
-        </div>
-    </div> -->
-
     <div class="profile-info">
         <div class="name-user">
             <span><?php echo $perfilAutenticado['nomePerfil']; ?></span>
@@ -64,7 +54,13 @@ require_once "../dao/perfilDao.php";
         <div class="name-user">
             <span><?php echo $perfilAutenticado['dinheiroPerfil']; ?></span>
         </div>
+
+        <div class="logout-area">
+            <a href="../controller/logoutUser.php">
+                <img src="../assets/images/icons/exitIcon.svg" alt="Logout">
+            </a>
+        </div>
     </div>
 
 </nav>
-<!-- <script src="https://kit.fontawesome.com/a3e37e504d.js" crossorigin="anonymous"></script> -->
+

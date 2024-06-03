@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 // session
 session_start();
@@ -35,7 +36,6 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
 }
 ?>
 
-<!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
 
 <head>
@@ -53,7 +53,7 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
     <style>
         /* Estilo da div com base na porcentagem */
         .barra .progresso {
-            width: <?php echo $porcentagem; ?>%
+            width: <?php echo $porcentagem; ?><span>%</span>
         }
     </style>
 </head>

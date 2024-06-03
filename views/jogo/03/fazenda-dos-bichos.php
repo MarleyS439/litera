@@ -6,9 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Fazenda dos Bichos</title>
     <link rel="stylesheet" href="../03/assets/css/style.css">
+    <link rel="stylesheet" href="../03/assets/css/modal.css">
 </head>
 
 <body>
+
+    <!--Modal exit-->
+    <?php include('assets/components/modalExit.php'); ?>
+
+    <div id="overlay"></div>
+
     <div class="container-game">
         <div class="top-bar">
             <div class="coins">
@@ -25,7 +32,7 @@
             </div>
 
             <div class="buttons">
-                <button type="button">
+                <button type="button" id="home">
                     <img src="assets/images/icons/HomeIconBtn.svg" alt="">
                 </button>
 
@@ -40,9 +47,10 @@
         </div>
     </div>
 
-    <!--Modal aqui via include-->
 
     <script src="assets/javascript/fullscreen.js"></script>
+    <!--Modal exit javascript-->
+    <script src="assets/javascript/exitGame.js"></script>
 </body>
 
 </html>
