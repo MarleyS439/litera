@@ -81,7 +81,7 @@ class AdminDao
         $adminsCount = $stmtAdmins->fetch(PDO::FETCH_ASSOC)['adminCount'];
     
         // Query to get count of all users
-        $queryUsers = "SELECT COUNT(codUsuario) AS userCount FROM tbusuario";
+        $queryUsers = "SELECT COUNT(codPerfil) AS userCount FROM tbperfil";
         $stmtUsers = $conexao->prepare($queryUsers);
         $stmtUsers->execute();
         $usersCount = $stmtUsers->fetch(PDO::FETCH_ASSOC)['userCount'];

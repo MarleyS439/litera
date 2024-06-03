@@ -1,9 +1,21 @@
 <?php
-    session_start();
+require_once "../dao/acessoUsuarioDao.php";
+session_start();
+$codUser = $_SESSION['authPerfil'];
 
-    if(isset($_SESSION['authUser'])){
-        unset($_SESSION['authUser']);
+if (isset($_SESSION['authUser'])) {
+    // Obtendo o codAcessoUsuario específico
+    $idAcessoUsuario = AcessoUsuarioDao::selectById($codUser['codPerfil']);
+    
+    // Se a consulta retornar um resultado válido
+    if ($idAcessoUsuario) {
+        // Passando apenas o valor de codAcessoUsuario para a função logout()
+        AcessoUsuarioDao::logout($idAcessoUsuario['codAcessoUsuario']);
     }
-    header('Location: ./../index.php');
-    exit();
+    
+    unset($_SESSION['authUser']);
+}
+
+header('Location: ./../index.php');
+exit();
 ?>

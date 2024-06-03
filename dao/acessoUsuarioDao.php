@@ -17,10 +17,9 @@ class AcessoUsuarioDao
     public static function logout($codAcessoUsuario)
     {
         $conexao = Conexao::conectar();
-        $query = "UPDATE tbacessousuario set isLogged = ? WHERE codAcessoUsuario = ?";
+        $query = "UPDATE tbacessousuario set isLogged = 0 WHERE codAcessoUsuario = ?";
         $stmt = $conexao->prepare($query);
-        $stmt->bindValue(1, 0);
-        $stmt->bindValue(2, $codAcessoUsuario);
+        $stmt->bindValue(1, $codAcessoUsuario);
         $stmt->execute();
     }
     public static function selectAllByWeekday()
@@ -49,19 +48,20 @@ class AcessoUsuarioDao
     public static function selectById($codPerfil)
     {
         $conexao = Conexao::conectar();
-        $query = "SELECT codAcessoUsuario FROM tbacessousuario WHERE codPerfil = ? AND dataAcesso = ?";
+        $query = "SELECT codAcessoUsuario FROM tbacessousuario WHERE codPerfil = ? AND dataAcesso = (SELECT MAX(dataAcesso) FROM tbacessousuario WHERE codPerfil = ?) ORDER BY codAcessoUsuario DESC;";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $codPerfil);
-        $stmt->bindValue(2, date('Y-m-d')); 
+        $stmt->bindValue(2, $codPerfil);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
     public static function countLoggedAcoounts()
     {
         $conexao = Conexao::conectar();
         $query = "SELECT COUNT(*) FROM tbacessousuario WHERE dataAcesso = ? AND isLogged = 1";
         $stmt = $conexao->prepare($query);
-        $stmt->bindValue(1, date('Y-m-d')); 
+        $stmt->bindValue(1, date('Y-m-d'));
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }

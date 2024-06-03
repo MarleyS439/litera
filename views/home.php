@@ -109,7 +109,6 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
                     <div class="title-game">
                         <p>Caça às Letras</p>
                     </div>
-
                     <div class="background-card-game"></div>
                 </a>
             </div>

@@ -486,7 +486,6 @@
   .add {
     display: flex;
     justify-content: center;
-    margin-left: 7%;
   }
 
   .add button {
@@ -570,11 +569,6 @@
     transform: translate(0px, -2px);
   }
 
-  .cancel {
-    position: absolute;
-    top: -4%;
-    right: -2%;
-  }
 
   .select-icon {
     display: flex;
@@ -608,7 +602,11 @@
     justify-content: space-between;
     margin: 3% 0%;
   }
-
+  .inputs-modal-buttom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
   .inputs-modal-buttom button {
     background-color: var(--blue3);
     padding: 8px;
@@ -619,14 +617,24 @@
     font-size: 1.01rem;
     cursor: pointer;
     transition: 200ms ease-in-out;
-    width: 100%;
+    width: 40%;
   }
 
   .inputs-modal-buttom button:hover {
     background-color: var(--blue2);
     transform: translate(-2px, 2px);
     box-shadow: 2px 2px 2px #000;
-    width: 100%;
+    width: 40%;
+  }
+  #cancelAddProfile{
+    background-color: white;
+    border: 3px solid #1c96e1;
+    color: #1c96e1;
+  }
+  #cancelEditProfile{
+    background-color: white;
+    border: 3px solid #1c96e1;
+    color: #1c96e1;
   }
 
   .inpu input,
@@ -752,9 +760,16 @@
     background-color: transparent;
     border: 4px solid white;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .edit-perfil::before {
-    content: "Gerenciar Perfis";
+  .edit-perfil:hover{
+    cursor: pointer;
+    box-shadow: 5px 5px 20px  rgb(34, 34, 34);
+    transition: 0.4s; 
+  }
+  .edit-perfil span {
     color: white;
     font-size: 1.2rem;
   }
@@ -764,14 +779,50 @@
     width: 40px;
     height: 50px;
   }
+  .edit-box{
+    display: flex;
+    flex-direction: row;
+  }
+  .imgBox{
+    display: flex;
+    align-items: center;
+    width: 40%;
+  }
+  .infoP{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+  }
+  .infoP input{
+    background-color: #F1F1F1;
+    border: 1px solid #D6D6D6;
+    border-radius: 10px;
+    padding: 10px 5px;
+    width: 40%;
+  }
+  .infoP input:nth-child(2){
+    width: 100%;
+  }
   .logoutBtn {
     position: absolute;
-    top: 80.7vh;
+    top: 81.5vh;
     right: 5%;
     background-color: transparent;
     border: none;
   }
+  .logoutBtn:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.5s; 
+ 
+  }
   .logoutBtn img {
     width: 5vh;
   }
+  #edit-icon-input{
+    background-color: red;
+    width: 10vw;
+    height: 10vw;
+  }
+
 }
