@@ -1,0 +1,93 @@
+@import url(./default.css);
+@import url(./animations.css);
+@import url(../landing/default.css);
+
+/*Media query para celulares*/
+@media screen and (max-width:768px) {}
+
+/*Mediq query para tablets*/
+@media screen and (min-width: 769px) and (max-width:1024px) {}
+
+/*Media query para desktops*/
+@media screen and (min-width:1025px) {
+    body {
+        background-image: url(../images/v1015-104a\ 3.png);
+        background-size: cover;
+    }
+
+    .container-selection {
+        padding: 5%;
+    }
+
+    .litera {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 30%
+    }
+
+    .litera img {
+        width: 400px;
+        display: block;
+        filter: drop-shadow(0 0 50px var(--litera-white));
+    }
+
+    .title-action h2 {
+        background-color: var(--litera-blue);
+        padding: 10px 20px;
+        color: var(--litera-white);
+        border-radius: 12px;
+        border: 5px solid var(--litera-dark-blue)
+    }
+
+    .selections {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 5% 2%;
+        margin: 0% 5%;
+        background-color: var(--litera-white);
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    }
+
+    .actions {
+
+    }
+
+    .option1, .option2 {
+        padding:
+    }
+
+    .option1 a, .option2 a {
+        padding: 10px 25px;
+        text-decoration: none;
+        border-radius: 12px;
+        font-family: var(--font-poppins-bold);
+    }
+
+    .option2 a {
+        background-color: var(--litera-yellow);
+        color: var(--litera-black);
+        border: 3px solid var(--litera-orange);
+        box-shadow: 0px 5px 0px var(--litera-black);
+    }
+
+    .option1 a {
+        background-color: var(--litera-light-green);
+        color: var(--litera-dark-green);
+        border: 3px solid var(--litera-green);
+    }
+
+    .option2 a:hover {
+        transform: translate(1px, 2px);
+        box-shadow: none;
+    }
+
+    .option1 a:hover {
+        transform: translate(1px, 2px);
+        box-shadow: none;
+    }
+}
+
