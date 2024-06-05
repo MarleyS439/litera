@@ -71,9 +71,6 @@
                 <h1>Aprender com jogos educativos</h1>
                 <h2>Suíte de jogos para alfabetização infantil</h2>
 
-                <!--<div class="cta">
-                    <a href="#">Saiba mais</a>
-                </div>-->
             </div>
         </div>
     </header>
@@ -84,7 +81,7 @@
     <main>
         <section class="section1 left">
             <div class="img-section">
-                <img src="./assets/images/multiplataforma.png" alt="" />
+                <img src="./assets/images/multiplataforma.png" alt="Multiplataforma" />
             </div>
 
             <div class="information-section">
@@ -98,7 +95,7 @@
 
         <section class="section1 right">
             <div class="img-section">
-                <img src="./assets/images/multiplataforma.png" alt="" />
+                <img src="./assets/images/children.svg" alt="Crianças" />
             </div>
 
             <div class="information-section">
