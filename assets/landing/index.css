@@ -1313,7 +1313,7 @@
 
     .form-contact {
         display: flex;
-        background-image: url(../images/72523319_9798006.jpg);
+        background-image: url(../images/72523319_9798006.svg);
         background-size: cover;
         background-position: center center;
         padding: 8% 5%;
@@ -1522,6 +1522,7 @@
     .copy a, .copy span {
         font-family: var(--font-poppins-bold);
         color: var(--blue-index);
+        cursor: var(--cursor-hand);
     }
 }
 
@@ -1542,7 +1543,6 @@
     }
 
 }
-
 
 @media screen and (min-width: 1920px) and (min-height: 1080px) {
 

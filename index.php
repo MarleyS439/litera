@@ -202,6 +202,10 @@
             </div>
         </section>
 
+        <section class="price">
+
+        </div>
+
         <section class="form-contact" id="contato">
             
 
