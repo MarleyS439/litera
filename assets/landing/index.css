@@ -1312,6 +1312,48 @@
         color: var(--litera-white);
     }
 
+    .form-contact {
+        display: flex;
+        margin: 5%;
+        background-color: var(--litera-white)
+    }
+
+    .form-contact form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 1% 5%;
+        border: 1px solid red
+    }
+
+    .inputs textarea {
+        width: 100%;
+    }
+
+    .inputs input, .inputs textarea {
+        padding: 8px;
+        border-radius: 12px;
+        border: none;
+        background-color: #f2f2f2
+    }
+
+    .inputs input:focus {
+        border: 1px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
+
+
+
+
+    .inverse {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: left
+    }
+
+    .image-form img {
+        width: 100%
+    }
 
 
     /* Footer */

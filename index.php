@@ -70,7 +70,6 @@
             <div class="container-header">
                 <h1>Aprender com jogos educativos</h1>
                 <h2>Suíte de jogos para alfabetização infantil</h2>
-
             </div>
         </div>
     </header>
@@ -99,10 +98,10 @@
             </div>
 
             <div class="information-section">
-                <h2>Título da seção</h2>
+                <h2>Animado e Divertido</h2>
 
                 <div class="content-section">
-                    <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.</p>
+                    <p class="">Buscamos tornar a plataforma divertida e cativante para os pequenos, onde a todo momento serão instigados com as animações e efeitos visuais presentes nos jogos do Litera.</p>
                 </div>
             </div>
         </section>
@@ -183,23 +182,53 @@
                     <p class="">Este vídeo pitch é o seu convite para conhecer um projeto que transforma a vida das crianças. Prepare-se para se inspirar e se apaixonar pelo futuro da alfabetização!</p>
                 </div>
             </div>
-            </section>
+        </section>
 
-            <section class="section1 right">
-                <div class="img-section">
-                    <img src="./assets/images/fundo.png" alt="" />
+        <section class="section1 right">
+            <div class="img-section">
+                <img src="./assets/images/fundo.png" alt="" />
+            </div>
+
+            <div class="information-section">
+                <h2>Título da seção</h2>
+
+                <div class="content-section">
+                    <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="form-contact">
+            <form action="" method="post">
+                <div class="inputs">
+                    <label for="">Nome</label>
+                    <input type="text" placeholder="Nome">
                 </div>
 
-                <div class="information-section">
-                    <h2>Título da seção</h2>
-
-                    <div class="content-section">
-                        <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.</p>
-                    </div>
+                <div class="inputs">
+                    <label for="">E-mail</label>
+                    <input type="email" placeholder="seuemail@email.com">
                 </div>
-            </section>
 
+                <div class="inputs">
+                    <label for="">Mensagem</label>
+                    <textarea name="" id="" rows="10"></textarea>
+                </div>
 
+                <div class="inputs inverse">
+                    <span class="">Concordo com os <a href="#">Termos e Condições</a><span>
+                    <input type="checkbox">
+                </div>
+
+                <div class="inputs">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+
+            <div class="image-form">
+                <img src="./assets/images/72523319_9798006.jpg" alt="">
+            </div>
+        </section>
     </main>
 
     <!--Footer-->
