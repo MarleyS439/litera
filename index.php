@@ -29,7 +29,7 @@
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">Preço</a></li>
-                    <li><a href="#">Contato</a></li>
+                    <li><a href="#contato">Contato</a></li>
                 </ul>
             </div>
 
@@ -172,7 +172,11 @@
 
         <section class="section1 left">
             <div class="img-section">
-                <iframe width="560" height="315" style="border-radius: 12px" src="https://www.youtube.com/embed/iVGN-FqM3O4?si=8e1V8p-0VKG7cRdR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <!-- <video src="assets/video/pitch.mp4" controls>
+                    Seu navegador não suporta a tag de vídeo.
+                </video> -->
+                
+                <iframe width="560" height="315" style="border-radius: 12px; cursor: var(--cursor-hand);" src="https://www.youtube.com/embed/iVGN-FqM3O4?si=8e1V8p-0VKG7cRdR" title="Vídeo Pitch Litera | Illumi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
 
             <div class="information-section">
@@ -198,36 +202,39 @@
             </div>
         </section>
 
-        <section class="form-contact">
+        <section class="form-contact" id="contato">
+            
+
             <form action="" method="post">
+
+                <div class="title-form">
+                    <h2>Ficou com alguma dúvida? Quer saber mais?</h2>
+                </div>
+
                 <div class="inputs">
                     <label for="">Nome</label>
-                    <input type="text" placeholder="Nome">
+                    <input type="text" placeholder="Seu nome" required>
                 </div>
 
                 <div class="inputs">
                     <label for="">E-mail</label>
-                    <input type="email" placeholder="seuemail@email.com">
+                    <input type="email" placeholder="Seu melhor e-mail" required>
                 </div>
 
                 <div class="inputs">
                     <label for="">Mensagem</label>
-                    <textarea name="" id="" rows="10"></textarea>
+                    <textarea name="" id="" rows="4" required placeholder="Digite sua mensagem"></textarea>
                 </div>
 
                 <div class="inputs inverse">
-                    <span class="">Concordo com os <a href="#">Termos e Condições</a><span>
-                    <input type="checkbox">
+                    <span class="">Concordo com os <a href="#">Termos e Condições</a></span>
+                    <input type="checkbox" required>
                 </div>
 
-                <div class="inputs">
+                <div class="inputs submit">
                     <button type="submit">Enviar</button>
                 </div>
             </form>
-
-            <div class="image-form">
-                <img src="./assets/images/72523319_9798006.jpg" alt="">
-            </div>
         </section>
     </main>
 

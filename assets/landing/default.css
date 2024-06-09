@@ -27,6 +27,14 @@
     /* Default fonts */
     --font-poppins-bold: 'Poppins-Bold';
     --font-poppins-regular: 'Poppins-Regular', sans-serif;
+
+    /* Default cursor */
+    --cursor-default: url(../images/cursors/Point.ico), auto;
+    
+    --cursor-hand: url(../images/cursors/HandPoint.ico), auto;
+    --cursor-hand-click: url(../images/cursors/HandClick.svg), auto;
+
+    --cursor-blocked: url(../images/cursors/Bloqued.ico), auto;
 }
 
 /* Default reset */
@@ -36,4 +44,5 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-family: var(--font-poppins-regular), sans-serif;
+    cursor: var(--cursor-default);
 }
