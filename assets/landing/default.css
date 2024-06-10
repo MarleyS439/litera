@@ -30,9 +30,7 @@
 
     /* Default cursor */
     --cursor-default: url(../images/cursors/Point.ico), auto;
-    
     --cursor-hand: url(../images/cursors/HandPoint.ico), auto;
-    --cursor-hand-click: url(../images/cursors/HandClick.svg), auto;
 
     --cursor-blocked: url(../images/cursors/Bloqued.ico), auto;
 }

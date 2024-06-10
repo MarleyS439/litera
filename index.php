@@ -28,7 +28,7 @@
                     <li><a href="#">Início</a></li>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#">Blog</a></li>
-                    <li><a href="#">Preço</a></li>
+                    <li><a href="#price">Preço</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </div>
@@ -46,14 +46,14 @@
             </div>
         </nav>
 
-        <!-- Menu oculto-->
+        <!-- Menu oculto mobile -->
         <div class="side-menu" id="hiddenMenu">
             <ul>
-                <li><a href="" title="">Início</a></li>
-                <li><a href="" title="#sobre">Sobre</a></li>
-                <li><a href="" title="">Blog</a></li>
-                <li><a href="" title="">Preço</a></li>
-                <li><a href="" title="">Contato</a></li>
+                <li><a href="#" title="">Início</a></li>
+                <li><a href="#sobre" title="sobre">Sobre</a></li>
+                <li><a href="#blog" title="blog">Blog</a></li>
+                <li><a href="#price" title="price">Preço</a></li>
+                <li><a href="#contato" title="contato">Contato</a></li>
             </ul>
 
             <div class="close-menu-mobile" id="closeBtn">
@@ -70,7 +70,12 @@
             <div class="container-header">
                 <h1>Aprender com jogos educativos</h1>
                 <h2>Suíte de jogos para alfabetização infantil</h2>
+
+                <div class="cta">
+                    <a href="#">Entre ou cadastre-se</a>
+                </div>
             </div>
+
         </div>
     </header>
 
@@ -202,12 +207,34 @@
             </div>
         </section>
 
-        <section class="price">
+        <section class="price" id="price">
+            <div class="image-price-section">
+                <img src="./assets/images/freeSite.svg" alt="">
+            </div>
 
-        </div>
+            <div class="ia">
+
+            <div class="sides">
+                <div class="value-info">
+                    <p>Sei que você estava ansioso para saber os valores dos planos, mas tenho uma notícia melhor ainda:<br><br>
+                    <span>O Litera é totalmente gratuito!</span>
+                    </p>
+                </div>
+
+                <div class="image-sides">
+                    <img src="./assets/images/" alt="Imagem">
+                </div>
+            </div>
+
+
+
+            </div>
+
+
+        </section>
+
 
         <section class="form-contact" id="contato">
-            
 
             <form action="" method="post">
 
@@ -216,23 +243,23 @@
                 </div>
 
                 <div class="inputs">
-                    <label for="">Nome</label>
-                    <input type="text" placeholder="Seu nome" required>
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" id="nome" placeholder="Seu nome" required>
                 </div>
 
                 <div class="inputs">
-                    <label for="">E-mail</label>
-                    <input type="email" placeholder="Seu melhor e-mail" required>
+                    <label for="email">E-mail</label>
+                    <input type="email" name="" id="email" placeholder="Seu melhor e-mail" required>
                 </div>
 
                 <div class="inputs">
-                    <label for="">Mensagem</label>
-                    <textarea name="" id="" rows="4" required placeholder="Digite sua mensagem"></textarea>
+                    <label for="msg">Mensagem</label>
+                    <textarea name="mensagem" id="msg" rows="4" required placeholder="Digite sua mensagem"></textarea>
                 </div>
 
                 <div class="inputs inverse">
                     <span class="">Concordo com os <a href="#">Termos e Condições</a></span>
-                    <input type="checkbox" required>
+                    <input type="checkbox" name="confirma" required>
                 </div>
 
                 <div class="inputs submit">
@@ -251,6 +278,8 @@
                     <img src="./assets/images/arara 2.svg" alt="">
                     <h4>Litera</h4>
                 </div>
+
+                <h4>Litera</h4>
 
                 <a href="#" title="Conheças todos os recursos">Recursos</a>
                 <a href="#" title="Temos soluções diversas. Acesse e saiba mais.">Soluções</a>
@@ -293,21 +322,38 @@
         <!-- Links de redes sociais -->
         <div class="social-media">
 
-            <i class="fa-brands fa-instagram" title="Instagram" id="instagram"></i>
-            <i class="fa-brands fa-facebook" title="Facebook" id="facebook"></i>
-            <i class="fa-brands fa-x-twitter" title="Twitter/X" id="x"></i>
-            <i class="fa-brands fa-pinterest" title="Pinterest" id="pin"></i>
-            <i class="fa-brands fa-youtube" title="YouTube" id="youtube"></i>
+            <a href="https://instagram.com/" title="Instagram">
+                <i class="fa-brands fa-instagram" id="instagram"></i>
+            </a>
+
+            <a href="https://facebook.com/" title="Facebook">
+                <i class="fa-brands fa-facebook" title="Facebook" id="facebook"></i>
+            </a>
+
+            <a href="https://x.com/" title="Twitter/X">
+                <i class="fa-brands fa-x-twitter" title="Twitter/X" id="x"></i>
+            </a>
+
+            <a href="https://pinterest.com/" title="Pinterest">
+                <i class="fa-brands fa-pinterest" title="Pinterest" id="pin"></i>
+            </a>
+
+            <a href="https://youtube.com/" title="YoutTube">
+                <i class="fa-brands fa-youtube" title="YouTube" id="youtube"></i>
+            </a>
+
 
         </div>
 
         <!-- Copyright -->
         <div class="copy">
             <span>
-                &copy; 2023 · Litera. Todos os direitos reservados. Desenvolvido por<a href="https://localhost/illumi" target="_blank"> Illumi</a>
+                &copy; 2023 · Litera. Todos os direitos reservados. Desenvolvido por
+
+                <a href="https://localhost/illumi" target="_blank">Illumi</a>
 
                 <span>🇧🇷</span>
-                <span>
+            <span>
         </div>
 
     </footer>
