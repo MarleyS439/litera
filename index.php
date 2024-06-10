@@ -72,7 +72,7 @@
                 <h2>Suíte de jogos para alfabetização infantil</h2>
 
                 <div class="cta">
-                    <a href="#">Entre ou cadastre-se</a>
+                    <a href="./views/portal.php">Entre ou cadastre-se</a>
                 </div>
             </div>
 
