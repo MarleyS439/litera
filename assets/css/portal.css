@@ -8,7 +8,7 @@
         flex-direction: column;
         padding: 5%;
         justify-content: center;
-        background-image: url(../images/v1015-104a\ 3.png);
+        background-image: url(../images/fundoLogin.svg);
         background-repeat: no-repeat;
         background-size: cover;
         height: 100vh;
@@ -26,13 +26,16 @@
         flex-direction: row-reverse;
         align-items: center;
         justify-content: center;
+        background-color: var(--litera-white);
+        padding: 2%;
+        border-radius: 12px 12px 0px 0px;
     }
 
     .lit h2 {
         margin: 5px;
         font-family: var(--font-poppins-bold);
         font-size: 3rem;
-        color: var(--white);
+        color: var(--litera-blue);
     }
 
     .litera img {
@@ -45,63 +48,50 @@
     }
 
     .sideb {
-        background-color: var(--white);
+        background-color: var(--litera-white);
         border-radius: 8px;
         padding: 5%;
+        border-radius: 0px 0px 12px 12px;
+    }
+
+    .title-form {
+        display: flex;
+        justify-content: center;
     }
 
     .title-form h2 {
+        color: var(--litera-blue);
         font-family: var(--font-poppins-bold);
-        color: var(--black2);
     }
 
-    form,
-        .inputs,
-        input {
-            width: 100%;
-        }
+    .portal-container {
+        padding: 2%;
+        margin-top: 5%;
+        border: 2px solid red
+    }
 
-        form input {
-            padding: 8px;
-            border-radius: 8px;
-            border: 1px solid var(--line-border);
-            background-color: var(--white2);
-        }
+    .option {
+        width: 100%;
+    }
 
-        form label {
-            font-family: var(--font-poppins-bold);
-            color: var(--black2);
-        }
+    .option a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5% 0%;
+        text-decoration: none;
+        font-family: var(--font-poppins-bold);
+        border-radius: 12px;
+        box-shadow: 0px 5px 0px var(--litera-black);
+    }
 
-        form .inputs {
-            margin: 10px 0px;
-        }
+    #login {
+        background-color: var(--litera-yellow);
+        padding: 2%;
+        border: 3px solid var(--litera-orange);
+    }
 
-        .send button {
-            margin-top: 10%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 8px;
-            width: 100%;
-            border: none;
-            background-color: var(--blue3);
-            border-radius: 8px;
-            color: var(--white);
-            font-family: var(--font-poppins-bold);
-        }
 
-        .send button img {
-            width: 20px;
-        }
-        .non{
-            display: flex;
-        }
-        .non a{
-            margin: 0px 12px;
-            text-decoration: none;
-            color: var(--blue3);
-        }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -109,11 +99,13 @@
         display: flex;
         justify-content: space-between;
         height: 100vh;
+        -webkit-animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+        animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
     }
 
     .sidea {
         color: var(--white);
-        background-image: url(../images/v1015-104a\ 3.png);
+        background-image: url(../images/fundoLogin.svg);
         background-repeat: no-repeat;
         background-size: cover;
         padding: 5%;
@@ -180,9 +172,14 @@
 
     .title-form h2 {
         font-family: var(--font-poppins-bold);
+        /*background-color: var(--litera-blue);*/
+        padding: 3%;
+        color: var(--litera-blue);
+        border-radius: 12px;
+        font-size: 2rem;
     }
 
-    form {
+    .portal-container {
         padding: 0% 8%;
         width: 100%;
         align-items: center;
@@ -190,64 +187,63 @@
         justify-content: left;
     }
 
-    form label {
-        font-family: var(--font-poppins-bold);
+    .option {
+
     }
 
-    .send {
-        display: flex;
+    .option a {
         width: 100%;
-        margin-top: 10%;
-    }
-
-    .send button {
-        background-color: var(--blue3);
-        border: none;
-        border-radius: 8px;
+        padding: 2%;
         display: flex;
-        flex-direction: row;
-        align-items: center;
         justify-content: center;
-        padding: 5px;
-        width: 100%;
-        color: var(--white);
-        cursor: pointer;
+        align-items: center;
+        margin: 5% 0%;
+        border-radius: 12px;
+        text-decoration: none;
+        cursor: var(--cursor-hand);
+    }
+
+    #login {
+        background-color: var(--litera-yellow);
+        border: 3px solid var(--litera-orange);
+        color: var(--litera-black);
+        font-family: var(--font-poppins-bold);
+        box-shadow: 0px 5px 0px var(--litera-black);
+    }
+
+    #login:hover {
+        transform: translate(1px, 2px);
+        box-shadow: none;
+    }
+
+    #register {
+        background-color: var(--litera-light-green);
+        border: 3px solid var(--litera-dark-green);
+        color: var(--litera-dark-green);
+        font-family: var(--font-poppins-bold);
+        box-shadow: 0px 5px 0px var(--litera-black);
         transition: 200ms ease-in-out;
     }
 
-    .send span {
-        font-family: var(--font-poppins-bold);
-    }
-
-    .send button:hover {
-        background-color: var(--dark-blue);
-    }
-
-    .send button img {
-        width: 20px;
-        height: auto;
-        margin: 5px;
-    }
-    .non{
-        display: flex;
-    }
-    .non a{
-        margin: 0px 10px;
-        text-decoration: none;
-        color: var(--blue3);
+    #register:hover {
+        transform: translate(1px, 2px);
+        box-shadow: none;
     }
 }
 
 @media screen and (min-width: 1025px) {
+
     .container-page {
         display: flex;
         justify-content: space-between;
         height: 100vh;
+        -webkit-animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+        animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
     }
 
     .sidea {
         color: var(--white);
-        background-image: url(../images/v1015-104a\ 3.png);
+        background-image: url(../images/fundoLogin.svg);
         background-repeat: no-repeat;
         background-size: cover;
         padding: 5%;
@@ -298,18 +294,6 @@
         z-index: 10;
     }
 
-    .sideb input {
-        width: 100%;
-        padding: 8px;
-        border-radius: 8px;
-        border: none;
-        background-color: var(--white2);
-        border: 1px solid var(--line-border);
-    }
-
-    .inputs {
-        margin: 5px 0px;
-    }
 
     .title-form {
         padding: 8%;
@@ -317,9 +301,14 @@
 
     .title-form h2 {
         font-family: var(--font-poppins-bold);
+        /*background-color: var(--litera-blue);*/
+        padding: 3%;
+        color: var(--litera-blue);
+        border-radius: 12px;
+        font-size: 2rem;
     }
 
-    form {
+    .portal-container {
         padding: 0% 8%;
         width: 100%;
         align-items: center;
@@ -327,56 +316,48 @@
         justify-content: left;
     }
 
-    form label {
-        font-family: var(--font-poppins-bold);
+    .option {
+
     }
 
-    .send {
-        display: flex;
+    .option a {
         width: 100%;
-        margin-top: 10%;
-    }
-
-    .send button {
-        background-color: var(--litera-light-green);
-        border: 4px solid var(--litera-green);
-        border-radius: 12px;
+        padding: 2%;
         display: flex;
-        flex-direction: row;
-        align-items: center;
         justify-content: center;
-        padding: 3px;
-        width: 100%;
-        color: var(--litera-dark-green);
-        cursor: pointer;
-        transition: 180ms ease-in-out;
-        box-shadow: 0px 5px 0px var(--litera-black)
-    }
-
-    .send button:hover {
-        transform: translate(1px, 2px);
-        box-shadow: none
-    }
-
-    .send span {
-        font-family: var(--font-poppins-bold);
-    }
-
-    .send button img {
-        width: 20px;
-        height: auto;
-        margin: 5px;
-    }
-
-    .non {
-        display: flex;
-        margin-top: 2%;
-    }
-
-    .non a {
+        align-items: center;
+        margin: 5% 0%;
+        border-radius: 12px;
         text-decoration: none;
-        color: var(--blue3);
-        margin: 0px 10px;
+        cursor: var(--cursor-hand);
     }
+
+    #login {
+        background-color: var(--litera-yellow);
+        border: 3px solid var(--litera-orange);
+        color: var(--litera-black);
+        font-family: var(--font-poppins-bold);
+        box-shadow: 0px 5px 0px var(--litera-black);
+    }
+
+    #login:hover {
+        transform: translate(1px, 2px);
+        box-shadow: none;
+    }
+
+    #register {
+        background-color: var(--litera-light-green);
+        border: 3px solid var(--litera-dark-green);
+        color: var(--litera-dark-green);
+        font-family: var(--font-poppins-bold);
+        box-shadow: 0px 5px 0px var(--litera-black);
+        transition: 200ms ease-in-out;
+    }
+
+    #register:hover {
+        transform: translate(1px, 2px);
+        box-shadow: none;
+    }
+
 
 }

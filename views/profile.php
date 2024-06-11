@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 // variavel para todas as informaçoes do usuario
 require_once "../dao/usuarioDao.php";
@@ -26,7 +27,6 @@ if ($_SESSION['authUser'] == null) {
 }
 // var_dump($perfil);
 ?>
-<!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
 
 <head>
@@ -47,13 +47,20 @@ if ($_SESSION['authUser'] == null) {
 </head>
 
 <body>
+
+    <!--Sbreposição de corpo da página-->
     <div class="overlay"></div>
+
+    <!--Container de perfil-->
     <div class="container">
+
+        <!--Logo Litera-->
         <div class="arara">
             <img src="../assets/images/arara 2.svg" alt="">
             <h2>Litera</h2>
         </div>
 
+        <!--Container de adição e gerenciamento de perfis-->
         <div class="container-add-profile">
             <?php if (is_array($perfil) && !empty($perfil)) { ?>
                 <div class="title-form">
@@ -65,21 +72,27 @@ if ($_SESSION['authUser'] == null) {
                     <h2 id="h2">Parece que ainda não há um perfil, vamos criar um?</h2>
                 </div>
             <?php } ?>
+
             <div class="box-perfil">
                 <div class="cards-perfil">
                     <?php if (is_array($perfil) && !empty($perfil)) :
                         foreach ($perfil as $perfils) : ?>
                             <div class="cards">
                                 <div class="overlay-card " id="card-modal"></div>
+
                                 <input type="hidden" value="<?php echo $perfils['codPerfil'] ?>" class="cod-usuario-hidden-input">
+
                                 <a href="../controller/conectionPerfil.php?id=<?php echo $perfils['codPerfil']; ?>&coduser=<?php echo $codUser['cod'] ?>">
+
                                     <img src="../assets/images/icons/<?php echo $perfils['iconPerfil'] ?>" alt="">
                                     <p><?php echo $perfils['nomePerfil']; ?></p>
+
                                 </a>
                             </div>
                     <?php endforeach;
                     endif; ?>
                 </div>
+
                 <?php if ($qntdPerfil < 5) { ?>
                     <div class="add">
                         <button type="submit" id="addProfile" title="Criar um novo perfil">
@@ -91,12 +104,17 @@ if ($_SESSION['authUser'] == null) {
 
         </div>
     </div>
+
+
+
     <div class="configs">
+
+        <!--Configurar perfis-->
         <button class="edit-perfil" id="open-edit">
-            <span>
-                Gerenciar Perfis
-            </span>
+            <span>Gerenciar Perfis</span>
         </button>
+
+        <!--Fazer logout-->
         <form action="../controller/logoutProfile.php">
             <button class="logoutBtn"><img src="../assets/images/icons/exit-svgrepo-person.svg" alt=""></button>
         </form>
@@ -106,28 +124,27 @@ if ($_SESSION['authUser'] == null) {
 
     <!-- Modal de adicionar perfil -->
     <div class="modal-add-profile" id="modalAddProfile">
-
-
-
         <div class="title-modal">
             <p>Adicionar perfil</p>
         </div>
 
         <div class="">
             <form action="../controller/processRegisterPerfis.php" method="post">
+
                 <!-- cod do usuario responsavel -->
                 <input type="hidden" value="<?php echo $codUser['cod'] ?>" name="codUser">
+
                 <div class="inputs-modal">
                     <label for="nome_perfil">Nome</label>
                     <input type="text" name="nome_perfil" id="nome_perfil" placeholder="João">
                 </div>
-
 
                 <div class="two">
                     <div class="inpu">
                         <label for="data_nasc">Data de nascimento</label>
                         <input type="date" name="data_nasc" id="data_nasc">
                     </div>
+
                     <div class="inpu">
                         <label for="genero">Gênero</label>
                         <select name="genero" id="genero">
@@ -143,6 +160,7 @@ if ($_SESSION['authUser'] == null) {
                     <div class="title-profile-select">
                         <p>Selecione a foto de perfil</p>
                     </div>
+
                     <input type="hidden" name="imagem_perfil" id="imagem_perfil">
 
 
@@ -183,9 +201,12 @@ if ($_SESSION['authUser'] == null) {
         <div class="title-modal">
             <p>Configurar perfil</p>
         </div>
+
         <div class="">
+
            <form action="../controller/processRegisterPerfis.php">
                 <input type="hidden" value="<?php echo $codUser['cod'] ?>" name="codUser">
+
                 <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['pontuacaoPerfil']) ? $codUser['pontuacaoPerfil'] : '' ?>">
                 <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['dinheiroPerfil']) ? $codUser['dinheiroPerfil'] : '' ?>">
                 <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['tutorial']) ? $codUser['tutorial'] : '' ?>">
@@ -193,33 +214,37 @@ if ($_SESSION['authUser'] == null) {
                 <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['fasesConcluidas']) ? $codUser['fasesConcluidas'] : '' ?>">
 
                 <div class="edit-box">
+
                     <div class="imgBox">
                         <image id="edit-icon-input" src="../assets/images/perfil/<?php echo isset($codUser['iconPerfil']) ?>">
                     </div>
-                        <div class="infoP">
 
-                            <label for="">Nome:</label>
-                            <input id="nome_perfil" name="nome_perfil" type="text" placeholder="<?php echo isset($codUser['nomePerfil']) ? $codUser['nomePerfil'] : '' ?>">
-                            
-                            <label for="">Data de Nascimento</label>
-                            <input id="edit-birth-input" name="data_nasc" type="text" value="<?php echo isset($codUser['dataNasc']) ? $codUser['dataNasc'] : '' ?>">
+                    <div class="infoP">
 
-                            <label for="">Gênero</label>
-                            <input id="edit-gender-input" name="genero_user" type="text" value="<?php echo isset($codUser['generoPerfil']) ? $codUser['generoPerfil'] : '' ?>">
+                        <label for="">Nome:</label>
+                        <input id="nome_perfil" name="nome_perfil" type="text" placeholder="<?php echo isset($codUser['nomePerfil']) ? $codUser['nomePerfil'] : '' ?>">
+
+                        <label for="">Data de Nascimento</label>
+                        <input id="edit-birth-input" name="data_nasc" type="text" value="<?php echo isset($codUser['dataNasc']) ? $codUser['dataNasc'] : '' ?>">
+
+                        <label for="">Gênero</label>
+                        <input id="edit-gender-input" name="genero_user" type="text" value="<?php echo isset($codUser['generoPerfil']) ? $codUser['generoPerfil'] : '' ?>">
 
 
-                            <div class="inputs-modal-buttom">
-                                <button type="button" id="cancelEditProfile" title="Cancelar">
-                                    <p>Cancelar</p>
-                                </button>
-                                <button type="submit" value="Alterar">Editar</button>
-                            </div>
+                        <div class="inputs-modal-buttom">
+                            <button type="button" id="cancelEditProfile" title="Cancelar">
+                                <p>Cancelar</p>
+                            </button>
+
+                            <button type="submit" value="Alterar">Editar</button>
                         </div>
                     </div>
+                </div>
             </form>
         </div>
     </div>
-    </div>
+
+    <!--Javascripts-->
     <script src="../assets/javascript/modal-edit-profile.js"></script>
     <script src="../assets/javascript/modal-add-profile.js"></script>
 </body>

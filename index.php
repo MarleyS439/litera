@@ -27,7 +27,7 @@
                 <ul>
                     <li><a href="#">Início</a></li>
                     <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <!--<li><a href="#">Blog</a></li>-->
                     <li><a href="#price">Preço</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
@@ -35,7 +35,9 @@
 
             <!--Botão de ação - desktop-->
             <div class="action-btn" id="menu">
-                <a href="./views/register.php">Entre ou cadastre-se</a>
+                <a href="./views/login.php">Login
+                    <img src="./assets/images/icons/login.svg" alt="Login Ícone">
+                </a>
 
                 <!-- Div que simula um botão de clique para abrir o menu oculto -->
                 <div class="menu-mobile" id="openBtn">
@@ -51,7 +53,7 @@
             <ul>
                 <li><a href="#" title="">Início</a></li>
                 <li><a href="#sobre" title="sobre">Sobre</a></li>
-                <li><a href="#blog" title="blog">Blog</a></li>
+<!--                <li><a href="#blog" title="blog">Blog</a></li>-->
                 <li><a href="#price" title="price">Preço</a></li>
                 <li><a href="#contato" title="contato">Contato</a></li>
             </ul>
@@ -72,7 +74,7 @@
                 <h2>Suíte de jogos para alfabetização infantil</h2>
 
                 <div class="cta">
-                    <a href="./views/portal.php">Entre ou cadastre-se</a>
+                    <a href="./views/portal.php">Começar agora</a>
                 </div>
             </div>
 
@@ -221,13 +223,7 @@
                     </p>
                 </div>
 
-                <div class="image-sides">
-                    <img src="./assets/images/" alt="Imagem">
-                </div>
             </div>
-
-
-
             </div>
 
 
@@ -258,7 +254,7 @@
                 </div>
 
                 <div class="inputs inverse">
-                    <span class="">Concordo com os <a href="#">Termos e Condições</a></span>
+                    <span class="tetx">Concordo com os <a href="#">Termos e Condições</a></span>
                     <input type="checkbox" name="confirma" required>
                 </div>
 

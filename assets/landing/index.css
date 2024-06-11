@@ -393,6 +393,134 @@
         color: var(--litera-white);
     }
 
+    .price {
+        margin: 5% 0%;
+        padding: 5% 0%;
+    }
+
+    .price p {
+        color: var(--litera-white);
+        font-family: var(--font-poppins-bold);
+        padding: 5%;
+        background-color: var(--litera-blue)
+    }
+
+    .price span {
+        display: flex;
+        justify-content: center;
+        background-color: var(--litera-light-green);
+        color: var(--litera-dark-green);
+        font-family: var(--font-poppins-bold);
+        padding: 3%;
+        border-radius: 12px;
+        border: 3px solid var(--litera-dark-green);
+        box-shadow: 0x 5px 0px var(--litera-black);
+        font-size: 1.8rem;
+    }
+
+    .price img {
+        width: 100%;
+    }
+
+    /*Formulário de contato*/
+    .form-contact {
+        display: flex;
+        background-image: url(../images/72523319_9798006.svg);
+        background-size: cover;
+        background-position: center center;
+        padding: 8% 5%;
+        justify-content: center;
+    }
+
+    .form-contact form {
+        display: flex;
+        flex-direction: column;
+        padding: 5%;
+        background-color: var(--litera-white);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        border-radius: 12px;
+        width: 100%
+    }
+
+    .inputs {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .inputs textarea {
+        width: 100%;
+    }
+
+    .inputs input, .inputs textarea {
+        padding: 8px;
+        border-radius: 12px;
+        border: none;
+        background-color: #f2f2f2;
+    }
+
+    .inputs input:focus {
+        border: 1px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
+
+    .submit {
+        margin-top: 10%;
+    }
+
+    .inputs button {
+        background-color: var(--litera-yellow);
+        width: 100%;
+        padding: 10px;
+        border: 3px solid var(--litera-orange);
+        border-radius: 12px;
+        box-shadow: 0px 5px 0px var(--litera-black);
+        cursor: var(--cursor-hand);
+        transition: 200ms ease-in-out;
+    }
+
+    .inputs button:hover {
+        transform: translate(1px, 2px);
+        box-shadow: none
+    }
+
+    .inverse {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        flex-direction: row-reverse;
+    }
+
+    .tetx span {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        text-wrap: wrap-through
+    }
+
+    .inverse input {
+        margin: 0px 5px 2px 0px;
+    }
+
+    .inverse span a {
+        color: var(--litera-dark-blue);
+        text-decoration: none;
+        display: flex
+    }
+
+    .title-form {
+        margin: 5% 0%;
+    }
+
+    .title-form h2 {
+        background-color: var(--litera-blue);
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0px 5px 0px var(--litera-black);
+        color: var(--litera-white);
+        font-size: 1.2rem
+    }
+
+
 
     /*Footer*/
     footer {
@@ -595,6 +723,12 @@
         padding: 6px 12px;
         text-decoration: none;
         transition: 50ms;
+    }
+
+    .action-btn a img {
+        width: 20px;
+        height: auto;
+        margin: 0px 2px
     }
 
     .action-btn:hover {
@@ -843,20 +977,6 @@
     }
 
 
-    /*Vídeo section*/
-    /*.video {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        padding: 6%;
-        background-color: #ffffff80;
-        margin: 0% 5%;
-        border-radius: 12px;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 50px;
-    }*/
-
-
     .form-contact {
         display: flex;
         background-image: url(../images/72523319_9798006.svg);
@@ -945,6 +1065,40 @@
         border-radius: 12px;
         box-shadow: 0px 5px 0px var(--litera-black);
         color: var(--litera-white);
+    }
+
+    /*Secion Price*/
+    .price {
+        margin: 5%;
+        background-color: var(--litera-blue);
+        border-radius: 12px;
+        padding: 2%;
+    }
+
+    .price p {
+        color: var(--litera-white);
+        font-family: var(--font-poppins-bold);
+        padding: 5%;
+        font-size: 1.8rem;
+        transition: 250ms ease-in-out;
+    }
+
+    .price span {
+        display: flex;
+        justify-content: center;
+        background-color: var(--litera-light-green);
+        color: var(--litera-dark-green);
+        font-family: var(--font-poppins-bold);
+        padding: 3%;
+        border-radius: 12px;
+        border: 3px solid var(--litera-dark-green);
+        box-shadow: 0x 5px 0px var(--litera-black);
+        font-size: 1.8rem;
+    }
+
+    .price img {
+        width: 100%;
+        border-radius: 12px
     }
 
 
@@ -1171,10 +1325,16 @@
         display: flex;
         font-weight: bold;
         justify-content: center;
-        padding: 6px 12px;
+        padding: 6px 30px;
         text-decoration: none;
         transition: 50ms;
         cursor: var(--cursor-hand);
+    }
+
+    .action-btn a img {
+        width: 20px;
+        height: auto;
+        margin: 0px 2px
     }
 
     .action-btn:hover {
@@ -1244,7 +1404,30 @@
     }
 
     .cta {
-        display: none;
+        position: relative;
+        top: 2%;
+        background-color: var(--litera-light-green);
+        border-radius: 12px;
+        transition: 250ms ease-in-out;
+        margin: 0px 5px;
+        border: 3px solid var(--litera-green);
+        box-shadow: 0px 5px 0px var(--litera-dark-green);
+        padding: 12px 18px;
+    }
+
+    .cta a {
+        align-items: center;
+        color: #0E3010;
+        display: flex;
+        font-weight: bold;
+        justify-content: center;
+        text-decoration: none;
+        transition: 50ms;
+    }
+
+    .cta:hover {
+        transform: translate(1px, 2px);
+        box-shadow: none;
     }
 
     /*Main*/
@@ -1398,7 +1581,6 @@
     /*Section Price*/
     .price {
         padding: 5% 0%;
-        background-color: var(--litera-white);
         margin: 0% 5%;
         border-radius: 12px;
     }
@@ -1407,14 +1589,17 @@
         width: 100%;
     }
 
+    .price {
+        background-color: var(--litera-white);
+    }
+
     .sides {
         display: flex;
         justify-content: space-between;
     }
 
     .ia {
-        padding: 0% 5%;
-        background-color: var(--litera-white)
+        background-color: var(--litera-white);
     }
 
     .ia p, .ia span {
@@ -1511,6 +1696,35 @@
         border-radius: 12px;
         box-shadow: 0px 5px 0px var(--litera-black);
         color: var(--litera-white);
+    }
+
+    /*Secion Price*/
+    .price {
+        margin: 5%;
+    }
+
+    .price p {
+        color: var(--litera-blue);
+        font-family: var(--font-poppins-bold);
+        padding: 5%;
+        transition: 250ms ease-in-out;
+    }
+
+    .price span {
+        display: flex;
+        justify-content: center;
+        background-color: var(--litera-light-green);
+        color: var(--litera-dark-green);
+        font-family: var(--font-poppins-bold);
+        padding: 3%;
+        border-radius: 12px;
+        border: 3px solid var(--litera-dark-green);
+        box-shadow: 0x 5px 0px var(--litera-black);
+        font-size: 1.8rem;
+    }
+
+    .price img {
+        width: 100%;
     }
 
 

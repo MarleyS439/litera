@@ -89,50 +89,13 @@
             </form>
         </div>
     </div>
-
-    <!--   <div class="desktop-view">
-        <div class="container-desktop">
-            <div class="content">
-                <div class="title">
-                    <h1>Litera</h1>
-                    <p>Alfabetizando novas gerações</p>
-                </div>
-
-                <div class="arara-imagem">
-                    <img src="../assets/images/arara 2.svg" alt="">
-                </div>
-            </div>
-
-            <div class="formu">
-                <form action="../controller/processLogin.php" method="post">
-                    <h2>Entrar</h2>
-                    <div class="item">
-                        <label for="nameUser">Nome de usuário ou e-mail</label>
-                        <input type="text" name="login_user" id="nameUser" placeholder="" required>
-                    </div>
-
-                    <div class="item">
-                        <label for="passwUser">Senha</label>
-                        <input type="password" name="passwd_user" id="passwUser" required>
-                    </div>
-                    <?php if (isset($_GET['status'])) : ?>
+    <?php if (isset($_GET['status'])) : ?>
                         <?php if ($_GET['status'] == 'erro1') : ?>
                             <p style="color: red;">Credenciais inválidas ou incorretas</p>
                         <?php else : ?>
                             <p style="color: red;"></p>
                         <?php endif ?>
                     <?php endif ?>
-                    <div class="item">
-                        <button type="submit">Continuar</button>
-                    </div>
-
-                    <div class="register">
-                        <p>Não tem cadastro? <a href="../views/register.php">Cadastre-se</a></p>
-                    </div>
-
-                    <div class="return">
-                        <a href="./../index.php">Voltar</a>
-                    </div>
                 </form>
             </div>
         </div>
@@ -164,7 +127,7 @@
                 <p style="color: red;"></p>
             <?php endif ?>
         <?php endif ?>
-    </div> -->
+    </div>
 
 </body>
 <script src="../assets/javascript/emptyField.js"></script>
