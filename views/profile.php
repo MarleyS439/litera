@@ -184,7 +184,7 @@ if ($_SESSION['authUser'] == null) {
             <p>Configurar perfil</p>
         </div>
         <div class="">
-           <form action="../controller/processRegisterPerfis.php">
+            <form action="../controller/processRegisterPerfis.php">
                 <input type="hidden" value="<?php echo $codUser['cod'] ?>" name="codUser">
                 <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['pontuacaoPerfil']) ? $codUser['pontuacaoPerfil'] : '' ?>">
                 <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['dinheiroPerfil']) ? $codUser['dinheiroPerfil'] : '' ?>">
@@ -196,26 +196,38 @@ if ($_SESSION['authUser'] == null) {
                     <div class="imgBox">
                         <image id="edit-icon-input" src="../assets/images/perfil/<?php echo isset($codUser['iconPerfil']) ?>">
                     </div>
-                        <div class="infoP">
+                    <div class="infoP">
 
-                            <label for="">Nome:</label>
-                            <input id="nome_perfil" name="nome_perfil" type="text" placeholder="<?php echo isset($codUser['nomePerfil']) ? $codUser['nomePerfil'] : '' ?>">
-                            
-                            <label for="">Data de Nascimento</label>
-                            <input id="edit-birth-input" name="data_nasc" type="text" value="<?php echo isset($codUser['dataNasc']) ? $codUser['dataNasc'] : '' ?>">
+                    <div class="inputs-modal">
+                        <label for="">Nome:</label>
+                        <input id="nome_perfil" name="nome_perfil" type="text" placeholder="<?php echo isset($codUser['nomePerfil']) ? $codUser['nomePerfil'] : '' ?>">
+                    </div>
 
-                            <label for="">Gênero</label>
-                            <input id="edit-gender-input" name="genero_user" type="text" value="<?php echo isset($codUser['generoPerfil']) ? $codUser['generoPerfil'] : '' ?>">
-
-
-                            <div class="inputs-modal-buttom">
-                                <button type="button" id="cancelEditProfile" title="Cancelar">
-                                    <p>Cancelar</p>
-                                </button>
-                                <button type="submit" value="Alterar">Editar</button>
+                        
+                        <div class="two">
+                            <div class="inpu">
+                                <label for="data_nasc">Data de nascimento</label>
+                                <input type="date" name="data_nasc" id="data_nasc" value="<?php echo isset($codUser['dataNasc']) ? $codUser['dataNasc'] : '' ?>">
+                            </div>
+                            <div class="inpu">
+                                <label for="genero">Gênero</label>
+                                <select name="genero" id="genero" value="<?php echo isset($codUser['generoPerfil']) ? $codUser['generoPerfil'] : '' ?>">
+                                    <option value="null">-</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Feminino">Feminino</option>
+                                    <option value="nao-definir">Não definir</option>
+                                </select>
                             </div>
                         </div>
+
+                        <div class="inputs-modal-buttom">
+                            <button type="button" id="cancelEditProfile" title="Cancelar">
+                                <p>Cancelar</p>
+                            </button>
+                            <button type="submit" value="Alterar">Editar</button>
+                        </div>
                     </div>
+                </div>
             </form>
         </div>
     </div>
