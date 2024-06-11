@@ -14,7 +14,8 @@
 </head>
 
 <body>
-<div class="overlay"></div>
+    <div class="overlay"></div>
+
     <div class="container">
         <div class="arara">
             <img src="../assets/images/arara 2.svg" alt="">

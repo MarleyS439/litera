@@ -3,6 +3,7 @@
 @import url(../../assets/landing/default.css);
 
 @media screen and (max-width: 768px) {
+
     .container-page {
         display: flex;
         flex-direction: column;

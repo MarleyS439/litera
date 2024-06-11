@@ -1,5 +1,6 @@
 @import url(default.css);
 @import url(animations.css);
+@import url(../../assets/landing/default.css);
 
 /* Telas de dispositivos móveis */
 @media screen and (max-width: 768px) {
@@ -57,13 +58,13 @@
     }
 
     .inputs button {
-        background-color: var(--blue3);
-        border: none;
+        background-color: var(--litera-light-green);
+        border: 3px solid var(--litera-dark-green)  ;
         padding: 8px;
-        border-radius: 8px;
-        color: var(--white);
+        border-radius: 12px;
+        color: var(--litera-dark-green);
         font-weight: bold;
-        box-shadow: 1px 2px 1px #00000099;
+        box-shadow: 0px 5px 0px var(--litera-black);
         font-size: 1.01rem;
     }
 
@@ -73,13 +74,27 @@
 
     .title-form h2 {
         font-family: var(--font-poppins-bold);
-        color: var(--black2);
+        background-color: var(--litera-blue);
+        padding: 5%;
+        display: flex;
+        justify-content: center;
+        color: var(--litera-white);
+        border-radius: 12px;
+        margin: 2% 0%;
+    }
+
+    .title-form p {
+        display: flex;
+        justify-content: center;
+        font-family: var(--font-poppins-bold);
+        color: var(--litera-orange);
     }
 
     .non {
         display: flex;
         align-items: center;
         margin-top: 5%;
+        justify-content: space-evenly;
     }
 
     .non a {
@@ -89,13 +104,11 @@
         transition: 200ms ease-in-out;
     }
 
-    .non a:hover {
-        color: var(--blue2);
-    }
 }
 
 /* Telas de dispositivos tablets */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+
     .container {
         background-image: url(../images/v1015-104a\ 3.png);
         background-size: cover;
@@ -103,6 +116,8 @@
         height: 100vh;
         padding: 10px;
         z-index: 1;
+        -webkit-animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+        animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
     }
 
     .arara {
@@ -131,11 +146,11 @@
         display: flex;
         justify-content: center;
         align-content: center;
-        background-color: var(--white);
+        background-color: var(--litera-white);
         margin: 0% 25%;
         flex-direction: column;
         padding: 2% 5%;
-        border-radius: 8px;
+        border-radius: 12px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         transition: 300ms ease-in-out;
     }
@@ -144,18 +159,26 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
+        align-items: center;
         width: 100%;
         margin: 2% 0%;
     }
 
     .title-form h2 {
-        margin: 2% 0%;
         font-family: var(--font-poppins-bold);
-        color: var(--black2);
+        color: var(--litera-white);
+        background-color: var(--litera-blue);
+        box-shadow: 0px 5px 0px  var(--litera-black);
+        padding: 2% 15%;
+        display: flex;
+        margin: 2% 0%;
+        justify-content: center;
+        border-radius: 12px;
     }
 
     .title-form p {
-        color: var(--blue3);
+        color: var(--litera-orange);
+        font-family: var(--font-poppins-bold);
     }
 
     .inputs {
@@ -177,26 +200,25 @@
 
     .inputs button {
         padding: 8px;
-        box-shadow: 1px 2px 1px #00000099;
-        background-color: var(--blue3);
-        border-radius: 8px;
-        color: var(--white);
+        box-shadow: 0px 5px 0px var(--litera-black);
+        background-color: var(--litera-light-green);
+        border-radius: 12px;
+        color: var(--litera-dark-green);
         font-weight: bold;
         transition: 200ms ease-in-out;
-        cursor: pointer;
-        font-size: 1.01rem;
+        cursor: var(--cursor-hand);
     }
 
     .inputs button:hover {
-        background-color: var(--blue2);
-        transform: translate(-2px, -1px);
+        transform: translate(1px, 2px);
+        box-shadow: none;
     }
 
     .btn {
         margin-top: 5%;
     }
 
-    .overlay {
+    /*.overlay {
         content: "";
         background-color: #00000050;
         position: absolute;
@@ -204,23 +226,21 @@
         height: 100vh;
         backdrop-filter: blur(2px);
         -webkit-backdrop-filter: blur(2px);
-    }
+    }*/
 
     .non {
         display: flex;
         align-items: center;
+        justify-content: space-evenly;
     }
 
     .non a {
         margin: 0px 10px;
-        color: var(--blue3);
+        color: var(--litera-dark-blue);
         text-decoration: none;
         transition: 200ms ease-in-out;
     }
 
-    .non a:hover {
-        color: var(--blue2);
-    }
 }
 
 /* Telas de dispositivos desktops */
@@ -233,6 +253,8 @@
         height: 100vh;
         padding: 10px;
         z-index: 1;
+        -webkit-animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+        animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
     }
 
     .arara {
@@ -245,7 +267,7 @@
 
     .arara h2 {
         margin: 0% 1%;
-        color: var(--white);
+        color: var(--litera-white);
         font-family: var(--font-poppins-bold);
         text-shadow: 1px 1px 2px #00000030;
     }
@@ -257,14 +279,15 @@
 
     .container-form {
         position: relative;
+        top: -2%;
         display: flex;
         justify-content: center;
         align-content: center;
-        background-color: var(--white);
+        background-color: var(--litera-white);
         margin: 0% 32%;
         flex-direction: column;
         padding: 2% 5%;
-        border-radius: 8px;
+        border-radius: 12px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         transition: 300ms ease-in-out;
     }
@@ -272,18 +295,28 @@
     .title-form {
         display: flex;
         justify-content: center;
+        align-items: center;
         flex-direction: column;
         width: 100%;
         margin: 2% 0%;
     }
 
     .title-form h2 {
-        margin: 2% 0%;
         font-family: var(--font-poppins-bold);
+        background-color: var(--litera-blue);
+        color: var(--litera-white);
+        padding: 2% 10%;
+        box-shadow: 0px 5px 0px  var(--litera-black);
+        width: 100%;
+        margin: 2% 0%;
+        display: flex;
+        justify-content: center;
+        border-radius: 12px;
     }
 
     .title-form p {
-        color: var(--blue3);
+        font-family: var(--font-poppins-bold);
+        color: var(--litera-orange);
     }
 
     .inputs {
@@ -305,19 +338,19 @@
 
     .inputs button {
         padding: 8px;
-        box-shadow: 1px 2px 1px #00000099;
-        background-color: var(--blue3);
-        border-radius: 8px;
-        color: var(--white);
+        box-shadow: 0px 5px 0px var(--litera-black);
+        background-color: var(--litera-light-green);
+        border-radius: 12px;
+        border: 3px solid var(--litera-dark-green);
+        color: var(--litera-dark-green);
         font-weight: bold;
         transition: 200ms ease-in-out;
-        cursor: pointer;
-        font-size: 1.01rem;
+        cursor: var(--cursor-hand);
     }
 
     .inputs button:hover {
-        background-color: var(--blue2);
-        transform: translate(-2px, -1px);
+        transform: translate(1px, 2px);
+        box-shadow: none
     }
 
     .btn {
@@ -335,19 +368,21 @@
     }
 
     .non {
+        margin: 2% 0%;
         display: flex;
         align-items: center;
+        justify-content: space-evenly;
     }
 
     .non a {
         margin: 0px 10px;
-        color: var(--blue3);
+        color: var(--litera-dark-blue);
         text-decoration: none;
         transition: 200ms ease-in-out;
     }
 
     .non a:hover {
-        color: var(--blue2);
+        cursor: var(--cursor-hand);
     }
 
     .input-cod h2 {
@@ -367,6 +402,5 @@
     .input-cod a {
         cursor: pointer;
     }
-
 
 }
