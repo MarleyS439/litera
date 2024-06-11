@@ -47,6 +47,7 @@
                     <a href="register.php">Cadastre-se</a>
                 </div>
 
+
                 <div class="advisor">
                     <!-- Aqui vai as informações de autenticação de login -->
                     <?php if (isset($_GET['status'])) : ?>
@@ -81,9 +82,13 @@
 
                 <div class="send">
                     <button type="submit">
-                        <span>Continuar</span>
+                        <span>Entrar</span>
                         <img src="../assets/images/icons/enter-icon.svg" alt="">
                     </button>
+                </div>
+
+                <div class="reset">
+                    <a href="#">Esqueceu a senha?</a>
                 </div>
             </form>
         </div>

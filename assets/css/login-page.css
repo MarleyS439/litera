@@ -94,8 +94,8 @@
         color: var(--litera-dark-green);
         font-family: var(--font-poppins-bold);
         font-weight: bold;
-        border: 5px solid var(--litera-green);
-        box-shadow: 0x 50px 0px var(--litera-black);
+        border: 3px solid var(--litera-dark-green);
+        box-shadow: 0x 5px 0px var(--litera-black);
     }
 
     .send button img {
@@ -110,11 +110,25 @@
     .non a {
         margin: 0px 12px;
         text-decoration: none;
-        color: var(--blue3);
+        color: var(--litera-dark-blue);
+    }
+
+    .reset {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5% 0%;
+    }
+
+    .reset a {
+        color: var(--litera-dark-blue);
+        text-decoration: none;
+        cursor: var(--cursor-hand)
     }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+
     .container-page {
         display: flex;
         justify-content: space-between;
@@ -122,8 +136,8 @@
     }
 
     .sidea {
-        color: var(--white);
-        background-image: url(../images/v1015-104a\ 3.png);
+        color: var(--litera-white);
+        background-image: url(../images/fundoLogin.svg);
         background-repeat: no-repeat;
         background-size: cover;
         padding: 5%;
@@ -151,10 +165,12 @@
     .sidea h2 {
         font-family: var(--font-poppins-bold);
         font-size: 5rem;
+        text-shadow: 1px 1px 1px #00000070;
     }
 
     .sidea span {
         font-family: var(--font-poppins-bold);
+        text-shadow: 1px 1px 1px #00000070;
     }
 
     .litera {
@@ -211,18 +227,18 @@
     }
 
     .send button {
-        background-color: var(--blue3);
-        border: none;
+        background-color: var(--litera-light-green);
+        border: 3px solid var(--litera-dark-green);
         border-radius: 8px;
         display: flex;
-        flex-direction: row;
         align-items: center;
         justify-content: center;
         padding: 5px;
         width: 100%;
-        color: var(--white);
-        cursor: pointer;
+        color: var(--litera-dark-green);
+        cursor: var(--cursor-hand);
         transition: 200ms ease-in-out;
+        box-shadow: 0px 5px 0px var(--litera-black);
     }
 
     .send span {
@@ -230,7 +246,8 @@
     }
 
     .send button:hover {
-        background-color: var(--dark-blue);
+        transform: translate(1px, 2px);
+        box-shadow: none;
     }
 
     .send button img {
@@ -238,13 +255,32 @@
         height: auto;
         margin: 5px;
     }
-    .non{
+
+    .non p, .non a {
+        font-size: 13px
+    }
+
+    .non {
         display: flex;
+        justify-content: space-between;
     }
     .non a{
         margin: 0px 10px;
         text-decoration: none;
-        color: var(--blue3);
+        color: var(--litera-dark-blue);
+    }
+
+    .reset {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5% 0%;
+    }
+
+    .reset a {
+        color: var(--litera-dark-blue);
+        text-decoration: none;
+        cursor: var(--cursor-hand)
     }
 }
 
@@ -326,6 +362,7 @@
 
     .title-form h2 {
         font-family: var(--font-poppins-bold);
+        color: var(--litera-blue);
     }
 
     form {
@@ -338,6 +375,7 @@
 
     form label {
         font-family: var(--font-poppins-bold);
+        color: var(--litera-black);
     }
 
     .send {
@@ -351,7 +389,7 @@
         border: 3px solid var(--litera-dark-green);
         border-radius: 8px;
         display: flex;
-        flex-direction: row;
+
         align-items: center;
         justify-content: center;
         padding: 5px;
@@ -359,6 +397,7 @@
         color: var(--litera-dark-green);
         cursor: var(--cursor-hand);
         transition: 200ms ease-in-out;
+        box-shadow: 0px 5px 0px var(--litera-black);
     }
 
     .send span {
@@ -366,7 +405,7 @@
     }
 
     .send button:hover {
-        transition: translate(1px, 2px);
+        transform: translate(1px, 2px);
         box-shadow: none;
     }
 
@@ -387,6 +426,19 @@
         color: var(--litera-dark-blue);
         margin: 0px 10px;
         cursor: var(--cursor-hand);
+    }
+
+    .reset {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5% 0%;
+    }
+
+    .reset a {
+        color: var(--litera-dark-blue);
+        text-decoration: none;
+        cursor: var(--cursor-hand)
     }
 
 }
