@@ -257,7 +257,7 @@
 
     .sidea {
         color: var(--white);
-        background-image: url(../images/v1015-104a\ 3.png);
+        background-image: url(../images/fundoLogin.svg);
         background-repeat: no-repeat;
         background-size: cover;
         padding: 5%;
@@ -347,8 +347,8 @@
     }
 
     .send button {
-        background-color: var(--blue3);
-        border: none;
+        background-color: var(--litera-light-green);
+        border: 3px solid var(--litera-dark-green);
         border-radius: 8px;
         display: flex;
         flex-direction: row;
@@ -356,8 +356,8 @@
         justify-content: center;
         padding: 5px;
         width: 100%;
-        color: var(--white);
-        cursor: pointer;
+        color: var(--litera-dark-green);
+        cursor: var(--cursor-hand);
         transition: 200ms ease-in-out;
     }
 
@@ -366,7 +366,8 @@
     }
 
     .send button:hover {
-        background-color: var(--dark-blue);
+        transition: translate(1px, 2px);
+        box-shadow: none;
     }
 
     .send button img {
@@ -378,12 +379,14 @@
     .non {
         display: flex;
         margin-top: 2%;
+        justify-content: space-between;
     }
 
     .non a {
         text-decoration: none;
-        color: var(--blue3);
+        color: var(--litera-dark-blue);
         margin: 0px 10px;
+        cursor: var(--cursor-hand);
     }
 
 }

@@ -28,7 +28,7 @@
 
         <div class="sideb">
             <div class="title-form">
-                <h2>Entrar</h2>
+                <h2>Faça Login</h2>
             </div>
 
             <form action="../controller/processLogin.php" method="post">
@@ -90,7 +90,16 @@
     </div>
     <?php if (isset($_GET['status'])) : ?>
                         <?php if ($_GET['status'] == 'erro1') : ?>
-                            <p style="color: red;">Credenciais inválidas ou incorretas</p>
+
+                        <div class="notification-erro2">
+                            <div class="notification_body">
+                                <span> Credenciais inválidas! <img class="icon-alert"  src="../assets/images/icons/icon _warning triangle outline_.svg" class="notification_icon" alt="block">
+                                </span>
+                            </div>
+
+                            <div class="notification_progress-erro2"></div>
+                        </div>
+
                         <?php else : ?>
                             <p style="color: red;"></p>
                         <?php endif ?>
