@@ -1,45 +1,47 @@
 <?php
 // session
 session_start();
-// verificação se o user esta logado
+// verificação se o usuário está logado
 if (!isset($_SESSION['authPerfil'])) {
-    // caso não esteja, redirecione a login e indique que para realizar o login
+    // caso não esteja, redirecione para o login e indique que é necessário fazer login
     header("Location: ./login.php?status=erro2");
     exit();
 }
-// variavel para todas as informaçoes do usuario
-require_once("../dao/perfilDao.php");
-require_once("../dao/usuarioDao.php");
-require('../dao/avatarDao.php');
-
+// variável para todas as informações do usuário
+require_once "../dao/perfilDao.php";
+require_once "../dao/usuarioDao.php";
 $codUser = $_SESSION['authPerfil'];
 $perfilAutenticado = PerfilDao::selectById($codUser['codPerfil']);
 $usuarioAutenticado =  UsuarioDao::selectById($codUser['codUser']);
-$avatar = AvatarDao::selectByIdUser($perfilAutenticado['codPerfil']);
-// verificar se o user esta banido
-if ($usuarioAutenticado['banido'] != 0) {
-    // caso não esteja, redirecionar a login e indique que o user foi banido
-    header("Location: ./login.php?status=erro3");
-    exit();
+if ($codUser['isGuesty']) {
+    $usuarioAutenticado =  $_SESSION;
 }
-if ($_SESSION['authUser'] == null) {
+// verificar se o usuário está banido
+if (!$codUser['isGuesty']) {
+    if ($usuarioAutenticado['banido'] != 0) {
+        // caso esteja banido, redirecione para o login e indique que o usuário foi banido
+        header("Location: ./login.php?status=erro3");
+        exit();
+    }
+}
+if ($_SESSION == null) {
     header('Location: ./login.php?status=erro4');
 }
-// var_dump($perfilAutenticado);
-?>
-
-<?php
-// if e else para atualizar o progresso
+if ($codUser['isGuesty']) {
+    header('Location: home.php');
+}
+// calcular a porcentagem de progresso
 $porcentagem = 0;
-
-if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacaoPerfil'] > 0) {
-    $porcentagem = ($perfilAutenticado['pontuacaoPerfil'] / 100) * 100;
-} else if ($perfilAutenticado['pontuacaoPerfil'] < 260 && $perfilAutenticado['pontuacaoPerfil'] >= 100) {
-    $porcentagem = ($perfilAutenticado['pontuacaoPerfil'] / 260) * 100;
-} else if ($perfilAutenticado['pontuacaoPerfil'] < 700 && $perfilAutenticado['pontuacaoPerfil'] >= 260) {
-    $porcentagem = ($perfilAutenticado['pontuacaoPerfil'] / 700) * 100;
-} else if ($perfilAutenticado['pontuacaoPerfil'] == 0) {
-    $porcentagem = 5;
+if (!$codUser['isGuesty']) {
+    if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacaoPerfil'] > 0) {
+        $porcentagem = ($perfilAutenticado['pontuacaoPerfil'] / 100) * 100;
+    } else if ($perfilAutenticado['pontuacaoPerfil'] < 260 && $perfilAutenticado['pontuacaoPerfil'] >= 100) {
+        $porcentagem = ($perfilAutenticado['pontuacaoPerfil'] / 260) * 100;
+    } else if ($perfilAutenticado['pontuacaoPerfil'] < 700 && $perfilAutenticado['pontuacaoPerfil'] >= 260) {
+        $porcentagem = ($perfilAutenticado['pontuacaoPerfil'] / 700) * 100;
+    } else if ($perfilAutenticado['pontuacaoPerfil'] == 0) {
+        $porcentagem = 5;
+    }
 }
 ?>
 
@@ -64,55 +66,8 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
 <body>
     <div class="desktop-view">
 
-        <nav class="navbar">
-            <div class="logo-area">
-                <img src="../assets/images/litera.png" alt="Litera">
-                <span>Litera</span>
-            </div>
-
-            <div class="navigation">
-                <ul>
-                    <li class="home-icon">
-                        <a href="../views/home.php">
-                            <svg width="28" height="31">
-                                <image href="../assets/images/icons/home-icon-desktop.svg" width="28" height="31" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="store-icon">
-                        <a href="../views/store.php">
-                            <svg width="28" height="31">
-                                <image href="../assets/images/icons/store-icon-desktop.svg" width="28" height="31" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="profile-icon">
-                        <a href="../views/perfil-profile.php">
-                            <svg width="28" height="31">
-                                <image href="../assets/images/icons/profile-icon-desktop.svg" width="28" height="31" />
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="profile-info">
-                <div class="name-user">
-                    <span><?php echo $perfilAutenticado['nomePerfil']; ?></span>
-                </div>
-                <div class="level">
-                    <span><?php echo $perfilAutenticado['nivel']; ?></span>
-                </div>
-                <div class="coin">
-                    <svg width="36" height="36">
-                        <image href="../assets/images/icons/coin2.svg" width="35" height="36" />
-                    </svg>
-                </div>
-
-                <div class="name-user">
-                    <span><?php echo $perfilAutenticado['dinheiroPerfil']; ?></span>
-                </div>
-            </div>
-        </nav>
+            <?php include('../views/components/navbarHome.php'); ?>
+<!-- #region -->
         <div class="container">
             <div class="card">
                 <div class="title-card">

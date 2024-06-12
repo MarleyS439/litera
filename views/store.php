@@ -1,26 +1,35 @@
 <?php
 // session
 session_start();
-// verificação se o user esta logado
+// verificação se o usuário está logado
 if (!isset($_SESSION['authPerfil'])) {
-    // caso não esteja, redirecione a login e indique que para realizar o login
+    // caso não esteja, redirecione para o login e indique que é necessário fazer login
     header("Location: ./login.php?status=erro2");
     exit();
 }
-// variavel para todas as informaçoes do usuario
+// variável para todas as informações do usuário
 require_once "../dao/perfilDao.php";
 require_once "../dao/usuarioDao.php";
 $codUser = $_SESSION['authPerfil'];
 $perfilAutenticado = PerfilDao::selectById($codUser['codPerfil']);
-$usuarioAutenticado =  UsuarioDao::selectById($codUser['codUser']);
-// verificar se o user esta banido
-if ($usuarioAutenticado['banido'] != 0) {
-    // caso não esteja, redirecionar a login e indique que o user foi banido
-    header("Location: ./login.php?status=erro3");
-    exit();
+$usuarioAutenticado = UsuarioDao::selectById($codUser['codUser']);
+if ($codUser['isGuesty']) {
+    $usuarioAutenticado =  $_SESSION;
+} 
+// verificar se o usuário está banido
+if (!$codUser['isGuesty']) {
+    if ($usuarioAutenticado['banido'] != 0) {
+        // caso esteja banido, redirecione para o login e indique que o usuário foi banido
+        header("Location: ./login.php?status=erro3");
+        exit();
+    }
 }
-if ($_SESSION['authUser'] == null) {
+if ($_SESSION == null) {
     header('Location: ./login.php?status=erro4');
+}
+
+if ($codUser['isGuesty']) {
+    header('Location: home.php');
 }
 // var_dump($perfilAutenticado);
 require('../dao/roupaDao.php');
@@ -40,72 +49,8 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
 
 <body style="background-color: white;">
     <div class="desktop-view">
+    <?php include('../views/components/navbarHome.php'); ?>
 
-        <nav class="navbar">
-            <div class="logo-area">
-                <img src="../assets/images/litera.png" alt="Litera">
-                <span>Litera</span>
-            </div>
-
-            <div class="navigation">
-                <ul>
-                    <li class="home-icon">
-                        <a href="../views/home.php">
-                            <svg width="28" height="31">
-                                <image href="../assets/images/icons/home-icon-desktop.svg" width="28" height="31" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="store-icon">
-                        <a href="../views/store.php">
-                            <svg width="28" height="31">
-                                <image href="../assets/images/icons/store-icon-desktop.svg" width="28" height="31" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="profile-icon">
-                        <a href="../views/perfil-profile.php">
-                            <svg width="28" height="31">
-                                <image href="../assets/images/icons/profile-icon-desktop.svg" width="28" height="31" />
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-
-            <!-- <div class="profile">
-        <div class="profile-pic">
-            <span>Nome</span>
-            <img src="../assets/images/icons/profile.svg" alt="">
-        </div>
-
-        <div class="logout-area">
-            <a href="../controller/logoutUser.php" title="logout">
-                <img class="img-logoff" src="../assets/images/icons/exit-svgrepo-com.svg" alt="exit">
-            </a>
-        </div>
-    </div> -->
-
-            <div class="profile-info">
-                <div class="name-user">
-                    <span><?php echo $perfilAutenticado['nomePerfil']; ?></span>
-                </div>
-                <div class="level">
-                    <span><?php echo $perfilAutenticado['nivel']; ?></span>
-                </div>
-                <div class="coin">
-                    <svg width="36" height="36">
-                        <image href="../assets/images/icons/coin2.svg" width="35" height="36" />
-                    </svg>
-                </div>
-
-                <div class="name-user">
-                    <span><?php echo $perfilAutenticado['dinheiroPerfil']; ?></span>
-                </div>
-            </div>
-
-        </nav>
         <!-- <script src="https://kit.fontawesome.com/a3e37e504d.js" crossorigin="anonymous"></script> -->
 
         <div class="title-container">

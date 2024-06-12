@@ -1,28 +1,32 @@
 <?php
 // session
 session_start();
-// verificação se o user esta logado
+// verificação se o usuário está logado
 if (!isset($_SESSION['authPerfil'])) {
-    // caso não esteja, redirecione a login e indique que para realizar o login
+    // caso não esteja, redirecione para o login e indique que é necessário fazer login
     header("Location: ./login.php?status=erro2");
     exit();
 }
-// variavel para todas as informaçoes do usuario
+// variável para todas as informações do usuário
 require_once "../../dao/perfilDao.php";
 require_once "../../dao/usuarioDao.php";
 $codUser = $_SESSION['authPerfil'];
 $perfilAutenticado = PerfilDao::selectById($codUser['codPerfil']);
 $usuarioAutenticado =  UsuarioDao::selectById($codUser['codUser']);
-// verificar se o user esta banido
-if ($usuarioAutenticado['banido'] != 0) {
-    // caso não esteja, redirecionar a login e indique que o user foi banido
-    header("Location: ./login.php?status=erro3");
-    exit();
+if ($codUser['isGuesty']) {
+    $usuarioAutenticado =  $_SESSION;
 }
-if ($_SESSION['authUser'] == null) {
+// verificar se o usuário está banido
+if (!$codUser['isGuesty']) {
+    if ($usuarioAutenticado['banido'] != 0) {
+        // caso esteja banido, redirecione para o login e indique que o usuário foi banido
+        header("Location: ./login.php?status=erro3");
+        exit();
+    }
+}
+if ($_SESSION == null) {
     header('Location: ./login.php?status=erro4');
 }
-// var_dump($usuarioAutenticado);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
@@ -34,8 +38,10 @@ if ($_SESSION['authUser'] == null) {
     <link rel="shortcut icon" href="../../assets/images/icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../assets/css/navbar.css">
     <?php
-    if ($perfilAutenticado['tutorial'] == 0) {
-        echo '<link rel="stylesheet" type="text/css" href="../../assets/css/tutorial-fases.css">';
+    if (!$codUser['isGuesty']) {
+        if (!$perfilAutenticado['tutorial']) {
+            echo '<link rel="stylesheet" type="text/css" href="../../assets/css/tutorial-fases.css">';
+        }
     }
     ?>
 
@@ -45,58 +51,7 @@ if ($_SESSION['authUser'] == null) {
 <body>
     <!-- <div class="overlay-itens1"></div> -->
     <div class="desktop-view">
-
-        <nav class="navbar">
-            <div class="logo-area">
-                <img src="../../assets/images/litera.png" alt="Litera">
-                <span>Litera</span>
-            </div>
-
-            <div class="navigation">
-                <ul>
-                    <li class="home-icon">
-                        <a href="../../views/home.php">
-                            <svg width="28" height="31">
-                                <image href="../../assets/images/icons/home-icon-desktop.svg" width="28" height="31" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="store-icon">
-                        <a href="../../views/store.php">
-                            <svg width="28" height="31">
-                                <image href="../../assets/images/icons/store-icon-desktop.svg" width="28" height="31" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="profile-icon">
-                        <a href="../../views/user-profile.php">
-                            <svg width="28" height="31">
-                                <image href="../../assets/images/icons/profile-icon-desktop.svg" width="28" height="31" />
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="profile-info">
-                <div class="name-user">
-                    <span><?php echo $perfilAutenticado['nomePerfil']; ?></span>
-                </div>
-                <div class="level">
-                    <span><?php echo $perfilAutenticado['nivel']; ?></span>
-                </div>
-                <div class="coin">
-                    <svg width="36" height="36">
-                        <image href="../../assets/images/icons/coin2.svg" width="35" height="36" />
-                    </svg>
-                </div>
-
-                <div class="name-user">
-                    <span><?php echo $perfilAutenticado['dinheiroPerfil']; ?></span>
-                </div>
-            </div>
-
-        </nav>
+        <?php include('../../views/components/navbarHome.php'); ?>
 
         <div class="overlay-itens2"></div>
 
@@ -123,7 +78,9 @@ if ($_SESSION['authUser'] == null) {
                     <div class="game-1">
                         <p>Fase 1</p>
                         <?php
-                        if ($perfilAutenticado['tutorial'] == 0) {
+                        if (!$codUser['isGuesty']) {
+                            if ($perfilAutenticado['tutorial'] == 0) {
+                            }
                         ?>
                             <a href="#">
                                 <img src="../../assets/images/fase/map-off.png" alt="">
@@ -138,7 +95,9 @@ if ($_SESSION['authUser'] == null) {
                     <div class="game-2">
                         <p>Fase 2</p>
                         <?php
-                        if ($perfilAutenticado['nivel'] >= 2 and $perfilAutenticado['nivel'] < 3) {
+                        if (!$codUser['isGuesty']) {
+                            if ($perfilAutenticado['nivel'] >= 2 and $perfilAutenticado['nivel'] < 3) {
+                            }
                         ?>
                             <a href="../jogo/01/balao.php">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
@@ -153,7 +112,9 @@ if ($_SESSION['authUser'] == null) {
                     <div class="game-3">
                         <p>Fase 3</p>
                         <?php
-                        if ($perfilAutenticado['nivel'] >= 3 and $perfilAutenticado['nivel'] < 4) {
+                        if (!$codUser['isGuesty']) {
+                            if ($perfilAutenticado['nivel'] >= 3 and $perfilAutenticado['nivel'] < 4) {
+                            }
                         ?>
                             <a href="../jogo/01/balao.php">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
@@ -168,7 +129,9 @@ if ($_SESSION['authUser'] == null) {
                     <div class="game-4">
                         <p>Fase 3</p>
                         <?php
-                        if ($perfilAutenticado['nivel'] >= 4 and $perfilAutenticado['nivel'] < 5) {
+                        if (!$codUser['isGuesty']) {
+                            if ($perfilAutenticado['nivel'] >= 4 and $perfilAutenticado['nivel'] < 5) {
+                            }
                         ?>
                             <a href="#">
                                 <img src="../../assets/images/fase/map-on.png" alt="">

@@ -5,10 +5,10 @@ class Conexao
     {
         try {
             //informações do banco de dados
-            $servidor = "localhost";
+            $servidor = "db";
             $banco = "dblitera";
             $usuario = "root";
-            $senha = "";
+            $senha = "1234";
 
             //$conexao = new PDO("TIPO_BANCO:host=SERVIDOR;dbname=NOME_BANCO", "USUARIO", "SENHA"); 
             $conexao = new PDO("mysql:host=$servidor;dbname=$banco;charset=utf8", $usuario, $senha);

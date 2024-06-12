@@ -3,7 +3,7 @@ require_once "../dao/acessoUsuarioDao.php";
 session_start();
 $codUser = $_SESSION['authPerfil'];
 
-if (isset($_SESSION['authUser'])) {
+if (isset($_SESSION)) {
     // Obtendo o codAcessoUsuario específico
     $idAcessoUsuario = AcessoUsuarioDao::selectById($codUser['codPerfil']);
     

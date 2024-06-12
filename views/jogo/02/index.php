@@ -1,25 +1,30 @@
 <?php
 // session
 session_start();
-// verificação se o user esta logado
+// verificação se o usuário está logado
 if (!isset($_SESSION['authPerfil'])) {
-    // caso não esteja, redirecione a login e indique que para realizar o login
+    // caso não esteja, redirecione para o login e indique que é necessário fazer login
     header("Location: ./login.php?status=erro2");
     exit();
 }
-// variavel para todas as informaçoes do usuario
+// variável para todas as informações do usuário
 require_once "../../../dao/perfilDao.php";
 require_once "../../../dao/usuarioDao.php";
 $codUser = $_SESSION['authPerfil'];
 $perfilAutenticado = PerfilDao::selectById($codUser['codPerfil']);
-$usuarioAutenticado =  UsuarioDao::selectById($codUser['codUser']);
-// verificar se o user esta banido
-if ($usuarioAutenticado['banido'] != 0) {
-    // caso não esteja, redirecionar a login e indique que o user foi banido
-    header("Location: ./login.php?status=erro3");
-    exit();
+$usuarioAutenticado = UsuarioDao::selectById($codUser['codUser']);
+if ($codUser['isGuesty']) {
+    $usuarioAutenticado =  $_SESSION;
 }
-if ($_SESSION['authUser'] == null) {
+// verificar se o usuário está banido
+if (!$codUser['isGuesty']) {
+    if ($usuarioAutenticado['banido'] != 0) {
+        // caso esteja banido, redirecione para o login e indique que o usuário foi banido
+        header("Location: ./login.php?status=erro3");
+        exit();
+    }
+}
+if ($_SESSION == null) {
     header('Location: ./login.php?status=erro4');
 }
 // var_dump($perfilAutenticado);
@@ -75,22 +80,22 @@ if ($_SESSION['authUser'] == null) {
                                 <p id="corErros" class="desk">Tentativas: <span class="total_modal" id="final_error2"></span></p>
                                 <p id="corAcertos" class="desk">Acertos: <span class="total_modal" id="final_acerto"></span></p>
                                 <p id="corAcertos" class="desk">Tempo: <span class="total_modal" id="cronometroFim">00:00</span></p>
-                                
-                                
+
+
                                 <p id="corPontuacao" class="mobile"><span class="total_modal" id="final_point3"><i class="fa-solid fa-coins"> </i></span></p>
                                 <p id="corErros" class="mobile">Tentativas: <span class="total_modal" id="final_error3"></span></p>
-                                <p id="corAcertos" class="mobile">Acertos: <span class="total_modal" id="final_acerto2"></span></p>    
-                                <p id="corAcertos" class="mobile">Tempo: <span class="total_modal" id="cronometroFim2">00:00</span></p>    
-                                
-                                
+                                <p id="corAcertos" class="mobile">Acertos: <span class="total_modal" id="final_acerto2"></span></p>
+                                <p id="corAcertos" class="mobile">Tempo: <span class="total_modal" id="cronometroFim2">00:00</span></p>
+
+
                                 <div class="som">
                                     <div class="audioSom">
                                         <img src="./img/jogoFruta/audioIco.svg" alt="">
                                     </div>
                                 </div>
-                               
-                               
-                                
+
+
+
                             </div>
                             <div class="areaDeFrutas">
                                 <div class="cardsFrutas">
@@ -183,12 +188,12 @@ if ($_SESSION['authUser'] == null) {
                                             <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
                                             <p class="laranja">Laranja</p>
                                         </div>
-                                        
+
                                     </div>
-                               
-                                    
-                              
-                                    
+
+
+
+
                                 </div>
                             </div>
                         </div>

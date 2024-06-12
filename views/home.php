@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 // session
 session_start();
@@ -14,28 +13,36 @@ require_once "../dao/usuarioDao.php";
 $codUser = $_SESSION['authPerfil'];
 $perfilAutenticado = PerfilDao::selectById($codUser['codPerfil']);
 $usuarioAutenticado =  UsuarioDao::selectById($codUser['codUser']);
-// verificar se o usuário está banido
-if ($usuarioAutenticado['banido'] != 0) {
-    // caso esteja banido, redirecione para o login e indique que o usuário foi banido
-    header("Location: ./login.php?status=erro3");
-    exit();
+if ($codUser['isGuesty']) {
+    $usuarioAutenticado =  $_SESSION;
 }
-if ($_SESSION['authUser'] == null) {
+// verificar se o usuário está banido
+if (!$codUser['isGuesty']) {
+    if ($usuarioAutenticado['banido'] != 0) {
+        // caso esteja banido, redirecione para o login e indique que o usuário foi banido
+        header("Location: ./login.php?status=erro3");
+        exit();
+    }
+}
+if ($_SESSION == null) {
     header('Location: ./login.php?status=erro4');
 }
 // calcular a porcentagem de progresso
 $porcentagem = 0;
-if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacaoPerfil'] > 0) {
-    $porcentagem = ($perfilAutenticado['pontuacaoPerfil'] / 100) * 100;
-} else if ($perfilAutenticado['pontuacaoPerfil'] < 260 && $perfilAutenticado['pontuacaoPerfil'] >= 100) {
-    $porcentagem = ($perfilAutenticado['pontuacaoPerfil'] / 260) * 100;
-} else if ($perfilAutenticado['pontuacaoPerfil'] < 700 && $perfilAutenticado['pontuacaoPerfil'] >= 260) {
-    $porcentagem = ($perfilAutenticado['pontuacaoPerfil'] / 700) * 100;
-} else if ($perfilAutenticado['pontuacaoPerfil'] == 0) {
-    $porcentagem = 5;
+if (!$codUser['isGuesty']) {
+    if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacaoPerfil'] > 0) {
+        $porcentagem = ($perfilAutenticado['pontuacaoPerfil'] / 100) * 100;
+    } else if ($perfilAutenticado['pontuacaoPerfil'] < 260 && $perfilAutenticado['pontuacaoPerfil'] >= 100) {
+        $porcentagem = ($perfilAutenticado['pontuacaoPerfil'] / 260) * 100;
+    } else if ($perfilAutenticado['pontuacaoPerfil'] < 700 && $perfilAutenticado['pontuacaoPerfil'] >= 260) {
+        $porcentagem = ($perfilAutenticado['pontuacaoPerfil'] / 700) * 100;
+    } else if ($perfilAutenticado['pontuacaoPerfil'] == 0) {
+        $porcentagem = 5;
+    }
 }
 ?>
 
+<!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
 
 <head>
@@ -46,9 +53,12 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
     <link rel="stylesheet" type="text/css" href="../assets/css/home.css">
     <link rel="stylesheet" href="./../assets/css/navbar.css">
 
-    <?php if ($perfilAutenticado['tutorial'] == 0) {
-        echo '<link rel="stylesheet" type="text/css" href="../assets/css/tutorial-inicial.css">';
-    } ?>
+    <?php if (!$codUser['isGuesty']) {
+        if ($perfilAutenticado['tutorial'] == 0) {
+            echo '<link rel="stylesheet" type="text/css" href="../assets/css/tutorial-inicial.css">';
+        }
+    }
+    ?>
     <title>Litera | Sala de Jogos</title>
     <style>
         /* Estilo da div com base na porcentagem */
@@ -66,12 +76,17 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
         <div class="top-bar">
             <div class="info-user">
                 <img src="../assets/images/icons/profile.svg" alt="">
-                <span><?php echo ($perfilAutenticado['nomePerfil']) ?></span>
+                <?php if (!$codUser['isGuesty']) : ?>
+
+                    <span><?php echo ($perfilAutenticado['nomePerfil']) ?></span>
+                <?php endif; ?>
             </div>
 
             <div class="credits">
                 <img src="../assets/images/icons/coin2.svg" alt="">
-                <span><?php echo ($perfilAutenticado['dinheiroPerfil']) ?></span>
+                <?php if (!$codUser['isGuesty']) : ?>
+                    <span><?php echo ($perfilAutenticado['dinheiroPerfil']) ?></span>
+                <?php endif ?>
             </div>
         </div>
 
@@ -173,11 +188,13 @@ if ($perfilAutenticado['pontuacaoPerfil'] < 100 && $perfilAutenticado['pontuacao
                     </div>
                 </div>
 
-                <?php // include('../views/components/menu-profile.php'); ?>
+                <?php // include('../views/components/menu-profile.php'); 
+                ?>
             </main>
         </div>
     </div>
 
     <script src="./../assets/javascript/modal.js"></script>
 </body>
+
 </html>
