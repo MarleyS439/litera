@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
     <title>Litera | Alfabetização para Novas Gerações</title>
 
     <link rel="stylesheet" type="text/css" href="./assets/landing/index.css">
     <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/5bf5514c29.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
@@ -381,6 +381,20 @@
             menu.style.display = 'none';
             bodySite.style.overflowY = 'auto';
         });
+    </script>
+
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/litera/service-worker.js')
+            .then(registration => {
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            })
+            .catch(error => {
+                console.log('ServiceWorker registration failed: ', error);
+            });
+        });
+    }
     </script>
 
 </body>

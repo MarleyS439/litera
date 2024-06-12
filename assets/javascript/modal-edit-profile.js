@@ -1,15 +1,15 @@
-var buttonEditProfile = document.querySelector(".editProfile")
-var modalEditProfile = document.getElementById("modalEditProfile")
+var buttonEditProfile = document.querySelector(".editProfile");
+var modalEditProfile = document.getElementById("modalEditProfile");
 var buttonCancelEditProfile = document.getElementById("cancelEditProfile");
-var buttonOpenEdit = document.getElementById("open-edit")
+var buttonOpenEdit = document.getElementById("open-edit");
 // var modalEditCardAll = document.getElementById("card-modal")
-var modalEditCard = document.getElementsByClassName("overlay-card")
+var modalEditCard = document.getElementsByClassName("overlay-card");
 // console.log("aqui", modalEditCardAll[0].style)
 
 
 // Botão de edição
 // Adiciona o evento de clique ao botão de abrir edição
-buttonOpenEdit.addEventListener("click", function(){
+buttonOpenEdit.addEventListener("click", function() {
     // Alterna a exibição dos elementos modalEditCard entre flexível e oculto
     for (var i = 0; i < modalEditCard.length; i++) {
         if (modalEditCard[i].style.display === "flex") {

@@ -13,7 +13,7 @@ if (!isset($_SESSION['authUser'])) {
     exit();
 }
 $codUser = $_SESSION['authUser'];
-$perfil = PerfilDao::selectByIdUser($codUser['cod']);
+$perfis = PerfilDao::selectByIdUser($codUser['cod']);
 $usuarioAutenticado = UsuarioDao::selectById($codUser['cod']);
 $qntdPerfil = PerfilDao::countById($codUser['cod']);
 // verificar se o user esta banido
@@ -27,11 +27,11 @@ if ($_SESSION['authUser'] == null) {
 }
 // var_dump($perfil);
 ?>
+
 <html lang="pt-BR" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=7">
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="Illumi">
@@ -49,7 +49,7 @@ if ($_SESSION['authUser'] == null) {
 <body>
 
     <!--Sbreposição de corpo da página-->
-    <div class="overlay"></div>
+    <!--<div class="overlay"></div>-->
 
     <!--Container de perfil-->
     <div class="container">
@@ -62,30 +62,36 @@ if ($_SESSION['authUser'] == null) {
 
         <!--Container de adição e gerenciamento de perfis-->
         <div class="container-add-profile">
-            <?php if (is_array($perfil) && !empty($perfil)) { ?>
+            <?php if (is_array($perfis) && !empty($perfis)) { ?>
                 <div class="title-form">
                     <h2 id="h2">Escolha um perfil</h2>
                 </div>
             <?php } else { ?>
 
+                <!--Faz verificação se não há perfil e indica criar um caso a quantidade de perfis seja 0-->
                 <div class="title-form">
                     <h2 id="h2">Parece que ainda não há um perfil, vamos criar um?</h2>
                 </div>
             <?php } ?>
 
+
+            <!--Caixa de perfis -->
             <div class="box-perfil">
                 <div class="cards-perfil">
-                    <?php if (is_array($perfil) && !empty($perfil)) :
-                        foreach ($perfil as $perfils) : ?>
+                    <?php if (is_array($perfis) && !empty($perfis)) :
+                        foreach ($perfis as $perfil) : ?>
+
                             <div class="cards">
-                                <div class="overlay-card " id="card-modal"></div>
+                                <div class="overlay-card" id="card-modal">
+                                    <img src="../assets/images/icons/edit-svgrepo-com.svg" alt="">
+                                </div>
 
-                                <input type="hidden" value="<?php echo $perfils['codPerfil'] ?>" class="cod-usuario-hidden-input">
+                                <input type="hidden" value="<?php echo $perfil['codPerfil'] ?>" class="cod-usuario-hidden-input">
 
-                                <a href="../controller/conectionPerfil.php?id=<?php echo $perfils['codPerfil']; ?>&coduser=<?php echo $codUser['cod'] ?>">
+                                <a href="../controller/conectionPerfil.php?id=<?php echo $perfil['codPerfil']; ?>&coduser=<?php echo $codUser['cod'] ?>">
 
-                                    <img src="../assets/images/icons/<?php echo $perfils['iconPerfil'] ?>" alt="">
-                                    <p><?php echo $perfils['nomePerfil']; ?></p>
+                                    <img src="../assets/images/icons/<?php echo $perfil['iconPerfil'] ?>" alt="">
+                                    <p><?php echo $perfil['nomePerfil']; ?></p>
 
                                 </a>
                             </div>
@@ -93,34 +99,17 @@ if ($_SESSION['authUser'] == null) {
                     endif; ?>
                 </div>
 
+                <!--Faz a verificação se há a possibilidade de adicionar mais perfis-->
                 <?php if ($qntdPerfil < 5) { ?>
                     <div class="add">
                         <button type="submit" id="addProfile" title="Criar um novo perfil">
-                            <img src="../assets/images/icons/addbtn.png" alt="">
+                            <span>+ Adicionar</span>
                         </button>
                     </div>
                 <?php }; ?>
             </div>
-
         </div>
     </div>
-
-
-
-    <div class="configs">
-
-        <!--Configurar perfis-->
-        <button class="edit-perfil" id="open-edit">
-            <span>Gerenciar Perfis</span>
-        </button>
-
-        <!--Fazer logout-->
-        <form action="../controller/logoutProfile.php">
-            <button class="logoutBtn"><img src="../assets/images/icons/exit-svgrepo-person.svg" alt=""></button>
-        </form>
-    </div>
-
-
 
     <!-- Modal de adicionar perfil -->
     <div class="modal-add-profile" id="modalAddProfile">
@@ -136,7 +125,7 @@ if ($_SESSION['authUser'] == null) {
 
                 <div class="inputs-modal">
                     <label for="nome_perfil">Nome</label>
-                    <input type="text" name="nome_perfil" id="nome_perfil" placeholder="João">
+                    <input type="text" name="nome_perfil" id="nome_perfil" placeholder="Ex.: João">
                 </div>
 
                 <div class="two">
@@ -184,6 +173,7 @@ if ($_SESSION['authUser'] == null) {
                         </div>
                     </div>
                 </div>
+
                 <div class="inputs-modal-buttom">
                     <button type="button" id="cancelAddProfile" title="Cancelar">
                         <p>Cancelar</p>
@@ -203,8 +193,7 @@ if ($_SESSION['authUser'] == null) {
         </div>
 
         <div class="">
-
-           <form action="../controller/processRegisterPerfis.php">
+            <form action="../controller/processRegisterPerfis.php">
                 <input type="hidden" value="<?php echo $codUser['cod'] ?>" name="codUser">
 
                 <input id="edit-name-input" name="passw_user" type="hidden" value="<?php echo isset($codUser['pontuacaoPerfil']) ? $codUser['pontuacaoPerfil'] : '' ?>">
@@ -243,6 +232,21 @@ if ($_SESSION['authUser'] == null) {
             </form>
         </div>
     </div>
+
+
+    <!--Gerenciar perfis-->
+    <div class="configs">
+        <button class="edit-perfil" id="open-edit">
+            <span>Gerenciar Perfis</span>
+        </button>
+
+    <!--Fazer logout-->
+        <a href="../controller/logoutProfile.php" class="logoutBtn">
+            <img src="../assets/images/icons/exit-svgrepo-com.svg" alt="">
+            <span>Sair</span>
+        </a>
+    </div>
+    
 
     <!--Javascripts-->
     <script src="../assets/javascript/modal-edit-profile.js"></script>

@@ -1,5 +1,7 @@
 @import url(./default.css);
 @import url(./animations.css);
+@import url(../../assets/landing/default.css);
+
 
 :root {
     --filter-black: #00000035;
@@ -11,13 +13,15 @@
 
 /* Mobile */
 @media screen and (max-width: 768px) {
-<<<<<<< HEAD
+
     .desktop-view {
         display: none;
     }
-    span{
+
+    span {
         font-family: var(--font-poppins-bold);
     }
+
     .container {
         width: 100%;
         height: 100vh;
@@ -33,7 +37,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        /* background-color: rebeccapurple; */
     }
 
     .topo span {
@@ -43,13 +46,14 @@
     }
 
 
-    .card{
+    .card {
         width: 100%;
         height: 40vh;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
     /* avatar */
     .area-avatar {
         width: 75%;
@@ -61,6 +65,7 @@
         justify-content: center;
         padding-top: 2%;
     }
+
     .base {
         position: relative;
         display: inline-block;
@@ -88,54 +93,62 @@
         width: 110px;
     }
 
-    .infos{
+    .infos {
         width: 100%;
         height: 12vh;
         padding: 3% 5%;
     }
-    .primeira-info{
+
+    .primeira-info {
         width: 100%;
         display: flex;
         justify-content: space-between;
     }
-    .primeira-info .nome{
+
+    .primeira-info .nome {
         color: var(--color-azul);
         font-size: 20px;
-
     }
-    .primeira-info span{
+
+    .primeira-info span {
         font-size: 15px;
     }
 
-    .conquistas{
+    .conquistas {
         width: 100%;
         min-height: 40vh;
     }
-    .conquistas .title{
+
+    .conquistas .title {
         width: 100%;
         display: flex;
         justify-content: center;
     }
-    .conquistas .title>span{
+
+    .conquistas .title>span {
         font-family: var(--font-poppins-bold);
         font-size: 24px;
     }
-    .conquistas .conquistas-area{
+
+    .conquistas .conquistas-area {
         width: 100%;
         min-height: 30vh;
         border-radius: 10px;
         border: solid var(--black) 1px;
     }
+
     .nivel-area {
         display: flex;
         height: 100%;
         align-items: center;
     }
-    .nivel-area span{
+
+    .nivel-area span {
         font-family: var(--font-poppins-bold);
         font-size: 22px;
     }
-    .nivel-area div{
+
+    .nivel-area div {
         width: 40px;
         height: 40px;
         border-radius: 100%;
@@ -146,7 +159,7 @@
         align-items: center;
         margin-left: 10px;
     }
-    
+
 }
 
 /* Tablets */
@@ -351,8 +364,7 @@
         display: none;
     }
 
-=======
-    .desktop-view{
+    .desktop-view {
         display: none;
     }
 }
@@ -362,10 +374,10 @@
 
 /* Desktops */
 @media screen and (min-width: 1025px) {
-    .mobile-view{
+    .mobile-view {
         display: none;
     }
->>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
+
     body {
         background-image: url(../images/profile-user.png);
         background-size: cover;
@@ -438,20 +450,13 @@
         font-weight: 900;
         font-family: var(--font-poppins-bold);
     }
-<<<<<<< HEAD
 
     .infos-principais img {
-=======
-    .infos-principais img{
->>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
         width: 40px;
         height: 30px;
         margin-top: 6px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
     .infos-principais .user {
         color: var(--color-azul);
     }
@@ -503,89 +508,72 @@
     }
 
     .progresso .barra>.barra-progresso {
-<<<<<<< HEAD
         background-color: var(--azul-card);
         height: 80%;
         border-radius: 5px;
     }
 
     .conquistas-card {
-=======
-        background-color: var(--azul-card); 
+
+        background-color: var(--azul-card);
         height: 80%;
         border-radius: 5px;
-    }
-    .conquistas-card{
->>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
         width: 100%;
         height: 48%;
         padding: 0% 5% 2% 5%;
     }
-<<<<<<< HEAD
+
 
     .title-conquista {
-=======
-    .title-conquista{
->>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
         width: 100%;
         display: flex;
         justify-content: center;
     }
-<<<<<<< HEAD
 
     .title-conquista h1 {
         margin-top: 15px;
-=======
-    .title-conquista h1{
->>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
-        text-align: center;
-        font-size: 26px;
-        font-family: var(--font-poppins);
-    }
-<<<<<<< HEAD
 
-    .conquistas-card .conquistas {
-        width: 100%;
-        height: 80%;
-=======
-    .conquistas-card .conquistas{
-        width: 100%;
-        height: 90%;
->>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
-        border: solid 1px var(--black);
-        border-radius: 10px;
-        padding: 1% 3%;
-    }
-<<<<<<< HEAD
+        .title-conquista h1 {
+            text-align: center;
+            font-size: 26px;
+            font-family: var(--font-poppins);
+        }
 
-=======
-    
->>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
-    /* AVATAR   */
-    .base {
-        position: relative;
-        display: inline-block;
-    }
 
-    .base img {
-        display: block;
-        margin: 0 auto;
-        width: 135px;
-    }
+        .conquistas-card .conquistas {
+            width: 100%;
+            height: 90%;
+            border: solid 1px var(--black);
+            border-radius: 10px;
+            padding: 1% 3%;
+        }
 
-    .cabelo img {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translatey(-20%) translateX(-50%);
-        width: 115px;
-    }
 
-    .roupa img {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 110px;
+        /* AVATAR   */
+        .base {
+            position: relative;
+            display: inline-block;
+        }
+
+        .base img {
+            display: block;
+            margin: 0 auto;
+            width: 135px;
+        }
+
+        .cabelo img {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translatey(-20%) translateX(-50%);
+            width: 115px;
+        }
+
+        .roupa img {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 110px;
+        }
     }
-}
