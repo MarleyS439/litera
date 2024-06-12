@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 // variavel para todas as informaçoes do usuario
 require_once "../dao/usuarioDao.php";
@@ -27,7 +26,11 @@ if ($_SESSION['authUser'] == null) {
 }
 // var_dump($perfil);
 ?>
+<<<<<<< HEAD
 
+=======
+<!DOCTYPE html>
+>>>>>>> 9c9f2cbba128a78a7e42e0aeeb3d3d8c75294a59
 <html lang="pt-BR" dir="ltr">
 
 <head>

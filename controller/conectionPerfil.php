@@ -28,6 +28,7 @@ if (isset($_GET['id']) && isset($_GET['coduser'])) {
             'dataNasc' => $datePerfil['dataNasc'],
             'dataCriacao' => $datePerfil['dataCriacao'],
             'codUser' => $codUser,
+            'isGuesty' => false,
         ];
         // var_dump($authPerfil);
         session_start();
@@ -36,6 +37,7 @@ if (isset($_GET['id']) && isset($_GET['coduser'])) {
         $avatar = AvatarDao::selectByIdUser($datePerfil['codPerfil']);
         //var_dump($avatar);
         if ($avatar == false) {
+            AcessoUsuarioDao::insert($authPerfil['codPerfil']);
             header("Location: ../views/avatar.php?status=base");
         } else {
             AcessoUsuarioDao::insert($authPerfil['codPerfil']);

@@ -234,7 +234,6 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
                 </form>
             </div> -->
         <?php else :
-            AcessoUsuarioDao::insert($codUser);
             header('Location: ../views/home.php');
         endif ?>
 
