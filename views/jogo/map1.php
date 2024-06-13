@@ -49,26 +49,27 @@ if ($_SESSION == null) {
 </head>
 
 <body>
-    <!-- <div class="overlay-itens1"></div> -->
+
     <div class="desktop-view">
+
+        <!--Barra de navegação-->
         <?php include('../../views/components/navbarHome.php'); ?>
 
         <div class="overlay-itens2"></div>
 
+
         <main>
             <div class="dots">
-
                 <div class="games-list-map">
                     <a class="game" id="t">
                         <div class="title-game-map" id="aa">
                             <p>Caça às Letras</p>
                         </div>
                     </a>
-
                 </div>
 
+                <!--Listagem de fases-->
                 <div class="fase-list">
-
                     <div class="game-0" id="first">
                         <p>Tutorial</p>
                         <a href="../tutorial/tutorial-jogo1/tutorial.php">
@@ -145,10 +146,10 @@ if ($_SESSION == null) {
                     </div>
 
                 </div>
-
         </main>
-
     </div>
+
+
     <div class="mobile-view">
 
         <div class="overlay-itens2"></div>
@@ -249,6 +250,7 @@ if ($_SESSION == null) {
                 </div>
 
         </main>
+
 
 
 

@@ -12,10 +12,10 @@ var modalEditCard = document.getElementsByClassName("overlay-card");
 buttonOpenEdit.addEventListener("click", function() {
     // Alterna a exibição dos elementos modalEditCard entre flexível e oculto
     for (var i = 0; i < modalEditCard.length; i++) {
-        if (modalEditCard[i].style.display === "flex") {
+        if (modalEditCard[i].style.display === "block") {
             modalEditCard[i].style.display = "none";
         } else {
-            modalEditCard[i].style.display = "flex";
+            modalEditCard[i].style.display = "block";
         }
     }
 });

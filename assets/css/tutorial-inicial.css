@@ -5,7 +5,7 @@
 @media screen and (max-width: 768px) {
 
     body {
-        overflow: hidden;
+        overflow-y: hidden;
     }
 
     #t {
@@ -23,7 +23,7 @@
         content: "";
         position: absolute;
         background-color: #00000050;
-        height: 120vh;
+        height: 100%;
         width: 100vw;
         z-index: 1001;
     }
@@ -48,6 +48,22 @@
         background-color: var(--blue0);
         padding: 10px;
     }
+
+    #game1 {
+        -webkit-animation: pulsate-fwd 1s ease-in-out infinite both;
+        animation: pulsate-fwd 1s ease-in-out infinite both;
+    }
+
+    .games-list {
+        margin-top: 15%;
+    }
+
+    #first {
+        position: relative;
+        z-index: 3000;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
 }
 
 /* Tablets */

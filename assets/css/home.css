@@ -84,6 +84,14 @@
         color: var(--black2);
     }
 
+    .title {
+        padding: 5%;
+    }
+
+    .title h2 {
+        padding: 5% 0%;
+    }
+
     #game1 {
         background-image: url(../../assets/images/Frame\ 150.png);
         background-size: cover;
