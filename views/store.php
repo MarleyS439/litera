@@ -181,7 +181,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
                     <button type="submit">
                         <p>Cancelar</p>
                     </button>
-                    <input type="hidden" name="codUser" value="<?php echo $codUser['cod'] ?>">
+                    <input type="hidden" name="codUser" value="<?php echo $codUser['codPerfil'] ?>">
                     <input type="hidden" name="itemAvatar" value="comprarRoupa">
                     <button type="submit">
                         <p>Comprar</p>

@@ -1,5 +1,6 @@
 @import url(./default.css);
 @import url(./animations.css);
+@import url(../../../../../assets/landing/default.css);
 
 @media screen and (max-width: 768px) {
     
@@ -14,8 +15,9 @@
         background-image: url(../images/background-game.svg);
         background-size: cover;
         background-repeat: no-repeat;
-        height: 100%;
+        height: 100vh;
         width: 100%;
+        cursor: var(--cursor-default);
     }
 
     .container-game {
@@ -52,14 +54,22 @@
     }
 
     .time {
-        position: fixed;
-        top: 12vh;
-        display: flex;
-        left: 50%
+        position: absolute;
+        left: 48%;
+        top: 12%;
     }
 
     .time span {
-        font-size: 1.2rem
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--litera-orange);
+        background-color: var(--litera-yellow);
+        padding: 10px 15px;
+        border-radius: 12px;
+        font-family: var(--font-poppins-bold);
+        border: 2px solid var(--litera-orange);
     }
 
     .coins {
@@ -86,11 +96,59 @@
     .buttons button {
         margin: 0% 2%;
         display: flex;
-        alig-items: center;
+        align-items: center;
         border-radius: 50px;
+    }
+
+    .buttons button:hover {
+        cursor: var(--cursor-hand);
+    }
+
+    .buttons-modal button {
+        cursor: var(--cursor-hand);
     }
 
     .buttons button img {
         width: 42px;
+    }
+
+    .left button, .right button {
+        cursor: var(--cursor-hand);
+    }
+
+    .options {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-column-gap: 15px;
+        grid-row-gap: 15px;
+    }
+
+    .div1 { grid-area: 1 / 1 / 2 / 2; }
+    .div2 { grid-area: 1 / 2 / 2 / 3; }
+    .div3 { grid-area: 2 / 1 / 3 / 2; }
+    .div4 { grid-area: 2 / 2 / 3 / 3; }
+    .div5 { grid-area: 3 / 1 / 4 / 2; }
+    .div6 { grid-area: 3 / 2 / 4 / 3; }
+    .div7 { grid-area: 4 / 1 / 5 / 2; }
+    .div8 { grid-area: 4 / 2 / 5 / 3; }
+
+    .div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8 {
+        width: 150px;
+        height: 150px;
+        background-image: url(../images/Frame.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        border: 2px solid red;
+    }
+
+    .animal {
+        width: 100%;
+    }
+
+    .animal img {
+        width: 100%;
     }
 }

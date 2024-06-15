@@ -45,6 +45,36 @@
                 </button>
             </div>
         </div>
+
+        <div class="game-container">
+            <div class="options">
+                <div class="div1">
+                    <div class="animal">
+                        <img src="" alt="">
+                    </div>
+                </div>
+
+                <div class="div2">
+                    <div class="animal">
+                        <img src="" alt="">
+                    </div>
+                </div>
+
+                <div class="div3">
+                    <div class="animal">
+                        <img src="" alt="">
+                    </div>
+                </div>
+
+                <div class="div4"> </div>
+                <div class="div5"> </div>
+                <div class="div6"> </div>
+                <div class="div7"> </div>
+                <div class="div8"> </div>
+            </div>
+        </div>
+
+
     </div>
 
 

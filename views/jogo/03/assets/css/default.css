@@ -24,6 +24,8 @@
 
     --font-poppins-bold: 'Poppins-Bold';
     --font-poppins-regular: 'Poppins-Regular';
+    --cursor-default: url(../../../../../assets/images/cursors/Point.ico), auto;
+    --cursor-hand: url(../../../../../assets/images/cursors/HandPoint.ico), auto;
 
 }
 
@@ -32,6 +34,5 @@
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font-poppins-regular), sans-serif;
-    cursor: url(../../../../../assets/images/icons/MAOZINHA.png), auto;
-
+    cursor: var(--cursor-default), auto;
 }
