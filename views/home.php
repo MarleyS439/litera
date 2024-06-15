@@ -2,9 +2,14 @@
 // session
 session_start();
 // verificação se o usuário está logado
-if (!isset($_SESSION['authPerfil'])) {
+if(!isset($_SESSION['authUser'])){
     // caso não esteja, redirecione para o login e indique que é necessário fazer login
     header("Location: ./login.php?status=erro2");
+    exit();
+}
+if (!isset($_SESSION['authPerfil'])) {
+    // caso não esteja, redirecione para o login e indique que é necessário fazer login
+    header("Location: ./profile.php?status=erro");
     exit();
 }
 // variável para todas as informações do usuário
@@ -104,7 +109,7 @@ if (!$codUser['isGuesty']) {
                     <div class="background-card-game" id="game1"></div>
                 </a>
 
-                <a class="game" href="../views/jogo/02/index.php">
+                <a class="game" href="../views/jogo/map2.php">
                     <div class="title-game">
                         <p>Jogo das sílabas</p>
                     </div>
@@ -165,7 +170,7 @@ if (!$codUser['isGuesty']) {
                             </div>
                         </a>
 
-                        <a class="game-item game2" href="../views/jogo/02/index.php">
+                        <a class="game-item game2" href="../views/jogo/map2.php">
                             <div class="title-game-item">
                                 <p>Montar Sílabas</p>
                                 <div class="bg-game" id="fruits"></div>

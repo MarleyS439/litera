@@ -2,9 +2,14 @@
 // session
 session_start();
 // verificação se o usuário está logado
-if (!isset($_SESSION['authPerfil'])) {
+if(!isset($_SESSION['authUser'])){
     // caso não esteja, redirecione para o login e indique que é necessário fazer login
     header("Location: ./login.php?status=erro2");
+    exit();
+}
+if (!isset($_SESSION['authPerfil'])) {
+    // caso não esteja, redirecione para o login e indique que é necessário fazer login
+    header("Location: ./profile.php?status=erro");
     exit();
 }
 // variável para todas as informações do usuário
@@ -27,6 +32,7 @@ if (!$codUser['isGuesty']) {
 if ($_SESSION == null) {
     header('Location: ./login.php?status=erro4');
 }
+
 if ($codUser['isGuesty']) {
     header('Location: home.php');
 }
@@ -43,6 +49,9 @@ if (!$codUser['isGuesty']) {
         $porcentagem = 5;
     }
 }
+require('../dao/avatarDao.php');
+$avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
+// var_dump($avatar);
 ?>
 
 <!DOCTYPE html>
@@ -57,6 +66,9 @@ if (!$codUser['isGuesty']) {
     <style>
         /* Estilo da div com base na porcentagem */
         .barra .barra-progresso {
+            width: <?php echo $porcentagem ?>%
+        }
+        .barra-progresso .progresso {
             width: <?php echo $porcentagem ?>%
         }
     </style>
@@ -123,7 +135,6 @@ if (!$codUser['isGuesty']) {
         </div>
     </div>
     <div class="mobile-view">
-<<<<<<< HEAD
         <div class="container">
             <div class="topo">
                 <span>Seu Perfil</span>
@@ -151,36 +162,32 @@ if (!$codUser['isGuesty']) {
                             <span class="nivel"><?php echo $perfilAutenticado['nivel'] ?></span>
                         </div>
                     </div>
-                    <!-- <div class="infos-perfil">
-                        <div class="nivel-area">
-                            <span>Nivel</span>
-                            <div>
-                                <span class="nivel"><?php echo $perfilAutenticado['nivel'] ?></span>
-                            </div>
+                    <div class="pontuacao-area">
+                        <span>Próximo Nível</span>
+                        <div class="barra-progresso">
+                            <div class="progresso"></div>
                         </div>
-                        <div class="dinheiro-area">
-                            <img src="../assets/images/icons/icon-moeda-azul.png" alt="moeda">
-                            <span><?php echo $perfilAutenticado['dinheiroPerfil']  ?></span>
+                    </div>
+                    <div class="nivel-area">
+                        <span>Pontos: </span>
+                        <span class="pontuacao"><?php echo $perfilAutenticado['pontuacaoPerfil'] ?></span>
+                    </div>
+                    <div class="conquistas">
+                        <div class="title-conquista">
+                            <h2>Conquistas</h2>
                         </div>
-                    </div> -->
+                        <div class="area-conquista">
+                            <div class="card-conquista">a</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="conquistas">
-                <div class="title">
-                    <span>Conquistas</span>
-                </div>
-                <div class="conquistas-area">
-
-                </div>
-            </div>
-        </div>
-
-        <div class="bottom-navigation-bar">
-=======
+           
 
         <div class="bottom-navigation-bar">
 
->>>>>>> 58f7c13589524941715a1ba50a17ce6b71636441
+        <div class="bottom-navigation-bar">
+
             <a href="../views/home.php">
                 <img src="../assets/images/icons/home-icon.svg" alt="Início" id="home">
             </a>

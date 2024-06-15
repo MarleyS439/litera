@@ -2,9 +2,14 @@
 // session
 session_start();
 // verificação se o usuário está logado
-if (!isset($_SESSION['authPerfil'])) {
+if(!isset($_SESSION['authUser'])){
     // caso não esteja, redirecione para o login e indique que é necessário fazer login
     header("Location: ./login.php?status=erro2");
+    exit();
+}
+if (!isset($_SESSION['authPerfil'])) {
+    // caso não esteja, redirecione para o login e indique que é necessário fazer login
+    header("Location: ./profile.php?status=erro");
     exit();
 }
 // variável para todas as informações do usuário
@@ -27,6 +32,7 @@ if (!$codUser['isGuesty']) {
 if ($_SESSION == null) {
     header('Location: ./login.php?status=erro4');
 }
+// var_dump($perfilAutenticado)
 ?>
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
@@ -53,7 +59,7 @@ if ($_SESSION == null) {
     <div class="desktop-view">
 
         <!--Barra de navegação-->
-        <?php include('../../views/components/navbarHome.php'); ?>
+        <?php include('../../views/components/navbarMap.php'); ?>
 
         <div class="overlay-itens2"></div>
 
@@ -63,7 +69,7 @@ if ($_SESSION == null) {
                 <div class="games-list-map">
                     <a class="game" id="t">
                         <div class="title-game-map" id="aa">
-                            <p>Caça às Letras</p>
+                            <p>Acertar Balões</p>
                         </div>
                     </a>
                 </div>
@@ -81,7 +87,6 @@ if ($_SESSION == null) {
                         <?php
                         if (!$codUser['isGuesty']) {
                             if ($perfilAutenticado['tutorial'] == 0) {
-                            }
                         ?>
                             <a href="#">
                                 <img src="../../assets/images/fase/map-off.png" alt="">
@@ -91,14 +96,13 @@ if ($_SESSION == null) {
                             <a href="../jogo/01/balao.php">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
                             </a>
-                        <?php } ?>
+                        <?php } } ?>
                     </div>
                     <div class="game-2">
                         <p>Fase 2</p>
                         <?php
                         if (!$codUser['isGuesty']) {
-                            if ($perfilAutenticado['nivel'] >= 2 and $perfilAutenticado['nivel'] < 3) {
-                            }
+                            if ($perfilAutenticado['nivel'] >= 2) {
                         ?>
                             <a href="../jogo/01/balao.php">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
@@ -108,14 +112,13 @@ if ($_SESSION == null) {
                             <a href="#">
                                 <img src="../../assets/images/fase/map-off.png" alt="">
                             </a>
-                        <?php } ?>
+                        <?php } }?>
                     </div>
                     <div class="game-3">
                         <p>Fase 3</p>
                         <?php
                         if (!$codUser['isGuesty']) {
-                            if ($perfilAutenticado['nivel'] >= 3 and $perfilAutenticado['nivel'] < 4) {
-                            }
+                            if ($perfilAutenticado['nivel'] >= 3) {
                         ?>
                             <a href="../jogo/01/balao.php">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
@@ -125,14 +128,13 @@ if ($_SESSION == null) {
                             <a href="#">
                                 <img src="../../assets/images/fase/map-off.png" alt="">
                             </a>
-                        <?php } ?>
+                        <?php } } ?>
                     </div>
                     <div class="game-4">
-                        <p>Fase 3</p>
+                        <p>Fase 4</p>
                         <?php
                         if (!$codUser['isGuesty']) {
-                            if ($perfilAutenticado['nivel'] >= 4 and $perfilAutenticado['nivel'] < 5) {
-                            }
+                            if ($perfilAutenticado['nivel'] >= 4) {
                         ?>
                             <a href="#">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
@@ -142,7 +144,7 @@ if ($_SESSION == null) {
                             <a href="#">
                                 <img src="../../assets/images/fase/map-off.png" alt="">
                             </a>
-                        <?php } ?>
+                        <?php } } ?>
                     </div>
 
                 </div>
@@ -204,7 +206,7 @@ if ($_SESSION == null) {
                     <div class="game-2">
                         <p>Fase 2</p>
                         <?php
-                        if ($perfilAutenticado['nivel'] >= 2 and $perfilAutenticado['nivel'] < 3) {
+                        if ($perfilAutenticado['nivel'] >= 2) {
                         ?>
                             <a href="../jogo/01/balao.php">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
@@ -219,7 +221,7 @@ if ($_SESSION == null) {
                     <div class="game-3">
                         <p>Fase 3</p>
                         <?php
-                        if ($perfilAutenticado['nivel'] >= 3 and $perfilAutenticado['nivel'] < 4) {
+                        if ($perfilAutenticado['nivel'] >= 3) {
                         ?>
                             <a href="../jogo/01/balao.php">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
@@ -234,7 +236,7 @@ if ($_SESSION == null) {
                     <div class="game-4">
                         <p>Fase 3</p>
                         <?php
-                        if ($perfilAutenticado['nivel'] >= 4 and $perfilAutenticado['nivel'] < 5) {
+                        if ($perfilAutenticado['nivel'] >= 4) {
                         ?>
                             <a href="#">
                                 <img src="../../assets/images/fase/map-on.png" alt="">

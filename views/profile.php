@@ -241,8 +241,8 @@ if ($_SESSION['authUser'] == null) {
 
     <!--Fazer logout-->
         <a href="../controller/logoutProfile.php" class="logoutBtn">
-            <img src="../assets/images/icons/exit-svgrepo-com.svg" alt="">
-            <span>Sair</span>
+            <img src="../assets/images/icons/exit-svgrepo-com.svg" alt="sair" title="logout">
+            <!-- <span>Sair</span> -->
         </a>
     </div>
     

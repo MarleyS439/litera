@@ -770,6 +770,7 @@ function fazerPergunta() {
 
               
               // lógica de inserção no banco ajax Ajax AJAX 
+              // lógica de inserção no banco ajax Ajax AJAX 
               const dados = {
                 id: document.getElementById("id").value,
                 money: moedas,
@@ -857,6 +858,7 @@ function fazerPergunta() {
 
               // Envia a requisição com os dados convertidos para JSON
               xhrDadosFase.send(JSON.stringify(dadosFase));
+
             }, 2500);
           }
       }

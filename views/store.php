@@ -2,9 +2,14 @@
 // session
 session_start();
 // verificação se o usuário está logado
-if (!isset($_SESSION['authPerfil'])) {
+if(!isset($_SESSION['authUser'])){
     // caso não esteja, redirecione para o login e indique que é necessário fazer login
     header("Location: ./login.php?status=erro2");
+    exit();
+}
+if (!isset($_SESSION['authPerfil'])) {
+    // caso não esteja, redirecione para o login e indique que é necessário fazer login
+    header("Location: ./profile.php?status=erro");
     exit();
 }
 // variável para todas as informações do usuário
@@ -12,10 +17,10 @@ require_once "../dao/perfilDao.php";
 require_once "../dao/usuarioDao.php";
 $codUser = $_SESSION['authPerfil'];
 $perfilAutenticado = PerfilDao::selectById($codUser['codPerfil']);
-$usuarioAutenticado = UsuarioDao::selectById($codUser['codUser']);
+$usuarioAutenticado =  UsuarioDao::selectById($codUser['codUser']);
 if ($codUser['isGuesty']) {
     $usuarioAutenticado =  $_SESSION;
-} 
+}
 // verificar se o usuário está banido
 if (!$codUser['isGuesty']) {
     if ($usuarioAutenticado['banido'] != 0) {
@@ -31,7 +36,7 @@ if ($_SESSION == null) {
 if ($codUser['isGuesty']) {
     header('Location: home.php');
 }
-// var_dump($perfilAutenticado);
+// var_dump($codUser);
 require('../dao/roupaDao.php');
 $roupa = RoupaDao::selectAll();
 require('../dao/avatarDao.php');
@@ -94,7 +99,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
             </div>
             <form action="../controller/insertAvatar.php" method="POST" class="form-avatar">
                 <!-- Adicione o input hidden aqui, responsavel pelo cod da roupa  -->
-                <!--  !!!IMPORTANTE N REMOVER, SUJEITO A TIJOLADA!!!! -->
+                <!--  !!!IMPORTANTE N REMOVER, SUJEITO A TIJOLADA!!!! ass: Agiota-->
                 <input type="hidden" name="roupa" id="roupa-hidden" value="">
 
                 <div class="inventory">
