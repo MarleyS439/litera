@@ -81,7 +81,7 @@
                 </div>
                 <div class="btn-fim">
                     <a href="../tutorial-jogo1/tutorial.php" class="btnFinal"><img src="img/recomecar.svg" alt=""></a>
-                    <a href="../../../views/jogo/map1.php" class="btnFinal"><img src="img/avancar.svg" alt=""></a>
+                    <a href="../../../controller/fimTutorial.php" class="btnFinal"><img src="img/avancar.svg" alt=""></a>
                 </div>
             </div>
         </div>

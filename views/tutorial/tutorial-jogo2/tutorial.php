@@ -34,8 +34,7 @@
             <!-- caixa com a mesagem do tutorial -->
             <div class="box-mensagem">
                 <div class="mensagem">
-                    <p class="texto" id="text">Junte as silabas para formar o 
-                        nome da fruta desenhada</p>
+                    <p class="texto" id="text">Junte as sílabas para formar o nome da fruta desenhada.</p>
                 </div>
             </div>
 
@@ -92,7 +91,7 @@
                 </div>
                 <div class="btn-fim">
                     <a href="../tutorial-jogo2/tutorial.php" class="btnFinal"><img src="img/recomecar.svg" alt=""></a>
-                    <a href="../../../views/jogo/map2.php" class="btnFinal"><img src="img/avancar.svg" alt=""></a>
+                    <a href="../../../controller/fimTutorial.php" class="btnFinal"><img src="img/avancar.svg" alt=""></a>
                 </div>
             </div>
         </div>
