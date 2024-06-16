@@ -112,7 +112,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
                             </div>
                         <?php } ?>
                     </div>
-                    <div class="items" style="border: 1px solid gray; border-radius: 10px">
+                    <div class="items">
                         <div class="container-avatar">
                             <div class="base">
                                 <img src="../assets/images/perfil/genero/<?php echo $avatar["imgGenero"] ?>" alt="">
@@ -185,7 +185,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
                             </div>
                         <?php } ?>
                     </div>
-                    <div class="items" style="border: 1px solid gray; border-radius: 10px">
+                    <div class="items">
                         <div class="container-avatar">
                             <div class="base">
                                 <img src="../assets/images/perfil/genero/<?php echo $avatar["imgGenero"] ?>" alt="">

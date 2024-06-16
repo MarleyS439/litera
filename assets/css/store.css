@@ -1,11 +1,6 @@
 @import url(./home.css);
 @import url(./default.css);
 
-:root {
-    --gd-top-card-item: #;
-    --gd-bottom-card-item: #;
-}
-
 body {
     background-color: var(--blue0);
 
@@ -212,7 +207,7 @@ body {
         align-items: center;
         border-radius: 10px;
         border: solid 4px var(--blue3);
-        background: linear-gradient(to top, #4776ccbd, #3da7d1b0);
+
         backdrop-filter: blur(2px);
     }
 
@@ -344,9 +339,7 @@ body {
         margin-left: 6%;
     }
 
-    .card-active {
-        background: linear-gradient(to top, #1262ca, #31e0ff);
-    }
+
 
     .cards a {
         display: flex;
@@ -496,7 +489,7 @@ body {
         position: relative;
         top: 10vh;
         justify-content: space-evenly;
-        padding: 0;
+        padding: 0px 1vw;
         transition: 500ms ease-in-out .1s;
         flex-direction: column;
         margin-right: 5vw;
@@ -527,15 +520,16 @@ body {
         padding: 2vh 0%;
         align-items: center;
         border-radius: 10px;
-        border: solid 4px var(--blue3);
-        background: linear-gradient(to top, #4776ccbd, #3da7d1b0);
+        border: solid 4px var(--blue2);
+        background-color: var(--blue3);
         backdrop-filter: blur(2px);
+        transition: 0.5s;
     }
 
     .card-item .center-card-item {
         width: 8vw;
         height: 12vh;
-        background-color: #ffffff6c;
+        background-color: var(--blue2);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -563,29 +557,31 @@ body {
 
 
     .card-item:hover {
-        background-color: #f0f0f0cc;
-        transition: 0.8s;
+        animation: pulse 1s infinite;
     }
 
     .items {
         position: relative;
         left: 7vw;
-        background-color: #1c95e138;
-        backdrop-filter: blur(3px);
-        padding: 5px;
+        padding: 5px 5px;
+        background-color: var(--blue2);
+        border: solid 5px var(--blue2);
+        border-radius: 20px;
+        top: 11vh
     }
 
     .container-avatar {
         width: 20vw;
         height: 40vh;
-        margin-top: 25%;
-        background-color: var(--blue2);
-        border-radius: 5%;
+        background-color: var(--blue3);
+        padding: 1vh 0px;
         overflow: hidden;
         display: flex;
         align-items: end;
         justify-content: center;
         position: relative;
+        border-radius: 16px;
+
     }
 
     .base {
@@ -619,18 +615,23 @@ body {
 
     .buttons {
         position: relative;
-        margin-top: 5vh;
+        margin-top: 2vh;
+        height: 11vh;
         width: 20vw;
+        border-radius: 17px;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        align-items: center;
+        background-color: var(--blue2);
     }
 
     .buttons button {
         padding: 5%;
-        background-color: #1C96E1;
+        background-color: var(--blue3);
         border-radius: 15px;
         border: none;
         color: white;
+        height: 60%;
         font-family: var(--font-poppins-bold);
         cursor: url(../images/icons/MAOZINHA.png), auto;
     }
@@ -648,41 +649,62 @@ body {
         padding: 0% 5%;
     }
 
+    /* cards de troca */
     .cards {
-        transition: 500ms ease-in-out .1s;
+        width: 14vw;
+        height: 20vh;
         background-color: var(--blue3);
-        padding: 1%;
-        border-radius: 8px;
-        margin: 10px;
-        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-        width: 13vw;
-        margin-top: 2%;
-        margin-left: 6%;
-    }
+        border: 5px solid var(--blue2);
+        border-radius: 20px;
+        transition: 0.4s;
 
-    .card-active {
-        background: linear-gradient(to top, #1262ca, #31e0ff);
     }
 
     .cards a {
-        display: flex;
-        justify-content: center;
-        border-radius: 8px;
         width: 100%;
         text-decoration: none;
-        color: var(--blue0);
-        cursor: url(../images/icons/MAOZINHA.png), auto;
+        color: var(--white);
+        font-family: var(--font-poppins-bold);
     }
 
-    .cards a p {
-        /* background-color: var(--blue3); */
-        font-size: 1.3rem;
+    .cards .name-card {
+        width: 100%;
+        height: 20%;
+        padding: 1% 5%;
+        background-color: var(--blue2);
     }
+
+    .cards .name-card>p {
+        filter: drop-shadow(2px 2px 5px #000);
+    }
+
+    .cards:hover {
+        transition: 0.4s;
+        transform: rotate(-2deg) scale(1.05);
+        box-shadow: 7px 7px 0px var(--blue6);
+    }
+
+    .card-active {
+        background-color: var(--green-line);
+        border-color: var(--green-fill);
+    }
+
+    .card-active .name-card {
+        background-color: var(--green-fill);
+    }
+
+    .card-active:hover {
+        box-shadow: 7px 7px 0px var(--green-dark);
+    }
+
+
 
     .access-card {
         display: flex;
         flex-direction: column;
     }
+
+
 
     .figure-card {
         padding: 2%;
@@ -796,3 +818,17 @@ body {
 }
 
 @media screen and (max-width: 1447px) {}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
