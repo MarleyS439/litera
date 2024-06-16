@@ -19,7 +19,7 @@ basta você usar :root assim você irá criar variaveis de cores para o seu webS
 :root {
     --branco: #FFFFFF;
     --header: #1C96E1;
-    --fundo: #ddab71;
+    --fundo: #783812;
     --borda: #000000;
     --barraPreenc: #3EF150;
     --mensagem: #00000083;
@@ -56,7 +56,7 @@ basta você usar :root assim você irá criar variaveis de cores para o seu webS
     --T-btnAvanc: 50px;
     --T-nav: 30px;
     --T-avatar: 30px;
-    --T-letraFalada: 60px;
+    --T-letraFalada: 90px;
     --T-balaoW: 80px;
     --T-balaoH: 160px;
 }
@@ -244,7 +244,7 @@ body {
     border: 2px solid var(--borda);
     border-radius: var(--R-areaJogoBorda);
     background-color: var(--branco);
-    background: url('../img/v1015-104a\ 2.svg');
+    background: url('../img/fundoSilabas.svg');
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
@@ -333,7 +333,7 @@ body {
 }
 
 
-.area-jogo .letra {
+.area-jogo .fruta {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -341,23 +341,23 @@ body {
     height: 15%;
 }
 
-.area-jogo .letra img {
+.area-jogo .fruta img {
     height: var(--T-letraFalada);
     width: var(--T-letraFalada);
     display: none;
 }
 
-.area-jogo .balao {
+.area-jogo .silabas {
     display: flex;
-    gap: 30%;
+    gap: 10%;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 30%;
+    /* background-color: var(--text-fim); */
 }
-
-.area-jogo .balao img {
+.area-jogo .silabas img {
     display: none;
     width: var(--T-balaoW);
     height: var(--T-balaoH);
@@ -649,39 +649,53 @@ body {
     }
 
     25% {
-        bottom: 35%;
-        right: 42%;
+        bottom: 5%;
+        right: 28%;
         transform: rotate(-30deg) rotateY(40deg);
 
     }
 
     30% {
-        bottom: 35%;
-        right: 42%;
+        bottom: 5%;
+        right: 28%;
         transform: scale(.5) rotate(-30deg);
 
     }
 
-    60% {
-        bottom: 35%;
-        right: 42%;
+    35% {
+        bottom: 5%;
+        right: 28%;
         transform: scale(1);
+    }
+    40% {
+        bottom: 5%;
+        right: 28%;
+        transform: scale(1);
+    }
+    50% {
+        bottom: 5%;
+        right: 43%;
+        transform: rotate(-30deg) rotateY(40deg);
+    }
+    60% {
+        bottom: 5%;
+        right: 43%;
+        transform: scale(.5) rotate(-30deg);
     }
 
     80% {
-        bottom: 2%;
-        right: 42%;
+        bottom: 5%;
+        right: 43%;
+        transform: rotate(-30deg) rotateY(40deg);
     }
-
     90% {
-        bottom: 2%;
-        right: 42%;
-        transform: scale(.7) rotate(-30deg) rotateY(40deg);
+        bottom: 5%;
+        right: 55%;
     }
 
     100% {
         bottom: 2%;
-        right: 42%;
+        right: 60%;
         transform: scale(1.2);
     }
 

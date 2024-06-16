@@ -99,9 +99,6 @@ function botaoAvancar2(){
     balaoE.style.display = 'block'
     verifica1.style.display = 'block'
     verifica2.style.display = 'none'
-
-
-
 }
 
 
