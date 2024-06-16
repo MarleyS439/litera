@@ -51,7 +51,7 @@ if ($_SESSION == null) {
     }
     ?>
 
-    <title>Acertar Balões | Selecionar Fase</title>
+    <title>Montar Sílabas | Selecionar Fase</title>
 </head>
 
 <body>
@@ -78,7 +78,7 @@ if ($_SESSION == null) {
                 <div class="fase-list">
                     <div class="game-0" id="first">
                         <p>Tutorial</p>
-                        <a href="../tutorial/tutorial-jogo1/tutorial.php">
+                        <a href="../tutorial/tutorial-jogo2/tutorial.php">
                             <img src="../../assets/images/fase/map-on.png" alt="">
                         </a>
                     </div>
@@ -184,7 +184,7 @@ if ($_SESSION == null) {
                 <div>
                     <div class="game-0" id="t">
                         <p>Tutorial</p>
-                        <a href="../tutorial/tutorial-jogo1/tutorial.php">
+                        <a href="../tutorial/tutorial-jogo2/tutorial.php">
                             <img id="aa" src="../../assets/images/fase/map-on.png" alt="">
                         </a>
                     </div>
