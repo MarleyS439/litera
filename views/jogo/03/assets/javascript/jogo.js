@@ -6,7 +6,28 @@ document.addEventListener('DOMContentLoaded', function () {
         { nome: 'Abelha', img: 'assets/images/animais/abelha.png' },
         { nome: 'Arara', img: 'assets/images/animais/arara.png' },
         { nome: 'Arraia', img: 'assets/images/animais/arraia.png' },
-        {nome: ''}
+        { nome: 'Besouro', img: 'assets/images/animais/besouro.png' },
+        { nome: 'Boi', img: 'assets/images/animais/boi.png' },
+        { nome: 'Cachorro', img: 'assets/images/animais/cachorro.png' },
+        { nome: 'Camaleão', img: 'assets/images/animais/camaleao.png' },
+        { nome: 'Capivara', img: 'assets/images/animais/capivara.png' },
+        { nome: 'Cervo', img: 'assets/images/animais/cervo.png' },
+        { nome: 'Cobra', img: 'assets/images/animais/cobra.png' },
+        { nome: 'Formiga', img: 'assets/images/animais/formiga.png' },
+        { nome: 'Galinha', img: 'assets/images/animais/galinha.png' },
+        { nome: 'Galo', img: 'assets/images/animais/galo.png' },
+        { nome: 'Jacaré', img: 'assets/images/animais/jacare.png' },
+        { nome: 'Macaco', img: 'assets/images/animais/macaco.png' },
+        { nome: 'Peixe', img: 'assets/images/animais/peixe.png' },
+        { nome: 'Peixe-boi', img: 'assets/images/animais/peixeboi.png' },
+        { nome: 'Sapo', img: 'assets/images/animais/sapo.png' },
+        { nome: 'Tamanduá', img: 'assets/images/animais/tamandua.png' },
+        { nome: 'tartaruga', img: 'assets/images/animais/tartaruag.png' },
+        { nome: 'Tatu', img: 'assets/images/animais/tatu.png' },
+        { nome: 'Tubarão', img: 'assets/images/animais/tubarão.png' },
+        { nome: 'Tucano', img: 'assets/images/animais/tucano.png' },
+        { nome: 'Urubu', img: 'assets/images/animais/urubu.png' },
+        { nome: 'Vaca', img: 'assets/images/animais/vaca.png'}
     ];
 
     function iniciarJogo() {
