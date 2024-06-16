@@ -1,14 +1,3 @@
-/*Importação de fontes tipográficas*/
-@font-face {
-    font-family: 'Poppins-Regular';
-    src: url(../../../../../assets/fonts/Poppins/Poppins-Regular.ttf);
-}
-
-@font-face {
-    font-family: 'Poppins-Bold';
-    src: url(../../../../../assets/fonts/Poppins/Poppins-Bold.ttf);
-}
-
 /*Estilos padrões*/
 :root {
     --litera-black: #3b3b3b;
@@ -35,4 +24,8 @@
     box-sizing: border-box;
     font-family: var(--font-poppins-regular), sans-serif;
     cursor: var(--cursor-default), auto;
+}
+
+button {
+    cursor: var(--cursor-hand), auto;
 }

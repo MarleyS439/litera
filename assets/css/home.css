@@ -10,10 +10,6 @@
         display: none;
     }
 
-    body {
-        background-color: var(--blue0);
-    }
-
     .mobile-view main {
         display: contents;
         position: relative;
@@ -31,9 +27,14 @@
 
     .mobile-view .title h2 {
         font-size: 2rem;
-        color: var(--black2);
+        background-color: var(--litera-blue);
+        width: 100%;
+        padding: 15px;
+        color: var(--litera-white);
+        border-radius: 12px;;
         font-family: var(--font-poppins-bold);
         margin-bottom: 5vw;
+        box-shadow: 0px 5px 0px var(--litera-black);
     }
 
     .games-list {
@@ -42,7 +43,7 @@
 
     .game {
         padding: 1%;
-        margin: 0% 0% 5% 0%;
+        margin: 10% 0% 5% 0%;
         text-decoration: none;
         color: var(--black2);
         transition: 200ms ease-in-out;
@@ -52,6 +53,7 @@
         font-family: var(--font-poppins-bold);
         margin: 1% 0%;
         font-size: 1.1rem;
+        color: var(--litera-orange);
     }
 
     .background-card-game {

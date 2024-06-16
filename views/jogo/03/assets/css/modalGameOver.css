@@ -1,24 +1,17 @@
 @import url(default.css);
 @import url(animations.css);
-@import url(../../../../../assets/landing/default.css);
 
 
+@media screen and (max-width: 768px) {}
 
-
-@media screen and (max-width: 768px) {
-
-}
-
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-
-}
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
 
 @media screen and (min-width: 1024px) {
 
     .modalExitGame {
         display: none;
         position: absolute;
-        padding: 2% 5%;;
+        padding: 2% 5%;
         left: 30vw;
         top: 25vh;
         background-color: var(--litera-white);
@@ -40,14 +33,16 @@
         padding: 10px
     }
 
-    .right, .left {
+    .right,
+    .left {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
     }
 
-    .right span, .left span {
+    .right span,
+    .left span {
         margin: 5px;
         text-transform: uppercase;
         font-family: var(--font-poppins-bold);
@@ -135,5 +130,5 @@
         -webkit-animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
         animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
     }
-    
+
 }

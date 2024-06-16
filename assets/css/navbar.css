@@ -1,5 +1,6 @@
 @import url(./default.css);
 @import url(./animations.css);
+@import url(../../assets/landing/default.css);
 
 @media screen and (max-width:768px) {
 
@@ -11,9 +12,9 @@
         justify-content: space-between;
         padding: 2% 5%;
         align-items: center;
-        color: var(--black2);
+        color: var(--litera-white);
         z-index: 1000;
-        background-color: var(--blue0);
+        background-color: var(--litera-blue);
         border-bottom: .5px solid #00000020;
         box-shadow: 1px 1px 1px #00000020;
         transition: 200ms ease-in-out;
