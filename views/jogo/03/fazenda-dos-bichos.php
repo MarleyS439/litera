@@ -13,8 +13,8 @@
 
 <body>
     <!-- Modal de início de partida -->
-    <div id="modalStartGame" class="modal">
-        <div class="modal-content">
+    <div id="modalStartGame" class="modalStart">
+        <div class="modal-content start">
             <h2>Bem-vindo à Fazenda dos Bichos!</h2>
             <p>Clique em "Começar Jogo" para iniciar a partida.</p>
             <button id="startGameBtn">Começar Jogo</button>
@@ -29,8 +29,18 @@
         <div class="modal-content">
             <h2>Fim de Jogo!</h2>
             <p>Você conseguiu colocar todos os animais nas palavras corretas.</p>
-            <button id="restartGameBtn">Reiniciar Jogo</button>
-            <button id="exitGameBtn">Sair da Partida</button>
+
+            <div class="bntns">
+                <button id="restartGameBtn">
+                    <span>Recomeçar</span>
+                    <img src="./assets/images/icons/retornarSil.svg" alt="">
+                </button>
+
+                <a id="exitGameBtn" href="../../home.php">
+                    <span>Sair</span>
+                    <img src="./assets/images/icons/arrow.svg" alt="">
+                </a>
+            </div>
         </div>
     </div>
 
@@ -48,7 +58,7 @@
                 <div class="effect"></div>
 
                 <div class="time">
-                    <span>1:00</span>
+                    <span>0:00</span>
                 </div>
             </div>
 

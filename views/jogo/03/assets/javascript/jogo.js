@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     let intervalo;
+    const tempoInicial = { minutos: 1, segundos: 0 };
 
     /* Array de imagens de animais */
     const animais = [
@@ -12,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { nome: 'Camaleão', img: 'assets/images/animais/camaleao.png' },
         { nome: 'Capivara', img: 'assets/images/animais/capivara.png' },
         { nome: 'Cervo', img: 'assets/images/animais/cervo.png' },
-        { nome: 'Cobra', img: 'assets/images/animais/cobra.png' },
+        { nome: 'Cobra', img: 'assets/imag  es/animais/cobra.png' },
         { nome: 'Formiga', img: 'assets/images/animais/formiga.png' },
         { nome: 'Galinha', img: 'assets/images/animais/galinha.png' },
         { nome: 'Galo', img: 'assets/images/animais/galo.png' },
@@ -22,12 +23,12 @@ document.addEventListener('DOMContentLoaded', function () {
         { nome: 'Peixe-boi', img: 'assets/images/animais/peixeboi.png' },
         { nome: 'Sapo', img: 'assets/images/animais/sapo.png' },
         { nome: 'Tamanduá', img: 'assets/images/animais/tamandua.png' },
-        { nome: 'tartaruga', img: 'assets/images/animais/tartaruag.png' },
+        { nome: 'Tartaruga', img: 'assets/images/animais/tartaruga.png' },
         { nome: 'Tatu', img: 'assets/images/animais/tatu.png' },
-        { nome: 'Tubarão', img: 'assets/images/animais/tubarão.png' },
+        { nome: 'Tubarão', img: 'assets/images/animais/tubarao.png' },
         { nome: 'Tucano', img: 'assets/images/animais/tucano.png' },
         { nome: 'Urubu', img: 'assets/images/animais/urubu.png' },
-        { nome: 'Vaca', img: 'assets/images/animais/vaca.png'}
+        { nome: 'Vaca', img: 'assets/images/animais/vaca.png' }
     ];
 
     function iniciarJogo() {
@@ -73,7 +74,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         /* Tempo de partida */
-        iniciarContagemRegressiva(1, 0);
+        iniciarContagemRegressiva(tempoInicial.minutos, tempoInicial.segundos);
+    }
+
+    function reiniciarJogo() {
+        clearInterval(intervalo); // Parar a contagem regressiva
+        iniciarJogo(); // Reiniciar o jogo
     }
 
     /* Funções para puxar e arrastar */
@@ -105,15 +111,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Verifica se todos os animais foram posicionados corretamente
             const animaisCorretos = document.querySelectorAll('.palavra span[style="display: none;"]').length;
+            
             if (animaisCorretos === 4) {
+                clearInterval(intervalo); // Pausa a contagem regressiva
+
                 document.getElementById('container-animais').classList.add('centralizado');
                 document.querySelector('.game-container').classList.add('centralizado');
 
-                // Pausa a contagem regressiva
-                clearInterval(intervalo);
-
                 // Mostra o alerta de fim de jogo
-                alert('Fim de jogo!');
+                alert("Fim");
             }
         } else {
             alert('Esse animal não corresponde a esta palavra!');
@@ -143,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (tempoRestante <= 0) {
                 clearInterval(intervalo);
                 document.dispatchEvent(new Event('tempoEsgotado'));
+                alert("Tempo Esgotado!");
             }
 
             tempoRestante--;
@@ -157,4 +164,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Exibir modal de início de partida ao carregar a página
     document.getElementById('modalStartGame').style.display = 'block';
+
+    // Reiniciar o jogo ao clicar no botão de reinício
+    document.getElementById('restartGameBtn').addEventListener('click', reiniciarJogo);
 });
