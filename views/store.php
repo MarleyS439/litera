@@ -2,7 +2,7 @@
 // session
 session_start();
 // verificação se o usuário está logado
-if(!isset($_SESSION['authUser'])){
+if (!isset($_SESSION['authUser'])) {
     // caso não esteja, redirecione para o login e indique que é necessário fazer login
     header("Location: ./login.php?status=erro2");
     exit();
@@ -40,7 +40,7 @@ if ($codUser['isGuesty']) {
 require('../dao/roupaDao.php');
 $roupa = RoupaDao::selectAll();
 require('../dao/cabeloDao.php');
-$cabelo = CabeloDao::selectAll(); 
+$cabelo = CabeloDao::selectAll();
 require('../dao/avatarDao.php');
 $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
 ?>
@@ -55,7 +55,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
 </head>
 
 <body style="background-color: white;">
-   
+
 
     <div class="desktop-view">
         <?php include('../views/components/navbarHome.php'); ?>
@@ -66,9 +66,9 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
             <h2>Loja de produtos</h2>
         </div>
         <?php
-            $status = isset($_GET['status']) ? $_GET['status'] : null;
-            // var_dump($cabelo);
-            if ($status === 'chapeos') {  ?>
+        $status = isset($_GET['status']) ? $_GET['status'] : null;
+        // var_dump($cabelo);
+        if ($status === 'chapeos') {  ?>
             <div class="page">
                 <div class="contain">
                     <div class="cards">
@@ -139,7 +139,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
             </div>
 
 
-        <?php } else {?>
+        <?php } else { ?>
 
 
             <div class="page">
@@ -212,8 +212,8 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
             </div>
 
 
-        <?php }?>
-        
+        <?php } ?>
+
     </div>
 
 
@@ -244,6 +244,30 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
                 <?php endif ?>
             </div>
         </div>
+        <div class="contain">
+            <div class="cards">
+                <a href="./store.php" class="access-card">
+                    <div class="name-card">
+                        <p>Roupas</p>
+                    </div>
+                    <div class="figure-card">
+                        <img src="../assets/images/icons/shirt-icon.png" alt="Roupas">
+                    </div>
+                </a>
+            </div>
+
+            <div class="cards card-active">
+                <a href="./store.php?status=chapeos" class="access-card">
+                    <div class="name-card">
+                        <p>Chapéus</p>
+                    </div>
+                    <div class="figure-card">
+                        <img src="../assets/images/icons/hat-icon.png" alt="Chápeus">
+                    </div>
+                </a>
+            </div>
+        </div>
+
         <form action="../controller/insertAvatar.php" method="POST" class="form-avatar">
             <!-- Adicione o input hidden aqui -->
             <input type="hidden" name="roupa" id="roupa-hidden" value="">
@@ -297,6 +321,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
             </a>
 
         </div>
+    </div>
 
 
 
@@ -320,29 +345,29 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
 
 
 
-        <?php
-            $status = isset($_GET['status']) ? $_GET['status'] : null;
-            if ($status === 'chapeos') {  
-        ?>
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    var cardItems = document.querySelectorAll('.inventory .card-item');
-                    var cabeloAvatar = document.querySelector('.container-avatar .cabelo img');
-                    var cabeloHiddenInput = document.getElementById('cabelo-hidden'); // Adicione esta linha para obter a referência ao input hidden
+    <?php
+    $status = isset($_GET['status']) ? $_GET['status'] : null;
+    if ($status === 'chapeos') {
+    ?>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var cardItems = document.querySelectorAll('.inventory .card-item');
+                var cabeloAvatar = document.querySelector('.container-avatar .cabelo img');
+                var cabeloHiddenInput = document.getElementById('cabelo-hidden'); // Adicione esta linha para obter a referência ao input hidden
 
-                    cardItems.forEach(function(card) {
-                        card.addEventListener('click', function() {
-                            var imgSrc = this.querySelector('img').getAttribute('src');
-                            var img = this.querySelector('img').getAttribute('data-value');
-                            cabeloAvatar.setAttribute('src', imgSrc);
-                            // Atualize o valor do input hidden com a informação da roupa
-                            cabeloHiddenInput.value = img;
-                        });
+                cardItems.forEach(function(card) {
+                    card.addEventListener('click', function() {
+                        var imgSrc = this.querySelector('img').getAttribute('src');
+                        var img = this.querySelector('img').getAttribute('data-value');
+                        cabeloAvatar.setAttribute('src', imgSrc);
+                        // Atualize o valor do input hidden com a informação da roupa
+                        cabeloHiddenInput.value = img;
                     });
                 });
-            </script>
-        <?php } else {?>
-        
+            });
+        </script>
+    <?php } else { ?>
+
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 var cardItems = document.querySelectorAll('.inventory .card-item');
@@ -360,7 +385,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
                 });
             });
         </script>
-        <?php }?>
+    <?php } ?>
 
 </body>
 

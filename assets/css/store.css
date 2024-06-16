@@ -25,7 +25,9 @@ body {
         box-shadow: 1px 1px 1px #00000020;
         transition: 200ms ease-in-out;
     }
-
+    .contain{
+        display: none,
+    }
     .info-user {
         display: flex;
         justify-content: left;
@@ -72,6 +74,7 @@ body {
         position: absolute;
         top: 20vh;
         left: 30%;
+        background-color: red;
     }
 
     .base {

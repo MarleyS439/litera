@@ -121,11 +121,24 @@
 
 
     .miniMenu {
+        display: none;
         position: absolute;
         background-color: var(--litera-white);
-        top: 10vh;
-        border: 2px solid var(--litera-black);
+        top: 6vh;
+        right: 10%;
+        transition: 200ms ease-in-out;
+        border: 1px solid var(--litera-black);
         padding: 5%;
+        flex-direction: column;
+        border-radius: 12px 0px 12px 12px;
+    }
+
+    .miniMenu a {
+        color: var(--litera-black);
+        font-family: var(--font-poppins-bold);
+        text-decoration: none;
+        margin: 2% 0%;
+        padding: 5% 0%;
     }
 
     #game1 {
