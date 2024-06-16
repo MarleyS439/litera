@@ -70,6 +70,29 @@
                     header('Location: ../views/home.php?status=erro2');
                 }
                 break;
+            case 'comprarCabelo':
+                $avatar -> setCodCabelo($_POST['cabelo']);
+                $cod = $_POST['codUser'];
+                $infoUsuario = PerfilDao::selectById($cod);
+                $moeda = $infoUsuario['dinheiroPerfil'];
+                // var_dump($moeda);
+                if($moeda >= 100){
+                    $money = $moeda - 100;
+                    // echo($money);
+                    try{
+                        $avatarDao = new AvatarDao();
+                        $avatarDao->updateCabelo( $cod, $avatar);
+                        $resultado = PerfilDao::setMoney($cod, $money);
+
+                        session_start();
+                        header('Location: ../views/home.php');
+                    }catch (Exception $e){
+                            echo $e;
+                    }
+                }else{
+                    header('Location: ../views/home.php?status=erro2');
+                }
+                break;
 
     }
     
