@@ -37,8 +37,17 @@ class PerfilDao
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $cod);
         $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        // Verificar se há resultado e formatar a data
+        if ($result && isset($result['dataCriacao'])) {
+            $data = new DateTime($result['dataCriacao']);
+            $result['dataCriacao'] = $data->format('d/m/Y');
+        }
+    
+        return $result;
     }
+    
     public static function selectByIdUser($cod)
     {
         $conexao = Conexao::conectar();

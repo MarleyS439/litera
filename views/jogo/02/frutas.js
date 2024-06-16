@@ -1889,7 +1889,7 @@ function fazerPergunta() {
               audio.src = silabaSrc;
               audio.play();
 
-              pontos_fim.textContent = moedas += ",00";
+              pontos_fim.textContent = moedas;
               pontos_fim2.textContent = moedas;
               pontos_fim3.textContent = moedas;
               pontos_errados.textContent = errado;
