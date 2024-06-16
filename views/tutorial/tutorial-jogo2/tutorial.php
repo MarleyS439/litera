@@ -46,18 +46,18 @@
 
             <!-- div onde aparece as silabas para selecionar -->
             <div class="silabas silabas-area-resp">
-                <img src="img/maça/ma1.svg" alt="silaba alt" id="alternativa">
-                <img src="img/maça/ça1.svg" alt="silaba alt" id="alternativa1">
+                <img src="img/maça/MA1.svg" alt="silaba alt" id="alternativa">
+                <img src="img/maça/ÇA1.svg" alt="silaba alt" id="alternativa1">
 
-                <img src="img/pera/pe1.svg" alt="silaba" id="alternativa2">
-                <img src="img/pera/ra2.svg" alt="silaba" id="alternativa3">   
+                <img src="img/pera/PE1.svg" alt="silaba" id="alternativa2">
+                <img src="img/pera/RE2.svg" alt="silaba" id="alternativa3">   
             </div>
 
             <!-- area onde apacere as letras selecionadas -->
              <div class="silabas">
-                <img src="img/maça/ça1.svg" alt="silaba" id="silaba1">
-                <img src="img/maça/ma1.svg" alt="silaba" id="silaba">
-                <img src="img/pera/ra2.svg"  onclick="selecionarSilaba(slb4)" alt="silaba" id="silaba3">
+                <img src="img/maça/ÇA1.svg" alt="silaba" id="silaba1">
+                <img src="img/maça/MA1.svg" alt="silaba" id="silaba">
+                <img src="img/pera/RA2.svg"  onclick="selecionarSilaba(slb4)" alt="silaba" id="silaba3">
              </div>
 
              

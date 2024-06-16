@@ -101,8 +101,8 @@ function selecionarSilaba(silaba) {
 function avancarParaProxima() {
     imgMaca.style.display = 'none';
     imgPera.style.display = 'block';
-    slb1.src = 'img/pera/pe.svg';
-    slb2.src = 'img/pera/ra.svg';
+    slb1.src = 'img/pera/PE.svg';
+    slb2.src = 'img/pera/RA.svg';
     silabaSelecionada = [];
     cor1.style.background = 'transparent';
     cor2.style.background = 'transparent';

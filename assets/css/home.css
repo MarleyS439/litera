@@ -120,7 +120,7 @@
     }
 
 
-    .miniMenu {
+    /* .miniMenu {
         display: none;
         position: absolute;
         background-color: var(--litera-white);
@@ -131,16 +131,50 @@
         padding: 5%;
         flex-direction: column;
         border-radius: 12px 0px 12px 12px;
-    }
-
-    .miniMenu a {
+    } 
+        .miniMenu a {
         color: var(--litera-black);
         font-family: var(--font-poppins-bold);
         text-decoration: none;
         margin: 2% 0%;
         padding: 5% 0%;
     }
+*/
 
+    .miniMenu {
+        display: none;
+        position: absolute;
+        z-index: 999;
+        width: 100%;
+        height: 100%;
+        background-color: var(--filter-modal);
+        animation: modal 1s ease ; 
+        align-items: center;
+        justify-content: center;
+    }
+    .miniMenu .card-center-miniMenu{
+        width: 75%;
+        height: 50%;
+        background-color: var(--blue3);
+        border-radius: 20px ;
+        display: flex;
+        flex-direction: column;
+        justify-content: baseline;
+        box-shadow: 5px 5px 0px var(--white);
+    }
+    .card-center-miniMenu .title-mineMenu{
+        width: 100%;
+        height: 20%;
+        /* background-color: red; */
+        text-align: center;
+        padding-top: 10%;
+    }
+    .card-center-miniMenu .title-mineMenu>p{
+        color: var(--white);
+        font-family: var(--font-poppins-bold);
+        font-size: 25px;
+    }
+    
     #game1 {
         background-image: url(../../assets/images/Frame\ 150.png);
         background-size: cover;
@@ -159,6 +193,17 @@
         background-position: center center;
     }
 
+    @keyframes modal {
+        0% {
+            opacity: 0;
+            top: -100%;
+        }
+        100% {
+            opacity: 1;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
 
 }
 
@@ -925,3 +970,4 @@
         width: 110px;
     }
 }
+

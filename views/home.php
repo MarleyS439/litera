@@ -97,9 +97,12 @@ if (!$codUser['isGuesty']) {
                 </div>
             </div>
 
+            <!-- Mini menu - mobile
+            <?php include('../views/components/minimenu.php'); ?> -->
+        </div>
+        
             <!-- Mini menu - mobile -->
             <?php include('../views/components/minimenu.php'); ?>
-        </div>
 
         <main>
             <div class="title">
