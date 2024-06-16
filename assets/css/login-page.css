@@ -30,7 +30,6 @@
         justify-content: center;
         background-color: var(--litera-white);
         padding: 5px 0px
-
     }
 
     .lit h2 {
@@ -117,6 +116,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         margin: 5% 0%;
     }
 
@@ -256,7 +256,8 @@
         margin: 5px;
     }
 
-    .non p, .non a {
+    .non p,
+    .non a {
         font-size: 13px
     }
 
@@ -264,7 +265,8 @@
         display: flex;
         justify-content: space-between;
     }
-    .non a{
+
+    .non a {
         margin: 0px 10px;
         text-decoration: none;
         color: var(--litera-dark-blue);

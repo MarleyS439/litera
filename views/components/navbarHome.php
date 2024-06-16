@@ -74,7 +74,7 @@ $fileName = basename($_SERVER['PHP_SELF']);
 
     <div class="profile-info">
         <div class="name-user">
-            <span><?php echo $perfilAutenticado['nomePerfil'] ?? $codUser['nomePerfil']; ?></span>
+            <span><?php echo $perfilAutenticado['nomePerfil'] ?? $codUser['nomePerfil']; ?> a</span>
         </div>
         <div class="level">
             <span><?php echo $perfilAutenticado['nivel'] ?? $codUser['nivel']; ?></span>

@@ -2,7 +2,7 @@
 // session
 session_start();
 // verificação se o usuário está logado
-if(!isset($_SESSION['authUser'])){
+if (!isset($_SESSION['authUser'])) {
     // caso não esteja, redirecione para o login e indique que é necessário fazer login
     header("Location: ./login.php?status=erro2");
     exit();
@@ -80,10 +80,10 @@ if (!$codUser['isGuesty']) {
 
         <div class="top-bar">
             <div class="info-user">
-                <img src="../assets/images/icons/profile.svg" alt="">
                 <?php if (!$codUser['isGuesty']) : ?>
 
                     <span><?php echo ($perfilAutenticado['nomePerfil']) ?></span>
+                    <span class="levelUser"><?php echo $perfilAutenticado['nivel'] ?? $codUser['nivel']; ?></span>
                 <?php endif; ?>
             </div>
 
@@ -92,7 +92,13 @@ if (!$codUser['isGuesty']) {
                 <?php if (!$codUser['isGuesty']) : ?>
                     <span><?php echo ($perfilAutenticado['dinheiroPerfil']) ?></span>
                 <?php endif ?>
+                <div class="options" >
+                    <img id="configs" src="../assets/images/icons/confiIcon.svg" alt="Opções">
+                </div>
             </div>
+
+            <!-- Mini menu - mobile -->
+            <?php include('../views/components/minimenu.php'); ?>
         </div>
 
         <main>
@@ -117,12 +123,12 @@ if (!$codUser['isGuesty']) {
                     <div class="background-card-game" id="game2"></div>
                 </a>
 
-                <a class="game" href="#">
+                <a class="game" href="../views/jogo/03/fazenda-dos-bichos.php">
                     <div class="title-game">
-                        <p>Caça às Letras</p>
+                        <p>Fazenda dos bichos</p>
                     </div>
 
-                    <div class="background-card-game"></div>
+                    <div class="background-card-game" id="game3"></div>
                 </a>
 
                 <a class="game" href="../views/jogo/03/fazenda-dos-bichos.php">
@@ -200,6 +206,7 @@ if (!$codUser['isGuesty']) {
     </div>
 
     <script src="./../assets/javascript/modal.js"></script>
+    <script src="../assets/javascript/minimenu.js"></script>
 </body>
 
 </html>

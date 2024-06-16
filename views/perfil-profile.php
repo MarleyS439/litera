@@ -177,7 +177,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
                             <h2>Conquistas</h2>
                         </div>
                         <div class="area-conquista">
-                            <div class="card-conquista">a</div>
+                            <div class="card-conquista">A</div>
                         </div>
                     </div>
                 </div>

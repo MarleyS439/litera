@@ -87,10 +87,11 @@
                     </button>
                 </div>
 
-                <div style="display: flex; justify-content: space-between;">
+                <div class="reset-pwd">
                     <div class="reset">
                         <a href="#">Esqueceu a senha?</a>
                     </div>
+                    
                     <div class="reset">
                         <a href="../controller/conectionGuesty.php" onclick="document.getElementById('guestLoginForm').submit();">Faça login como convidado!</a>
                     </div>

@@ -37,6 +37,10 @@
         margin: 0% 3%;
     }
 
+    .levelUser {
+        color: var(--litera-blue);
+    }
+
     .credits {
         display: flex;
         justify-content: center;

@@ -20,7 +20,7 @@
     }
 
     body {
-        background-color: var(--azul-body);
+        background-color: var(--litera-white);
     }
 
     span {
@@ -38,7 +38,7 @@
 
     .topo {
         width: 100%;
-        height: 8vh;
+        height: 10vh;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -47,7 +47,11 @@
     .topo span {
         font-family: var(--font-poppins-bold);
         font-size: 24px;
-        color: var(--black);
+        color: var(--litera-black);
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 5% 0%
     }
 
 

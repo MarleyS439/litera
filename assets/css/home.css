@@ -31,7 +31,8 @@
         width: 100%;
         padding: 15px;
         color: var(--litera-white);
-        border-radius: 12px;;
+        border-radius: 12px;
+        ;
         font-family: var(--font-poppins-bold);
         margin-bottom: 5vw;
         box-shadow: 0px 5px 0px var(--litera-black);
@@ -58,11 +59,12 @@
 
     .background-card-game {
         border: 5px solid var(--blue2);
-        background-image: url(../images/Frame-game1.png);
+        background-image: url(../images/Frame\ 149.png);
         width: 100%;
         background-size: cover;
         background-repeat: no-repeat;
         border-radius: 10px;
+        background-position: center center;
         height: 25vh;
         box-shadow: 1px 5px 1px #00000020;
     }
@@ -94,13 +96,54 @@
         padding: 5% 0%;
     }
 
+    .levelUser {
+        background-color: var(--litera-white);
+        padding: 3px 15px;
+        border-radius: 100%;
+        width: 25px;
+        color: var(--litera-black);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .options {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 0px 0px 10px;
+    }
+
+    .options #configs {
+        width: 28px;
+        padding: 2px;
+    }
+
+
+    .miniMenu {
+        position: absolute;
+        background-color: var(--litera-white);
+        top: 10vh;
+        border: 2px solid var(--litera-black);
+        padding: 5%;
+    }
+
     #game1 {
         background-image: url(../../assets/images/Frame\ 150.png);
         background-size: cover;
+        background-position: center center;
     }
 
     #game2 {
         background-image: url(../../assets/images/Frame\ 33.png);
+        background-size: cover;
+        background-position: center center;
+    }
+
+    #game3 {
+        background-image: url(../../assets/images/game3.png);
+        background-size: cover;
+        background-position: center center;
     }
 
 
@@ -186,7 +229,7 @@
         display: flex;
         border-radius: 10px;
         text-decoration: none;
-        margin:5%;
+        margin: 5%;
         cursor: url(../images/icons/MAOZINHA.png), auto;
         transition: 300ms ease-in-out;
     }
@@ -494,7 +537,7 @@
         background-attachment: fixed;
     }
 
-    main .title{
+    main .title {
         margin-top: 50px;
     }
 
@@ -564,7 +607,8 @@
         border-radius: 10px;
         margin: 1% 5%;
         text-decoration: none;
-        cursor: url(../images/icons/MAOZINHA.png), auto;;
+        cursor: url(../images/icons/MAOZINHA.png), auto;
+        ;
         transition: 300ms ease-in-out;
     }
 
@@ -573,7 +617,8 @@
         -webkit-animation: pulsate-fwd 1s ease-in-out infinite both;
         animation: pulsate-fwd 1s ease-in-out infinite both;
     }
-    .menu-profile-child{
+
+    .menu-profile-child {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -611,7 +656,7 @@
         padding: 3.5%;
         z-index: 10;
         display: flex;
-        justify-content: center ;
+        justify-content: center;
     }
 
 
