@@ -7,18 +7,32 @@
     <title>A Fazenda dos Bichos</title>
     <link rel="stylesheet" href="../03/assets/css/style.css">
     <link rel="stylesheet" href="../03/assets/css/modal.css">
-    <link rel="stylesheet" href="../03//assets/css/modalGameOver.css">
+    <link rel="stylesheet" href="../03/assets/css/modalGameOver.css">
+    <link rel="stylesheet" href="../03/assets/css/modalStartGame.css">
 </head>
 
 <body>
+    <!-- Modal de início de partida -->
+    <div id="modalStartGame" class="modal">
+        <div class="modal-content">
+            <h2>Bem-vindo à Fazenda dos Bichos!</h2>
+            <p>Clique em "Começar Jogo" para iniciar a partida.</p>
+            <button id="startGameBtn">Começar Jogo</button>
+        </div>
+    </div>
 
-    <!--Modal exit-->
+    <!-- Modal de saída de partida -->
     <?php include('assets/components/modalExit.php'); ?>
 
     <!-- Modal de game over -->
-    <?php include('assets/components/modalGameOver.php'); ?>
-    
-    <div class="ovarlaygameOver"></div>
+    <div id="modalGameOver" class="modal">
+        <div class="modal-content">
+            <h2>Fim de Jogo!</h2>
+            <p>Você conseguiu colocar todos os animais nas palavras corretas.</p>
+            <button id="restartGameBtn">Reiniciar Jogo</button>
+            <button id="exitGameBtn">Sair da Partida</button>
+        </div>
+    </div>
 
     <!-- Overlay for modal exit -->
     <div id="overlay"></div>
@@ -69,7 +83,7 @@
     <script src="assets/javascript/jogo.js"></script>
 
     <!-- Modal de gameOver -->
-    <script src=""></script>
+    <script src="../03/assets/javascript/gameOver.js"></script>
 </body>
 
 </html>

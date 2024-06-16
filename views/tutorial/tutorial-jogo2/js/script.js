@@ -63,7 +63,8 @@ function botaoAvancar() {
         maoProx.style.display = 'block';
     }, 9500);
 }
-function botaoAvancar2(){
+
+function botaoAvancar2() {
     maoProx.style.display= 'none'
     avancar2.style.display = 'none'
     imgMaca.style.display = 'none'

@@ -1,33 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
+    let intervalo;
 
-    /* Array de imagems de animais */
+    /* Array de imagens de animais */
     const animais = [
-        { nome: 'Cachorro', img: 'assets/images/animais/cachorro.png' },
         { nome: 'Abelha', img: 'assets/images/animais/abelha.png' },
-        { nome: 'Formiga', img: 'assets/images/animais/formiga.png' },
-        { nome: 'Camaleão', img: 'assets/images/animais/camaleao.png' },
-        { nome: 'Tartaruga', img: 'assets/images/animais/tartaruga.png' },
         { nome: 'Arara', img: 'assets/images/animais/arara.png' },
-        { nome: 'Besouro', img: 'assets/images/animais/besouro.png' },
-        { nome: 'Touro', img: 'assets/images/animais/touro.png' },
-        { nome: 'Capivara', img: 'assets/images/animais/capivara.png' },
-        { nome: 'Cervo', img: 'assets/images/animais/cervo.png' },
-        { nome: 'Cobra', img: 'assets/images/animais/cobra.png' },
-        { nome: 'Galinha', img: 'assets/images/animais/galinha.png' },
-        { nome: 'Galo', img: 'assets/images/animais/galo.png' },
-        { nome: 'Jacaré', img: 'assets/images/animais/jacare.png' },
-        { nome: 'Macaco', img: 'assets/images/animais/macaco.png' },
-        { nome: 'Sapo', img: 'assets/images/animais/sapo.png' },
-        { nome: 'Tatu', img: 'assets/images/animais/tatu.png' },
-        { nome: 'Vaca', img: 'assets/images/animais/vaca.png' },
-        { nome: 'Peixe', img: 'assets/images/animais/peixe.png' }
-
+        { nome: 'Arraia', img: 'assets/images/animais/arraia.png' },
+        {nome: ''}
     ];
 
     function iniciarJogo() {
         const containerAnimais = document.getElementById('container-animais');
         const containerPalavras = document.getElementById('container-palavras');
-
 
         containerAnimais.innerHTML = '';
         containerPalavras.innerHTML = '';
@@ -36,17 +20,13 @@ document.addEventListener('DOMContentLoaded', function () {
         const animaisSelecionados = shuffle(animais).slice(0, 4);
         const palavrasSelecionadas = shuffle([...animaisSelecionados]);
 
-
         animaisSelecionados.forEach(animal => {
-
             const animalDiv = document.createElement('div');
-
             animalDiv.classList.add('animal');
             animalDiv.setAttribute('draggable', 'true');
             animalDiv.setAttribute('data-animal', animal.nome);
 
             const img = document.createElement('img');
-
             img.src = animal.img;
             img.alt = animal.nome;
 
@@ -54,18 +34,14 @@ document.addEventListener('DOMContentLoaded', function () {
             containerAnimais.appendChild(animalDiv);
 
             animalDiv.addEventListener('dragstart', handleDragStart);
-
         });
 
         palavrasSelecionadas.forEach(palavra => {
-
             const palavraDiv = document.createElement('div');
-
             palavraDiv.classList.add('palavra');
             palavraDiv.setAttribute('data-animal', palavra.nome);
 
             const span = document.createElement('span');
-
             span.textContent = palavra.nome;
 
             palavraDiv.appendChild(span);
@@ -73,14 +49,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
             palavraDiv.addEventListener('dragover', handleDragOver);
             palavraDiv.addEventListener('drop', handleDrop);
-
         });
 
         /* Tempo de partida */
         iniciarContagemRegressiva(1, 0);
     }
 
-    /* Funções para puxa e arrasta */
+    /* Funções para puxar e arrastar */
     function handleDragStart(event) {
         event.dataTransfer.setData('text/plain', event.target.dataset.animal);
         event.dataTransfer.effectAllowed = 'move';
@@ -91,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
         event.dataTransfer.dropEffect = 'move';
     }
 
-    /* Função para largar a div na outra div */
     function handleDrop(event) {
         event.preventDefault();
 
@@ -109,12 +83,18 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             // Verifica se todos os animais foram posicionados corretamente
-            if (document.querySelectorAll('.palavra span[style="display: none;"]').length === 4) {
+            const animaisCorretos = document.querySelectorAll('.palavra span[style="display: none;"]').length;
+            if (animaisCorretos === 4) {
                 document.getElementById('container-animais').classList.add('centralizado');
                 document.querySelector('.game-container').classList.add('centralizado');
+
+                // Pausa a contagem regressiva
+                clearInterval(intervalo);
+
+                // Mostra o alerta de fim de jogo
+                alert('Fim de jogo!');
             }
         } else {
-
             alert('Esse animal não corresponde a esta palavra!');
         }
     }
@@ -133,15 +113,14 @@ document.addEventListener('DOMContentLoaded', function () {
         let tempoRestante = minutos * 60 + segundos;
         const display = document.querySelector('.time span');
 
-        const intervalo = setInterval(() => {
+        intervalo = setInterval(() => {
             const minutos = Math.floor(tempoRestante / 60);
             const segundos = tempoRestante % 60;
 
             display.textContent = `${minutos}:${segundos < 10 ? '0' : ''}${segundos}`;
 
-
             if (tempoRestante <= 0) {
-                clearInterval(intervalo);   
+                clearInterval(intervalo);
                 document.dispatchEvent(new Event('tempoEsgotado'));
             }
 
@@ -149,11 +128,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1000);
     }
 
-    document.addEventListener('tempoEsgotado', function() {
-        let modalgameOver = document.getElementById('gameOver');
-        modalgameOver.style.display = 'block';
+    // Iniciar jogo ao clicar em "Começar Jogo"
+    document.getElementById('startGameBtn').addEventListener('click', function () {
+        document.getElementById('modalStartGame').style.display = 'none'; // Esconder modal de início de partida
+        iniciarJogo(); // Iniciar o jogo
     });
 
-    /* Faz a chamada da função de jogo */
-    iniciarJogo();
+    // Exibir modal de início de partida ao carregar a página
+    document.getElementById('modalStartGame').style.display = 'block';
 });

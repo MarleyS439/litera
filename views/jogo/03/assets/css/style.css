@@ -1,6 +1,7 @@
-@import url(./default.css);
-@import url(./animations.css);
+@import url(default.css);
+@import url(animations.css);
 @import url(../../../../../assets/landing/default.css);
+
 
 @media screen and (max-width: 768px) {
     
