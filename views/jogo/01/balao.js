@@ -1005,6 +1005,11 @@ let fruta2 = document.getElementById("f2");
 let fruta3 = document.getElementById("f3");
 let fruta4 = document.getElementById("f4");
 let fruta5 = document.getElementById("f5");
+let fruta6 = document.getElementById("f6");
+let fruta7 = document.getElementById("f7");
+let fruta8 = document.getElementById("f8");
+let fruta9 = document.getElementById("f9");
+let fruta10 = document.getElementById("f10");
 
 
 
@@ -1014,6 +1019,11 @@ function limaparCard(){
   fruta3.style.transform = "none";
   fruta4.style.transform = "none";
   fruta5.style.transform = "none";
+  fruta6.style.transform = "none";
+  fruta7.style.transform = "none";
+  fruta8.style.transform = "none";
+  fruta9.style.transform = "none";
+  fruta10.style.transform = "none";
 }
 
 fruta1.addEventListener('click', function() {
@@ -1029,6 +1039,19 @@ fruta1.addEventListener('click', function() {
     fruta1.style.transform = "none";
   });
 });
+fruta6.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Audios/A.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta6.style.transform = "translateY(-20px)";
+  fruta6.style.transition = "transform 0.5s ease";
+
+  audio.addEventListener('ended', function() {
+    fruta6.style.transform = "none";
+  });
+});
 fruta2.addEventListener('click', function() {
   limaparCard();
   // Exibe o modal
@@ -1040,6 +1063,19 @@ fruta2.addEventListener('click', function() {
 
   audio.addEventListener('ended', function() {
     fruta2.style.transform = "none";
+  });
+});
+fruta7.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Audios/E.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta7.style.transform = "translateY(-20px)";
+  fruta7.style.transition = "transform 0.5s ease";
+
+  audio.addEventListener('ended', function() {
+    fruta7.style.transform = "none";
   });
 });
 fruta3.addEventListener('click', function() {
@@ -1055,6 +1091,19 @@ fruta3.addEventListener('click', function() {
     fruta3.style.transform = "none";
   });
 });
+fruta8.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Audios/I.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta8.style.transform = "translateY(-20px)";
+  fruta8.style.transition = "transform 0.5s ease";
+
+  audio.addEventListener('ended', function() {
+    fruta8.style.transform = "none";
+  });
+});
 fruta4.addEventListener('click', function() {
   limaparCard();
   // Exibe o modal
@@ -1068,6 +1117,19 @@ fruta4.addEventListener('click', function() {
     fruta4.style.transform = "none";
   });
 });
+fruta9.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Audios/O.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta9.style.transform = "translateY(-20px)";
+  fruta9.style.transition = "transform 0.5s ease";
+
+  audio.addEventListener('ended', function() {
+    fruta9.style.transform = "none";
+  });
+});
 fruta5.addEventListener('click', function() {
   limaparCard();
   // Exibe o modal
@@ -1079,6 +1141,19 @@ fruta5.addEventListener('click', function() {
 
   audio.addEventListener('ended', function() {
     fruta5.style.transform = "none";
+  });
+});
+fruta10.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Audios/U.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta10.style.transform = "translateY(-20px)";
+  fruta10.style.transition = "transform 0.5s ease";
+
+  audio.addEventListener('ended', function() {
+    fruta10.style.transform = "none";
   });
 });
 

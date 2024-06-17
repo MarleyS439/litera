@@ -136,27 +136,27 @@ if ($_SESSION['authUser'] == null) {
 
                                 <div class="swiper-container">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
+                                        <div class="swiper-slide" id="f6">
                                             <img src="./img/baloes/BalaoA.svg" alt="Maçã">
                                             <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
                                             <p class="maca">A</p>
                                         </div>
-                                        <div class="swiper-slide">
+                                        <div class="swiper-slide" id="f7">
                                             <img src="./img/baloes/BalaoE.svg" alt="Banana">
                                             <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
                                             <p class="banana">E</p>
                                         </div>
-                                        <div class="swiper-slide">
+                                        <div class="swiper-slide" id="f8">
                                             <img src="./img/baloes/BalaoI.svg" alt="Melancia">
                                             <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
                                             <p class="melancia">I</p>
                                         </div>
-                                        <div class="swiper-slide">
+                                        <div class="swiper-slide" id="f9">
                                             <img src="./img/baloes/BalaoO.svg" alt="Morango">
                                             <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
                                             <p class="morango">O</p>
                                         </div>
-                                        <div class="swiper-slide">
+                                        <div class="swiper-slide" id="f10">
                                             <img src="./img/baloes/BalaoU.svg" alt="Pera">
                                             <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
                                             <p class="pera">U</p>

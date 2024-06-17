@@ -2199,6 +2199,15 @@ let fruta5 = document.getElementById("f5");
 let fruta6 = document.getElementById("f6");
 let fruta7 = document.getElementById("f7");
 let fruta8 = document.getElementById("f8");
+let fruta9 = document.getElementById("f9");
+let fruta10 = document.getElementById("f10");
+let fruta11 = document.getElementById("f11");
+let fruta12 = document.getElementById("f12");
+let fruta13 = document.getElementById("f13");
+let fruta14 = document.getElementById("f14");
+let fruta15 = document.getElementById("f15");
+let fruta16 = document.getElementById("f16");
+
 
 function limaparCard(){
   fruta1.style.transform = "none";
@@ -2209,6 +2218,14 @@ function limaparCard(){
   fruta6.style.transform = "none";
   fruta7.style.transform = "none";
   fruta8.style.transform = "none";
+  fruta9.style.transform = "none";
+  fruta10.style.transform = "none";
+  fruta11.style.transform = "none";
+  fruta12.style.transform = "none";
+  fruta13.style.transform = "none";
+  fruta14.style.transform = "none";
+  fruta15.style.transform = "none";
+  fruta16.style.transform = "none";
 }
 
 fruta1.addEventListener('click', function() {
@@ -2224,6 +2241,19 @@ fruta1.addEventListener('click', function() {
     fruta1.style.transform = "none";
   });
 });
+fruta9.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Falas Jogo Silabas/maça/maça.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta9.style.transform = "translateY(-20px)";
+  fruta9.style.transition = "transform 0.5s ease";
+
+  audio.addEventListener('ended', function() {
+    fruta9.style.transform = "none";
+  });
+});
 fruta2.addEventListener('click', function() {
   limaparCard();
   // Exibe o modal
@@ -2235,6 +2265,19 @@ fruta2.addEventListener('click', function() {
   
   audio.addEventListener('ended', function() {
     fruta2.style.transform = "none";
+  });
+});
+fruta10.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Falas Jogo Silabas/banana/banana.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta10.style.transform = "translateY(-20px)";
+  fruta10.style.transition = "transform 0.5s ease";
+  
+  audio.addEventListener('ended', function() {
+    fruta10.style.transform = "none";
   });
 });
 fruta3.addEventListener('click', function() {
@@ -2252,6 +2295,21 @@ fruta3.addEventListener('click', function() {
   });
 
 });
+fruta11.addEventListener('click', function() {
+  limaparCard();
+
+  // Exibe o modal
+  audio.src = "Falas Jogo Silabas/melancia/melancia.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta11.style.transform = "translateY(-20px)";
+  fruta11.style.transition = "transform 0.5s ease";
+  
+  audio.addEventListener('ended', function() {
+    fruta11.style.transform = "none";
+  });
+
+});
 fruta4.addEventListener('click', function() {
   limaparCard();
   // Exibe o modal
@@ -2263,6 +2321,20 @@ fruta4.addEventListener('click', function() {
   
   audio.addEventListener('ended', function() {
     fruta4.style.transform = "none";
+  });
+
+});
+fruta12.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Falas Jogo Silabas/morango/morango.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta12.style.transform = "translateY(-20px)";
+  fruta12.style.transition = "transform 0.5s ease";
+  
+  audio.addEventListener('ended', function() {
+    fruta12.style.transform = "none";
   });
 
 });
@@ -2280,6 +2352,20 @@ fruta5.addEventListener('click', function() {
   });
 
 });
+fruta13.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Falas Jogo Silabas/pera/pera.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta13.style.transform = "translateY(-20px)";
+  fruta13.style.transition = "transform 0.5s ease";
+  
+  audio.addEventListener('ended', function() {
+    fruta13.style.transform = "none";
+  });
+
+});
 fruta6.addEventListener('click', function() {
   limaparCard();
   // Exibe o modal
@@ -2291,6 +2377,20 @@ fruta6.addEventListener('click', function() {
   
   audio.addEventListener('ended', function() {
     fruta6.style.transform = "none";
+  });
+
+});
+fruta14.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Falas Jogo Silabas/cereja/cereja.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta14.style.transform = "translateY(-20px)";
+  fruta14.style.transition = "transform 0.5s ease";
+  
+  audio.addEventListener('ended', function() {
+    fruta14.style.transform = "none";
   });
 
 });
@@ -2307,6 +2407,19 @@ fruta7.addEventListener('click', function() {
     fruta7.style.transform = "none";
   });
 });
+fruta15.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Falas Jogo Silabas/abacaxi/abacaxi.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta15.style.transform = "translateY(-20px)";
+  fruta15.style.transition = "transform 0.5s ease";
+  
+  audio.addEventListener('ended', function() {
+    fruta15.style.transform = "none";
+  });
+});
 fruta8.addEventListener('click', function() {
   limaparCard();
   // Exibe o modal
@@ -2318,6 +2431,19 @@ fruta8.addEventListener('click', function() {
   
   audio.addEventListener('ended', function() {
     fruta8.style.transform = "none";
+  });
+});
+fruta16.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Falas Jogo Silabas/laranja/laranja.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta16.style.transform = "translateY(-20px)";
+  fruta16.style.transition = "transform 0.5s ease";
+  
+  audio.addEventListener('ended', function() {
+    fruta16.style.transform = "none";
   });
 });
 

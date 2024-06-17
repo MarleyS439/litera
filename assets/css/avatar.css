@@ -255,22 +255,32 @@
 
     .base {
         position: relative;
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .base img {
-        display: block;
-        margin: 0 auto;
-        width: 120px;
-    }
 
-    .cabelo img {
+
+    .cabelo {
+        display: flex;
         position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateY(-20%) translateX(-50%);
-        width: 105px;
+        top: -17px;
+        width: 140px;
+        height: 170px;
+        border: 1px solid red;
+        justify-content: center;
+        align-items: center;
     }
+
+    .cabelo img{
+
+        position: absolute;
+        top: 0px;
+        width: auto;
+        height: auto;
+    }
+
 
     .roupa img {
         position: absolute;
