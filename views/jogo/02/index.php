@@ -88,11 +88,7 @@ if ($_SESSION == null) {
                                 <p id="corAcertos" class="mobile">Tempo: <span class="total_modal" id="cronometroFim2">00:00</span></p>
 
 
-                                <div class="som">
-                                    <div class="audioSom">
-                                        <img src="./img/jogoFruta/audioIco.svg" alt="">
-                                    </div>
-                                </div>
+                               
 
 
 
@@ -239,8 +235,8 @@ if ($_SESSION == null) {
                     <div id="cronometro" class="cronometro">00:00</div>
                     <a href="../../../views/home.php" class="homeScreen"></a>
                     <button class="mutarSom" id="mutarEdesmutar"></button>
-                    <!-- <button onclick="openFullscreen()" class="fullScreen" id="abrirCheia"></button> -->
-                    <!-- <button onclick="closeFullscreen()" class="fullScreen" id="fecharCheia"></button> -->
+                    <button onclick="openFullscreen()" class="fullScreen" id="abrirCheia"></button>
+                    <button onclick="closeFullscreen()" class="fullScreen" id="fecharCheia"></button>
                 </div>
 
             </div>

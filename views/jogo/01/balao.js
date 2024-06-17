@@ -19,9 +19,13 @@ var verificar = document.getElementById("verificar");
 
 // VIDAS:
 let vidas = 1;
+let intervalId = null;
 
 // EXIBIR PONTOS NO FIM
 let pontos_fim = document.getElementById("final_point");
+
+let cronometro_fim = document.getElementById("cronometroFim");
+let cronometro_fim2 = document.getElementById("cronometroFim2");
 
 let pontos_fim2 = document.getElementById("final_point2");
 
@@ -213,24 +217,22 @@ function fazerPergunta() {
       segundos++;
       
       // Calcular horas, minutos e segundos
-      let horas = Math.floor(segundos / 3600);
       let minutos = Math.floor((segundos % 3600) / 60);
       let seg = segundos % 60;
       
       // Exibir o cronômetro no formato hh:mm:ss
       cronometroElement.textContent = 
-          (horas < 10 ? "0" + horas : horas) + ":" +
           (minutos < 10 ? "0" + minutos : minutos) + ":" +
           (seg < 10 ? "0" + seg : seg);
     }
   
     // Iniciar o cronômetro
-    let intervalId = setInterval(atualizarCronometro, 1000); // Atualiza a cada segundo
+    intervalId = setInterval(atualizarCronometro, 1000); // Atualiza a cada segundo
     
     // Exemplo de como parar o cronômetro após 10 segundos
     setTimeout(function() {
         clearInterval(intervalId); // Parar o intervalo
-    },  3600000);
+    },  600000);
 
 
 
@@ -762,11 +764,25 @@ function fazerPergunta() {
           }
           else {
             setTimeout(function () {
+
+              let tempoAtual = cronometroElement.textContent;
+
+              // Exibir o tempo atual
+              console.log("Tempo atual: " + tempoAtual);
+              cronometro_fim.textContent = tempoAtual;
+              cronometro_fim2.textContent = tempoAtual;
+
               console.log("FIM!");
               fim.style.display = "flex";
               acertou.style.display = "none";
               pontos_fim.textContent = moedas;
+              pontos_fim2.textContent = moedas;
+              pontos_fim3.textContent = moedas;
               pontos_errados.textContent = errado;
+              pontos_errados2.textContent = errado;
+              pontos_errados3.textContent = errado;
+              pontos_acertos.textContent = acertado;
+              pontos_acertos2.textContent = acertado;
 
               
               // lógica de inserção no banco ajax Ajax AJAX 
@@ -942,17 +958,17 @@ verificar.addEventListener("click", function() {
 }
 
 
-/*document.getElementById('fecharCheia').style.display = 'none'
+document.getElementById('fecharCheia').style.display = 'none'
 
 function openFullscreen() {
   if (document.documentElement.requestFullscreen) {
     document.documentElement.requestFullscreen();
   } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
-   /* document.documentElement.mozRequestFullScreen();
+    document.documentElement.mozRequestFullScreen();
   } else if (document.documentElement.webkitRequestFullscreen) { /* Chrome, Safari e Opera */
-  /*  document.documentElement.webkitRequestFullscreen();
+    document.documentElement.webkitRequestFullscreen();
   } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
-  /*  document.documentElement.msRequestFullscreen();
+    document.documentElement.msRequestFullscreen();
  }
   document.getElementById('fecharCheia').style.display = 'block'
   document.getElementById('abrirCheia').style.display = 'none'
@@ -965,15 +981,108 @@ function closeFullscreen() {
   if (document.exitFullscreen) {
     document.exitFullscreen();
   } else if (document.mozCancelFullScreen) { /* Firefox */
-   /* document.mozCancelFullScreen();
+    document.mozCancelFullScreen();
   } else if (document.webkitExitFullscreen) { /* Chrome, Safari e Opera */
-   /* document.webkitExitFullscreen();
+    document.webkitExitFullscreen();
   } else if (document.msExitFullscreen) { /* IE/Edge */
-  /*  document.msExitFullscreen();
+    document.msExitFullscreen();
   }
   document.getElementById('fecharCheia').style.display = 'none'
   document.getElementById('abrirCheia').style.display = 'block'
-}*/
+}
+
+
+
+
+
+
+
+
+
+
+let fruta1 = document.getElementById("f1");
+let fruta2 = document.getElementById("f2");
+let fruta3 = document.getElementById("f3");
+let fruta4 = document.getElementById("f4");
+let fruta5 = document.getElementById("f5");
+
+
+
+function limaparCard(){
+  fruta1.style.transform = "none";
+  fruta2.style.transform = "none";
+  fruta3.style.transform = "none";
+  fruta4.style.transform = "none";
+  fruta5.style.transform = "none";
+}
+
+fruta1.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Audios/A.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta1.style.transform = "translateY(-20px)";
+  fruta1.style.transition = "transform 0.5s ease";
+
+  audio.addEventListener('ended', function() {
+    fruta1.style.transform = "none";
+  });
+});
+fruta2.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Audios/E.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta2.style.transform = "translateY(-20px)";
+  fruta2.style.transition = "transform 0.5s ease";
+
+  audio.addEventListener('ended', function() {
+    fruta2.style.transform = "none";
+  });
+});
+fruta3.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Audios/I.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta3.style.transform = "translateY(-20px)";
+  fruta3.style.transition = "transform 0.5s ease";
+
+  audio.addEventListener('ended', function() {
+    fruta3.style.transform = "none";
+  });
+});
+fruta4.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Audios/O.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta4.style.transform = "translateY(-20px)";
+  fruta4.style.transition = "transform 0.5s ease";
+
+  audio.addEventListener('ended', function() {
+    fruta4.style.transform = "none";
+  });
+});
+fruta5.addEventListener('click', function() {
+  limaparCard();
+  // Exibe o modal
+  audio.src = "Audios/U.mp3";
+  audio.play();
+  audio.volume = 1;
+  fruta5.style.transform = "translateY(-20px)";
+  fruta5.style.transition = "transform 0.5s ease";
+
+  audio.addEventListener('ended', function() {
+    fruta5.style.transform = "none";
+  });
+});
+
+
 
 
 
@@ -989,24 +1098,24 @@ const modal = document.getElementById('modal');
 // Seleciona o elemento para fechar o modal
 const closeBtn = document.querySelector('.close');
 
-// Adiciona um evento de clique ao botão final
-// btnFinal.addEventListener('click', function() {
-//   // Exibe o modal
-//   modal.style.display = 'block';
-// });
+//Adiciona um evento de clique ao botão final
+btnFinal.addEventListener('click', function() {
+  // Exibe o modal
+  modal.style.display = 'block';
+});
 
-// // Adiciona um evento de clique ao elemento para fechar o modal
-// closeBtn.addEventListener('click', function() {
-//   // Fecha o modal
-//   modal.style.display = 'none';
-// });
+// Adiciona um evento de clique ao elemento para fechar o modal
+closeBtn.addEventListener('click', function() {
+  // Fecha o modal
+  modal.style.display = 'none';
+});
 
-// // Fecha o modal quando o usuário clica fora dele
-// window.addEventListener('click', function(event) {
-//   if (event.target === modal) {
-//     modal.style.display = 'none';
-//   }
-// });
+// Fecha o modal quando o usuário clica fora dele
+window.addEventListener('click', function(event) {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+});
 
 
 

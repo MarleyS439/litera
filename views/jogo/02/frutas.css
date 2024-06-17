@@ -282,6 +282,7 @@ TOPO DO JOGO MOEDAS - BARRA DE ACERTO - AUDIO!!!!!
     cursor: url("./img/mao2.svg"), auto;
 }
 
+
 .topo .header .mutarSom{
     width: 45px;
     height: 45px;
@@ -341,6 +342,20 @@ TOPO DO JOGO MOEDAS - BARRA DE ACERTO - AUDIO!!!!!
     left: 5%;
     right: 5%;
 }
+
+.topo .header .fullScreen{
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
+    background: url('./img/fullscreen.svg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: var(--cor-audio-balao);
+    border: 3px solid var(--border--header);
+    outline: none;
+    cursor: url("./img/mao2.svg"), auto;
+  }
 
 .topo .barra .acerto {
     animation: barra 1s ease-in-out forwards;
@@ -860,15 +875,24 @@ FIM DO JOGO MODAL!!!!!
 
   .headerModal{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     align-items: center;
+    position: relative;
 
   }
   .headerModal p{
     color: var(--borda-resultados);
   }
 
+
+
+  .headerModal .close{
+    position: absolute;
+    right: 0;
+    cursor: url("./img/mao2.svg"), auto;
+  }
+  
   .conteudoFrutas{
     display: flex;
     flex-direction: column;
@@ -1508,7 +1532,7 @@ FIM DO JOGO MODAL!!!!!
 
     
     .topo .header .fullScreen{
-        display: none;
+        display: flex;
     }
     .topo .header .homeScreen{
         width: 50px;

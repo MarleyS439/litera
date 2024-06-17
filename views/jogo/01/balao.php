@@ -75,7 +75,7 @@ if ($_SESSION['authUser'] == null) {
                 <div id="modal" class="modal">
                     <div class="modal-content">
                         <div class="headerModal">
-                            <p>seus resultados:</p>
+                            <p>seus resultados</p>
                             <span class="close"><img style="width: 30px;" src="./img/jogoFruta/X.svg" alt=""></span>
                         </div>
 
@@ -84,11 +84,12 @@ if ($_SESSION['authUser'] == null) {
                                 <p id="corPontuacao" class="desk">Pontuação: <span class="total_modal" id="final_point2"><i class="fa-solid fa-coins"></i></span></p>
                                 <p id="corErros" class="desk">Tentativas: <span class="total_modal" id="final_error2"></span></p>
                                 <p id="corAcertos" class="desk">Acertos: <span class="total_modal" id="final_acerto"></span></p>
-                                
+                                <p id="corAcertos" class="desk">Tempo: <span class="total_modal" id="cronometroFim">00:00</span></p>
                                 
                                 <p id="corPontuacao" class="mobile"><span class="total_modal" id="final_point3"><i class="fa-solid fa-coins"> </i></span></p>
                                 <p id="corErros" class="mobile">Tentativas: <span class="total_modal" id="final_error3"></span></p>
                                 <p id="corAcertos" class="mobile">Acertos: <span class="total_modal" id="final_acerto2"></span></p>
+                                <p id="corAcertos" class="mobile">Tempo: <span class="total_modal" id="cronometroFim2">00:00</span></p>
                                 
                                 
                                 <div class="som">
@@ -102,49 +103,33 @@ if ($_SESSION['authUser'] == null) {
                             </div>
                             <div class="areaDeFrutas">
                                 <div class="cardsFrutas">
-                                    <div class="card">
-                                        <img src="./img/jogoFruta/figuras-frutas/maça.svg" alt="">
+                                    <div class="card"  id="f1">
+                                        <img src="./img/baloes/BalaoA.svg" alt="">
                                         <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
-                                        <p>Maçã</p>
+                                        <p>A</p>
                                     </div>
-                                    <div class="card">
-                                        <img src="./img/jogoFruta/figuras-frutas/banana.svg" alt="">
+                                    <div class="card" id="f2">
+                                        <img src="./img/baloes/BalaoE.svg" alt="">
                                         <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
-                                        <p class="banana">Banana</p>
+                                        <p class="banana">E</p>
                                     </div>
-                                    <div class="card">
-                                        <img src="./img/jogoFruta/figuras-frutas/melancia.svg" alt="">
+                                    <div class="card" id="f3">
+                                        <img src="./img/baloes/BalaoI.svg" alt="">
                                         <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
-                                        <p class="melancia">Melancia</p>
+                                        <p class="melancia">I</p>
                                     </div>
-                                    <div class="card">
+                                    <div class="card" id="f4">
 
-                                        <img src="./img/jogoFruta/figuras-frutas/morango.svg" alt="">
+                                        <img src="./img/baloes/BalaoO.svg" alt="">
                                         <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
-                                        <p class="morango">Morango</p>
+                                        <p class="morango">O</p>
                                     </div>
                                 </div>
                                 <div class="cardsFrutas2">
-                                    <div class="card">
-                                        <img src="./img/jogoFruta/figuras-frutas/pera.svg" alt="">
+                                    <div class="card" id="f5">
+                                        <img src="./img/baloes/BalaoU.svg" alt="">
                                         <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
-                                        <p class="pera">Pera</p>
-                                    </div>
-                                    <div class="card">
-                                        <img src="./img/jogoFruta/figuras-frutas/cereja.svg" alt="">
-                                        <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
-                                        <p class="cereja">cereja</p>
-                                    </div>
-                                    <div class="card">
-                                        <img src="./img/jogoFruta/figuras-frutas/abacaxi.svg" alt="">
-                                        <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
-                                        <p class="abacaxi">Abacaxi</p>
-                                    </div>
-                                    <div class="card">
-
-                                        <img src="./img/jogoFruta/figuras-frutas/laranja.svg" alt="">
-                                        <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
-                                        <p class="laranja">Laranja</p>
+                                        <p class="pera">U</p>
                                     </div>
                                 </div>
 
@@ -152,44 +137,29 @@ if ($_SESSION['authUser'] == null) {
                                 <div class="swiper-container">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
-                                            <img src="./img/jogoFruta/figuras-frutas/maça.svg" alt="Maçã">
+                                            <img src="./img/baloes/BalaoA.svg" alt="Maçã">
                                             <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
-                                            <p class="maca">Maçã</p>
+                                            <p class="maca">A</p>
                                         </div>
                                         <div class="swiper-slide">
-                                            <img src="./img/jogoFruta/figuras-frutas/banana.svg" alt="Banana">
+                                            <img src="./img/baloes/BalaoE.svg" alt="Banana">
                                             <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
-                                            <p class="banana">Banana</p>
+                                            <p class="banana">E</p>
                                         </div>
                                         <div class="swiper-slide">
-                                            <img src="./img/jogoFruta/figuras-frutas/melancia.svg" alt="Melancia">
+                                            <img src="./img/baloes/BalaoI.svg" alt="Melancia">
                                             <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
-                                            <p class="melancia">Melancia</p>
+                                            <p class="melancia">I</p>
                                         </div>
                                         <div class="swiper-slide">
-                                            <img src="./img/jogoFruta/figuras-frutas/morango.svg" alt="Morango">
+                                            <img src="./img/baloes/BalaoO.svg" alt="Morango">
                                             <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
-                                            <p class="morango">Morango</p>
+                                            <p class="morango">O</p>
                                         </div>
                                         <div class="swiper-slide">
-                                            <img src="./img/jogoFruta/figuras-frutas/pera.svg" alt="Pera">
+                                            <img src="./img/baloes/BalaoU.svg" alt="Pera">
                                             <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
-                                            <p class="pera">Pera</p>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img src="./img/jogoFruta/figuras-frutas/cereja.svg" alt="Cereja">
-                                            <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
-                                            <p class="cereja">Cereja</p>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img src="./img/jogoFruta/figuras-frutas/abacaxi.svg" alt="Abacaxi">
-                                            <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
-                                            <p class="abacaxi">Abacaxi</p>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img src="./img/jogoFruta/figuras-frutas/laranja.svg" alt="Laranja">
-                                            <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
-                                            <p class="laranja">Laranja</p>
+                                            <p class="pera">U</p>
                                         </div>
                                         
                                     </div>
@@ -237,11 +207,11 @@ if ($_SESSION['authUser'] == null) {
                 </div>
 
                 <div class="header" id="header">
-                    <div id="cronometro" class="cronometro">00:00:00</div>
+                    <div id="cronometro" class="cronometro">00:00</div>
                     <a href="../../../views/home.php" class="homeScreen"></a>
                     <button class="mutarSom" id="mutarEdesmutar"></button>
-                    <!-- <button onclick="openFullscreen()" class="fullScreen" id="abrirCheia"></button> -->
-                    <!-- <button onclick="closeFullscreen()" class="fullScreen" id="fecharCheia"></button> -->
+                    <button onclick="openFullscreen()" class="fullScreen" id="abrirCheia"></button>
+                    <button onclick="closeFullscreen()" class="fullScreen" id="fecharCheia"></button>
                 </div>
 
             </div>

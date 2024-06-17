@@ -114,84 +114,6 @@ body {
 
 
 
-/***
-****INICIO header****
-***/
-
-
-.headerNav {
-    background-color: var(--header);
-    width: 100%;
-    padding: var(--P-header);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-}
-
-.headerNav .logo {
-    font-weight: var(--F-weightBold);
-    font-size: var(--F-logoHeader);
-    color: var(--branco);
-}
-
-.navbar .ulNav {
-    display: flex;
-    gap: 30px;
-}
-
-.ulNav .liNav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: var(--T-nav);
-    height: var(--T-nav);
-    border-radius: var(--R-nav);
-    overflow: hidden;
-
-
-}
-
-.ulNav .liNav:nth-child(1) {
-    background-color: var(--branco);
-}
-
-.ulNav .liNav a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-
-.ulNav .liNav img {
-    width: 15px;
-    height: 15px;
-}
-
-.headerNav .perfil {
-    gap: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.headerNav .perfil .avatar {
-    width: var(--T-avatar);
-    height: var(--T-avatar);
-    border-radius: var(--R-avatar);
-}
-
-.headerNav .perfil .nomeUser {
-    font-size: var(--F-nomeHeader);
-    color: var(--branco);
-}
-
-/***
-****FIM header****
-***/
-
-
 
 /***** CONTAINER PARA O JOGO! *****/
 .container {
@@ -236,13 +158,8 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-top: var(--MT-areaJogo);
-    width: 50%;
-    height: 80%;
-    min-width: 370px;
-    min-height: 350px;
-    border: 2px solid var(--borda);
-    border-radius: var(--R-areaJogoBorda);
+    width: 100%;
+    height: 100%;
     background-color: var(--branco);
     background: url('../img/v1015-104a\ 2.svg');
     background-repeat: no-repeat;
@@ -273,7 +190,8 @@ body {
     display: flex;
     flex-direction: row;
     border: 1px solid var(--borda);
-    width: 70%;
+    width: 50%;
+    min-width: 300px;
     height: 20px;
     border-radius: var(--R-barraBorda);
     overflow: hidden;
@@ -650,39 +568,96 @@ body {
 
     25% {
         bottom: 35%;
-        right: 42%;
+        right: 46%;
         transform: rotate(-30deg) rotateY(40deg);
 
     }
 
     30% {
         bottom: 35%;
-        right: 42%;
+        right: 46%;
         transform: scale(.5) rotate(-30deg);
 
     }
 
     60% {
         bottom: 35%;
-        right: 42%;
+        right: 46%;
         transform: scale(1);
     }
 
     80% {
-        bottom: 2%;
-        right: 42%;
+        bottom: 10%;
+        right: 46%;
     }
 
     90% {
-        bottom: 2%;
-        right: 42%;
+        bottom: 10%;
+        right: 46%;
         transform: scale(.7) rotate(-30deg) rotateY(40deg);
     }
 
     100% {
-        bottom: 2%;
-        right: 42%;
+        bottom: 10%;
+        right: 46%;
         transform: scale(1.2);
+    }
+
+}
+
+
+
+@media only screen and (max-width: 768px) {
+ 
+    .area-jogo .box-mensagem .mensagem {
+
+        width: 70%;
+        
+    }
+
+    @keyframes mao {
+        0% {
+            bottom: 0%;
+            right: 0%;
+        }
+    
+        25% {
+            bottom: 36%;
+            right: 37%;
+            transform: rotate(-30deg) rotateY(40deg);
+    
+        }
+    
+        30% {
+            bottom: 36%;
+            right: 37%;
+            transform: scale(.5) rotate(-30deg);
+    
+        }
+    
+        60% {
+            bottom: 36%;
+            right: 37%;
+            transform: scale(1);
+        }
+    
+        80% {
+            bottom: 0%;
+            right: 37%;
+        }
+    
+        90% {
+            bottom: 0%;
+            right: 37%;
+            transform: scale(.7) rotate(-30deg) rotateY(40deg);
+        }
+    
+        100% {
+            bottom: 0%;
+            right: 37%;
+            transform: scale(1.2);
+        }
+    
     }
 
 }

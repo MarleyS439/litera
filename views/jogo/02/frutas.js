@@ -2158,17 +2158,17 @@ function fazerPergunta() {
 }
 
 
-/*document.getElementById('fecharCheia').style.display = 'none'
+document.getElementById('fecharCheia').style.display = 'none'
 
 function openFullscreen() {
   if (document.documentElement.requestFullscreen) {
     document.documentElement.requestFullscreen();
   } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
-   /* document.documentElement.mozRequestFullScreen();
+    document.documentElement.mozRequestFullScreen();
   } else if (document.documentElement.webkitRequestFullscreen) { /* Chrome, Safari e Opera */
-  /*  document.documentElement.webkitRequestFullscreen();
+    document.documentElement.webkitRequestFullscreen();
   } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
-  /*  document.documentElement.msRequestFullscreen();
+    document.documentElement.msRequestFullscreen();
  }
   document.getElementById('fecharCheia').style.display = 'block'
   document.getElementById('abrirCheia').style.display = 'none'
@@ -2181,15 +2181,15 @@ function closeFullscreen() {
   if (document.exitFullscreen) {
     document.exitFullscreen();
   } else if (document.mozCancelFullScreen) { /* Firefox */
-   /* document.mozCancelFullScreen();
+    document.mozCancelFullScreen();
   } else if (document.webkitExitFullscreen) { /* Chrome, Safari e Opera */
-   /* document.webkitExitFullscreen();
+    document.webkitExitFullscreen();
   } else if (document.msExitFullscreen) { /* IE/Edge */
-  /*  document.msExitFullscreen();
+    document.msExitFullscreen();
   }
   document.getElementById('fecharCheia').style.display = 'none'
   document.getElementById('abrirCheia').style.display = 'block'
-}*/
+}
 
 let fruta1 = document.getElementById("f1");
 let fruta2 = document.getElementById("f2");
