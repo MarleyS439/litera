@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02/06/2024 às 18:19
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Tempo de geração: 17/06/2024 às 03:46
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -88,7 +88,13 @@ CREATE TABLE `tbcabelo` (
 
 INSERT INTO `tbcabelo` (`codCabelo`, `nomeCabelo`, `precoCabelo`, `imgCabelo`, `tokenCabelo`) VALUES
 (1, 'Cabelo Top', 0, 'bb69b1ff5b4cea72ae8ffbbeb088027d.jpg', '6574023345d1dfdf80b695e690cefc50'),
-(2, 'cabelo Felipe ', 0, 'f179881d725a99d5782a971f84eb7a62.jpg', '19b5163872c9d0d05adc31719f670dd2');
+(2, 'cabelo Felipe ', 0, 'f179881d725a99d5782a971f84eb7a62.jpg', '19b5163872c9d0d05adc31719f670dd2'),
+(3, 'Cabelo Campos', 0, '6ecdfb8ad1f0433c78efa2a995019a70.jpg', '2c14b8aeef2ee53c3f366410331a84e4'),
+(4, 'Cabelo Gomes', 0, 'aa801156b44fb474f3e549781143302a.jpg', '6bd5716d9bfaf1ea0c37f0917deca400'),
+(5, 'Cabelo Henrique', 0, '84e0f92004f54afb0d642151cf093461.jpg', 'c5f5b3700804343a83270e5999a40e95'),
+(6, 'Cabelo Kaua', 0, 'ce790e78b8256fa5a280e3c462ee67cf.jpg', 'baaab4cfaa726e399906f84bccf55925'),
+(7, 'Cabelo Mariana', 0, 'd54d24898e79b7103cad98604a11fdb2.jpg', 'a5c999b6a1c75d97ff2d1b6ed1395593'),
+(8, 'Cabelo Milena', 0, 'fb41a1f335e4e5a20dde5da4bd81077c.jpg', 'aec778e8aa46119e3eb1e3197a333962');
 
 -- --------------------------------------------------------
 
@@ -188,7 +194,13 @@ CREATE TABLE `tbgenero` (
 
 INSERT INTO `tbgenero` (`codGenero`, `nomeGenero`, `precoGenero`, `imgGenero`, `tokenGenero`) VALUES
 (1, 'genero nulo', 0, 'e204caf49569222bc33753005ca07653.jpg', '68e3fe91a425202f5471c56c95f4d0cf'),
-(2, 'Felipe', 0, '58fde547b4ea0b4dad86fad4f6262598.jpg', '2e0e22187c58e8aab0b43fd265f1e280');
+(2, 'Felipe', 0, '58fde547b4ea0b4dad86fad4f6262598.jpg', '2e0e22187c58e8aab0b43fd265f1e280'),
+(3, 'Base Campos', 0, '35f45def3ece410649f5762a913ba405.jpg', 'bbb8caccdadc954c0bdf099847a6437d'),
+(4, 'Base Gomes', 0, '80652449f9f629a147996e067f42edf6.jpg', '7bbcda6c4cf40c39469c8c0226836f2d'),
+(5, 'Base Henrique', 0, 'ceb3f9b64fd0e0e39885c3739ffa50d1.jpg', '995ea4d4dea7377fa92c522265183329'),
+(6, 'Base Kaua ', 0, 'bcde42dc5f25574118484aad830434e0.jpg', 'e9c1a0d6e156ba45294270c03622ba6e'),
+(7, 'Base Mariana', 0, '4c523d1b98befef1db084134c6369149.jpg', '19664e924b867273b58df8e4b5b556d0'),
+(8, 'Base Milena', 0, '1b0d4537600d96317f23f6505add6787.jpg', '9126c352cb7c51d83db726458bd715bc');
 
 -- --------------------------------------------------------
 
@@ -272,7 +284,13 @@ CREATE TABLE `tbroupa` (
 
 INSERT INTO `tbroupa` (`codRoupa`, `nomeRoupa`, `precoRoupa`, `imgRoupa`, `tokenRoupa`) VALUES
 (1, 'Roupa Teste', 0, '624be995f7dcb77f07bd98035aa1a23f.jpg', 'ea39342e27cfc8cac339e1c9bf6776b5'),
-(2, 'Roupa Branca', 0, '120fa382f360c4cb9b57f2c3cf71c62e.jpg', 'f0256aa7cc7c713a507d9fe14e191377');
+(2, 'Roupa Branca', 0, '120fa382f360c4cb9b57f2c3cf71c62e.jpg', 'f0256aa7cc7c713a507d9fe14e191377'),
+(3, 'Roupa Campos', 0, '36dade16388c7007b96bf45316afe2b2.jpg', 'f3c566010a1f634e07a2211318d886eb'),
+(4, 'Roupa Gomes', 0, '9f1620cd87c6bc651f8111c8cfb51ea3.jpg', '155f765399ecaa42c86853296accd0fd'),
+(5, 'Roupa Henrique', 0, '17f38dd1602e527d02dcabe476573a49.jpg', '81f59b36d492f47b1143b24b2c477168'),
+(6, 'Roupa Kaua', 0, '493c33ca5199c31669432ba800a63204.jpg', 'a0f70a8b08bc35ad4599d6df1dba39b4'),
+(7, 'Roupa Mariana', 0, 'b16b12748f3741ad9afb79dc800346e7.jpg', 'd06e26d1a599536c95acb807b50a6527'),
+(8, 'Roupa Milena', 0, '768072e67ebfbc6ea12ff395a25478dc.jpg', '14d496976e1fe74ab0a12213a3d08920');
 
 -- --------------------------------------------------------
 
@@ -453,7 +471,7 @@ ALTER TABLE `tbavatar`
 -- AUTO_INCREMENT de tabela `tbcabelo`
 --
 ALTER TABLE `tbcabelo`
-  MODIFY `codCabelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `codCabelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `tbcategoria`
@@ -495,7 +513,7 @@ ALTER TABLE `tbdadosusuarios`
 -- AUTO_INCREMENT de tabela `tbgenero`
 --
 ALTER TABLE `tbgenero`
-  MODIFY `codGenero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `codGenero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `tbitem`
@@ -525,7 +543,7 @@ ALTER TABLE `tbperfil`
 -- AUTO_INCREMENT de tabela `tbroupa`
 --
 ALTER TABLE `tbroupa`
-  MODIFY `codRoupa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `codRoupa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `tbtipoitem`
