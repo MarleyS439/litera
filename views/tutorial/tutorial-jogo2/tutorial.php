@@ -8,19 +8,6 @@
     <title>Litera | Tutorial Fruta </title>
 </head>
 <body>
-    <header class="headerNav">
-        <a href="#" class="logo">Litera</a>
-        <nav class="navbar">
-            <ul class="ulNav">
-                <li class="liNav"><a href="#"><img src="./img/home.svg"></a></li>
-                <li class="liNav"><a href="#"><img src="./img/store.svg"></a></li>
-            </ul>
-        </nav>
-        <a href="#" class="perfil">
-            <img src="./img/sapo.png" class="avatar">
-            <span class="nomeUser" name="userName">João</span>   
-        </a>
-    </header>
     <section class="container">
         <div class="area-jogo">
             <!-- barra de progresso -->

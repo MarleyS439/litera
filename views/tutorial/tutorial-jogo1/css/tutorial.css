@@ -235,6 +235,7 @@ body {
 .area-jogo .box-mensagem .mensagem {
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 100%;
     width: 40%;
     border-radius: var(--R-barraBorda);
