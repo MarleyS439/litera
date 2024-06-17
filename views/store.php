@@ -216,24 +216,15 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
 
     </div>
 
-
-
-
-
-
-
-
-
-
     <!-- Mobile View -->
     <div class="mobile-view">
         <div class="overlay-itens2"></div>
         <div class="top-bar">
             <div class="info-user">
-                <img src="../assets/images/icons/profile.svg" alt="">
                 <?php if (!$codUser['isGuesty']) : ?>
 
                     <span><?php echo ($perfilAutenticado['nomePerfil']) ?></span>
+                    <span class="levelUser"><?php echo $perfilAutenticado['nivel'] ?? $codUser['nivel']; ?></span>
                 <?php endif; ?>
             </div>
 
@@ -242,69 +233,168 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
                 <?php if (!$codUser['isGuesty']) : ?>
                     <span><?php echo ($perfilAutenticado['dinheiroPerfil']) ?></span>
                 <?php endif ?>
+                <div class="options" >
+                    <img id="configs" src="../assets/images/icons/confiIcon.svg" alt="Opções">
+                </div>
+            </div>
+       </div>
+        
+            <!-- Mini menu - mobile -->
+            <?php include('../views/components/minimenu.php'); ?>
+
+        <main>
+        
+        <div class="title-store">
+            <div>
+                <h1>Loja de Pontos</h1>
             </div>
         </div>
-        <div class="contain">
-            <div class="cards">
-                <a href="./store.php" class="access-card">
-                    <div class="name-card">
-                        <p>Roupas</p>
-                    </div>
-                    <div class="figure-card">
-                        <img src="../assets/images/icons/shirt-icon.png" alt="Roupas">
-                    </div>
-                </a>
-            </div>
+        <?php
+        $status = isset($_GET['status']) ? $_GET['status'] : null;
+        // var_dump($cabelo);
+        if ($status === 'chapeos') {  ?>
+            <form action="../controller/insertAvatar.php" method="POST" class="form-avatar">
+                <input type="hidden" name="roupa" id="roupa-hidden" value="">
 
-            <div class="cards card-active">
-                <a href="./store.php?status=chapeos" class="access-card">
-                    <div class="name-card">
-                        <p>Chapéus</p>
-                    </div>
-                    <div class="figure-card">
-                        <img src="../assets/images/icons/hat-icon.png" alt="Chápeus">
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <form action="../controller/insertAvatar.php" method="POST" class="form-avatar">
-            <!-- Adicione o input hidden aqui -->
-            <input type="hidden" name="roupa" id="roupa-hidden" value="">
-
-            <div class="inventory">
-                <?php
-                foreach ($roupa as $roupas) { ?>
-                    <div class="card-item">
-                        <img src="../assets/images/perfil/roupa/<?php echo $roupas['imgRoupa'] ?>" alt="<?php echo $roupas['nomeRoupa'] ?>" data-value="<?php echo $roupas['codRoupa'] ?>">
-                    </div>
-                <?php } ?>
-            </div>
-            <div class="items">
-                <div class="container-avatar">
-                    <div class="base">
-                        <img src="../assets/images/perfil/genero/<?php echo $avatar["imgGenero"] ?>" alt="">
-                        <div class="cabelo">
-                            <img src="../assets/images/perfil/cabelo/<?php echo $avatar["imgCabelo"] ?>" alt="">
+                
+                <div class="items">
+                    <div class="container-avatar">
+                        <div class="sla">
+                            <h1>Seu Avatar</h1>
                         </div>
-                        <div class="roupa">
-                            <img src="../assets/images/perfil/roupa/<?php echo $avatar["imgRoupa"] ?>" alt="">
+                        <div class="base">
+                            <img src="../assets/images/perfil/genero/<?php echo $avatar["imgGenero"] ?>" alt="">
+                            <div class="cabelo">
+                                <img src="../assets/images/perfil/cabelo/<?php echo $avatar["imgCabelo"] ?>" alt="">
+                            </div>
+                            <div class="roupa">
+                                <img src="../assets/images/perfil/roupa/<?php echo $avatar["imgRoupa"] ?>" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="buttons">
+                        <button type="submit">
+                            <p>Cancelar</p>
+                        </button>
+                        <input type="hidden" name="codUser" value="<?php echo $codUser['codPerfil'] ?>">
+                        <input type="hidden" name="itemAvatar" value="comprarRoupa">
+                        <button type="submit">
+                            <p>Comprar</p>
+                        </button>
+                    </div> -->
+                    <div class="contain">
+                        <div class="cards">
+                            <a href="./store.php" class="access-card">
+                                <div class="name-card">
+                                    <p>Roupas</p>
+                                </div>
+                                <div class="figure-card">
+                                    <img src="../assets/images/icons/shirt-icon.png" alt="Roupas">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cards card-active">
+                            <a href="./store.php?status=chapeos" class="access-card">
+                                <div class="name-card">
+                                    <p>Chapéus</p>
+                                </div>
+                                <div class="figure-card">
+                                    <img src="../assets/images/icons/hat-icon.png" alt="Chápeus">
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="buttons">
-                    <button type="submit">
-                        <p>Cancelar</p>
-                    </button>
-                    <input type="hidden" name="codUser" value="<?php echo $codUser['codPerfil'] ?>">
-                    <input type="hidden" name="itemAvatar" value="comprarRoupa">
-                    <button type="submit">
-                        <p>Comprar</p>
-                    </button>
+                <div class="inventory">
+                    <?php
+                        foreach ($cabelo as $cabelos) { ?>
+                            <div class="card-item">
+                                <div class="center-card-item">
+                                    <img class="img-cabelo-card" src="../assets/images/perfil/cabelo/<?php echo $cabelos['imgCabelo'] ?>" alt="<?php echo $cabelos['nomeCabelo'] ?>" data-value="<?php echo $cabelos['codCabelo'] ?>">
+                                </div>
+                                <div class="valor">
+                                    <img src="../assets/images/icons/coin.svg" alt="valor">
+                                    <span>100</span>
+                                </div>
+                            </div>
+                    <?php } ?>
                 </div>
-            </div>
-        </form>
+            </form>
+        <?php } else { ?>
+            <form action="../controller/insertAvatar.php" method="POST" class="form-avatar">
+                <input type="hidden" name="roupa" id="roupa-hidden" value="">
 
+                
+                <div class="items">
+                    <div class="container-avatar">
+                        <div class="sla">
+                            <h1>Seu Avatar</h1>
+                        </div>
+                        <div class="base">
+                            <img src="../assets/images/perfil/genero/<?php echo $avatar["imgGenero"] ?>" alt="">
+                            <div class="cabelo">
+                                <img src="../assets/images/perfil/cabelo/<?php echo $avatar["imgCabelo"] ?>" alt="">
+                            </div>
+                            <div class="roupa">
+                                <img src="../assets/images/perfil/roupa/<?php echo $avatar["imgRoupa"] ?>" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="buttons">
+                        <button type="submit">
+                            <p>Cancelar</p>
+                        </button>
+                        <input type="hidden" name="codUser" value="<?php echo $codUser['codPerfil'] ?>">
+                        <input type="hidden" name="itemAvatar" value="comprarRoupa">
+                        <button type="submit">
+                            <p>Comprar</p>
+                        </button>
+                    </div> -->
+                    <div class="contain">
+                        <div class="cards  card-active">
+                            <a href="./store.php" class="access-card">
+                                <div class="name-card">
+                                    <p>Roupas</p>
+                                </div>
+                                <div class="figure-card">
+                                    <img src="../assets/images/icons/shirt-icon.png" alt="Roupas">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cards">
+                            <a href="./store.php?status=chapeos" class="access-card">
+                                <div class="name-card">
+                                    <p>Chapéus</p>
+                                </div>
+                                <div class="figure-card">
+                                    <img src="../assets/images/icons/hat-icon.png" alt="Chápeus">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="inventory">
+                    <?php
+                        foreach ($roupa as $roupas) { ?>
+                            <div class="card-item">
+                                <div class="center-card-item">
+                                    <img src="../assets/images/perfil/roupa/<?php echo $roupas['imgRoupa'] ?>" alt="<?php echo $roupas['nomeRoupa'] ?>" data-value="<?php echo $roupas['codRoupa'] ?>">
+                                </div>
+                                <div class="valor">
+                                    <img src="../assets/images/icons/coin.svg" alt="valor">
+                                    <span>100</span>
+                                </div>
+                            </div>
+                    <?php } ?>
+                </div>
+            </form>
+        <?php } ?>
+        
+       
+
+    
 
         <div class="bottom-navigation-bar">
 
@@ -316,10 +406,9 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
                 <img src="../assets/images/icons/store-icon.svg" alt="Loja" id="store">
             </a>
 
-            <a href="#">
+            <a href="./perfil-profile.php">
                 <img src="../assets/images/icons/profile-icon.svg" alt="Perfil" id="profile">
             </a>
-
         </div>
     </div>
 
