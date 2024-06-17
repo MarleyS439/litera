@@ -70,7 +70,7 @@ if ($_SESSION == null) {
                 <div id="modal" class="modal">
                     <div class="modal-content">
                         <div class="headerModal">
-                            <p>seus resultados:</p>
+                            <p>seus resultados</p>
                             <span class="close"><img style="width: 30px;" src="./img/jogoFruta/X.svg" alt=""></span>
                         </div>
 
@@ -144,42 +144,42 @@ if ($_SESSION == null) {
 
                                 <div class="swiper-container">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
+                                        <div class="swiper-slide" id="f9">
                                             <img src="./img/jogoFruta/figuras-frutas/maça.svg" alt="Maçã">
                                             <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
                                             <p class="maca">Maçã</p>
                                         </div>
-                                        <div class="swiper-slide">
+                                        <div class="swiper-slide" id="f10">
                                             <img src="./img/jogoFruta/figuras-frutas/banana.svg" alt="Banana">
                                             <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
                                             <p class="banana">Banana</p>
                                         </div>
-                                        <div class="swiper-slide">
+                                        <div class="swiper-slide" id="f11">
                                             <img src="./img/jogoFruta/figuras-frutas/melancia.svg" alt="Melancia">
                                             <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
                                             <p class="melancia">Melancia</p>
                                         </div>
-                                        <div class="swiper-slide">
+                                        <div class="swiper-slide" id="f12">
                                             <img src="./img/jogoFruta/figuras-frutas/morango.svg" alt="Morango">
                                             <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
                                             <p class="morango">Morango</p>
                                         </div>
-                                        <div class="swiper-slide">
+                                        <div class="swiper-slide" id="f13">
                                             <img src="./img/jogoFruta/figuras-frutas/pera.svg" alt="Pera">
                                             <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
                                             <p class="pera">Pera</p>
                                         </div>
-                                        <div class="swiper-slide">
+                                        <div class="swiper-slide" id="f14">
                                             <img src="./img/jogoFruta/figuras-frutas/cereja.svg" alt="Cereja">
                                             <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
                                             <p class="cereja">Cereja</p>
                                         </div>
-                                        <div class="swiper-slide">
+                                        <div class="swiper-slide" id="f15">
                                             <img src="./img/jogoFruta/figuras-frutas/abacaxi.svg" alt="Abacaxi">
                                             <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
                                             <p class="abacaxi">Abacaxi</p>
                                         </div>
-                                        <div class="swiper-slide">
+                                        <div class="swiper-slide" id="f16">
                                             <img src="./img/jogoFruta/figuras-frutas/laranja.svg" alt="Laranja">
                                             <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
                                             <p class="laranja">Laranja</p>
