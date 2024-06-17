@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     let intervalo;
     const tempoInicial = { minutos: 1, segundos: 0 };
+    let animaisCorretos = 0; // Adicionando variável para monitorar animais corretamente alocados
 
     /* Array de imagens de animais */
     const animais = [
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { nome: 'Camaleão', img: 'assets/images/animais/camaleao.png' },
         { nome: 'Capivara', img: 'assets/images/animais/capivara.png' },
         { nome: 'Cervo', img: 'assets/images/animais/cervo.png' },
-        { nome: 'Cobra', img: 'assets/imag  es/animais/cobra.png' },
+        { nome: 'Cobra', img: 'assets/images/animais/cobra.png' },
         { nome: 'Formiga', img: 'assets/images/animais/formiga.png' },
         { nome: 'Galinha', img: 'assets/images/animais/galinha.png' },
         { nome: 'Galo', img: 'assets/images/animais/galo.png' },
@@ -37,6 +38,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         containerAnimais.innerHTML = '';
         containerPalavras.innerHTML = '';
+
+        // Redefine o contador de animais corretos
+        animaisCorretos = 0;
 
         // Seleciona 4 animais aleatórios e embaralha
         const animaisSelecionados = shuffle(animais).slice(0, 4);
@@ -109,9 +113,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 setTimeout(() => span.style.display = 'none', 300);
             }
 
+            // Incrementa o contador de animais corretos
+            animaisCorretos++;
+
             // Verifica se todos os animais foram posicionados corretamente
-            const animaisCorretos = document.querySelectorAll('.palavra span[style="display: none;"]').length;
-            
             if (animaisCorretos === 4) {
                 clearInterval(intervalo); // Pausa a contagem regressiva
 
@@ -168,3 +173,4 @@ document.addEventListener('DOMContentLoaded', function () {
     // Reiniciar o jogo ao clicar no botão de reinício
     document.getElementById('restartGameBtn').addEventListener('click', reiniciarJogo);
 });
+    

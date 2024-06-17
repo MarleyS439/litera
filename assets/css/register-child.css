@@ -517,7 +517,7 @@
 /* Telas de dispositivos desktops */
 @media screen and (min-width: 1025px) {
   .container {
-    background-image: url(../images/v1015-104a\ 3.png);
+    background-image: url(../images/fundo.png);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -568,9 +568,13 @@
   }
 
   .title-form h2 {
-    color: var(--white);
-    text-shadow: 1px 2px 2px #000;
+    color: var(--litera-white);
     font-size: 2rem;
+    background-color: var(--litera-blue);
+    padding: 15px 20px;
+    font-family: var(--font-poppins-bold);
+    border-radius: 12px;
+    box-shadow: 0px 5px 0px var(--litera-black);
   }
 
   .container-add-profile {
@@ -824,6 +828,7 @@
     display: flex;
     justify-content: center;
     padding: 5%;
+    margin: 0% 5%;
     background-color: var(--litera-white);
   }
 
