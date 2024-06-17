@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17/06/2024 às 03:46
+-- Tempo de geração: 17/06/2024 às 19:04
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -87,14 +87,11 @@ CREATE TABLE `tbcabelo` (
 --
 
 INSERT INTO `tbcabelo` (`codCabelo`, `nomeCabelo`, `precoCabelo`, `imgCabelo`, `tokenCabelo`) VALUES
-(1, 'Cabelo Top', 0, 'bb69b1ff5b4cea72ae8ffbbeb088027d.jpg', '6574023345d1dfdf80b695e690cefc50'),
-(2, 'cabelo Felipe ', 0, 'f179881d725a99d5782a971f84eb7a62.jpg', '19b5163872c9d0d05adc31719f670dd2'),
-(3, 'Cabelo Campos', 0, '6ecdfb8ad1f0433c78efa2a995019a70.jpg', '2c14b8aeef2ee53c3f366410331a84e4'),
-(4, 'Cabelo Gomes', 0, 'aa801156b44fb474f3e549781143302a.jpg', '6bd5716d9bfaf1ea0c37f0917deca400'),
-(5, 'Cabelo Henrique', 0, '84e0f92004f54afb0d642151cf093461.jpg', 'c5f5b3700804343a83270e5999a40e95'),
-(6, 'Cabelo Kaua', 0, 'ce790e78b8256fa5a280e3c462ee67cf.jpg', 'baaab4cfaa726e399906f84bccf55925'),
-(7, 'Cabelo Mariana', 0, 'd54d24898e79b7103cad98604a11fdb2.jpg', 'a5c999b6a1c75d97ff2d1b6ed1395593'),
-(8, 'Cabelo Milena', 0, 'fb41a1f335e4e5a20dde5da4bd81077c.jpg', 'aec778e8aa46119e3eb1e3197a333962');
+(1, 'Cabelo Campos', 0, 'f9de66d6aa9366aa68ea6df806b492f0.jpg', '5f69c9f16a2ed401b7e7a9df3188fcc8'),
+(2, 'Cabelo Gomes', 0, '85d7165150d98861fc08790e6fc1ec89.jpg', 'e6caa0607c4ad70993e16486c0ad8723'),
+(3, 'Cabelo Henrique', 0, 'be40d7de85feb474fae9f06ee4af3654.jpg', '5f2bc33c6490746384348c9d4788131b'),
+(4, 'Cabelo Mariana', 0, '6497a6552bea08bb3cc07ce5680f19af.jpg', '4d150e473da821ad3efb9f9086efe706'),
+(5, 'Cabelo Milena', 0, '580474f0d3e465ed8ad6ab221aa7b4f0.jpg', 'ba9421c13587f8f494e79d2eefed89ec');
 
 -- --------------------------------------------------------
 
@@ -471,7 +468,7 @@ ALTER TABLE `tbavatar`
 -- AUTO_INCREMENT de tabela `tbcabelo`
 --
 ALTER TABLE `tbcabelo`
-  MODIFY `codCabelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `codCabelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `tbcategoria`

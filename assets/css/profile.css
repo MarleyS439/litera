@@ -77,29 +77,46 @@
 
     .base {
         position: relative;
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .base img {
-        display: block;
-        margin: 0 auto;
-        width: 135px;
-    }
 
-    .cabelo img {
-        position: absolute;
+
+    .cabelo {
         top: 0;
-        left: 50%;
-        transform: translatey(-20%) translateX(-50%);
-        width: 115px;
+        display: flex;
+        position: absolute;
+        width: 140px;
+        height: 90px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cabelo img{
+        position: absolute;
+        top: -12px;
+        width: auto;
+        height: auto;
+        transform: translateX(-50%), translateY(-50%);
+
+    }
+
+    .roupa{
+        bottom: 0;
+        display: flex;
+        position: absolute;
+        width: 140px;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
     }
 
     .roupa img {
         position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 110px;
+        width: auto;
+        height: auto;
     }
 
     .infos {
@@ -382,29 +399,46 @@
     /* AVATAR   */
     .base {
         position: relative;
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .base img {
-        display: block;
-        margin: 0 auto;
-        width: 135px;
-    }
 
-    .cabelo img {
-        position: absolute;
+
+    .cabelo {
         top: 0;
-        left: 50%;
-        transform: translatey(-20%) translateX(-50%);
-        width: 115px;
+        display: flex;
+        position: absolute;
+        width: 140px;
+        height: 90px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cabelo img{
+        position: absolute;
+        top: -12px;
+        width: auto;
+        height: auto;
+        transform: translateX(-50%), translateY(-50%);
+
+    }
+
+    .roupa{
+        bottom: 0;
+        display: flex;
+        position: absolute;
+        width: 140px;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
     }
 
     .roupa img {
         position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 110px;
+        width: auto;
+        height: auto;
     }
 }
 
@@ -600,28 +634,43 @@
     /* AVATAR   */
     .base {
         position: relative;
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .base img {
-        display: block;
-        margin: 0 auto;
-        width: 125px;
-    }
-
-    .cabelo img {
-        position: absolute;
+    .cabelo {
         top: 0;
-        left: 50%;
-        transform: translatey(-20%) translateX(-50%);
-        width: 112px;
+        display: flex;
+        position: absolute;
+        width: 140px;
+        height: 90px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cabelo img{
+        position: absolute;
+        top: -12px;
+        width: auto;
+        height: auto;
+        transform: translateX(-50%), translateY(-50%);
+
+    }
+
+    .roupa{
+        bottom: 0;
+        display: flex;
+        position: absolute;
+        width: 140px;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
     }
 
     .roupa img {
         position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 105px;
+        width: auto;
+        height: auto;
     }
 }

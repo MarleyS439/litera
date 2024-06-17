@@ -10,7 +10,7 @@
 }
 
 /* Mobile */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1025px) {
     body {
         background-color: var(--white-blue);
     }
@@ -28,7 +28,8 @@
         height: 15vh;
         display: flex;
         align-items: center;
-        padding-left: 10%;
+        justify-content: center;
+
         color: var(--black);
         font-family: var(--font-poppins-bold);
         font-size: 30px;
@@ -57,34 +58,49 @@
 
     .base {
         position: relative;
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-
-    .base img {
-        display: block;
-        margin: 0 auto;
-        width: 120px;
+    
+    .cabelo {
+        top: 0;
+        display: flex;
+        position: absolute;
+        width: 140px;
+        height: 90px;
+        justify-content: center;
+        align-items: center;
     }
 
     .cabelo img {
         position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateY(-20%) translateX(-50%);
-        width: 105px;
+        top: -12px;
+        width: auto;
+        height: auto;
+        transform: translateX(-50%), translateY(-50%);
+
+    }
+
+    .roupa {
+        bottom: 0;
+        display: flex;
+        position: absolute;
+        width: 140px;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
     }
 
     .roupa img {
         position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
+        width: auto;
+        height: auto;
     }
 
     /* etapas */
     .etapa {
-        width: 60%;
+        width: 300px;
         height: 10vh;
         border-radius: 20px;
         background-color: var(--border-azul-2);
@@ -93,9 +109,11 @@
         justify-content: space-evenly;
         margin: 5vw 0;
     }
-    .card img{
-        width: 90%;
+
+    .card img {
+        width: 50px;
     }
+
     .etapa .card,
     .etapa .etapaAtu {
         width: 20%;
@@ -112,27 +130,32 @@
 
     .etapa .etapaAtu {
         background-color: #0ea3ff;
-        
+
     }
-    .genero{
+
+    .genero {
         display: flex;
         flex-direction: row;
         align-items: center;
     }
-    .genero img{
+
+    .genero img {
         width: 7vw;
         height: 7vh;
         margin: -5%;
-    } 
-    .genderMale{
+    }
+
+    .genderMale {
         width: 50vw;
         height: 15vh;
     }
-    .cabeloIcon{
+
+    .cabeloIcon {
         width: 90%;
     }
+
     .avancar {
-        width: 100%;
+        width: 500px;
         height: 7vh;
         display: flex;
         justify-content: end;
@@ -159,9 +182,10 @@
     }
 
     .containerOpcoes {
-        width: 80%;
+        width: 400px;
         min-height: 20vh;
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         justify-content: space-around
     }
@@ -170,16 +194,17 @@
         width: 35%;
         height: 130px;
         border: solid 3px var(--border-blue);
-        display: flex;  
+        display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         position: relative;
         padding: 5px 0px 0px 0px;
         border-radius: 20px;
     }
+
     .opcoes img {
-        width: 70px;
+        width: 100px;
     }
 
     .input-opcao {
@@ -190,22 +215,13 @@
     }
 
     input[type="radio"] {
-        width: 300%;
-        opacity: 1  ;
+        width: 100%;
+        opacity: 0;
     }
 
-    .opcoes-cabelo {
-        width: 35%;
-        height: 130px;
-    }
-    .opcoes-cabelo img{
-        position: relative;
-        top: 30%;
-    }
+
 }
 
-/* Tablets */
-@media screen and (min-width: 769px) and (max-width: 1024px) {}
 
 /* Desktops */
 @media screen and (min-width: 1025px) {
@@ -219,6 +235,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        position: relative;
+        /* Adicionado */
     }
 
     .top {
@@ -226,7 +244,7 @@
         height: 15vh;
         display: flex;
         align-items: center;
-        padding-left: 10%;
+        justify-content: center;
         color: var(--black);
         font-family: var(--font-poppins-bold);
         font-size: 30px;
@@ -260,39 +278,43 @@
         justify-content: center;
     }
 
-
-
     .cabelo {
+        top: 0;
         display: flex;
         position: absolute;
-        top: -17px;
         width: 140px;
-        height: 170px;
-        border: 1px solid red;
+        height: 90px;
         justify-content: center;
         align-items: center;
     }
 
-    .cabelo img{
-
+    .cabelo img {
         position: absolute;
-        top: 0px;
+        top: -12px;
+        width: auto;
+        height: auto;
+        transform: translateX(-50%), translateY(-50%);
+    }
+
+    .roupa {
+        bottom: 0;
+        display: flex;
+        position: absolute;
+        width: 140px;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .roupa img {
+        position: absolute;
         width: auto;
         height: auto;
     }
 
-
-    .roupa img {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
-    }
-
     /* etapas */
     .etapa {
-        width: 30%;
+        width: 300px;
         height: 10vh;
         border-radius: 20px;
         background-color: var(--border-azul-2);
@@ -304,8 +326,8 @@
 
     .etapa .card,
     .etapa .etapaAtu {
-        width: 14%;
-        height: 90%;
+        width: 60px;
+        height: 60px;
         border-radius: 10px;
         background-color: var(--white);
         align-items: center;
@@ -317,32 +339,44 @@
 
     .etapa .etapaAtu {
         background-color: var(--border-blue);
-        
     }
-    .genero{
+
+    .genero {
         display: flex;
         flex-direction: row;
         align-items: center;
     }
-    .genero img{
+
+    .genero img {
         width: 5vw;
         height: 5vh;
         margin: -5%;
-    } 
-    .genderMale{
+    }
+
+    .genderMale {
         width: 10vw;
         height: 5vh;
     }
+
     .avancar {
-        width: 100%;
-        height: 7vh;
+        width: 200px;
+        /* Ajuste conforme necessário */
+        height: 50px;
+        /* Ajuste conforme necessário */
         display: flex;
-        justify-content: end;
+        justify-content: center;
+        align-items: center;
         padding-right: 10%;
-        margin-top: -15vh;
+        position: absolute;
+        bottom: 20px;
+        /* Ajuste conforme necessário */
+        right: 10%;
+        /* Ajuste conforme necessário */
     }
 
     .avancar button {
+        width: 200px;
+        height: 100%;
         padding: 5px 20px 5px 20px;
         border: none;
         border-radius: 10px;
@@ -365,7 +399,7 @@
         min-height: 20vh;
         display: flex;
         flex-direction: row;
-        justify-content: space-around
+        justify-content: space-around;
     }
 
     .opcoes {
@@ -374,14 +408,13 @@
         border: solid 3px var(--border-blue);
         display: flex;
         flex-direction: column;
-        display: flex;
-        flex-direction: column;
         justify-content: space-between;
         align-items: center;
         position: relative;
         padding: 5px 0px 0px 0px;
         border-radius: 20px;
     }
+
     .opcoes img {
         width: 120px;
     }
@@ -392,10 +425,12 @@
         width: 100%;
         height: 100%;
     }
+
     .opcoes-cabelo {
         width: 17%;
         height: 150px;
     }
+}
 
 
 
@@ -420,7 +455,8 @@
 
 
 
-    /* .conteinerImg {
+
+/* .conteinerImg {
         width: 100%;
         height: 35vh;
         display: flex;
@@ -439,12 +475,12 @@
         background-color: #5ca3cf;
     } */
 
-    /* .base {
+/* .base {
         position: relative;
         display: inline-block;
     } */
 
-    /* .base img {
+/* .base img {
         display: block;
         margin: 0 auto;
         width: 135px;
@@ -458,7 +494,7 @@
         width: 120px;
     } */
 
-    /* .roupa img {
+/* .roupa img {
         position: absolute;
         bottom: 0;
         left: 50%;
@@ -466,7 +502,7 @@
         width: 117px;
     } */
 
-    /* .conteinerOpcoes form {
+/* .conteinerOpcoes form {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
@@ -474,7 +510,7 @@
         margin-top: 2vh;
     } */
 
-    /* .opcoes {
+/* .opcoes {
         width: 10%;
         height: 20vh;
         border: solid 3px var(--border-blue);
@@ -485,6 +521,6 @@
         position: relative;
     } */
 
-    /* Ajuste para o input radio */
+/* Ajuste para o input radio */
 
-}
+/* } */

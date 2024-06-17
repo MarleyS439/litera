@@ -25,9 +25,11 @@ body {
         box-shadow: 1px 1px 1px #00000020;
         transition: 200ms ease-in-out;
     }
-    .contain{
+
+    .contain {
         display: none,
     }
+
     .info-user {
         display: flex;
         justify-content: left;
@@ -587,34 +589,52 @@ body {
 
     }
 
+    /* AVATAR   */
     .base {
         position: relative;
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: red;
     }
-
-    .base img {
-        display: block;
-        margin: 0 auto;
-        width: 140px;
+    
+    .cabelo {
+        top: 0;
+        display: flex;
+        position: absolute;
+        /* width: 180px; */
+        height: 90px;
+        justify-content: center;
+        align-items: center;
+        background-color: blueviolet;
     }
 
     .cabelo img {
         position: absolute;
-        top: -15;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 120px;
+        top: 5;
+        width: auto;
+        height: auto;
+        transform: translateX(-50%), translateY(-50%);
+
+    }
+
+    .roupa {
+        bottom: 0;
+        display: flex;
+        position: absolute;
+        width: 140px;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
     }
 
     .roupa img {
         position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 115px;
-        z-index: 3;
+        width: auto;
+        height: 80;
     }
 
+    
 
     .buttons {
         position: relative;

@@ -50,7 +50,7 @@
                 <img src="img/maça/ÇA1.svg" alt="silaba alt" id="alternativa1">
 
                 <img src="img/pera/PE1.svg" alt="silaba" id="alternativa2">
-                <img src="img/pera/RE2.svg" alt="silaba" id="alternativa3">   
+                <img src="img/pera/RA2.svg" alt="silaba" id="alternativa3">   
             </div>
 
             <!-- area onde apacere as letras selecionadas -->
