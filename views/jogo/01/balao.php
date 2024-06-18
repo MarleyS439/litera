@@ -75,7 +75,7 @@ if ($_SESSION['authUser'] == null) {
                 <div id="modal" class="modal">
                     <div class="modal-content">
                         <div class="headerModal">
-                            <p>seus resultados</p>
+                            <p>Seus resultados</p>
                             <span class="close"><img style="width: 30px;" src="./img/jogoFruta/X.svg" alt=""></span>
                         </div>
 

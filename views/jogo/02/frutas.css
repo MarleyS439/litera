@@ -633,6 +633,11 @@ INICIO - JOGO!!!!!
     border-radius: 5px;
 }
 
+.boxSilabas:nth-child(6){
+    width: 70px;
+    height: 40px;
+}
+
 .sil {
     width: 100%;
     height: 100%;

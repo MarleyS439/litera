@@ -104,7 +104,7 @@ if ($_SESSION == null) {
                         if (!$codUser['isGuesty']) {
                             if ($perfilAutenticado['nivel'] >= 2) {
                         ?>
-                            <a href="../jogo/02/">
+                            <a href="../jogo/02/fase 2.php">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
                             </a>
 
@@ -208,7 +208,7 @@ if ($_SESSION == null) {
                         <?php
                         if ($perfilAutenticado['nivel'] >= 2 ) {
                         ?>
-                            <a href="../jogo/02/">
+                            <a href="../jogo/02/fase 2.php">
                                 <img src="../../assets/images/fase/map-on.png" alt="">
                             </a>
 

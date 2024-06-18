@@ -70,7 +70,7 @@ if ($_SESSION == null) {
                 <div id="modal" class="modal">
                     <div class="modal-content">
                         <div class="headerModal">
-                            <p>seus resultados</p>
+                            <p>Seus resultados</p>
                             <span class="close"><img style="width: 30px;" src="./img/jogoFruta/X.svg" alt=""></span>
                         </div>
 
@@ -126,7 +126,7 @@ if ($_SESSION == null) {
                                     <div class="card" id="f6">
                                         <img src="./img/jogoFruta/figuras-frutas/cereja.svg" alt="">
                                         <img class="somFruta" src="./img/jogoFruta/icoSom.svg" alt="">
-                                        <p class="cereja">cereja</p>
+                                        <p class="cereja">Cereja</p>
                                     </div>
                                     <div class="card" id="f7">
                                         <img src="./img/jogoFruta/figuras-frutas/abacaxi.svg" alt="">
