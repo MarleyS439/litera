@@ -1,164 +1,254 @@
 @import url(./home.css);
 @import url(./default.css);
-
+/* 
 body {
     background-color: var(--blue0);
-
-}
+} */
 
 @media screen and (max-width: 768px) {
+
     .desktop-view {
         display: none;
     }
 
-    .top-bar {
-        position: fixed;
+    .mobile-view {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .mobile-view main {
+        display: contents;
+        position: relative;
+        /* top: 10vh; */
+        padding: 1% 5%;
+    }
+
+    .bottom-navigation-bar {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .title-store {
+        margin-top: 10vh;
         width: 100%;
-        display: flex;
-        justify-content: space-between;
-        padding: 5%;
-        align-items: center;
-        color: var(--black2);
-        z-index: 1000;
-        background-color: var(--blue0);
-        border-bottom: .5px solid #00000020;
-        box-shadow: 1px 1px 1px #00000020;
-        transition: 200ms ease-in-out;
-    }
-
-    .contain {
-        display: none,
-    }
-
-    .info-user {
-        display: flex;
-        justify-content: left;
-        align-items: center;
-        width: 60%;
-    }
-
-    .info-user img {
-        width: 45px;
-        height: auto;
-    }
-
-    .info-user span {
-        font-family: var(--font-poppins-bold);
-        margin: 0% 3%;
-    }
-
-    .credits {
+        height: 8vh;
+        /* background-color: red; */
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .credits img {
-        width: 32px;
-        height: auto;
-        margin: 0;
+    .title-store div {
+        width: 90%;
+        height: 100%;
+        background-color: var(--litera-blue);
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        border-radius: 15px;
+        box-shadow: 0px 5px 0px var(--litera-black);
+        margin-bottom: 5vh;
     }
 
-    .credits span {
-        display: flex;
+    .title-store div>h1 {
+        font-size: 2rem;
+        color: var(--white);
         font-family: var(--font-poppins-bold);
-        justify-content: center;
-        align-items: center;
-        margin: 2px;
-        padding: 5px;
+    }
+
+    .form-avatar {
+        display: flex;
+        flex-direction: column;
+        padding: 0% 5% 0% 5%;
     }
 
     .items {
-        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
+    .inventory {
+        width: 100%;
+        margin-bottom: 13vh;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly; 
+    }
+    .card-item {
+        width: 30%;
+        height: 18vh ;
+        margin-bottom: 1vh;
+        display: flex;
+        flex-direction: column;
+        padding: 2vh 0%;
+        align-items: center;
+        border-radius: 10px;
+        border: solid 4px var(--blue3);
+        background-color: var(--blue3);
+    }
+
+    .card-item .center-card-item {
+        width: 85%;
+        height: 18vh;
+        background-color: var(--blue2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 7px;
+    }
+    .img-cabelo-card{
+        width: 95%;
+        max-height: 14vh ;
+    }
+    .card-item .valor {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 3vh;
+    }
+
+    .card-item .valor>span {
+        color: #fff;
+        font-size: 20px;
+        font-family: var(--font-poppins-bold);
+
+    }
+
+    .card-item .valor>img {
+        width: 35;
+        margin-right: 10%;
+    }
+    
+
+
+    /* pagina */
+    .contain{
+        width: 100%;
+        height: 10vh;
+        margin-bottom: 1vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .cards {
+        width: 30%;
+        height: 100%;
+        background-color: var(--blue3);
+        border: 5px solid var(--blue2);
+        border-radius: 20px;
+        transition: 0.4s;
+
+    }
+
+    .cards a {
+        width: 100%;
+        text-decoration: none;
+        color: var(--white);
+        font-family: var(--font-poppins-bold);
+    }
+
+    .cards .name-card {
+        width: 100%;
+        height: 35%;
+        padding: 1% 5%;
+        background-color: var(--blue2);
+    }
+
+    .cards .name-card>p {
+        filter: drop-shadow(2px 2px 5px #000);
+    }
+
+    .card-active {
+        background-color: var(--green-line);
+        border-color: var(--green-fill);
+    }
+
+    .card-active .name-card {
+        background-color: var(--green-fill);
+    }
+    .figure-card{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        padding: 15px;
+    }
+    .figure-card img{
+        width: 35px;
+    }
+
+
+    /* avatar  */
     .container-avatar {
-        position: absolute;
-        top: 20vh;
-        left: 30%;
-        background-color: red;
+        width: 75%;
+        height: 27vh;
+        background-color: var(--litera-blue);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 20px;
+        margin-bottom: 2vh;
+        padding-bottom: 5px;
+        border: solid 8px var(--blue2);
+    }
+
+    .container-avatar .sla {
+        width: 100%;
+        height: 5vh;
+        background-color: var(--blue2);
+        padding: 0 13px;
+    }
+
+    .container-avatar .sla h1 {
+        color: var(--white);
+        font-size: var(--font-poppins-bold);
+        font-size: 1.5rem;
     }
 
     .base {
         position: relative;
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .base img {
-        display: block;
-        margin: 0 auto;
+    .cabelo {
+        top: 0;
+        display: flex;
+        position: absolute;
         width: 140px;
+        height: 90px;
+        justify-content: center;
+        align-items: center;
     }
 
     .cabelo img {
         position: absolute;
-        top: -15;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 120px;
+        top: -12px;
+        width: auto;
+        height: auto;
+        transform: translateX(-50%), translateY(-50%);
+
+    }
+
+    .roupa {
+        bottom: 0;
+        display: flex;
+        position: absolute;
+        width: 140px;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
     }
 
     .roupa img {
         position: absolute;
-        bottom: 2%;
-        left: 51%;
-        transform: translateX(-50%);
-        width: 115px;
-        z-index: 3;
-    }
-
-    .inventory {
-        display: none;
-    }
-
-    .buttons {
-        position: absolute;
-        top: 50vh;
-        left: 35vw;
-        height: 5vh;
-        width: 10vw;
-        justify-content: space-evenly;
-        display: flex;
-        flex: row;
-    }
-
-    .buttons button {
-        padding: 5%;
-        background-color: #1C96E1;
-        border-radius: 15px;
-        border: none;
-        color: white;
-        font-family: var(--font-poppins-bold);
-        margin: 0% 15%;
-
-    }
-
-    /* Navegacao da parte de baixo */
-    .bottom-navigation-bar {
-        z-index: 1000;
-        width: 100%;
-        position: fixed;
-        bottom: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--white);
-        box-shadow: 0px -10px 5px #00000020;
-        padding: 2% 5%;
-    }
-
-    .bottom-navigation-bar a {
-        margin: 2% 5%;
-        padding: 1%;
-        text-decoration: none;
-        color: var(--black2);
-        transition: 200ms ease-out;
-    }
-
-    .bottom-navigation-bar a img {
-        width: 36px;
+        width: auto;
         height: auto;
-        margin: 0px 5px;
     }
 }
 
@@ -180,7 +270,7 @@ body {
         position: relative;
         top: 10vh;
         justify-content: space-evenly;
-        padding: 0;
+        padding: 0px 1vw;
         transition: 500ms ease-in-out .1s;
         flex-direction: column;
         margin-right: 5vw;
@@ -211,15 +301,16 @@ body {
         padding: 2vh 0%;
         align-items: center;
         border-radius: 10px;
-        border: solid 4px var(--blue3);
-
+        border: solid 4px var(--blue2);
+        background-color: var(--blue3);
         backdrop-filter: blur(2px);
+        transition: 0.5s;
     }
 
     .card-item .center-card-item {
         width: 8vw;
         height: 12vh;
-        background-color: #ffffff6c;
+        background-color: var(--blue2);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -247,74 +338,102 @@ body {
 
 
     .card-item:hover {
-        background-color: #f0f0f0cc;
-        transition: 0.8s;
+        animation: pulse 1s infinite;
     }
 
     .items {
         position: relative;
         left: 7vw;
-        background-color: #1c95e138;
-        backdrop-filter: blur(3px);
-        padding: 5px;
+        padding: 5px 5px;
+        background-color: var(--blue2);
+        border: solid 5px var(--blue2);
+        border-radius: 20px;
+        top: 11vh
     }
 
     .container-avatar {
         width: 20vw;
         height: 40vh;
-        margin-top: 25%;
-        background-color: var(--blue2);
-        border-radius: 5%;
+        background-color: var(--blue3);
+        padding: 1vh 0px;
         overflow: hidden;
         display: flex;
-        align-items: end;
+
         justify-content: center;
-        position: relative;
+        align-items: center;
+
+        border-radius: 16px;
+
     }
 
     .base {
         position: relative;
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .base img {
-        display: block;
-        margin: 0 auto;
+        width: auto;
+        height: auto;
+    }
+
+    .cabelo {
+        display: flex;
+        position: absolute;
         width: 140px;
+        top: 0;
+        height: 90px;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-50%), translateY(-50%);
     }
 
     .cabelo img {
         position: absolute;
-        top: -15;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 120px;
+        top: 9px;
+        width: auto;
+        height: auto;
+
+
+    }
+
+    .roupa {
+        bottom: 0;
+        display: flex;
+        position: absolute;
+        width: 140px;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
     }
 
     .roupa img {
         position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 115px;
-        z-index: 3;
+        width: auto;
+        height: auto;
     }
 
 
     .buttons {
         position: relative;
-        margin-top: 5vh;
+        margin-top: 2vh;
+        height: 11vh;
         width: 20vw;
+        border-radius: 17px;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        align-items: center;
+        background-color: var(--blue2);
     }
 
     .buttons button {
         padding: 5%;
-        background-color: #1C96E1;
+        background-color: var(--blue3);
         border-radius: 15px;
         border: none;
         color: white;
+        height: 60%;
         font-family: var(--font-poppins-bold);
         cursor: url(../images/icons/MAOZINHA.png), auto;
     }
@@ -332,39 +451,62 @@ body {
         padding: 0% 5%;
     }
 
+    /* cards de troca */
     .cards {
-        transition: 500ms ease-in-out .1s;
+        width: 14vw;
+        height: 20vh;
         background-color: var(--blue3);
-        padding: 1%;
-        border-radius: 8px;
-        margin: 10px;
-        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-        width: 13vw;
-        margin-top: 2%;
-        margin-left: 6%;
+        border: 5px solid var(--blue2);
+        border-radius: 20px;
+        transition: 0.4s;
+
     }
-
-
 
     .cards a {
-        display: flex;
-        justify-content: center;
-        border-radius: 8px;
         width: 100%;
         text-decoration: none;
-        color: var(--blue0);
-        cursor: url(../images/icons/MAOZINHA.png), auto;
+        color: var(--white);
+        font-family: var(--font-poppins-bold);
     }
 
-    .cards a p {
-        /* background-color: var(--blue3); */
-        font-size: 1.3rem;
+    .cards .name-card {
+        width: 100%;
+        height: 20%;
+        padding: 1% 5%;
+        background-color: var(--blue2);
     }
+
+    .cards .name-card>p {
+        filter: drop-shadow(2px 2px 5px #000);
+    }
+
+    .cards:hover {
+        transition: 0.4s;
+        transform: rotate(-2deg) scale(1.05);
+        box-shadow: 7px 7px 0px var(--blue6);
+    }
+
+    .card-active {
+        background-color: var(--green-line);
+        border-color: var(--green-fill);
+    }
+
+    .card-active .name-card {
+        background-color: var(--green-fill);
+    }
+
+    .card-active:hover {
+        box-shadow: 7px 7px 0px var(--green-dark);
+    }
+
+
 
     .access-card {
         display: flex;
         flex-direction: column;
     }
+
+
 
     .figure-card {
         padding: 2%;
@@ -474,7 +616,9 @@ body {
         display: flex;
         justify-content: center;
     }
+
 }
+
 
 @media screen and (min-width: 1025px) {
     /* Estilos para PCs */
@@ -582,39 +726,43 @@ body {
         padding: 1vh 0px;
         overflow: hidden;
         display: flex;
-        align-items: end;
+
         justify-content: center;
-        position: relative;
+        align-items: center;
+
         border-radius: 16px;
 
     }
 
-    /* AVATAR   */
     .base {
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: red;
     }
-    
+
+    .base img {
+        width: auto;
+        height: auto;
+    }
+
     .cabelo {
-        top: 0;
         display: flex;
         position: absolute;
-        /* width: 180px; */
+        width: 140px;
+        top: 0;
         height: 90px;
         justify-content: center;
         align-items: center;
-        background-color: blueviolet;
+        transform: translateX(-50%), translateY(-50%);
     }
 
     .cabelo img {
         position: absolute;
-        top: 5;
+        top: 9px;
         width: auto;
         height: auto;
-        transform: translateX(-50%), translateY(-50%);
+
 
     }
 
@@ -631,10 +779,9 @@ body {
     .roupa img {
         position: absolute;
         width: auto;
-        height: 80;
+        height: auto;
     }
 
-    
 
     .buttons {
         position: relative;

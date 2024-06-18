@@ -89,7 +89,7 @@
 
                 <div class="reset-pwd">
                     <div class="reset">
-                        <a href="#">Esqueceu a senha?</a>
+                        <a href="./passwordRecovery.php">Esqueceu a senha?</a>
                     </div>
                     
                     <div class="reset">

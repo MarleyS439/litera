@@ -32,6 +32,15 @@ class UsuarioDao
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    public static function selectByEmail($email)
+    {
+        $conexao = Conexao::conectar();
+        $query = "SELECT * FROM tbusuario WHERE emailUsuario = ?";
+        $stmt = $conexao->prepare($query);
+        $stmt->bindValue(1, $email);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
     public static function delete($cod)
     {
         $conexao = Conexao::conectar();
@@ -75,6 +84,17 @@ class UsuarioDao
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $usuario->getNomeUsuario());
         $stmt->bindValue(2, $cod);
+        return $stmt->execute();
+    }
+    public static function updatePassword($usuario)
+    {
+        $conexao = Conexao::conectar();
+        $query = "UPDATE tbusuario SET
+        senhaUsuario = ?
+        WHERE codUsuario = ?";
+        $stmt = $conexao->prepare($query);
+        $stmt->bindValue(1, $usuario->getSenhaUsuario());
+        $stmt->bindValue(2, $usuario->getCodUsuario());
         return $stmt->execute();
     }
     public static function checkCredentials($emailUsuario, $senhaUsuario)
