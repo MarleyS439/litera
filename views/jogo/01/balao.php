@@ -3,7 +3,7 @@
 session_start();
 // verificação se o user esta logado
 if (!isset($_SESSION['authPerfil'])) {
-    // caso não esteja, redirecione a login e indique que para realizar o login
+    // caso não esteja, redirecione para o login e indique que é necessário fazer login
     header("Location: ./login.php?status=erro2");
     exit();
 }
