@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
 <?php
 // session
 session_start();
@@ -85,10 +87,10 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
                     <div class="cards card-active">
                         <a href="./store.php?status=chapeos" class="access-card">
                             <div class="name-card">
-                                <p>Chapéus</p>
+                                <p>Cabelos</p>
                             </div>
                             <div class="figure-card">
-                                <img src="../assets/images/icons/hat-icon.png" alt="Chápeus">
+                                <img src="../assets/images/icons/Vector.svg" alt="Chápeus">
                             </div>
                         </a>
                     </div>
