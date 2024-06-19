@@ -216,14 +216,14 @@
 
         <section class="section1 right">
             <div class="img-section">
-                <img src="./assets/images/fundo.png" alt="" />
+                <img src="./assets/images/games.svg" alt="" />
             </div>
 
             <div class="information-section">
-                <h2>Título da seção</h2>
+                <h2>Uma plataforma gamificada</h2>
 
                 <div class="content-section">
-                    <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.</p>
+                    <p class="">Unimos o a educação com a gamificação para criar este incrível projeto, capaz de melhorar o engajamento e a eficiência no aprendizado das crianças brasileiras.</p>
                 </div>
             </div>
         </section>
@@ -373,22 +373,7 @@
 
     <!--Aviso de uso de cookies-->
     <div class="modal-cookies" id="cookies">
-        <div class="modal-cookies-title">
-            <img src="assets/images/icons/cookies.svg" alt="">
-            <p class="modal-cookies-title-text">Este site usa cookies</p>
-        </div>
-
-        <div class="bs">
-            <div class="modal-cookies-content">
-                <p>Nosso site usa cookies para melhorar a navegação </p>
-            </div>
-        </div>
-
-
-    <div class="modal-cookies-links">
-        <button id="reject" onclick="closeModalCookies()">Rejeitar</button>
-
-        <button id="accept" onclick="closeModalCookies()">Aceitar</button>
+        <
     </div>
 
     <!-- Script para menu lateral mobile -->

@@ -1953,59 +1953,11 @@
         animation: bounce-in-top 1.1s 4s both;
     }
 
-    .modal-cookies-title {
+    .modal-cookies {
         display: flex;
-        width: 100%;
-        justify-content: center;
-        align-items: center.
+        justify-content: space-between;
     }
 
-    .modal-cookies-title img {
-        width: 30px;
-        margin: 0% 5px
-    }
-
-    .modal-cookies-title p {
-        font-size: 1.2rem;
-        font-family: var(--font-poppins-bold);
-        color: var(--litera-orange);
-    }
-
-    .modal-cookies-content p {
-        color: var(--litera-black);
-        margin: 1% 0%;
-    }
-
-    .modal-cookies-links {
-        margin: 5px 0%;
-    }
-
-    .modal-cookies-links button {
-        color: var(--litera-black);
-        cursor: var(--litera-hand);
-    }
-
-    #reject {
-        text-decoration: none;
-        padding: 5px 10px;
-        border: 2px solid var(--litera-blue);
-        border-radius: 12px;
-        margin: 0px 5px;
-    }
-
-    #accept {
-        text-decoration: none;
-        padding: 8px 12px;
-        background-color: var(--litera-blue);
-        color: var(--litera-white);
-        border-radius: 12px;
-        margin: 0px 5px;
-    }
-
-    .bs {
-        display: flex;
-
-    }
 }
 
 @media screen and (max-height: 1366px) {
