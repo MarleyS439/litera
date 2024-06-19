@@ -386,7 +386,7 @@
 
 
     <div class="modal-cookies-links">
-        <button id="reject" onClick="closeModalCookies()">Rejeitar</button>
+        <button id="reject" onclick="closeModalCookies()">Rejeitar</button>
 
         <button id="accept" onclick="closeModalCookies()">Aceitar</button>
     </div>

@@ -1,0 +1,31 @@
+/*Estilos padrões*/
+:root {
+    --litera-black: #3b3b3b;
+    --litera-green: #15BE26;
+    --litera-dark-green: #0E3010;
+    --litera-light-green: #6AFA78;
+    --litera-white: #fff;
+    --litera-beige: #FFCC9C;
+    --litera-orange: #E17B1C;
+    --litera-light-red: #FF8181;
+    --litera-red: #E11C1C;
+    
+
+    --font-poppins-bold: 'Poppins-Bold';
+    --font-poppins-regular: 'Poppins-Regular';
+    --cursor-default: url(../../../../../assets/images/cursors/Point.ico), auto;
+    --cursor-hand: url(../../../../../assets/images/cursors/HandPoint.ico), auto;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-poppins-regular), sans-serif;
+    cursor: var(--cursor-default), auto;
+}
+
+button {
+    cursor: var(--cursor-hand), auto;
+}

@@ -1980,7 +1980,7 @@
         margin: 5px 0%;
     }
 
-    .modal-cookies-links button {
+    .modal-cookies-links buttoon {
         color: var(--litera-black);
         cursor: var(--litera-hand);
     }
