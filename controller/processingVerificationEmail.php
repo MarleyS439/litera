@@ -7,6 +7,15 @@ require_once '../src/PHPMailer.php';
 require_once '../src/SMTP.php';
 require_once '../src/Exception.php';
 
+require_once '../dao/usuarioDao.php';
+
+$emailQuery =  UsuarioDao::selectByEmail($dadosUsuario['email_user']);
+
+if ($emailQuery) {
+    header('Location: register.php');
+    exit();
+}
+
 $numero_aleatorio = mt_rand(100000, 999999);
 $num_string = (string)$numero_aleatorio;
 $num_char = [];

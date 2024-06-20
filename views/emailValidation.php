@@ -1,9 +1,9 @@
-<!DOCTYPE html>
 <?php
 $dadosUsuario = $_POST;
 require_once('../controller/processingVerificationEmail.php');
 ?>
 
+<!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
 
 <head>
