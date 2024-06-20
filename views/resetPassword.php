@@ -5,7 +5,8 @@ $dadosUsuario = $_POST;
 $emailQuery =  UsuarioDao::selectByEmail($dadosUsuario['email_user']);
 
 if (!$emailQuery) {
-    header('Location: login.php?');
+    header('Location: passwordRecovery.php');
+    exit();
 }
 
 require_once('../controller/processResetPassword.php');

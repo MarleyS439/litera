@@ -25,7 +25,7 @@
         <div class="container-form">
             <div class="title-form">
                 <h2>Seja bem-vindo(a)</h2>
-                <p>Vamos recuperar sua conta</p>
+                <p>Vamos recuperar a sua conta</p>
             </div>
 
             <form action="./resetPassword.php" method="post">

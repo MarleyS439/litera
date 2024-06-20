@@ -28,7 +28,7 @@ require_once('../controller/processingVerificationEmail.php');
 
         <div class="container-form input-cod">
             <div class="title-form">
-                <h2>Varifique seu e-mail</h2>
+                <h2>Verifique seu e-mail</h2>
                 <p>Um código de verificação foi enviado ao seu email. Digite e envie ele abaixo para ter sua conta validada.</p>
             </div>
 
