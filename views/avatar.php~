@@ -198,7 +198,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
                 <div class="avancar">
                     <input type="hidden" name="codUser" value="<?php echo $codUser['codPerfil'] ?>">
                     <input type="hidden" name="itemAvatar" value="roupa">
-                    <button type="submit">Próximo</button>
+                    <button type="submit">Proximo</button>
                 </div>
             </form>
 

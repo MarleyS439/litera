@@ -57,7 +57,7 @@
         color: var(--litera-orange);
         background-color: var(--litera-white);
         border-radius: 12px;
-        padding: 3%;
+        padding: 2%;
     }
 
     .background-card-game {
