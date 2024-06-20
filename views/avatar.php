@@ -147,7 +147,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
 
                 <div class="containerOpcoes">
                     <?php foreach ($cabelo as $cabelos) : ?>
-                        <div class="opcoes opcoes-cabelo">
+                        <div class="opcoes opcoes-cabelo" id="opcoes2">
                             <input required type="radio" name="cabelo" class="input-opcao" value="<?php echo $cabelos['codCabelo'] ?>" data-img="<?php echo $cabelos["imgCabelo"] ?>">
                             <img src="../assets/images/perfil/cabelo/<?php echo $cabelos["imgCabelo"] ?>" alt="base">
                         </div>
@@ -189,7 +189,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
 
                 <div class="containerOpcoes">
                     <?php foreach ($roupa as $roupas) : ?>
-                        <div class="opcoes opcoes-cabelo">
+                        <div class="opcoes opcoes-cabelo" id="opcoes2">
                             <input required type="radio" name="roupa" class="input-opcao" value="<?php echo $roupas['codRoupa'] ?>" data-img="<?php echo $roupas["imgRoupa"] ?>">
                             <img src="../assets/images/perfil/roupa/<?php echo $roupas["imgRoupa"] ?>" alt="base">
                         </div>

@@ -156,7 +156,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
                 <div class="avancar">
                     <input type="hidden" name="codUser" value="<?php echo $codUser['codPerfil'] ?>">
                     <input type="hidden" name="itemAvatar" value="cabelo">
-                    <button type="submit">Próximo</button>
+                    <button type="submit">Próximoa</button>
                 </div>
             </form>
 
@@ -189,7 +189,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
 
                 <div class="containerOpcoes">
                     <?php foreach ($roupa as $roupas) : ?>
-                        <div class="opcoes opcoes-cabelo">
+                        <div class="opcoes opcoes-cabelo" id="opcoes2">
                             <input required type="radio" name="roupa" class="input-opcao" value="<?php echo $roupas['codRoupa'] ?>" data-img="<?php echo $roupas["imgRoupa"] ?>">
                             <img src="../assets/images/perfil/roupa/<?php echo $roupas["imgRoupa"] ?>" alt="base">
                         </div>
@@ -198,7 +198,7 @@ $avatar = AvatarDao::selectByIdUser($codUser['codPerfil']);
                 <div class="avancar">
                     <input type="hidden" name="codUser" value="<?php echo $codUser['codPerfil'] ?>">
                     <input type="hidden" name="itemAvatar" value="roupa">
-                    <button type="submit">Proximo</button>
+                    <button type="submit">Próximo</button>
                 </div>
             </form>
 

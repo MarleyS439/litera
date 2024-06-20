@@ -57,7 +57,7 @@
         color: var(--litera-orange);
         background-color: var(--litera-white);
         border-radius: 12px;
-        padding: 2%;
+        padding: 3%;
     }
 
     .background-card-game {
@@ -645,7 +645,7 @@
 
 
     .bg-game {
-        background-image: url(../images/Frame\ 149.png);
+        background-image: url(../images/Frame\ 150.png);
         background-size: cover;
         background-repeat: no-repeat;
         width: 400px;
@@ -661,6 +661,10 @@
 
     #fruits {
         background-image: url(../images/Frame\ 33.png);
+    }
+
+    #animals {
+        background-image: url(../images/game3.png);
     }
 
     .game-item {

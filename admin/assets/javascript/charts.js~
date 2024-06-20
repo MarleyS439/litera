@@ -31,7 +31,7 @@ new Chart(lineChart, {
     datasets: [
       {
         data: [resultado[0].totalAcessos, resultado[1].totalAcessos, resultado[2].totalAcessos, resultado[3].totalAcessos, resultado[4].totalAcessos, resultado[5].totalAcessos, resultado[6].totalAcessos],
-        tension: 0.4,
+        tension: 0.3,
         borderWidth: 1,
         borderColor: "rgb(45, 156, 219)",
         backgroundColor: gradient,

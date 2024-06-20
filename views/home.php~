@@ -189,11 +189,11 @@ if (!$codUser['isGuesty']) {
                         <a class="game-item game3" href="../views/jogo/03/fazenda-dos-bichos.php">
                             <div class="title-game-item">
                                 <p>Reconhecer Animais</p>
-                                <div class="bg-game" id="animals"></div>
+                                <div class="bg-game" id=""></div>
                             </div>
                         </a>
 
-                        <a class="game-item game4">
+                        <a class="game-item game4" id="animals">
                             <div class="title-game-item">
                                 <p>Em breve um novo jogo</p>
                                 <div class="bg-game"></div>

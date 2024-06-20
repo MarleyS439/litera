@@ -94,7 +94,7 @@ $infoAcessos = new AcessoUsuarioDao;
                         <div class="chart-title">Gráfico de Pizza</div>
                         <div class="chart-subtitle">Metas mensais</div>
                         <div class="chart-width">
-                            <canvas id="doughnutChart1" class="chart"></canvas>
+                            <canvas id="doughnutChart1" class="chart">AAAAA</canvas>
                             <canvas id="doughnutChart2" class="chart"></canvas>
                             <canvas id="doughnutChart3" class="chart"></canvas>
                         </div>

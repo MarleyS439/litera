@@ -349,7 +349,7 @@
     }
 
     .modal2 {
-        width: 531px;
+        width: 800px;
         left: 40%
     }
 

@@ -903,7 +903,7 @@ body {
     }
 
     .title-container h2 {
-        padding: 10px 30px;;
+        padding: 10px 30px;
         background-color: var(--litera-light-green);
         border: 5px solid var(--litera-green);
         font-family: var(--font-poppins-bold);

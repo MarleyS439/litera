@@ -25,11 +25,11 @@
             <?php if (!$usuario['banido']) : ?>
                 <input type="hidden" value="suspend" id="acao" name="acao">
                 <input type="hidden" id="userIdToDelete" name="userIdToDelete">
-                <button type="submit" id="positive">Sim, desativar</button>
+                <button type="submit" id="positive">Sim, banir</button>
             <?php else : ?>
                 <input type="hidden" value="Unbanned" id="acao" name="acao">
                 <input type="hidden" id="userIdToDelete" name="userIdToDelete">
-                <button type="submit" id="refazer">Reativar</button>
+                <button type="submit" id="refazer">Desbanir</button>
             <?php endif; ?>
             <button type="button" id="negative" class="aaaaa" onclick="closeModalBlockUser()">Não</button>
         </form>

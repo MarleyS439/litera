@@ -663,6 +663,10 @@
         background-image: url(../images/Frame\ 33.png);
     }
 
+    #animals {
+        background-image: url(../images/game3.png);
+    }
+
     .game-item {
         display: flex;
         border-radius: 10px;

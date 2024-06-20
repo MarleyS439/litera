@@ -1,0 +1,22 @@
+<div class="modalExitGame modal2" id="modalEnd">
+<div class="information-modal">
+<span id="exit-info">Parabéns!</span>
+<span>Jogo concluído</span>
+</div>
+
+<div class="buttons-modal">
+<div class="left">
+<button type="button" id="exit">
+<img src="assets/images/icons/exitIcon.svg" alt="Sair da partida">
+</button>
+<span>Sair</span>
+</div>
+
+<div class="right">
+<button type="button" id="restartBtn" style="background-color: var(--litera-yellow); border: 3px solid var(--litera-orange); padding: 10px 25px; border-radius: 12px;">
+<img src="assets/images/icons/retornarSil.svg" alt="Continuar">
+</button>
+<span style="color: var(--litera-orange);">Recomeçar</span>
+</div>
+</div>
+</div>

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 // session
 
@@ -17,6 +16,7 @@ require('../../dao/perfilDao.php');
 $usuarios = PerfilDao::selectAll();
 
 ?>
+<!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
 
 <head>
@@ -51,7 +51,7 @@ $usuarios = PerfilDao::selectAll();
                     <input type="text" id="searchInput" class="input-search" placeholder="Nome, E-mail e ID" onkeyup="searchUsers()">
                 </div>
 
-                <div class="filter">
+                <div class="">
                     <span>Filtrar</span>
                     <select name="filtro" id="status" onchange="filterUsers()">
                         <option value="Todos">Todos</option>

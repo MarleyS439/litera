@@ -372,9 +372,9 @@
     <!--Fim do footer-->
 
     <!--Aviso de uso de cookies-->
-    <div class="modal-cookies" id="cookies">
-        <
-    </div>
+    <!--<div class="modal-cookies" id="cookies">
+
+    </div>-->
 
     <!-- Script para menu lateral mobile -->
     <script>
