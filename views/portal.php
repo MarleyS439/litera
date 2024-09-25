@@ -40,10 +40,14 @@
                     <a href="../views/login.php" id="login">Já possui conta?</a>
                 </div>
             </div>
+
+            <div class="return">
+                <a href="../index.php">Voltar</a>
+            </div>
         </div>
     </div>
 
 </body>
-<script src="../assets/javascript/emptyField.js"></script>
+<!-- <script src="../assets/javascript/emptyField.js"></script> -->
 
 </html>
