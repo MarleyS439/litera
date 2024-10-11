@@ -36,7 +36,7 @@ Contribuições são bem-vindas! Sinta-se à vontade para enviar sugestões, cor
 
 ### Heitor de Oliveira Alves da Silva
 - **Cargo:** Designer de Jogos
-- **E-mail:** ciclano@example.com
+- **E-mail:** --
 
 ### Kauã da Silva Barbosa
 - **Cargo:** Full-Stack
@@ -52,11 +52,11 @@ Contribuições são bem-vindas! Sinta-se à vontade para enviar sugestões, cor
 
 ### Matheus Gomes de Oliveira
 - **Cargo:** DBA
-- **E-mail:** mariana@gmail.com
+- **E-mail:** --
 
 ### Matheus Henrique Teixeira Santos
 - **Cargo:** Beck-end
-- **E-mail:** mariana@gmail.com
+- **E-mail:** --
 
 ### Matheus Merlim Costa da Silva
 - **Cargo:** DBA
@@ -64,7 +64,7 @@ Contribuições são bem-vindas! Sinta-se à vontade para enviar sugestões, cor
 
 ### Milena Fernandes Oliveira
 - **Cargo:** DBA
-- **E-mail:** mariana@gmail.com
+- **E-mail:** --
 
 ### Renan de Castro Teixeira
 - **Cargo:** DBA
