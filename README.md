@@ -35,7 +35,7 @@ Contribuições são bem-vindas! Sinta-se à vontade para enviar sugestões, cor
 - **E-mail:** felipe.frlima@gmail.com
 
 ### Heitor de Oliveira Alves da Silva
-- **Cargo:** Designer de Jogos
+- **Cargo:** Analista
 - **E-mail:** --
 
 ### Kauã da Silva Barbosa
@@ -47,15 +47,15 @@ Contribuições são bem-vindas! Sinta-se à vontade para enviar sugestões, cor
 - **E-mail:** mh15122006@gmail.com
 
 ### Matheus Campos de Menezes
-- **Cargo:** DBA
+- **Cargo:** Full-Stack
 - **E-mail:** matheusmenezescampos@gmail.com
 
 ### Matheus Gomes de Oliveira
-- **Cargo:** DBA
+- **Cargo:** Front-End
 - **E-mail:** --
 
 ### Matheus Henrique Teixeira Santos
-- **Cargo:** Beck-end
+- **Cargo:** Beck-End
 - **E-mail:** --
 
 ### Matheus Merlim Costa da Silva
@@ -63,11 +63,11 @@ Contribuições são bem-vindas! Sinta-se à vontade para enviar sugestões, cor
 - **E-mail:** matheusmerlim9@gmail.com
 
 ### Milena Fernandes Oliveira
-- **Cargo:** DBA
+- **Cargo:** Analista
 - **E-mail:** --
 
 ### Renan de Castro Teixeira
-- **Cargo:** DBA
+- **Cargo:** Analista
 - **E-mail:** castroteixeira2019@gmail.com
 
 ### Vitor Mota Novais de Jesus
