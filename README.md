@@ -8,7 +8,7 @@ Litera é uma suíte de jogos educacionais desenvolvida para auxiliar no process
 - Atividades de correspondência entre letras e imagens.
 - Exercícios de escrita e identificação de palavras.
 - Recursos de áudio para auxiliar na pronúncia correta das letras e palavras.
-- Entre outros items em desenvolvimento
+- Entre outros itens em desenvolvimento
 
 ## Instalação
 Como o projeto ainda não foi publicado, você precisará configurar um ambiente local para executá-lo. Aqui estão os passos básicos:
