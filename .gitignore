@@ -1,3 +1,2 @@
-/Dockerfile
-/config/conexao.php
-/docker-compose.yml
+# Ignorar o arquivo de configuração
+config/config.ini
