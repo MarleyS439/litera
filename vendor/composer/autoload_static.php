@@ -11,12 +11,36 @@ class ComposerStaticInit25f4bd96cc076ea5bf56289d284a9b29
         array (
             'PHPMailer\\PHPMailer\\' => 20,
         ),
+        'E' => 
+        array (
+            'Enums\\' => 6,
+        ),
+        'C' => 
+        array (
+            'Config\\' => 7,
+        ),
+        'A' => 
+        array (
+            'App\\' => 4,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
+        'Enums\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/Model/Enums',
+        ),
+        'Config\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/config',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 
