@@ -50,9 +50,13 @@ namespace App\View; ?>
 
             <!--Botão de ação - desktop-->
             <div class="action-btn" id="menu">
-                <a href="./views/login.php">Login
+                <a href="index.php?route=login">Login
                     <img src="./assets/images/icons/login.svg" alt="Login Ícone">
                 </a>
+
+                <!-- <a href="./views/login.php">Login
+                    <img src="./assets/images/icons/login.svg" alt="Login Ícone">
+                </a> -->
 
                 <!-- Div que simula um botão de clique para abrir o menu oculto -->
                 <div class="menu-mobile" id="openBtn">

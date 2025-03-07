@@ -1,0 +1,17 @@
+# Ativa o mecanismo de reescrita de URL do Apache.
+RewriteEngine On
+
+# Define a base do rewrite para a subpasta correta
+RewriteBase /litera/
+
+# Verifica se o arquivo solicitado existe no sistema de arquivos.
+# Se existir, a regra de reescrita não será aplicada.
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Verifica se o diretório solicitado existe no sistema de arquivos.
+# Se existir, a regra de reescrita não será aplicada.
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redireciona todas as requisições que não correspondem a arquivos ou diretórios existentes
+# para o arquivo index.php, passando a URL solicitada como parâmetro 'url'.
+RewriteRule ^(.*)$ index.php?url=/$1 [QSA,L]
