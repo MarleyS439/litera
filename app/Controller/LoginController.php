@@ -23,6 +23,14 @@ class LoginController
     public function index(): void
     {
         // Inclui o arquivo login.php
-        include "app/View/login.php";
+        include "app/View/Auth/login.php";
     }
+
+    /**
+     * Método público para realizar o login do Usuário
+     *
+     * @param void
+     * @return bool
+     */
+    public function login(): bool {}
 }

@@ -9,6 +9,13 @@ namespace DAO;
 // Importa a classe User do namespace App\Model
 use App\Model\User;
 
+// Importa a classe PDO
+use Config\DatabaseConnect;
+use PDO;
+
+// Importa a classe PDOException
+use PDOException;
+
 /**
  * Classe responsável pelo DAO (Data Access Object) do Usuário
  *
@@ -17,6 +24,20 @@ use App\Model\User;
  */
 class UserDAO
 {
+    /**
+     * @var PDO $pdo - PHP Data Object (PDO)
+     */
+    private PDO $pdo;
+
+    /**
+     * Método construtor da classe UserDAO
+     */
+    public function __construct()
+    {
+        $database = new DatabaseConnect();
+        $database->pdo = $database->connect();
+    }
+
     /**
      * Método público para Criar um Usuário
      *

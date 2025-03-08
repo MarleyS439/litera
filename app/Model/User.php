@@ -23,37 +23,37 @@ class User
     /**
      * @var string $name - Nome do Usuário
      */
-    public string $name;
+    protected string $name;
 
     /**
      * @var string $email - E-mail do Usuário
      */
-    public string $email;
+    protected string $email;
 
     /**
      * @var string $password - Senha do Usuário
      */
-    public string $password;
+    protected string $password;
 
     /**
      * @var Status $status - Status do Usuário
      */
-    public Status $status;
+    protected Status $status;
 
     /**
      * @var DateTime $createdAd - Data e Hora de Criação do Usuário
      */
-    public DateTime $createdAt;
+    protected DateTime $createdAt;
 
     /**
      * @var DateTime $updatedAt - Data e Hora de Atualização do Usuário
      */
-    public DateTime $updatedAt;
+    protected DateTime $updatedAt;
 
     /**
      * @var int|null $id - ID do Usuário
      */
-    public ?int $id = null;
+    protected ?int $id = null;
 
     /**
      * Método construtor da classe model User
@@ -67,7 +67,7 @@ class User
     ) {
         $this->name = $name;
         $this->email = $email;
-        $this->password = $password;
+        $this->password = password_hash($password, PASSWORD_DEFAULT);
         $this->status = $status;
         $this->createdAt = $createdAt;
     }
@@ -114,6 +114,28 @@ class User
     public function setEmail(string $email): void
     {
         $this->email = $email;
+    }
+
+    /**
+     * Método para definir a Senha do Usuário
+     *
+     * @param string $password - Senha em Hash do Usuário
+     * @return void
+     */
+    public function setPassword(string $password): void
+    {
+        $this->password = password_hash($password, PASSWORD_DEFAULT);
+    }
+
+    /**
+     * Método para verificar a Senha do Usuário
+     *
+     * @param string $password - Senha em Hash do Usuário
+     * @return bool
+     */
+    public function verifyPassword(string $password): bool
+    {
+        return password_verify($password, $this->password);
     }
 
     /**
