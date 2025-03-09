@@ -19,7 +19,7 @@ Como o projeto ainda não foi publicado, você precisará configurar um ambiente
    ```
 
    ```
-   cd litera && npm install
+   cd litera/ && npm install
    ```
 
 2. Configure seu ambiente PHP local (por exemplo, utilizando XAMPP, WAMP, ou similar).
