@@ -1,3 +1,5 @@
+![Litera](https://github.com/MarleyS439/litera/blob/master/assets/images/Litera.png)
+
 # Litera - Suíte de Jogos Educacionais para Auxílio à Alfabetização Infantil
 
 ## Descrição do Projeto
