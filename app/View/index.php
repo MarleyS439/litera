@@ -103,8 +103,12 @@ $assets = [
                 <!-- Navigation -->
                 <div class="hidden lg:flex">
                     <ul class="flex">
-                        <li class="font-medium text-[1.1rem] mx-3 text-stone-800 hover:transform transition-transform duration-300 ease-in-out hover:-translate-y-1">
-                            <a class="hover:text-blue-litera transition-all duration-300" href="">Início</a>
+                        <li class="font-medium text-[1.1rem] mx-3 text-stone-800 hover:transform transition-transform duration-300 ease-in-out hover:-translate-y-1" style="cursor: url(<?= htmlspecialchars(
+                            $assets["cursors"]
+                        ) ?>HandPoint.ico), auto ">
+                            <a class="hover:text-blue-litera transition-all duration-300" href="" style="cursor: url(<?= htmlspecialchars(
+                                $assets["cursors"]
+                            ) ?>HandPoint.ico), auto ">Início</a>
                         </li>
 
                         <li class="font-medium text-[1.1rem] mx-3 text-stone-800 hover:transform transition-transform duration-300 ease-in-out hover:-translate-y-1">
