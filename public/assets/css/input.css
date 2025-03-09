@@ -1,0 +1,25 @@
+/* Font Import */
+@import url(font.css);
+
+/* Custom CSS Import */
+@import url(custom.css);
+
+/* Tailwind CSS Import */
+@import "tailwindcss";
+
+/* Custom Theme */
+@theme {
+    /* Default Font */
+    --font-poppins: "Poppins", sans-serif;
+
+    /* Colors */
+    --color-green-litera: #6afa78;
+    --color-dark-green-litera: #15be26;
+    --color-blue-litera: #03a9f5;
+    --color-darken-green-litera: #0e3010;
+    --color-yellow-litera: #ffd13e;
+    --color-shadow: #3b3b3b;
+
+    /* Shadow */
+    --shadow: 0px 5px 0px --color-shadow;
+}

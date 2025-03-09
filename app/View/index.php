@@ -4,437 +4,176 @@
 declare(strict_types=1);
 
 // Declaração do namespace
-namespace App\View; ?>
+namespace App\View;
 
+// Informações da página
+
+// Título da página
+$title = "Litera | Alfabetização Para Novas Gerações";
+
+// Autor
+$author = "Marley de S. Santos";
+
+// Descrição
+$description =
+    "Conheça o Litera, uma plataforma de jogos educativos voltados para a alfabetização intantil, totalmente gratuita!";
+
+// Palavras-chave
+$keywords = [
+    "Litera",
+    "Alfabetização",
+    "Infantil",
+    "Jogos",
+    "Gamificação",
+    "Educação",
+    "Alfabetização infantil",
+];
+
+// URL de assets
+$assetsUrl = "./public/assets";
+
+// Assets
+$assets = [
+    "images" => "$assetsUrl/images/",
+    "icons" => "$assetsUrl/icons/",
+    "javascript" => "$assetsUrl/javascript/",
+    "css" => "$assetsUrl/css/",
+    "cursors" => "$assetsUrl/cursors/",
+];
+?>
 <!DOCTYPE html>
-<html lang="pt-BR" dir="ltr">
+<html lang="pt-BR" dir="ltr" class="font-poppins">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <!-- HTML Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="<?= htmlspecialchars($author) ?>">
+        <meta name="description" content="<?= htmlspecialchars(
+            $description
+        ) ?>">
+        <meta name="keywords" content="<?= htmlspecialchars(
+            implode(", ", $keywords)
+        ) ?>" >
+        <meta name="robots" content="index, follow">
+        <meta name="copyright" content="© Marley de S. Santos" >
 
-    <!--Link do manifest para a funcionalidade de PWA-->
-    <link rel="manifest" href="manifest.json">
+        <!-- Security -->
+        <meta http-equiv="X-XSS-Protection" content="1; mode=block">
 
-    <title>Litera | Alfabetização para Novas Gerações</title>
+        <!-- Appearance -->
+        <meta name="theme-color" content="#03a9f5">
 
-    <link rel="stylesheet" type="text/css" href="./assets/landing/index.css">
-    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon">
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="<?= htmlspecialchars(
+            $assets["icons"]
+        ) ?>favicon.ico">
 
-    <!--fontawesome-->
-    <script src="https://kit.fontawesome.com/5bf5514c29.js" crossorigin="anonymous"></script>
-</head>
+        <!-- Tailwind CSS -->
+        <link rel="stylesheet" href="<?= htmlspecialchars(
+            $assets["css"]
+        ) ?>styles.css">
 
-<body>
+        <!-- Title -->
+        <title><?= htmlspecialchars($title) ?></title>
+    </head>
 
-    <!-- Header -->
-    <header>
+    <body class="" style="cursor: url(<?= htmlspecialchars(
+        $assets["cursors"]
+    ) ?>Point.ico), auto ">
 
-        <!-- Navbar -->
-        <nav class="" id="navbar">
-            <!--Área do logo Litera-->
-            <div class="logo-area">
-                <img src="./assets/images/arara 2.svg" alt="Litera">
-                <span>Litera</span>
-            </div>
+        <!-- Header -->
+        <header class="bg-center bg-cover h-screen bg-no-repeat" style="background-image: url(<?= htmlspecialchars(
+            $assets["images"]
+        ) ?>Background.svg)">
 
-            <!--Links de navegação Litera-->
-            <div class="navigation">
-                <ul>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#price">Preço</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </div>
+            <!-- Navbar -->
+            <nav class="z-50 flex items-center lg:fixed lg:top-4 w-[90%] lg:mx-16 lg:p-2 lg:justify-between bg-white/95 backdrop-blur-lg rounded-2xl shadow-lg shadow-black/20">
 
-            <!--Botão de ação - desktop-->
-            <div class="action-btn" id="menu">
-                <a href="index.php?route=login">Login
-                    <img src="./assets/images/icons/login.svg" alt="Login Ícone">
-                </a>
-
-                <!-- <a href="./views/login.php">Login
-                    <img src="./assets/images/icons/login.svg" alt="Login Ícone">
-                </a> -->
-
-                <!-- Div que simula um botão de clique para abrir o menu oculto -->
-                <div class="menu-mobile" id="openBtn">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Menu oculto mobile -->
-        <div class="side-menu" id="hiddenMenu">
-
-            <!--Lista de links no menu mobile lateral-->
-            <ul>
-                <li><a href="#" title="">Início</a></li>
-                <li><a href="#sobre" title="sobre">Sobre</a></li>
-                <li><a href="#price" title="price">Preço</a></li>
-                <li><a href="#contato" title="contato">Contato</a></li>
-            </ul>
-
-            <!--ícone de fechar o menu mobile-->
-            <div class="close-menu-mobile" id="closeBtn">
-                <img src="./assets/images/icons/cancel-svgrepo-com.svg">
-            </div>
-
-            <!--Botão de ação no menu mobile-->
-            <div class="cta-mobile">
-                <a href="./views/register.php">Entre ou cadastre-se</a>
-            </div>
-
-        </div>
-
-        <!--Título de header-->
-        <div class="hero">
-
-            <!-- Container de itens do header -->
-            <div class="container-header">
-                <!--Título-->
-                <h1>Aprender com jogos educativos</h1>
-                <!--Subtítulo-->
-                <h2>Suíte de jogos para alfabetização infantil</h2>
-
-                <!--Call-to-action-->
-                <div class="cta">
-                    <a href="./views/portal.php">Começar agora</a>
+                <!-- Logo -->
+                <div class="flex items-center lg:px-4">
+                    <a class="flex items-center" href="">
+                        <img class="w-16 lg:mx-1" src="<?= htmlspecialchars(
+                            $assets["images"]
+                        ) ?>Litera.svg" alt="Logo Litera">
+                        <span class="mx-1 font-bold text-2xl text-blue-litera">Litera</span>
+                    </a>
                 </div>
 
-            </div>
-        </div>
-    </header>
-    <!--Fim do header-->
+                <!-- Navigation -->
+                <div class="hidden lg:flex">
+                    <ul class="flex">
+                        <li class="font-medium text-[1.1rem] mx-3 text-stone-800 hover:transform transition-transform duration-300 ease-in-out hover:-translate-y-1">
+                            <a class="hover:text-blue-litera transition-all duration-300" href="">Início</a>
+                        </li>
 
-    <!--Div para correção de acesso à link rápido-->
-    <div id="sobre"></div>
+                        <li class="font-medium text-[1.1rem] mx-3 text-stone-800 hover:transform transition-transform duration-300 ease-in-out hover:-translate-y-1">
+                            <a class="hover:text-blue-litera transition-all duration-300" href="">Sobre</a>
+                        </li>
 
-    <!--Main-->
-    <main>
+                        <li class="font-medium text-[1.1rem] mx-3 text-stone-800 hover:transform transition-transform duration-300 ease-in-out hover:-translate-y-1">
+                            <a class="hover:text-blue-litera transition-all duration-300" href="">Preço</a>
+                        </li>
 
-        <section class="section1 left">
-            <div class="img-section">
-                <img src="./assets/images/multiplataforma.png" alt="Multiplataforma" />
-            </div>
-
-            <div class="information-section">
-                <h2>Um Projeto Online e Multiplataforma</h2>
-
-                <div class="content-section">
-                    <p class="">O Litera foi totalmente desenvolvido e pensado para rodar em quaisquer dispositivos com navegador e acesso à internet, facilitando o uso, sem necessidade de muitos recursos ou instalação direta.</p>
+                        <li class="font-medium text-[1.1rem] mx-3 text-stone-800 hover:transform transition-transform duration-300 ease-in-out hover:-translate-y-1">
+                            <a class="hover:text-blue-litera transition-all duration-300" href="">Contato</a>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-        </section>
 
-        <section class="section1 right">
-            <div class="img-section">
-                <img src="./assets/images/children.svg" alt="Crianças" />
-            </div>
-
-            <div class="information-section">
-                <h2>Animado e Divertido</h2>
-
-                <div class="content-section">
-                    <p class="">Buscamos tornar a plataforma divertida e cativante para os pequenos, onde a todo momento serão instigados com as animações e efeitos visuais presentes nos jogos do Litera.</p>
+                <!-- Action -->
+                <div class="lg:px-6">
+                    <a href="login" class="flex items-center justify-center px-6 py-2 bg-green-litera text-stone-800 font-medium rounded-lg shadow-lg hover:bg-green-litera border-3 border-dark-green-litera transition duration-200 ease-in-out active:scale-90 active:shadow-inner">
+                        <span class="font-medium text-stone-800">Login</span>
+                        <img class="w-5 mx-1" src="<?= htmlspecialchars(
+                            $assets["icons"]
+                        ) ?>login-icon.svg" alt="">
+                    </a>
                 </div>
+
+                <!-- Menu Mobile -->
+                <button class="lg:hidden" id="button" type="button">
+                    <img class="w-8" src="<?= htmlspecialchars(
+                        $assets["icons"]
+                    ) ?>menu.svg" alt="Menu">
+                </button>
+
+            </nav>
+
+            <div class="bg-white hidden" id="menu">
+                Conteúdo do menu
             </div>
-        </section>
 
-        <section class="cards-section">
-            <div class="title-section-cards">
-                <h2>Porquê o Litera?</h1>
-            </div>
+            <!-- Header content -->
+            <div class="lg:h-screen lg:mx-10 flex justify-center items-center">
 
-            <div class="bg"></div>
+                <div class="flex flex-col bg-center bg-[100%_auto] h-screen items-center justify-center" style="background-image: url(<?= htmlspecialchars(
+                    $assets["images"]
+                ) ?>Clould.svg);">
+                    <h1 class="lg:flex lg:px-10 lg:justify-center lg:p-4 lg:text-4xl bg-blue-litera font-bold text-white rounded-lg self-center" style="box-shadow: 0px 5px 0px #3b3b3b">Aprender com jogos educativos</h1>
+                    <h2 class="lg:flex lg:px-10 lg:justify-center lg:p-4 lg:text-2xl bg-yellow-litera font-bold text-stone-800 rounded-lg lg:self-center" style="box-shadow: 0px 5px 0px #3b3b3b">Suíte de jogos para alfabetização infantil</h2>
 
-            <div class="cards">
-                <div class="card" id="card1">
-                    <div class="title-card">
-                        <div class="tag-card">
-                            <span> 1 </span>
-                        </div>
-
-                        <div class="content-card">
-                            <h4>Engajamento e Diversão</h4>
-
-                            <div class="content-card-p">
-                                <p>Um aprendizado divertido, criativo, estimulante e extremamente envolvente que os pequenos realmente adoram.</p>
-                            </div>
-
-                        </div>
+                    <!-- Call to Action -->
+                    <div class="lg:flex lg:justify-center lg:my-2">
+                        <a class="p-3 bg-green-litera border-2 border-dark-green-litera rounded-lg shadow-lg hover:bg-green-litera transition duration-200 ease-in-out active:scale-90 active:shadow-inner" href="">Começe agora</a>
                     </div>
                 </div>
 
-                <div class="card" id="card2">
-                    <div class="title-card">
-                        <div class="tag-card">
-                            <span>2</span>
-                        </div>
-
-                        <div class="content-card">
-                            <h4>Uma plataforma inovadora</h4>
-
-                            <div class="content-card-p">
-                                <p>Combinamos o melhor da educação com jogos para tornar o aprendizado divertido, interativo e eficaz para as crianças.</p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="title-card">
-                        <div class="tag-card">
-                            <span>3</span>
-                        </div>
-
-                        <div class="content-card">
-                            <h4>Múltiplos Perfis</h4>
-
-                            <div class="content-card-p">
-                                <p>Oferecemos a possibilidade de criar até 5 perfis individuais, cada um com seu próprio avatar, estatísticas de perfil e conquistas personalizadas.</p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
             </div>
 
-            </div>
-        </section>
+        </header>
 
-        <section class="section1 left">
-            <div class="img-section">
-                <!-- <video src="assets/video/pitch.mp4" controls>
-                    Seu navegador não suporta a tag de vídeo.
-                </video> -->
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-                <iframe width="560" height="315" style="border-radius: 12px; cursor: var(--cursor-hand);" src="https://www.youtube.com/embed/iVGN-FqM3O4?si=8e1V8p-0VKG7cRdR" title="Vídeo Pitch Litera | Illumi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-
-            <div class="information-section">
-                <h2>Desperte a Curiosidade das Crianças com o Mundo Maravilhoso da Alfabetização!</h2>
-
-                <div class="content-section">
-                    <p class="">Este vídeo pitch é o seu convite para conhecer um projeto que transforma a vida das crianças. Prepare-se para se inspirar e se apaixonar pelo futuro da alfabetização!</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section1 right">
-            <div class="img-section">
-                <img src="./assets/images/games.svg" alt="" />
-            </div>
-
-            <div class="information-section">
-                <h2>Uma plataforma gamificada</h2>
-
-                <div class="content-section">
-                    <p class="">Unimos o a educação com a gamificação para criar este incrível projeto, capaz de melhorar o engajamento e a eficiência no aprendizado das crianças brasileiras.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="price" id="price">
-            <div class="image-price-section">
-                <img src="./assets/images/freeSite.svg" alt="">
-            </div>
-
-            <div class="ia">
-
-            <div class="sides">
-                <div class="value-info">
-                    <p>Sei que você estava ansioso para saber os valores dos planos, mas tenho uma notícia melhor ainda:<br><br>
-                    <span>O Litera é totalmente gratuito!</span>
-                    </p>
-                </div>
-
-            </div>
-            </div>
-
-
-        </section>
-
-
-        <section class="form-contact" id="contato">
-
-            <form action="" method="post">
-
-                <div class="title-form">
-                    <h2>Ficou com alguma dúvida? Quer saber mais?</h2>
-                </div>
-
-                <div class="inputs">
-                    <label for="nome">Nome</label>
-                    <input type="text" name="nome" id="nome" placeholder="Seu nome" required>
-                </div>
-
-                <div class="inputs">
-                    <label for="email">E-mail</label>
-                    <input type="email" name="" id="email" placeholder="Seu melhor e-mail" required>
-                </div>
-
-                <div class="inputs">
-                    <label for="msg">Mensagem</label>
-                    <textarea name="mensagem" id="msg" rows="4" required placeholder="Digite sua mensagem"></textarea>
-                </div>
-
-                Confirmação de
-                <div class="inputs inverse">
-                    <span class="tetx">Concordo com os <a href="#">Termos e Condições</a></span>
-                    <input type="checkbox" name="confirma" required>
-                </div>
-
-                <!--Botão de envio de formulário de contato-->
-                <div class="inputs submit">
-                    <button type="submit">Enviar</button>
-                </div>
-            </form>
-        </section>
-    </main>
-    <!--Fim da main-->
-
-    <!--Footer-->
-    <footer>
-        <div class="items-footer">
-            <div class="item-footer">
-
-                <!--Logo Litera no footer-->
-                <div class="logo-litera">
-                    <img src="./assets/images/arara 2.svg" alt="">
-                    <h4>Litera</h4>
-                </div>
-
-                <h4>Litera</h4>
-
-                <a href="#" title="Conheças todos os recursos">Recursos</a>
-                <a href="#" title="Temos soluções diversas. Acesse e saiba mais.">Soluções</a>
-                <a href="#" title="Ficou preocupado com a Segurança da nossa plataforma? Saiba mais.">Segurança</a>
-                <a href="#" title="Fique por dentro das mais recentes versões do antes de todo mundo.">Acesso antecipado</a>
-                <a href="./admin/index.php">Área Administrativa</a>
-            </div>
-
-            <div class="item-footer">
-                <h4>Empresa</h4>
-                <a href="#">Illumi</a>
-                <a href="#">Trabalhe conosco</a>
-                <a href="#">Parceiros</a>
-            </div>
-
-            <div class="item-footer">
-                <h4>Suporte</h4>
-                <a href="#">Central de ajuda</a>
-                <a href="#">Fale conosco</a>
-                <a href="#">Privacidade e termos de uso</a>
-                <a href="#">Política de cookies</a>
-                <a href="#">Recursos de aprendizagem</a>
-            </div>
-
-            <div class="item-footer">
-                <h4>Comunidade</h4>
-                <a href="#">Blog</a>
-                <a href="#">Desenvolvedores</a>
-                <a href="#">Fóruns da comunidade</a>
-                <a href="#">Indicações</a>
-                <a href="#">Parceiros de integração</a>
-            </div>
-
-        </div>
-
-        <div class="title-social-media">
-            <h4>Siga-nos nas redes sociais</h4>
-        </div>
-
-        <!-- Links de redes sociais -->
-        <div class="social-media">
-            <a href="https://instagram.com/" title="Instagram">
-                <i class="fa-brands fa-instagram" id="instagram"></i>
-            </a>
-            <a href="https://facebook.com/" title="Facebook">
-                <i class="fa-brands fa-facebook" title="Facebook" id="facebook"></i>
-            </a>
-            <a href="https://x.com/" title="Twitter/X">
-                <i class="fa-brands fa-x-twitter" title="Twitter/X" id="x"></i>
-            </a>
-            <a href="https://pinterest.com/" title="Pinterest">
-                <i class="fa-brands fa-pinterest" title="Pinterest" id="pin"></i>
-            </a>
-            <a href="https://youtube.com/" title="YoutTube">
-                <i class="fa-brands fa-youtube" title="YouTube" id="youtube"></i>
-            </a>
-        </div>
-
-        <!-- Copyright -->
-        <div class="copy">
-            <span>
-                &copy; 2023 · Litera. Todos os direitos reservados. Desenvolvido por
-
-                <a href="https://localhost/illumi" target="_blank">Illumi</a>
-
-                <span>🇧🇷</span>
-            <span>
-        </div>
-
-    </footer>
-    <!--Fim do footer-->
-
-    <!--Aviso de uso de cookies-->
-    <!--<div class="modal-cookies" id="cookies">
-
-    </div>-->
-
-    <!-- Script para menu lateral mobile -->
-    <script>
-        // Div botão
-        let openMenuBtn = document.getElementById('openBtn');
-
-        // Menu
-        let menu = document.getElementById('hiddenMenu');
-
-        // Corpo do site
-        let bodySite = document.body;
-
-        // Função para abrir o menu
-        openBtn.addEventListener('click', function() {
-            if (menu.style.display = 'none') {
-                menu.style.display = 'block';
-                menu.style.position = 'fixed';
-                bodySite.style.overflowY = 'hidden';
-            }
-        });
-
-        // Botão de fechar o menu
-        let closeMenuBtn = document.getElementById('closeBtn');
-
-        closeBtn.addEventListener('click', function() {
-            menu.style.display = 'none';
-            bodySite.style.overflowY = 'auto';
-        });
-
-    </script>
-
-    <!--Script para ServiceWorker-->
-    <script>
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/litera/service-worker.js')
-            .then(registration => {
-                console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            })
-            .catch(error => {
-                console.log('ServiceWorker registration failed: ', error);
-            });
-        });
-    }
-    </script>
-
-    <script src="/assets/landing/modalCookies.js"></script>
-
-</body>
-
+        <script>
+        (function () {
+          $(document).ready(function () {
+              $("#button").click(function () {
+                  $("#menu").toggleClass("hidden");
+              });
+          });
+        })();
+        </script>
+    </body>
 </html>

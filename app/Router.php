@@ -24,6 +24,7 @@ class Router
         "/" => ["HomeController", "index"],
         "/login" => ["LoginController", "index"],
         "/register" => ["RegisterController", "index"],
+        "/oldIndex" => ["OldIndexController", "index"],
     ];
 
     /**
