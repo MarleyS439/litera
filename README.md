@@ -18,6 +18,10 @@ Como o projeto ainda não foi publicado, você precisará configurar um ambiente
    git clone --branch main --single-branch https://github.com/MarleyS439/litera.git
    ```
 
+   ```
+   cd litera && npm install
+   ```
+
 2. Configure seu ambiente PHP local (por exemplo, utilizando XAMPP, WAMP, ou similar).
 
 3. Importe o projeto para o seu ambiente PHP local e configure o banco de dados incluso em litera/documents, se necessário.
