@@ -1,9 +1,6 @@
 /* Font Import */
 @import url(font.css);
 
-/* Custom CSS Import */
-@import url(custom.css);
-
 /* Tailwind CSS Import */
 @import "tailwindcss";
 
@@ -19,6 +16,7 @@
     --color-darken-green-litera: #0e3010;
     --color-yellow-litera: #ffd13e;
     --color-shadow: #3b3b3b;
+    --color-orange-litera: #e17b1c;
 
     /* Shadow */
     --shadow: 0px 5px 0px --color-shadow;
