@@ -1,0 +1,14 @@
+/* Animations Import */
+@import url("animations.css");
+
+.nav {
+    animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+label {
+    cursor: text;
+}
+
+.why-litera {
+    animation: float 1.5s ease-in-out infinite;
+}

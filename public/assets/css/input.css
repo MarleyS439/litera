@@ -1,5 +1,8 @@
 /* Font Import */
-@import url(font.css);
+@import url("font.css");
+
+/* Animations Import */
+@import url("custom.css");
 
 /* Tailwind CSS Import */
 @import "tailwindcss";
