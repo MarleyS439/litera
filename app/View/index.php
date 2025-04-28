@@ -1,12 +1,8 @@
 <?php
 
-// Declaração de tipagem forte
 declare(strict_types=1);
 
-// Declaração do namespace
 namespace App\View;
-
-// Informações da página
 
 // Título da página
 $title = "Litera | Alfabetização Para Novas Gerações";
@@ -80,7 +76,7 @@ $assets = [
 
     <body class="bg-blue-litera" style="cursor: url(<?= htmlspecialchars(
         $assets["cursors"]
-    ) ?>Point.ico), auto ">
+    ) ?>Point.ico), auto">
 
         <!-- Header -->
         <header class="bg-center bg-cover h-screen bg-no-repeat" style="background-image: url(<?= htmlspecialchars(
@@ -177,36 +173,35 @@ $assets = [
                         ) ?>HandPoint.ico), auto" href="portal">Começe agora</a>
                     </div>
                 </div>
-
             </div>
 
         </header>
 
-        <!-- Main -->
-        <main class="bg-blue-litera bg-center bg-no-repeat lg:my-2" id="about" style="background-image: url(<?= htmlspecialchars(
-            $assets["images"]
-        ) ?>nuvens-sem-fundo.svg">
+        <div id="about" class="lg:my-2"></div>
 
-            <section class="lg:p-4 lg:py-8 bg-white/95 backdrop-blur-lg lg:my-16 lg:mx-16 rounded-lg shadow-lg flex items-center">
+        <!-- Main -->
+        <main class="bg-blue-litera bg-center bg-no-repeat lg:my-2">
+
+            <section class="lg:p-6 lg:py-8 bg-white/95 backdrop-blur-lg lg:my-20 lg:mx-16 rounded-lg shadow-lg flex items-center">
                 <div class="flex p-4 lg:justify-between items-center">
-                    <img class="w-[50%] rounded-lg lg:mx-4" style="box-shadow: -12px 8px 1px #f8d467" src="<?= htmlspecialchars(
+                    <img class="w-[100%] rounded-lg lg:mx-4" style="box-shadow: -12px 8px 1px #f8d467" src="<?= htmlspecialchars(
                         $assets["images"]
                     ) ?>Multiplataforma.png" alt="Uma plataforma online e multiplataforma">
-                    <div class="px-2 py-4 my-2">
-                        <h3 class="text-orange-litera text-3xl font-bold lg:my-4">Uma plataforma online e multiplataforma</h3>
-                        <p class="w-full">O Litera foi totalmente desenvolvido e pensado para rodar em quaisquer dispositivos com navegador e acesso à internet, facilitando o uso, sem necessidade de muitos recursos ou instalação direta.</p>
+                    <div class="lg:px-2 lg:py-4">
+                        <h3 class="text-orange-litera text-3xl font-bold lg:my-4">Online e multiplataforma</h3>
+                        <p class="w-full text-xl">O Litera foi totalmente desenvolvido e pensado para rodar em quaisquer dispositivos com acesso à internet, facilitando o uso, sem necessidade de muitos recursos.</p>
                     </div>
                 </div>
             </section>
 
-            <section class="lg:p-4 lg:py-8 bg-white/95 backdrop-blur-lg lg:mt-16 lg:mx-16 rounded-lg shadow-lg flex items-center">
+            <section class="lg:p-6 lg:py-8 bg-white/95 backdrop-blur-lg lg:mt-16 lg:mx-16 rounded-lg shadow-lg flex items-center">
                 <div class="flex p-4 lg:justify-between flex-row-reverse items-center">
-                    <img class="w-[50%] rounded-lg lg:mx-4" style="box-shadow: -12px 8px 1px #f8d467" src="<?= htmlspecialchars(
+                    <img class="w-[100%] rounded-lg lg:mx-4" style="box-shadow: -12px 8px 1px #f8d467" src="<?= htmlspecialchars(
                         $assets["images"]
                     ) ?>Children.svg" alt="Uma plataforma online e multiplataforma">
                     <div class="px-2 py-4 my-2">
                         <h3 class="text-orange-litera text-3xl font-bold lg:my-4">Animado e Divertido</h3>
-                        <p class="w-full">Buscamos tornar a plataforma divertida e cativante para os pequenos, onde a todo momento serão instigados com as animações e efeitos visuais presentes nos jogos do Litera.</p>
+                        <p class="w-full text-xl">Buscamos tornar a plataforma divertida e cativante para os pequenos, onde a todo momento serão instigados com as animações e efeitos visuais presentes nos jogos do Litera.</p>
                     </div>
                 </div>
             </section>
