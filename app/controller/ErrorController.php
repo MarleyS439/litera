@@ -1,23 +1,22 @@
 <?php
 
-// Declaração de tipagem forte
 declare(strict_types=1);
 
-// Declaração do namespace
 namespace Controller;
 
 /**
- * Classe responsável por lidar com os erros da aplicação
+ * Classe responsável lidar com erros
  *
  * @package Controller
- * @author @MarleyS439
+ * @author Marley de S. Santos (MarleyS439) <marleysantos439@gmail.com>
+ * @version 1.0.0
+ * @since 03/07/2025
  */
 class ErrorController
 {
     /**
      * Método público e estático para lançar uma resposta HTTP 404
      *
-     * @param void
      * @return void
      */
     public function index(): void
