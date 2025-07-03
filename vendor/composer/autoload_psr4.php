@@ -14,6 +14,7 @@ return array(
     'GrahamCampbell\\ResultType\\' => array($vendorDir . '/graham-campbell/result-type/src'),
     'Enums\\' => array($baseDir . '/app/model/enums'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
+    'Database\\' => array($baseDir . '/app/database'),
     'DAO\\' => array($baseDir . '/app/model/DAO'),
     'Controller\\' => array($baseDir . '/app/controller'),
     'Config\\' => array($baseDir . '/config'),

@@ -9,7 +9,8 @@
       "Config\\": "config/",
       "Enums\\": "app/model/enums/",
       "DAO\\": "app/model/DAO/",
-      "Controller\\": "app/controller/"
+      "Controller\\": "app/controller/",
+      "Database\\": "app/database/"
     }
   }
 }
