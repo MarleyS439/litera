@@ -6,9 +6,9 @@
     "psr-4": {
       "App\\": "app/",
       "Config\\": "config/",
-      "Enums\\": "app/Model/Enums/",
-      "DAO\\": "app/Model/DAO/",
-      "Controller\\": "app/Controller/"
+      "Enums\\": "app/model/enums/",
+      "DAO\\": "app/model/DAO/",
+      "Controller\\": "app/controller/"
     }
   }
 }

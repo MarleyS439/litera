@@ -37,15 +37,15 @@ class ComposerStaticInit25f4bd96cc076ea5bf56289d284a9b29
         ),
         'Enums\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/app/Model/Enums',
+            0 => __DIR__ . '/../..' . '/app/model/enums',
         ),
         'DAO\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/app/Model/DAO',
+            0 => __DIR__ . '/../..' . '/app/model/DAO',
         ),
         'Controller\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/app/Controller',
+            0 => __DIR__ . '/../..' . '/app/controller',
         ),
         'Config\\' => 
         array (
