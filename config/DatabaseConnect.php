@@ -70,9 +70,7 @@ class DatabaseConnect
             $this->password = $config["app"]["PASSWORD"];
             $this->port = (int) $config["app"]["PORT"];
         } else {
-            die(
-                "Não foi possível iniciar os dados de acesso ao Banco de Dados."
-            );
+            die("Não foi possível iniciar os dados de acesso ao Banco de Dados.");
         }
     }
 
@@ -103,10 +101,8 @@ class DatabaseConnect
             // Retorna o PDO
             return $this->pdo;
         } catch (PDOException $exception) {
-            die(
-                "Erro ao conectar com o banco de dados: " .
-                    $exception->getMessage()
-            );
+            die("Erro ao conectar com o banco de dados: " .
+                $exception->getMessage());
         }
     }
 }

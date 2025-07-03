@@ -3,3 +3,6 @@ config/config.ini
 
 # Ignorar a diretório node_modules
 node_modules/
+
+# Ignorar o .env
+.env
