@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\view;
+namespace App\View;
 
 // Título da página
 $title = "Litera | Alfabetização Para Novas Gerações";
@@ -11,8 +11,8 @@ $title = "Litera | Alfabetização Para Novas Gerações";
 $author = "Marley de S. Santos";
 
 // Descrição
-// $description =
-"Conheça o Litera, uma plataforma de jogos educativos voltados para a alfabetização intantil, totalmente gratuita!";
+$description =
+    "Conheça o Litera, uma plataforma de jogos educativos voltados para a alfabetização intantil, totalmente gratuita!";
 
 // Palavras-chave
 $keywords = [
