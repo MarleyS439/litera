@@ -1,15 +1,16 @@
 <?php
 
-// Declaração de tipagem forte
 declare(strict_types=1);
 
-// Declaração do namespace
-namespace Enums;
+namespace App\Model\Enums;
 
 /**
  * Enumeração de Status de Usuário
  *
- * @author @MarleyS439
+ * @package Enums
+ * @author Marley de S. Santos (MarleyS439) <marleysantos439@gmail.com>
+ * @version 1.0.1
+ * @since 12/10/2025
  */
 enum Status: string
 {
