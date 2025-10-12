@@ -1,3 +1,5 @@
+# Necessário para roteamento correto das URLs
+
 # Ativa o mecanismo de reescrita de URL do Apache.
 RewriteEngine On
 

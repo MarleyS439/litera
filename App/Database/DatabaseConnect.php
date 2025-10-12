@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Database;
+namespace App\Database;
 
 use PDO;
 use PDOException;
@@ -53,20 +53,30 @@ class DatabaseConnect
      */
     public function __construct()
     {
-        $required_var = ['DB_HOSTNAME', 'DB_DATABASE', 'DB_USER', 'DB_PASSWORD', 'DB_PORT'];
+        $required_var = [
+            "DB_HOSTNAME",
+            "DB_DATABASE",
+            "DB_USER",
+            "DB_PASSWORD",
+            "DB_PORT",
+        ];
 
         foreach ($required_var as $var) {
             if (!isset($_ENV[$var]) || empty($_ENV[$var])) {
-                error_log("Erro fatal: Variável de ambiente '$var' não foi definida ou está vazia.\n");
-                throw new RuntimeException("Erro de configuração de variável de ambiente '$var'.");
+                error_log(
+                    "Erro fatal: Variável de ambiente '$var' não foi definida ou está vazia.\n",
+                );
+                throw new RuntimeException(
+                    "Erro de configuração de variável de ambiente '$var'.",
+                );
             }
         }
 
-        $this->hostname = $_ENV['DB_HOSTNAME'];
-        $this->database = $_ENV['DB_DATABASE'];
-        $this->user = $_ENV['DB_USER'];
-        $this->password = $_ENV['DB_PASSWORD'] ?? "";
-        $this->port = (int) $_ENV['DB_PORT'];
+        $this->hostname = $_ENV["DB_HOSTNAME"];
+        $this->database = $_ENV["DB_DATABASE"];
+        $this->user = $_ENV["DB_USER"];
+        $this->password = $_ENV["DB_PASSWORD"] ?? "";
+        $this->port = (int) $_ENV["DB_PORT"];
     }
 
     /**
@@ -83,13 +93,18 @@ class DatabaseConnect
             $this->pdo = new PDO($dsn, $this->user, $this->password, [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-                PDO::ATTR_EMULATE_PREPARES => false
+                PDO::ATTR_EMULATE_PREPARES => false,
             ]);
 
             return $this->pdo;
         } catch (PDOException $exception) {
-            error_log("Erro de conexão com o banco de dados: " . $exception->getMessage());
-            throw new RuntimeException("Não foi possível conectar ao banco de dados. Tente novamente mais tarde.");
+            error_log(
+                "Erro de conexão com o banco de dados: " .
+                    $exception->getMessage(),
+            );
+            throw new RuntimeException(
+                "Não foi possível conectar ao banco de dados. Tente novamente mais tarde.",
+            );
         }
     }
 }
