@@ -93,7 +93,6 @@ class User
     /**
      * Método para Obter o E-mail do Usuário
      *
-     * @param void
      * @return string
      */
     public function getEmail(): string
@@ -137,7 +136,6 @@ class User
     /**
      * Método para Obter o Status do Usuário
      *
-     * @param void
      * @return Status
      */
     public function getStatus(): Status
@@ -159,10 +157,9 @@ class User
     /**
      * Método para Obter a Data e Hora de Criação do Usuário
      *
-     * @param void
-     * @return DateTime
+     * @return DateTimeImmutable
      */
-    public function getCreatedAt(): DateTime
+    public function getCreatedAt(): DateTimeImmutable
     {
         return $this->createdAt;
     }
@@ -170,10 +167,10 @@ class User
     /**
      * Método para Definir a Data e Hora de Criação do Usuário
      *
-     * @param DateTime $createdAt - Data e Hora de Criação do Usuário
+     * @param DateTimeImmutable $createdAt - Data e Hora de Criação do Usuário
      * @return void
      */
-    public function setCreatedAt(DateTime $createdAt): void
+    public function setCreatedAt(DateTimeImmutable $createdAt): void
     {
         $this->createdAt = $createdAt;
     }
@@ -181,10 +178,9 @@ class User
     /**
      * Método para Obter a Data e Hora de Atualização do Usuário
      *
-     * @param void
-     * @return DateTime
+     * @return DateTimeImmutable
      */
-    public function getUpdatedAt(): DateTime
+    public function getUpdatedAt(): DateTimeImmutable
     {
         return $this->updatedAt;
     }
@@ -192,10 +188,10 @@ class User
     /**
      * Método para Definir a Data e Hora de Atualização do Usuário
      *
-     * @param DateTime $updatedAt - Data e Hora de Atualização do Usuário
+     * @param DateTimeImmutable $updatedAt - Data e Hora de Atualização do Usuário
      * @return void
      */
-    public function setUpdatedAt(DateTime $updatedAt): void
+    public function setUpdatedAt(DateTimeImmutable $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
     }

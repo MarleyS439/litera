@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App;
 
-use Controller\ErrorController;
+use App\Controller\ErrorController;
 use RuntimeException;
 
 /**
@@ -21,13 +21,6 @@ use RuntimeException;
  */
 class Router
 {
-    /**
-     * Código HTTP para recurso não encontrado
-     *
-     * @var int
-     */
-    private const HTTP_NOT_FOUND = 404;
-
     /**
      * Tabela de rotas da aplicação.
      * O formato é: ["METHOD /path" => [Controlador, método]]
@@ -82,10 +75,7 @@ class Router
             $routeKey = "$method $url";
 
             if (!array_key_exists($routeKey, $this->routes)) {
-                throw new RuntimeException(
-                    "Rota não encontrada",
-                    self::HTTP_NOT_FOUND,
-                );
+                throw new RuntimeException("Rota não encontrada", 404);
             }
 
             [$controllerName, $actionName] = $this->routes[$routeKey];
@@ -101,10 +91,7 @@ class Router
             $controllerClass = "App\\controller\\{$controllerName}";
 
             if (!class_exists($controllerClass)) {
-                throw new RuntimeException(
-                    "Controlador não encontrado",
-                    self::HTTP_NOT_FOUND,
-                );
+                throw new RuntimeException("Controlador não encontrado", 404);
             }
 
             $controller = new $controllerClass();
@@ -115,7 +102,7 @@ class Router
             ) {
                 throw new RuntimeException(
                     "Método não encontrado no controlador",
-                    self::HTTP_NOT_FOUND,
+                    404,
                 );
             }
 
@@ -141,7 +128,7 @@ class Router
     public function handleError(int $errorCode, string $errorMessage): void
     {
         http_response_code($errorCode);
-        $controller = new ErrorController($errorCode, $errorMessage);
-        $controller->index();
+        // $controller = new ErrorController($errorCode, $errorMessage);
+        // $controller->index();
     }
 }
