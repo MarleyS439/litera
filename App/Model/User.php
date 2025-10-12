@@ -1,22 +1,19 @@
 <?php
 
-// Declaração de tipagem forte
 declare(strict_types=1);
 
-// Declaração do namespace
 namespace App\Model;
 
-// Importa a classe DateTime
-use DateTime;
-
-// Importa o Enum Status
+use DateTimeImmutable;
 use App\Model\Enums\Status;
 
 /**
  * Classe responsável por definir o Modelo de Usuário
  *
- * @package App\Model
- * @author @MarleyS439
+ * @package Model
+ * @author Marley de S. Santos (MarleyS439) <marleysantos439@gmail.com>
+ * @version 1.0.1
+ * @since 12/10/2025
  */
 class User
 {
@@ -31,9 +28,9 @@ class User
     protected string $email;
 
     /**
-     * @var string $password - Senha do Usuário
+     * @var Password $password - Senha do Usuário
      */
-    protected string $password;
+    protected Password $password;
 
     /**
      * @var Status $status - Status do Usuário
@@ -41,14 +38,14 @@ class User
     protected Status $status;
 
     /**
-     * @var DateTime $createdAd - Data e Hora de Criação do Usuário
+     * @var DateTimeImmutable $createdAd - Data e Hora de Criação do Usuário
      */
-    protected DateTime $createdAt;
+    protected DateTimeImmutable $createdAt;
 
     /**
-     * @var DateTime $updatedAt - Data e Hora de Atualização do Usuário
+     * @var DateTimeImmutable $updatedAt - Data e Hora de Atualização do Usuário
      */
-    protected DateTime $updatedAt;
+    protected DateTimeImmutable $updatedAt;
 
     /**
      * @var int|null $id - ID do Usuário
@@ -56,18 +53,18 @@ class User
     protected ?int $id = null;
 
     /**
-     * Método construtor da classe model User
+     * Método construtor da classe User
      */
     public function __construct(
         string $name,
         string $email,
-        string $password,
+        Password $password,
         Status $status,
-        DateTime $createdAt
+        DateTimeImmutable $createdAt,
     ) {
         $this->name = $name;
         $this->email = $email;
-        $this->password = password_hash($password, PASSWORD_DEFAULT);
+        $this->password = $password;
         $this->status = $status;
         $this->createdAt = $createdAt;
     }
@@ -75,7 +72,6 @@ class User
     /**
      * Método para Obter o Nome do Usuário
      *
-     * @param void
      * @return string
      */
     public function getName(): string
