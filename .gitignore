@@ -1,8 +1,11 @@
-# Ignorar o arquivo de configuração
+# Arquivo de configuração
 config/config.ini
 
-# Ignorar a diretório node_modules
+# Diretório do node_modules/
 node_modules/
 
-# Ignorar o .env
+# Arquivo de chaves de API e senhas
 .env
+
+# Diretório do composer
+vendor/
