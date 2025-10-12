@@ -8,6 +8,6 @@ class OldIndexController
 {
     public function index(): void
     {
-        include "app/View/oldIndex.php";
+        include "app/view/oldIndex.php";
     }
 }

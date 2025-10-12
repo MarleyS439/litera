@@ -4,7 +4,7 @@
 declare(strict_types=1);
 
 // Declaração do namespace
-namespace Controller;
+namespace App\controller;
 
 /**
  * Classe responsável por lidar com os erros da aplicação
@@ -17,12 +17,11 @@ class HomeController
     /**
      * Método público para lançar o Erro 404 - Not Found
      *
-     * @param void
      * @return void
      */
     public function index(): void
     {
         // Inclui o arquivo index.php
-        include "app/View/index.php";
+        include "app/view/index.php";
     }
 }

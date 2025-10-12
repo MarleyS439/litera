@@ -5,23 +5,48 @@ declare(strict_types=1);
 namespace Controller;
 
 /**
- * Classe responsável lidar com erros
+ * Classe de controle de Erros
  *
- * @package Controller
  * @author Marley de S. Santos (MarleyS439) <marleysantos439@gmail.com>
- * @version 1.0.0
- * @since 03/07/2025
  */
 class ErrorController
 {
     /**
-     * Método público e estático para lançar uma resposta HTTP 404
+     * @var int $erroCode - Código de erro
+     */
+    private int $errorCode;
+
+    /**
+     * @var string $errorMessage - Mensagem de erro
+     */
+    private string $errorMessage;
+
+    /**
+     * Método construtor da classe
+     *
+     * @param int $errorCode - Código de erro
+     * @param string $errorMessage - Mensagem de erro
+     */
+    public function __construct(int $errorCode, string $errorMessage)
+    {
+        $this->errorCode = $errorCode;
+        $this->errorMessage = $errorMessage;
+    }
+
+    /**
+     * Método para exibir a View de erro com uma resposta HTTP
+     *
+     * @author Marley de S. Santos (MarleyS439) <marleysantos439@gmail.com>
      *
      * @return void
      */
     public function index(): void
     {
-        // Lança a resposta HTTP 404
-        http_response_code(404);
+        http_response_code($this->errorCode);
+
+        $message = $this->errorMessage;
+        $code = $this->errorCode;
+
+        require_once __DIR__ . "/../view/error.php";
     }
 }

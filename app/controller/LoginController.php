@@ -4,7 +4,7 @@
 declare(strict_types=1);
 
 // Declaração do namespace
-namespace Controller;
+namespace App\Controller;
 
 /**
  * Classe responsável por lidar com o login do Usuário
@@ -17,19 +17,17 @@ class LoginController
     /**
      * Método público para direcionar para a página de login
      *
-     * @param void
      * @return void
      */
     public function index(): void
     {
         // Inclui o arquivo login.php
-        include "app/View/Auth/login.php";
+        include "app/view/Auth/login.php";
     }
 
     /**
      * Método público para realizar o login do Usuário
      *
-     * @param void
      * @return bool
      */
     public function login(): bool {}

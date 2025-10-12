@@ -17,7 +17,7 @@ use RuntimeException;
  * @package App
  * @author Marley de S. Santos (MarleyS439) <marleysantos439@gmail.com>
  * @version 1.0.0
- * @since 03/07/2025
+ * @since 31/05/2025
  */
 class Router
 {
@@ -35,10 +35,11 @@ class Router
      * @var array<string, array{0: string, 1: string}>
      */
     private array $routes = [
-        "/" => ["HomeController", "index"],
-        "/login" => ["LoginController", "index"],
-        "/register" => ["RegisterController", "index"],
-        "/oldIndex" => ["OldIndexController", "index"],
+        "GET /" => ["HomeController", "index"],
+        // "GET /" => ["OldIndexController", "index"],
+        "GET /home" => ["HomeController", "index"],
+        "GET /login" => ["LoginController", "index"],
+        "GET /register" => ["RegisterController", "index"],
     ];
 
     /**
@@ -60,7 +61,7 @@ class Router
                 !in_array(
                     $method,
                     ["GET", "POST", "PUT", "DELETE", "PATCH"],
-                    true
+                    true,
                 )
             ) {
                 throw new RuntimeException("Método HTTP não suportado", 405);
@@ -74,7 +75,7 @@ class Router
             if ($url !== strip_tags($url)) {
                 throw new RuntimeException(
                     "URL inválida ou com possíveis scripts",
-                    400
+                    400,
                 );
             }
 
@@ -83,7 +84,7 @@ class Router
             if (!array_key_exists($routeKey, $this->routes)) {
                 throw new RuntimeException(
                     "Rota não encontrada",
-                    self::HTTP_NOT_FOUND
+                    self::HTTP_NOT_FOUND,
                 );
             }
 
@@ -97,12 +98,12 @@ class Router
                 throw new RuntimeException("Nome de método inválido", 400);
             }
 
-            $controllerClass = "\\Controller\\{$controllerName}";
+            $controllerClass = "App\\controller\\{$controllerName}";
 
             if (!class_exists($controllerClass)) {
                 throw new RuntimeException(
                     "Controlador não encontrado",
-                    self::HTTP_NOT_FOUND
+                    self::HTTP_NOT_FOUND,
                 );
             }
 
@@ -114,7 +115,7 @@ class Router
             ) {
                 throw new RuntimeException(
                     "Método não encontrado no controlador",
-                    self::HTTP_NOT_FOUND
+                    self::HTTP_NOT_FOUND,
                 );
             }
 
@@ -122,7 +123,7 @@ class Router
         } catch (RuntimeException $e) {
             $this->handleError(
                 $e->getCode() >= 400 ? $e->getCode() : 500,
-                htmlspecialchars($e->getMessage(), ENT_QUOTES, "UTF-8")
+                htmlspecialchars($e->getMessage(), ENT_QUOTES, "UTF-8"),
             );
         }
     }

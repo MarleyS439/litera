@@ -4,7 +4,7 @@
 declare(strict_types=1);
 
 // Declaração do namespace
-namespace App\View;
+namespace App\view\Auth;
 
 $title = "Login | Litera";
 $author = "Marley de S. Santos";
@@ -32,7 +32,7 @@ $publicPath = "public/";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Litera | Login</title>
     <link rel="stylesheet" href="<?= htmlspecialchars(
-        $assetsPath
+        $assetsPath,
     ) ?>css/login-page.css">
     <link rel="shortcut icon" href="../assets/images/icons/favicon.ico" type="image/x-icon">
 </head>
@@ -69,7 +69,7 @@ $publicPath = "public/";
 
                 <div class="non">
                     <p>Não possui cadastro?</p>
-                    <a href="register.php">Cadastre-se</a>
+                    <a href="register">Cadastre-se</a>
                 </div>
 
 

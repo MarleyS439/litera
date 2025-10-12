@@ -1,5 +1,10 @@
 <?php
 
+// Declaração de tipagem forte
+declare(strict_types=1);
+
+// Declaração do namespace
+namespace App\view\Auth;
 $assetsPath = "assets/";
 
 $publicPath = "public/";
@@ -18,7 +23,7 @@ $publicPath = "public/";
     <title>Litera | Cadastro</title>
     <link rel="shortcut icon" href="/assets/images/icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<?= htmlspecialchars(
-        $assetsPath
+        $assetsPath,
     ) ?>/css/register.css">
 </head>
 

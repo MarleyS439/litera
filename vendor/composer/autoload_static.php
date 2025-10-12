@@ -28,20 +28,13 @@ class ComposerStaticInit25f4bd96cc076ea5bf56289d284a9b29
         array (
             'GrahamCampbell\\ResultType\\' => 26,
         ),
-        'E' => 
-        array (
-            'Enums\\' => 6,
-        ),
         'D' => 
         array (
             'Dotenv\\' => 7,
-            'Database\\' => 9,
-            'DAO\\' => 4,
         ),
         'C' => 
         array (
             'Controller\\' => 11,
-            'Config\\' => 7,
         ),
         'A' => 
         array (
@@ -74,29 +67,13 @@ class ComposerStaticInit25f4bd96cc076ea5bf56289d284a9b29
         array (
             0 => __DIR__ . '/..' . '/graham-campbell/result-type/src',
         ),
-        'Enums\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/model/enums',
-        ),
         'Dotenv\\' => 
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
         ),
-        'Database\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/database',
-        ),
-        'DAO\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/model/DAO',
-        ),
         'Controller\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/controller',
-        ),
-        'Config\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/config',
         ),
         'App\\' => 
         array (
