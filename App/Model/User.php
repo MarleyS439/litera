@@ -57,7 +57,7 @@ class User
      */
     public function __construct(
         string $name,
-        string $email,
+        Email $email,
         Password $password,
         Status $status,
         DateTimeImmutable $createdAt,
@@ -93,44 +93,22 @@ class User
     /**
      * Método para Obter o E-mail do Usuário
      *
-     * @return string
+     * @return Email
      */
-    public function getEmail(): string
+    public function getEmail(): Email
     {
-        return $this->email;
+        return $this->getEmail();
     }
 
     /**
      * Método para Definir o E-mail do Usuário
      *
-     * @param string $email - E-mail do Usuário
+     * @param Email $email - E-mail do Usuário
      * @return void
      */
-    public function setEmail(string $email): void
+    public function setEmail(Email $email): void
     {
-        $this->email = $email;
-    }
-
-    /**
-     * Método para definir a Senha do Usuário
-     *
-     * @param string $password - Senha em Hash do Usuário
-     * @return void
-     */
-    public function setPassword(string $password): void
-    {
-        $this->password = password_hash($password, PASSWORD_DEFAULT);
-    }
-
-    /**
-     * Método para verificar a Senha do Usuário
-     *
-     * @param string $password - Senha em Hash do Usuário
-     * @return bool
-     */
-    public function verifyPassword(string $password): bool
-    {
-        return password_verify($password, $this->password);
+        $this->email = $email->getEmail();
     }
 
     /**
