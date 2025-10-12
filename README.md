@@ -8,7 +8,7 @@
 
 ## 📖 Descrição do Projeto
 
-**Litera** é uma suíte de jogos educacionais desenvolvida para auxiliar no processo de alfabetização de crianças brasileiras.  
+**Litera** é uma suíte de jogos educacionais desenvolvida para auxiliar no processo de alfabetização de crianças brasileiras.
 Este projeto foi criado como parte do Trabalho de Conclusão de Curso de **Desenvolvimento de Sistemas** na **ETEC Guaianases**.
 
 🎯 O objetivo é tornar o aprendizado da leitura e escrita mais lúdico e envolvente, utilizando jogos interativos e dinâmicos.
@@ -23,11 +23,11 @@ Este projeto foi criado como parte do Trabalho de Conclusão de Curso de **Desen
 
 ## 🧩 Funcionalidades
 
-- 🅰️ Jogos interativos para aprender o alfabeto  
-- 🖼️ Atividades de correspondência entre letras e imagens  
-- ✍️ Exercícios de escrita e identificação de palavras  
-- 🔊 Recursos de áudio para auxiliar na pronúncia correta das letras e palavras  
-- 🛠️ Outros itens em desenvolvimento  
+- 🅰️ Jogos interativos para aprender o alfabeto
+- 🖼️ Atividades de correspondência entre letras e imagens
+- ✍️ Exercícios de escrita e identificação de palavras
+- 🔊 Recursos de áudio para auxiliar na pronúncia correta das letras e palavras
+- 🛠️ Outros itens em desenvolvimento
 
 ---
 
@@ -62,8 +62,8 @@ Projeto desenvolvido por alunos da **ETEC Guaianases** no curso de Desenvolvimen
 
 ### 🚀 Passo a passo
 
-1. Clone este repositório:
-   ```
+- Clone este repositório:
+```
 git clone --branch main --single-branch https://github.com/Illumi-Etec/litera.git
 cd litera/
 composer install
