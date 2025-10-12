@@ -63,6 +63,9 @@ Projeto desenvolvido por alunos da **ETEC Guaianases** no curso de Desenvolvimen
 ### 🚀 Passo a passo
 
 1. Clone este repositório:
-   ```bash
-   git clone --branch main --single-branch https://github.com/Illumi-Etec/litera.git
-   cd litera/
+   ```
+git clone --branch main --single-branch https://github.com/Illumi-Etec/litera.git
+cd litera/
+composer install
+npm install
+```
