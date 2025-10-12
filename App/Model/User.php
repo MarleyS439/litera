@@ -28,9 +28,9 @@ class User
     protected string $email;
 
     /**
-     * @var Password $password Senha do Usuário
+     * @var Password $passwordHash Senha do Usuário
      */
-    protected Password $password;
+    protected Password $passwordHash;
 
     /**
      * @var Status $status Status do Usuário
@@ -64,7 +64,7 @@ class User
     ) {
         $this->name = $name;
         $this->email = $email->getEmail();
-        $this->password = $password;
+        $this->passwordHash = $password;
         $this->status = $status;
         $this->createdAt = $createdAt;
     }
@@ -97,13 +97,13 @@ class User
      */
     public function getEmail(): Email
     {
-        return $this->email;
+        return $this->getEmail();
     }
 
     /**
      * Método para Definir o E-mail do Usuário
      *
-     * @param Email $email - E-mail do Usuário
+     * @param Email $email E-mail do Usuário
      * @return void
      */
     public function setEmail(Email $email): void
@@ -124,7 +124,7 @@ class User
     /**
      * Método para Definir o Status do Usuário
      *
-     * @param Status $status - Status do Usuário
+     * @param Status $status Status do Usuário
      * @return void
      */
     public function setStatus(Status $status): void
@@ -145,7 +145,7 @@ class User
     /**
      * Método para Definir a Data e Hora de Criação do Usuário
      *
-     * @param DateTimeImmutable $createdAt - Data e Hora de Criação do Usuário
+     * @param DateTimeImmutable $createdAt Data e Hora de Criação do Usuário
      * @return void
      */
     public function setCreatedAt(DateTimeImmutable $createdAt): void
@@ -166,7 +166,7 @@ class User
     /**
      * Método para Definir a Data e Hora de Atualização do Usuário
      *
-     * @param DateTimeImmutable $updatedAt - Data e Hora de Atualização do Usuário
+     * @param DateTimeImmutable $updatedAt Data e Hora de Atualização do Usuário
      * @return void
      */
     public function setUpdatedAt(DateTimeImmutable $updatedAt): void
