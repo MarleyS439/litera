@@ -17,14 +17,14 @@ use App\Model\Email;
 class VerifyEmailDomain
 {
     /**
-     * @var Email $email - Email
+     * @var Email $email Email
      */
     private Email $email;
 
     /**
      * Método para verificar existência de registros do domínio do e-mail no Mail Exchange
      *
-     * @param Email $email
+     * @param Email $email Email
      * @return bool
      */
     public static function verify(Email $email): bool

@@ -17,9 +17,9 @@ use InvalidArgumentException;
 class Password
 {
     /**
-     * @var string $passwordHash Hash da senha
+     * @var string $hash Hash
      */
-    private string $passwordHash;
+    private string $hash;
 
     /**
      * Método construtor
@@ -36,7 +36,7 @@ class Password
     {
         $instance = new self();
         $instance->validate($password);
-        $instance->passwordHash = password_hash($password, PASSWORD_DEFAULT);
+        $instance->hash = password_hash($password, PASSWORD_DEFAULT);
         return $instance;
     }
 
@@ -53,7 +53,7 @@ class Password
         }
 
         $instance = new self();
-        $instance->passwordHash = $hash;
+        $instance->hash = $hash;
         return $instance;
     }
 
@@ -113,7 +113,7 @@ class Password
      */
     public function getHash(): string
     {
-        return $this->passwordHash;
+        return $this->hash;
     }
 
     /**
@@ -124,6 +124,6 @@ class Password
      */
     public function verify(string $password): bool
     {
-        return password_verify($password, $this->passwordHash);
+        return password_verify($password, $this->hash);
     }
 }

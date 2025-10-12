@@ -18,37 +18,37 @@ use App\Model\Enums\Status;
 class User
 {
     /**
-     * @var string $name - Nome do Usuário
+     * @var string $name Nome do Usuário
      */
     protected string $name;
 
     /**
-     * @var string $email - E-mail do Usuário
+     * @var string $email E-mail do Usuário
      */
     protected string $email;
 
     /**
-     * @var Password $password - Senha do Usuário
+     * @var Password $password Senha do Usuário
      */
     protected Password $password;
 
     /**
-     * @var Status $status - Status do Usuário
+     * @var Status $status Status do Usuário
      */
     protected Status $status;
 
     /**
-     * @var DateTimeImmutable $createdAd - Data e Hora de Criação do Usuário
+     * @var DateTimeImmutable $createdAd Data e Hora de Criação do Usuário
      */
     protected DateTimeImmutable $createdAt;
 
     /**
-     * @var DateTimeImmutable $updatedAt - Data e Hora de Atualização do Usuário
+     * @var DateTimeImmutable $updatedAt Data e Hora de Atualização do Usuário
      */
     protected DateTimeImmutable $updatedAt;
 
     /**
-     * @var int|null $id - ID do Usuário
+     * @var int|null $id ID do Usuário
      */
     protected ?int $id = null;
 
@@ -63,7 +63,7 @@ class User
         DateTimeImmutable $createdAt,
     ) {
         $this->name = $name;
-        $this->email = $email;
+        $this->email = $email->getEmail();
         $this->password = $password;
         $this->status = $status;
         $this->createdAt = $createdAt;
@@ -82,7 +82,7 @@ class User
     /**
      * Método para Definir o Nome do Usuário
      *
-     * @param string $name - Nome do Usuário
+     * @param string $name Nome do Usuário
      * @return void
      */
     public function setName(string $name): void
@@ -97,7 +97,7 @@ class User
      */
     public function getEmail(): Email
     {
-        return $this->getEmail();
+        return $this->email;
     }
 
     /**
